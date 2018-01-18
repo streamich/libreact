@@ -13,6 +13,7 @@ npm install mol-fe-react --save
   - [`mock()`](#mock)
   - [`loadable()`](#loadable)
   - [`lazy()`](#lazy)
+  - [`lazyIdle()`](#lazyidle)
 
 
 ### `mock()`
@@ -106,3 +107,19 @@ export interface ILazyComponent<TProps> extends React.SFC<TProps> {
 ```
 
 Use it the same as `loadable()` function.
+
+
+### `lazyIdle()`
+
+Same as `lazy` but also postpones component loading to JavaScript idle time and after some timeout that can
+be specified as `delay` parameter.
+
+```ts
+lazyIdle: <TProps>(params: ILazyIdleParams<TProps>) => ILazyComponent<TProps>;
+
+interface ILazyIdleParams<TProps> extends ILazyParams<TProps> {
+  delay?: number;
+}
+```
+
+  - `delay` - time in milliseconds to wait before loading a component, defaults to 300.
