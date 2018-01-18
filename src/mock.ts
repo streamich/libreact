@@ -3,22 +3,22 @@ import {Component, createElement as h} from 'react';
 
 export interface IMock<TProps> extends Component<TProps, any> {}
 
-export interface IMockConstructor<TProps> {
+export interface IMockComponent<TProps> {
   new (props: TProps, context): IMock<TProps>;
   implement(Implementation: React.Component<TProps, any> | React.SFC<TProps>);
 }
 
-export interface ImockParams {
+export interface IMockParams {
   loading?: React.ReactElement<any>;
 }
 
-export type TMock = <TProps>(params?: ImockParams) => IMockConstructor<TProps>;
+export type TMock = <TProps>(params?: IMockParams) => IMockComponent<TProps>;
 
-export const mock: TMock = <TProps>({loading = null}: ImockParams = {}) => {
+export const mock: TMock = <TProps>({loading = null}: IMockParams = {}) => {
   let Comp;
   const notifyOnImplementationList = [];
 
-  const Mock: IMockConstructor<TProps> = class Mock extends Component<TProps, any> {
+  const Mock: IMockComponent<TProps> = class Mock extends Component<TProps, any> {
     constructor (props, context) {
       super(props, context);
 
@@ -30,7 +30,7 @@ export const mock: TMock = <TProps>({loading = null}: ImockParams = {}) => {
     render () {
       return Comp ? h(Comp, this.props) : loading;
     }
-  } as IMockConstructor<TProps>;
+  } as IMockComponent<TProps>;
 
   Mock.implement = (Implementation) => {
     Comp = Implementation;
