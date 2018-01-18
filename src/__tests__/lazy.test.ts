@@ -9,15 +9,23 @@ describe('mock()', () => {
 
   it('returns a stateless component', () => {
     const Lazy = lazy({
-      loader: () => Promise.resolve(null)
+      loader: () => Promise.resolve(() => null)
     });
 
     expect(Lazy).toBeInstanceOf(Function);
   });
 
+  it('has .load() method', () => {
+    const Lazy = lazy({
+      loader: () => Promise.resolve(() => null)
+    });
+
+    expect(Lazy.load).toBeInstanceOf(Function);
+  });
+
   it('renders nothing by default', () => {
     const Lazy = lazy({
-      loader: () => Promise.resolve(null)
+      loader: () => Promise.resolve(() => null)
     });
     const wrapper = mount(h(Lazy));
 
@@ -27,7 +35,7 @@ describe('mock()', () => {
   it('renders loading placeholder', () => {
     const Lazy = lazy({
       loading: h('span', {}, 'Loading...'),
-      loader: () => Promise.resolve(null)
+      loader: () => Promise.resolve(() => null)
     });
     const wrapper = mount(h(Lazy));
 

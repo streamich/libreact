@@ -11,7 +11,7 @@ describe('loadable()', () => {
 
   it('return a stateless component', () => {
     const Loadable = loadable({
-      loader: Promise.resolve(null)
+      loader: Promise.resolve(() => null)
     });
 
     expect(Loadable).toBeInstanceOf(Function);
@@ -19,7 +19,7 @@ describe('loadable()', () => {
 
   it('renders nothing by default', () => {
     const Loadable = loadable({
-      loader: Promise.resolve(null)
+      loader: Promise.resolve(() => null)
     });
     const wrapper = shallow(h(Loadable));
 
@@ -28,7 +28,7 @@ describe('loadable()', () => {
 
   it('renders loading placeholder', () => {
     const Loadable = loadable({
-      loader: Promise.resolve(null),
+      loader: Promise.resolve(() => null),
       loading: h('span', {}, 'Loading...')
     });
     const wrapper = mount(h(Loadable));
@@ -38,7 +38,7 @@ describe('loadable()', () => {
 
   it('provides .load() method', () => {
     const Loadable = loadable({
-      loader: Promise.resolve(null)
+      loader: Promise.resolve(() => null)
     });
 
     expect(typeof Loadable.load).toBe('function');
