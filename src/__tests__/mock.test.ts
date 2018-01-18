@@ -46,4 +46,43 @@ describe('mock()', () => {
 
         expect(wrapper.html()).toBe('<div>IMPLEMENTATION</div>');
     });
+
+    it('can re-implement mock many times', () => {
+        const Mock = mock();
+        const Implementation1 = () => h('div', {}, 'IMPLEMENTATION 1');
+        const Implementation2 = () => h('div', {}, 'IMPLEMENTATION 2');
+        const Implementation3 = () => h('div', {}, 'IMPLEMENTATION 3');
+        const wrapper = mount(h(Mock));
+
+        expect(wrapper.html()).toBe(null);
+
+        Mock.implement(Implementation1);
+
+        expect(wrapper.html()).toBe('<div>IMPLEMENTATION 1</div>');
+
+        Mock.implement(Implementation2);
+
+        expect(wrapper.html()).toBe('<div>IMPLEMENTATION 2</div>');
+
+        Mock.implement(Implementation3);
+
+        expect(wrapper.html()).toBe('<div>IMPLEMENTATION 3</div>');
+    });
+
+    it('does not throw when calling .implement() on un-mounted component', () => {
+        const Mock = mock();
+        const Implementation1 = () => h('div', {}, 'IMPLEMENTATION 1');
+        const Implementation2 = () => h('div', {}, 'IMPLEMENTATION 2');
+        const wrapper = mount(h(Mock));
+
+        expect(wrapper.html()).toBe(null);
+
+        Mock.implement(Implementation1);
+
+        expect(wrapper.html()).toBe('<div>IMPLEMENTATION 1</div>');
+
+        wrapper.unmount();
+
+        Mock.implement(Implementation2);
+    });
 });
