@@ -24,6 +24,9 @@
     "gulp": "3.9.1",
     "gulp-typescript": "3",
     "rimraf": "2.6.2",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-15": "1.0.5",
+    "react-test-renderer": "15",
     "@types/node": "9.3.0",
     "@types/jest": "22.0.1",
     "@types/react": "15"
@@ -45,6 +48,9 @@
     "transform": {
       "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": ".*/__tests__/.*\\.(test|spec)\\.(jsx?|tsx?)$"
+    "testRegex": ".*/__tests__/.*\\.(test|spec)\\.(jsx?|tsx?)$",
+    "setupFiles": [
+      "./src/__tests__/setup.js"
+    ]
   }
 }
