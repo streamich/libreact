@@ -1,5 +1,6 @@
 import {Component, createElement as h} from 'react';
 import {mock, IMockParams, IMockComponent} from './mock';
+import {noop} from './util';
 
 export type TLoaderPromise = () => Promise<TComponent<any>>;
 export type TLoader = TLoaderPromise;
@@ -22,6 +23,8 @@ export const loadable: TLoadable = <TProps>(params: ILoadableParams<TProps>) => 
         loader().then((Implementation) => {
             Mock.implement((Implementation as any).default || Implementation);
         });
+
+        Mock.load = noop;
     };
 
     return Mock;
