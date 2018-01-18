@@ -11,3 +11,4 @@ yarn.lock
 *.spec.js
 /typings/
 /test/
+/.vscode/

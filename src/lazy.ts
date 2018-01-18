@@ -29,7 +29,7 @@ export const lazy: TLazy = <TProps>(params) => {
   return Lazy;
 };
 
-const requestIdleCallback = (window as any).requestIdleCallback || setTimeout;
+const requestIdleCallback = (window as any).requestIdleCallback || ((callback) => setTimeout(callback, 300));
 
 export interface ILazyIdleParams<TProps> extends ILazyParams<TProps> {
   delay?: number;
