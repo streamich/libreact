@@ -66,6 +66,31 @@ describe('lazy', () => {
         });
       });
     });
+
+    it('does pass children', () => {
+      const Implementation = (props) => h('div', {}, props.children);
+      const Lazy = lazy({
+        loader: () => Promise.resolve(Implementation),
+      });
+
+      const wrapper = mount(h(Lazy, {
+        children: 'foobar'
+      } as any));
+
+      Lazy.load();
+
+      return new Promise((resolve, reject) => {
+        setImmediate(() => {
+          try {
+            wrapper.update();
+            expect(wrapper.find('div').html()).toBe('<div>foobar</div>');
+            resolve();
+          } catch (error) {
+            reject(error);
+          }
+        });
+      });
+    });
   });
 
   describe('lazyIdle()', () => {
@@ -129,7 +154,7 @@ describe('lazy', () => {
           } catch (error) {
             reject(error);
           }
-        }, 50);
+        }, 500);
       });
     });
   });

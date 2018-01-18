@@ -98,4 +98,17 @@ describe('mock()', () => {
 
     Mock.implement(Implementation2);
   });
+
+  it('does pass children', () => {
+    const Mock = mock();
+    const Implementation = (props) => h('div', {}, props.children);
+
+    Mock.implement(Implementation);
+
+    const wrapper = mount(h(Mock, {
+      children: 'foobar'
+    } as any));
+
+    expect(wrapper.find('div').html()).toBe('<div>foobar</div>');
+  });
 });

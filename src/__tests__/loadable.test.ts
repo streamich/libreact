@@ -91,4 +91,29 @@ describe('loadable()', () => {
       });
     });
   });
+
+  it('does pass children', () => {
+    const Implementation = (props) => h('div', {}, props.children);
+    const Loadable = loadable({
+      loader: () => Promise.resolve(Implementation),
+    });
+
+    const wrapper = mount(h(Loadable, {
+      children: 'foobar'
+    } as any));
+
+    Loadable.load();
+
+    return new Promise((resolve, reject) => {
+      setImmediate(() => {
+        try {
+          wrapper.update();
+          expect(wrapper.find('div').html()).toBe('<div>foobar</div>');
+          resolve();
+        } catch (error) {
+          reject(error);
+        }
+      });
+    });
+  });
 });
