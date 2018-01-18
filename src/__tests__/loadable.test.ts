@@ -1,0 +1,70 @@
+import {loadable} from '../loadable';
+import {Component, createElement as h} from 'react';
+import {shallow, mount} from 'enzyme';
+
+declare const Promise;
+
+describe('loadable()', () => {
+  it('is a function', () => {
+    expect(typeof loadable).toBe('function');
+  });
+
+  it('return a React component', () => {
+    const Loadable = loadable({
+      loader: Promise.resolve(null)
+    });
+
+    expect(Loadable.prototype).toBeInstanceOf(Component);
+  });
+
+  it('renders nothing by default', () => {
+    const Loadable = loadable({
+      loader: Promise.resolve(null)
+    });
+    const wrapper = shallow(h(Loadable));
+
+    expect(Boolean(wrapper.html())).toBe(false);
+  });
+
+  it('renders loading placeholder', () => {
+    const Loadable = loadable({
+      loader: Promise.resolve(null),
+      loading: h('span', {}, 'Loading...')
+    });
+    const wrapper = mount(h(Loadable));
+
+    expect(wrapper.find('span').html()).toBe('<span>Loading...</span>');
+  });
+
+  it('provides .load() method', () => {
+    const Loadable = loadable({
+      loader: Promise.resolve(null)
+    });
+
+    expect(typeof Loadable.load).toBe('function');
+  });
+
+  it('loads implementation', () => {
+    const Implementation = () => h('div', {}, 'IMPLEMENTATION');
+    const Loadable = loadable({
+      loader: () => Promise.resolve(Implementation),
+    });
+    const wrapper = mount(h(Loadable));
+
+    expect(wrapper.html()).toBe(null);
+
+    Loadable.load();
+
+    return new Promise((resolve, reject) => {
+      setImmediate(() => {
+          try {
+            wrapper.update();
+            expect(wrapper.find('div').html()).toBe('<div>IMPLEMENTATION</div>');
+            resolve();
+          } catch (error) {
+            reject(error);
+          }
+      });
+    });
+  });
+});

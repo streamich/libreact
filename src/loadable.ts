@@ -15,8 +15,9 @@ export interface ILoadableComponent<TProps> {
 
 export type TLoadable = <TProps>(params: ILoadableParams) => ILoadableComponent<TProps>;
 
-export const loadable: TLoadable = <TProps>({loader}: ILoadableParams) => {
-    const Mock = mock();
+export const loadable: TLoadable = <TProps>(params: ILoadableParams) => {
+    const {loader} = params;
+    const Mock = mock(params);
     const Loadable: ILoadableComponent<TProps> = class Loadable extends Component<TProps, any> {
         render () {
             return h(Mock, this.props);
