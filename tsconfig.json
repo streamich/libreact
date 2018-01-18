@@ -1,12 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
     "removeComments": false,
     "noImplicitAny": false,
-    "sourceMap": true
+    "sourceMap": true,
+    "lib": [
+      "dom",
+      "es5",
+      "es6",
+      "es7",
+      "es2015",
+      "scripthost",
+      "dom.iterable"
+    ]
   },
   "include": [
+    "typing.d.ts",
     "src"
   ],
   "exclude": [
