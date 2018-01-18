@@ -12,6 +12,7 @@ npm install mol-fe-react --save
 
   - [`mock()`](#mock)
   - [`loadable()`](#loadable)
+  - [`lazy()`](#lazy)
 
 
 ### `mock()`
@@ -89,3 +90,15 @@ const LoadableComp = loadable({
 });
 ```
 
+
+### `lazy()`
+
+Creates a loadable component which is loaded when it is rendered for the first time.
+
+```ts
+lazy: <TProps>(params: ILazyParams) => React.SFC<TProps>;
+
+interface ILazyParams extends ILoadableParams {}
+```
+
+Use it the same as `loadable()` function.
