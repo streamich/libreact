@@ -8,13 +8,13 @@ export interface IMockComponent<TProps> {
   implement(Implementation: React.Component<TProps, any> | React.SFC<TProps>);
 }
 
-export interface IMockParams {
-  loading?: React.ReactElement<any>;
+export interface IMockParams<TProps> {
+  loading?: React.ReactElement<TProps>;
 }
 
-export type TMock = <TProps>(params?: IMockParams) => IMockComponent<TProps>;
+export type TMock = <TProps>(params?: IMockParams<TProps>) => IMockComponent<TProps>;
 
-export const mock: TMock = <TProps>({loading = null}: IMockParams = {}) => {
+export const mock: TMock = <TProps>({loading = null}: IMockParams<TProps> = {}) => {
   let Comp;
   let cnt = 0;
   const instances: {[cnt: number]: React.Component<TProps, any>} = {};

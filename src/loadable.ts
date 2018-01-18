@@ -4,7 +4,7 @@ import {mock, IMockParams, IMockComponent} from './mock';
 export type TLoaderPromise = () => Promise<TComponent<any>>;
 export type TLoader = TLoaderPromise;
 
-export interface ILoadableParams extends IMockParams {
+export interface ILoadableParams<TProps> extends IMockParams<TProps> {
     loader: TLoader,
 }
 
@@ -12,9 +12,9 @@ export interface ILoadableComponent<TProps> extends IMockComponent<TProps> {
     load();
 }
 
-export type TLoadable = <TProps>(params: ILoadableParams) => ILoadableComponent<TProps>;
+export type TLoadable = <TProps>(params: ILoadableParams<TProps>) => ILoadableComponent<TProps>;
 
-export const loadable: TLoadable = <TProps>(params: ILoadableParams) => {
+export const loadable: TLoadable = <TProps>(params: ILoadableParams<TProps>) => {
     const {loader} = params;
     const Mock: ILoadableComponent<TProps> = mock(params) as ILoadableComponent<TProps>;
 

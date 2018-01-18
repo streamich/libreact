@@ -1,13 +1,17 @@
 import {createElement as h} from 'react';
-import {loadable} from './loadable';
+import {loadable, ILoadableParams} from './loadable';
 
-export type TLazy = () => any;
+export interface ILazyParams<TProps> extends ILoadableParams<TProps> {
 
-export const lazy = (params) => {
-    const Loadable = loadable(params);
+}
+
+export type TLazy = <TProps>(params: ILazyParams<TProps>) => React.SFC<TProps>;
+
+export const lazy: TLazy = <TProps>(params) => {
+    const Loadable = loadable<TProps>(params);
 
     let needsLoading = true;
-    const Lazy = (props) => {
+    const Lazy = (props: TProps) => {
         if (!needsLoading) {
             Loadable.load();
             needsLoading = false;
