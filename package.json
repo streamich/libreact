@@ -1,6 +1,6 @@
 {
   "name": "@mol-fe/mol-fe-react",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "MOL React.js utilities",
   "main": "lib/index.js",
   "keywords": [
@@ -43,7 +43,8 @@
     "build": "npm run clean && gulp build-ts",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "pub": "npm publish --registry http://sinopia.devhsk.mol.dmgt.net:4873"
   },
   "jest": {
     "moduleFileExtensions": [
