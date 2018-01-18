@@ -1,0 +1,50 @@
+{
+  "name": "mol-fe-react",
+  "version": "0.1.0",
+  "description": "MOL React.js utilities",
+  "keywords": [
+    "react",
+    "utilities",
+    "MailOnline"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MailOnline/mol-fe-react.git"
+  },
+  "dependencies": {
+    "react": "15",
+    "react-dom": "15"
+  },
+  "devDependencies": {
+    "jest": "22.1.2",
+    "jest-tap-reporter": "1.9.0",
+    "ts-jest": "22.0.1",
+    "typescript": "2.6.2",
+    "ts-node": "4.1.0",
+    "gulp": "3.9.1",
+    "gulp-typescript": "3",
+    "rimraf": "2.6.2",
+    "@types/node": "9.3.0",
+    "@types/jest": "22.0.1",
+    "@types/react": "15"
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "npm run clean && gulp build-ts",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": ".*/__tests__/.*\\.(test|spec)\\.(jsx?|tsx?)$"
+  }
+}
