@@ -2,6 +2,7 @@
   "name": "mol-fe-react",
   "version": "0.1.0",
   "description": "MOL React.js utilities",
+  "main": "lib/index.js",
   "keywords": [
     "react",
     "utilities",
