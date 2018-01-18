@@ -8,8 +8,7 @@ export interface ILoadableParams extends IMockParams {
     loader: TLoader,
 }
 
-export interface ILoadableComponent<TProps> {
-    new (props: TProps, context): React.Component<TProps, any>;
+export interface ILoadableComponent<TProps> extends React.SFC<TProps> {
     load();
 }
 
@@ -18,11 +17,7 @@ export type TLoadable = <TProps>(params: ILoadableParams) => ILoadableComponent<
 export const loadable: TLoadable = <TProps>(params: ILoadableParams) => {
     const {loader} = params;
     const Mock = mock(params);
-    const Loadable: ILoadableComponent<TProps> = class Loadable extends Component<TProps, any> {
-        render () {
-            return h(Mock, this.props);
-        }
-    } as ILoadableComponent<TProps>;
+    const Loadable: ILoadableComponent<TProps> = ((props) => h(Mock, props)) as ILoadableComponent<TProps>;
 
     Loadable.load = () => {
         loader().then((Implementation) => {

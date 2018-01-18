@@ -9,12 +9,12 @@ describe('loadable()', () => {
     expect(typeof loadable).toBe('function');
   });
 
-  it('return a React component', () => {
+  it('return a stateless component', () => {
     const Loadable = loadable({
       loader: Promise.resolve(null)
     });
 
-    expect(Loadable.prototype).toBeInstanceOf(Component);
+    expect(Loadable).toBeInstanceOf(Function);
   });
 
   it('renders nothing by default', () => {
