@@ -20,7 +20,7 @@ export const loadable: TLoadable = <TProps>(params: ILoadableParams<TProps>) => 
 
     Mock.load = () => {
         loader().then((Implementation) => {
-            Mock.implement(Implementation);
+            Mock.implement((Implementation as any).default || Implementation);
         });
     };
 

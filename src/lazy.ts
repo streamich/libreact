@@ -13,8 +13,8 @@ export const lazy: TLazy = <TProps>(params) => {
     let needsLoading = true;
     const Lazy = (props: TProps) => {
         if (needsLoading) {
-            Loadable.load();
             needsLoading = false;
+            Loadable.load();
         }
 
         return h(Loadable, props);

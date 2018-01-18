@@ -67,4 +67,28 @@ describe('loadable()', () => {
       });
     });
   });
+
+  it('make .implement() to look for default exports, when using import()', () => {
+    const Implementation = () => h('div', {}, 'IMPLEMENTATION');
+    const Loadable = loadable({
+      loader: () => Promise.resolve({default: Implementation}),
+    });
+    const wrapper = mount(h(Loadable));
+
+    expect(wrapper.html()).toBe(null);
+
+    Loadable.load();
+
+    return new Promise((resolve, reject) => {
+      setImmediate(() => {
+          try {
+            wrapper.update();
+            expect(wrapper.find('div').html()).toBe('<div>IMPLEMENTATION</div>');
+            resolve();
+          } catch (error) {
+            reject(error);
+          }
+      });
+    });
+  });
 });
