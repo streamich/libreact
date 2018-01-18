@@ -6,25 +6,44 @@ export interface ILazyParams<TProps> extends ILoadableParams<TProps> {
 }
 
 export interface ILazyComponent<TProps> extends React.SFC<TProps> {
-    load();
+  load();
 }
 
 export type TLazy = <TProps>(params: ILazyParams<TProps>) => ILazyComponent<TProps>;
 
 export const lazy: TLazy = <TProps>(params) => {
-    const Loadable = loadable<TProps>(params);
+  const Loadable = loadable<TProps>(params);
 
-    let needsLoading = true;
-    const Lazy: ILazyComponent<TProps> = ((props: TProps) => {
-        if (needsLoading) {
-            needsLoading = false;
-            Loadable.load();
-        }
+  let needsLoading = true;
+  const Lazy: ILazyComponent<TProps> = ((props: TProps) => {
+    if (needsLoading) {
+      needsLoading = false;
+      Loadable.load();
+    }
 
-        return h(Loadable, props);
-    }) as ILazyComponent<TProps>;
+    return h(Loadable, props);
+  }) as ILazyComponent<TProps>;
 
-    Lazy.load = Loadable.load;
+  Lazy.load = Loadable.load;
 
-    return Lazy;
+  return Lazy;
+};
+
+const requestIdleCallback = (window as any).requestIdleCallback || setTimeout;
+
+export const lazyIdle = (params) => {
+  const {
+    delay = 300,
+    loader
+  } = params;
+
+  params.loader = () => new Promise((resolve) => {
+    setTimeout(() => {
+      requestIdleCallback(() => {
+        resolve(loader());
+      });
+    }, delay);
+  });
+
+  return lazy(params);
 };
