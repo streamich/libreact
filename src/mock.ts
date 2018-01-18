@@ -12,7 +12,9 @@ export interface ImockParams {
   loading?: React.ReactElement<any>;
 }
 
-export const mock = <TProps>({loading = null}: ImockParams) => {
+export type TMock = <TProps>(params?: ImockParams) => IMockConstructor<TProps>;
+
+export const mock: TMock = <TProps>({loading = null}: ImockParams = {}) => {
   let Comp;
   const notifyOnImplementationList = [];
 
