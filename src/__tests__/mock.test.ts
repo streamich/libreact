@@ -19,4 +19,31 @@ describe('mock()', () => {
 
         expect(wrapper.html()).toBe(null);
     });
+
+    it('renders loading placeholder', () => {
+        const Mock = mock({
+            loading: h('span', {}, 'Loading...')
+        });
+        const wrapper = shallow(h(Mock));
+
+        expect(wrapper.html()).toBe('<span>Loading...</span>');
+    });
+
+    it('provides .implement() method', () => {
+        const Mock = mock();
+
+        expect(typeof Mock.implement).toBe('function');
+    });
+
+    it('can implement mock', () => {
+        const Mock = mock();
+        const Implementation = () => h('div', {}, 'IMPLEMENTATION');
+        const wrapper = mount(h(Mock));
+
+        expect(wrapper.html()).toBe(null);
+
+        Mock.implement(Implementation);
+
+        expect(wrapper.html()).toBe('<div>IMPLEMENTATION</div>');
+    });
 });
