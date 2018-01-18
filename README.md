@@ -81,3 +81,11 @@ const SVGImage = loadable({
 SVGImage.load();
 ```
 
+Use default exports
+
+```js
+const LoadableComp = loadable({
+  loader: () => import('./MyComp')
+});
+```
+
