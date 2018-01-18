@@ -3,86 +3,86 @@ import {Component, createElement as h} from 'react';
 import {shallow, mount} from 'enzyme';
 
 describe('mock()', () => {
-    it('is a function', () => {
-        expect(typeof mock).toBe('function');
+  it('is a function', () => {
+    expect(typeof mock).toBe('function');
+  });
+
+  it('return a React component', () => {
+    const Mock = mock();
+
+    expect(Mock.prototype).toBeInstanceOf(Component);
+  });
+
+  it('renders nothing by default', () => {
+    const Mock = mock();
+    const wrapper = shallow(h(Mock));
+
+    expect(wrapper.html()).toBe(null);
+  });
+
+  it('renders loading placeholder', () => {
+    const Mock = mock({
+    loading: h('span', {}, 'Loading...')
     });
+    const wrapper = shallow(h(Mock));
 
-    it('return a React component', () => {
-        const Mock = mock();
+    expect(wrapper.html()).toBe('<span>Loading...</span>');
+  });
 
-        expect(Mock.prototype).toBeInstanceOf(Component);
-    });
+  it('provides .implement() method', () => {
+    const Mock = mock();
 
-    it('renders nothing by default', () => {
-        const Mock = mock();
-        const wrapper = shallow(h(Mock));
+    expect(typeof Mock.implement).toBe('function');
+  });
 
-        expect(wrapper.html()).toBe(null);
-    });
+  it('can implement mock', () => {
+    const Mock = mock();
+    const Implementation = () => h('div', {}, 'IMPLEMENTATION');
+    const wrapper = mount(h(Mock));
 
-    it('renders loading placeholder', () => {
-        const Mock = mock({
-            loading: h('span', {}, 'Loading...')
-        });
-        const wrapper = shallow(h(Mock));
+    expect(wrapper.html()).toBe(null);
 
-        expect(wrapper.html()).toBe('<span>Loading...</span>');
-    });
+    Mock.implement(Implementation);
 
-    it('provides .implement() method', () => {
-        const Mock = mock();
+    expect(wrapper.html()).toBe('<div>IMPLEMENTATION</div>');
+  });
 
-        expect(typeof Mock.implement).toBe('function');
-    });
+  it('can re-implement mock many times', () => {
+    const Mock = mock();
+    const Implementation1 = () => h('div', {}, 'IMPLEMENTATION 1');
+    const Implementation2 = () => h('div', {}, 'IMPLEMENTATION 2');
+    const Implementation3 = () => h('div', {}, 'IMPLEMENTATION 3');
+    const wrapper = mount(h(Mock));
 
-    it('can implement mock', () => {
-        const Mock = mock();
-        const Implementation = () => h('div', {}, 'IMPLEMENTATION');
-        const wrapper = mount(h(Mock));
+    expect(wrapper.html()).toBe(null);
 
-        expect(wrapper.html()).toBe(null);
+    Mock.implement(Implementation1);
 
-        Mock.implement(Implementation);
+    expect(wrapper.html()).toBe('<div>IMPLEMENTATION 1</div>');
 
-        expect(wrapper.html()).toBe('<div>IMPLEMENTATION</div>');
-    });
+    Mock.implement(Implementation2);
 
-    it('can re-implement mock many times', () => {
-        const Mock = mock();
-        const Implementation1 = () => h('div', {}, 'IMPLEMENTATION 1');
-        const Implementation2 = () => h('div', {}, 'IMPLEMENTATION 2');
-        const Implementation3 = () => h('div', {}, 'IMPLEMENTATION 3');
-        const wrapper = mount(h(Mock));
+    expect(wrapper.html()).toBe('<div>IMPLEMENTATION 2</div>');
 
-        expect(wrapper.html()).toBe(null);
+    Mock.implement(Implementation3);
 
-        Mock.implement(Implementation1);
+    expect(wrapper.html()).toBe('<div>IMPLEMENTATION 3</div>');
+  });
 
-        expect(wrapper.html()).toBe('<div>IMPLEMENTATION 1</div>');
+  it('does not throw when calling .implement() on un-mounted component', () => {
+    const Mock = mock();
+    const Implementation1 = () => h('div', {}, 'IMPLEMENTATION 1');
+    const Implementation2 = () => h('div', {}, 'IMPLEMENTATION 2');
+    const wrapper = mount(h(Mock));
 
-        Mock.implement(Implementation2);
+    expect(wrapper.html()).toBe(null);
 
-        expect(wrapper.html()).toBe('<div>IMPLEMENTATION 2</div>');
+    Mock.implement(Implementation1);
 
-        Mock.implement(Implementation3);
+    expect(wrapper.html()).toBe('<div>IMPLEMENTATION 1</div>');
 
-        expect(wrapper.html()).toBe('<div>IMPLEMENTATION 3</div>');
-    });
+    wrapper.unmount();
 
-    it('does not throw when calling .implement() on un-mounted component', () => {
-        const Mock = mock();
-        const Implementation1 = () => h('div', {}, 'IMPLEMENTATION 1');
-        const Implementation2 = () => h('div', {}, 'IMPLEMENTATION 2');
-        const wrapper = mount(h(Mock));
-
-        expect(wrapper.html()).toBe(null);
-
-        Mock.implement(Implementation1);
-
-        expect(wrapper.html()).toBe('<div>IMPLEMENTATION 1</div>');
-
-        wrapper.unmount();
-
-        Mock.implement(Implementation2);
-    });
+    Mock.implement(Implementation2);
+  });
 });
