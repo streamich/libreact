@@ -67,7 +67,7 @@ describe('lazy', () => {
       });
     });
 
-    it('does pass children', () => {
+    it('does pass through children', () => {
       const Implementation = (props) => h('div', {}, props.children);
       const Lazy = lazy({
         loader: () => Promise.resolve(Implementation),
@@ -150,6 +150,32 @@ describe('lazy', () => {
             wrapper.update();
             expect(wrapper.find('div').html()).toBe('<div>IMPLEMENTATION</div>');
 
+            resolve();
+          } catch (error) {
+            reject(error);
+          }
+        }, 500);
+      });
+    });
+
+    it('does pass through children', () => {
+      const Implementation = (props) => h('div', {}, props.children);
+      const Lazy = lazyIdle({
+        delay: 10,
+        loader: () => Promise.resolve(Implementation),
+      });
+
+      const wrapper = mount(h(Lazy, {
+        children: 'foobar'
+      } as any));
+
+      Lazy.load();
+
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          try {
+            wrapper.update();
+            expect(wrapper.find('div').html()).toBe('<div>foobar</div>');
             resolve();
           } catch (error) {
             reject(error);
