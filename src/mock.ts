@@ -16,26 +16,31 @@ export type TMock = <TProps>(params?: IMockParams) => IMockComponent<TProps>;
 
 export const mock: TMock = <TProps>({loading = null}: IMockParams = {}) => {
   let Comp;
-  const notifyOnImplementationList = [];
+  let cnt = 0;
+  const instances: {[cnt: number]: React.Component<TProps, any>} = {};
 
   const Mock: IMockComponent<TProps> = class Mock extends Component<TProps, any> {
+    mockId = cnt++;
+
     constructor (props, context) {
       super(props, context);
 
-      if (!Comp) {
-        notifyOnImplementationList.push(this);
-      }
+      instances[this.mockId] = this;
+    }
+
+    componentWillUnmount () {
+      delete instances[this.mockId];
     }
 
     render () {
       return Comp ? h(Comp, this.props) : loading;
     }
-  } as IMockComponent<TProps>;
+  } as any as IMockComponent<TProps>;
 
   Mock.implement = (Implementation) => {
     Comp = Implementation;
-    for (const instance of notifyOnImplementationList) {
-      instance.forceUpdate();
+    for (const id in instances) {
+      instances[id].forceUpdate();
     }
   };
 
