@@ -22,11 +22,24 @@ describe('mock()', () => {
 
   it('renders loading placeholder', () => {
     const Mock = mock({
-    loading: h('span', {}, 'Loading...')
+      loading: h('span', {}, 'Loading...')
     });
     const wrapper = shallow(h(Mock));
 
     expect(wrapper.html()).toBe('<span>Loading...</span>');
+  });
+
+  it('loading placeholder can be a component and receive props', () => {
+    const Loading = (props) => h('div', {}, props.value);
+    const Mock = mock({
+      loading: Loading
+    });
+
+    const wrapper = mount(h(Mock, {
+      value: 'foobar'
+    }));
+
+    expect(wrapper.html()).toBe('<div>foobar</div>');
   });
 
   it('provides .implement() method', () => {
