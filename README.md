@@ -44,6 +44,14 @@ const Player = mock();
 Player.implement(PlayerMailOnline);
 ```
 
+Specify placeholder for the mock
+
+```js
+const MySvg = mock({
+    loading: 'SVG is loading...'
+});
+```
+
 
 ### `loadable()`
 
