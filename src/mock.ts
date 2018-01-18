@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import {Component, createElement as h} from 'react';
 
 export interface IMock<TProps> extends Component<TProps, any> {}
