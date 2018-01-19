@@ -1,4 +1,4 @@
-import {Component, createElement as h} from 'react';
+import {Component} from 'react';
 
 export interface IMediaSensorProps {
   query: string;
