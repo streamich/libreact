@@ -11,6 +11,8 @@ export interface IWindowScrollSensorState {
 }
 
 export class WindowScrollSensor extends Component<IWindowScrollSensorProps, IWindowScrollSensorState> {
+  frame;
+
   constructor (props, context) {
     super(props, context);
 
@@ -36,9 +38,12 @@ export class WindowScrollSensor extends Component<IWindowScrollSensorProps, IWin
   }
 
   onScroll = () => {
-    this.setState({
-      x: window.scrollX,
-      y: window.scrollY
+    cancelAnimationFrame(this.frame);
+    this.frame = requestAnimationFrame(() => {
+      this.setState({
+        x: window.scrollX,
+        y: window.scrollY
+      });
     });
   };
 
