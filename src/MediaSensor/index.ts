@@ -16,6 +16,16 @@ export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState>
     matches: false
   };
 
+  constructor (props, context) {
+    super(props, context);
+
+    this.updateQuery();
+  }
+
+  componentDidMount () {
+    this.updateQuery();
+  }
+
   onMediaChange = (mediaQueryList) => {
     this.setState({
       matches: !!mediaQueryList.matches
@@ -26,7 +36,18 @@ export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState>
     const {query} = this.props;
 
     this.mql = window.matchMedia(query);
+
+    this.setState({
+      matches: !!this.mql.matches
+    });
+
     this.mql.addListener(this.onMediaChange);
+  }
+
+  removeListener () {
+    if (this.mql) {
+      this.mql.removeListener(this.onMediaChange);
+    }
   }
 
   render () {
