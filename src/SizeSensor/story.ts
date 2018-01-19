@@ -7,7 +7,7 @@ import SizeSensor from '.';
 storiesOf('SizeSensor', module)
   .add('basic', () =>
     h(SizeSensor, {
-
+      onSize: action('onSize')
     }, ({width, height}) =>
       h('div', {
         style: {

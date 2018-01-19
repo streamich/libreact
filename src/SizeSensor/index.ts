@@ -5,7 +5,8 @@ import {idx, noop} from '../util';
 const DRAF = (callback) => setTimeout(callback, 35);
 
 export interface ISizeSensorProps extends React.HTMLProps<any> {
-  children?: (size: ISizeSensorState) => any;
+  children?: ((size: ISizeSensorState) => React.ReactElement<any>) | React.ReactElement<any>;
+  onSize?: (size: ISizeSensorState) => void;
   refElement?;
   tagName?: string;
 }
@@ -63,16 +64,18 @@ class SizeSensor extends Component<ISizeSensorProps, ISizeSensorState> {
   };
 
   setSize () {
-    this.setState(this.iframe ?
-      {
-        width: this.iframe.offsetWidth,
-        height: this.iframe.offsetHeight
-      } :
-      {
-        width: null,
-        height: null
-      }
-    );
+    const size = this.iframe ?
+    {
+      width: this.iframe.offsetWidth,
+      height: this.iframe.offsetHeight
+    } :
+    {
+      width: null,
+      height: null
+    };
+
+    this.setState(size);
+    (this.props.onSize || noop)(size);
   }
 
   render () {
@@ -100,7 +103,7 @@ class SizeSensor extends Component<ISizeSensorProps, ISizeSensorState> {
           zIndex: -1
         }
       }),
-      children(this.state)
+      typeof children === 'function' ? children(this.state) : children
     );
   }
 }
