@@ -47,7 +47,7 @@
   },
   "scripts": {
     "clean": "rimraf lib",
-    "build": "npm run clean && tsc",
+    "build": "npm run clean && tsc --pretty",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",

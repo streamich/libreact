@@ -79,7 +79,7 @@ export class SizeSensor extends Component<ISizeSensorProps, ISizeSensorState> {
   }
 
   render () {
-    const {children, refElement, tagName, ...rest} = this.props;
+    const {children, refElement, tagName, onSize, ...rest} = this.props;
 
     rest.ref = refElement;
 
