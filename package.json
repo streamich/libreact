@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "react": "15",
-    "react-dom": "15"
+    "react-dom": "15",
+    "throttle-debounce": "1.0.1"
   },
   "peerDependencies": {
     "react": "15",

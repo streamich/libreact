@@ -6,6 +6,8 @@
     "noImplicitAny": false,
     "sourceMap": false,
     "outDir": "./lib",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "lib": [
       "dom",
       "es5",
