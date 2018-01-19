@@ -9,3 +9,12 @@ export const idx = (obj, accessor) => {
 };
 
 export const isClient = typeof window === 'object';
+
+export const debounce = (fn, delay) => {
+  let timeout;
+
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => fn(...args), delay)
+  }
+};

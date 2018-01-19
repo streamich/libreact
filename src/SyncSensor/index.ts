@@ -10,6 +10,7 @@ export interface ISyncSensorProps<TState> {
 }
 
 export class SyncSensor<TState> extends Component<ISyncSensorProps<TState>, TState> {
+  frame;
   state: TState;
 
   constructor (props, context) {

@@ -1,5 +1,6 @@
 import {Component, createElement as h} from 'react';
 import {SyncSensor} from '../SyncSensor';
+import {isClient} from '../util';
 
 export interface IWindowSizeSensorValue {
   width: number;
@@ -10,21 +11,34 @@ export interface IWindowSizeSensorProps {
   children?: (state: IWindowSizeSensorValue) => React.ReactElement<any>;
 }
 
-export class WindowSizeSensor extends Component<IWindowSizeSensorProps, any> {
-  addListener = (handler) => window.addEventListener('resize', handler);
-  removeListener = (handler) => window.removeEventListener('resize', handler);
+const addListener = (handler) => window.addEventListener('resize', handler);
+const removeListener = (handler) => window.removeEventListener('resize', handler);
+const onEvent = () => ({
+  width: window.innerWidth,
+  height: window.innerHeight
+});
 
-  onEvent = () => ({
-    width: window.innerWidth,
-    height: window.innerHeight
-  });
+const getInitialState = () => {
+  if (isClient) {
+    return onEvent();
+  } else {
+    return {
+      width: 1920,
+      height: 1080
+    };
+  }
+};
+
+export class WindowSizeSensor extends Component<IWindowSizeSensorProps, any> {
+  initial = getInitialState();
 
   render () {
     return h(SyncSensor, {
       children: this.props.children,
-      addListener: this.addListener,
-      removeListener: this.removeListener,
-      onEvent: this.onEvent
+      initial: this.initial,
+      addListener,
+      removeListener,
+      onEvent
     });
   }
 }
