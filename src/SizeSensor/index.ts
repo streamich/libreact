@@ -16,7 +16,7 @@ export interface ISizeSensorState {
   height: number;
 }
 
-class SizeSensor extends Component<ISizeSensorProps, ISizeSensorState> {
+export class SizeSensor extends Component<ISizeSensorProps, ISizeSensorState> {
   state: ISizeSensorState = {
     width: null,
     height: null,

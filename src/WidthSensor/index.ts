@@ -6,7 +6,7 @@ export interface IWidthSensorProps extends ISizeSensorProps {
   onWidth?: (size: ISizeSensorState) => void;
 }
 
-class WidthSensor extends Component<IWidthSensorProps, ISizeSensorState> {
+export class WidthSensor extends Component<IWidthSensorProps, ISizeSensorState> {
   state: ISizeSensorState = {
     width: null,
     height: null,
