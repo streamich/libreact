@@ -17,4 +17,4 @@ npm install mol-fe-react --save
      - [`delayed()`](./docs/delayed.md)
   - Sensors
      - [`SizeSensor`](./docs/SizeSensor.md)
-     - [`WidthSendor`](./docs/WidthSensor.md)
+     - [`WidthSensor`](./docs/WidthSensor.md)
