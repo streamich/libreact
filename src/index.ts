@@ -5,3 +5,4 @@ export * from './lazy';
 export * from './delayed';
 export * from './SizeSensor';
 export * from './WidthSensor';
+export * from './MediaSensor';
