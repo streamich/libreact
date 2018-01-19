@@ -26,6 +26,16 @@ export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState>
     this.updateQuery();
   }
 
+  componentDidUpdate (props) {
+    if (props.query !== this.props.query) {
+      this.updateQuery();
+    }
+  }
+
+  componentWillUnmount () {
+    this.removeListener();
+  }
+
   onMediaChange = (mediaQueryList) => {
     this.setState({
       matches: !!mediaQueryList.matches
