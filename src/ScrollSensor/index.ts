@@ -12,6 +12,8 @@ export interface IScrollSensorState {
 }
 
 export class ScrollSensor extends Component<IScrollSensorProps, IScrollSensorState> {
+  frame;
+
   state: IScrollSensorState = {
     x: 0,
     y: 0
@@ -35,11 +37,14 @@ export class ScrollSensor extends Component<IScrollSensorProps, IScrollSensorSta
 
   onScroll = () => {
     const {el} = this.props;
-console.log('ON SCROLL');
+
     if (el) {
-      this.setState({
-        x: el.scrollLeft,
-        y: el.scrollTop
+      cancelAnimationFrame(this.frame);
+      this.frame = requestAnimationFrame(() => {
+        this.setState({
+          x: el.scrollLeft,
+          y: el.scrollTop
+        });
       });
     }
   };
