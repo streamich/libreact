@@ -128,3 +128,8 @@ interface IDelayedParams<TProps> extends ILazyParams<TProps> {
   - `idle` - whether to start loading component on JavaScript idle time using `requestIdleCallback`, defaults to `false`.
 
 Using default params this function is equivalent to `lazy()` function.
+
+
+### `SizeSensor`
+
+FaCC that tracks width and height of children.
