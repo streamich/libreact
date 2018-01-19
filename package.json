@@ -1,6 +1,6 @@
 {
   "name": "@mol-fe/mol-fe-react",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "MOL React.js utilities",
   "main": "lib/index.js",
   "keywords": [
