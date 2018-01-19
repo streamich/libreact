@@ -22,9 +22,9 @@ export type TDelayed = <TProps>(params: IDelayedParams<TProps>) => ILazyComponen
 
 export const delayed: TDelayed = <TProps>(params: IDelayedParams<TProps>) => {
   let {
-    delay = 300,
-    draf = false,
-    idle = true
+    delay,
+    draf,
+    idle
   } = params;
 
   if (delay) {

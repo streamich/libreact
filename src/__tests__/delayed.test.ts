@@ -46,7 +46,8 @@ describe('delayed()', () => {
     const Implementation = () => h('div', {}, 'IMPLEMENTATION');
     const Delayed = delayed({
       loader: () => Promise.resolve(Implementation),
-      delay: 1
+      delay: 1,
+      idle: true
     });
 
     const wrapper = mount(h(Delayed));
@@ -71,6 +72,7 @@ describe('delayed()', () => {
     const Implementation = (props) => h('div', {}, props.children);
     const Delayed = delayed({
       delay: 10,
+      idle: true,
       loader: () => Promise.resolve(Implementation),
     });
 
