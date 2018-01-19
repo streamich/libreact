@@ -43,6 +43,10 @@ export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState>
   };
 
   updateQuery () {
+    if (typeof window !== 'object') {
+      return;
+    }
+
     const {query} = this.props;
 
     this.mql = window.matchMedia(query);
