@@ -13,7 +13,7 @@ npm install mol-fe-react --save
   - [`mock()`](#mock)
   - [`loadable()`](#loadable)
   - [`lazy()`](#lazy)
-  - [`lazyIdle()`](#lazyidle)
+  - [`delayed()`](#delayed)
 
 
 ### `mock()`
