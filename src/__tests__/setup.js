@@ -4,3 +4,5 @@ const Adapter = require('enzyme-adapter-react-15');
 configure({
   adapter: new Adapter()
 });
+
+global.requestAnimationFrame = window.requestAnimationFrame = (callback) => setTimeout(callback, 17);

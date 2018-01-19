@@ -28,28 +28,3 @@ export const lazy: TLazy = <TProps>(params) => {
 
   return Lazy;
 };
-
-const requestIdleCallback = (window as any).requestIdleCallback || ((callback) => setTimeout(callback, 300));
-
-export interface ILazyIdleParams<TProps> extends ILazyParams<TProps> {
-  delay?: number;
-}
-
-export type TLazyIdle = <TProps>(params: ILazyIdleParams<TProps>) => ILazyComponent<TProps>;
-
-export const lazyIdle: TLazyIdle = <TProps>(params: ILazyIdleParams<TProps>) => {
-  const {
-    delay = 300,
-    loader
-  } = params;
-
-  params.loader = () => new Promise((resolve) => {
-    setTimeout(() => {
-      requestIdleCallback(() => {
-        resolve(loader());
-      });
-    }, delay);
-  });
-
-  return lazy(params);
-};

@@ -1,14 +1,14 @@
-import {lazy} from '../lazy';
 import {Component, createElement as h} from 'react';
-import {shallow, mount} from 'enzyme';
+import {mount, shallow} from 'enzyme';
+import {delayed} from '../delayed';
 
-describe('lazy()', () => {
+describe('delayed()', () => {
   it('is a function', () => {
-    expect(typeof lazy).toBe('function');
+    expect(typeof delayed).toBe('function');
   });
 
   it('returns a stateless component', () => {
-    const Lazy = lazy({
+    const Lazy = delayed({
       loader: () => Promise.resolve(() => null)
     });
 
@@ -16,7 +16,7 @@ describe('lazy()', () => {
   });
 
   it('has .load() method', () => {
-    const Lazy = lazy({
+    const Lazy = delayed({
       loader: () => Promise.resolve(() => null)
     });
 
@@ -24,7 +24,7 @@ describe('lazy()', () => {
   });
 
   it('renders nothing by default', () => {
-    const Lazy = lazy({
+    const Lazy = delayed({
       loader: () => Promise.resolve(() => null)
     });
     const wrapper = mount(h(Lazy));
@@ -33,7 +33,7 @@ describe('lazy()', () => {
   });
 
   it('renders loading placeholder', () => {
-    const Lazy = lazy({
+    const Lazy = delayed({
       loading: h('span', {}, 'Loading...'),
       loader: () => Promise.resolve(() => null)
     });
@@ -44,8 +44,9 @@ describe('lazy()', () => {
 
   it('loads and renders actual implementation after first render', () => {
     const Implementation = () => h('div', {}, 'IMPLEMENTATION');
-    const Lazy = lazy({
-      loader: () => Promise.resolve(Implementation)
+    const Lazy = delayed({
+      loader: () => Promise.resolve(Implementation),
+      delay: 1
     });
 
     const wrapper = mount(h(Lazy));
@@ -53,7 +54,7 @@ describe('lazy()', () => {
     expect(Boolean(wrapper.html())).toBe(false);
 
     return new Promise((resolve, reject) => {
-      setImmediate(() => {
+      setTimeout(() => {
         try {
           wrapper.update();
           expect(wrapper.find('div').html()).toBe('<div>IMPLEMENTATION</div>');
@@ -62,13 +63,14 @@ describe('lazy()', () => {
         } catch (error) {
           reject(error);
         }
-      });
+      }, 500);
     });
   });
 
   it('does pass through children', () => {
     const Implementation = (props) => h('div', {}, props.children);
-    const Lazy = lazy({
+    const Lazy = delayed({
+      delay: 10,
       loader: () => Promise.resolve(Implementation),
     });
 
@@ -79,7 +81,7 @@ describe('lazy()', () => {
     Lazy.load();
 
     return new Promise((resolve, reject) => {
-      setImmediate(() => {
+      setTimeout(() => {
         try {
           wrapper.update();
           expect(wrapper.find('div').html()).toBe('<div>foobar</div>');
@@ -87,7 +89,7 @@ describe('lazy()', () => {
         } catch (error) {
           reject(error);
         }
-      });
+      }, 500);
     });
   });
 });
