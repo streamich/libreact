@@ -7,3 +7,5 @@ export const idx = (obj, accessor) => {
     return undefined;
   }
 };
+
+export const isClient = typeof window === 'object';
