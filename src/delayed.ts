@@ -18,9 +18,9 @@ export interface IDelayedParams<TProps> extends ILazyParams<TProps> {
   idle?: boolean;
 }
 
-export type TLazyIdle = <TProps>(params: IDelayedParams<TProps>) => ILazyComponent<TProps>;
+export type TDelayed = <TProps>(params: IDelayedParams<TProps>) => ILazyComponent<TProps>;
 
-export const delayed: TLazyIdle = <TProps>(params: IDelayedParams<TProps>) => {
+export const delayed: TDelayed = <TProps>(params: IDelayedParams<TProps>) => {
   let {
     delay = 300,
     draf = false,
