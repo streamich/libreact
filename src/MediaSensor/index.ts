@@ -2,7 +2,7 @@ import {Component, createElement as h} from 'react';
 
 export interface IMediaSensorProps {
   query: string;
-  children: (match: boolean) => React.ReactElement<any>;
+  children?: (match: boolean) => React.ReactElement<any>;
 }
 
 export interface IMediaSensorState {
