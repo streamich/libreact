@@ -1,6 +1,7 @@
 import {Component} from 'react';
 
 export interface IMediaSensorProps {
+  matches?: boolean;
   query: string;
   children?: (match: boolean) => React.ReactElement<any>;
 }
@@ -11,13 +12,14 @@ export interface IMediaSensorState {
 
 export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState> {
   mql: MediaQueryList;
-
-  state: IMediaSensorState = {
-    matches: false
-  };
+  state: IMediaSensorState;
 
   constructor (props, context) {
     super(props, context);
+
+    this.state = {
+      matches: props.matches || false
+    };
 
     this.updateQuery();
   }
