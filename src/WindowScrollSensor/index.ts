@@ -38,7 +38,7 @@ export class WindowScrollSensor extends Component<IWindowScrollSensorProps, IWin
   onScroll = () => {
     this.setState({
       x: window.scrollX,
-      y: window.scrollX
+      y: window.scrollY
     });
   };
 
