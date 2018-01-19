@@ -13,40 +13,39 @@ export interface IScrollSensorState {
 
 export class ScrollSensor extends Component<IScrollSensorProps, IScrollSensorState> {
   state: IScrollSensorState = {
-    x: NaN,
-    y: NaN
+    x: 0,
+    y: 0
   };
-
-  get el (): Element | Window {
-    const {el} = this.props;
-
-    return el ? el : (el === undefined ? window : null);
-  }
-
-  componentWillMount () {
-    if (isClient) {
-      this.onScroll();
-    }
-  }
 
   componentDidMount () {
     this.onScroll();
     this.addListener();
   }
 
-  onScroll = () => {
-    const {el}: {el: any} = this;
+  componentDidUpdate (props) {
+    if (props.el !== this.props.el) {
+      this.removeListener(props.el);
+      this.addListener();
+    }
+  }
 
+  componentWillUnmount () {
+    this.removeListener();
+  }
+
+  onScroll = () => {
+    const {el} = this.props;
+console.log('ON SCROLL');
     if (el) {
       this.setState({
-        x: el.scrollX || el.scrollLeft,
-        y: el.scrollX || el.scrollTop
+        x: el.scrollLeft,
+        y: el.scrollTop
       });
     }
   };
 
   addListener () {
-    const {el} = this;
+    const {el} = this.props;
 
     if (el) {
       el.addEventListener('scroll', this.onScroll, {
@@ -56,17 +55,13 @@ export class ScrollSensor extends Component<IScrollSensorProps, IScrollSensorSta
     }
   }
 
-  removeListener () {
-    const {el} = this;
-
+  removeListener (el: Element = this.props.el) {
     if (el) {
       el.removeEventListener('scroll', this.onScroll);
     }
   }
 
   render () {
-    const {children} = this.props;
-
-    return children(this.state);
+    return this.props.children(this.state);
   }
 }

@@ -30,7 +30,10 @@ export class WindowScrollSensor extends Component<IWindowScrollSensorProps, IWin
   }
 
   componentDidMount () {
-    window.addEventListener('scroll', this.onScroll);
+    window.addEventListener('scroll', this.onScroll, {
+      capture: false,
+      passive: true
+    } as any);
   }
 
   componentWillUnmount () {
