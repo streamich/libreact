@@ -29,7 +29,10 @@
     "mol-conventional-changelog": "1.2.0",
     "@types/node": "9.3.0",
     "@types/jest": "22.0.1",
-    "@types/react": "15"
+    "@types/react": "15",
+    "@storybook/react": "^3.3.10",
+    "@storybook/addon-actions": "^3.3.10",
+    "@storybook/addon-links": "^3.3.10"
   },
   "config": {
     "commitizen": {
@@ -42,7 +45,9 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
-    "pub": "npm publish --registry http://sinopia.devhsk.mol.dmgt.net:4873"
+    "pub": "npm publish --registry http://sinopia.devhsk.mol.dmgt.net:4873",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "jest": {
     "moduleFileExtensions": [
