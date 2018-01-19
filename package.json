@@ -16,11 +16,16 @@
     "react": "15",
     "react-dom": "15"
   },
+  "peerDependencies": {
+    "react": "15",
+    "react-dom": "15"
+  },
   "devDependencies": {
     "jest": "22.1.2",
     "jest-tap-reporter": "1.9.0",
     "ts-jest": "22.0.1",
     "typescript": "2.6.2",
+    "ts-loader": "3.2.0",
     "ts-node": "4.1.0",
     "rimraf": "2.6.2",
     "enzyme": "3.3.0",
