@@ -39,6 +39,5 @@ const MyComponent = mock();
      - [`<Vibrate>`](./docs/Vibrate.md)
   - Context
      - [`<Provider>`](./docs/context.md#provider), [`<Consumer>`](./docs/context.md#consumer), and [`withContext()`](./docs/context.md#withcontext)
-     - [`<Theme>`](), [`<Themed>`](), and `withTheme()`
+     - [`<Theme>`](./docs/theme.md#theme), [`<Themed>`](./docs/theme.md#themed), and [`withTheme()`](./docs/theme.md#withtheme)
      - `<CssVars>`
-

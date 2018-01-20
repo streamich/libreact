@@ -1,4 +1,4 @@
-# context
+# Context
 
 Provides a generic way to safely use React's context. Re-renders *consumer*
 components when *provider* changes value.
