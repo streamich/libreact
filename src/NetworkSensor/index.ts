@@ -1,17 +1,17 @@
 import {Component} from 'react';
 import {on, off, isClient} from '../util';
 
-export interface INetworkProps {
+export interface INetworkSensorProps {
   children?: (INetworkState) => React.ReactElement<any>;
 }
 
-export interface INetworkState {
+export interface INetworkSensorState {
   online: boolean;
   since: Date;
 }
 
-export class Network extends Component<INetworkProps, INetworkState> {
-  state: INetworkState;
+export class NetworkSensor extends Component<INetworkSensorProps, INetworkSensorState> {
+  state: INetworkSensorState;
 
   constructor (props, context) {
     super(props, context);

@@ -2,10 +2,20 @@
 
 React.js utility belt.
 
-## Usage
+## Installation
 
 ```shell
 npm install mol-fe-react --save
+```
+
+## Usage
+
+Import each utility individually to decrease your bundle size
+
+```js
+import {mock} from 'mol-fe-react/lib/mock';
+
+const MyComponent = mock();
 ```
 
 ## Reference
@@ -22,6 +32,7 @@ npm install mol-fe-react --save
      - [`ScrollSensor`](./docs/ScrollSensor.md)
      - [`WindowScrollSensor`](./docs/WindowScrollSensor.md)
      - [`WindowSizeSensor`](./docs/WindowSizeSensor.md)
-     - [`Speak`](./docs/Speak.md)
-     - [`Network`](./docs/Network.md)
+     - [`NetworkSensor`](./docs/NetworkSensor.md)
      - [`BatterySensor`](./docs/BatterySensor.md)
+   - Generators
+     - [`Speak`](./docs/Speak.md)

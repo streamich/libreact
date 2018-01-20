@@ -2,11 +2,11 @@ import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
-import {Network} from '.';
+import {NetworkSensor} from '.';
 
-storiesOf('Network', module)
+storiesOf('NetworkSensor', module)
   .add('basic', () =>
-    h(Network, {}, (state) =>
+    h(NetworkSensor, {}, (state) =>
       h('pre', {style: {
         fontFamily: 'monospace'
       }},
