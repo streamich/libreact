@@ -12,3 +12,4 @@ yarn.lock
 /typings/
 /test/
 /.vscode/
+.DS_Store
