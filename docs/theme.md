@@ -14,7 +14,7 @@ const theme = {
 
 <Theme value={theme}>
   <Themed>{({color, background}) =>
-    <div style={{color, background}}>Color is: {color}</div>;
+    <div style={{color, background}}>Color is: {color}</div>
   }</Themed>
 </Theme>
 ```

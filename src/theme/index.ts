@@ -7,8 +7,8 @@ export interface IThemeProps {
   value: object;
 }
 
-export const Theme: React.StatelessComponent<IThemedProps> = (props) => {
-  let {name = 'theme', value, children} = this.props;
+export const Theme: React.StatelessComponent<IThemeProps> = (props) => {
+  let {name = 'theme', value, children} = props;
 
   return h(Provider, {name, value}, children);
 };
@@ -18,7 +18,7 @@ export interface IThemedProps {
 }
 
 export const Themed: React.StatelessComponent<IThemedProps> = (props) => {
-  let {name = 'theme', children} = this.props;
+  let {name = 'theme', children} = props;
 
   return h(Consumer, {name}, children);
 };

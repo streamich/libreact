@@ -74,6 +74,7 @@
     "transform": {
       "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
+    "transformIgnorePatterns": [],
     "testRegex": ".*/__tests__/.*\\.(test|spec)\\.(jsx?|tsx?)$",
     "setupFiles": [
       "./src/__tests__/setup.js"
