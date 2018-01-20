@@ -1,5 +1,8 @@
 import {createElement as h} from 'react';
 
+export type TComponent<TProps> = React.ComponentClass<TProps> | React.StatelessComponent<TProps>;
+export type THoc<P1, P2> = (Comp: TComponent<P1>) => TComponent<P2>
+
 export const noop = () => {};
 
 export const idx = (obj, accessor) => {

@@ -32,7 +32,7 @@ const MyComponent = mock();
      - [`<MediaSensor>`](./docs/MediaSensor.md)
      - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md)
      - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md)
-     - [`<NetworkSensor>`](./docs/NetworkSensor.md)
+     - [`<NetworkSensor>`](./docs/NetworkSensor.md) and [`withNetwork`](./docs/NetworkSensor.md#withnetwork)
      - [`<BatterySensor>`](./docs/BatterySensor.md)
   - Generators
      - [`<Speak>`](./docs/Speak.md)

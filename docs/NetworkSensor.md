@@ -2,11 +2,28 @@
 
 FaCC that re-renders on network status change. Uses `navigator.onLine` and [`NetworkInformation`](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation) to get network connection information.
 
-## Props
+
+## `<NetworkSensor>`
+
+FaCC that passes through its state to child function
+
+```ts
+interface INetworkSensorState {
+  online?: boolean;
+  since?: Date;
+  downlink?: number;
+  downlinkMax?: number;
+  effectiveType?: string;
+  rtt?: number;
+  type?: string;
+}
+```
+
+### Props
 
 None.
 
-## Example
+### Example
 
 ```jsx
 import {NetworkSensor} from 'mol-fe-react/lib/NetworkSensor';
@@ -33,3 +50,20 @@ Result
   - `online` - boolean, whether user is connected.
   - `since` - time when `online` property last changed, is set to `null` in the beginning.
   - `downlink`, `downlinkMax`, `effectiveType`, `type`, `rtt` - properties as provided by [`NetworkInformation`](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation).
+
+
+## `withNetwork`
+
+HOC that merges `<NetworkSensor>` state into props of the enhanced component.
+
+### Example
+
+```jsx
+import {withNetwork} from 'mol-fe-react/lib/NetworkSensro';
+
+const NetworkStatus = withNetwork((props) =>
+  <pre style={{fontFamily: 'monospace'}}>
+    {JSON.stringify(props, null, 4)}
+  </pre>
+);
+```

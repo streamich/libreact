@@ -2,7 +2,13 @@ import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
-import {NetworkSensor} from '.';
+import {NetworkSensor, withNetwork} from '.';
+
+const NetworkStatus = withNetwork((props) =>
+  <pre style={{fontFamily: 'monospace'}}>
+    {JSON.stringify(props, null, 4)}
+  </pre>
+);
 
 storiesOf('NetworkSensor', module)
   .add('basic', () =>
@@ -13,4 +19,5 @@ storiesOf('NetworkSensor', module)
         JSON.stringify(state, null, 4)
       )
     )
-  );
+  )
+  .add('withNetwork', () => h(NetworkStatus));
