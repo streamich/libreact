@@ -24,3 +24,4 @@ npm install mol-fe-react --save
      - [`WindowSizeSensor`](./docs/WindowSizeSensor.md)
      - [`Speak`](./docs/Speak.md)
      - [`Network`](./docs/Network.md)
+     - [`BatterySensor`](./docs/BatterySensor.md)

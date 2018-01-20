@@ -1,19 +1,19 @@
 import {Component} from 'react';
 import {on, off, isClient} from '../util';
 
-export interface IBatteryProps {
+export interface IBatterySensorProps {
   children?: (INetworkState) => React.ReactElement<any>;
 }
 
-export interface IBatteryState {
+export interface IBatterySensorState {
   charging: boolean;
   level: number;
   chargingTime: number;
   dischargingTime: number;
 }
 
-export class Battery extends Component<IBatteryProps, IBatteryState> {
-  state: IBatteryState;
+export class BatterySensor extends Component<IBatterySensorProps, IBatterySensorState> {
+  state: IBatterySensorState;
   mounted: boolean;
   battery;
 

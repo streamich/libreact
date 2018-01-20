@@ -2,11 +2,11 @@ import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
-import {Battery} from '.';
+import {BatterySensor} from '.';
 
-storiesOf('Battery', module)
+storiesOf('BatterySensor', module)
   .add('basic', () =>
-    h(Battery, {}, (state) =>
+    h(BatterySensor, {}, (state) =>
       h('pre', {style: {
         fontFamily: 'monospace'
       }},
