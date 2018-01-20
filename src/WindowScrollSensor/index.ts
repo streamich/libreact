@@ -1,56 +1,49 @@
 import {Component, createElement as h} from 'react';
+import {SyncSensor} from '../SyncSensor';
 import {isClient} from '../util';
 
+export interface IWindowScrollSensorValue {
+  x: number;
+  y: number;
+}
+
 export interface IWindowScrollSensorProps {
-  children?: (scroll: IWindowScrollSensorState) => React.ReactElement<any>;
+  children?: (state: IWindowScrollSensorValue) => React.ReactElement<any>;
 }
 
-export interface IWindowScrollSensorState {
-  x: number,
-  y: number,
-}
+const addListener = (handler) => window.addEventListener('scroll', handler, {
+  capture: false,
+  passive: true
+} as any);
 
-export class WindowScrollSensor extends Component<IWindowScrollSensorProps, IWindowScrollSensorState> {
-  frame;
+const removeListener = (handler) => window.removeEventListener('scroll', handler);
 
-  constructor (props, context) {
-    super(props, context);
+const onEvent = () => ({
+  x: window.scrollX,
+  y: window.scrollY
+});
 
-    if (isClient) {
-      this.state = {
-        x: window.scrollX,
-        y: window.scrollY
-      };
-    } else {
-      this.state = {
-        x: 0,
-        y: 0
-      };
-    }
+const getInitialState = () => {
+  if (isClient) {
+    return onEvent();
+  } else {
+    return {
+      x: 0,
+      y: 0
+    };
   }
+};
 
-  componentDidMount () {
-    window.addEventListener('scroll', this.onScroll, {
-      capture: false,
-      passive: true
-    } as any);
-  }
-
-  componentWillUnmount () {
-    window.removeEventListener('scroll', this.onScroll);
-  }
-
-  onScroll = () => {
-    cancelAnimationFrame(this.frame);
-    this.frame = requestAnimationFrame(() => {
-      this.setState({
-        x: window.scrollX,
-        y: window.scrollY
-      });
-    });
-  };
+export class WindowScrollSensor extends Component<IWindowScrollSensorProps, any> {
+  initial = getInitialState();
 
   render () {
-    return this.props.children(this.state);
+    return h(SyncSensor, {
+      children: this.props.children,
+      initial: this.initial,
+      addListener,
+      removeListener,
+      onEvent
+    });
   }
 }

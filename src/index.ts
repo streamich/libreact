@@ -6,3 +6,6 @@ export * from './delayed';
 export * from './SizeSensor';
 export * from './WidthSensor';
 export * from './MediaSensor';
+export * from './ScrollSensor';
+export * from './WindowSizeSensor';
+export * from './WindowScrollSensor';
