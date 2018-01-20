@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import {on, off} from '../util';
+import {on, off, isClient} from '../util';
 
 export interface INetworkProps {
   children?: (INetworkState) => React.ReactElement<any>;
@@ -11,6 +11,24 @@ export interface INetworkState {
 }
 
 export class Network extends Component<INetworkProps, INetworkState> {
+  state: INetworkState;
+
+  constructor (props, context) {
+    super(props, context);
+
+    if (isClient) {
+      this.state = {
+        online: navigator.onLine,
+        since: null
+      };
+    } else {
+      this.state = {
+        online: true,
+        since: null
+      };
+    }
+  }
+
   componentDidMount() {
     on(window, 'online', this.onOnline);
     on(window, 'offline', this.onOffline);
