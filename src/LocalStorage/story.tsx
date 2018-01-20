@@ -3,6 +3,7 @@ import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {LocalStorage} from '.';
+import StoryLocalStorageForm from './stories/StoryLocalStorageForm';
 
 storiesOf('LocalStorage', module)
   .add('basic', () =>
@@ -20,4 +21,5 @@ storiesOf('LocalStorage', module)
         {`<LocalStorage name='foo2' value='bar2' persist />`}
       </pre>
     </div>
-  );
+  )
+  .add('form', () => <StoryLocalStorageForm />);
