@@ -26,18 +26,18 @@ const MyComponent = mock();
      - [`lazy()`](./docs/lazy.md)
      - [`delayed()`](./docs/delayed.md)
   - Sensors
-     - [`SizeSensor`](./docs/SizeSensor.md)
-     - [`WidthSensor`](./docs/WidthSensor.md)
-     - [`MediaSensor`](./docs/MediaSensor.md)
-     - [`ScrollSensor`](./docs/ScrollSensor.md)
-     - [`WindowScrollSensor`](./docs/WindowScrollSensor.md)
-     - [`WindowSizeSensor`](./docs/WindowSizeSensor.md)
-     - [`NetworkSensor`](./docs/NetworkSensor.md)
-     - [`BatterySensor`](./docs/BatterySensor.md)
+     - [`<SizeSensor>`](./docs/SizeSensor.md)
+     - [`<WidthSensor>`](./docs/WidthSensor.md)
+     - [`<MediaSensor>`](./docs/MediaSensor.md)
+     - [`<ScrollSensor>`](./docs/ScrollSensor.md)
+     - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md)
+     - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md)
+     - [`<NetworkSensor>`](./docs/NetworkSensor.md)
+     - [`<BatterySensor>`](./docs/BatterySensor.md)
   - Generators
-     - [`Speak`](./docs/Speak.md)
+     - [`<Speak>`](./docs/Speak.md)
   - Context
-     - [`Provider`](), [`Consumer`](), and `withContext`
-     - [`Theme`](), [`Themed`](), and `withTheme`
-     - [`CssVars`]
+     - [`<Provider>`](./docs/context.md#provider), [`<Consumer>`](./docs/context.md#consumer), and [`withContext()`](./docs/context.md#withcontext)
+     - [`<Theme>`](), [`<Themed>`](), and `withTheme()`
+     - `<CssVars>`
 

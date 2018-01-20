@@ -14,5 +14,8 @@ export * from './ScrollSensor';
 export * from './WindowSizeSensor';
 export * from './WindowScrollSensor';
 
+// Generators
+export * from './Speak';
+
 // Context
 export * from './context';
