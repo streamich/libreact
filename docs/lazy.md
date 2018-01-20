@@ -2,6 +2,11 @@
 
 Creates a loadable component which is loaded when it is rendered for the first time.
 
+Use it the same as [`loadable()`](./loadable.md) function.
+
+
+## Reference
+
 ```ts
 lazy: <TProps>(params: ILazyParams) => ILazyComponent<TProps>;
 
@@ -11,5 +16,3 @@ export interface ILazyComponent<TProps> extends React.SFC<TProps> {
     load();
 }
 ```
-
-Use it the same as `loadable()` function.

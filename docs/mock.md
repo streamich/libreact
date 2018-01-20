@@ -10,7 +10,10 @@ Create a mock and implement it
 ```js
 const Player = mock();
 
-Player.implement(PlayerMailOnline);
+// Now you can already use <Player>.
+
+// But implement it only later.
+Player.implement(RealPlayer);
 ```
 
 Specify placeholder for the mock

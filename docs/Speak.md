@@ -1,6 +1,6 @@
 # Speak
 
-Read out loud text provided.
+Read out loud provided text.
 
 # Props
 

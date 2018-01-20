@@ -15,3 +15,14 @@ import {BatterySensor} from 'mol-fe-react/lib/BatterySensor';
   JSON.stringify(battery, null, 4)
 }</BatterySensor>
 ```
+
+Result
+
+```json
+{
+    "charging": true,
+    "level": 0.98,
+    "chargingTime": 2040,
+    "dischargingTime": null
+}
+```
