@@ -8,6 +8,10 @@
     "outDir": "./lib",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "jsxFactory": "h",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
     "lib": [
       "dom",
       "es5",
