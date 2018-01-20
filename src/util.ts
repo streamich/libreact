@@ -18,3 +18,7 @@ export const debounce = (fn, delay) => {
     timeout = setTimeout(() => fn(...args), delay)
   }
 };
+
+export const on = (obj, ...args) => obj.addEventListener(...args);
+
+export const off = (obj, ...args) => obj.removeEventListener(...args);
