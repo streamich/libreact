@@ -22,3 +22,4 @@ npm install mol-fe-react --save
      - [`ScrollSensor`](./docs/ScrollSensor.md)
      - [`WindowScrollSensor`](./docs/WindowScrollSensor.md)
      - [`WindowSizeSensor`](./docs/WindowSizeSensor.md)
+     - [`Speak`](./docs/Speak.md)
