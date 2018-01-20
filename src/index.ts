@@ -16,6 +16,8 @@ export * from './WindowScrollSensor';
 
 // Generators
 export * from './Speak';
+export * from './Vibrate';
 
 // Context
 export * from './context';
+export * from './theme';

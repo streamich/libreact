@@ -1,6 +1,6 @@
 # mol-fe-react
 
-React.js utility belt.
+React utility belt, a collection of isomorphic React goodies.
 
 ## Installation
 
