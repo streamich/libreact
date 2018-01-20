@@ -17,7 +17,9 @@ export class LocalStorage extends Component<ILocalStorageProps, any> {
       this.remove();
       this.put();
     } else {
-      this.put();
+      if (props.value !== this.props.value) {
+        this.put();
+      }
     }
   }
 
@@ -28,7 +30,7 @@ export class LocalStorage extends Component<ILocalStorageProps, any> {
   put () {
     const {name, value} = this.props;
 
-    localStorage[name] = value;
+    localStorage[String(name)] = String(value);
   }
 
   remove (name = this.props.name) {
