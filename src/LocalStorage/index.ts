@@ -1,6 +1,6 @@
 import {Component} from 'react';
 import {noop} from '../util';
-import * as debounce from 'throttle-debounce/debounce';
+const debounce = require('throttle-debounce/debounce');
 
 export interface ILocalStorageProps {
   name: string;
@@ -12,22 +12,25 @@ export interface ILocalStorageProps {
 
 export class LocalStorage extends Component<ILocalStorageProps, any> {
   static defaultProps = {
-    onMount: noop,
     debounce: 200
   };
 
   componentDidMount () {
-    const {name} = this.props;
-    const json = localStorage[name];
+    const {name, onMount} = this.props;
 
-    if (typeof json === 'string') {
-      try {
-        const data = JSON.parse(json);
+    if (onMount) {
+      const json = localStorage[name];
 
-        this.props.onMount(data);
-      } catch {}
+      if (typeof json === 'string') {
+        try {
+          const data = JSON.parse(json);
+
+          onMount(data);
+        } catch {}
+      }
+    } else {
+      this.put();
     }
-    this.put();
   }
 
   componentDidUpdate (props) {
@@ -39,6 +42,7 @@ export class LocalStorage extends Component<ILocalStorageProps, any> {
         const newJson = JSON.stringify(this.props.data);
 
         if (JSON.stringify(props.data) !== newJson) {
+
           this.put(newJson);
         }
       } catch {}

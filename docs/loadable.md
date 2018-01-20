@@ -1,6 +1,6 @@
 # `loadable()`
 
-Create a mock React component whose implementation is loeaded using a promise when `.load()` methods is called.
+Create a mock React component whose implementation is loaded using a promise when `.load()` methods is called.
 
 ## Example
 
