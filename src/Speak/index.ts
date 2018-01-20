@@ -16,8 +16,11 @@ export class Speak extends Component<ISpeakProps, any> {
   }
 
   speak () {
-    var msg = new SpeechSynthesisUtterance(this.props.text);
-    window.speechSynthesis.speak(msg);
+    const {text} = this.props;
+
+    if (text && window.speechSynthesis) {
+      window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+    }
   }
 
   render () {
