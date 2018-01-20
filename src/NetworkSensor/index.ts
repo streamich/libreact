@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import {on, off, isClient} from '../util';
+import {h, on, off, isClient} from '../util';
 
 export interface INetworkSensorProps {
   children?: (INetworkState) => React.ReactElement<any>;
@@ -111,3 +111,9 @@ export class NetworkSensor extends Component<INetworkSensorProps, INetworkSensor
     return this.props.children(this.state);
   }
 }
+
+export const withNetwork = (Comp: React.ComponentClass<any> | React.StatelessComponent<any>) =>
+  (props) => h(NetworkSensor, null, (net) => h(Comp, {
+    ...net,
+    ...props
+  }));

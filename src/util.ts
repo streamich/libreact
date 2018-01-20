@@ -1,3 +1,5 @@
+import {createElement as h} from 'react';
+
 export const noop = () => {};
 
 export const idx = (obj, accessor) => {
@@ -29,4 +31,8 @@ const hasSymbols = typeof Symbol !== 'undefined';
 
 export const sym = (name) => {
   return hasSymbols ? Symbol(name) : ns(name);
+};
+
+export {
+  h
 };
