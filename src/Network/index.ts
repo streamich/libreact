@@ -19,12 +19,12 @@ export class Network extends Component<INetworkProps, INetworkState> {
     if (isClient) {
       this.state = {
         online: navigator.onLine,
-        since: null
+        since: undefined
       };
     } else {
       this.state = {
         online: true,
-        since: null
+        since: undefined
       };
     }
   }

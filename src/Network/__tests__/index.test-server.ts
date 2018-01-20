@@ -14,7 +14,7 @@ describe('<Network> SSR', () => {
     const html = renderToStaticMarkup(h(Network, {},
       ({online, since}) => {
         expect(online).to.equal(true);
-        expect(since).to.equal(null);
+        expect(since).to.equal(undefined);
 
         return null;
       }
