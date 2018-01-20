@@ -15,15 +15,14 @@
   "dependencies": {
     "react": "15",
     "react-dom": "15",
+    "prop-types": "15",
     "throttle-debounce": "^1.0.1",
-    "freestyler-context": "^1.3.2",
-    "themestyler": "^1.3.0"
+    "freestyler-context": "1.3.3"
   },
   "peerDependencies": {
     "react": "15",
     "react-dom": "15",
-    "freestyler-context": "^1.3.2",
-    "themestyler": "^1.3.0"
+    "prop-types": "15"
   },
   "devDependencies": {
     "jest": "22.1.2",
@@ -42,7 +41,6 @@
     "chai": "4.1.2",
     "@types/node": "9.3.0",
     "@types/jest": "22.0.1",
-    "@types/mocha": "2.2.46",
     "@types/chai": "4.1.1",
     "@types/react": "15",
     "@storybook/react": "^3.3.10",

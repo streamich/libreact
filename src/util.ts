@@ -22,3 +22,11 @@ export const debounce = (fn, delay) => {
 export const on = (obj, ...args) => obj.addEventListener(...args);
 
 export const off = (obj, ...args) => obj.removeEventListener(...args);
+
+export const ns = (name) => `@@${name}`;
+
+const hasSymbols = typeof Symbol !== 'undefined';
+
+export const sym = (name) => {
+  return hasSymbols ? Symbol(name) : ns(name);
+};
