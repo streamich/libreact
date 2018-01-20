@@ -34,6 +34,7 @@ const MyComponent = mock();
      - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md)
      - [`<NetworkSensor>`](./docs/NetworkSensor.md) and [`withNetwork()`](./docs/NetworkSensor.md#withnetwork)
      - [`<BatterySensor>`](./docs/BatterySensor.md)
+     - [`<LightSensor>`](./docs/LightSensor.md)
   - Generators
      - [`<Speak>`](./docs/Speak.md)
      - [`<Vibrate>`](./docs/Vibrate.md)
