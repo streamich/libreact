@@ -36,6 +36,7 @@ const MyComponent = mock();
      - [`<BatterySensor>`](./docs/BatterySensor.md)
   - Generators
      - [`<Speak>`](./docs/Speak.md)
+     - [`<Vibrate>`](./docs/Vibrate.md)
   - Context
      - [`<Provider>`](./docs/context.md#provider), [`<Consumer>`](./docs/context.md#consumer), and [`withContext()`](./docs/context.md#withcontext)
      - [`<Theme>`](), [`<Themed>`](), and `withTheme()`
