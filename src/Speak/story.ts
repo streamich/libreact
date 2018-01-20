@@ -13,7 +13,10 @@ class StorySpeakBasic extends Component<any, any> {
   render () {
     return h('div', {},
       h('input', {value: this.state.text, onChange: (e) => this.setState({text: e.target.value})}),
-      h('btn', {onClick: () => this.setState({speakText: this.state.text})}, 'Speak'),
+      h('button', {onClick: () => this.setState({speakText: this.state.text})}, 'Speak'),
+      h('pre', {style: {fontFamily: 'monospace'}},
+        `<Speak text="${this.state.speakText}" />`
+      ),
       h(Speak, {
         text: this.state.speakText
       })
