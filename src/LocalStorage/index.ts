@@ -1,14 +1,26 @@
 import {Component} from 'react';
+import {noop} from '../util';
 
 export interface ILocalStorageProps {
   name: string;
-  value: string;
+  data: string;
   persist?: boolean;
+  onMount?: (data) => void;
 }
 
 export class LocalStorage extends Component<ILocalStorageProps, any> {
 
   componentDidMount () {
+    const {name} = this.props;
+    const json = localStorage[name];
+
+    if (typeof json === 'string') {
+      try {
+        const data = JSON.parse(json);
+
+        (this.props.onMount || noop)(data);
+      } catch {}
+    }
     this.put();
   }
 
@@ -17,7 +29,7 @@ export class LocalStorage extends Component<ILocalStorageProps, any> {
       this.remove();
       this.put();
     } else {
-      if (props.value !== this.props.value) {
+      if (props.value !== this.props.data) {
         this.put();
       }
     }
@@ -28,9 +40,13 @@ export class LocalStorage extends Component<ILocalStorageProps, any> {
   }
 
   put () {
-    const {name, value} = this.props;
+    const {name, data} = this.props;
 
-    localStorage[String(name)] = String(value);
+    try {
+      localStorage[String(name)] = JSON.stringify(data);
+    } catch (error) {
+
+    }
   }
 
   remove (name = this.props.name) {
