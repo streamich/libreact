@@ -1,6 +1,6 @@
 # `BatterySensor`
 
-Tracks battery level, charging status and time it takes to charge/discharge a battery.
+Uses [`Navigator.getBattery()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getBattery) API to track battery level, charging status and time it takes to charge/discharge a battery.
 
 # Props
 
