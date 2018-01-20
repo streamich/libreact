@@ -28,10 +28,10 @@ const MyComponent = mock();
   - Sensors
      - [`<SizeSensor>`](./docs/SizeSensor.md)
      - [`<WidthSensor>`](./docs/WidthSensor.md)
-     - [`<MediaSensor>`](./docs/MediaSensor.md)
      - [`<ScrollSensor>`](./docs/ScrollSensor.md)
-     - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md)
+     - [`<MediaSensor>`](./docs/MediaSensor.md)
      - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md)
+     - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md)
      - [`<NetworkSensor>`](./docs/NetworkSensor.md)
      - [`<BatterySensor>`](./docs/BatterySensor.md)
   - Generators
