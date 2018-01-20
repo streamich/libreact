@@ -34,5 +34,10 @@ const MyComponent = mock();
      - [`WindowSizeSensor`](./docs/WindowSizeSensor.md)
      - [`NetworkSensor`](./docs/NetworkSensor.md)
      - [`BatterySensor`](./docs/BatterySensor.md)
-   - Generators
+  - Generators
      - [`Speak`](./docs/Speak.md)
+  - Context
+     - [`Provider`](), [`Consumer`](), and `withContext`
+     - [`Theme`](), [`Themed`](), and `withTheme`
+     - [`CssVars`]
+
