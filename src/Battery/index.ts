@@ -8,6 +8,8 @@ export interface IBatteryProps {
 export interface IBatteryState {
   charging: boolean;
   level: number;
+  chargingTime: number;
+  dischargingTime: number;
 }
 
 export class Battery extends Component<IBatteryProps, IBatteryState> {
@@ -29,30 +31,36 @@ export class Battery extends Component<IBatteryProps, IBatteryState> {
   componentWillUnmount () {
     this.mounted = false;
 
-    const {battery} = this;
+    const {battery, onChange} = this;
 
     if (battery) {
-      off(battery, 'chargingchange', this.onChange);
-      off(battery, 'levelchange', this.onChange);
+      off(battery, 'chargingchange', onChange);
+      off(battery, 'levelchange', onChange);
+      off(battery, 'chargingtimechange', onChange);
+      off(battery, 'dischargingtimechange', onChange);
     }
   }
 
   onBattery () {
-    const {battery} = this;
+    const {battery, onChange} = this;
 
     this.onChange();
 
-    on(battery, 'chargingchange', this.onChange);
-    on(battery, 'levelchange', this.onChange);
+    on(battery, 'chargingchange', onChange);
+    on(battery, 'levelchange', onChange);
+    on(battery, 'chargingtimechange', onChange);
+    on(battery, 'dischargingtimechange', onChange);
   }
 
   onChange = () => {
     const {battery} = this;
-    const {charging, level} = battery;
+    const {charging, level, chargingTime, dischargingTime} = battery;
 
     this.setState({
       charging,
-      level
+      level,
+      chargingTime,
+      dischargingTime
     });
   };
 
