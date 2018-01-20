@@ -1,14 +1,20 @@
 import {Component} from 'react';
 import {noop} from '../util';
+import * as debounce from 'throttle-debounce/debounce';
 
 export interface ILocalStorageProps {
   name: string;
-  data: string;
+  data: any;
   persist?: boolean;
   onMount?: (data) => void;
+  debounce?: number;
 }
 
 export class LocalStorage extends Component<ILocalStorageProps, any> {
+  static defaultProps = {
+    onMount: noop,
+    debounce: 200
+  };
 
   componentDidMount () {
     const {name} = this.props;
@@ -18,20 +24,24 @@ export class LocalStorage extends Component<ILocalStorageProps, any> {
       try {
         const data = JSON.parse(json);
 
-        (this.props.onMount || noop)(data);
+        this.props.onMount(data);
       } catch {}
     }
     this.put();
   }
 
   componentDidUpdate (props) {
-    if (props.key !== this.props.name) {
+    if (props.name !== this.props.name) {
       this.remove();
       this.put();
     } else {
-      if (props.value !== this.props.data) {
-        this.put();
-      }
+      try {
+        const newJson = JSON.stringify(this.props.data);
+
+        if (JSON.stringify(props.data) !== newJson) {
+          this.put(newJson);
+        }
+      } catch {}
     }
   }
 
@@ -39,15 +49,19 @@ export class LocalStorage extends Component<ILocalStorageProps, any> {
     this.remove();
   }
 
-  put () {
+  put = debounce(this.props.debounce, (rawData?: string) => {
     const {name, data} = this.props;
 
     try {
-      localStorage[String(name)] = JSON.stringify(data);
+      if (!rawData) {
+        rawData = JSON.stringify(data);
+      }
+
+      localStorage[String(name)] = rawData;
     } catch (error) {
 
     }
-  }
+  });
 
   remove (name = this.props.name) {
     if (!this.props.persist) {

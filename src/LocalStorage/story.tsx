@@ -7,7 +7,7 @@ import {LocalStorage} from '.';
 storiesOf('LocalStorage', module)
   .add('basic', () =>
     <div>
-      <LocalStorage name='foo' value='bar' />
+      <LocalStorage name='foo' data='bar' />
       <pre style={{fontFamily: 'monospace'}}>
         {`<LocalStorage name='foo' value='bar' />`}
       </pre>
@@ -15,7 +15,7 @@ storiesOf('LocalStorage', module)
   )
   .add('persist', () =>
     <div>
-      <LocalStorage name='foo2' value='bar2' persist />
+      <LocalStorage name='foo2' data='bar2' persist />
       <pre style={{fontFamily: 'monospace'}}>
         {`<LocalStorage name='foo2' value='bar2' persist />`}
       </pre>
