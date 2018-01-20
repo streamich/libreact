@@ -1,7 +1,7 @@
 import {Component} from 'react';
 
 export interface ILocalStorageProps {
-  key: string;
+  name: string;
   value: string;
   persist?: boolean;
 }
@@ -13,7 +13,7 @@ export class LocalStorage extends Component<ILocalStorageProps, any> {
   }
 
   componentDidUpdate (props) {
-    if (props.key !== this.props.key) {
+    if (props.key !== this.props.name) {
       this.remove();
       this.put();
     } else {
@@ -26,14 +26,14 @@ export class LocalStorage extends Component<ILocalStorageProps, any> {
   }
 
   put () {
-    const {key, value} = this.props;
+    const {name, value} = this.props;
 
-    localStorage[key] = value;
+    localStorage[name] = value;
   }
 
-  remove (key = this.props.key) {
+  remove (name = this.props.name) {
     if (!this.props.persist) {
-      delete localStorage[key];
+      delete localStorage[name];
     }
   }
 
