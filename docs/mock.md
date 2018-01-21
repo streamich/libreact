@@ -11,6 +11,7 @@ Create a mock and implement it
 const Player = mock();
 
 // Now you can already use <Player>.
+<Player />
 
 // But implement it only later.
 Player.implement(RealPlayer);
