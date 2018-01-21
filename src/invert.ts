@@ -4,6 +4,7 @@ import {h, noop} from './util';
 export interface IInvertedProps {
   children?: (...args) => React.ReactElement<any>;
   onMounted: (el: HTMLElement, comp: React.Component<any>) => void;
+  onUnmount: (comp: React.Component<any>) => void;
   render: (element: React.ReactElement<any>, comp: React.Component<any>) => React.ReactElement<any>;
 }
 
@@ -25,10 +26,12 @@ export const invert: TInvert = (tag: keyof React.ReactHTML) => {
 
     componentDidMount () {
       (this.props.onMounted || noop)(this.el, this);
+      this.forceUpdate();
     }
 
     compnentWillUnmount () {
       this.el = null;
+      (this.props.onUnmount || noop)(this);
     }
 
     event (name: string, handler: (...args) => void) {

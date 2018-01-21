@@ -25,6 +25,7 @@ const MyComponent = mock();
      - [`loadable()`](./docs/loadable.md)
      - [`lazy()`](./docs/lazy.md)
      - [`delayed()`](./docs/delayed.md)
+     - [`invert()`](./docs/invert.md)
   - Sensors
      - [`<SizeSensor>`](./docs/SizeSensor.md)
      - [`<WidthSensor>`](./docs/WidthSensor.md)

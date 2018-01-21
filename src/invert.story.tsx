@@ -5,8 +5,10 @@ import {linkTo} from '@storybook/addon-links';
 import {invert} from './invert';
 
 const Audio = invert('audio');
+import ShowDocs from '../.storybook/ShowDocs'
 
-storiesOf('invert()', module)
+storiesOf('Dummies/invert()', module)
+  .add('Documentation', () => h(ShowDocs, {name: 'invert'}))
   .add('<audio>', () =>
     <Audio
       src='https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
