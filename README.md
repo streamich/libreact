@@ -45,8 +45,9 @@ const MyComponent = mock();
      - [`<Theme>`](./docs/theme.md#theme), [`<Themed>`](./docs/theme.md#themed), and [`withTheme()`](./docs/theme.md#withtheme)
      - `<CssVars>`
   - CSS resets
-     - [`<CssResetEricMeyer>`](./docs/CssResetEricMeyer.md)
-     - [`<CssResetEricMeyerCondensed>`](./docs/CssResetEricMeyerCondensed.md)
-     - [`<CssResetMinimalistic>`](./docs/CssResetMinimalistic.md)
+     - [`<CssResetEricMeyer>`](./docs/reset/CssResetEricMeyer.md)
+     - [`<CssResetEricMeyerCondensed>`](./docs/reset/CssResetEricMeyerCondensed.md)
+     - [`<CssResetMinimalistic>`](./docs/reset/CssResetMinimalistic.md)
+     - [`<CssResetMinimalistic2>`](./docs/reset/CssResetMinimalistic2.md)
   - Other
      - [`<Resolve>`](./docs/Resolve.md)
