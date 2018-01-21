@@ -47,5 +47,6 @@ const MyComponent = mock();
   - CSS resets
      - [`<CssResetEricMeyer>`](./docs/CssResetEricMeyer.md)
      - [`<CssResetEricMeyerCondensed>`](./docs/CssResetEricMeyerCondensed.md)
+     - [`<CssResetMinimalistic>`](./docs/CssResetMinimalistic.md)
   - Other
      - [`<Resolve>`](./docs/Resolve.md)
