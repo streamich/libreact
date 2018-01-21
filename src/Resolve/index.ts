@@ -21,9 +21,29 @@ export class Resolve extends Component<IResolveProps, any> {
   constructor (props, context) {
     super(props, context);
 
-    this.props.promise
+    this.resolve();
+  }
+
+  componentDidMount () {
+    this.mounted = true;
+  }
+
+  componentDidUpdate ({promise}) {
+    if (promise !== this.props.promise) {
+      this.resolve();
+    }
+  }
+
+  componentWillUnmount () {
+    this.mounted = false;
+  }
+
+  resolve () {
+    const {promise} = this.props;
+
+    promise
       .then((value) => {
-        if (this.mounted) {
+        if (this.mounted && (promise === this.props.promise)) {
           this.setState({
             pending: false,
             value
@@ -31,21 +51,13 @@ export class Resolve extends Component<IResolveProps, any> {
         }
       })
       .catch((error) => {
-        if (this.mounted) {
+        if (this.mounted && (promise === this.props.promise)) {
           this.setState({
             pending: false,
             error
           });
         }
-      })
-  }
-
-  componentDidMount () {
-    this.mounted = true;
-  }
-
-  componentWillUnmount () {
-    this.mounted = false;
+      });
   }
 
   render () {

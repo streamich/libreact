@@ -45,4 +45,4 @@ const MyComponent = mock();
      - [`<Theme>`](./docs/theme.md#theme), [`<Themed>`](./docs/theme.md#themed), and [`withTheme()`](./docs/theme.md#withtheme)
      - `<CssVars>`
   - Other
-     - [`Resolve`](./docs/Resolve.md)
+     - [`<Resolve>`](./docs/Resolve.md)
