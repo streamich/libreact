@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {MediaSensor} from '.';
 
-storiesOf('MediaSensor', module)
+storiesOf('Sensors/MediaSensor', module)
   .add('basic', () =>
     h(MediaSensor, {
       query: '(min-width: 480px)'

@@ -41,5 +41,5 @@ class StoryScrollSensorBasic extends Component<any, any> {
   }
 }
 
-storiesOf('ScrollSensor', module)
+storiesOf('Sensors/ScrollSensor', module)
   .add('basic', () => h(StoryScrollSensorBasic));

@@ -24,7 +24,7 @@ class StorySpeakBasic extends Component<any, any> {
   }
 }
 
-storiesOf('Speak', module)
+storiesOf('Generators/Speak', module)
   .add('basic', () =>
     h(StorySpeakBasic)
   );

@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import CssResetYahoo from '.';
 
-storiesOf('reset', module)
+storiesOf('CSS resets', module)
   .add('CssResetYahoo', () =>
     h(CssResetYahoo)
   );

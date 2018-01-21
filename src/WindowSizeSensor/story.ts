@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {WindowSizeSensor} from '.';
 
-storiesOf('WindowSizeSensor', module)
+storiesOf('Sensors/WindowSizeSensor', module)
   .add('basic', () =>
     h(WindowSizeSensor, {}, ({width, height}) =>
       h('div', {},

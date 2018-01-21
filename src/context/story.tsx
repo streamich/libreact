@@ -8,7 +8,7 @@ const ColorIs = ({ctx}) => <div>Color is: {ctx.color}</div>;
 const ColorIsConnected = withContext(ColorIs, 'ctx');
 const ColorIsConnected2 = withContext(ColorIs);
 
-storiesOf('context', module)
+storiesOf('Context/context', module)
   .add('FaCC', () =>
     <Provider name="theme" value={{color: 'red'}}>
       <Consumer name="theme">{(theme) => {

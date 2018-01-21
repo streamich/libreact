@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {MediaDeviceSensor} from '.';
 
-storiesOf('MediaDeviceSensor', module)
+storiesOf('Sensors/MediaDeviceSensor', module)
   .add('basic', () =>
     <div>
       <MediaDeviceSensor>{(state) =>

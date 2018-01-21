@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {Vibrate} from '.';
 
-storiesOf('Vibrate', module)
+storiesOf('Generators/Vibrate', module)
   .add('single', () =>
     <div>
       <Vibrate ms={200} />

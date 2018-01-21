@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {BatterySensor} from '.';
 
-storiesOf('BatterySensor', module)
+storiesOf('Sensors/BatterySensor', module)
   .add('basic', () =>
     h(BatterySensor, {}, (state) =>
       h('pre', {style: {

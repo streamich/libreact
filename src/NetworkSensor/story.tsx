@@ -10,7 +10,7 @@ const NetworkStatus = withNetwork((props) =>
   </pre>
 );
 
-storiesOf('NetworkSensor', module)
+storiesOf('Sensors/NetworkSensor', module)
   .add('basic', () =>
     h(NetworkSensor, {}, (state) =>
       h('pre', {style: {

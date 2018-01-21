@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import WidthSensor from '.';
 
-storiesOf('WidthSensor', module)
+storiesOf('Sensors/WidthSensor', module)
   .add('basic', () =>
     h(WidthSensor, {
       onWidth: action('onWidth')

@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import CssResetEricMeyer from '.';
 
-storiesOf('reset', module)
+storiesOf('CSS reset', module)
   .add('CssResetEricMeyer', () =>
     h(CssResetEricMeyer)
   );

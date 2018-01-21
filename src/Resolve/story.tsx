@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {Resolve} from '.';
 
-storiesOf('Resolve', module)
+storiesOf('Other/Resolve', module)
   .add('basic', () => {
     const promise = new Promise((resolve) => {
       setTimeout(resolve, 2000);

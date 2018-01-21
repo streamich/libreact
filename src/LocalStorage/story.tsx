@@ -5,7 +5,7 @@ import {linkTo} from '@storybook/addon-links';
 import {LocalStorage} from '.';
 import StoryLocalStorageForm from './stories/StoryLocalStorageForm';
 
-storiesOf('LocalStorage', module)
+storiesOf('Generators/LocalStorage', module)
   .add('basic', () =>
     <div>
       <LocalStorage name='foo' data='bar' />

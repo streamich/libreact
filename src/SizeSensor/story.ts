@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import SizeSensor from '.';
 
-storiesOf('SizeSensor', module)
+storiesOf('Sensors/SizeSensor', module)
   .add('basic', () =>
     h(SizeSensor, {
       onSize: action('onSize')

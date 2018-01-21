@@ -14,7 +14,7 @@ const Block = ({theme: {color, background}}) =>
 
 const BlockThemed = withTheme(Block);
 
-storiesOf('theme', module)
+storiesOf('Context/theme', module)
   .add('FaCC', () =>
     <Theme value={theme}>
       <Themed>{({color, background}) =>

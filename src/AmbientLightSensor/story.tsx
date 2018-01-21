@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {LightSensor} from '.';
 
-storiesOf('LightSensor', module)
+storiesOf('Sensors/LightSensor', module)
   .add('basic', () =>
     <LightSensor>{(light) =>
       <pre style={{fontFamily: 'monospace'}}>

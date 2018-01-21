@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {WindowScrollSensor} from '.';
 
-storiesOf('WindowScrollSensor', module)
+storiesOf('Sensors/WindowScrollSensor', module)
   .add('basic', () =>
     h('div', {style: {
       background: 'linear-gradient(to bottom, #fff 0%, #000 100%)',

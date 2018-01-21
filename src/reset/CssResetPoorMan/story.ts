@@ -4,7 +4,7 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import CssResetPoorMan from '.';
 
-storiesOf('reset', module)
+storiesOf('CSS resets', module)
   .add('CssResetPoorMan', () =>
     h(CssResetPoorMan)
   );
