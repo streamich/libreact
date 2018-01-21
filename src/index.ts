@@ -13,6 +13,7 @@ export * from './MediaSensor';
 export * from './ScrollSensor';
 export * from './WindowSizeSensor';
 export * from './WindowScrollSensor';
+export * from './LightSensor';
 
 // Generators
 export * from './Speak';
