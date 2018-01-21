@@ -18,6 +18,8 @@ export * from './LightSensor';
 // Generators
 export * from './Speak';
 export * from './Vibrate';
+export * from './LocalStorage';
+export * from './Audio';
 
 // Context
 export * from './context';
