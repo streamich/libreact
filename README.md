@@ -55,5 +55,6 @@ const MyComponent = mock();
      - [`<CssResetSiolon>`](./docs/reset/CssResetSiolon.md)
      - [`<CssResetTantek>`](./docs/reset/CssResetTantek.md)
      - [`<CssResetUniversal>`](./docs/reset/CssResetUniversal.md)
+     - [`<CssResetYahoo>`](./docs/reset/CssResetYahoo.md)
   - Other
      - [`<Resolve>`](./docs/Resolve.md)
