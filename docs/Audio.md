@@ -7,7 +7,7 @@ FaCC that creates an `<audio>` element to play audio tracks, re-renders on audio
 ```jsx
 import {Audio} from 'mol-fe-react/lib/Audio';
 
-<Audio autoplay src='https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'>{(control, state) => {
+<Audio autoPlay src='https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'>{(control, state) => {
   JSON.stringify(state, null, 4)
 }}</Audio>
 ```
@@ -19,7 +19,7 @@ In addition to props below also accepts all [React's media events](https://react
 ```tsx
 export interface IAudioProps {
   src: string;
-  autoplay?: boolean;
+  autoPlay?: boolean;
   loop?: boolean;
   muted?: boolean;
   preload?: 'none' | 'metadata' | 'auto';
@@ -29,7 +29,7 @@ export interface IAudioProps {
 ```
 
   - `src` - required, string, audio source file URL.
-  - `autoplay` - optional, boolean, whether to autoplay audio, defaults to `false`.
+  - `autoPlay` - optional, boolean, whether to autoplay audio, defaults to `false`.
   - `loop` - optional, boolean, whether to repeat the track when it ends, defaults to `false`.
   - `muted` - optional, boolean, whether to mute the audio, defaults to `false`.
   - `preload` - optional, string, `<audio>` element preload attribute.

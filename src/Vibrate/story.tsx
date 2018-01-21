@@ -6,7 +6,7 @@ import {Vibrate} from '.';
 import ShowDocs from '../../.storybook/ShowDocs'
 
 storiesOf('Generators/Vibrate', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'SizeSensor'}))
+  .add('Documentation', () => h(ShowDocs, {name: 'Vibrate'}))
   .add('One beep', () =>
     <div>
       <Vibrate ms={200} />

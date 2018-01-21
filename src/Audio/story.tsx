@@ -10,7 +10,7 @@ const src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3';
 storiesOf('Generators/Audio', module)
   .add('Documentation', () => h(ShowDocs, {name: 'Audio'}))
   .add('Example', () =>
-    <Audio autoplay src={src}>{(audio) =>
+    <Audio autoPlay src={src}>{(audio) =>
       <div>
         Hello audio!
       </div>

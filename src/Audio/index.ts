@@ -6,7 +6,7 @@ export type TAudioEvent = (event, Audio, IAudioState) => void;
 export interface IAudioProps {
   src: string;
   children?: (...args) => React.ReactElement<any>;
-  autoplay?: boolean;
+  autoPlay?: boolean;
   loop?: boolean;
   muted?: boolean;
   preload?: 'none' | 'metadata' | 'auto';
@@ -62,7 +62,7 @@ export class Audio extends Component<IAudioProps, IAudioState> {
   };
 
   componentDidMount () {
-    if (this.props.autoplay && this.el.paused) {
+    if (this.props.autoPlay && this.el.paused) {
       this.play();
     }
 
@@ -170,14 +170,14 @@ export class Audio extends Component<IAudioProps, IAudioState> {
 
   render () {
     const {props, event} = this;
-    const {children, src, autoplay, loop, muted, preload, volume, noJs = noop as any} = props;
+    const {children, src, autoPlay, loop, muted, preload, volume, noJs = noop as any} = props;
 
 
     const audio = h('audio', {
       ref: this.ref,
       controls: false,
       src,
-      autoplay,
+      autoPlay,
       loop,
       muted,
       preload,

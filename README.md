@@ -3,7 +3,7 @@
 React utility belt.
 
   - Collection of React goodies
-  - Isomorphic - all components work in the browser and in Node
+  - Isomorphic - all components work in browser and Node
   - [See demos and docs](https://mailonline.github.io/mol-fe-react/)
 
 ## Installation
