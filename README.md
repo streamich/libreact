@@ -1,6 +1,10 @@
 # mol-fe-react
 
-React utility belt, a collection of isomorphic React goodies.
+React utility belt.
+
+  - Collection of React goodies
+  - Isomorphic - all components work in the browser and in Node
+  - [See demos and docs](https://mailonline.github.io/mol-fe-react/)
 
 ## Installation
 
