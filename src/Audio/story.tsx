@@ -27,6 +27,10 @@ storiesOf('Generators/Audio', module)
       <div>
         <button onClick={audio.play}>Play</button>
         <button onClick={audio.pause}>Pause</button>
+        <button onClick={() => audio.seek(state.time - 5)}>Seek -</button>
+        <button onClick={() => audio.seek(state.time + 5)}>Seek +</button>
+        <button onClick={() => audio.volume(state.volume - 0.05)}>Volume -</button>
+        <button onClick={() => audio.volume(state.volume + 0.05)}>Volume +</button>
         <pre style={{fontFamily: 'monospace'}}>
           {JSON.stringify(state, null, 4)}
         </pre>

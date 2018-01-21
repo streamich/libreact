@@ -11,7 +11,7 @@ export interface IAudioProps {
   muted?: boolean;
   preload?: 'none' | 'metadata' | 'auto';
   volume?: number;
-  renderInner?: () => React.ReactElement<any>;
+  noJs?: React.ReactElement<any>;
 
   onAbort?: TAudioEvent,
   onCanPlay?: TAudioEvent,
@@ -39,24 +39,38 @@ export interface IAudioProps {
 }
 
 export interface IAudioState {
+  time?: number;
+  duration?: number;
   isPlaying?: boolean;
+  volume: number;
 }
 
 export class Audio extends Component<IAudioProps, IAudioState> {
-  el: HTMLAudioElement;
+  el: HTMLAudioElement = null;
 
   state: IAudioState = {
-    isPlaying: false
+    time: 0,
+    duration: 0,
+    isPlaying: false,
+    volume: NaN
   };
 
   ref = (el) => {
     this.el = el;
   };
 
-  componentDidMount() {
+  componentDidMount () {
     if (this.props.autoplay && this.el.paused) {
       this.play();
     }
+
+    this.setState({
+      volume: this.el.volume
+    });
+  }
+
+  componentWillUnmount () {
+    this.el = null;
   }
 
   play = () => {
@@ -71,27 +85,80 @@ export class Audio extends Component<IAudioProps, IAudioState> {
     }
   };
 
+  seek = (time: number) => {
+    if (this.el) {
+      time = Math.min(this.state.duration, Math.max(0, time));
+      this.el.currentTime = time;
+    }
+  };
+
+  volume = (volume) => {
+    if (this.el) {
+      volume = Math.min(1, Math.max(0, volume));
+
+      this.el.volume = volume;
+      this.setState({
+        volume
+      });
+    }
+  };
+
   event = (name: string) => (event) => {
     const handler = this.props[name];
 
     if (handler) {
       handler(event, this, this.state);
     }
-
-    this.scrapDOM();
   };
 
-  scrapDOM() {
+  onPlay = (event) => {
+    this.setState({
+      isPlaying: true
+    });
 
-  }
+    this.event('onPlay')(event);
+  };
+
+  onPause = (event) => {
+    this.setState({
+      isPlaying: false
+    });
+
+    this.event('onPause')(event);
+  };
+
+  onVolumeChange = (event) => {
+    this.setState({
+      volume: this.el.volume
+    });
+
+    this.event('onVolumeChange')(event);
+  };
+
+  onDurationChange = (event) => {
+    this.setState({
+      duration: this.el.duration
+    });
+
+    this.event('onDurationChange')(event);
+  };
+
+  onTimeUpdate = (event) => {
+    this.setState({
+      time: this.el.currentTime
+    });
+
+    this.event('onTimeUpdate')(event);
+  };
 
   render () {
     const {props, event} = this;
-    const {children, src, autoplay, loop, muted, preload, volume, renderInner = noop as any} = props;
+    const {children, src, autoplay, loop, muted, preload, volume, noJs = noop as any} = props;
 
 
     const audio = h('audio', {
       ref: this.ref,
+      controls: false,
       src,
       autoplay,
       loop,
@@ -101,7 +168,7 @@ export class Audio extends Component<IAudioProps, IAudioState> {
       onAbort: event('onAbort'),
       onCanPlay: event('onCanPlay'),
       onCanPlayThrough: event('onCanPlayThrough'),
-      onDurationChange: event('onDurationChange'),
+      onDurationChange: this.onDurationChange,
       onEmptied: event('onEmptied'),
       onEncrypted: event('onEncrypted'),
       onEnded: event('onEnded'),
@@ -109,8 +176,8 @@ export class Audio extends Component<IAudioProps, IAudioState> {
       onLoadedData: event('onLoadedData'),
       onLoadedMetadata: event('onLoadedMetadata'),
       onLoadStart: event('onLoadStart'),
-      onPause: event('onPause'),
-      onPlay: event('onPlay'),
+      onPause: this.onPause,
+      onPlay: this.onPlay,
       onPlaying: event('onPlaying'),
       onProgress: event('onProgress'),
       onRateChange: event('onRateChange'),
@@ -118,11 +185,11 @@ export class Audio extends Component<IAudioProps, IAudioState> {
       onSeeking: event('onSeeking'),
       onStalled: event('onStalled'),
       onSuspend: event('onSuspend'),
-      onTimeUpdate: event('onTimeUpdate'),
-      onVolumeChange: event('onVolumeChange'),
+      onTimeUpdate: this.onTimeUpdate,
+      onVolumeChange: this.onVolumeChange,
       onWaiting: event('onWaiting')
     },
-      renderInner()
+      noJs
     );
 
     const markup = children(this, this.state);
