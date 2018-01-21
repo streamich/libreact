@@ -5,7 +5,11 @@ import toCss from 'freestyler-renderer/lib/ast/toCss';
 const createCssResetComponent = (cssTemplate) => {
   const rawCss = toCss(toStylesheet(cssTemplate));
 
-  return () => h('style', null, rawCss);
+  return () => h('style', {
+    dangerouslySetInnerHTML: {
+      __html: rawCss
+    }
+  });
 };
 
 export default createCssResetComponent;
