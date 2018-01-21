@@ -4,8 +4,8 @@ const vars = {
   color: 'red'
 };
 
-export class CssVars extends Component<any, any> {
-  render () {
-    return this.props.children;
-  }
-}
+// export class CssVarsProvider extends Component<any, any> {
+  // render () {
+    // return this.props.children;
+  // }
+// }
