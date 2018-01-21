@@ -3,10 +3,12 @@ import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {Audio} from '.';
+import ShowDocs from '../../.storybook/ShowDocs'
 
 const src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3';
 
 storiesOf('Generators/Audio', module)
+  .add('Documentation', () => h(ShowDocs, {name: 'Audio'}))
   .add('Example', () =>
     <Audio autoplay src={src}>{(audio) =>
       <div>
