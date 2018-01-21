@@ -11,7 +11,7 @@ export const css = {
   body: {
     fz: '100%',
   },
-  'a img,a:link img,a:visited img': {
+  'a img,:link img,:visited img': {
     bd: 0,
   },
 };
