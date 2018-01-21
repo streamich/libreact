@@ -46,5 +46,6 @@ const MyComponent = mock();
      - `<CssVars>`
   - CSS resets
      - [`<CssResetEricMeyer>`](./docs/CssResetEricMeyer.md)
+     - [`<CssResetEricMeyerCondensed>`](./docs/CssResetEricMeyerCondensed.md)
   - Other
      - [`<Resolve>`](./docs/Resolve.md)

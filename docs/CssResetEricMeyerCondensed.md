@@ -1,6 +1,19 @@
-import createCssResetComponent from '../createCssResetComponent';
+# `<CssResetEricMeyerCondensed>`
 
-export const css = {
+## Usage
+
+Simply render it in your React app
+
+```jsx
+import CssResetEricMeyerCondensed from 'mol-fe-react/lib/reset/CssResetEricMeyerCondensed';
+
+<CssResetEricMeyerCondensed />
+```
+
+## Contents
+
+```js
+{
   'body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td': {
       pad: 0,
       mar: 0,
@@ -32,8 +45,5 @@ export const css = {
   'abbr, acronym': {
       bd: 0,
   },
-};
-
-const CssResetEricMeyerCondensed = createCssResetComponent(css);
-
-export default CssResetEricMeyerCondensed;
+}
+```
