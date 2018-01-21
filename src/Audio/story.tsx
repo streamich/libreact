@@ -31,8 +31,30 @@ storiesOf('Generators/Audio', module)
         <button onClick={() => audio.seek(state.time + 5)}>Seek +</button>
         <button onClick={() => audio.volume(state.volume - 0.05)}>Volume -</button>
         <button onClick={() => audio.volume(state.volume + 0.05)}>Volume +</button>
+        <button onClick={audio.mute}>Mute</button>
+        <button onClick={audio.unmute}>Unmute</button>
         <pre style={{fontFamily: 'monospace'}}>
           {JSON.stringify(state, null, 4)}
+        </pre>
+        <hr />
+        <pre style={{fontFamily: 'monospace'}}>
+          {`
+<Audio src={src}>{(audio, state) =>
+  <div>
+    <button onClick={audio.play}>Play</button>
+    <button onClick={audio.pause}>Pause</button>
+    <button onClick={() => audio.seek(state.time - 5)}>Seek -</button>
+    <button onClick={() => audio.seek(state.time + 5)}>Seek +</button>
+    <button onClick={() => audio.volume(state.volume - 0.05)}>Volume -</button>
+    <button onClick={() => audio.volume(state.volume + 0.05)}>Volume +</button>
+    <button onClick={audio.mute}>Mute</button>
+    <button onClick={audio.unmute}>Unmute</button>
+    <pre style={{fontFamily: 'monospace'}}>
+      {JSON.stringify(state, null, 4)}
+    </pre>
+  </div>
+}</Audio>
+          `}
         </pre>
       </div>
     }</Audio>

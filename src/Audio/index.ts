@@ -42,7 +42,8 @@ export interface IAudioState {
   time?: number;
   duration?: number;
   isPlaying?: boolean;
-  volume: number;
+  muted?: boolean;
+  volume?: number;
 }
 
 export class Audio extends Component<IAudioProps, IAudioState> {
@@ -52,7 +53,8 @@ export class Audio extends Component<IAudioProps, IAudioState> {
     time: 0,
     duration: 0,
     isPlaying: false,
-    volume: NaN
+    muted: false,
+    volume: 1
   };
 
   ref = (el) => {
@@ -103,6 +105,18 @@ export class Audio extends Component<IAudioProps, IAudioState> {
     }
   };
 
+  mute = () => {
+    if (this.el) {
+      this.el.muted = true;
+    }
+  };
+
+  unmute = () => {
+    if (this.el) {
+      this.el.muted = false;
+    }
+  };
+
   event = (name: string) => (event) => {
     const handler = this.props[name];
 
@@ -128,8 +142,11 @@ export class Audio extends Component<IAudioProps, IAudioState> {
   };
 
   onVolumeChange = (event) => {
+    const {muted, volume} = this.el;
+
     this.setState({
-      volume: this.el.volume
+      muted,
+      volume
     });
 
     this.event('onVolumeChange')(event);
