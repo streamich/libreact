@@ -3,6 +3,7 @@ import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {ScrollSensor} from '.';
+import ShowDocs from '../../.storybook/ShowDocs'
 
 class StoryScrollSensorBasic extends Component<any, any> {
   state = {
@@ -42,4 +43,5 @@ class StoryScrollSensorBasic extends Component<any, any> {
 }
 
 storiesOf('Sensors/ScrollSensor', module)
-  .add('basic', () => h(StoryScrollSensorBasic));
+  .add('Documentation', () => h(ShowDocs, {name: 'ScrollSensor'}))
+  .add('Example', () => h(StoryScrollSensorBasic));

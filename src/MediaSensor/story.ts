@@ -3,9 +3,11 @@ import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {MediaSensor} from '.';
+import ShowDocs from '../../.storybook/ShowDocs'
 
 storiesOf('Sensors/MediaSensor', module)
-  .add('basic', () =>
+  .add('Documentation', () => h(ShowDocs, {name: 'MediaSensor'}))
+  .add('Example', () =>
     h(MediaSensor, {
       query: '(min-width: 480px)'
     }, (matches) =>

@@ -6,8 +6,8 @@ import {BatterySensor} from '.';
 import ShowDocs from '../../.storybook/ShowDocs'
 
 storiesOf('Sensors/BatterySensor', module)
-  .add('docs', () => h(ShowDocs, {name: 'BatterySensor'}))
-  .add('basic', () =>
+  .add('Documentation', () => h(ShowDocs, {name: 'BatterySensor'}))
+  .add('Example', () =>
     h(BatterySensor, {}, (state) =>
       h('pre', {style: {
         fontFamily: 'monospace'

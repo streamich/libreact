@@ -3,6 +3,7 @@ import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {NetworkSensor, withNetwork} from '.';
+import ShowDocs from '../../.storybook/ShowDocs'
 
 const NetworkStatus = withNetwork((props) =>
   <pre style={{fontFamily: 'monospace'}}>
@@ -11,7 +12,8 @@ const NetworkStatus = withNetwork((props) =>
 );
 
 storiesOf('Sensors/NetworkSensor', module)
-  .add('basic', () =>
+  .add('Documentation', () => h(ShowDocs, {name: 'NetworkSensor'}))
+  .add('Basic example', () =>
     h(NetworkSensor, {}, (state) =>
       h('pre', {style: {
         fontFamily: 'monospace'
@@ -20,4 +22,4 @@ storiesOf('Sensors/NetworkSensor', module)
       )
     )
   )
-  .add('withNetwork', () => h(NetworkStatus));
+  .add('withNetwork()', () => h(NetworkStatus));

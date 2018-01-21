@@ -3,9 +3,11 @@ import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {WindowScrollSensor} from '.';
+import ShowDocs from '../../.storybook/ShowDocs'
 
 storiesOf('Sensors/WindowScrollSensor', module)
-  .add('basic', () =>
+  .add('Documentation', () => h(ShowDocs, {name: 'WindowScrollSensor'}))
+  .add('Example', () =>
     h('div', {style: {
       background: 'linear-gradient(to bottom, #fff 0%, #000 100%)',
       width: 5000,

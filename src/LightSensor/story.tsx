@@ -7,8 +7,8 @@ import {readFileSync} from 'fs';
 import ShowDocs from '../../.storybook/ShowDocs'
 
 storiesOf('Sensors/LightSensor', module)
-  .add('docs', () => <ShowDocs name='LightSensor' />)
-  .add('basic', () =>
+  .add('Documentation', () => <ShowDocs name='LightSensor' />)
+  .add('Example', () =>
     <LightSensor>{(light) =>
       <pre style={{fontFamily: 'monospace'}}>
         {JSON.stringify(light, null, 4)}

@@ -4,9 +4,11 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {LocalStorage} from '.';
 import StoryLocalStorageForm from './stories/StoryLocalStorageForm';
+import ShowDocs from '../../.storybook/ShowDocs'
 
 storiesOf('Generators/LocalStorage', module)
-  .add('basic', () =>
+  .add('Documentation', () => h(ShowDocs, {name: 'LocalStorage'}))
+  .add('Basic example', () =>
     <div>
       <LocalStorage name='foo' data='bar' />
       <pre style={{fontFamily: 'monospace'}}>
@@ -14,7 +16,7 @@ storiesOf('Generators/LocalStorage', module)
       </pre>
     </div>
   )
-  .add('persist', () =>
+  .add('Using persist', () =>
     <div>
       <LocalStorage name='foo2' data='bar2' persist />
       <pre style={{fontFamily: 'monospace'}}>
@@ -22,4 +24,4 @@ storiesOf('Generators/LocalStorage', module)
       </pre>
     </div>
   )
-  .add('form', () => <StoryLocalStorageForm />);
+  .add('Form example', () => <StoryLocalStorageForm />);

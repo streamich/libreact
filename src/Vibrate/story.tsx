@@ -3,9 +3,11 @@ import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {Vibrate} from '.';
+import ShowDocs from '../../.storybook/ShowDocs'
 
 storiesOf('Generators/Vibrate', module)
-  .add('single', () =>
+  .add('Documentation', () => h(ShowDocs, {name: 'SizeSensor'}))
+  .add('One beep', () =>
     <div>
       <Vibrate ms={200} />
       <pre style={{fontFamily: 'monospace'}}>
@@ -13,7 +15,7 @@ storiesOf('Generators/Vibrate', module)
       </pre>
     </div>
   )
-  .add('sequence', () =>
+  .add('Sequence', () =>
     <div>
       <Vibrate ms={[100, 100, 100, 100, 100]} />
       <pre style={{fontFamily: 'monospace'}}>
