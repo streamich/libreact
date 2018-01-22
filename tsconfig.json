@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "removeComments": false,
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "outDir": "./lib",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "jsxFactory": "h",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "lib": [
+      "dom",
+      "es5",
+      "es6",
+      "es7",
+      "es2015",
+      "scripthost",
+      "dom.iterable"
+    ]
+  },
+  "include": [
+    "typing.d.ts",
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib",
+    "src/__tests__"
+  ]
+}

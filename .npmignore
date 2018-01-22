@@ -1,0 +1,15 @@
+.idea
+/node_modules/
+/.idea/
+/.nyc_output/
+/coverage/
+package-lock.json
+yarn.lock
+*.test.ts
+*.spec.ts
+*.test.js
+*.spec.js
+/typings/
+/test/
+/.vscode/
+.DS_Store
