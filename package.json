@@ -1,6 +1,6 @@
 {
   "name": "@mol-fe/mol-fe-react",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "MOL React.js utilities",
   "main": "lib/index.js",
   "keywords": [
@@ -43,6 +43,8 @@
     "chai": "4.1.2",
     "react-markdown": "3.1.4",
     "to-string-loader": "1.1.5",
+    "gulp": "3.9.1",
+    "gulp-typescript": "3",
     "@types/node": "9.3.0",
     "@types/jest": "22.0.1",
     "@types/chai": "4.1.1",
@@ -58,7 +60,7 @@
   },
   "scripts": {
     "clean": "rimraf lib",
-    "build": "npm run clean && tsc --pretty",
+    "build": "npm run clean && gulp build-ts",
     "test": "npm run test:server && npm run test:client",
     "test:server": "mocha -r ts-node/register src/**/*.test-server.ts*",
     "test:client": "jest",
