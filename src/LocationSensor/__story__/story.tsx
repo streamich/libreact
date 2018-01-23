@@ -2,8 +2,8 @@ import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
-import {LocationSensor} from '.';
-import ShowDocs from '../../.storybook/ShowDocs'
+import {LocationSensor} from '..';
+import ShowDocs from '../../../.storybook/ShowDocs'
 
 class StoryLocationSensroExample extends Component<any, any> {
   state = {
@@ -36,5 +36,5 @@ class StoryLocationSensroExample extends Component<any, any> {
 }
 
 storiesOf('Sensors/LocationSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'BatterySensor'}))
+  .add('Documentation', () => h(ShowDocs, {name: 'LocationSensor'}))
   .add('Example', () => h(StoryLocationSensroExample));

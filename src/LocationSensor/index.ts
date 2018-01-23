@@ -18,8 +18,10 @@ const patchHistoryMethod = (method) => {
   };
 };
 
-patchHistoryMethod('pushState');
-patchHistoryMethod('replaceState');
+if (isClient) {
+  patchHistoryMethod('pushState');
+  patchHistoryMethod('replaceState');
+}
 
 export interface ILocationSensorProps {
   children?: (ILocationSensorState) => React.ReactElement<any>;
