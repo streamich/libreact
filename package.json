@@ -45,7 +45,6 @@
     "to-string-loader": "1.1.5",
     "gulp": "3.9.1",
     "gulp-typescript": "3",
-    "react-syntax-highlighter": "^6.1.2",
     "@types/node": "9.3.0",
     "@types/jest": "22.0.1",
     "@types/chai": "4.1.1",

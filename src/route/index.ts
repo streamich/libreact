@@ -48,7 +48,7 @@ export class Router extends Component<IRouteProviderProps, any> {
 
 export interface TRouteMatchResult {
   length: number; // Length how many characters to truncate from route.
-  matches?: RegExpMatchArray;
+  matches?: RegExpMatchArray; // RegExp matches, if any.
 }
 
 export type TRouteMatcher = (route: string) => TRouteMatchResult;
