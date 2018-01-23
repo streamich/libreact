@@ -15,6 +15,7 @@ export * from './ScrollSensor';
 export * from './WindowSizeSensor';
 export * from './WindowScrollSensor';
 export * from './LightSensor';
+export * from './LocationSensor';
 
 // Generators
 export * from './Speak';
@@ -25,3 +26,7 @@ export * from './Audio';
 // Context
 export * from './context';
 export * from './theme';
+export * from './route';
+
+// Other
+export * from './Resolve';
