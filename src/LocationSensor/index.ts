@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import {on, off} from '../util';
+import {h, on, off, isClient} from '../util';
 
 const patchHistoryMethod = (method) => {
   const original = history[method];
@@ -9,8 +9,8 @@ const patchHistoryMethod = (method) => {
     const event = new Event(method.toLowerCase());
 
     (event as any).state = state;
-    (event as any).title = title;
-    (event as any).url = url;
+    // (event as any).title = title;
+    // (event as any).url = url;
 
     window.dispatchEvent(event);
 
@@ -26,27 +26,97 @@ export interface ILocationSensorProps {
 }
 
 export interface ILocationSensorState {
-
+  trigger: string;
+  state?: any;
+  length?: number;
+  hash?: string;
+  host?: string;
+  hostname?: string;
+  href?: string;
+  origin?: string;
+  pathname?: string;
+  port?: string;
+  protocol?: string;
+  search?: string;
 }
 
 export class LocationSensor extends Component<ILocationSensorProps, ILocationSensorState> {
+  state: ILocationSensorState;
+
+  constructor (props, context) {
+    super(props, context);
+
+    if (isClient) {
+      this.state = this.buildState('load');
+    } else {
+      this.state = {
+        trigger: 'load',
+        length: 1
+      };
+    }
+  }
+
   componentDidMount () {
     on(window, 'popstate', this.onPopstate);
     on(window, 'pushstate', this.onPushstate);
     on(window, 'replacestate', this.onReplacestate);
   }
 
+  componentWillUnmount () {
+    off(window, 'popstate', this.onPopstate);
+    off(window, 'pushstate', this.onPushstate);
+    off(window, 'replacestate', this.onReplacestate);
+  }
+
   onPopstate = (e) => {
-    console.log('popstate', e);
+    this.onChange('popstate');
   };
 
   onPushstate = (e) => {
-    console.log('pushstate', e);
+    this.onChange('pushstate');
   };
 
   onReplacestate = (e) => {
-    console.log('replacestaet', e);
+    this.onChange('replacestaet');
   };
+
+  onChange = (trigger: string) => {
+    this.setState(this.buildState(trigger));
+  };
+
+  buildState (trigger: string) {
+    const {
+      state,
+      length
+    } = history;
+
+    const {
+      hash,
+      host,
+      hostname,
+      href,
+      origin,
+      pathname,
+      port,
+      protocol,
+      search
+    } = location;
+
+    return {
+      trigger,
+      state,
+      length,
+      hash,
+      host,
+      hostname,
+      href,
+      origin,
+      pathname,
+      port,
+      protocol,
+      search
+    };
+  }
 
   render () {
     return this.props.children(this.state);
