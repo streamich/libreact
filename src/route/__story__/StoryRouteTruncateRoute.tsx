@@ -4,7 +4,7 @@ import {Router, Route} from '..';
 
 const StoryRouteTruncateRoute = () =>
   <div>
-    <Router route='/api/users/43f23f-23f34f43r.json'>
+    <Router route='/api/users/123.json'>
       <Route match='/api'>
         <Route match='/users'>
           <Route match={/.*/}>{(result) =>
@@ -17,7 +17,7 @@ const StoryRouteTruncateRoute = () =>
     <hr />
 
     <pre style={{fontFamily: 'monospace'}}>{`
-<Router route='/api/users/43f23f-23f34f43r.json'>
+<Router route='/api/users/132.json'>
   <Route match='/api'>
     <Route match='/users'>
       <Route match={/.*/}>{(result) =>

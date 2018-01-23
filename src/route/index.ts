@@ -18,6 +18,7 @@ export class Router extends Component<IRouteProviderProps, any> {
   };
 
   renderProvider (route) {
+    const {children} = this.props;
     this.matches = 0;
 
     const element = h(Provider, {
@@ -28,7 +29,7 @@ export class Router extends Component<IRouteProviderProps, any> {
         getMathces: () => this.matches,
         parent: this.props.parent
       }
-    }, this.props.children);
+    }, Array.isArray(children) ? h('div', null, children) : children);
 
     return element;
   }
@@ -41,7 +42,7 @@ export class Router extends Component<IRouteProviderProps, any> {
       return this.renderProvider(route);
     }
 
-    return h(LocationSensor, {}, (value) => this.renderProvider(value.pathname));
+    return h(LocationSensor, null, ({pathname}) => this.renderProvider(pathname));
   }
 }
 
