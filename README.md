@@ -3,8 +3,8 @@
 React standard library.
 
   - Collection of React goodies necessary for every project.
-  - Isomorphic - all components work in browser and Node.
-  - [See demos and docs](https://mailonline.github.io/mol-fe-react/)
+  - Isomorphic - all components work in browser and Node.js (and some in `react-native`).
+  - [See demos and docs](https://mailonline.github.io/mol-fe-react/).
 
 ## Installation
 
@@ -37,16 +37,18 @@ const MyComponent = mock();
      - [`<NetworkSensor>`](./docs/NetworkSensor.md) and [`withNetwork()`](./docs/NetworkSensor.md#withnetwork)
      - [`<LightSensor>`](./docs/LightSensor.md)
      - [`<LocationSensor>`](./docs/LocationSensor.md)
-     - [`<SizeSensor>`](./docs/SizeSensor.md)
      - [`<ScrollSensor>`](./docs/ScrollSensor.md)
+     - [`<SizeSensor>`](./docs/SizeSensor.md)
+     - `<ViewportSensor>`
      - [`<WidthSensor>`](./docs/WidthSensor.md)
-     - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md)
      - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md)
+     - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md)
   - Generators
      - [`<Audio>`](./docs/Audio.md)
      - [`<LocalStorage>`](./docs/LocalStorage.md)
      - [`<Speak>`](./docs/Speak.md)
      - [`<Vibrate>`](./docs/Vibrate.md)
+     - `<Video>`
   - Context
      - [`<Provider>`](./docs/context.md#provider), [`<Consumer>`](./docs/context.md#consumer), and [`withContext()`](./docs/context.md#withcontext)
      - [`<Theme>`](./docs/theme.md#theme), [`<Themed>`](./docs/theme.md#themed), and [`withTheme()`](./docs/theme.md#withtheme)

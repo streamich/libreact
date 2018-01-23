@@ -2,12 +2,56 @@
 
 Routing components allow you to create implement single page app routing functionality.
 
+  - Provides *dynamic* routing, [just like `react-router`](https://reacttraining.com/react-router/core/guides/philosophy/dynamic-routing)
+  - Use any state container
+  - Multiple routers on one page
+
 Contents:
 
   - [`<Router>`](#router)
   - [`<Route>`](#route)
   - [`go()`](#go)
   - [`withRoute()`](#withroute)
+
+
+## Use any state container
+
+With libreact's `<Router>` you can choose to store the current route in your state continer (like Redux or MobX) of
+choice, or not bother about it at all, in which case the `<Router>` will just use the current browser location out-of-the box.
+
+The "problem-of-routers" is that they all want to be the ones that keep the state of the route. For example, [`react-router`](https://reacttraining.com/react-router/) uses
+its internal history objects to store route information, and [it does not give you good access to that data structure](http://formidable.com/blog/2016/07/11/let-the-url-do-the-talking-part-1-the-pain-of-react-router-in-redux/).
+
+So, if you wanted to store the state of the route in Redux, there was no good way for you to do that using `react-router`, that is why
+[`redux-little-router`](https://github.com/FormidableLabs/redux-little-router) was born, however, `redux-little-router` itself hoards the
+state of the route in Redux, so you cannot use it if you use any other state container, say MobX.
+
+Libreact is completely orthogonal to where you store the current route, all you have to do is provide the current route to the `<Router>` component:
+
+```jsx
+<Router route={currentRoute}>
+  {/* ... */}
+</Router>
+```
+
+You can story in Redux or MobX, or really anywhere you want. And if you don't want to bother, don't! Just use the current location of the browser:
+
+```jsx
+<LocationSensor>{({pathname}) =>
+  <Router route={pathname}>
+    {/* ... */}
+  </Router>
+}</LocationSensor>
+```
+
+Actually, you don't even have to do that, if you don't explicitly specify the `route` prop, the `<Router>` component will do exactly that for you under the hood,
+so, simply use:
+
+```jsx
+<Router>
+  {/* ... */}
+</Router>
+```
 
 
 ## `<Router>`
