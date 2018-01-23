@@ -1,12 +1,11 @@
 import {Component} from 'react';
 import {LocationSensor} from '../LocationSensor';
 import {Provider, Consumer} from '../context';
-import {h, sym} from '../util';
-
-const $$location = sym('location');
+import {h, ns} from '../util';
 
 export interface IRouteProviderProps {
   children?: any;
+  ns?: string;
   route?: string;
   parent?: TRouteMatchResult;
 }
@@ -22,7 +21,7 @@ export class Router extends Component<IRouteProviderProps, any> {
     this.matches = 0;
 
     const element = h(Provider, {
-      name: $$location,
+      name: ns(`route/${this.props.ns}`),
       value: {
         route,
         onMatch: this.onMatch,
@@ -55,16 +54,17 @@ export type TRouteMatcher = (route: string) => TRouteMatchResult;
 
 export interface IRouteMatch {
   children?: React.ReactElement<any> | ((params) => React.ReactElement<any>);
+  cnt?: number;
   comp?: React.ComponentClass<{}> | React.StatelessComponent<{}>;
   exact?: boolean;
   match?: TRouteMatcher | RegExp | string;
-  cnt?: number;
+  ns?: string;
   preserve?: boolean;
 }
 
 export class Route extends Component<IRouteMatch, any> {
   static defaultProps = {
-    match: /.*/,
+    match: /.+/,
     cnt: 0
   };
 
@@ -99,7 +99,7 @@ export class Route extends Component<IRouteMatch, any> {
   }
 
   render () {
-    return h(Consumer, {name: $$location}, ({route, onMatch, getMathces, parent}) => {
+    return h(Consumer, {name: ns(`route/${this.props.ns}`)}, ({route, onMatch, getMathces, parent}) => {
       const {children, match} = this.props;
 
       if (getMathces() <= this.props.cnt) {
