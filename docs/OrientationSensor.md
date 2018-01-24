@@ -31,3 +31,15 @@ interface IOrientationSensorState {
 
   - `angle` - screen rotation angle in degrees.
   - `type` - is one of `portrait-primary`, `portrait-secondary`, `landscape-primary`, or `landscape-secondary`.
+
+
+## `withOrientation()`
+
+HOC that injects `orientation` object into your component.
+
+
+```js
+import {withOrientation} from 'libreact/lib/OrientationSensor';
+
+const MyCompWithOrientation = withOrientation(MyComp);
+```
