@@ -9,8 +9,6 @@ const patchHistoryMethod = (method) => {
     const event = new Event(method.toLowerCase());
 
     (event as any).state = state;
-    // (event as any).title = title;
-    // (event as any).url = url;
 
     window.dispatchEvent(event);
 
@@ -79,7 +77,7 @@ export class LocationSensor extends Component<ILocationSensorProps, ILocationSen
   };
 
   onReplacestate = (e) => {
-    this.onChange('replacestaet');
+    this.onChange('replacestate');
   };
 
   onChange = (trigger: string) => {

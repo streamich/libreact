@@ -27,7 +27,7 @@ So, if you wanted to store the state of the route in Redux, there was no good wa
 state of the route in Redux, so you cannot use it if you use any other state container, say MobX.
 
 Libreact is completely orthogonal to where you store the *current route*, all you have to do is provide the current route to the `<Router>`
-coponent using the `route` prop.
+component using the `route` prop.
 
 ```jsx
 <Router route={currentRoute}>
@@ -73,7 +73,7 @@ own routing logic.
 
 ### `<Router>`
 
-`Router` is a root component that provides routing to your application. I should be placed above all other components
+`Router` is a root component that provides routing to your application. It should be placed above all other components
 that use routing. It uses React's context [`Provider`](./context.md#provider) component to provide route information to
 its children.
 
@@ -140,7 +140,7 @@ interface TRouteMatchResult {
   with the following properties:
      - `length` - required, number of characters to truncate from the start of the route, for the inner routes, basically this should be
      equal to the length of the matched fragment of the path.
-     - `matches` - optionsl, array of matches returned by `String.prototype.match()` function.
+     - `matches` - optional, array of matches returned by `String.prototype.match()` function.
 
 
 ### `go()`
