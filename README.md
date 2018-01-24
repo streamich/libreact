@@ -1,5 +1,7 @@
 # libreact
 
+[![][npm-badge]][npm-url] [![][travis-badge]][travis-url]
+
 React standard library, must-have toolbox for any React project.
 
   - Collection of React sensors, FaCCs, HOCs, context providers, dummies, and [other goodies](#contents).
@@ -74,3 +76,9 @@ const MyComponent = mock();
 ## License
 
 [Unlicense](./LICENSE) - public domain.
+
+
+[npm-url]: https://www.npmjs.com/package/libreact
+[npm-badge]: https://img.shields.io/npm/v/libreact.svg
+[travis-url]: https://travis-ci.org/MailOnline/libreact
+[travis-badge]: https://travis-ci.org/MailOnline/libreact.svg?branch=master
