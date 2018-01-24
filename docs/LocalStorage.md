@@ -24,7 +24,7 @@ import {LocalStorage} from 'libreact/lib/LocalStorage';
   - `onMount` - optional, callback that receives stored data on component mount. Useful to persist and
   re-hydrate form data, for example.
 
-# Example
+## Example
 
 In the below example form inputs are stored in `localStorage` and re-hydrated when user
 comes back and form renders for the first time.
