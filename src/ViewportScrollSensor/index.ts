@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import {h, on, off} from '../util';
+import {h, on, off, noop} from '../util';
 import * as throttle from 'throttle-debounce/throttle';
 
 export const isInViewport = (el) => {
@@ -15,6 +15,7 @@ export const isInViewport = (el) => {
 
 export interface IViewportScrollSensorProps {
   throttle?: number;
+  refInner?: (el: HTMLElement) => void;
 }
 
 export interface IViewportScrollSensorState {
@@ -26,6 +27,7 @@ export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, 
     throttle: 150
   };
 
+  mounted: boolean = false;
   el: HTMLElement;
 
   state = {
@@ -34,30 +36,41 @@ export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, 
 
   ref = (el) => {
     this.el = el;
+    (this.props.refInner || noop)(el);
   };
 
-  componentWillMount () {
-    // TODO: TRY TO DETECT IF COMPONENT IS VISIBLE.
-  }
-
   componentDidMount () {
+    this.mounted = true;
     on(document, 'scroll', this.onScroll);
   }
 
   componentWillUnmount () {
+    this.mounted = false;
     off(document, 'scroll', this.onScroll);
   }
 
   onScroll = throttle(this.props.throttle, false, () => {
-    this.setState({
-      visible: isInViewport(this.el)
-    });
+    if (!this.mounted) {
+      return;
+    }
+
+    const visible = isInViewport(this.el);
+
+    if (visible !== this.state.visible) {
+      this.setState({
+        visible: isInViewport(this.el)
+      });
+    }
   });
 
   render () {
-    const {children} = this.props;
+    const {children, refInner, ...rest} = this.props;
 
-    return h('div', {},
+    Object.assign(rest, {
+      ref: this.ref
+    });
+
+    return h('div', rest,
       typeof children === 'function' ? children(this.state) : children
     );
   }
