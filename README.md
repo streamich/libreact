@@ -1,10 +1,10 @@
 # libreact
 
-React standard library.
+React standard library, must-have toolbox for any React project.
 
-  - Collection of React goodies necessary for every project.
+  - Collection of React sensors, FaCCs, HOCs, context, lazy loading, and [other goodies](#contents).
   - Isomorphic - all components work in browser and Node.js (and some in `react-native`).
-  - [See demos and docs](https://mailonline.github.io/mol-fe-react/).
+  - [See demos and docs](https://mailonline.github.io/libreact/).
 
 ## Installation
 
@@ -22,7 +22,7 @@ import {mock} from 'libreact/lib/mock';
 const MyComponent = mock();
 ```
 
-## Reference
+## Contents
 
   - Dummies
      - [`mock()`](./docs/mock.md)

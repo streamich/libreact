@@ -56,7 +56,7 @@ export type TRouteMatcher = (route: string) => TRouteMatchResult;
 export interface IRouteMatch {
   children?: React.ReactElement<any> | ((params) => React.ReactElement<any>);
   cnt?: number;
-  comp?: React.ComponentClass<{}> | React.StatelessComponent<{}>;
+  comp?: React.ComponentClass<any> | React.StatelessComponent<any>;
   exact?: boolean;
   match?: TRouteMatcher | RegExp | string;
   ns?: string;

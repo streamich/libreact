@@ -1,12 +1,12 @@
 # Route
 
-Routing components allow you to create implement single page app routing functionality.
+Routing components that allow you to implement single page app routing functionality.
 
-  - Provides *dynamic* routing, [just like `react-router`](https://reacttraining.com/react-router/core/guides/philosophy/dynamic-routing)
-  - Use any state container
-  - Multiple routers on one page
+  - Provide *dynamic* routing, [just like `react-router`](https://reacttraining.com/react-router/core/guides/philosophy/dynamic-routing)
+  - Use [any state container](#use-any-state-container)
+  - [Multiple routers](#multiple-routers) on one page
 
-Contents:
+Reference:
 
   - [`<Router>`](#router)
   - [`<Route>`](#route)
@@ -17,16 +17,17 @@ Contents:
 ## Use any state container
 
 With libreact's `<Router>` you can choose to store the current route in your state continer (like Redux or MobX) of
-choice, or not bother about it at all, in which case the `<Router>` will just use the current browser location out-of-the box.
+choice, or not bother about it at all, in which case the `<Router>` will just use the current browser location out-of-the-box.
 
-The "problem-of-routers" is that they all want to be the ones that keep the state of the route. For example, [`react-router`](https://reacttraining.com/react-router/) uses
+The "problem-of-all-routers" is that they all want to keep the state of the route. For example, [`react-router`](https://reacttraining.com/react-router/) uses
 its internal history objects to store route information, and [it does not give you good access to that data structure](http://formidable.com/blog/2016/07/11/let-the-url-do-the-talking-part-1-the-pain-of-react-router-in-redux/).
 
 So, if you wanted to store the state of the route in Redux, there was no good way for you to do that using `react-router`, that is why
 [`redux-little-router`](https://github.com/FormidableLabs/redux-little-router) was born, however, `redux-little-router` itself hoards the
 state of the route in Redux, so you cannot use it if you use any other state container, say MobX.
 
-Libreact is completely orthogonal to where you store the current route, all you have to do is provide the current route to the `<Router>` component:
+Libreact is completely orthogonal to where you store the *current route*, all you have to do is provide the current route to the `<Router>`
+coponent using the `route` prop.
 
 ```jsx
 <Router route={currentRoute}>
@@ -34,7 +35,7 @@ Libreact is completely orthogonal to where you store the current route, all you 
 </Router>
 ```
 
-You can story in Redux or MobX, or really anywhere you want. And if you don't want to bother, don't! Just use the current location of the browser:
+You can store it in Redux or MobX, or really anywhere you want. And if you don't want to bother, don't! Just use the current location of the browser:
 
 ```jsx
 <LocationSensor>{({pathname}) =>
@@ -44,7 +45,7 @@ You can story in Redux or MobX, or really anywhere you want. And if you don't wa
 }</LocationSensor>
 ```
 
-Actually, you don't even have to do that, if you don't explicitly specify the `route` prop, the `<Router>` component will do exactly that for you under the hood,
+Actually, you don't even have to do that, if you don't explicitly specify the `route` prop, the `<Router>` component will do exactly that for you under-the-hood,
 so, simply use:
 
 ```jsx
@@ -54,13 +55,25 @@ so, simply use:
 ```
 
 
-## `<Router>`
+## Multiple routers
+
+You can have many routers operating on the same page in parallel. All you have to do is specify a *namespace* using the `ns` props.
+
+```jsx
+<Router ns='secret'>
+  <Route ns='secret' />
+</Router>
+```
+
+## Reference
+
+### `<Router>`
 
 `Router` is a root component that provides routing to your application. I should be placed above all other components
 that use routing. It uses React's context [`Provider`](./context.md#provider) component to provide route information to
 its children.
 
-### Props
+#### Props
 
   - `route` - optional, string, route to use for routing. If not specified, `<Router>` will use
   [`<LocationSensor>`](./LocationSensor.md) internally to track any changes to `window.location`.
@@ -71,13 +84,13 @@ Unlike other routing libraries `<Router>` component lets you specify the current
 this way you can use Redux or MobX, or any other state container library to store your route, if you want to.
 
 
-## `<Route>`
+### `<Route>`
 
 `Route` tries to match a fragment in a route. If it does match, the contents of the route is rendered. The contents of the route
 can be either regular JSX children or a FaCC or a React component specified in the `comp` prop.
 
 
-### Props
+#### Props
 
   - `match`, optional, matching condition, defaults to `/.+/`, see discussion below.
 
