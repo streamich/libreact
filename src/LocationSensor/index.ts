@@ -100,7 +100,7 @@ export class LocationSensor extends Component<ILocationSensorProps, ILocationSen
       port,
       protocol,
       search
-    } = location;
+    } = window.location;
 
     return {
       trigger,
