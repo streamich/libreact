@@ -5,7 +5,7 @@
 Simply render it in your React app
 
 ```jsx
-import CssResetShaunInman from 'mol-fe-react/lib/reset/CssResetShaunInman';
+import CssResetShaunInman from 'libreact/lib/reset/CssResetShaunInman';
 
 <CssResetShaunInman />
 ```

@@ -9,7 +9,7 @@ None.
 # Example
 
 ```jsx
-import {BatterySensor} from 'mol-fe-react/lib/BatterySensor';
+import {BatterySensor} from 'libreact/lib/BatterySensor';
 
 <BatterySensor>{(battery) =>
   JSON.stringify(battery, null, 4)

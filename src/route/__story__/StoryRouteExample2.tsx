@@ -59,7 +59,7 @@ const Topics = (props) => {
       </ul>
 
       <Route  comp={Topic}/>
-      <Route exact path={match.url} render={() => (
+      <Route exact match={match} children={() => (
         <h3>Please select a topic.</h3>
       )}/>
     </div>

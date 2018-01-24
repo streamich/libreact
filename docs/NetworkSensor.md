@@ -26,7 +26,7 @@ None.
 ### Example
 
 ```jsx
-import {NetworkSensor} from 'mol-fe-react/lib/NetworkSensor';
+import {NetworkSensor} from 'libreact/lib/NetworkSensor';
 
 <NetworkSensor>{(state) =>
   JSON.strinfigy(state, null 4)
@@ -59,7 +59,7 @@ HOC that merges `<NetworkSensor>` state into props of the enhanced component.
 ### Example
 
 ```jsx
-import {withNetwork} from 'mol-fe-react/lib/NetworkSensro';
+import {withNetwork} from 'libreact/lib/NetworkSensro';
 
 const NetworkStatusFormatter = (props) =>
   <pre style={{fontFamily: 'monospace'}}>

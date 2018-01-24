@@ -5,7 +5,7 @@
 Simply render it in your React app
 
 ```jsx
-import CssResetPoorMan from 'mol-fe-react/lib/reset/CssResetPoorMan';
+import CssResetPoorMan from 'libreact/lib/reset/CssResetPoorMan';
 
 <CssResetPoorMan />
 ```

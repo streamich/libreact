@@ -9,7 +9,7 @@ Read out loud provided text.
 # Example
 
 ```jsx
-import {Speak} from 'mol-fe-react/lib/Speak';
+import {Speak} from 'libreact/lib/Speak';
 
 <Speak text="Hello world!"/>
 ```

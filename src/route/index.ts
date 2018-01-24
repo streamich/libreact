@@ -26,7 +26,7 @@ export class Router extends Component<IRouteProviderProps, any> {
       value: {
         route,
         onMatch: this.onMatch,
-        getMathces: () => this.matches,
+        getMatches: () => this.matches,
         parent: this.props.parent
       }
     }, Array.isArray(children) ? h('div', null, children) : children);
@@ -110,10 +110,10 @@ export class Route extends Component<IRouteMatch, any> {
   }
 
   render () {
-    return h(Consumer, {name: ns(`route/${this.props.ns}`)}, ({route, onMatch, getMathces, parent}) => {
+    return h(Consumer, {name: ns(`route/${this.props.ns}`)}, ({route, onMatch, getMatches, parent}) => {
       const {children, match, preserve} = this.props;
 
-      if (getMathces() <= this.props.cnt) {
+      if (getMatches() <= this.props.cnt) {
         const matchResult = this.matcher()(route);
 
         if (matchResult) {

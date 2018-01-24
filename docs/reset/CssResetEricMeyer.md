@@ -7,7 +7,7 @@ Eric Meyer's CSS reset.
 Simply render it in your React app
 
 ```jsx
-import CssResetEricMeyer from 'mol-fe-react/lib/reset/CssResetEricMeyer';
+import CssResetEricMeyer from 'libreact/lib/reset/CssResetEricMeyer';
 
 <CssResetEricMeyer />
 ```

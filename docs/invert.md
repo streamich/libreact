@@ -6,7 +6,7 @@ create stateless DOM compnents with reference to a DOM element and invertd contr
 ## Usage
 
 ```jsx
-import {invert} from 'mol-fe-react/lib/invert';
+import {invert} from 'libreact/lib/invert';
 
 const Div = invert('div');
 const Audio = invert('audio');
@@ -51,7 +51,7 @@ The created react component instance has `.el` property which is a reference to 
 ## Example
 
 ```jsx
-import {invert} from 'mol-fe-react/lib/invert';
+import {invert} from 'libreact/lib/invert';
 
 const Audio = invert('audio');
 

@@ -1,8 +1,10 @@
 # libreact
 
+[![][npm-badge]][npm-url] [![][travis-badge]][travis-url]
+
 React standard library, must-have toolbox for any React project.
 
-  - Collection of React sensors, FaCCs, HOCs, context, lazy loading, and [other goodies](#contents).
+  - Collection of React sensors, FaCCs, HOCs, context providers, dummies, and [other goodies](#contents).
   - Isomorphic - all components work in browser and Node.js (and some in `react-native`).
   - [See demos and docs](https://mailonline.github.io/libreact/).
 
@@ -69,3 +71,14 @@ const MyComponent = mock();
      - [`<CssResetYahoo>`](./docs/reset/CssResetYahoo.md)
   - Other
      - [`<Resolve>`](./docs/Resolve.md)
+
+
+## License
+
+[Unlicense](./LICENSE) - public domain.
+
+
+[npm-url]: https://www.npmjs.com/package/libreact
+[npm-badge]: https://img.shields.io/npm/v/libreact.svg
+[travis-url]: https://travis-ci.org/MailOnline/libreact
+[travis-badge]: https://travis-ci.org/MailOnline/libreact.svg?branch=master

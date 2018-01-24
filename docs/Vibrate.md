@@ -12,7 +12,7 @@ device vibrations.
 ## Example
 
 ```jsx
-import {Vibrate} from 'mol-fe-react/lib/Vibrate';
+import {Vibrate} from 'libreact/lib/Vibrate';
 
 <Vibrate ms={200} />
 <Vibrate ms={[100, 100, 100, 100, 100]} />

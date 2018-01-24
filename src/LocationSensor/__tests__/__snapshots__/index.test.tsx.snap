@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LocationSensor> re-renders on popstate 1`] = `
+Object {
+  "hash": "",
+  "host": "example.com",
+  "hostname": "example.com",
+  "href": "https://example.com/foobar",
+  "length": 1,
+  "origin": "https://example.com",
+  "pathname": "/foobar",
+  "port": "",
+  "protocol": "https:",
+  "search": "",
+  "state": null,
+  "trigger": "popstate",
+}
+`;
+
+exports[`<LocationSensor> re-renders on pushstate 1`] = `
+Object {
+  "hash": "",
+  "host": "example.com",
+  "hostname": "example.com",
+  "href": "https://example.com/foobar",
+  "length": 1,
+  "origin": "https://example.com",
+  "pathname": "/foobar",
+  "port": "",
+  "protocol": "https:",
+  "search": "",
+  "state": null,
+  "trigger": "pushstate",
+}
+`;
+
+exports[`<LocationSensor> re-renders on replacestate 1`] = `
+Object {
+  "hash": "",
+  "host": "example.com",
+  "hostname": "example.com",
+  "href": "https://example.com/foobar",
+  "length": 1,
+  "origin": "https://example.com",
+  "pathname": "/foobar",
+  "port": "",
+  "protocol": "https:",
+  "search": "",
+  "state": null,
+  "trigger": "replacestate",
+}
+`;
+
+exports[`<LocationSensor> returns expected default state 1`] = `
+Object {
+  "hash": "",
+  "host": "example.com",
+  "hostname": "example.com",
+  "href": "https://example.com/",
+  "length": 1,
+  "origin": "https://example.com",
+  "pathname": "/",
+  "port": "",
+  "protocol": "https:",
+  "search": "",
+  "state": null,
+  "trigger": "load",
+}
+`;

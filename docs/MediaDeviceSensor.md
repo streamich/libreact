@@ -6,7 +6,7 @@ user's connected media devices.
 ## Usage
 
 ```jsx
-import {MediaDevicesSensor} from 'mol-fe-react/lib/MediaDevicesSensor';
+import {MediaDevicesSensor} from 'libreact/lib/MediaDevicesSensor';
 
 <MediaDevicesSensor>{(state) =>
   JSON.stringify(state, null, 4)

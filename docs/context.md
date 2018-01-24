@@ -6,7 +6,7 @@ components when *provider* changes value.
 ## Example
 
 ```jsx
-import {Provider, Context} from 'mol-fe-react/lib/context';
+import {Provider, Context} from 'libreact/lib/context';
 
 <Provider name="theme" value={{color: 'red'}}>
   <Consumer name="theme">{(theme) => {
