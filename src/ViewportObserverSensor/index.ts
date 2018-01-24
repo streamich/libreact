@@ -38,22 +38,32 @@ export class ViewportObserverSensor extends Component<IViewportObserverSensorPro
     const {margin, threshold} = this.props;
 
     this.mounted = true;
+
     this.observer = new IntersectionObserver(this.onObserve, {
-      rootMargin: margin.map((val) => val + 'px').join(','),
+      rootMargin: margin.map((val) => val + 'px').join(' '),
       threshold
     });
     this.observer.observe(this.el);
+    console.log('MOUNTED');
   }
 
   componentWillUnmount () {
     this.mounted = false;
+
     this.observer.unobserve(this.el);
   }
 
-  onObserve = (entries) => {
+  onObserve = (entries: IntersectionObserverEntry[]) => {
     const entry = entries[0];
+    const {intersectionRatio} = entry;
+    const {threshold, onChange = noop} = this.props;
 
-    console.log('entry', entry);
+    const state = {
+      visible: !!((!threshold && intersectionRatio) || (intersectionRatio >= threshold))
+    };
+
+    this.setState(state);
+    onChange(state);
   };
 
   render () {
