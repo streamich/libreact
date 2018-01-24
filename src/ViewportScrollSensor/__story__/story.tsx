@@ -8,8 +8,7 @@ import StoryViewportSensorBasic from '../../ViewportObserverSensor/__story__/Sto
 import StoryViewportSensorHorizontal from '../../ViewportObserverSensor/__story__/StoryViewportSensorHorizontal';
 import StoryViewportSensorConf from '../../ViewportObserverSensor/__story__/StoryViewportSensorConf';
 
-storiesOf('Sensors/ViewportScrollSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'ViewportScrollSensor'}))
+storiesOf('Sensors/ViewportSensor/ViewportScrollSensor', module)
   .add('Basic example', () =>
     <StoryViewportSensorBasic sensor={ViewportScrollSensor} onChange={action('onChange')} />)
   .add('Horizontal', () =>

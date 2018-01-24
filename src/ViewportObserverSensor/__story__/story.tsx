@@ -8,8 +8,7 @@ import StoryViewportSensorBasic from './StoryViewportSensorBasic';
 import StoryViewportSensorHorizontal from './StoryViewportSensorHorizontal';
 import StoryViewportSensorConf from './StoryViewportSensorConf';
 
-storiesOf('Sensors/ViewportObserverSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'ViewportObserverSensor'}))
+storiesOf('Sensors/ViewportSensor/ViewportObserverSensor', module)
   .add('Basic example', () =>
     <StoryViewportSensorBasic sensor={ViewportObserverSensor} onChange={action('onChange')} />)
   .add('Horizontal', () =>

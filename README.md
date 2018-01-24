@@ -43,7 +43,7 @@ const MyComponent = mock();
      - [`<LocationSensor>`](./docs/LocationSensor.md)
      - [`<ScrollSensor>`](./docs/ScrollSensor.md)
      - [`<SizeSensor>`](./docs/SizeSensor.md)
-     - `<ViewportSensor>`
+     - [`<ViewportSensor>`](./docs/ViewportSensor.md), `<ViewportScrollSensor>`, and `<ViewportObserverSensor>`
      - [`<WidthSensor>`](./docs/WidthSensor.md)
      - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md)
      - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md)
