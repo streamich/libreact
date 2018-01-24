@@ -6,7 +6,7 @@ import {ViewportObserverSensor} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 import StoryViewportSensorBasic from './StoryViewportSensorBasic';
 import StoryViewportSensorHorizontal from './StoryViewportSensorHorizontal';
-import StoryViewportSensorThreshold from './StoryViewportSensorThreshold';
+import StoryViewportSensorConf from './StoryViewportSensorConf';
 
 storiesOf('Sensors/ViewportObserverSensor', module)
   .add('Documentation', () => h(ShowDocs, {name: 'ViewportObserverSensor'}))
@@ -15,10 +15,12 @@ storiesOf('Sensors/ViewportObserverSensor', module)
   .add('Horizontal', () =>
     <StoryViewportSensorHorizontal sensor={ViewportObserverSensor} onChange={action('onChange')} />)
   .add('Threshold 0%', () =>
-    <StoryViewportSensorThreshold threshold={0} sensor={ViewportObserverSensor} onChange={action('onChange')} />)
+    <StoryViewportSensorConf threshold={0} sensor={ViewportObserverSensor} onChange={action('onChange')} />)
   .add('Threshold 25%', () =>
-    <StoryViewportSensorThreshold threshold={0.25} sensor={ViewportObserverSensor} onChange={action('onChange')} />)
+    <StoryViewportSensorConf threshold={0.25} sensor={ViewportObserverSensor} onChange={action('onChange')} />)
   .add('Threshold 75%', () =>
-    <StoryViewportSensorThreshold threshold={0.75} sensor={ViewportObserverSensor} onChange={action('onChange')} />)
+    <StoryViewportSensorConf threshold={0.75} sensor={ViewportObserverSensor} onChange={action('onChange')} />)
   .add('Threshold 100%', () =>
-    <StoryViewportSensorThreshold threshold={1} sensor={ViewportObserverSensor} onChange={action('onChange')} />);
+    <StoryViewportSensorConf threshold={1} sensor={ViewportObserverSensor} onChange={action('onChange')} />)
+  .add('Threshold 100%, margin 100px', () =>
+    <StoryViewportSensorConf threshold={1} margin={[100, 100, 100, -100]} sensor={ViewportObserverSensor} onChange={action('onChange')} />);

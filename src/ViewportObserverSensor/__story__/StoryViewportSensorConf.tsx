@@ -1,6 +1,6 @@
 import {h} from '../../util';
 
-const StoryViewportSensorThreshold = ({sensor: Sensor, onChange, threshold}) => {
+const StoryViewportSensorConf = ({sensor: Sensor, onChange, threshold, margin=[0, 0, 0, 0]}) => {
   return (
     <div>
       <div style={{
@@ -9,7 +9,11 @@ const StoryViewportSensorThreshold = ({sensor: Sensor, onChange, threshold}) => 
         border: '1px solid tomato'
       }} />
 
-      <Sensor threshold={threshold} onChange={onChange}>{(state) =>
+      <Sensor
+        threshold={threshold}
+        margin={margin}
+        onChange={onChange}
+      >{(state) =>
         <div style={{
           width: 300,
           height: 300,
@@ -30,4 +34,4 @@ const StoryViewportSensorThreshold = ({sensor: Sensor, onChange, threshold}) => 
   );
 };
 
-export default StoryViewportSensorThreshold;
+export default StoryViewportSensorConf;
