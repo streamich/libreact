@@ -32,26 +32,43 @@ const About = () => (
   </div>
 );
 
-const Topics = ({ match }) => (
-  <div>
-    <h2>Topics</h2>
-    <ul>
-      <li>
-          Rendering with React
-      </li>
-      <li>
-          Components
-      </li>
-      <li>
-          Props v. State
-      </li>
-    </ul>
-  </div>
-);
+const Topics = (props) => {
+  const {match} = props;
 
-const Topic = ({ match }) => (
+  console.log('PROPS', props);
+
+  return (
+    <div>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <Link to={`${match}/rendering`}>
+            Rendering with React
+          </Link>
+        </li>
+        <li>
+          <Link to={`${match}/components`}>
+            Components
+          </Link>
+        </li>
+        <li>
+          <Link to={`${match}/props-v-state`}>
+            Props v. State
+          </Link>
+        </li>
+      </ul>
+
+      <Route  comp={Topic}/>
+      <Route exact path={match.url} render={() => (
+        <h3>Please select a topic.</h3>
+      )}/>
+    </div>
+  );
+};
+
+const Topic = ({match}) => (
   <div>
-    <h3>{match.params.topicId}</h3>
+    <h3>{match}</h3>
   </div>
 );
 

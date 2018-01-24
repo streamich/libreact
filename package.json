@@ -1,16 +1,18 @@
 {
-  "name": "@mol-fe/mol-fe-react",
-  "version": "1.5.0",
-  "description": "MOL React.js utilities",
+  "name": "libreact",
+  "version": "0.0.1",
+  "description": "React standard library",
   "main": "lib/index.js",
   "keywords": [
     "react",
+    "stdlib",
+    "libreact",
     "utilities",
     "MailOnline"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/MailOnline/mol-fe-react.git"
+    "url": "https://github.com/MailOnline/libreact.git"
   },
   "dependencies": {
     "react": "15",
@@ -66,7 +68,6 @@
     "test:client": "jest",
     "test:client:coverage": "jest --coverage",
     "test:watch": "jest --watch",
-    "pub": "npm publish --registry http://sinopia.devhsk.mol.dmgt.net:4873",
     "storybook": "start-storybook -p 6007",
     "build-storybook": "build-storybook",
     "start": "npm run storybook"

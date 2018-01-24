@@ -99,9 +99,19 @@ export class Route extends Component<IRouteMatch, any> {
     };
   }
 
+  renderChildren (props) {
+    const {comp, children} = this.props;
+
+    return comp ?
+      h(comp, props) :
+      typeof children === 'function' ?
+        children(props) :
+        children;
+  }
+
   render () {
     return h(Consumer, {name: ns(`route/${this.props.ns}`)}, ({route, onMatch, getMathces, parent}) => {
-      const {children, match} = this.props;
+      const {children, match, preserve} = this.props;
 
       if (getMathces() <= this.props.cnt) {
         const matchResult = this.matcher()(route);
@@ -113,14 +123,19 @@ export class Route extends Component<IRouteMatch, any> {
           // Notify <RouteProvider> that we matched.
           onMatch(this, matchResult);
 
-          if (!this.props.preserve && length) {
-            route = route.substr(length);
+          let newRoute = route;
+
+          if (!preserve && length) {
+            newRoute = newRoute.substr(length);
           }
 
-          return h(Router, {route, parent: matchResult},
-            this.props.comp ?
-              h(this.props.comp) :
-              typeof children === 'function' ? children({matches, route, parent}) : children
+          return h(Router, {route: newRoute, parent: matchResult},
+            this.renderChildren({
+              match: route.substr(0, length),
+              matches,
+              route: newRoute,
+              parent
+            })
           );
         }
       }
@@ -130,14 +145,4 @@ export class Route extends Component<IRouteMatch, any> {
   }
 }
 
-export interface IGoParams {
-  replace?: boolean;
-  title?: string;
-  state?: any;
-}
-
-export type TGo = (url: string, params: IGoParams) => void;
-
-export const go = (url, {replace, title = '', state}: IGoParams = {}) => {
-  history[replace ? 'replaceState' : 'pushState'](state, title || '', url);
-};
+export * from './go';
