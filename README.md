@@ -49,6 +49,7 @@ const MyComponent = mock();
      - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md)
      - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md)
   - Generators
+     - [`Alert`](./docs/Alert.md)
      - [`<Audio>`](./docs/Audio.md)
      - [`<LocalStorage>`](./docs/LocalStorage.md)
      - `<Redirect>`
