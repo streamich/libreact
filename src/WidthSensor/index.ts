@@ -1,5 +1,5 @@
 import {Component, createElement as h} from 'react';
-import SizeSensor, {ISizeSensorProps, ISizeSensorState} from '../SizeSensor';
+import {SizeSensor, ISizeSensorProps, ISizeSensorState} from '../SizeSensor';
 import {noop} from '../util';
 
 export interface IWidthSensorProps extends ISizeSensorProps {

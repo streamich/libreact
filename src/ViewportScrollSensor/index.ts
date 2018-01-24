@@ -14,8 +14,10 @@ export const isInViewport = (el) => {
 }
 
 export interface IViewportScrollSensorProps {
+  tagName?: string;
   throttle?: number;
   refInner?: (el: HTMLElement) => void;
+  onChange?: (state: IViewportScrollSensorState) => void;
 }
 
 export interface IViewportScrollSensorState {
@@ -24,6 +26,7 @@ export interface IViewportScrollSensorState {
 
 export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, IViewportScrollSensorState> {
   static defaultProps = {
+    tagName: 'div',
     throttle: 150
   };
 
@@ -42,6 +45,7 @@ export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, 
   componentDidMount () {
     this.mounted = true;
     on(document, 'scroll', this.onScroll);
+    this.onScroll();
   }
 
   componentWillUnmount () {
@@ -57,20 +61,23 @@ export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, 
     const visible = isInViewport(this.el);
 
     if (visible !== this.state.visible) {
-      this.setState({
-        visible: isInViewport(this.el)
-      });
+      const state = {
+        visible
+      };
+
+      this.setState(state);
+      (this.props.onChange || noop)(state);
     }
   });
 
   render () {
-    const {children, refInner, ...rest} = this.props;
+    const {children, onChange, refInner, tagName, ...rest} = this.props;
 
     Object.assign(rest, {
       ref: this.ref
     });
 
-    return h('div', rest,
+    return h(tagName, rest,
       typeof children === 'function' ? children(this.state) : children
     );
   }
