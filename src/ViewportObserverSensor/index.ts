@@ -2,12 +2,8 @@ import {Component, cloneElement} from 'react';
 import {h, on, off, noop} from '../util';
 
 export interface IViewportObserverSensorProps {
-  check?: (el: HTMLElement) => boolean;
   margin?: [number, number, number, number];
-  tagName?: string;
   threshold?: number;
-  throttle?: number;
-  refInner?: (el: HTMLElement) => void;
   onChange?: (state: IViewportObserverSensorState) => void;
 }
 
@@ -44,7 +40,6 @@ export class ViewportObserverSensor extends Component<IViewportObserverSensorPro
       threshold
     });
     this.observer.observe(this.el);
-    console.log('MOUNTED');
   }
 
   componentWillUnmount () {
