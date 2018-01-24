@@ -6,7 +6,7 @@ import {ViewportScrollSensor} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('Sensors/ViewportScrollSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'SizeSensor'}))
+  .add('Documentation', () => h(ShowDocs, {name: 'ViewportScrollSensor'}))
   .add('Example', () =>
     <div>
       <div style={{
@@ -15,7 +15,7 @@ storiesOf('Sensors/ViewportScrollSensor', module)
         border: '1px solid tomato'
       }} />
 
-      <ViewportScrollSensor>{(state) =>
+      <ViewportScrollSensor onChange={action('onChange')}>{(state) =>
         <pre>{JSON.stringify(state, null, 4)}</pre>
       }</ViewportScrollSensor>
 

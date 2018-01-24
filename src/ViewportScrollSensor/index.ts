@@ -1,8 +1,8 @@
-import {Component} from 'react';
+import {Component, cloneElement} from 'react';
 import {h, on, off, noop} from '../util';
 import * as throttle from 'throttle-debounce/throttle';
 
-export const isInViewport = (el) => {
+export const isInViewport = (el: HTMLElement) => {
   const {top, left, bottom, right} = el.getBoundingClientRect();
 
   return (
@@ -14,6 +14,7 @@ export const isInViewport = (el) => {
 }
 
 export interface IViewportScrollSensorProps {
+  check?: (el: HTMLElement) => boolean;
   tagName?: string;
   throttle?: number;
   refInner?: (el: HTMLElement) => void;
@@ -26,7 +27,7 @@ export interface IViewportScrollSensorState {
 
 export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, IViewportScrollSensorState> {
   static defaultProps = {
-    tagName: 'div',
+    check: isInViewport,
     throttle: 150
   };
 
@@ -37,9 +38,9 @@ export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, 
     visible: false
   };
 
-  ref = (el) => {
+  ref = (originalRef) => (el) => {
     this.el = el;
-    (this.props.refInner || noop)(el);
+    (originalRef || noop)(el);
   };
 
   componentDidMount () {
@@ -58,7 +59,7 @@ export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, 
       return;
     }
 
-    const visible = isInViewport(this.el);
+    const visible = this.props.check(this.el);
 
     if (visible !== this.state.visible) {
       const state = {
@@ -71,14 +72,20 @@ export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, 
   });
 
   render () {
-    const {children, onChange, refInner, tagName, ...rest} = this.props;
+    const {children} = this.props;
+    const element = typeof children === 'function' ? children(this.state) : children;
 
-    Object.assign(rest, {
-      ref: this.ref
+    if (process.env.NODE_ENV !== 'production') {
+      if ((typeof element !== 'object') || (typeof element.type !== 'string')) {
+        throw new TypeError(
+          '<ViewportScrollSensor> accepts a single child which must be ' +
+          'a plain DOM element or a function that returns one.'
+        );
+      }
+    }
+
+    return cloneElement(element, {
+      ref: this.ref(element.ref)
     });
-
-    return h(tagName, rest,
-      typeof children === 'function' ? children(this.state) : children
-    );
   }
 }
