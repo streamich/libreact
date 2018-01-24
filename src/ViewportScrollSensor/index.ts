@@ -15,7 +15,9 @@ export const isInViewport = (el: HTMLElement) => {
 
 export interface IViewportScrollSensorProps {
   check?: (el: HTMLElement) => boolean;
+  margin?: [number, number, number, number];
   tagName?: string;
+  threshold?: number;
   throttle?: number;
   refInner?: (el: HTMLElement) => void;
   onChange?: (state: IViewportScrollSensorState) => void;
@@ -28,7 +30,9 @@ export interface IViewportScrollSensorState {
 export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, IViewportScrollSensorState> {
   static defaultProps = {
     check: isInViewport,
-    throttle: 150
+    threshold: 0,
+    throttle: 150,
+    margin: [0, 0, 0, 0]
   };
 
   mounted: boolean = false;
@@ -47,6 +51,13 @@ export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, 
     this.mounted = true;
     on(document, 'scroll', this.onScroll);
     this.onScroll();
+
+    var observer = new IntersectionObserver((entries, observer) => {
+      console.log('CB', entries, observer);
+    }, {
+      threshold: 1
+    });
+    observer.observe(this.el);
   }
 
   componentWillUnmount () {
