@@ -5,7 +5,7 @@
 Simply render it in your React app
 
 ```jsx
-import CssResetUniversal from 'mol-fe-react/lib/reset/CssResetUniversal';
+import CssResetUniversal from 'libreact/lib/reset/CssResetUniversal';
 
 <CssResetUniversal />
 ```

@@ -7,7 +7,7 @@ FaCC that works similar to [`SizeSensor`](./SizeSensor.md) but re-renders only o
 Use it as FaCC
 
 ```jsx
-import {WidthSensor} from 'mol-fe-react';
+import {WidthSensor} from 'libreact/lib/WidthSensor';
 
 <WidthSensor>{({width, height}) =>
   `WIDTH: ${width}, HEIGHT: ${height}`
@@ -17,7 +17,7 @@ import {WidthSensor} from 'mol-fe-react';
 Or use `onWidth` prop
 
 ```jsx
-import {WidthSensor} from 'mol-fe-react';
+import {WidthSensor} from 'libreact/lib/WidthSensor';
 
 <SizeSensor onWidth={({width, height}) => console.log(width, height)}>
   Resize me!

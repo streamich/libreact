@@ -5,7 +5,7 @@ Uses [context](./context.md) components to provide theme object deep down React 
 ## Example
 
 ```jsx
-import {Theme, Themed} from 'mol-fe-react/lib/theme';
+import {Theme, Themed} from 'libreact/lib/theme';
 
 const theme = {
   color: 'white',

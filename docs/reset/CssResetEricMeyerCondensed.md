@@ -5,7 +5,7 @@
 Simply render it in your React app
 
 ```jsx
-import CssResetEricMeyerCondensed from 'mol-fe-react/lib/reset/CssResetEricMeyerCondensed';
+import CssResetEricMeyerCondensed from 'libreact/lib/reset/CssResetEricMeyerCondensed';
 
 <CssResetEricMeyerCondensed />
 ```

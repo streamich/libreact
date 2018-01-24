@@ -5,7 +5,7 @@ FaCC that re-renders on [media query](https://developer.mozilla.org/en-US/docs/W
 ## Example
 
 ```jsx
-import {MediaSensor} from 'mol-fe-react/lib/MediaSensor';
+import {MediaSensor} from 'libreact/lib/MediaSensor';
 
 <MediaSensor query='(min-width: 480px)'>{(matches) =>
   `WIDTH IS GREATED THAN 480PX: ${matches}`

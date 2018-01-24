@@ -9,7 +9,7 @@ FaCC that re-renders on when scroll position in a DOM element changes.
 ## Example
 
 ```jsx
-import {ScrollSensor} from 'mol-fe-react/lib/ScrollSensor';
+import {ScrollSensor} from 'libreact/lib/ScrollSensor';
 
 <ScrollSensor el={element}>{({x, y}) =>
   `x: ${x}, y: ${y}`

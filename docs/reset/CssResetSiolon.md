@@ -5,7 +5,7 @@
 Simply render it in your React app
 
 ```jsx
-import CssResetSiolon from 'mol-fe-react/lib/reset/CssResetSiolon';
+import CssResetSiolon from 'libreact/lib/reset/CssResetSiolon';
 
 <CssResetSiolon />
 ```

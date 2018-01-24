@@ -5,7 +5,7 @@
 Simply render it in your React app
 
 ```jsx
-import CssResetTantek from 'mol-fe-react/lib/reset/CssResetTantek';
+import CssResetTantek from 'libreact/lib/reset/CssResetTantek';
 
 <CssResetTantek />
 ```

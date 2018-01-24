@@ -5,7 +5,7 @@
 Simply render it in your React app
 
 ```jsx
-import CssResetMinimalistic from 'mol-fe-react/lib/reset/CssResetMinimalistic';
+import CssResetMinimalistic from 'libreact/lib/reset/CssResetMinimalistic';
 
 <CssResetMinimalistic />
 ```

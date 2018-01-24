@@ -7,7 +7,7 @@ FaCC that tracks width and height of its children.
 Use it as FaCC
 
 ```jsx
-import {SizeSensor} from 'mol-fe-react';
+import {SizeSensor} from 'libreact/lib/SizeSensor';
 
 <SizeSensor>{({width, height}) =>
   `WIDTH: ${width}, HEIGHT: ${height}`
@@ -17,7 +17,7 @@ import {SizeSensor} from 'mol-fe-react';
 Or use `onSize` prop
 
 ```jsx
-import {SizeSensor} from 'mol-fe-react';
+import {SizeSensor} from 'libreact/lib/SizeSensor';
 
 <SizeSensor onSize={({width, height}) => console.log(width, height)}>
   Resize me!

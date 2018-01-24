@@ -5,7 +5,7 @@ Uses [`Window.localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Wi
 ## Usage
 
 ```jsx
-import {LocalStorage} from 'mol-fe-react/lib/LocalStorage';
+import {LocalStorage} from 'libreact/lib/LocalStorage';
 
 <LocalStorage name='foo' data='bar' />
 <LocalStorage name='foo2' data='baz' persist />

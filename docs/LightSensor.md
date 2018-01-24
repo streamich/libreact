@@ -6,7 +6,7 @@ to privide lightning data.
 ## Usage
 
 ```jsx
-import {LightSensor} from 'mol-fe-react/lib/LightSensor';
+import {LightSensor} from 'libreact/lib/LightSensor';
 
 <LightSensor>{(light) =>
   JSON.stringify(light, null, 4)

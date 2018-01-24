@@ -5,7 +5,7 @@
 Simply render it in your React app
 
 ```jsx
-import CssResetYahoo from 'mol-fe-react/lib/reset/CssResetYahoo';
+import CssResetYahoo from 'libreact/lib/reset/CssResetYahoo';
 
 <CssResetYahoo />
 ```
