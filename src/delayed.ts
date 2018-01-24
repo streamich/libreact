@@ -30,19 +30,19 @@ export const delayed: TDelayed = <TProps>(params: IDelayedParams<TProps>) => {
   if (delay) {
     const loader = params.loader;
 
-    params.loader = () => wait(loader, delay) as Promise<TComponent<any>>;
+    params.loader = () => wait(loader, delay) as Promise<React.ComponentClass<any> | React.StatelessComponent<any>>;
   }
 
   if (idle) {
     const loader = params.loader;
 
-    params.loader = () => PRIC(loader) as Promise<TComponent<any>>;
+    params.loader = () => PRIC(loader) as Promise<React.ComponentClass<any> | React.StatelessComponent<any>>;
   }
 
   if (draf) {
     const loader = params.loader;
 
-    params.loader = () => loader().then(PRAF).then(PRAF) as Promise<TComponent<any>>;
+    params.loader = () => loader().then(PRAF).then(PRAF) as Promise<React.ComponentClass<any> | React.StatelessComponent<any>>;
   }
 
   return lazy(params);
