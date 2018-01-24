@@ -7,7 +7,11 @@ const getDisplayName = (Comp: any) => {
     case 'function':
       return Comp.displayName || Comp.name || 'Unknown';
     case 'object':
-        return `<${Comp.type.displayName || Comp.type.name || String(Comp)}>`;
+      const {type} = Comp;
+
+      return typeof type === 'function' ?
+        `<${type.displayName || type.name || String(Comp)}>` :
+        `<Unknown>`;
     default:
       return 'Unknown';
   }
