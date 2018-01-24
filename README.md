@@ -41,6 +41,7 @@ const MyComponent = mock();
      - [`<NetworkSensor>`](./docs/NetworkSensor.md) and [`withNetwork()`](./docs/NetworkSensor.md#withnetwork)
      - [`<LightSensor>`](./docs/LightSensor.md)
      - [`<LocationSensor>`](./docs/LocationSensor.md)
+     - [`<OrientationSensor>`](./docs/OrientationSensor.md) and [`withOrientation()`](./docs/OrientationSensor.md#withorientation)
      - [`<ScrollSensor>`](./docs/ScrollSensor.md)
      - [`<SizeSensor>`](./docs/SizeSensor.md)
      - [`<ViewportSensor>`](./docs/ViewportSensor.md), `<ViewportScrollSensor>`, and `<ViewportObserverSensor>`
