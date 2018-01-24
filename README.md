@@ -1,3 +1,5 @@
+![libreact logo](./docs/libreact.png)
+
 # libreact
 
 [![][npm-badge]][npm-url] [![][travis-badge]][travis-url]
