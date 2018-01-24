@@ -5,7 +5,7 @@ FaCC that re-renders on network status change. Uses `navigator.onLine` and [`Net
 
 ## `<NetworkSensor>`
 
-FaCC that passes through its state to child function
+Passes through its state to the `children` function
 
 ```ts
 interface INetworkSensorState {
@@ -28,8 +28,8 @@ None.
 ```jsx
 import {NetworkSensor} from 'mol-fe-react/lib/NetworkSensor';
 
-<NetworkSensor>{(status) =>
-  JSON.strinfigy(status, null 4)
+<NetworkSensor>{(state) =>
+  JSON.strinfigy(state, null 4)
 }</NetworkSensor>
 ```
 
@@ -52,7 +52,7 @@ Result
   - `downlink`, `downlinkMax`, `effectiveType`, `type`, `rtt` - properties as provided by [`NetworkInformation`](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation).
 
 
-## `withNetwork`
+## `withNetwork()`
 
 HOC that merges `<NetworkSensor>` state into props of the enhanced component.
 
@@ -61,9 +61,13 @@ HOC that merges `<NetworkSensor>` state into props of the enhanced component.
 ```jsx
 import {withNetwork} from 'mol-fe-react/lib/NetworkSensro';
 
-const NetworkStatus = withNetwork((props) =>
+const NetworkStatusFormatter = (props) =>
   <pre style={{fontFamily: 'monospace'}}>
     {JSON.stringify(props, null, 4)}
-  </pre>
+  </pre>;
+
+const NetworkStatus = withNetwork(NetworkStatusFormatter);
+
+<NetworkStatus />
 );
 ```

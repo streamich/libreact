@@ -8,6 +8,8 @@ Create a mock React component whose implementation can be postponed.
 Create a mock and implement it
 
 ```js
+import {mock} from 'libreact/lib/mock';
+
 const Player = mock();
 
 // Now you can already use <Player>.
@@ -28,17 +30,16 @@ const MySvg = mock({
 ## Reference
 
 ```ts
-const mock: <TProps>(params?: ImockParams) => IMockConstructor<TProps>;
+mock: (params?: IMockParams) => IMockComponent;
 
-interface ImockParams {
-  loading?: React.ReactElement<any>;
+interface IMockParams {
+  loading?: React.ReactElement;
 }
 
-interface IMockComponent<TProps> {
-  new (props: TProps, context): IMock<TProps>;
-  implement(Implementation: React.Component<TProps, any> | React.SFC<TProps>);
+interface IMockComponent {
+  implement(Implementation: React.Component | React.SFC);
 }
 ```
 
-  - `loading` - React element to show while the is not implemented.
+  - `loading` - React element to show while the mock is not implemented.
   - `.implement` - use this method to set the implementation of your mock coponent.
