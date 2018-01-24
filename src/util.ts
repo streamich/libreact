@@ -28,7 +28,7 @@ export const on = (obj, ...args) => obj.addEventListener(...args);
 
 export const off = (obj, ...args) => obj.removeEventListener(...args);
 
-export const ns = (name) => `@@${name}`;
+export const ns = (name) => `@@libreact/${name}`;
 
 const hasSymbols = typeof Symbol !== 'undefined';
 

@@ -1,13 +1,14 @@
 import {h} from '../../util';
-import {Router, Route} from '..';
+import {Router, Route, go} from '..';
+import {Link} from '../Link';
 
 const StoryRouteExample2 = () => (
   <Router>
     <div>
       <ul>
-        <li><a onClick={() => history.pushState(null, '', '/')}>Home</a></li>
-        <li><a onClick={() => history.pushState(null, '', '/about')}>About</a></li>
-        <li><a onClick={() => history.pushState(null, '', '/topics')}>Topics</a></li>
+        <li><a onClick={() => go('/')}>Home</a></li>
+        <li><Link to='/about'>About</Link></li>
+        <li><Link to='/topics'>Topics</Link></li>
       </ul>
 
       <hr/>

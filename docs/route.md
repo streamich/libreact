@@ -57,13 +57,17 @@ so, simply use:
 
 ## Multiple routers
 
-You can have many routers operating on the same page in parallel. All you have to do is specify a *namespace* using the `ns` props.
+You can have many routers operating on the same page in parallel. All you have to do is specify a *namespace* using the `ns` prop.
 
 ```jsx
 <Router ns='secret'>
   <Route ns='secret' />
 </Router>
 ```
+
+This allows you to route by basically anything, not just the current page location. You can have *app-inside-app* that has its
+own routing logic.
+
 
 ## Reference
 
@@ -137,6 +141,27 @@ interface TRouteMatchResult {
      - `length` - required, number of characters to truncate from the start of the route, for the inner routes, basically this should be
      equal to the length of the matched fragment of the path.
      - `matches` - optionsl, array of matches returned by `String.prototype.match()` function.
+
+
+### `go()`
+
+Utility function that changes the current browser location. Has the following signature:
+
+```ts
+go: (url: string, params?: IGoParams) => void;
+
+interface IGoParams {
+  replace?: boolean;
+  title?: string;
+  state?: any;
+}
+```
+
+  - `url` - required, string, URL where to navigate the browser. Usually you want to use a relative route with leading slash, like `/users`.
+  - `replace` - whether to to use [`.replaceState()`](https://developer.mozilla.org/en-US/docs/Web/API/History_API#The_replaceState()_method)
+  rather than default [`.pushState()`](https://developer.mozilla.org/en-US/docs/Web/API/History_API#The_pushState()_method) when invoking History API.
+  - `title` - title to specify in `.pushState()` or `.replaceState()` methods.
+  - `state` - any serializable JavaScript object to store with the current history state. Useful, for example, to store current scroll position.
 
 
 ## Example

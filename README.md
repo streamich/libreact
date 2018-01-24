@@ -46,6 +46,7 @@ const MyComponent = mock();
   - Generators
      - [`<Audio>`](./docs/Audio.md)
      - [`<LocalStorage>`](./docs/LocalStorage.md)
+     - `<Redirect>`
      - [`<Speak>`](./docs/Speak.md)
      - [`<Vibrate>`](./docs/Vibrate.md)
      - `<Video>`
