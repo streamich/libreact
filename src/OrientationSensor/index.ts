@@ -1,6 +1,6 @@
-import {Component, createElement as h} from 'react';
+import {Component} from 'react';
 import {SyncSensor} from '../SyncSensor';
-import {on, off, isClient} from '../util';
+import {h, on, off, isClient} from '../util';
 
 export interface IOrientationSensorProps {
   children?: (state: IOrientationSensorState) => React.ReactElement<any>;
@@ -53,3 +53,12 @@ export class OrientationSensor extends Component<IOrientationSensorProps, any> {
     });
   }
 }
+
+export const withOrientation = (Comp) =>
+  (props) =>
+    h(OrientationSensor, null, (orientation) =>
+      h(Comp, {
+        ...props,
+        orientation
+      })
+    );
