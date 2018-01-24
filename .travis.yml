@@ -1,5 +1,8 @@
 language: node_js
+os:
+  - linux
 cache:
+  yarn: true
   directories:
     - ~/.npm
 notifications:
@@ -7,8 +10,12 @@ notifications:
 node_js:
   - '9'
   - '8'
-  - '6'
-  - '4'
+script:
+  - npm run test
+  - npm run build
+matrix:
+  allow_failures: []
+  fast_finish: true
 after_success:
   - npm run semantic-release
 branches:
