@@ -34,7 +34,7 @@ export class ViewportObserverSensor extends Component<IViewportObserverSensorPro
     const {margin, threshold} = this.props;
 
     this.mounted = true;
-console.log('MAR', margin.map((val) => val + 'px').join(' '));
+
     this.observer = new IntersectionObserver(this.onObserve, {
       rootMargin: margin.map((val) => val + 'px').join(' '),
       threshold

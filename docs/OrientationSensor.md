@@ -1,6 +1,6 @@
 # `<OrientationSensor>`
 
-Tracs screen orientation using [`orientationchange` event](https://developer.mozilla.org/en-US/docs/Web/Events/orientationchange).
+Tracks screen orientation using [`orientationchange` event](https://developer.mozilla.org/en-US/docs/Web/Events/orientationchange).
 
 ## Usage
 

@@ -33,4 +33,4 @@ Or use it as a FaCC
   - `show` - boolean, optional, whether to show the prompt modal.
   - `message` - string, optional, string message to display to the user.
   - `default` - string, optional, default text to pre-fill the user's response input.
-  - `onResult` - function, optional, function that receives propt result string as a single argument.
+  - `onResult` - function, optional, function that receives prompt result string as a single argument.

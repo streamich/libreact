@@ -33,7 +33,7 @@ interface IViewportSensorProps {
 
   - `threshold` - optional, number, percentage how much does your component have to intersect with viewport
   to be considered visible. Defaults to `0`.
-  - `onChange` - optional, callback called when sensor changes it's state, receives the state of the sensor as
+  - `onChange` - optional, callback called when sensor changes its state, receives the state of the sensor as
   a single argument.
 
 ## State

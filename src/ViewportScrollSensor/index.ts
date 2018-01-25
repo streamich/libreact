@@ -39,7 +39,7 @@ const intersect: TIntersect = (rect1, rect2) => {
   return [x5, y5, x6, y6];
 };
 
-// Compute are of a NORMALIZED rectangle.
+// Compute area of a NORMALIZED rectangle.
 type TArea = (react: TRect) => number;
 const area: TArea = ([x1, y1, x2, y2]) => (x2 - x1) * (y2 - y1);
 

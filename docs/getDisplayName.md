@@ -8,4 +8,4 @@ import getDisplayName from 'libreact/lib/util/getDisplayName';
 const name = getDisplayName(MyComponent);
 ```
 
-Accepts a single argument, which can be a statefull or stateless React component, or element. Returns a string.
+Accepts a single argument, which can be a stateful or stateless React component, or element. Returns a string.
