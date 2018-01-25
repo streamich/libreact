@@ -1,6 +1,7 @@
 import {Component, cloneElement, Children} from 'react';
 import {h, noop} from '../util';
 import renderProp from '../util/renderProp';
+import parseTimeRanges from './parseTimeRanges';
 
 export type TVideoEvent = (event, IVideo?, IVideoState?) => void;
 export type TVideoRenderProp = (video: Video, state: IVideoState) => React.ReactElement<any>;
@@ -51,10 +52,11 @@ export interface IVideoProps extends React.AllHTMLAttributes<any> {
 }
 
 export interface IVideoState {
-  time?: number;
+  buffered?: any[];
   duration?: number;
   isPlaying?: boolean;
   muted?: boolean;
+  time?: number;
   volume?: number;
 }
 
@@ -82,10 +84,14 @@ export class Video extends Component<IVideoProps, IVideoState> implements IVideo
     this.setState({
       volume: this.el.volume
     });
+
+    this.event('onMount')(this);
   }
 
   componentWillUnmount () {
     this.el = null;
+
+    this.event('onUnmount')(this);
   }
 
   play = () => {
@@ -168,8 +174,11 @@ export class Video extends Component<IVideoProps, IVideoState> implements IVideo
   };
 
   onDurationChange = (event) => {
+    const {duration, buffered} = this.el;
+
     this.setState({
-      duration: this.el.duration
+      duration,
+      buffered: parseTimeRanges(buffered)
     });
 
     this.event('onDurationChange')(event);
@@ -181,6 +190,14 @@ export class Video extends Component<IVideoProps, IVideoState> implements IVideo
     });
 
     this.event('onTimeUpdate')(event);
+  };
+
+  onProgress = (event) => {
+    this.setState({
+      buffered: parseTimeRanges(this.el.buffered)
+    });
+
+    this.event('onProgress')(event);
   };
 
   render () {
@@ -205,7 +222,7 @@ export class Video extends Component<IVideoProps, IVideoState> implements IVideo
       onPause: this.onPause,
       onPlay: this.onPlay,
       onPlaying: event('onPlaying'),
-      onProgress: event('onProgress'),
+      onProgress: this.onProgress,
       onRateChange: event('onRateChange'),
       onSeeked: event('onSeeked'),
       onSeeking: event('onSeeking'),
@@ -218,6 +235,6 @@ export class Video extends Component<IVideoProps, IVideoState> implements IVideo
       noJs
     );
 
-    return renderProp(this.props, this, this.state);
+    return renderProp(this.props, this, this.state) || this.video;
   }
 }

@@ -19,7 +19,25 @@ storiesOf('Generators/Video', module)
       </div>
     }</Video>
   )
-  .add('Control buttons', () =>
+  .add('Basic controls', () =>
+    <Video
+      src={src}
+      style={{
+        width: 400,
+        border: '1px solid tomato'
+      }}
+      render={({video, play, pause, seek, volume, mute, unmute}, {isPlaying}) =>
+        <div>
+          {video}
+          <br />
+          <button onClick={() => isPlaying ? pause() : play()}>
+            {isPlaying ? 'Pause' : 'Play'}
+          </button>
+        </div>
+      }
+    />
+  )
+  .add('All bontrol buttons', () =>
     <Video
       src={src}
       style={{
@@ -44,5 +62,15 @@ storiesOf('Generators/Video', module)
           </pre>
         </div>
       }
+    />
+  )
+  .add('No render props', () =>
+    <Video
+      src={src}
+      autoPlay
+      style={{
+        width: 400,
+        border: '1px solid tomato'
+      }}
     />
   );
