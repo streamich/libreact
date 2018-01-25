@@ -2,7 +2,7 @@ import {Component, cloneElement, Children} from 'react';
 import {h, noop} from '../util';
 import renderProp from '../util/renderProp';
 
-export type TVideoEvent = (event, Audio, IAudioState) => void;
+export type TVideoEvent = (event, Audio?, IAudioState?) => void;
 export type TVideoRenderProp = (video: Video, state: IVideoState) => React.ReactElement<any>;
 
 export interface IVideo {
@@ -14,7 +14,7 @@ export interface IVideo {
   unmute();
 }
 
-export interface IVideoProps {
+export interface IVideoProps extends React.AllHTMLAttributes<any> {
   src: string;
   children?: TVideoRenderProp;
   render?: TVideoRenderProp;
