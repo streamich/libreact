@@ -185,17 +185,12 @@ export class Video extends Component<IVideoProps, IVideoState> implements IVideo
 
   render () {
     const {props, event} = this;
-    const {children, src, autoPlay, loop, muted, preload, volume, noJs} = props;
+    const {children, render, noJs, ...rest} = props;
 
     this.video = h('video', {
+      ...rest,
       ref: this.ref,
       controls: false,
-      src,
-      autoPlay,
-      loop,
-      muted,
-      preload,
-      volume,
       onAbort: event('onAbort'),
       onCanPlay: event('onCanPlay'),
       onCanPlayThrough: event('onCanPlayThrough'),
