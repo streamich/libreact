@@ -2,7 +2,7 @@ import {Component, createElement as h} from 'react';
 import {mock, IMockParams, IMockComponent} from './mock';
 import {noop} from './util';
 
-export type TLoaderPromise = () => Promise<TComponent<any>>;
+export type TLoaderPromise = () => Promise<React.ComponentClass<any> | React.StatelessComponent<any>>;
 export type TLoader = TLoaderPromise;
 
 export interface ILoadableParams<TProps> extends IMockParams<TProps> {

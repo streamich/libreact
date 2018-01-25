@@ -34,7 +34,6 @@ describe('<LocationSensor>', () => {
     );
   });
 
-
   describe('re-renders on', () => {
     const events = [
       'pushstate',

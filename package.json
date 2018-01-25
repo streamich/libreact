@@ -1,6 +1,6 @@
 {
   "name": "libreact",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React standard library",
   "main": "lib/index.js",
   "keywords": [
@@ -55,7 +55,8 @@
     "ts-loader": "3.2.0",
     "ts-node": "4.1.0",
     "typescript": "2.6.2",
-    "webpack": "3.10.0"
+    "webpack": "3.10.0",
+    "semantic-release": "^12.2.4"
   },
   "config": {
     "commitizen": {
@@ -72,7 +73,8 @@
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6007",
     "build-storybook": "build-storybook",
-    "start": "npm run storybook"
+    "start": "npm run storybook",
+    "semantic-release": "semantic-release"
   },
   "jest": {
     "moduleFileExtensions": [

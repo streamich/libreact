@@ -107,5 +107,3 @@ export class SizeSensor extends Component<ISizeSensorProps, ISizeSensorState> {
     );
   }
 }
-
-export default SizeSensor;
