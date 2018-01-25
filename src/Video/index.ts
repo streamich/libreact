@@ -1,11 +1,23 @@
 import {Component, cloneElement, Children} from 'react';
 import {h, noop} from '../util';
+import renderProp from '../util/renderProp';
 
-export type TAudioEvent = (event, Audio, IAudioState) => void;
+export type TVideoEvent = (event, Audio, IAudioState) => void;
+export type TVideoRenderProp = (video: Video, state: IVideoState) => React.ReactElement<any>;
 
-export interface IAudioProps {
+export interface IVideo {
+  play();
+  pause();
+  seek(time: number);
+  volume(volume: number);
+  mute();
+  unmute();
+}
+
+export interface IVideoProps {
   src: string;
-  children?: (...args) => React.ReactElement<any>;
+  children?: TVideoRenderProp;
+  render?: TVideoRenderProp;
   autoPlay?: boolean;
   loop?: boolean;
   muted?: boolean;
@@ -13,32 +25,32 @@ export interface IAudioProps {
   volume?: number;
   noJs?: React.ReactElement<any>;
 
-  onAbort?: TAudioEvent,
-  onCanPlay?: TAudioEvent,
-  onCanPlayThrough?: TAudioEvent,
-  onDurationChange?: TAudioEvent,
-  onEmptied?: TAudioEvent,
-  onEncrypted?: TAudioEvent,
-  onEnded?: TAudioEvent,
-  onError?: TAudioEvent,
-  onLoadedData?: TAudioEvent,
-  onLoadedMetadata?: TAudioEvent,
-  onLoadStart?: TAudioEvent,
-  onPause?: TAudioEvent,
-  onPlay?: TAudioEvent,
-  onPlaying?: TAudioEvent,
-  onProgress?: TAudioEvent,
-  onRateChange?: TAudioEvent,
-  onSeeked?: TAudioEvent,
-  onSeeking?: TAudioEvent,
-  onStalled?: TAudioEvent,
-  onSuspend?: TAudioEvent,
-  onTimeUpdate?: TAudioEvent,
-  onVolumeChange?: TAudioEvent,
-  onWaiting?: TAudioEvent
+  onAbort?: TVideoEvent,
+  onCanPlay?: TVideoEvent,
+  onCanPlayThrough?: TVideoEvent,
+  onDurationChange?: TVideoEvent,
+  onEmptied?: TVideoEvent,
+  onEncrypted?: TVideoEvent,
+  onEnded?: TVideoEvent,
+  onError?: TVideoEvent,
+  onLoadedData?: TVideoEvent,
+  onLoadedMetadata?: TVideoEvent,
+  onLoadStart?: TVideoEvent,
+  onPause?: TVideoEvent,
+  onPlay?: TVideoEvent,
+  onPlaying?: TVideoEvent,
+  onProgress?: TVideoEvent,
+  onRateChange?: TVideoEvent,
+  onSeeked?: TVideoEvent,
+  onSeeking?: TVideoEvent,
+  onStalled?: TVideoEvent,
+  onSuspend?: TVideoEvent,
+  onTimeUpdate?: TVideoEvent,
+  onVolumeChange?: TVideoEvent,
+  onWaiting?: TVideoEvent
 }
 
-export interface IAudioState {
+export interface IVideoState {
   time?: number;
   duration?: number;
   isPlaying?: boolean;
@@ -46,10 +58,11 @@ export interface IAudioState {
   volume?: number;
 }
 
-export class Audio extends Component<IAudioProps, IAudioState> {
-  el: HTMLAudioElement = null;
+export class Video extends Component<IVideoProps, IVideoState> implements IVideo {
+  el: HTMLVideoElement = null;
+  video: React.ReactElement<any> = null;
 
-  state: IAudioState = {
+  state: IVideoState = {
     time: 0,
     duration: 0,
     isPlaying: false,
@@ -77,7 +90,9 @@ export class Audio extends Component<IAudioProps, IAudioState> {
 
   play = () => {
     if (this.el) {
-      this.el.play();
+      // TODO: In some browsers `.play()` method returns a `Promise`, where you
+      // TODO: cannot call `pauer()` or `play()` again before that promise resolves.
+      const promise = this.el.play();
     }
   };
 
@@ -172,8 +187,7 @@ export class Audio extends Component<IAudioProps, IAudioState> {
     const {props, event} = this;
     const {children, src, autoPlay, loop, muted, preload, volume, noJs} = props;
 
-
-    const audio = h('audio', {
+    this.video = h('video', {
       ref: this.ref,
       controls: false,
       src,
@@ -209,11 +223,6 @@ export class Audio extends Component<IAudioProps, IAudioState> {
       noJs
     );
 
-    const markup = children(this, this.state);
-
-    return cloneElement(markup, null, ...[
-      ...Children.toArray(markup.props.children),
-      audio
-    ]);
+    return renderProp(this.props, this, this.state);
   }
 }
