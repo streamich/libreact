@@ -1,5 +1,6 @@
 import {Component, createElement as h} from 'react';
 import {isClient} from '../util';
+import renderProp from '../util/renderProp';
 import * as throttle from 'throttle-debounce/throttle';
 
 export interface ISyncSensorProps<TState> {
@@ -41,6 +42,6 @@ export class SyncSensor<TState> extends Component<ISyncSensorProps<TState>, TSta
   }
 
   render () {
-    return this.props.children(this.state);
+    return renderProp(this.props, this.state);
   }
 }
