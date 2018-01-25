@@ -18,4 +18,31 @@ storiesOf('Generators/Video', module)
         {video}
       </div>
     }</Video>
+  )
+  .add('Control buttons', () =>
+    <Video
+      src={src}
+      style={{
+        width: 400,
+        border: '1px solid tomato'
+      }}
+      render={({video, play, pause, seek, volume, mute, unmute}, state) =>
+        <div>
+          {video}
+          <br />
+          <button onClick={play}>Play</button>
+          <button onClick={pause}>Pause</button>
+          <button onClick={() => seek(state.time - 5)}>Seek -</button>
+          <button onClick={() => seek(state.time + 5)}>Seek +</button>
+          <button onClick={() => volume(state.volume - 0.05)}>Volume -</button>
+          <button onClick={() => volume(state.volume + 0.05)}>Volume +</button>
+          <button onClick={mute}>Mute</button>
+          <button onClick={unmute}>Unmute</button>
+
+          <pre style={{fontFamily: 'monospace'}}>
+            {JSON.stringify(state, null, 4)}
+          </pre>
+        </div>
+      }
+    />
   );
