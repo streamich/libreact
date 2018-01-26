@@ -35,8 +35,8 @@ const MyComponent = mock();
      - [`delayed()`](./docs/delayed.md)
      - [`invert()`](./docs/invert.md)
   - Sensors
-     - [`<BatterySensor>`](./docs/BatterySensor.md), [`withBattery()`](./docs/BatterySensor.md#withbattery), and [`@withBattery`](./docs/BatterySensor.md#@withbattery)
-     - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md)
+     - [`<BatterySensor>`](./docs/BatterySensor.md), [`withBattery()`](./docs/BatterySensor.md#withbattery), and [`@withBattery`](./docs/BatterySensor.md#withbattery-1)
+     - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md), [`withMediaDevices`](./docs/MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./docs/MediaDeviceSensor.md#withmediadevices-1)
      - [`<MediaSensor>`](./docs/MediaSensor.md)
      - [`<NetworkSensor>`](./docs/NetworkSensor.md) and [`withNetwork()`](./docs/NetworkSensor.md#withnetwork)
      - [`<LightSensor>`](./docs/LightSensor.md)

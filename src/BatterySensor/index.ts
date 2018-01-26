@@ -1,9 +1,11 @@
 import {Component} from 'react';
 import {h, on, off, isClient} from '../util';
 import faccToHoc from '../util/faccToHoc';
+import renderProp from '../util/renderProp';
 
 export interface IBatterySensorProps {
   children?: (INetworkState) => React.ReactElement<any>;
+  render?: (INetworkState) => React.ReactElement<any>;
 }
 
 export interface IBatterySensorState {
@@ -66,7 +68,7 @@ export class BatterySensor extends Component<IBatterySensorProps, IBatterySensor
   };
 
   render () {
-    return this.props.children(this.state);
+    return renderProp(this.props, this.state);
   }
 }
 
