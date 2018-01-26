@@ -51,7 +51,7 @@ const MyComponent = mock();
      - [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
      - [`<LocalStorage>`](./docs/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
      - [`<Speak>`](./docs/Speak.md), [`<Vibrate>`](./docs/Vibrate.md), [`<Alert>`](./docs/Alert.md), `<Prompt>`, `<Confirm>`
-     - [`go()`](./docs/route.md#go), `<Redirect>`, `<Link>`, `<Sms>`, `<Mailto>`, and `<Tel>`
+     - [`go()`](./docs/route.md#go), `<Redirect>`, `<Link>`, `<Sms>`, `<Email>`, and `<Tel>`
      - `<Overlay>`, `<FullScreen>`
   - Promises
      - [`<Resolve>`](./docs/Resolve.md), `<Fetch>`
@@ -70,6 +70,9 @@ const MyComponent = mock();
      - [`<CssResetTantek>`](./docs/reset/CssResetTantek.md)
      - [`<CssResetUniversal>`](./docs/reset/CssResetUniversal.md)
      - [`<CssResetYahoo>`](./docs/reset/CssResetYahoo.md)
+  - Other
+     - [`getDisplayName()`](./docs/getDisplayName.md)
+     - `<BrowserOnly>` or `<Environment>`
 
 
 ## License
