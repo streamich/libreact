@@ -47,6 +47,9 @@ const MyComponent = mock();
         - [`<ViewportScrollSensor>`](./docs/ViewportSensor.md#viewportscrollsensor) and [`<ViewportObserverSensor>`](./docs/ViewportSensor.md#viewportobserversensor)
      - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md), `withWindowScroll()`, and `@withWindowScroll`
      - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md), `withWindowSize()`, and `@withWindowSize`
+     - `<MotionSensor>`
+     - `<MouseSensor>`
+     - `<GeoPositionSensor>`
   - Generators
      - [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
      - [`<LocalStorage>`](./docs/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
@@ -73,6 +76,8 @@ const MyComponent = mock();
   - Other
      - [`getDisplayName()`](./docs/getDisplayName.md)
      - `<BrowserOnly>`, `<ServerOnly>`, and `<Environment>`
+     - `<Locales>`
+     - `<Draggable>`, `<Droppable>`, `<Parallax>`, `<Pin>`
 
 
 ## License
