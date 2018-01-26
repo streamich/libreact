@@ -1,14 +1,12 @@
-import {Component, Children} from 'react';
+import {Component} from 'react';
 import {h, noop} from '../util';
 const screenfull = require('screenfull');
 
 export interface IFullScreenProps {
-  children?;
-  video?: HTMLVideoElement;
-  innerRef?: (el) => void;
-  on?: boolean;
-  onClose?: () => void;
-  tag?: keyof React.ReactHTML;
+  children?,
+  el: HTMLVideoElement,
+  on?: boolean,
+  onClose?: () => void,
 }
 
 export interface IFullScreenState {
@@ -16,19 +14,6 @@ export interface IFullScreenState {
 }
 
 export class FullScreen extends Component<IFullScreenProps, IFullScreenState> {
-  static defaultProps = {
-    onClose: noop,
-    innerRef: noop,
-    tag: 'div'
-  };
-
-  el: HTMLElement = null;
-
-  ref = (el) => {
-    this.el = el;
-    this.props.innerRef(el);
-  };
-
   componentDidMount () {
     screenfull.on('change', this.onChange);
   }
@@ -46,9 +31,9 @@ export class FullScreen extends Component<IFullScreenProps, IFullScreenState> {
   }
 
   enter () {
-    if (this.el && screenfull.enabled) {
+    if (this.props.el && screenfull.enabled) {
       try {
-        screenfull.request(this.el);
+        screenfull.request(this.props.el);
       } catch {}
     }
   }
@@ -60,7 +45,7 @@ export class FullScreen extends Component<IFullScreenProps, IFullScreenState> {
   }
 
   onChange = () => {
-    const isFullScreen = screenfull.element === this.el;
+    const isFullScreen = screenfull.element === this.props.el;
 
     if (!isFullScreen) {
       (this.props.onClose || noop)();
@@ -68,10 +53,8 @@ export class FullScreen extends Component<IFullScreenProps, IFullScreenState> {
   };
 
   render () {
-    const {video, innerRef, on, onClose, tag, children, ...rest} = this.props;
+    const {children} = this.props;
 
-    (rest as any).ref = this.ref;
-
-    return h(tag, rest, ...Children.toArray(children));
+    return children;
   }
 }

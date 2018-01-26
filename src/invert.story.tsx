@@ -2,13 +2,14 @@ import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
-import {invert} from './invert';
+import {invert, Inverted} from './invert';
 
 const Audio = invert('audio');
 import ShowDocs from '../.storybook/ShowDocs'
 
 storiesOf('Dummies/invert()', module)
   .add('Documentation', () => h(ShowDocs, {name: 'invert'}))
+  .add('<div>', () => h(Inverted, {tag: 'div'}, 'Hello world'))
   .add('<audio>', () =>
     <Audio
       src='https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'

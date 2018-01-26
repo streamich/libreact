@@ -13,14 +13,10 @@ class StoryFullScreenBasicNative extends Component<any, any> {
     on: false
   };
 
-  ref = (el) => {
-    this.el = el;
-  };
-
   render () {
     return (
-      <FullScreen el={this.el} on={this.state.on} onClose={() => this.setState({on: false})}>
-        <div ref={this.ref}>
+      <FullScreen on={this.state.on} onClose={() => this.setState({on: false})}>
+        <div>
           Hello world
           <br />
           <button onClick={() => this.setState({on: !this.state.on})}>{this.state.on ? 'Leave' : 'Enter'}</button>

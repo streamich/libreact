@@ -1,21 +1,24 @@
 import {Component} from 'react';
 import {h, noop} from './util';
+import renderProp from './util/renderProp';
 
-export interface IInvertedProps {
-  children?: (...args) => React.ReactElement<any>;
-  onMounted: (el: HTMLElement, comp: React.Component<any>) => void;
+export interface IInvertedProps extends React.AllHTMLAttributes<any> {
+  children?: React.ReactElement<any> | ((comp) => React.ReactElement<any>);
+  render?: React.ReactElement<any> | ((comp) => React.ReactElement<any>);
+  onMount: (el: HTMLElement, comp: React.Component<any>) => void;
   onUnmount: (comp: React.Component<any>) => void;
-  render: (element: React.ReactElement<any>, comp: React.Component<any>) => React.ReactElement<any>;
+  wrapper: (element: React.ReactElement<any>, comp: React.Component<any>) => React.ReactElement<any>;
+  tag?: keyof React.ReactHTML;
 }
 
-export type TInvert = (tag: string) => React.ComponentClass<any>;
+export type TInvert = (tag?: keyof React.ReactHTML) => React.ComponentClass<any>;
 
-const defaultRenderProp = (element) => element;
+const defaultWrapper = (element) => element;
 
-export const invert: TInvert = (tag: keyof React.ReactHTML) => {
+export const invert: TInvert = (tag?: keyof React.ReactHTML) => {
   const Inverted = class Inverted extends Component<IInvertedProps, any> {
     static defaultProps = {
-      render: defaultRenderProp
+      wrapper: defaultWrapper
     };
 
     el: HTMLElement = null;
@@ -25,7 +28,7 @@ export const invert: TInvert = (tag: keyof React.ReactHTML) => {
     };
 
     componentDidMount () {
-      (this.props.onMounted || noop)(this.el, this);
+      (this.props.onMount || noop)(this.el, this);
       this.forceUpdate();
     }
 
@@ -43,7 +46,7 @@ export const invert: TInvert = (tag: keyof React.ReactHTML) => {
 
     render () {
       const {event} = this;
-      const {children, render, ...rest} = this.props;
+      const {children, render, wrapper, tag: tagProp, onMount, onUnmount, ...rest} = this.props;
       const props = {
         ref: this.ref
       };
@@ -58,11 +61,13 @@ export const invert: TInvert = (tag: keyof React.ReactHTML) => {
         }
       }
 
-      const element = h(tag, props, typeof children === 'function' ? children(this) : children);
+      const element = h(tagProp || tag, props, renderProp(this.props, this));
 
-      return render(element, this);
+      return wrapper(element, this);
     }
   }
 
   return Inverted;
 };
+
+export const Inverted = invert();
