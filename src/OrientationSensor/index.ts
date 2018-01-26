@@ -1,6 +1,7 @@
 import {Component} from 'react';
 import {SyncSensor} from '../SyncSensor';
 import {h, on, off, isClient} from '../util';
+import faccToHoc from '../util/faccToHoc';
 
 export interface IOrientationSensorProps {
   children?: (state: IOrientationSensorState) => React.ReactElement<any>;
@@ -54,11 +55,4 @@ export class OrientationSensor extends Component<IOrientationSensorProps, any> {
   }
 }
 
-export const withOrientation = (Comp) =>
-  (props) =>
-    h(OrientationSensor, null, (orientation) =>
-      h(Comp, {
-        ...props,
-        orientation
-      })
-    );
+export const withOrientation = faccToHoc(OrientationSensor, 'orientation');
