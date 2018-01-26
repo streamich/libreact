@@ -1,55 +1,53 @@
 import {Component} from 'react';
 import {h, noop} from '../util';
-import {enabled, request, exit, on, off} from 'screenfull';
+const screenfull = require('screenfull');
 
 export interface IFullScreenProps {
-  children,
-  element?: HTMLVideoElement,
-  isOn: boolean,
-  onClose: () => void,
+  children?,
+  el: HTMLVideoElement,
+  on?: boolean,
+  onClose?: () => void,
 }
 
 export interface IFullScreenState {
 
 }
 
-class FullScreen extends Component<IFullScreenProps, IFullScreenState> {
-  el: HTMLElement = null;
-
+export class FullScreen extends Component<IFullScreenProps, IFullScreenState> {
   componentDidMount () {
-    on('change', this.onChange);
+    screenfull.on('change', this.onChange);
   }
 
   componentDidUpdate (props) {
-    if (!props.isOn && this.props.isOn) {
+    if (!props.on && this.props.on) {
       this.enter();
-    } else if (props.isOn && !this.props.isOn) {
+    } else if (props.on && !this.props.on) {
       this.leave();
     }
   }
 
   componentWillUnmount () {
-    off('change', this.onChange);
+    screenfull.off('change', this.onChange);
   }
 
   enter () {
-    if (this.el && enabled) {
+    if (this.props.el && screenfull.enabled) {
       try {
-        request(this.el);
+        screenfull.request(this.props.el);
       } catch {}
     }
   }
 
   leave () {
     try {
-      exit();
+      screenfull.exit();
     } catch {}
   }
 
-  onChange = (isFullScreen) => {
-    if (!isFullScreen) {
-      (this.props.onClose || noop)();
-    }
+  onChange = () => {
+    const isFullScreen = screenfull.element === this.props.el;
+
+    console.log('IS FS', isFullScreen);
   };
 
   render () {
@@ -58,5 +56,3 @@ class FullScreen extends Component<IFullScreenProps, IFullScreenState> {
     return children;
   }
 }
-
-export default FullScreen;
