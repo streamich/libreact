@@ -10,7 +10,7 @@ import {MediaDeviceSensor} from 'libreact/lib/MediaDeviceSensor';
 
 <MediaDeviceSensor>{(state) =>
   JSON.stringify(state, null, 4)
-}</MediaDevicesSensor>
+}</MediaDeviceSensor>
 ```
 
 
