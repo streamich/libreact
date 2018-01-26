@@ -27,7 +27,7 @@ const MyCompDevices = withMediaDevices(MyComp);
 
 ## `@withMediaDevices`
 
-Statefull component class decorator that injects `devices` prop into your component.
+Stateful component class decorator that injects `devices` prop into your component.
 
 ```js
 import {withMediaDevices} from 'libreact/lib/MediaDeviceSensor';

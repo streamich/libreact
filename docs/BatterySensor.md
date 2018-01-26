@@ -52,7 +52,7 @@ const MyCompWithBattery = withBattery(MyComp, null);
 
 ## `@withBattery`
 
-Statefull component class decorator that injects `battery` prop into your component.
+Stateful component class decorator that injects `battery` prop into your component.
 
 ```js
 import {withBattery} from 'libreact/lib/BatterySensor';

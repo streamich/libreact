@@ -26,7 +26,7 @@ const MyCompWithSize = withMedia(MyComp, 'isBigScreen', '(min-width: 480px)');
 
 ## `@withMedia`
 
-Statefull component class decorator that injects a boolean prop into your component that specifies if media query matches.
+Stateful component class decorator that injects a boolean prop into your component that specifies if media query matches.
 
 ```js
 import {withMedia} from 'libreact/lib/MediaSensor';

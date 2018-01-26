@@ -64,7 +64,7 @@ export interface IMediaState {
   volume?: number;
 }
 
-export abstract class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IMedia> extends Component<P, S> implements IMedia {
+export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IMedia> extends Component<P, S> implements IMedia {
   tag: 'video' | 'audio' = 'video';
   props: P;
   el: HTMLMediaElement = null;
@@ -100,16 +100,31 @@ export abstract class Media<P extends IMediaProps<M>, S extends IMediaState, M e
     this.event('onUnmount')(this);
   }
 
+  // Some browsers return `Promise` on `.play()` and may throw errors
+  // if one tries to execute another `.play()` or `.pause()` while that
+  // promise is resolving. So we prevent that with this lock.
+  // See: https://bugs.chromium.org/p/chromium/issues/detail?id=593273
+  lockPlay: boolean = false;
+
   play = () => {
-    if (this.el) {
-      // TODO: In some browsers `.play()` method returns a `Promise`, where you
-      // TODO: cannot call `pause()` or `play()` again before that promise resolves.
+    if (this.el && !this.lockPlay) {
       const promise = this.el.play();
+      const isPromise = typeof promise === 'object';
+
+      if (isPromise) {
+        this.lockPlay = true;
+
+        const resetLock = () => {
+          this.lockPlay = false;
+        };
+
+        promise.then(resetLock, resetLock);
+      }
     }
   };
 
   pause = () => {
-    if (this.el) {
+    if (this.el && !this.lockPlay) {
       this.el.pause();
     }
   };
