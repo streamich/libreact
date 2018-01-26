@@ -5,10 +5,16 @@
   "main": "lib/index.js",
   "keywords": [
     "react",
-    "stdlib",
     "libreact",
+    "stdlib",
+    "hoc",
+    "higher-order",
+    "composition",
+    "facc",
+    "components",
     "utilities",
-    "MailOnline"
+    "toolbox",
+    "toolbox"
   ],
   "repository": {
     "type": "git",

@@ -1,5 +1,7 @@
 import {Component} from 'react';
 import {h, on, off, isClient} from '../util';
+import faccToHoc from '../util/faccToHoc';
+import renderProp from '../util/renderProp';
 
 const patchHistoryMethod = (method) => {
   const original = history[method];
@@ -23,6 +25,7 @@ if (isClient) {
 
 export interface ILocationSensorProps {
   children?: (ILocationSensorState) => React.ReactElement<any>;
+  render?: (ILocationSensorState) => React.ReactElement<any>;
 }
 
 export interface ILocationSensorState {
@@ -119,6 +122,8 @@ export class LocationSensor extends Component<ILocationSensorProps, ILocationSen
   }
 
   render () {
-    return this.props.children(this.state);
+    return renderProp(this.props, this.state);
   }
 }
+
+export const withLocation = faccToHoc(LocationSensor, 'location');
