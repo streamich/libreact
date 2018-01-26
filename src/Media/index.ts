@@ -101,7 +101,7 @@ export abstract class Media<P extends IMediaProps<M>, S extends IMediaState, M e
   play = () => {
     if (this.el) {
       // TODO: In some browsers `.play()` method returns a `Promise`, where you
-      // TODO: cannot call `pauer()` or `play()` again before that promise resolves.
+      // TODO: cannot call `pause()` or `play()` again before that promise resolves.
       const promise = this.el.play();
     }
   };

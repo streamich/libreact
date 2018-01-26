@@ -7,14 +7,14 @@
 React standard library, must-have toolbox for any React project.
 
   - Collection of React sensors, FaCCs, HOCs, context providers, dummies, and [other goodies](#contents).
-  - Isomorphic - all components work in browser and Node.js (and some in `react-native`).
-  - [See demos and docs](https://mailonline.github.io/libreact/).
+  - Isomorphic - all components work in browser and on server (and some in `react-native`).
+  - See [demos](https://mailonline.github.io/libreact/) and [docs](#contents).
 
 ## Installation
 
-```shell
-npm install libreact --save
-```
+<pre>
+npm i <a href="https://www.npmjs.com/package/libreact">libreact</a> --save
+</pre>
 
 ## Usage
 
@@ -35,7 +35,7 @@ const MyComponent = mock();
      - [`delayed()`](./docs/delayed.md)
      - [`invert()`](./docs/invert.md)
   - Sensors
-     - [`<BatterySensor>`](./docs/BatterySensor.md)
+     - [`<BatterySensor>`](./docs/BatterySensor.md), `withBattery()`, and `@withBattery`
      - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md)
      - [`<MediaSensor>`](./docs/MediaSensor.md)
      - [`<NetworkSensor>`](./docs/NetworkSensor.md) and [`withNetwork()`](./docs/NetworkSensor.md#withnetwork)
@@ -44,7 +44,7 @@ const MyComponent = mock();
      - [`<OrientationSensor>`](./docs/OrientationSensor.md) and [`withOrientation()`](./docs/OrientationSensor.md#withorientation)
      - [`<ScrollSensor>`](./docs/ScrollSensor.md)
      - [`<SizeSensor>`](./docs/SizeSensor.md)
-     - [`<ViewportSensor>`](./docs/ViewportSensor.md), `<ViewportScrollSensor>`, and `<ViewportObserverSensor>`
+     - [`<ViewportSensor>`](./docs/ViewportSensor.md), [`<ViewportScrollSensor>`](./docs/ViewportSensor.md#viewportscrollsensor), and [`<ViewportObserverSensor>`](./docs/ViewportSensor.md#viewportobserversensor)
      - [`<WidthSensor>`](./docs/WidthSensor.md)
      - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md)
      - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md)

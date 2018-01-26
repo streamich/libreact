@@ -1,0 +1,43 @@
+import {Component, createElement as h} from 'react';
+import {storiesOf} from '@storybook/react';
+import {action} from '@storybook/addon-actions';
+import {linkTo} from '@storybook/addon-links';
+import {BatterySensor, withBattery} from '..';
+import ShowDocs from '../../../.storybook/ShowDocs';
+
+const Print = (props) => h('pre', {
+  style: {
+    fontFamily: 'monospace'
+  }
+},
+  JSON.stringify(props, null, 4)
+);
+
+const PrintBattery = withBattery(Print);
+
+@withBattery
+class Printer extends Component<any, any> {
+  render () {
+    return h('pre', {
+      style: {
+        fontFamily: 'monospace'
+      }
+    },
+      JSON.stringify(this.props, null, 4)
+    );
+  }
+}
+
+storiesOf('Sensors/BatterySensor', module)
+  .add('Documentation', () => h(ShowDocs, {name: 'BatterySensor'}))
+  .add('FaCC', () =>
+    h(BatterySensor, {}, (state) =>
+      h('pre', {style: {
+        fontFamily: 'monospace'
+      }},
+        JSON.stringify(state, null, 4)
+      )
+    )
+  )
+  .add('HOC', () => h(PrintBattery))
+  .add('Decorator', () => h(Printer));
