@@ -7,6 +7,8 @@ export interface IStateProps {
   init: object,
   onChange?: (state: any) => void;
   render?: (state: any, setState?) => void;
+  onMount?: (state) => void;
+  onUnmount?: (state) => void;
 }
 
 export interface IStateState {
@@ -15,7 +17,9 @@ export interface IStateState {
 
 export class State extends Component<IStateProps, IStateState> {
   static defaultProps = {
-    onChange: noop
+    onChange: noop,
+    onMount: noop,
+    onUnmount: noop
   };
 
   state: IStateState;
@@ -25,6 +29,14 @@ export class State extends Component<IStateProps, IStateState> {
 
     this.state = props.init;
     this.setState = this.setState.bind(this);
+  }
+
+  componentDidMount () {
+    this.props.onMount(this.state);
+  }
+
+  componentWillUnmount () {
+    this.props.onUnmount(this.state);
   }
 
   render () {

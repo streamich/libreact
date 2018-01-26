@@ -74,6 +74,46 @@ describe('<State>', () => {
       });
 
       expect(foos).toEqual(['bar', 'baz']);
-    })
+    });
+  });
+
+  describe('life-cycle methods', () => {
+    it('fires onMount() with right arguments', () => {
+      const onMount = jest.fn();
+      const onUnmount = jest.fn();
+
+      const wrapper = mount(h(State, {
+        init: {
+          foo: 'bar'
+        },
+        onMount,
+        onUnmount
+      }));
+
+      expect(onMount).toHaveBeenCalledTimes(1);
+      expect(onMount).toHaveBeenCalledWith({
+        foo: 'bar'
+      });
+
+      expect(onUnmount).not.toHaveBeenCalled();
+    });
+
+    it('fires onMount() with right arguments', () => {
+      const onUnmount = jest.fn();
+
+      const wrapper = mount(h(State, {
+        init: {
+          foo: 'bar'
+        },
+        onUnmount
+      }));
+
+      wrapper.unmount();
+
+      expect(onUnmount).toHaveBeenCalledTimes(1);
+      expect(onUnmount).toHaveBeenCalledWith({
+        foo: 'bar'
+      });
+    });
   });
 });
