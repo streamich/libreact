@@ -37,7 +37,7 @@ const MyComponent = mock();
      - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md), [`withMediaDevices()`](./docs/MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./docs/MediaDeviceSensor.md#withmediadevices-1)
      - [`<MediaSensor>`](./docs/MediaSensor.md), [`withMedia()`](./docs/MediaSensor.md#withmedia), and [`@withMedia`](./docs/MediaSensor.md#withmedia-1)
      - [`<NetworkSensor>`](./docs/NetworkSensor.md), [`withNetwork()`](./docs/NetworkSensor.md#withnetwork-hoc), and [`@withNetwork`](./docs/NetworkSensor.md#withnetwork-decorator)
-     - [`<LightSensor>`](./docs/LightSensor.md)
+     - [`<LightSensor>`](./docs/LightSensor.md), [`withLight()`](./docs/LightSensor.md#withlight-hoc), and [`@withLight`](./docs/LightSensor.md#withlight-decorator)
      - [`<LocationSensor>`](./docs/LocationSensor.md)
      - [`<OrientationSensor>`](./docs/OrientationSensor.md) and [`withOrientation()`](./docs/OrientationSensor.md#withorientation)
      - [`<ScrollSensor>`](./docs/ScrollSensor.md)

@@ -12,3 +12,28 @@ import {LightSensor} from 'libreact/lib/LightSensor';
   JSON.stringify(light, null, 4)
 }</LightSensor>
 ```
+
+
+## `withLight()` HOC
+
+Higher order component that injects `illumination` prop into your component.
+
+```js
+import {withLight} from 'libreact/lib/LightSensor';
+
+const MyCompWithLight = withLight(MyComp);
+```
+
+
+## `@withLight` HOC
+
+Class decorator that injects `illumination` prop into your component.
+
+```js
+import {withLight} from 'libreact/lib/LightSensor';
+
+@withLight
+class MyComp extends Component {
+
+}
+```
