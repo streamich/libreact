@@ -36,6 +36,8 @@ interface IAudioProps {
   - `preload` - optional, string, `<audio>` element preload attribute.
   - `volume` - optional, number, audio volume in `[0..1]` range, defaults to `1`.
   - `noJs` - optional, React element(s) to render insided the `<audio>` tag.
+  - `onMount` - optional, callback, called when component mounts, receives `IAudio` as the first argument.
+  - `onUnmount` - optional, callback, called when component un-mounts, receives `IAudio` as the first argument.
 
 
 ## Arguments

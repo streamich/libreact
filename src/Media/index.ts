@@ -28,6 +28,8 @@ export interface IMediaProps<M> extends React.AllHTMLAttributes<any> {
   volume?: number;
   noJs?: React.ReactElement<any>;
 
+  onMount?: TMediaEvent<M>,
+  onUnmount?: TMediaEvent<M>,
   onAbort?: TMediaEvent<M>,
   onCanPlay?: TMediaEvent<M>,
   onCanPlayThrough?: TMediaEvent<M>,

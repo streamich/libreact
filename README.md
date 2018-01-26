@@ -50,17 +50,16 @@ const MyComponent = mock();
      - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md)
   - Generators
      - [`<Alert>`](./docs/Alert.md)
-     - [`<Audio>`](./docs/Audio.md)
+     - [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
      - [`<LocalStorage>`](./docs/LocalStorage.md)
      - `<Redirect>`
      - [`<Speak>`](./docs/Speak.md)
      - [`<Vibrate>`](./docs/Vibrate.md)
-     - `<Video>`
   - Context
-     - [`<Provider>`](./docs/context.md#provider), [`<Consumer>`](./docs/context.md#consumer), and [`withContext()`](./docs/context.md#withcontext)
-     - [`<Theme>`](./docs/theme.md#theme), [`<Themed>`](./docs/theme.md#themed), and [`withTheme()`](./docs/theme.md#withtheme)
+     - [`<Provider>`](./docs/context.md#provider), [`<Consumer>`](./docs/context.md#consumer), [`withContext()`](./docs/context.md#withcontext), and `@withContext`
+     - [`<Theme>`](./docs/theme.md#theme), [`<Themed>`](./docs/theme.md#themed), [`withTheme()`](./docs/theme.md#withtheme), and `@withTheme`
      - `<CssVars>`
-     - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), [`go()`](./docs/route.md#go), and [`withRoute()`](./docs/route.md#withroute)
+     - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), [`go()`](./docs/route.md#go), [`withRoute()`](./docs/route.md#withroute), and `@withRoute`
   - CSS resets
      - [`<CssResetEricMeyer>`](./docs/reset/CssResetEricMeyer.md)
      - [`<CssResetEricMeyerCondensed>`](./docs/reset/CssResetEricMeyerCondensed.md)
