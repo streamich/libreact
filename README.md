@@ -28,12 +28,10 @@ const MyComponent = mock();
 
 ## Contents
 
-  - Dummies
-     - [`mock()`](./docs/mock.md)
-     - [`loadable()`](./docs/loadable.md)
-     - [`lazy()`](./docs/lazy.md)
-     - [`delayed()`](./docs/delayed.md)
-     - [`invert()`](./docs/invert.md)
+  - Basics
+     - Mocks: [`mock()`](./docs/mock.md) and [`loadable()`](./docs/loadable.md)
+     - Loading: [`lazy()`](./docs/lazy.md), [`delayed()`](./docs/delayed.md), and `viewport()`
+     - Inversions: [`invert()`](./docs/invert.md), `<State>`
   - Sensors
      - [`<BatterySensor>`](./docs/BatterySensor.md), [`withBattery()`](./docs/BatterySensor.md#withbattery), and [`@withBattery`](./docs/BatterySensor.md#withbattery-1)
      - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md), [`withMediaDevices()`](./docs/MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./docs/MediaDeviceSensor.md#withmediadevices-1)
@@ -49,17 +47,18 @@ const MyComponent = mock();
      - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md)
      - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md)
   - Generators
-     - [`<Alert>`](./docs/Alert.md)
-     - [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
-     - [`<LocalStorage>`](./docs/LocalStorage.md)
-     - `<Redirect>`
-     - [`<Speak>`](./docs/Speak.md)
-     - [`<Vibrate>`](./docs/Vibrate.md)
+     - Media: [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
+     - Storage: [`<LocalStorage>`](./docs/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
+     - Outputs: [`<Speak>`](./docs/Speak.md), [`<Vibrate>`](./docs/Vibrate.md), [`<Alert>`](./docs/Alert.md), `<Prompt>`, `<Confirm>`
+     - Navigation: [`go()`](./docs/route.md#go), `<Redirect>`, `<Link>`, `<Sms>`, `<Mailto>`, and `<Tel>`
+  - Promises
+     - [`<Resolve>`](./docs/Resolve.md), `<Fetch>`
   - Context
      - [`<Provider>`](./docs/context.md#provider), [`<Consumer>`](./docs/context.md#consumer), [`withContext()`](./docs/context.md#withcontext), and `@withContext`
      - [`<Theme>`](./docs/theme.md#theme), [`<Themed>`](./docs/theme.md#themed), [`withTheme()`](./docs/theme.md#withtheme), and `@withTheme`
      - `<CssVars>`
-     - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), [`go()`](./docs/route.md#go), [`withRoute()`](./docs/route.md#withroute), and `@withRoute`
+     - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), [`withRoute()`](./docs/route.md#withroute), and `@withRoute`
+     - `<Translations>`, `<Translate>`, `withTranslations`, and `@withTranslations`
   - CSS resets
      - [`<CssResetEricMeyer>`](./docs/reset/CssResetEricMeyer.md)
      - [`<CssResetEricMeyerCondensed>`](./docs/reset/CssResetEricMeyerCondensed.md)
@@ -72,8 +71,6 @@ const MyComponent = mock();
      - [`<CssResetTantek>`](./docs/reset/CssResetTantek.md)
      - [`<CssResetUniversal>`](./docs/reset/CssResetUniversal.md)
      - [`<CssResetYahoo>`](./docs/reset/CssResetYahoo.md)
-  - Other
-     - [`<Resolve>`](./docs/Resolve.md)
 
 
 ## License
