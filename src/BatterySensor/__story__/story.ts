@@ -41,11 +41,12 @@ storiesOf('Sensors/BatterySensor', module)
   )
   .add('Render prop', () =>
     h(BatterySensor, {
-      render: (state) => h('pre', {style: {
-          fontFamily: 'monospace'
-        }},
-          JSON.stringify(state, null, 4)
-        )
+      render: (state) =>
+      h('pre', {style: {
+        fontFamily: 'monospace'
+      }},
+        JSON.stringify(state, null, 4)
+      )
     })
   )
   .add('HOC', () => h(PrintBattery))
