@@ -12,6 +12,7 @@
     "jsxFactory": "h",
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
+    "experimentalDecorators": true,
     "lib": [
       "dom",
       "es5",

@@ -1,5 +1,7 @@
 import {Component} from 'react';
 import {on, off, noop} from '../util';
+import faccToHoc from '../util/faccToHoc';
+import renderProp from '../util/renderProp';
 
 export interface IMediaDevice {
   deviceId: string;
@@ -10,6 +12,7 @@ export interface IMediaDevice {
 
 export interface IMediaDeviceSensorProps {
   children?: (state: IMediaDeviceSensorState) => React.ReactElement<any>;
+  render?: (state: IMediaDeviceSensorState) => React.ReactElement<any>;
 }
 
 export interface IMediaDeviceSensorState {
@@ -49,6 +52,8 @@ export class MediaDeviceSensor extends Component<IMediaDeviceSensorProps, IMedia
   };
 
   render () {
-    return this.props.children(this.state);
+    return renderProp(this.props, this.state);
   }
 }
+
+export const withMediaDevices = faccToHoc(MediaDeviceSensor);

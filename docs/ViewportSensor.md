@@ -46,7 +46,16 @@ interface IViewportSensorState {
 }
 ```
 
+
 ## `<ViewportScrollSensor>`
+
+Is the same as `<ViewportSensor>`, but uses only window `scroll` event to check for visibility changes.
 
 The `<ViewportScrollSensor>` has an additional prop `throttle`, which is a number in milliseconds specifying
 how much to throttle document's `scroll` event.
+
+
+## `<ViewportObserverSensor>`
+
+Is the same as `<ViewportSensor>`, but uses only `IntersectionObserver` to detect element's intersection
+with viewport.

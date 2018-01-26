@@ -6,9 +6,34 @@ user's connected media devices.
 ## Usage
 
 ```jsx
-import {MediaDevicesSensor} from 'libreact/lib/MediaDevicesSensor';
+import {MediaDeviceSensor} from 'libreact/lib/MediaDeviceSensor';
 
-<MediaDevicesSensor>{(state) =>
+<MediaDeviceSensor>{(state) =>
   JSON.stringify(state, null, 4)
-}</MediaDevicesSensor>
+}</MediaDeviceSensor>
+```
+
+
+## `withMediaDevices()`
+
+Higher order component that injects `devices` prop into your component.
+
+```js
+import {withMediaDevices} from 'libreact/lib/MediaDeviceSensor';
+
+const MyCompDevices = withMediaDevices(MyComp);
+```
+
+
+## `@withMediaDevices`
+
+Stateful component class decorator that injects `devices` prop into your component.
+
+```js
+import {withMediaDevices} from 'libreact/lib/MediaDeviceSensor';
+
+@withMediaDevices
+class MyComp extends Component {
+
+}
 ```

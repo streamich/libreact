@@ -7,14 +7,14 @@
 React standard library, must-have toolbox for any React project.
 
   - Collection of React sensors, FaCCs, HOCs, context providers, dummies, and [other goodies](#contents).
-  - Isomorphic - all components work in browser and Node.js (and some in `react-native`).
-  - [See demos and docs](https://mailonline.github.io/libreact/).
+  - Isomorphic - all components work in browser and on server (and some in `react-native`).
+  - See [demos](https://mailonline.github.io/libreact/) and [docs](#contents).
 
 ## Installation
 
-```shell
-npm install libreact --save
-```
+<pre>
+npm i <a href="https://www.npmjs.com/package/libreact">libreact</a> --save
+</pre>
 
 ## Usage
 
@@ -35,32 +35,31 @@ const MyComponent = mock();
      - [`delayed()`](./docs/delayed.md)
      - [`invert()`](./docs/invert.md)
   - Sensors
-     - [`<BatterySensor>`](./docs/BatterySensor.md)
-     - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md)
-     - [`<MediaSensor>`](./docs/MediaSensor.md)
+     - [`<BatterySensor>`](./docs/BatterySensor.md), [`withBattery()`](./docs/BatterySensor.md#withbattery), and [`@withBattery`](./docs/BatterySensor.md#withbattery-1)
+     - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md), [`withMediaDevices()`](./docs/MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./docs/MediaDeviceSensor.md#withmediadevices-1)
+     - [`<MediaSensor>`](./docs/MediaSensor.md), [`withMedia()`](./docs/MediaSensor.md#withmedia), and [`@withMedia`](./docs/MediaSensor.md#withmedia-1)
      - [`<NetworkSensor>`](./docs/NetworkSensor.md) and [`withNetwork()`](./docs/NetworkSensor.md#withnetwork)
      - [`<LightSensor>`](./docs/LightSensor.md)
      - [`<LocationSensor>`](./docs/LocationSensor.md)
      - [`<OrientationSensor>`](./docs/OrientationSensor.md) and [`withOrientation()`](./docs/OrientationSensor.md#withorientation)
      - [`<ScrollSensor>`](./docs/ScrollSensor.md)
      - [`<SizeSensor>`](./docs/SizeSensor.md)
-     - [`<ViewportSensor>`](./docs/ViewportSensor.md), `<ViewportScrollSensor>`, and `<ViewportObserverSensor>`
+     - [`<ViewportSensor>`](./docs/ViewportSensor.md), [`<ViewportScrollSensor>`](./docs/ViewportSensor.md#viewportscrollsensor), and [`<ViewportObserverSensor>`](./docs/ViewportSensor.md#viewportobserversensor)
      - [`<WidthSensor>`](./docs/WidthSensor.md)
      - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md)
      - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md)
   - Generators
      - [`<Alert>`](./docs/Alert.md)
-     - [`<Audio>`](./docs/Audio.md)
+     - [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
      - [`<LocalStorage>`](./docs/LocalStorage.md)
      - `<Redirect>`
      - [`<Speak>`](./docs/Speak.md)
      - [`<Vibrate>`](./docs/Vibrate.md)
-     - `<Video>`
   - Context
-     - [`<Provider>`](./docs/context.md#provider), [`<Consumer>`](./docs/context.md#consumer), and [`withContext()`](./docs/context.md#withcontext)
-     - [`<Theme>`](./docs/theme.md#theme), [`<Themed>`](./docs/theme.md#themed), and [`withTheme()`](./docs/theme.md#withtheme)
+     - [`<Provider>`](./docs/context.md#provider), [`<Consumer>`](./docs/context.md#consumer), [`withContext()`](./docs/context.md#withcontext), and `@withContext`
+     - [`<Theme>`](./docs/theme.md#theme), [`<Themed>`](./docs/theme.md#themed), [`withTheme()`](./docs/theme.md#withtheme), and `@withTheme`
      - `<CssVars>`
-     - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), [`go()`](./docs/route.md#go), and [`withRoute()`](./docs/route.md#withroute)
+     - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), [`go()`](./docs/route.md#go), [`withRoute()`](./docs/route.md#withroute), and `@withRoute`
   - CSS resets
      - [`<CssResetEricMeyer>`](./docs/reset/CssResetEricMeyer.md)
      - [`<CssResetEricMeyerCondensed>`](./docs/reset/CssResetEricMeyerCondensed.md)

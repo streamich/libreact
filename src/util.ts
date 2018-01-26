@@ -36,6 +36,8 @@ export const sym = (name) => {
   return hasSymbols ? Symbol(name) : ns(name);
 };
 
+export const isFn = (fn) => typeof fn === 'function';
+
 export {
   h
 };

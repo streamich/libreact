@@ -1,4 +1,6 @@
 import {Component} from 'react';
+import faccToHoc from '../util/faccToHoc';
+import renderProp from '../util/renderProp';
 
 export interface IMediaSensorProps {
   matches?: boolean;
@@ -67,9 +69,8 @@ export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState>
   }
 
   render () {
-    const {children} = this.props;
-    const {matches} = this.state;
-
-    return children(matches);
+    return renderProp(this.props, this.state.matches);
   }
 }
+
+export const withMedia = faccToHoc(MediaSensor);

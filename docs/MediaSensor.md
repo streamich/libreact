@@ -11,3 +11,28 @@ import {MediaSensor} from 'libreact/lib/MediaSensor';
   `WIDTH IS GREATED THAN 480PX: ${matches}`
 }</MediaSensor>
 ```
+
+
+## `withMedia()`
+
+Higher order component that injects a boolean prop into your component that specifies if media query matches.
+
+```js
+import {withMedia} from 'libreact/lib/MediaSensor';
+
+const MyCompWithSize = withMedia(MyComp, 'isBigScreen', '(min-width: 480px)');
+```
+
+
+## `@withMedia`
+
+Stateful component class decorator that injects a boolean prop into your component that specifies if media query matches.
+
+```js
+import {withMedia} from 'libreact/lib/MediaSensor';
+
+@withMedia('isBigScreen', '(min-width: 480px)')
+class MyComp extends Component {
+
+}
+```
