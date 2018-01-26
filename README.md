@@ -72,7 +72,7 @@ const MyComponent = mock();
      - [`<CssResetYahoo>`](./docs/reset/CssResetYahoo.md)
   - Other
      - [`getDisplayName()`](./docs/getDisplayName.md)
-     - `<BrowserOnly>` or `<Environment>`
+     - `<BrowserOnly>`, `<ServerOnly>`, and `<Environment>`
 
 
 ## License
