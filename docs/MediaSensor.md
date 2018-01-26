@@ -24,7 +24,7 @@ const MyCompWithSize = withMedia(MyComp, 'isBigScreen', '(min-width: 480px)');
 ```
 
 
-## `@withBattery`
+## `@withMedia`
 
 Statefull component class decorator that injects a boolean prop into your component that specifies if media query matches.
 
