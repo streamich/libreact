@@ -13,7 +13,7 @@ const Print = (props) => h('pre', {
   JSON.stringify(props, null, 4)
 );
 
-const PrintBattery = withBattery(Print);
+const PrintBattery = withBattery(Print, 'overwritten');
 
 @withBattery
 class Printer extends Component<any, any> {

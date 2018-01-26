@@ -1,6 +1,6 @@
 import {Component} from 'react';
 import {h, on, off, isClient} from '../util';
-import addClassDecoratorSupport from '../util/addClassDecoratorSupport';
+import faccToHoc from '../util/faccToHoc';
 
 export interface IBatterySensorProps {
   children?: (INetworkState) => React.ReactElement<any>;
@@ -70,14 +70,4 @@ export class BatterySensor extends Component<IBatterySensorProps, IBatterySensor
   }
 }
 
-export const withBattery = (Comp) => {
-  const Enhanced = (props) =>
-    h(BatterySensor, null, (battery) =>
-      h(Comp, {
-        ...props,
-        battery
-      })
-    );
-
-  return addClassDecoratorSupport(Enhanced);
-};
+export const withBattery = faccToHoc(BatterySensor, 'battery');
