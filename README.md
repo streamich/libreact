@@ -6,8 +6,8 @@
 
 React standard library, must-have toolbox for any React project.
 
-  - Collection of React sensors, FaCCs, HOCs, context providers, dummies, and [other goodies](#contents).
-  - Isomorphic - all components work in browser and on server (and some in `react-native`).
+  - Collection of React sensors, FaCCs, render props, HOCs, context providers, dummies, and [other goodies](#contents).
+  - *Isomorphic* - all components work in browser and on server (and some in `react-native`).
   - See [demos](https://mailonline.github.io/libreact/) and [docs](#contents).
 
 ## Installation
@@ -61,11 +61,8 @@ const MyComponent = mock();
      - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), [`withRoute()`](./docs/route.md#withroute), and `@withRoute`
      - `<Translations>`, `<Translate>`, `withTranslations`, and `@withTranslations`
   - CSS resets
-     - [`<CssResetEricMeyer>`](./docs/reset/CssResetEricMeyer.md)
-     - [`<CssResetEricMeyerCondensed>`](./docs/reset/CssResetEricMeyerCondensed.md)
-     - [`<CssResetMinimalistic>`](./docs/reset/CssResetMinimalistic.md)
-     - [`<CssResetMinimalistic2>`](./docs/reset/CssResetMinimalistic2.md)
-     - [`<CssResetMinimalistic3>`](./docs/reset/CssResetMinimalistic3.md)
+     - [`<CssResetEricMeyer>`](./docs/reset/CssResetEricMeyer.md) and [`<CssResetEricMeyerCondensed>`](./docs/reset/CssResetEricMeyerCondensed.md)
+     - [`<CssResetMinimalistic>`](./docs/reset/CssResetMinimalistic.md), [`<CssResetMinimalistic2>`](./docs/reset/CssResetMinimalistic2.md), and [`<CssResetMinimalistic3>`](./docs/reset/CssResetMinimalistic3.md)
      - [`<CssResetPoorMan>`](./docs/reset/CssResetPoorMan.md)
      - [`<CssResetShaunInman>`](./docs/reset/CssResetShaunInman.md)
      - [`<CssResetSiolon>`](./docs/reset/CssResetSiolon.md)

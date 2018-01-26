@@ -44,4 +44,4 @@ export class WindowSizeSensor extends Component<IWindowSizeSensorProps, any> {
   }
 }
 
-export const withWindowScroll = faccToHoc(WindowSizeSensor, 'windowSize');
+export const withWindowSize = faccToHoc(WindowSizeSensor, 'windowSize');

@@ -1,6 +1,7 @@
-import {Component, createElement as h} from 'react';
+import {Component, createElement as h, cloneElement, Children} from 'react';
 import Types from 'prop-types';
 import {idx, noop} from '../util';
+import renderProp from '../util/renderProp';
 
 const DRAF = (callback) => setTimeout(callback, 35);
 
@@ -79,17 +80,12 @@ export class SizeSensor extends Component<ISizeSensorProps, ISizeSensorState> {
   }
 
   render () {
-    const {children, refElement, tagName, onSize, ...rest} = this.props;
+    const element = renderProp(this.props, this.state);
+    const style = element.props.style || {};
 
-    rest.ref = refElement;
+    style.position = 'relative';
 
-    if (!rest.style) {
-      rest.style = {};
-    }
-
-    rest.style.position = 'relative';
-
-    return h(tagName || 'div', rest,
+    return cloneElement(element, {style}, ...[
       h('iframe', {
         ref: this.ref,
         style: {
@@ -103,7 +99,7 @@ export class SizeSensor extends Component<ISizeSensorProps, ISizeSensorState> {
           zIndex: -1
         }
       }),
-      typeof children === 'function' ? children(this.state) : children
-    );
+      ...Children.toArray(element.props.children)
+    ]);
   }
 }

@@ -1,5 +1,6 @@
 import {Component, createElement as h} from 'react';
 import {isClient} from '../util';
+import renderProp from '../util/renderProp';
 
 export interface IScrollSensorProps {
   children?: (scroll: IScrollSensorState) => React.ReactElement<any>;
@@ -67,6 +68,6 @@ export class ScrollSensor extends Component<IScrollSensorProps, IScrollSensorSta
   }
 
   render () {
-    return this.props.children(this.state);
+    return renderProp(this.props, this.state);
   }
 }
