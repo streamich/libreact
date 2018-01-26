@@ -78,7 +78,7 @@ const NetworkStatus = withNetwork(NetworkStatusFormatter, 'network');
 Or simply merge the whole object into your props
 
 ```js
-const NetworkStatus = withNetwork(NetworkStatusFormatter, null);
+const NetworkStatus = withNetwork(NetworkStatusFormatter, '');
 ```
 
 ## `@withNetwork` decorator

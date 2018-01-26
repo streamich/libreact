@@ -42,7 +42,7 @@ const MyComponent = mock();
      - [`<OrientationSensor>`](./docs/OrientationSensor.md), [`withOrientation()`](./docs/OrientationSensor.md#withorientation), and `@withOrientation`
      - [`<ScrollSensor>`](./docs/ScrollSensor.md)
      - [`<SizeSensor>`](./docs/SizeSensor.md), [`withSize()`](./docs/SizeSensor.md#withsize-hoc), and [`@withSize`](./docs/SizeSensor.md#withsize-decorator)
-        - [`<WidthSensor>`](./docs/WidthSensor.md), `withWidth`, and `@withWidth`
+        - [`<WidthSensor>`](./docs/WidthSensor.md), [`withWidth`](./docs/WidthSensor.md#withwidth-hoc-and-withwidth-decorator), and [`@withWidth`](./docs/WidthSensor.md#withwidth-hoc-and-withwidth-decorator)
      - [`<ViewportSensor>`](./docs/ViewportSensor.md), `withViewport`, and `@withViewport`
         - [`<ViewportScrollSensor>`](./docs/ViewportSensor.md#viewportscrollsensor) and [`<ViewportObserverSensor>`](./docs/ViewportSensor.md#viewportobserversensor)
      - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md), `withWindowScroll()`, and `@withWindowScroll`
