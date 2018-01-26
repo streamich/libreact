@@ -1,7 +1,10 @@
 import {Component, cloneElement} from 'react';
 import {h, on, off, noop} from '../util';
+import renderProp from '../util/renderProp';
 
 export interface IViewportObserverSensorProps {
+  children?: ((size: IViewportObserverSensorState) => React.ReactElement<any>) | React.ReactElement<any>;
+  render?: (size: IViewportObserverSensorState) => React.ReactElement<any>;
   margin?: [number, number, number, number];
   threshold?: number;
   onChange?: (state: IViewportObserverSensorState) => void;
@@ -51,19 +54,19 @@ export class ViewportObserverSensor extends Component<IViewportObserverSensorPro
   onObserve = (entries: IntersectionObserverEntry[]) => {
     const entry = entries[0];
     const {intersectionRatio} = entry;
-    const {threshold, onChange = noop} = this.props;
+    const {threshold, onChange} = this.props;
 
     const state = {
       visible: !!((!threshold && intersectionRatio) || (intersectionRatio >= threshold))
     };
 
     this.setState(state);
-    onChange(state);
+    (onChange || noop)(state);
   };
 
   render () {
     const {children} = this.props;
-    const element = typeof children === 'function' ? children(this.state) : children;
+    const element = renderProp(this.props, this.state);
 
     if (process.env.NODE_ENV !== 'production') {
       if ((typeof element !== 'object') || (typeof element.type !== 'string')) {

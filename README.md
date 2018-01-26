@@ -52,6 +52,7 @@ const MyComponent = mock();
      - [`<LocalStorage>`](./docs/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
      - [`<Speak>`](./docs/Speak.md), [`<Vibrate>`](./docs/Vibrate.md), [`<Alert>`](./docs/Alert.md), `<Prompt>`, `<Confirm>`
      - [`go()`](./docs/route.md#go), `<Redirect>`, `<Link>`, `<Sms>`, `<Mailto>`, and `<Tel>`
+     - `<Overlay>`, `<FullScreen>`
   - Promises
      - [`<Resolve>`](./docs/Resolve.md), `<Fetch>`
   - Context
