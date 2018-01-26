@@ -1,11 +1,10 @@
 const parseTimeRanges = (ranges) => {
   const result = [];
-  let idx;
 
-  for (idx = 0; idx < ranges.length; idx++) {
+  for (let i = 0; i < ranges.length; i++) {
     result.push({
-      start: ranges.start(idx),
-      end: ranges.end(idx)
+      start: ranges.start(i),
+      end: ranges.end(i)
     });
   }
 
