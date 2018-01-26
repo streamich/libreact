@@ -5,14 +5,39 @@ import {linkTo} from '@storybook/addon-links';
 import {NetworkSensor, withNetwork} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
-const NetworkStatus = withNetwork((props) =>
+const Status = (props) =>
   <pre style={{fontFamily: 'monospace'}}>
     {JSON.stringify(props, null, 4)}
-  </pre>
-);
+  </pre>;
+
+const NetworkStatus1 = withNetwork(Status);
+const NetworkStatus2 = withNetwork(Status, 'network');
+const NetworkStatus3 = withNetwork(Status, '');
 
 @withNetwork
-class NetworkStatus2 extends Component<any, any> {
+class NetworkStatus4 extends Component<any, any> {
+  render () {
+    return (
+      <pre style={{fontFamily: 'monospace'}}>
+        {JSON.stringify(this.props, null, 4)}
+      </pre>
+    );
+  }
+}
+
+@withNetwork('network')
+class NetworkStatus5 extends Component<any, any> {
+  render () {
+    return (
+      <pre style={{fontFamily: 'monospace'}}>
+        {JSON.stringify(this.props, null, 4)}
+      </pre>
+    );
+  }
+}
+
+@withNetwork('')
+class NetworkStatus6 extends Component<any, any> {
   render () {
     return (
       <pre style={{fontFamily: 'monospace'}}>
@@ -43,5 +68,9 @@ storiesOf('Sensors/NetworkSensor', module)
         )
     })
   )
-  .add('HOC', () => h(NetworkStatus))
-  .add('Decorator', () => h(NetworkStatus2));
+  .add('HOC 1', () => h(NetworkStatus1))
+  .add('HOC 2', () => h(NetworkStatus2))
+  .add('HOC 3', () => h(NetworkStatus3))
+  .add('Decorator 1', () => h(NetworkStatus4))
+  .add('Decorator 2', () => h(NetworkStatus5))
+  .add('Decorator 3', () => h(NetworkStatus6));
