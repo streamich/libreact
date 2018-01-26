@@ -6,6 +6,14 @@ const noWrap = (Comp, propName, props, state) => h(Comp, propName ?
   {...state, ...props}
 );
 
+export const divWrapper = (Comp, propName, props, state) =>
+  h('div', null,
+    h(Comp, propName ?
+      {[propName]: state, ...props} :
+      {...state, ...props}
+    )
+  ) as any;
+
 const faccToHoc = (Facc, prop?: string, wrapper = noWrap) => {
   const hoc = (Comp, propName: any = prop, faccProps: object = null) => {
     const isClassDecoratorMethodCall = typeof Comp === 'string';

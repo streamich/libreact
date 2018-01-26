@@ -1,17 +1,13 @@
 import {Component, createElement as h} from 'react';
 import {SizeSensor, ISizeSensorProps, ISizeSensorState} from '../SizeSensor';
 import {noop} from '../util';
+import faccToHoc, {divWrapper} from '../util/faccToHoc';
 
 export interface IWidthSensorProps extends ISizeSensorProps {
   onWidth?: (size: ISizeSensorState) => void;
 }
 
 export class WidthSensor extends Component<IWidthSensorProps, ISizeSensorState> {
-  state: ISizeSensorState = {
-    width: null,
-    height: null,
-  };
-
   onSize = (size) => {
     if (this.state.width !== size.width) {
       this.setState(size);
@@ -20,15 +16,13 @@ export class WidthSensor extends Component<IWidthSensorProps, ISizeSensorState> 
   };
 
   render () {
-    const {children, onWidth, ..._rest} = this.props;
+    const {onWidth, ..._rest} = this.props;
     const rest: ISizeSensorProps = _rest;
 
     rest.onSize = this.onSize;
 
-    return h(SizeSensor, rest,
-      typeof children === 'function' ? children(this.state) : children
-    );
+    return h(SizeSensor, rest);
   }
 }
 
-export default WidthSensor;
+export const withWidth = faccToHoc(WidthSensor, 'size', divWrapper);

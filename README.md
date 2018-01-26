@@ -41,10 +41,10 @@ const MyComponent = mock();
      - [`<LocationSensor>`](./docs/LocationSensor.md), [`withLocation()`](./docs/LocationSensor.md#withlocation-hoc), and [`@withLocation`](./docs/LocationSensor.md#withlocation-decora)
      - [`<OrientationSensor>`](./docs/OrientationSensor.md), [`withOrientation()`](./docs/OrientationSensor.md#withorientation), and `@withOrientation`
      - [`<ScrollSensor>`](./docs/ScrollSensor.md)
-     - [`<SizeSensor>`](./docs/SizeSensor.md)
+     - [`<SizeSensor>`](./docs/SizeSensor.md), [`withSize()`](./docs/SizeSensor.md#withsize-hoc), and [`@withSize`](./docs/SizeSensor.md#withsize-decorator)
+        - [`<WidthSensor>`](./docs/WidthSensor.md), `withWidth`, and `@withWidth`
      - [`<ViewportSensor>`](./docs/ViewportSensor.md), `withViewport`, and `@withViewport`
         - [`<ViewportScrollSensor>`](./docs/ViewportSensor.md#viewportscrollsensor) and [`<ViewportObserverSensor>`](./docs/ViewportSensor.md#viewportobserversensor)
-     - [`<WidthSensor>`](./docs/WidthSensor.md)
      - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md), `withWindowScroll()`, and `@withWindowScroll`
      - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md), `withWindowSize()`, and `@withWindowSize`
   - Generators

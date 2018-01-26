@@ -2,7 +2,7 @@ import {Component, createElement as h, cloneElement, Children} from 'react';
 import Types from 'prop-types';
 import {idx, noop} from '../util';
 import renderProp from '../util/renderProp';
-import faccToHoc from '../util/faccToHoc';
+import faccToHoc, {divWrapper} from '../util/faccToHoc';
 
 const DRAF = (callback) => setTimeout(callback, 35);
 
@@ -103,13 +103,5 @@ export class SizeSensor extends Component<ISizeSensorProps, ISizeSensorState> {
     ]);
   }
 }
-
-const divWrapper = (Comp, propName, props, state) =>
-  h('div', null,
-    h(Comp, propName ?
-      {[propName]: state, ...props} :
-      {...state, ...props}
-    )
-  ) as any;
 
 export const withSize = faccToHoc(SizeSensor, 'size', divWrapper);
