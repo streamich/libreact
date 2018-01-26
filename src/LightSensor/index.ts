@@ -1,9 +1,12 @@
 import {Component} from 'react';
+import faccToHoc from '../util/faccToHoc';
+import renderProp from '../util/renderProp';
 
 declare const AmbientLightSensor;
 
 export interface ILightSensorProps {
   children?: (state: ILightSensorState) => React.ReactElement<any>;
+  render?: (state: ILightSensorState) => React.ReactElement<any>;
 }
 
 export interface ILightSensorState {
@@ -52,6 +55,8 @@ export class LightSensor extends Component<ILightSensorProps, ILightSensorState>
   };
 
   render () {
-    return this.props.children(this.state);
+    return renderProp(this.props, this.state);
   }
 }
+
+export const withLight = faccToHoc(LightSensor);

@@ -29,28 +29,29 @@ const MyComponent = mock();
 ## Contents
 
   - Basics
-     - Mocks: [`mock()`](./docs/mock.md) and [`loadable()`](./docs/loadable.md)
-     - Loading: [`lazy()`](./docs/lazy.md), [`delayed()`](./docs/delayed.md), and `viewport()`
-     - Inversions: [`invert()`](./docs/invert.md), `<State>`
+     - [`mock()`](./docs/mock.md) and [`loadable()`](./docs/loadable.md)
+     - [`lazy()`](./docs/lazy.md), [`delayed()`](./docs/delayed.md), and `viewport()`
+     - [`invert()`](./docs/invert.md), `<State>`
   - Sensors
      - [`<BatterySensor>`](./docs/BatterySensor.md), [`withBattery()`](./docs/BatterySensor.md#withbattery), and [`@withBattery`](./docs/BatterySensor.md#withbattery-1)
      - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md), [`withMediaDevices()`](./docs/MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./docs/MediaDeviceSensor.md#withmediadevices-1)
      - [`<MediaSensor>`](./docs/MediaSensor.md), [`withMedia()`](./docs/MediaSensor.md#withmedia), and [`@withMedia`](./docs/MediaSensor.md#withmedia-1)
-     - [`<NetworkSensor>`](./docs/NetworkSensor.md), [`withNetwork()`](./docs/NetworkSensor.md#withnetwork), and [`@withNetwork`](./docs/NetworkSensor.md#withnetwork-1)
+     - [`<NetworkSensor>`](./docs/NetworkSensor.md), [`withNetwork()`](./docs/NetworkSensor.md#withnetwork-hoc), and [`@withNetwork`](./docs/NetworkSensor.md#withnetwork-decorator)
      - [`<LightSensor>`](./docs/LightSensor.md)
      - [`<LocationSensor>`](./docs/LocationSensor.md)
      - [`<OrientationSensor>`](./docs/OrientationSensor.md) and [`withOrientation()`](./docs/OrientationSensor.md#withorientation)
      - [`<ScrollSensor>`](./docs/ScrollSensor.md)
      - [`<SizeSensor>`](./docs/SizeSensor.md)
-     - [`<ViewportSensor>`](./docs/ViewportSensor.md), [`<ViewportScrollSensor>`](./docs/ViewportSensor.md#viewportscrollsensor), and [`<ViewportObserverSensor>`](./docs/ViewportSensor.md#viewportobserversensor)
+     - [`<ViewportSensor>`](./docs/ViewportSensor.md), `withViewport`, and `@withViewport`
+        - [`<ViewportScrollSensor>`](./docs/ViewportSensor.md#viewportscrollsensor) and [`<ViewportObserverSensor>`](./docs/ViewportSensor.md#viewportobserversensor)
      - [`<WidthSensor>`](./docs/WidthSensor.md)
      - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md)
      - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md)
   - Generators
-     - Media: [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
-     - Storage: [`<LocalStorage>`](./docs/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
-     - Outputs: [`<Speak>`](./docs/Speak.md), [`<Vibrate>`](./docs/Vibrate.md), [`<Alert>`](./docs/Alert.md), `<Prompt>`, `<Confirm>`
-     - Navigation: [`go()`](./docs/route.md#go), `<Redirect>`, `<Link>`, `<Sms>`, `<Mailto>`, and `<Tel>`
+     - [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
+     - [`<LocalStorage>`](./docs/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
+     - [`<Speak>`](./docs/Speak.md), [`<Vibrate>`](./docs/Vibrate.md), [`<Alert>`](./docs/Alert.md), `<Prompt>`, `<Confirm>`
+     - [`go()`](./docs/route.md#go), `<Redirect>`, `<Link>`, `<Sms>`, `<Mailto>`, and `<Tel>`
   - Promises
      - [`<Resolve>`](./docs/Resolve.md), `<Fetch>`
   - Context
