@@ -2,12 +2,13 @@
 import {h} from '../util';
 import {stringify} from 'qs';
 
-export interface ISmsProps extends React.HTMLAttributes<HTMLAnchorElement> {
+export interface ISmsProps {
+  children?;
   phone: string;
   body?: string;
 }
 
-export const Sms: React.StatelessComponent<ISmsProps> = ({phone, body, children, ...props}) => {
+export const Sms: React.StatelessComponent<ISmsProps> = ({phone, body, children, ...props}: ISmsProps) => {
   return h('a', {
     href: `sms:${phone}?${stringify({body})}`,
     ...props
