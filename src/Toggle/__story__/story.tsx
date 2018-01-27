@@ -2,16 +2,46 @@ import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
-import {Toggle} from '..';
+import {Toggle, withToggle} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
+
+const Checkbox = ({on, toggle}) =>
+  <div onClick={toggle}>
+    <input type='checkbox' checked={on} />
+    Toggle me!
+  </div>;
+
+
+
+const Checkbox2 = ({toggle}) => h(Checkbox, toggle);
+
+const Hoc1 = withToggle(Checkbox, '', {init: true});
+const Hoc2 = withToggle(Checkbox2);
+
+@withToggle
+class Decorator extends Component<any, any> {
+  render () {
+    const {on, toggle} = this.props.toggle;
+
+    return (
+      <div onClick={toggle}>
+        <input type='checkbox' checked={on} />
+        Toggle me!
+      </div>
+    );
+  }
+}
 
 storiesOf('Basic/Toggle', module)
   .add('Documentation', () => h(ShowDocs, {name: 'Toggle'}))
   .add('Example', () =>
-    <Toggle init={true}>{(on, toggle) =>
+    <Toggle init={true}>{({on, toggle}) =>
       <div onClick={toggle}>
         <input type='checkbox' checked={on} />
         Toggle me!
       </div>
     }</Toggle>
-  );
+  )
+  .add('HOC 1', () => <Hoc1 />)
+  .add('HOC 2', () => <Hoc2 />)
+  .add('Decorator', () => <Decorator />);
