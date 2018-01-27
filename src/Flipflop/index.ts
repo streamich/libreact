@@ -28,4 +28,4 @@ export const Flipflop: React.StatelessComponent<IFlipflopProps> = (props) => {
   });
 };
 
-export const withFlipflop = faccToHoc(Toggle, 'flipflop');
+export const withFlipflop = faccToHoc(Flipflop, 'flipflop');

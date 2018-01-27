@@ -32,7 +32,7 @@ class Decorator extends Component<any, any> {
   }
 }
 
-storiesOf('Basic/Toggle', module)
+storiesOf('Inversion/Toggle', module)
   .add('Documentation', () => h(ShowDocs, {name: 'Toggle'}))
   .add('Example', () =>
     <Toggle init={true}>{({on, toggle}) =>
