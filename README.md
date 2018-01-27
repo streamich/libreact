@@ -29,7 +29,7 @@ const MyComponent = mock();
 ## Contents
 
   - Introduction
-  - Dummies
+  - [Dummies](./docs/Dummies.md)
      - [`mock()`](./docs/mock.md) and [`loadable()`](./docs/loadable.md)
      - [`lazy()`](./docs/lazy.md), [`delayed()`](./docs/delayed.md), and `viewport()`
   - [Inversion](./docs/inversion.md)

@@ -8,7 +8,7 @@ import ShowDocs from '../../../.storybook/ShowDocs'
 const Val = ({value, set}) =>
     <input value={value} onChange={(e) => set(e.target.value)} />;
 
-const Hoc1 = withValue(({value}) => h(Val, value));
+const Hoc1 = withValue(({value}) => h(Val, value), 'value', 'default');
 // const Hoc2 = withToggle(Checkbox2);
 
 @withValue

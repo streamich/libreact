@@ -14,13 +14,21 @@ export const Value: React.StatelessComponent<IValueProps> = (props) => {
     init: {
       value: props.init
     },
-    render: ({value}, set) => {
-      return renderProp(props, {
-        value,
-        set: (value) => set({value})
-      });
-    }
+    render: ({value}, set) => renderProp(props, {
+      value,
+      set: (value) => set({value})
+    })
   });
 };
 
-export const withValue = faccToHoc(Value, 'value');
+export const faccToHocInit = (Facc, name) => (Comp, name2?, init?) => {
+  const isClassDecoratorMethodCall = typeof Comp === 'string';
+
+    if (isClassDecoratorMethodCall) {
+      return faccToHoc(Facc, name)(Comp, {init: name2});
+    } else {
+      return faccToHoc(Facc, name)(Comp, name2, {init});
+    }
+};
+
+export const withValue = faccToHocInit(Value, 'value');

@@ -6,7 +6,7 @@ import {Counter, withCounter} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 const Val = ({value, inc, set}) =>
-    <div onClick={(e) => inc(3)} onDoubleClick={inc}>{value}</div>;
+  <div onClick={(e) => inc(3)} onDoubleClick={inc}>{value}</div>;
 
 const Hoc1 = withCounter(({counter}) => h(Val, counter));
 const Hoc2 = withCounter(Val, '', -5);

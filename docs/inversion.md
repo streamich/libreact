@@ -13,11 +13,16 @@ This effectively allows you to have
   3. Refs to DOM elements
   4. Other objects
 
-in JSX without having to write stateful React components.
+in JSX tree without having to write stateful React components.
+
+  - [`invert()`](./invert.md) and [`<Inverted>`](./invert.md#inverted) - inverts DOM element `ref`.
+  - [`<State>`](./State.md) - inverts state and `.setState()` method.
+     - [`<Toggle>`](./Toggle.md), [`<Flipflop>`](./Flipflop.md), [`<Value>`](./Value.md), [`<Couter>`](./Counter.md), [`<List>`](./List.md), and [`<Map>`](./Map.md)
+
 
 ## Example
 
-A counter example, `cnt` increments by 1 on each click:
+A basic example, `cnt` is incremented by 1 on each click:
 
 ```jsx
 <State init={{cnt: 0}}>

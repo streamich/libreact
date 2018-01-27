@@ -1,5 +1,5 @@
 import {h} from '../util';
-import {Value} from '../Value';
+import {Value, faccToHocInit} from '../Value';
 import renderProp from '../util/renderProp';
 import faccToHoc from '../util/faccToHoc';
 
@@ -16,12 +16,4 @@ export const Counter: React.StatelessComponent<ICounterProps> = (props) => {
   });
 };
 
-export const withCounter = (Comp, name?, init?) => {
-  const isClassDecoratorMethodCall = typeof Comp === 'string';
-
-  if (isClassDecoratorMethodCall) {
-    return faccToHoc(Counter, 'counter')(Comp, {init: name});
-  } else {
-    return faccToHoc(Counter, 'counter')(Comp, name, {init});
-  }
-};
+export const withCounter = faccToHocInit(Counter, 'counter');
