@@ -5,7 +5,7 @@ import {linkTo} from '@storybook/addon-links';
 import {State} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
-storiesOf('Basics/State', module)
+storiesOf('Basic/State', module)
   .add('Documentation', () => h(ShowDocs, {name: 'State'}))
   .add('Basic example', () =>
     <State init={{cnt: 0}}>{({cnt}, set) =>
