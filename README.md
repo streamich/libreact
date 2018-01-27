@@ -39,7 +39,7 @@ const MyComponent = mock();
         - [`<Flipflop>`](./docs/Flipflop.md), [`withFlipflop()`](./docs/Flipflop.md#withflipflop-hoc), and [`@withFlipflop`](./docs/Flipflop.md#withflipflop-decorator)
         - [`<Value>`](./docs/Value.md), [`withValue()`](./docs/Value.md#withvalue-hoc), and [`@withValue`](./docs/Value.md#withvalue-decorator)
         - [`<Counter>`](./docs/Counter.md), [`withCounter()`](./docs/Counter.md#withcounter-hoc) and [`@withCounter`](./docs/Counter.md#withcounter-decorator)
-        - `<List>`, `withList()`, and `@withList`
+        - [`<List>`](./docs/List.md), [`withList()`](./docs/List.md#withlist-hoc), and [`@withList`](./docs/List.md#withlist-decorator)
         - `<Map>`, `withMap()`, and `@withMap`
   - Sensors
      - [`<BatterySensor>`](./docs/BatterySensor.md), [`withBattery()`](./docs/BatterySensor.md#withbattery), and [`@withBattery`](./docs/BatterySensor.md#withbattery-1)
