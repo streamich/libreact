@@ -38,7 +38,7 @@ const MyComponent = mock();
         - [`<Toggle>`](./docs/Toggle.md), [`withToggle()`](./docs/Toggle.md#withtoggle-hoc), and [`@withToggle`](./docs/Toggle.md#withtoggle-decorator)
         - [`<Flipflop>`](./docs/Flipflop.md), [`withFlipflop()`](./docs/Flipflop.md#withflipflop-hoc), and [`@withFlipflop`](./docs/Flipflop.md#withflipflop-decorator)
         - [`<Value>`](./docs/Value.md), [`withValue()`](./docs/Value.md#withvalue-hoc), and [`@withValue`](./docs/Value.md#withvalue-decorator)
-        - `<Counter>`, `withCounter()` and `@withCounter`
+        - [`<Counter>`](./docs/Counter.md), [`withCounter()`](./docs/Counter.md#withcounter-hoc) and [`@withCounter`](./docs/Counter.md#withcounter-decorator)
         - `<List>`, `withList()`, and `@withList`
         - `<Map>`, `withMap()`, and `@withMap`
   - Sensors

@@ -11,7 +11,7 @@ export const Counter: React.StatelessComponent<ICounterProps> = (props) => {
   return h(Value, {
     init: props.init || 0,
     render: (state) => renderProp(props, Object.assign(state, {
-      inc: (by: number = 1) => state.set(state.value + by)
+      inc: (by: number = 1) => state.set(state.value + (+by || 0))
     }))
   });
 };
