@@ -10,12 +10,18 @@ export interface ICounterProps {
 export const Counter: React.StatelessComponent<ICounterProps> = (props) => {
   return h(Value, {
     init: props.init || 0,
-    render: ({value, set}) => renderProp(props, {
-      cnt: value,
-      set,
-      inc: (by: number = 1) => set(value + by)
-    })
+    render: (state) => renderProp(props, Object.assign(state, {
+      inc: (by: number = 1) => state.set(state.value + by)
+    }))
   });
 };
 
-export const withCounter = faccToHoc(Counter, 'counter');
+export const withCounter = (Comp, name?, init?) => {
+  const isClassDecoratorMethodCall = typeof Comp === 'string';
+
+  if (isClassDecoratorMethodCall) {
+    return faccToHoc(Counter, 'counter')(Comp, {init: name});
+  } else {
+    return faccToHoc(Counter, 'counter')(Comp, name, {init});
+  }
+};
