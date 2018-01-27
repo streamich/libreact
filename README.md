@@ -36,7 +36,7 @@ const MyComponent = mock();
      - [`invert()`](./docs/invert.md) and [`<Inverted>`](./docs/invert.md#inverted)
      - [`<State>`](./docs/State.md), `withState()`, and `@withState`
         - [`<Toggle>`](./docs/Toggle.md), [`withToggle()`](./docs/Toggle.md#withtoggle-hoc), and [`@withToggle`](./docs/Toggle.md#withtoggle-decorator)
-        - [`<Flipflop>`](./docs/Flipflop.md), `withFlipflop()`, and `@withFlipflop`
+        - [`<Flipflop>`](./docs/Flipflop.md), [`withFlipflop()`](./docs/Flipflop.md#withflipflop-hoc), and [`@withFlipflop`](./docs/Flipflop.md#withflipflop-decorator)
         - `<Value>`, `withValue()`, and `@withValue`
         - `<Counter>`, `withCounter()` and `@withCounter`
         - `<List>`, `withList()`, and `@withList`

@@ -69,7 +69,7 @@ const NetworkStatus = withNetwork(NetworkStatusFormatter);
 <NetworkStatus />
 ```
 
-You can overwrite the inject prop name
+You can overwrite the injected prop name
 
 ```js
 const NetworkStatus = withNetwork(NetworkStatusFormatter, 'network');
