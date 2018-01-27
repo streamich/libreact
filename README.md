@@ -31,6 +31,7 @@ const MyComponent = mock();
   - Basics
      - [`mock()`](./docs/mock.md) and [`loadable()`](./docs/loadable.md)
      - [`lazy()`](./docs/lazy.md), [`delayed()`](./docs/delayed.md), and `viewport()`
+  - [Inversion](./docs/inversion.md)
      - [`invert()`](./docs/invert.md) and [`<Inverted>`](./docs/invert.md#inverted)
      - [`<State>`](./docs/State.md), `withState()`, and `@withState`
         - [`<Toggle>`](./docs/Toggle.md), [`withToggle()`](./docs/Toggle.md#withtoggle-hoc), and [`@withToggle`](./docs/Toggle.md#withtoggle-decorator)
