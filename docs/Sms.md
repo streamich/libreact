@@ -7,7 +7,7 @@ Creates `<a>` element with `href` attribute formatted according to SMS protocol.
 ```jsx
 import {Sms} from 'libreact/lib/Sms';
 
-<Sms phone='123' body='hello' />
+<Sms phone='123' body='hello'>Click me!</Sms>
 ```
 
 ### Props

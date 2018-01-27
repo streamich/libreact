@@ -8,9 +8,9 @@ export interface ISmsProps extends React.HTMLAttributes<HTMLAnchorElement> {
   body?: string;
 }
 
-export const Sms: React.StatelessComponent<ISmsProps> = ({phone, body, children, ...props}: ISmsProps) => {
+export const Sms: React.StatelessComponent<ISmsProps> = ({phone, body, ...props}) => {
   return h('a', {
     href: `sms:${phone}?${stringify({body})}`,
     ...props
-  }, children);
+  });
 };
