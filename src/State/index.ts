@@ -27,7 +27,7 @@ export class State extends Component<IStateProps, IStateState> {
   constructor (props, context) {
     super(props, context);
 
-    this.state = props.init;
+    this.state = props.init || {};
     this.setState = this.setState.bind(this);
   }
 

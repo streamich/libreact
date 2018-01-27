@@ -31,7 +31,8 @@ const MyComponent = mock();
   - Basics
      - [`mock()`](./docs/mock.md) and [`loadable()`](./docs/loadable.md)
      - [`lazy()`](./docs/lazy.md), [`delayed()`](./docs/delayed.md), and `viewport()`
-     - [`invert()`](./docs/invert.md), [`<Inverted>`](./docs/invert.md#inverted), `<State>`
+     - [`invert()`](./docs/invert.md) and [`<Inverted>`](./docs/invert.md#inverted)
+     - [`<State>`](./docs/State.md)
   - Sensors
      - [`<BatterySensor>`](./docs/BatterySensor.md), [`withBattery()`](./docs/BatterySensor.md#withbattery), and [`@withBattery`](./docs/BatterySensor.md#withbattery-1)
      - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md), [`withMediaDevices()`](./docs/MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./docs/MediaDeviceSensor.md#withmediadevices-1)
@@ -54,7 +55,7 @@ const MyComponent = mock();
      - [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
      - [`<LocalStorage>`](./docs/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
      - [`<Speak>`](./docs/Speak.md), [`<Vibrate>`](./docs/Vibrate.md), [`<Alert>`](./docs/Alert.md), `<Prompt>`, `<Confirm>`
-     - [`go()`](./docs/route.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/Sms.md), `<Email>`, and `<Tel>`
+     - [`go()`](./docs/route.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/Sms.md), [`<Mailto>`](./docs/Mailto.md), and `<Tel>`
      - [`<FullScreen>`](./docs/FullScreen.md), `<Overlay>`
   - Promises
      - [`<Resolve>`](./docs/Resolve.md), `<Fetch>`
