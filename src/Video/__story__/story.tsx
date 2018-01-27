@@ -37,7 +37,7 @@ storiesOf('Generators/Video', module)
       }
     />
   )
-  .add('All bontrol buttons', () =>
+  .add('All control buttons', () =>
     <Video
       src={src}
       style={{

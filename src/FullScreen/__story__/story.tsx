@@ -4,6 +4,7 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {FullScreen} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
+import {invert} from '../../invert';
 
 
 class StoryFullScreenBasicNative extends Component<any, any> {
@@ -16,11 +17,32 @@ class StoryFullScreenBasicNative extends Component<any, any> {
   render () {
     return (
       <FullScreen on={this.state.on} onClose={() => this.setState({on: false})}>
-        <div>
-          Hello world
-          <br />
-          <button onClick={() => this.setState({on: !this.state.on})}>{this.state.on ? 'Leave' : 'Enter'}</button>
-        </div>
+        Hello world
+        <br />
+        <button onClick={() => this.setState({on: !this.state.on})}>{this.state.on ? 'Leave' : 'Enter'}</button>
+      </FullScreen>
+    );
+  }
+}
+
+const Video = invert('video');
+
+class StoryFullScreenVideo extends Component<any, any> {
+  state = {
+    on: false,
+    video: null
+  };
+
+  onMount = (video) => {
+    this.setState({video});
+  };
+
+  render () {
+    return (
+      <FullScreen on={this.state.on} video={this.state.video} onClose={() => this.setState({on: false})}>
+        <Video autoPlay src='http://dailym.ai/2rG7TBS' onMount={this.onMount} />
+        <br />
+        <button onClick={() => this.setState({on: !this.state.on})}>{this.state.on ? 'Leave' : 'Enter'}</button>
       </FullScreen>
     );
   }
@@ -29,4 +51,5 @@ class StoryFullScreenBasicNative extends Component<any, any> {
 
 storiesOf('Other/FullScreen', module)
   .add('Documentation', () => h(ShowDocs, {name: 'FullScreen'}))
-  .add('Example', () => <StoryFullScreenBasicNative />);
+  .add('Example', () => <StoryFullScreenBasicNative />)
+  .add('.webkitEnterFullscreen()', () => <StoryFullScreenVideo />);

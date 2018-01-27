@@ -23,6 +23,7 @@ export class FullScreen extends Component<IFullScreenProps, IFullScreenState> {
   };
 
   el: HTMLElement = null;
+  mounted: boolean = false;
 
   ref = (el) => {
     this.el = el;
@@ -30,6 +31,7 @@ export class FullScreen extends Component<IFullScreenProps, IFullScreenState> {
   };
 
   componentDidMount () {
+    this.mounted = true;
     screenfull.on('change', this.onChange);
   }
 
@@ -42,21 +44,46 @@ export class FullScreen extends Component<IFullScreenProps, IFullScreenState> {
   }
 
   componentWillUnmount () {
+    this.mounted = false;
     screenfull.off('change', this.onChange);
   }
 
   enter () {
-    if (this.el && screenfull.enabled) {
-      try {
-        screenfull.request(this.el);
-      } catch {}
+    if (this.el) {
+      if (screenfull.enabled) {
+        try {
+          screenfull.request(this.el);
+        } catch {}
+      } else {
+        const {video} = this.props;
+
+        if (video && video.webkitEnterFullscreen) {
+          const onWebkitEndFullscreen = () => {
+            video.removeEventListener('webkitendfullscreen', onWebkitEndFullscreen);
+            if (this.mounted) {
+              this.props.onClose();
+            }
+          };
+
+          video.webkitEnterFullscreen();
+          video.addEventListener('webkitendfullscreen', onWebkitEndFullscreen);
+        }
+      }
     }
   }
 
   leave () {
-    try {
-      screenfull.exit();
-    } catch {}
+    if (screenfull.enabled) {
+      try {
+        screenfull.exit();
+      } catch {}
+    } else {
+      const {video} = this.props;
+
+      if (video && video.webkitExitFullscreen) {
+        video.webkitExitFullscreen();
+      }
+    }
   }
 
   onChange = () => {
