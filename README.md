@@ -31,7 +31,7 @@ const MyComponent = mock();
   - Basics
      - [`mock()`](./docs/mock.md) and [`loadable()`](./docs/loadable.md)
      - [`lazy()`](./docs/lazy.md), [`delayed()`](./docs/delayed.md), and `viewport()`
-     - [`invert()`](./docs/invert.md), `<State>`
+     - [`invert()`](./docs/invert.md), [`<Inverted>`](./docs/invert.md#inverted), `<State>`
   - Sensors
      - [`<BatterySensor>`](./docs/BatterySensor.md), [`withBattery()`](./docs/BatterySensor.md#withbattery), and [`@withBattery`](./docs/BatterySensor.md#withbattery-1)
      - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md), [`withMediaDevices()`](./docs/MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./docs/MediaDeviceSensor.md#withmediadevices-1)

@@ -6,7 +6,7 @@ export interface IInvertedProps extends React.AllHTMLAttributes<any> {
   children?: React.ReactElement<any> | ((comp) => React.ReactElement<any>);
   render?: React.ReactElement<any> | ((comp) => React.ReactElement<any>);
   onMount: (el: HTMLElement, comp: React.Component<any>) => void;
-  onUnmount: (comp: React.Component<any>) => void;
+  onUnmount: (el: HTMLElement, comp: React.Component<any>) => void;
   wrapper: (element: React.ReactElement<any>, comp: React.Component<any>) => React.ReactElement<any>;
   tag?: keyof React.ReactHTML;
 }
@@ -32,14 +32,14 @@ export const invert: TInvert = (tag?: keyof React.ReactHTML) => {
       this.forceUpdate();
     }
 
-    compnentWillUnmount () {
+    componentWillUnmount () {
+      (this.props.onUnmount || noop)(this.el, this);
       this.el = null;
-      (this.props.onUnmount || noop)(this);
     }
 
     event (name: string, handler: (...args) => void) {
       return (event) => {
-        handler(event, this);
+        handler(event, this.el, this);
         this.forceUpdate();
       };
     }

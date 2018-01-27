@@ -3,18 +3,46 @@ import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {invert, Inverted} from './invert';
+import ShowDocs from '../.storybook/ShowDocs'
 
 const Audio = invert('audio');
-import ShowDocs from '../.storybook/ShowDocs'
+
+class StoryInvertedUnmount extends Component<any, any> {
+  state = {
+    show: true
+  };
+
+  componentDidMount () {
+    setTimeout(() => {
+      this.setState({
+        show: false
+      });
+    }, 1000);
+  }
+
+  render () {
+    return h('div', {},
+      this.state.show ?
+        h(Inverted, {
+          tag: 'div',
+          wrapper: (jsx, comp) => <b>jsx</b>,
+          onMount: (div) => console.log('MOUNTED', div),
+          onUnmount: (div) => console.log('UNMOUNTED', div)
+        }, 'Hello world') :
+        null
+    );
+  }
+}
+
 
 storiesOf('Dummies/invert()', module)
   .add('Documentation', () => h(ShowDocs, {name: 'invert'}))
-  .add('<div>', () => h(Inverted, {tag: 'div'}, 'Hello world'))
+  .add('<div>', () => h(StoryInvertedUnmount))
   .add('<audio>', () =>
     <Audio
       src='https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
       onTimeUpdate={() => {}}
-      render={(element, comp) =>
+      wrapper={(element, comp) =>
         <div>
           {element}
           <button onClick={() => comp.el.play()}>Play</button>

@@ -1,7 +1,7 @@
 # `invert()`
 
 A utility function that inverts DOM element by creating a FaCC out of it. Allows you to easily
-create stateless DOM compnents with reference to a DOM element and invertd control flow.
+create stateless DOM components with reference to a DOM element and inverted control flow.
 
 ## Usage
 
@@ -14,10 +14,10 @@ const Video = invert('video');
 // etc...
 
 <Div
-  onClick={(event, comp) => {
-
-  }}
-  render={(div, comp) => div}
+  onMount={(div, comp) => console.log('MOUNTED', div, comp)}
+  onUnmount={(div, comp) => console.log('UNMOUNTED', div, comp)}
+  onClick={(event, div, comp) => {}}
+  wrapper={(jsx, comp) => <b>jsx</b>}
 >{(comp) =>
 
 }</Div>
@@ -27,7 +27,7 @@ const Video = invert('video');
 ## Reference
 
 ```tsx
-invert: (tag: string) => React.ComponentClass;
+invert: (tag?: string) => React.ComponentClass;
 ```
 
 , where
@@ -46,6 +46,24 @@ it has these additional props:
 Children of the created component can be a function that recieves a React component as its only argument.
 
 The created react component instance has `.el` property which is a reference to the DOM element.
+
+
+## `<Inverted>`
+
+The default inverted element create for your convenience
+
+```js
+const Inverted = invert('div');
+```
+
+Although, by default, it is created as `<div>` element, it does not have to be a `<div>`. You can overwrite
+tag name when you use it
+
+```jsx
+<Inverted tag='span' onMount={() => console.log('<span> mounted')}>
+  Hello world!
+<Inverted>
+```
 
 
 ## Example
