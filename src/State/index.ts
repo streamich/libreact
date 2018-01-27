@@ -3,10 +3,10 @@ import {noop} from '../util';
 import renderProp from '../util/renderProp';
 
 export interface IStateProps {
-  children?: (state: IStateState, setState?) => React.ReactElement<any>;
+  children?: (state, setState?) => React.ReactElement<any>;
+  render?: (state, setState?) => React.ReactElement<any>;
   init: object,
   onChange?: (state: any) => void;
-  render?: (state: any, setState?) => void;
   onMount?: (state) => void;
   onUnmount?: (state) => void;
 }

@@ -8,7 +8,7 @@ import ShowDocs from '../../../.storybook/ShowDocs'
 storiesOf('Basics/State', module)
   .add('Documentation', () => h(ShowDocs, {name: 'State'}))
   .add('Basic example', () =>
-    h(State, {init: {cnt: 0}}, ({cnt}, set) =>
+    <State init={{cnt: 0}}>{({cnt}, set) =>
       <div
         style={{
           width: 100,
@@ -22,5 +22,5 @@ storiesOf('Basics/State', module)
       >
         {cnt}
       </div>
-    )
+    }</State>
   );
