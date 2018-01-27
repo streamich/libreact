@@ -32,3 +32,33 @@ Create a counter
   </div>
 }</State>
 ```
+
+
+## `withState()` HOC
+
+HOC that merges `state` prop into enhanced component's props. Your component will receive
+the state object with merged in `set()` method that you can use to update your state.
+
+```jsx
+import {withState} from 'libreact/lib/State';
+
+const MyCompWithState = withState(MyComp);
+```
+
+You can overwrite the injected prop name
+
+```js
+const MyCompWithState = withState(MyComp, 'foobar');
+```
+
+Or simply merge the whole object into your props
+
+```js
+const MyCompWithState = withState(MyComp, '');
+```
+
+Specify default state
+
+```js
+const MyCompWithState = withState(MyComp, '', {counter: 0});
+```

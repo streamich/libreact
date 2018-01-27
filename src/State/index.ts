@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import {noop} from '../util';
+import {h, noop} from '../util';
 import renderProp from '../util/renderProp';
 
 export interface IStateProps {
@@ -43,3 +43,23 @@ export class State extends Component<IStateProps, IStateState> {
     return renderProp(this.props, this.state, this.setState);
   }
 }
+
+export const withState = (Comp, name = 'state', init = {}) =>
+  (props) => h(State, {
+    init,
+    render: (state, set) =>
+      h(Comp, name ?
+        {
+          [name]: {
+            ...state,
+            set
+          },
+          ...props
+        } :
+        {
+          ...state,
+          set,
+          ...props,
+        }
+      )
+  });

@@ -2,8 +2,14 @@ import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
-import {State} from '..';
+import {State, withState} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
+
+const Cnt = ({cnt, set}) =>
+  <div onClick={() => set({cnt: cnt + 1})}>{cnt}</div>;
+
+const Hoc1 = withState(Cnt, '', {cnt: 3});
+const Hoc2 = withState(({foobar}) => h(Cnt, foobar), 'foobar', {cnt: 0});
 
 storiesOf('Inversion/State', module)
   .add('Documentation', () => h(ShowDocs, {name: 'State'}))
@@ -23,4 +29,6 @@ storiesOf('Inversion/State', module)
         {cnt}
       </div>
     }</State>
-  );
+  )
+  .add('HOC 1', () => <Hoc1 />)
+  .add('HOC 2', () => <Hoc2 />);
