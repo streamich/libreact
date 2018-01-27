@@ -40,7 +40,7 @@ const MyComponent = mock();
         - [`<Value>`](./docs/Value.md), [`withValue()`](./docs/Value.md#withvalue-hoc), and [`@withValue`](./docs/Value.md#withvalue-decorator)
         - [`<Counter>`](./docs/Counter.md), [`withCounter()`](./docs/Counter.md#withcounter-hoc) and [`@withCounter`](./docs/Counter.md#withcounter-decorator)
         - [`<List>`](./docs/List.md), [`withList()`](./docs/List.md#withlist-hoc), and [`@withList`](./docs/List.md#withlist-decorator)
-        - `<Map>`, `withMap()`, and `@withMap`
+        - [`<Map>`](./docs/Map.md), [`withMap()`](./docs/Map.md#withmap-hoc), and [`@withMap`](./docs/Map.md#withmap-decorator)
   - Sensors
      - [`<BatterySensor>`](./docs/BatterySensor.md), [`withBattery()`](./docs/BatterySensor.md#withbattery), and [`@withBattery`](./docs/BatterySensor.md#withbattery-1)
      - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md), [`withMediaDevices()`](./docs/MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./docs/MediaDeviceSensor.md#withmediadevices-1)
