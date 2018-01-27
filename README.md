@@ -32,7 +32,13 @@ const MyComponent = mock();
      - [`mock()`](./docs/mock.md) and [`loadable()`](./docs/loadable.md)
      - [`lazy()`](./docs/lazy.md), [`delayed()`](./docs/delayed.md), and `viewport()`
      - [`invert()`](./docs/invert.md) and [`<Inverted>`](./docs/invert.md#inverted)
-     - [`<State>`](./docs/State.md)
+     - [`<State>`](./docs/State.md), `withState()`, and `@withState`
+        - [`<Toggle>`](./docs/Toggle.md), [`withToggle()`](./docs/Toggle.md#withtoggle-hoc), and [`@withToggle`](./docs/Toggle.md#withtoggle-decorator)
+        - `<Flipflop>`, `withFlipflop()`, and `@withFlipflop`
+        - `<Value>`, `withValue()`, and `@withValue`
+        - `<Counter>`, `withCounter()` and `@withCounter`
+        - `<List>`, `withList()`, and `@withList`
+        - `<Map>`, `withMap()`, and `@withMap`
   - Sensors
      - [`<BatterySensor>`](./docs/BatterySensor.md), [`withBattery()`](./docs/BatterySensor.md#withbattery), and [`@withBattery`](./docs/BatterySensor.md#withbattery-1)
      - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md), [`withMediaDevices()`](./docs/MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./docs/MediaDeviceSensor.md#withmediadevices-1)
