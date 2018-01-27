@@ -3,7 +3,13 @@ import {State} from '../State';
 import renderProp from '../util/renderProp';
 import faccToHoc from '../util/faccToHoc';
 
-export const Value = (props) => {
+export interface IValueProps {
+  init?: any;
+  children?: (state) => React.ReactElement<any>;
+  render?: (state) => React.ReactElement<any>;
+}
+
+export const Value: React.StatelessComponent<IValueProps> = (props) => {
   return h(State, {
     init: {
       value: props.init
