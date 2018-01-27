@@ -16,8 +16,7 @@ export const Mailto: React.StatelessComponent<IMailtoProps> = ({
   cc,
   bcc,
   body = '',
-  children,
-  ...props,
+  ...props
 }) => {
   const query = stringify({
     subject,
@@ -27,6 +26,7 @@ export const Mailto: React.StatelessComponent<IMailtoProps> = ({
   });
 
   return h('a', {
-    href: `mailto:${email}?${query}`
+    href: `mailto:${email}?${query}`,
+    ...props
   });
 };
