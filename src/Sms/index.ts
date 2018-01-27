@@ -2,7 +2,7 @@
 import {h} from '../util';
 import {stringify} from 'qs';
 
-export interface ISmsProps {
+export interface ISmsProps extends React.HTMLAttributes<HTMLAnchorElement> {
   children?;
   phone: string;
   body?: string;

@@ -54,7 +54,7 @@ const MyComponent = mock();
      - [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
      - [`<LocalStorage>`](./docs/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
      - [`<Speak>`](./docs/Speak.md), [`<Vibrate>`](./docs/Vibrate.md), [`<Alert>`](./docs/Alert.md), `<Prompt>`, `<Confirm>`
-     - [`go()`](./docs/route.md#go), `<Redirect>`, `<Link>`, `<Sms>`, `<Email>`, and `<Tel>`
+     - [`go()`](./docs/route.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/Sms.md), `<Email>`, and `<Tel>`
      - [`<FullScreen>`](./docs/FullScreen.md), `<Overlay>`
   - Promises
      - [`<Resolve>`](./docs/Resolve.md), `<Fetch>`
