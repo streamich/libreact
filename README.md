@@ -57,7 +57,7 @@ const MyComponent = mock();
      - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md), `withWindowScroll()`, and `@withWindowScroll`
      - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md), `withWindowSize()`, and `@withWindowSize`
      - `<MotionSensor>`, `withMotion()`, and `@withMotion`
-     - `<MouseSensor>`, `withMouse()`, and `@withMouse`
+     - [`<MouseSensor>`](./docs/MouseSensor.md), [`withMouse()`](./docs/MouseSensor.md#withmouse-hoc), and [`@withMouse`](./docs/MouseSensor.md#withmouse-decorator)
      - `<GeoPositionSensor>`, `withGeoPosition()`, and `@withGeoPosition`
   - Generators
      - [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
