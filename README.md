@@ -72,7 +72,7 @@ const MyComponent = mock();
      - [`<Theme>`](./docs/theme.md#theme), [`<Themed>`](./docs/theme.md#themed), [`withTheme()`](./docs/theme.md#withtheme), and `@withTheme`
      - `<CssVars>`
      - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), [`withRoute()`](./docs/route.md#withroute), `@withRoute`, `go()`, and `<Go>`
-     - `<Translations>`, `<Translate>`, `<T>`, `withT()`, and `@withT`
+     - [`<Translations>`](./docs/translate.md#translations), [`<Translate>`](./docs/translate.md#translate), [`<T>`](./docs/translate.md#translate), [`withT()`](./docs/translate.md#witht-hoc), and [`@withT`](./docs/translate.md#witht-decorator)
   - [CSS resets](./docs/CSS-resets.md)
      - [`<CssResetEricMeyer>`](./docs/reset/CssResetEricMeyer.md) and [`<CssResetEricMeyerCondensed>`](./docs/reset/CssResetEricMeyerCondensed.md)
      - [`<CssResetMinimalistic>`](./docs/reset/CssResetMinimalistic.md), [`<CssResetMinimalistic2>`](./docs/reset/CssResetMinimalistic2.md), and [`<CssResetMinimalistic3>`](./docs/reset/CssResetMinimalistic3.md)
