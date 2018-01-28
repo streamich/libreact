@@ -60,7 +60,7 @@ export interface IViewportScrollSensorState {
 export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, IViewportScrollSensorState> {
   static defaultProps = {
     threshold: 0,
-    throttle: 150,
+    throttle: 50,
     margin: [0, 0, 0, 0]
   };
 

@@ -4,7 +4,7 @@
 
 [![][npm-badge]][npm-url] [![][travis-badge]][travis-url]
 
-React standard library, must-have toolbox for any React project.
+React standard library &mdash; must-have toolbox for any React project.
 
   - Collection of React sensors, FaCCs, render props, HOCs, context providers, dummies, and [other goodies](#contents).
   - *Isomorphic* - all components work in browser and on server (and some in `react-native`).
@@ -31,7 +31,7 @@ const MyComponent = mock();
   - Introduction
   - [Dummies](./docs/Dummies.md)
      - [`mock()`](./docs/mock.md) and [`loadable()`](./docs/loadable.md)
-     - [`lazy()`](./docs/lazy.md), [`delayed()`](./docs/delayed.md), and `viewport()`
+     - [`lazy()`](./docs/lazy.md), [`delayed()`](./docs/delayed.md), and [`viewport()`](./docs/viewport.md)
   - [Inversion](./docs/inversion.md)
      - [`invert()`](./docs/invert.md) and [`<Inverted>`](./docs/invert.md#inverted)
      - [`<State>`](./docs/State.md) and [`withState()`](./docs/State.md#withstate-hoc)

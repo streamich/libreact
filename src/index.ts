@@ -5,6 +5,7 @@ export * from './mock';
 export * from './loadable';
 export * from './lazy';
 export * from './delayed';
+export * from './viewport';
 export * from './invert';
 
 // Sensors

@@ -5,7 +5,7 @@ import faccToHoc, {divWrapper} from '../util/faccToHoc';
 
 let Sensor: any = ViewportObserverSensor;
 
-if (('IntersectionObserver' in window)) {
+if (!(window as any).IntersectionObserver) {
   const loader = () => import('../ViewportScrollSensor').then((module) => module.ViewportScrollSensor);
 
   Sensor = loadable({loader});
