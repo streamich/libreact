@@ -41,6 +41,12 @@ const MyComponent = mock();
         - [`<Counter>`](./docs/Counter.md), [`withCounter()`](./docs/Counter.md#withcounter-hoc) and [`@withCounter`](./docs/Counter.md#withcounter-decorator)
         - [`<List>`](./docs/List.md), [`withList()`](./docs/List.md#withlist-hoc), and [`@withList`](./docs/List.md#withlist-decorator)
         - [`<Map>`](./docs/Map.md), [`withMap()`](./docs/Map.md#withmap-hoc), and [`@withMap`](./docs/Map.md#withmap-decorator)
+  - [Context](./docs/Context.md)
+     - [`<Provider>`](./docs/Provider.md#provider), [`<Consumer>`](./docs/Provider.md#consumer), [`withContext()`](./docs/Provider.md#withcontext), and `@withContext`
+     - [`<Theme>`](./docs/theme.md#theme), [`<Themed>`](./docs/theme.md#themed), [`withTheme()`](./docs/theme.md#withtheme), and `@withTheme`
+     - `<CssVars>`
+     - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), [`withRoute()`](./docs/route.md#withroute), `@withRoute`, `go()`, and `<Go>`
+     - [`<Translations>`](./docs/translate.md#translations), [`<Translate>`](./docs/translate.md#translate-or-t), [`<T>`](./docs/translate.md#translate-or-t), [`withT()`](./docs/translate.md#witht-hoc), and [`@withT`](./docs/translate.md#witht-decorator)
   - [Sensors](./docs/Sensors.md)
      - [`<BatterySensor>`](./docs/BatterySensor.md), [`withBattery()`](./docs/BatterySensor.md#withbattery), and [`@withBattery`](./docs/BatterySensor.md#withbattery-1)
      - [`<GeoLocationSensor>`](./docs/GeoLocationSensor.md), [`withGeoLocation()`](./docs/GeoLocationSensor.md#withgeolocation-hoc), and [`@withGeoLocation`](./docs/GeoLocationSensor.md#withgeolocation-decorator)
@@ -59,20 +65,17 @@ const MyComponent = mock();
         - [`<ViewportScrollSensor>`](./docs/ViewportSensor.md#viewportscrollsensor) and [`<ViewportObserverSensor>`](./docs/ViewportSensor.md#viewportobserversensor)
      - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md), [`withWindowScroll()`](./docs/WindowScrollSensor.md#withwindowscroll-hoc), and [`@withWindowScroll`](./docs/WindowScrollSensor.md#withwindowscroll-decorator)
      - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md), [`withWindowSize()`](./docs/WindowSizeSensor.md#withwindowsize-hoc), and [`@withWindowSize`](./docs/WindowSizeSensor.md#withwindowsize-decorator)
+     - `HoverSensor`, `withHover()`, and `@withHover`
+     - `ActiveSensor`, `withActive()`, and `@withActive`
+     - `FocusSensor`, `withFocus()`, and `@withFocus`
   - Generators
      - [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
      - [`<LocalStorage>`](./docs/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
      - [`<Speak>`](./docs/Speak.md), [`<Vibrate>`](./docs/Vibrate.md), [`<Alert>`](./docs/Alert.md), `<Prompt>`, `<Confirm>`
      - [`go()`](./docs/route.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/Sms.md), [`<Mailto>`](./docs/Mailto.md), and `<Tel>`
-     - [`<FullScreen>`](./docs/FullScreen.md), `<Overlay>`
-  - Promises
-     - [`<Resolve>`](./docs/Resolve.md), `<Fetch>`
-  - Context
-     - [`<Provider>`](./docs/context.md#provider), [`<Consumer>`](./docs/context.md#consumer), [`withContext()`](./docs/context.md#withcontext), and `@withContext`
-     - [`<Theme>`](./docs/theme.md#theme), [`<Themed>`](./docs/theme.md#themed), [`withTheme()`](./docs/theme.md#withtheme), and `@withTheme`
-     - `<CssVars>`
-     - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), [`withRoute()`](./docs/route.md#withroute), `@withRoute`, `go()`, and `<Go>`
-     - [`<Translations>`](./docs/translate.md#translations), [`<Translate>`](./docs/translate.md#translate), [`<T>`](./docs/translate.md#translate), [`withT()`](./docs/translate.md#witht-hoc), and [`@withT`](./docs/translate.md#witht-decorator)
+     - [`<FullScreen>`](./docs/FullScreen.md)
+  - UI
+     - `<Overlay>`
   - [CSS resets](./docs/CSS-resets.md)
      - [`<CssResetEricMeyer>`](./docs/reset/CssResetEricMeyer.md) and [`<CssResetEricMeyerCondensed>`](./docs/reset/CssResetEricMeyerCondensed.md)
      - [`<CssResetMinimalistic>`](./docs/reset/CssResetMinimalistic.md), [`<CssResetMinimalistic2>`](./docs/reset/CssResetMinimalistic2.md), and [`<CssResetMinimalistic3>`](./docs/reset/CssResetMinimalistic3.md)
@@ -83,6 +86,7 @@ const MyComponent = mock();
      - [`<CssResetUniversal>`](./docs/reset/CssResetUniversal.md)
      - [`<CssResetYahoo>`](./docs/reset/CssResetYahoo.md)
   - Other
+     - [`<Resolve>`](./docs/Resolve.md), `<Fetch>`
      - [`getDisplayName()`](./docs/getDisplayName.md)
      - `<BrowserOnly>`, `<ServerOnly>`, and `<Environment>`
      - `<Locales>`
