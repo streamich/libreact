@@ -50,6 +50,7 @@ const MyComponent = mock();
   - [Sensors](./docs/Sensors.md)
      - [`<BatterySensor>`](./docs/BatterySensor.md), [`withBattery()`](./docs/BatterySensor.md#withbattery), and [`@withBattery`](./docs/BatterySensor.md#withbattery-1)
      - [`<GeoLocationSensor>`](./docs/GeoLocationSensor.md), [`withGeoLocation()`](./docs/GeoLocationSensor.md#withgeolocation-hoc), and [`@withGeoLocation`](./docs/GeoLocationSensor.md#withgeolocation-decorator)
+     - [`<HoverSensor>`](./docs/HoverSensor.md), [`withHover()`](./docs/HoverSensor.md#withhover-hoc), and [`@withHover`](./docs/HoverSensor.md#withhover-decorator)
      - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md), [`withMediaDevices()`](./docs/MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./docs/MediaDeviceSensor.md#withmediadevices-1)
      - [`<MediaSensor>`](./docs/MediaSensor.md), [`withMedia()`](./docs/MediaSensor.md#withmedia), and [`@withMedia`](./docs/MediaSensor.md#withmedia-1)
      - [`<MotionSensor>`](./docs/MotionSensor.md), [`withMotion()`](./docs/MotionSensor.md#withmotion-hoc), and [`@withMotion`](./docs/MotionSensor.md#withmotion-decorator)
@@ -65,7 +66,6 @@ const MyComponent = mock();
         - [`<ViewportScrollSensor>`](./docs/ViewportSensor.md#viewportscrollsensor) and [`<ViewportObserverSensor>`](./docs/ViewportSensor.md#viewportobserversensor)
      - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md), [`withWindowScroll()`](./docs/WindowScrollSensor.md#withwindowscroll-hoc), and [`@withWindowScroll`](./docs/WindowScrollSensor.md#withwindowscroll-decorator)
      - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md), [`withWindowSize()`](./docs/WindowSizeSensor.md#withwindowsize-hoc), and [`@withWindowSize`](./docs/WindowSizeSensor.md#withwindowsize-decorator)
-     - `HoverSensor`, `withHover()`, and `@withHover`
      - `ActiveSensor`, `withActive()`, and `@withActive`
      - `FocusSensor`, `withFocus()`, and `@withFocus`
   - Generators
