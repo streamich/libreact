@@ -14,6 +14,7 @@ For example, the below `<div>` will be re-rendered every time mouse position cha
 
   - [`<BatterySensor>`](./BatterySensor.md) &mdash; tracks battery status.
   - [`<GeoLocationSensor>`](./GeoLocationSensor.md) &mdash; tracks device geographical location.
+  - [`<HoverSensor>`](./HoverSensor.md) &mdash; tracks element's hover status.
   - [`<MediaDeviceSensor>`](./MediaDeviceSensor.md) &mdash; tracks media devices connected to your device.
   - [`<MediaSensor>`](./MediaSensor.md) &mdash; tracks matches of a media query.
   - [`<MotionSensor>`](./MotionSensor.md) &mdash; tracks physical motion of your device.
