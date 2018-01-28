@@ -81,4 +81,4 @@ HOC or *Higher Order Component* is a function that receives AND/OR returns React
 
 ## Enhancer
 
-*Enhancer* is a HOC that receives AND returns a React components.
+*Enhancer* is a HOC that receives AND returns React components.

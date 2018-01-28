@@ -58,6 +58,7 @@ export interface IRouteMatch {
   children?: React.ReactElement<any> | ((params) => React.ReactElement<any>);
   render?: React.ReactElement<any> | ((params) => React.ReactElement<any>);
   comp?: React.ComponentClass<any> | React.StatelessComponent<any>;
+  component?: React.ComponentClass<any> | React.StatelessComponent<any>;
   exact?: boolean;
   match?: TRouteMatcher | RegExp | string;
   min?: number;
@@ -107,8 +108,6 @@ export class Route extends Component<IRouteMatch, any> {
     return h(Consumer, {name: ns(`route/${this.props.ns}`)}, ({route, inc, count, parent}) => {
       const {children, match, preserve, min, max} = this.props;
       const matchCount = count();
-      console.log('...');
-      console.log('matchCount', matchCount);
 
       if ((matchCount >= min) && (matchCount <= max)) {
         const matchResult = this.matcher()(route);

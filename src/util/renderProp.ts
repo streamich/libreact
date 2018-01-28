@@ -17,14 +17,14 @@ const renderProp = (props, ...args) => {
     }
   }
 
-  const {children, comp, component, render} = props;
+  const {children, component, comp = component, render} = props;
 
   return isFn(children) ?
     children(...args) :
     isFn(render) ?
       render(...args) :
-      (comp || component) ?
-        h(comp || component, args[0]) :
+      comp ?
+        h(comp, args[0]) :
         (children || render || null);
 };
 

@@ -12,7 +12,7 @@ For example, the below `<div>` will be re-rendered every time mouse position cha
 
 `libreact` comes with plenty of sensors built-in.
 
-  - [`<BatterySensor>`](./BatterySensor.md) &mdash; tracks batter status.
+  - [`<BatterySensor>`](./BatterySensor.md) &mdash; tracks battery status.
   - [`<GeoLocationSensor>`](./GeoLocationSensor.md) &mdash; tracks device geographical location.
   - [`<MediaDeviceSensor>`](./MediaDeviceSensor.md) &mdash; tracks media devices connected to your device.
   - [`<MediaSensor>`](./MediaSensor.md) &mdash; tracks matches of a media query.
@@ -31,5 +31,5 @@ For example, the below `<div>` will be re-rendered every time mouse position cha
   - [`<WindowSizeSensor>`](./WindowSizeSensor.md) &mdash; tracks window size.
 
 Most sensors have also corresponding HOC and class decorator that provide the same functionality.
-For example, [`<NetworkSensor>`](./NetworkSensor.md) render prop has a corresponding [`withNetowrk()`](./NetworkSensor.md#withnetwork-hoc) HOC and
+For example, [`<NetworkSensor>`](./NetworkSensor.md) render prop component has a corresponding [`withNetowrk()`](./NetworkSensor.md#withnetwork-hoc) HOC and
 [`@withNetwork`](./NetworkSensor.md#withnetwork-decorator) decorator.
