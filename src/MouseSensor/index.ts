@@ -1,9 +1,10 @@
 import {Component, Children, cloneElement} from 'react';
 import {h, noop} from '../util';
 import renderProp from '../util/renderProp';
-import {extend} from 'fast-extend';
+import faccToHoc from '../util/faccToHoc';
 
 export interface IMouseSensorProps {
+  bond?: string | boolean;
   children?: (state: IMouseSensorState) => React.ReactElement<any>;
   render?: (state: IMouseSensorState) => React.ReactElement<any>;
   whenHovered?: boolean;
@@ -35,7 +36,7 @@ export class MouseSensor extends Component<IMouseSensorProps, IMouseSensorState>
   el: HTMLElement = null;
   frame = null;
 
-  ref = (originalRef) => (el) => {
+  ref = (originalRef?) => (el) => {
     this.el = el;
     (originalRef || noop)(el);
   };
@@ -84,14 +85,14 @@ export class MouseSensor extends Component<IMouseSensorProps, IMouseSensorState>
     });
   };
 
-  onMouseEnter = (originalOnMouseMove) => (event) => {
+  onMouseEnter = (originalOnMouseMove?) => (event) => {
     if (this.props.whenHovered) {
       this.bindEvents();
     }
     (originalOnMouseMove || noop)(event);
   };
 
-  onMouseLeave = (originalOnMouseMove) => (event) => {
+  onMouseLeave = (originalOnMouseMove?) => (event) => {
     if (this.props.whenHovered) {
       this.unbindEvents();
     }
@@ -99,20 +100,49 @@ export class MouseSensor extends Component<IMouseSensorProps, IMouseSensorState>
   };
 
   render () {
-    const element = renderProp(this.props, this.state);
+    let {bond} = this.props;
 
-    let newProps: any = {
-      ...element.props,
-      ref: this.ref(element.ref)
-    };
+    if (bond) {
+      if (typeof bond === 'boolean') {
+        bond = 'bond';
+      }
 
-    if (!this.props.whenHovered) {
-      const {onMouseEnter, onMouseLeave} = element.props;
+      const bondObject: any = {
+        ref: this.ref()
+      };
 
-      newProps.onMouseEnter = this.onMouseEnter(onMouseEnter);
-      newProps.onMouseLeave = this.onMouseLeave(onMouseLeave);
+      if (!this.props.whenHovered) {
+        bondObject.onMouseEnter = this.onMouseEnter();
+        bondObject.onMouseLeave = this.onMouseLeave();
+      }
+
+      return renderProp(this.props, {
+        ...this.state,
+        [bond]: bondObject
+      });
+    } else {
+      const element = renderProp(this.props, this.state);
+
+      let newProps: any = {
+        ...element.props,
+        ref: this.ref(element.ref)
+      };
+
+      if (!this.props.whenHovered) {
+        const {onMouseEnter, onMouseLeave} = element.props;
+
+        newProps.onMouseEnter = this.onMouseEnter(onMouseEnter);
+        newProps.onMouseLeave = this.onMouseLeave(onMouseLeave);
+      }
+
+      return cloneElement(element, newProps);
     }
-
-    return cloneElement(element, newProps);
   }
 }
+
+const MouseSensorWithBond = (props) => h(MouseSensor, {
+  bond: true,
+  ...props
+});
+
+export const withMouse = faccToHoc(MouseSensorWithBond, 'mouse');
