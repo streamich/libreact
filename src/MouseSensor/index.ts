@@ -6,10 +6,7 @@ import {extend} from 'fast-extend';
 export interface IMouseSensorProps {
   children?: (state: IMouseSensorState) => React.ReactElement<any>;
   render?: (state: IMouseSensorState) => React.ReactElement<any>;
-  onMouse,
-  onMouseEnter,
-  onMouseLeave
-  whenHovered
+  whenHovered?: boolean;
 }
 
 export interface IMouseSensorState {
@@ -24,12 +21,6 @@ export interface IMouseSensorState {
 }
 
 export class MouseSensor extends Component<IMouseSensorProps, IMouseSensorState> {
-  static defaultProps = {
-    onMouseEnter: noop,
-    onMouseLeave: noop,
-    whenHovered: true
-  };
-
   state: IMouseSensorState = {
     docX: 0,
     docY: 0,
@@ -115,7 +106,7 @@ export class MouseSensor extends Component<IMouseSensorProps, IMouseSensorState>
       ref: this.ref(element.ref)
     };
 
-    if (this.props.whenHovered) {
+    if (!this.props.whenHovered) {
       const {onMouseEnter, onMouseLeave} = element.props;
 
       newProps.onMouseEnter = this.onMouseEnter(onMouseEnter);

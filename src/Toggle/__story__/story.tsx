@@ -11,8 +11,6 @@ const Checkbox = ({on, toggle}) =>
     Toggle me!
   </div>;
 
-
-
 const Checkbox2 = ({toggle}) => h(Checkbox, toggle);
 
 const Hoc1 = withToggle(Checkbox, '', {init: true});
