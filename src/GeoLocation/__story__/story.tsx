@@ -5,9 +5,9 @@ import {linkTo} from '@storybook/addon-links';
 import {GeoLocationSensor, withGeoLocation} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
-const Print = ({geolocation}) =>
+const Print = ({geoLocation}) =>
   <pre style={{fontFamily: 'monospace'}}>
-    {JSON.stringify(geolocation, null, 4)}
+    {JSON.stringify(geoLocation, null, 4)}
   </pre>;
 
 const Hoc = withGeoLocation(Print);

@@ -67,4 +67,4 @@ export class GeoLocationSensor extends Component<IGeoLocationSensorProps, IGeoLo
   }
 }
 
-export const withGeoLocation = faccToHoc(GeoLocationSensor, 'geolocation');
+export const withGeoLocation = faccToHoc(GeoLocationSensor, 'geoLocation');

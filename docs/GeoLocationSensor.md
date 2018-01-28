@@ -35,7 +35,7 @@ Result
 
 ## `withGeoLocation()` HOC
 
-HOC that merges `geolocation` prop into enhanced component's props.
+HOC that merges `geoLocation` prop into enhanced component's props.
 
 ```jsx
 import {withGeoLocation} from 'libreact/lib/GeoLocationSensor';
@@ -44,7 +44,7 @@ import {withGeoLocation} from 'libreact/lib/GeoLocationSensor';
 
 ## `@withGeoLocation` decorator
 
-React stateful component decorator that adds `geolocation` prop.
+React stateful component decorator that adds `geoLocation` prop.
 
 ```js
 import {withGeoLocation} from 'libreact/lib/GeoLocationSensor';

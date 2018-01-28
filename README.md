@@ -43,22 +43,22 @@ const MyComponent = mock();
         - [`<Map>`](./docs/Map.md), [`withMap()`](./docs/Map.md#withmap-hoc), and [`@withMap`](./docs/Map.md#withmap-decorator)
   - Sensors
      - [`<BatterySensor>`](./docs/BatterySensor.md), [`withBattery()`](./docs/BatterySensor.md#withbattery), and [`@withBattery`](./docs/BatterySensor.md#withbattery-1)
+     - [`<GeoLocationSensor>`](./docs/GeoLocationSensor.md), [`withGeoLocation()`](./docs/GeoLocationSensor.md#withgeolocation-hoc), and [`@withGeoLocation`](./docs/GeoLocationSensor.md#withgeolocation-decorator)
      - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md), [`withMediaDevices()`](./docs/MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./docs/MediaDeviceSensor.md#withmediadevices-1)
      - [`<MediaSensor>`](./docs/MediaSensor.md), [`withMedia()`](./docs/MediaSensor.md#withmedia), and [`@withMedia`](./docs/MediaSensor.md#withmedia-1)
+     - [`<MotionSensor>`](./docs/MotionSensor.md), [`withMotion()`](./docs/MotionSensor.md#withmotion-hoc), and [`@withMotion`](./docs/MotionSensor.md#withmotion-decorator)
+     - [`<MouseSensor>`](./docs/MouseSensor.md), [`withMouse()`](./docs/MouseSensor.md#withmouse-hoc), and [`@withMouse`](./docs/MouseSensor.md#withmouse-decorator)
      - [`<NetworkSensor>`](./docs/NetworkSensor.md), [`withNetwork()`](./docs/NetworkSensor.md#withnetwork-hoc), and [`@withNetwork`](./docs/NetworkSensor.md#withnetwork-decorator)
      - [`<LightSensor>`](./docs/LightSensor.md), [`withLight()`](./docs/LightSensor.md#withlight-hoc), and [`@withLight`](./docs/LightSensor.md#withlight-decorator)
      - [`<LocationSensor>`](./docs/LocationSensor.md), [`withLocation()`](./docs/LocationSensor.md#withlocation-hoc), and [`@withLocation`](./docs/LocationSensor.md#withlocation-decora)
-     - [`<OrientationSensor>`](./docs/OrientationSensor.md), [`withOrientation()`](./docs/OrientationSensor.md#withorientation), and `@withOrientation`
+     - [`<OrientationSensor>`](./docs/OrientationSensor.md), [`withOrientation()`](./docs/OrientationSensor.md#withorientation-hoc), and [`@withOrientation`](./docs/OrientationSensor.md#withorientation-decorator)
      - [`<ScrollSensor>`](./docs/ScrollSensor.md)
      - [`<SizeSensor>`](./docs/SizeSensor.md), [`withSize()`](./docs/SizeSensor.md#withsize-hoc), and [`@withSize`](./docs/SizeSensor.md#withsize-decorator)
         - [`<WidthSensor>`](./docs/WidthSensor.md), [`withWidth()`](./docs/WidthSensor.md#withwidth-hoc-and-withwidth-decorator), and [`@withWidth`](./docs/WidthSensor.md#withwidth-hoc-and-withwidth-decorator)
      - [`<ViewportSensor>`](./docs/ViewportSensor.md), [`withViewport()`](./docs/ViewportSensor.md#withviewport-hoc), and [`@withViewport`](./docs/ViewportSensor.md#withviewport-decorator)
         - [`<ViewportScrollSensor>`](./docs/ViewportSensor.md#viewportscrollsensor) and [`<ViewportObserverSensor>`](./docs/ViewportSensor.md#viewportobserversensor)
-     - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md), `withWindowScroll()`, and `@withWindowScroll`
-     - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md), `withWindowSize()`, and `@withWindowSize`
-     - [`<MotionSensor>`](./docs/MotionSensor.md), [`withMotion()`](./docs/MotionSensor.md#withmotion-hoc), and [`@withMotion`](./docs/MotionSensor.md#withmotion-decorator)
-     - [`<MouseSensor>`](./docs/MouseSensor.md), [`withMouse()`](./docs/MouseSensor.md#withmouse-hoc), and [`@withMouse`](./docs/MouseSensor.md#withmouse-decorator)
-     - [`<GeoLocationSensor>`](./docs/GeoLocationSensor.md), [`withGeoLocation()`](./docs/GeoLocationSensor.md#withgeolocation-hoc), and [`@withGeoLocation`](./docs/GeoLocationSensor.md#withgeolocation-decorator)
+     - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md), [`withWindowScroll()`](./docs/WindowScrollSensor.md#withwindowscroll-hoc), and [`@withWindowScroll`](./docs/WindowScrollSensor.md#withwindowscroll-decorator)
+     - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md), [`withWindowSize()`](./docs/WindowSizeSensor.md#withwindowsize-hoc), and [`@withWindowSize`](./docs/WindowSizeSensor.md#withwindowsize-decorator)
   - Generators
      - [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
      - [`<LocalStorage>`](./docs/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`

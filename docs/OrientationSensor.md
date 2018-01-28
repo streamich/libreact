@@ -33,13 +33,24 @@ interface IOrientationSensorState {
   - `type` - is one of `portrait-primary`, `portrait-secondary`, `landscape-primary`, or `landscape-secondary`.
 
 
-## `withOrientation()`
+## `withOrientation()` HOC
 
-HOC that injects `orientation` object into your component.
+HOC that merges `orientation` prop into enhanced component's props.
 
+```jsx
+import {withOrientation} from 'libreact/lib/OrientationSensor';
+```
+
+
+## `@withOrientation` decorator
+
+React stateful component decorator that adds `orientation` prop.
 
 ```js
 import {withOrientation} from 'libreact/lib/OrientationSensor';
 
-const MyCompWithOrientation = withOrientation(MyComp);
+@withOrientation
+class MyComp extends Component {
+
+}
 ```
