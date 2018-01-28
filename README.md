@@ -73,7 +73,7 @@ const MyComponent = mock();
      - `<CssVars>`
      - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), [`withRoute()`](./docs/route.md#withroute), and `@withRoute`
      - `<Translations>`, `<Translate>`, `withTranslations`, and `@withTranslations`
-  - CSS resets
+  - [CSS resets](./docs/CSS-resets.md)
      - [`<CssResetEricMeyer>`](./docs/reset/CssResetEricMeyer.md) and [`<CssResetEricMeyerCondensed>`](./docs/reset/CssResetEricMeyerCondensed.md)
      - [`<CssResetMinimalistic>`](./docs/reset/CssResetMinimalistic.md), [`<CssResetMinimalistic2>`](./docs/reset/CssResetMinimalistic2.md), and [`<CssResetMinimalistic3>`](./docs/reset/CssResetMinimalistic3.md)
      - [`<CssResetPoorMan>`](./docs/reset/CssResetPoorMan.md)
