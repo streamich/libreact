@@ -5,7 +5,7 @@ import faccToHoc from '../util/faccToHoc';
 import renderProp from '../util/renderProp';
 
 export interface ITranslationsProps {
-  map: {[key: string]: string | React.StatelessComponent<any>};
+  map: {[key: string]: string | ((...args) => string)};
   ns?: string;
 }
 
@@ -33,11 +33,11 @@ export interface ITranslateState {
 export class Translate extends Component<ITranslateProps, ITranslateState> {
   render () {
     return h(Consumer, {name: ns(`T/${this.props.ns}`)}, (map) => {
-      const T = (key) => {
+      const T = (key, ...args) => {
         const value = map[key];
 
         if (typeof value === 'function') {
-          return value(T);
+          return value(T, ...args);
         }
 
         return value || key;
