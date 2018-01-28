@@ -1,9 +1,9 @@
-# `NetworkSensor`
+# `<NetworkSensor>`
 
 FaCC that re-renders on network status change. Uses `navigator.onLine` and [`NetworkInformation`](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation) to get network connection information.
 
 
-## `<NetworkSensor>`
+## Reference
 
 Passes through its state to the `children` function
 
