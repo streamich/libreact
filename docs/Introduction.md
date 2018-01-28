@@ -19,7 +19,7 @@ returns a React element, for example:
 />
 ```
 
-Where the function like `() => <Navigation />` *"render"s* the navigation.
+Where the function like `() => <Navigation />` *"renders"* the navigation.
 
 Typically though a render prop component will have only one `render*` prop, in that case
 we simply call it `render`.
@@ -31,15 +31,15 @@ we simply call it `render`.
 
 ## FaCC
 
-FaCC or *Function as a Child Component* is a special case or render prop where the single
+FaCC or *Function as a Child Component* is a special case of render prop where the single
 render prop is called `children` instead.
 
 ```jsx
 <MouseSensor children={({posX, posY}) => <div />} />
 ```
 
-FaCC is superior to a single render prop notation, because you can put the rendering function into props, as
-above, or place it as a child in JSX tree, which allows your *"HTML"* to have natural spacing.
+FaCC notation is superior to a single render prop notation, because you can put the rendering function into props, as
+above, or place it as a child in JSX tree, which allows your *"HTML"* markup to have natural spacing.
 
 ```jsx
 <MouseSensor>{({posX, posY}) =>
@@ -57,7 +57,7 @@ h(MouseSensor, null, ({posX, posY}) => h('div')})
 
 ## HOC
 
-HOC or *Higher Order Component* is a function that receives AND/OR returns a React component.
+HOC or *Higher Order Component* is a function that receives AND/OR returns React components.
 
 
 ## Enhancer

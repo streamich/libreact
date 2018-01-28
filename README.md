@@ -41,7 +41,7 @@ const MyComponent = mock();
         - [`<Counter>`](./docs/Counter.md), [`withCounter()`](./docs/Counter.md#withcounter-hoc) and [`@withCounter`](./docs/Counter.md#withcounter-decorator)
         - [`<List>`](./docs/List.md), [`withList()`](./docs/List.md#withlist-hoc), and [`@withList`](./docs/List.md#withlist-decorator)
         - [`<Map>`](./docs/Map.md), [`withMap()`](./docs/Map.md#withmap-hoc), and [`@withMap`](./docs/Map.md#withmap-decorator)
-  - Sensors
+  - [Sensors](./docs/Sensors.md)
      - [`<BatterySensor>`](./docs/BatterySensor.md), [`withBattery()`](./docs/BatterySensor.md#withbattery), and [`@withBattery`](./docs/BatterySensor.md#withbattery-1)
      - [`<GeoLocationSensor>`](./docs/GeoLocationSensor.md), [`withGeoLocation()`](./docs/GeoLocationSensor.md#withgeolocation-hoc), and [`@withGeoLocation`](./docs/GeoLocationSensor.md#withgeolocation-decorator)
      - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md), [`withMediaDevices()`](./docs/MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./docs/MediaDeviceSensor.md#withmediadevices-1)
