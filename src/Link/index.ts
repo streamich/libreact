@@ -7,6 +7,7 @@ const isModifiedEvent = (event) =>
   !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
 
 export interface ILinkProps extends React.AllHTMLAttributes<any> {
+  bond?: boolean | string;
   replace?: boolean;
   state?: any | ((props: ILinkProps) => any);
   to?: string;
@@ -26,7 +27,7 @@ export class Link extends Component<ILinkProps, any> {
     (originalRef || noop)(el);
   };
 
-  onClick = (originalClick) => (event) => {
+  onClick = (originalClick?) => (event) => {
     (originalClick || noop)(event);
 
     const {replace, to, state} = this.props;
@@ -46,11 +47,23 @@ export class Link extends Component<ILinkProps, any> {
   };
 
   render () {
-    const {replace, state, to, a, ...rest} = this.props;
-    let element = renderProp(this.props, {
+    let {bond, replace, state, to, a, ...rest} = this.props;
+    const renderPropState: any = {
       go,
       to
-    });
+    };
+
+    if (bond) {
+      if (typeof bond !== 'string') {
+        bond = 'bond';
+      }
+
+      renderPropState[bond] = {
+        onClick: this.onClick()
+      };
+    }
+
+    let element = renderProp(this.props, renderPropState);
 
     if (!element) {
       return null;
@@ -61,9 +74,12 @@ export class Link extends Component<ILinkProps, any> {
     }
 
     const props: any = {
-      ref: this.ref(element.ref),
-      onClick: this.onClick(element.props.originalClick)
+      ref: this.ref(element.ref)
     };
+
+    if (!bond) {
+      props.onClick = this.onClick(element.props.originalClick);
+    }
 
     this.target = '';
 

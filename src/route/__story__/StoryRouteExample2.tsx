@@ -1,5 +1,5 @@
 import {h} from '../../util';
-import {Router, Route, go} from '..';
+import {Router, Route, go, Go} from '..';
 import {Link} from '../../Link';
 
 const StoryRouteExample2 = () => (
@@ -7,7 +7,7 @@ const StoryRouteExample2 = () => (
     <div>
       <ul>
         <li><a onClick={() => go('/')}>Home</a></li>
-        <li><Link to='/about'>About</Link></li>
+        <li><Go to='/about'>About</Go></li>
         <li><Link a to='/topics'><span>Topics</span></Link></li>
       </ul>
 

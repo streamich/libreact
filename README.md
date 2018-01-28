@@ -71,7 +71,7 @@ const MyComponent = mock();
      - [`<Provider>`](./docs/context.md#provider), [`<Consumer>`](./docs/context.md#consumer), [`withContext()`](./docs/context.md#withcontext), and `@withContext`
      - [`<Theme>`](./docs/theme.md#theme), [`<Themed>`](./docs/theme.md#themed), [`withTheme()`](./docs/theme.md#withtheme), and `@withTheme`
      - `<CssVars>`
-     - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), [`withRoute()`](./docs/route.md#withroute), and `@withRoute`
+     - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), [`withRoute()`](./docs/route.md#withroute), `@withRoute`, `go()`, and `<Go>`
      - `<Translations>`, `<Translate>`, `withTranslations`, and `@withTranslations`
   - [CSS resets](./docs/CSS-resets.md)
      - [`<CssResetEricMeyer>`](./docs/reset/CssResetEricMeyer.md) and [`<CssResetEricMeyerCondensed>`](./docs/reset/CssResetEricMeyerCondensed.md)

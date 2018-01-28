@@ -3,10 +3,12 @@ import {LocationSensor} from '../LocationSensor';
 import {Provider, Consumer} from '../context';
 import {h, ns} from '../util';
 import renderProp from '../util/renderProp';
+import {Link, ILinkProps} from '../Link';
 
 export interface IRouteProviderProps {
   children?: any;
   ns?: string;
+  fullRoute?: string;
   route?: string;
   parent?: TRouteMatchResult;
 }
@@ -19,18 +21,19 @@ export class Router extends Component<IRouteProviderProps, any> {
   };
 
   renderProvider (route) {
-    const {children} = this.props;
+    const {children, fullRoute} = this.props;
     this.matches = 0;
 
     const element = h(Provider, {
       name: ns(`route/${this.props.ns}`),
       value: {
+        fullRoute: this.props.fullRoute || route,
         route,
         inc: this.inc,
         count: () => this.matches,
         parent: this.props.parent
       }
-    }, Array.isArray(children) ? h('div', null, children) : children);
+    }, renderProp(this.props));
 
     return element;
   }
@@ -54,8 +57,37 @@ export interface TRouteMatchResult {
 
 export type TRouteMatcher = (route: string) => TRouteMatchResult;
 
+export function createMatcher (match: string | RegExp | TRouteMatcher, exact?: boolean): TRouteMatcher {
+  let matcher: TRouteMatcher;
+
+  if (typeof match === 'function') {
+    return match;
+  }
+
+  let regex: RegExp;
+
+  if (typeof match === 'string') {
+    regex = new RegExp(`^(${match}${exact ? '$' : ''})`);
+  } else {
+    regex = match;
+  }
+
+  return (route: string) => {
+    const matches = route.match(regex);
+
+    if (!matches) {
+      return null;
+    }
+
+    return {
+      length: (matches && matches[1]) ? matches[1].length : 0,
+      matches
+    };
+  };
+}
+
 export interface IRouteMatch {
-  children?: React.ReactElement<any> | ((params) => React.ReactElement<any>);
+  children?: any;
   render?: React.ReactElement<any> | ((params) => React.ReactElement<any>);
   comp?: React.ComponentClass<any> | React.StatelessComponent<any>;
   component?: React.ComponentClass<any> | React.StatelessComponent<any>;
@@ -74,43 +106,13 @@ export class Route extends Component<IRouteMatch, any> {
     max: Infinity
   };
 
-  matcher (): TRouteMatcher {
-    const {match} = this.props;
-    let matcher: TRouteMatcher;
-
-    if (typeof match === 'function') {
-      return match;
-    }
-
-    let regex: RegExp;
-
-    if (typeof match === 'string') {
-      regex = new RegExp(`^(${match}${this.props.exact ? '$' : ''})`);
-    } else {
-      regex = match;
-    }
-
-    return (route: string) => {
-      const matches = route.match(regex);
-
-      if (!matches) {
-        return null;
-      }
-
-      return {
-        length: (matches && matches[1]) ? matches[1].length : 0,
-        matches
-      };
-    };
-  }
-
   render () {
     return h(Consumer, {name: ns(`route/${this.props.ns}`)}, ({route, inc, count, parent}) => {
-      const {children, match, preserve, min, max} = this.props;
+      const {children, exact, match, preserve, min, max} = this.props;
       const matchCount = count();
 
       if ((matchCount >= min) && (matchCount <= max)) {
-        const matchResult = this.matcher()(route);
+        const matchResult = createMatcher(match, exact)(route);
 
         if (matchResult) {
           // Increment number of matched routes.
@@ -124,7 +126,11 @@ export class Route extends Component<IRouteMatch, any> {
             newRoute = newRoute.substr(length);
           }
 
-          return h(Router, {route: newRoute, parent: matchResult},
+          return h(Router, {
+            fullRoute: route,
+            route: newRoute,
+            parent: matchResult
+          },
             renderProp(this.props, {
               match: route.substr(0, length),
               matches,
@@ -146,3 +152,19 @@ export const Route404 = (props) => h(Route, {
 });
 
 export * from './go';
+
+export interface IGoProps extends ILinkProps {
+  ns?: string;
+}
+
+export interface IGoState {
+
+}
+
+export class Go extends Component<IGoProps, IGoState> {
+  render () {
+    return h(Consumer, {name: ns(`route/${this.props.ns}`)}, ({fullRoute, route, inc, count, parent}) => {
+      return h(Link, this.props)
+    });
+  }
+}
