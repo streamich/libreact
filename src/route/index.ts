@@ -4,6 +4,11 @@ import {Provider, Consumer} from '../context';
 import {h, ns} from '../util';
 import renderProp from '../util/renderProp';
 import {Link, ILinkProps} from '../Link';
+import {go, TGo} from './go';
+
+export {
+  go
+};
 
 export interface IRouteProviderProps {
   children?: any;
@@ -11,9 +16,14 @@ export interface IRouteProviderProps {
   fullRoute?: string;
   route?: string;
   parent?: TRouteMatchResult;
+  onGo?: TGo;
 }
 
 export class Router extends Component<IRouteProviderProps, any> {
+  static defaultProps = {
+    onGo: go
+  };
+
   matches: number = 0;
 
   inc = () => {
@@ -27,6 +37,7 @@ export class Router extends Component<IRouteProviderProps, any> {
     const element = h(Provider, {
       name: ns(`route/${this.props.ns}`),
       value: {
+        go: this.props.onGo,
         fullRoute: this.props.fullRoute || route,
         route,
         inc: this.inc,
@@ -107,7 +118,8 @@ export class Route extends Component<IRouteMatch, any> {
   };
 
   render () {
-    return h(Consumer, {name: ns(`route/${this.props.ns}`)}, ({route, inc, count, parent}) => {
+    return h(Consumer, {name: ns(`route/${this.props.ns}`)}, (context) => {
+      const {fullRoute, route, go, inc, count, parent} = context;
       const {children, exact, match, preserve, min, max} = this.props;
       const matchCount = count();
 
@@ -132,9 +144,11 @@ export class Route extends Component<IRouteMatch, any> {
             parent: matchResult
           },
             renderProp(this.props, {
+              go,
               match: route.substr(0, length),
               matches,
               route: newRoute,
+              fullRoute,
               parent
             })
           );
@@ -151,20 +165,27 @@ export const Route404 = (props) => h(Route, {
   ...props
 });
 
-export * from './go';
-
 export interface IGoProps extends ILinkProps {
+  exact?: boolean;
+  match?: TRouteMatcher | RegExp | string;
   ns?: string;
 }
 
 export interface IGoState {
-
 }
 
 export class Go extends Component<IGoProps, IGoState> {
   render () {
-    return h(Consumer, {name: ns(`route/${this.props.ns}`)}, ({fullRoute, route, inc, count, parent}) => {
-      return h(Link, this.props)
+    return h(Consumer, {name: ns(`route/${this.props.ns}`)}, ({fullRoute, route, go, inc, count, parent}) => {
+      const {exact, match} = this.props;
+      const matcher = createMatcher(match, exact);
+      const isActive = !!matcher(fullRoute);
+
+      return h(Link, {
+        ...(this.props as ILinkProps),
+        isActive,
+        onGo: go
+      })
     });
   }
 }

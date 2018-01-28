@@ -1,6 +1,6 @@
 import {Component, cloneElement} from 'react';
 import {h, noop} from '../util';
-import {go} from '../route';
+import {go, TGo} from '../route/go';
 import renderProp from '../util/renderProp';
 
 const isModifiedEvent = (event) =>
@@ -12,6 +12,8 @@ export interface ILinkProps extends React.AllHTMLAttributes<any> {
   state?: any | ((props: ILinkProps) => any);
   to?: string;
   a?: boolean;
+  onGo?: TGo;
+  isActive?: boolean;
 }
 
 export interface ILinkState {
@@ -19,6 +21,10 @@ export interface ILinkState {
 }
 
 export class Link extends Component<ILinkProps, any> {
+  static defaultProps = {
+    onGo: go
+  };
+
   el: HTMLElement = null;
   target: string = '';
 
@@ -30,16 +36,16 @@ export class Link extends Component<ILinkProps, any> {
   onClick = (originalClick?) => (event) => {
     (originalClick || noop)(event);
 
-    const {replace, to, state} = this.props;
+    const {onGo, replace, to, state} = this.props;
 
     if (!event.defaultPrevented && // onClick prevented default
       event.button === 0 && // ignore everything but left clicks
-      !this.target && // let browser handle "target=_blank" etc.
+      !this.target && // let browser handle "target=*"
       !isModifiedEvent(event) // ignore clicks with modifier keys
     ) {
       event.preventDefault();
 
-      go(to, {
+      onGo(to, {
         replace,
         state: typeof state === 'function' ? state(this.props) : state
       });
@@ -47,8 +53,9 @@ export class Link extends Component<ILinkProps, any> {
   };
 
   render () {
-    let {bond, replace, state, to, a, ...rest} = this.props;
+    let {bond, replace, state, to, a, isActive, ...rest} = this.props;
     const renderPropState: any = {
+      isActive,
       go,
       to
     };
