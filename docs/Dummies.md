@@ -10,7 +10,7 @@ but implement them with real components only later when necessary.
 
   - [`mock()`](./mock.md) - dummy that can be implemented using `.implement()` method.
   - [`loadable()`](./loadable.md) - dummy that can be loaded using `.load()` method.
-  - [`lazy()`](./lazy.md) - dummy that loads automatically when rendered for the first time.
-  - [`delayed()`](./delayed.md) - like `lazy()`, but its loading can be delayed further.
+  - [`lazy()`](./lazy.md) - like `loadable()`, but also loads automatically when rendered for the first time.
+  - [`delayed()`](./delayed.md) - like `lazy()`, but its loading can be delayed.
   - [`viewport()`](./viewport.md) - postpones component's rendering until it is visible
   in viewport at least once.

@@ -5,7 +5,7 @@ Displays your component only after it appears in the viewport.
 Before your component has appeared in viewport at least once it displays
 a placeholder, which defaults to a transparent 1x1 pixel.
 
-`viewport()` is component enhancer with the following signature.
+`viewport()` is a component enhancer with the following signature.
 
 ```ts
 viewport: (Comp, params: IViewportParams) => React.ComponentClass;
@@ -17,7 +17,7 @@ interface IViewportParams {
 
 , where
 
-  - `placeholder` - React element to render while this component is out of viewport.
+  - `placeholder` - React element to render while this component is out of view.
 
 
 ## Usage

@@ -21,9 +21,9 @@ Player.implement(RealPlayer);
 
 Specify placeholder for the mock
 
-```js
+```jsx
 const MySvg = mock({
-    loading: 'SVG is loading...'
+    loading: <span>SVG is loading...</span>
 });
 ```
 
@@ -36,10 +36,10 @@ interface IMockParams {
   loading?: React.ReactElement;
 }
 
-interface IMockComponent {
-  implement(Implementation: React.Component | React.SFC);
+interface IMockComponent extends React.ComponentClass {
+  implement(Implementation: React.ComponentClass | React.StatelessComponent);
 }
 ```
 
   - `loading` - React element to show while the mock is not implemented.
-  - `.implement` - use this method to set the implementation of your mock coponent.
+  - `.implement()` - use this method to set the implementation of your mock component.
