@@ -61,4 +61,9 @@ export class HoverSensor extends Component<IHoverSensorProps, IHoverSensorState>
   }
 }
 
-export const withHover = faccToHoc(HoverSensor, 'hover');
+const HoverSensorWithBond = (props) => h(HoverSensor, {
+  bond: true,
+  ...props
+});
+
+export const withHover = faccToHoc(HoverSensorWithBond, 'hover');
