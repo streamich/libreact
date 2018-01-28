@@ -58,7 +58,7 @@ const MyComponent = mock();
      - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md), `withWindowSize()`, and `@withWindowSize`
      - [`<MotionSensor>`](./docs/MotionSensor.md), [`withMotion()`](./docs/MotionSensor.md#withmotion-hoc), and [`@withMotion`](./docs/MotionSensor.md#withmotion-decorator)
      - [`<MouseSensor>`](./docs/MouseSensor.md), [`withMouse()`](./docs/MouseSensor.md#withmouse-hoc), and [`@withMouse`](./docs/MouseSensor.md#withmouse-decorator)
-     - `<GeoPositionSensor>`, `withGeoPosition()`, and `@withGeoPosition`
+     - [`<GeoLocationSensor>`](./docs/GeoLocationSensor.md), [`withGeoLocation()`](./docs/GeoLocationSensor.md#withgeolocation-hoc), and [`@withGeoLocation`](./docs/GeoLocationSensor.md#withgeolocation-decorator)
   - Generators
      - [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
      - [`<LocalStorage>`](./docs/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`

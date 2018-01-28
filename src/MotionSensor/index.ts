@@ -8,8 +8,22 @@ export interface IMotionSensorProps {
 }
 
 export interface IMotionSensorState {
-  angle: number;
-  type: string;
+  acceleration: {
+    x: number,
+    y: number,
+    z: number
+  },
+  accelerationIncludingGravity: {
+    x: number,
+    y: number,
+    z: number
+  },
+  rotationRate: {
+    alpha: number,
+    beta: number,
+    gamma: number
+  },
+  interval: number
 }
 
 const DEFAULT = {
@@ -34,7 +48,6 @@ const DEFAULT = {
 const addListener = (handler) => on(window, 'devicemotion', handler);
 const removeListener = (handler) => off(window, 'devicemotion', handler);
 const onEvent = (event) => {
-  console.log('event', event);
   const {
     acceleration,
     accelerationIncludingGravity,
@@ -80,4 +93,4 @@ export class MotionSensor extends Component<IMotionSensorProps, any> {
   }
 }
 
-export const withMotion= faccToHoc(MotionSensor, 'motion');
+export const withMotion = faccToHoc(MotionSensor, 'motion');
