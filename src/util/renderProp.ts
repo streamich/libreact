@@ -1,4 +1,4 @@
-import {isFn} from '../util';
+import {h, isFn} from '../util';
 
 const renderProp = (props, ...args) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -17,13 +17,15 @@ const renderProp = (props, ...args) => {
     }
   }
 
-  const {children, render} = props;
+  const {children, comp, component, render} = props;
 
   return isFn(children) ?
     children(...args) :
     isFn(render) ?
       render(...args) :
-      (children || null);
+      (comp || component) ?
+        h(comp || component, args[0]) :
+        (children || render || null);
 };
 
 export default renderProp;

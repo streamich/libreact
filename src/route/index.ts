@@ -2,6 +2,7 @@ import {Component} from 'react';
 import {LocationSensor} from '../LocationSensor';
 import {Provider, Consumer} from '../context';
 import {h, ns} from '../util';
+import renderProp from '../util/renderProp';
 
 export interface IRouteProviderProps {
   children?: any;
@@ -13,7 +14,7 @@ export interface IRouteProviderProps {
 export class Router extends Component<IRouteProviderProps, any> {
   matches: number = 0;
 
-  onMatch = () => {
+  inc = () => {
     this.matches++;
   };
 
@@ -25,8 +26,8 @@ export class Router extends Component<IRouteProviderProps, any> {
       name: ns(`route/${this.props.ns}`),
       value: {
         route,
-        onMatch: this.onMatch,
-        getMatches: () => this.matches,
+        inc: this.inc,
+        count: () => this.matches,
         parent: this.props.parent
       }
     }, Array.isArray(children) ? h('div', null, children) : children);
@@ -55,10 +56,12 @@ export type TRouteMatcher = (route: string) => TRouteMatchResult;
 
 export interface IRouteMatch {
   children?: React.ReactElement<any> | ((params) => React.ReactElement<any>);
-  cnt?: number;
+  render?: React.ReactElement<any> | ((params) => React.ReactElement<any>);
   comp?: React.ComponentClass<any> | React.StatelessComponent<any>;
   exact?: boolean;
   match?: TRouteMatcher | RegExp | string;
+  min?: number;
+  max?: number;
   ns?: string;
   preserve?: boolean;
 }
@@ -66,7 +69,8 @@ export interface IRouteMatch {
 export class Route extends Component<IRouteMatch, any> {
   static defaultProps = {
     match: /.+/,
-    cnt: 0
+    min: 0,
+    max: Infinity
   };
 
   matcher (): TRouteMatcher {
@@ -99,30 +103,22 @@ export class Route extends Component<IRouteMatch, any> {
     };
   }
 
-  renderChildren (props) {
-    const {comp, children} = this.props;
-
-    return comp ?
-      h(comp, props) :
-      typeof children === 'function' ?
-        children(props) :
-        children;
-  }
-
   render () {
-    return h(Consumer, {name: ns(`route/${this.props.ns}`)}, ({route, onMatch, getMatches, parent}) => {
-      const {children, match, preserve} = this.props;
+    return h(Consumer, {name: ns(`route/${this.props.ns}`)}, ({route, inc, count, parent}) => {
+      const {children, match, preserve, min, max} = this.props;
+      const matchCount = count();
+      console.log('...');
+      console.log('matchCount', matchCount);
 
-      if (getMatches() <= this.props.cnt) {
+      if ((matchCount >= min) && (matchCount <= max)) {
         const matchResult = this.matcher()(route);
 
         if (matchResult) {
+          // Increment number of matched routes.
+          inc();
+
           (matchResult as any).parent = parent;
           const {matches, length} = matchResult;
-
-          // Notify <RouteProvider> that we matched.
-          onMatch(this, matchResult);
-
           let newRoute = route;
 
           if (!preserve && length) {
@@ -130,7 +126,7 @@ export class Route extends Component<IRouteMatch, any> {
           }
 
           return h(Router, {route: newRoute, parent: matchResult},
-            this.renderChildren({
+            renderProp(this.props, {
               match: route.substr(0, length),
               matches,
               route: newRoute,
@@ -144,5 +140,10 @@ export class Route extends Component<IRouteMatch, any> {
     });
   }
 }
+
+export const Route404 = (props) => h(Route, {
+  max: 0,
+  ...props
+});
 
 export * from './go';

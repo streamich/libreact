@@ -3,7 +3,12 @@
 `libreact` is a collection of most essential React utilities you will probably need in any project.
 
 [Render prop](#render-props) and [FaCC](#facc) notation is usually used interchangeably as most `libreact`
-components support both interfaces.
+components support both interfaces. Also, most render prop components support
+[component prop](#component-prop) interface, with the following precedence:
+
+  1. FaCC
+  2. Render prop
+  3. Component prop
 
 
 ## Render props
@@ -55,6 +60,20 @@ h(MouseSensor, null, ({posX, posY}) => h('div')})
 ```
 
 
+## Component prop
+
+*Component prop* is when a component expects a `component` or `comp` prop that is
+itself a component.
+
+```jsx
+<Route match='/home' comp={Home} />
+<Route match='/user' component={User} />
+```
+
+`libreact` supports both ways of component prop (`comp` and `component`). Normally, when a component has a
+render prop interface it will also support the component prop interface.
+
+
 ## HOC
 
 HOC or *Higher Order Component* is a function that receives AND/OR returns React components.
@@ -62,4 +81,4 @@ HOC or *Higher Order Component* is a function that receives AND/OR returns React
 
 ## Enhancer
 
-*Enhancer* is a HOC that receives AND returns a React component.
+*Enhancer* is a HOC that receives AND returns a React components.

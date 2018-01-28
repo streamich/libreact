@@ -32,7 +32,7 @@ const MyComponent = mock();
   - [Dummies](./docs/Dummies.md)
      - [`mock()`](./docs/mock.md) and [`loadable()`](./docs/loadable.md)
      - [`lazy()`](./docs/lazy.md), [`delayed()`](./docs/delayed.md), and [`viewport()`](./docs/viewport.md)
-  - [Inversion](./docs/inversion.md)
+  - [Inversion](./docs/Inversion.md)
      - [`invert()`](./docs/invert.md) and [`<Inverted>`](./docs/invert.md#inverted)
      - [`<State>`](./docs/State.md) and [`withState()`](./docs/State.md#withstate-hoc)
         - [`<Toggle>`](./docs/Toggle.md), [`withToggle()`](./docs/Toggle.md#withtoggle-hoc), and [`@withToggle`](./docs/Toggle.md#withtoggle-decorator)
