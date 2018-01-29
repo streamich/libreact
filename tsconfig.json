@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "removeComments": false,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "removeComments": true,
     "noImplicitAny": false,
     "sourceMap": false,
     "outDir": "./lib",
