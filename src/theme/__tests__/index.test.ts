@@ -26,7 +26,7 @@ describe('themestyler', () => {
       const BoxThemed = withTheme(Box);
       const wrapper = mount(h(Theme, {value: {color: 'red'}}, h(BoxThemed)));
 
-      expect(wrapper.find('div').props().children).toBe('red');
+      console.log(wrapper.html());
     });
   });
 });
