@@ -1,3 +1,0 @@
-const vars = {
-    color: 'red'
-};
