@@ -17,7 +17,7 @@ in JSX tree without having to write stateful React components.
 
   - [`invert()`](./invert.md) and [`<Inverted>`](./invert.md#inverted) - inverts DOM element `ref`.
   - [`<State>`](./State.md) - inverts `.state` and `.setState()` method.
-     - [`<Toggle>`](./Toggle.md), [`<Flipflop>`](./Flipflop.md), [`<Value>`](./Value.md), [`<Couter>`](./Counter.md), [`<List>`](./List.md), and [`<Map>`](./Map.md)
+     - [`<Toggle>`](./Toggle.md), [`<Flipflop>`](./Flipflop.md), [`<Value>`](./Value.md), [`<Counter>`](./Counter.md), [`<List>`](./List.md), and [`<Map>`](./Map.md)
 
 
 ## Example

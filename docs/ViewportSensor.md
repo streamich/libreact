@@ -69,7 +69,7 @@ HOC that merges `viewport` boolean prop into enhanced component's props. Uses `<
 import {withViewport} from 'libreact/lib/ViewportSensor';
 
 const MyComp = (props) =>
-  <pre style={{fontFamily: 'nomospace'}}>
+  <pre style={{fontFamily: 'monospace'}}>
     {JSON.stringify(props, null, 4)}
   </pre>;
 
