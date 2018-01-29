@@ -33,7 +33,7 @@ HOC that merges `size` prop into enhanced component's props.
 import {withSize} from 'libreact/lib/SizeSensor';
 
 const MyComp = (props) =>
-  <pre style={{fontFamily: 'nomospace'}}>
+  <pre style={{fontFamily: 'monospace'}}>
     {JSON.stringify(props, null, 4)}
   </pre>;
 

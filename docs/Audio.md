@@ -94,16 +94,18 @@ interface IAudioState {
 Play a sample audio track with control buttons.
 
 ```jsx
-<Audio src='https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'>{(audio, state) =>
-  <div>
-    <button onClick={audio.play}>Play</button>
-    <button onClick={audio.pause}>Pause</button>
-    <button onClick={() => audio.seek(state.time - 5)}>Seek -</button>
-    <button onClick={() => audio.seek(state.time + 5)}>Seek +</button>
-    <button onClick={() => audio.volume(state.volume - 0.05)}>Volume -</button>
-    <button onClick={() => audio.volume(state.volume + 0.05)}>Volume +</button>
-    <button onClick={audio.mute}>Mute</button>
-    <button onClick={audio.unmute}>Unmute</button>
-  </div>
-}</Audio>
+<Audio src='https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'>
+  {({play, pause, seek, volume, mute, unmute}, state) =>
+    <div>
+      <button onClick={play}>Play</button>
+      <button onClick={pause}>Pause</button>
+      <button onClick={() => seek(state.time - 5)}>Seek -</button>
+      <button onClick={() => seek(state.time + 5)}>Seek +</button>
+      <button onClick={() => volume(state.volume - 0.05)}>Volume -</button>
+      <button onClick={() => volume(state.volume + 0.05)}>Volume +</button>
+      <button onClick={mute}>Mute</button>
+      <button onClick={unmute}>Unmute</button>
+    </div>
+  }
+</Audio>
 ```

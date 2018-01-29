@@ -13,7 +13,7 @@ components support both interfaces. Also, most render prop components support
 
 ## Render props
 
-*Render props* are components which have props stat start with `render*` and accept a function that
+*Render props* are components which have props that start with `render*` and accept a function that
 returns a React element, for example:
 
 ```jsx
@@ -62,8 +62,8 @@ h(MouseSensor, null, ({posX, posY}) => h('div')})
 
 ## Component prop
 
-*Component prop* is when a component expects a `component` or `comp` prop that is
-itself a component.
+*Component prop* is when a component expects a `component` or `comp` prop that
+itself is a component.
 
 ```jsx
 <Route match='/home' comp={Home} />

@@ -60,7 +60,7 @@ HOC that merges `net` prop into enhanced component's props.
 import {withNetwork} from 'libreact/lib/NetworkSensor';
 
 const NetworkStatusFormatter = (props) =>
-  <pre style={{fontFamily: 'nomospace'}}>
+  <pre style={{fontFamily: 'monospace'}}>
     {JSON.stringify(props, null, 4)}
   </pre>;
 
