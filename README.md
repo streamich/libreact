@@ -41,7 +41,7 @@ const MyComponent = mock();
         - [`<Counter>`](./docs/Counter.md), [`withCounter()`](./docs/Counter.md#withcounter-hoc) and [`@withCounter`](./docs/Counter.md#withcounter-decorator)
         - [`<List>`](./docs/List.md), [`withList()`](./docs/List.md#withlist-hoc), and [`@withList`](./docs/List.md#withlist-decorator)
         - [`<Map>`](./docs/Map.md), [`withMap()`](./docs/Map.md#withmap-hoc), and [`@withMap`](./docs/Map.md#withmap-decorator)
-  - [Context](./docs/Context.md)
+  - [Context](./docs/Context2.md)
      - [`<Provider>`](./docs/Provider.md#provider), [`<Consumer>`](./docs/Provider.md#consumer), [`withContext()`](./docs/Provider.md#withcontext), and `@withContext`
      - [`<Theme>`](./docs/theme.md#theme), [`<Themed>`](./docs/theme.md#themed), [`withTheme()`](./docs/theme.md#withtheme), and `@withTheme`
      - `<CssVars>`
