@@ -2,34 +2,49 @@ import {Component} from 'react';
 import {LocationSensor} from '../LocationSensor';
 import {Provider, Consumer} from '../context';
 import {h, ns} from '../util';
+import renderProp from '../util/renderProp';
+import {Link, ILinkProps} from '../Link';
+import {go, TGo} from './go';
+
+export {
+  go
+};
 
 export interface IRouteProviderProps {
   children?: any;
   ns?: string;
+  fullRoute?: string;
   route?: string;
   parent?: TRouteMatchResult;
+  onGo?: TGo;
 }
 
 export class Router extends Component<IRouteProviderProps, any> {
+  static defaultProps = {
+    onGo: go
+  };
+
   matches: number = 0;
 
-  onMatch = () => {
+  inc = () => {
     this.matches++;
   };
 
   renderProvider (route) {
-    const {children} = this.props;
+    const {children, fullRoute} = this.props;
     this.matches = 0;
 
     const element = h(Provider, {
       name: ns(`route/${this.props.ns}`),
       value: {
+        go: this.props.onGo,
+        fullRoute: this.props.fullRoute || route,
         route,
-        onMatch: this.onMatch,
-        getMatches: () => this.matches,
+        inc: this.inc,
+        count: () => this.matches,
         parent: this.props.parent
       }
-    }, Array.isArray(children) ? h('div', null, children) : children);
+    }, renderProp(this.props));
 
     return element;
   }
@@ -53,12 +68,44 @@ export interface TRouteMatchResult {
 
 export type TRouteMatcher = (route: string) => TRouteMatchResult;
 
+export function createMatcher (match: string | RegExp | TRouteMatcher, exact?: boolean): TRouteMatcher {
+  let matcher: TRouteMatcher;
+
+  if (typeof match === 'function') {
+    return match;
+  }
+
+  let regex: RegExp;
+
+  if (typeof match === 'string') {
+    regex = new RegExp(`^(${match}${exact ? '$' : ''})`);
+  } else {
+    regex = match;
+  }
+
+  return (route: string) => {
+    const matches = route.match(regex);
+
+    if (!matches) {
+      return null;
+    }
+
+    return {
+      length: (matches && matches[1]) ? matches[1].length : 0,
+      matches
+    };
+  };
+}
+
 export interface IRouteMatch {
-  children?: React.ReactElement<any> | ((params) => React.ReactElement<any>);
-  cnt?: number;
+  children?: any;
+  render?: React.ReactElement<any> | ((params) => React.ReactElement<any>);
   comp?: React.ComponentClass<any> | React.StatelessComponent<any>;
+  component?: React.ComponentClass<any> | React.StatelessComponent<any>;
   exact?: boolean;
   match?: TRouteMatcher | RegExp | string;
+  min?: number;
+  max?: number;
   ns?: string;
   preserve?: boolean;
 }
@@ -66,74 +113,42 @@ export interface IRouteMatch {
 export class Route extends Component<IRouteMatch, any> {
   static defaultProps = {
     match: /.+/,
-    cnt: 0
+    min: 0,
+    max: Infinity
   };
 
-  matcher (): TRouteMatcher {
-    const {match} = this.props;
-    let matcher: TRouteMatcher;
-
-    if (typeof match === 'function') {
-      return match;
-    }
-
-    let regex: RegExp;
-
-    if (typeof match === 'string') {
-      regex = new RegExp(`^(${match}${this.props.exact ? '$' : ''})`);
-    } else {
-      regex = match;
-    }
-
-    return (route: string) => {
-      const matches = route.match(regex);
-
-      if (!matches) {
-        return null;
-      }
-
-      return {
-        length: (matches && matches[1]) ? matches[1].length : 0,
-        matches
-      };
-    };
-  }
-
-  renderChildren (props) {
-    const {comp, children} = this.props;
-
-    return comp ?
-      h(comp, props) :
-      typeof children === 'function' ?
-        children(props) :
-        children;
-  }
-
   render () {
-    return h(Consumer, {name: ns(`route/${this.props.ns}`)}, ({route, onMatch, getMatches, parent}) => {
-      const {children, match, preserve} = this.props;
+    return h(Consumer, {name: ns(`route/${this.props.ns}`)}, (context) => {
+      const {fullRoute, route, go, inc, count, parent} = context;
+      const {children, exact, match, preserve, min, max} = this.props;
+      const matchCount = count();
 
-      if (getMatches() <= this.props.cnt) {
-        const matchResult = this.matcher()(route);
+      if ((matchCount >= min) && (matchCount <= max)) {
+        const matchResult = createMatcher(match, exact)(route);
 
         if (matchResult) {
+          // Increment number of matched routes.
+          inc();
+
           (matchResult as any).parent = parent;
           const {matches, length} = matchResult;
-
-          // Notify <RouteProvider> that we matched.
-          onMatch(this, matchResult);
-
           let newRoute = route;
 
           if (!preserve && length) {
             newRoute = newRoute.substr(length);
           }
 
-          return h(Router, {route: newRoute, parent: matchResult},
-            this.renderChildren({
+          return h(Router, {
+            fullRoute: route,
+            route: newRoute,
+            parent: matchResult
+          },
+            renderProp(this.props, {
+              go,
               match: route.substr(0, length),
               matches,
               route: newRoute,
+              fullRoute,
               parent
             })
           );
@@ -145,4 +160,32 @@ export class Route extends Component<IRouteMatch, any> {
   }
 }
 
-export * from './go';
+export const Route404 = (props) => h(Route, {
+  max: 0,
+  ...props
+});
+
+export interface IGoProps extends ILinkProps {
+  exact?: boolean;
+  match?: TRouteMatcher | RegExp | string;
+  ns?: string;
+}
+
+export interface IGoState {
+}
+
+export class Go extends Component<IGoProps, IGoState> {
+  render () {
+    return h(Consumer, {name: ns(`route/${this.props.ns}`)}, ({fullRoute, route, go, inc, count, parent}) => {
+      const {exact, match} = this.props;
+      const matcher = createMatcher(match, exact);
+      const isActive = !!matcher(fullRoute);
+
+      return h(Link, {
+        ...(this.props as ILinkProps),
+        isActive,
+        onGo: go
+      })
+    });
+  }
+}

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`route <Route> does basic routing 1`] = `"<div><div>/foo</div><!-- react-empty: 3 --></div>"`;

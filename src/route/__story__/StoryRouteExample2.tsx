@@ -1,20 +1,20 @@
 import {h} from '../../util';
-import {Router, Route, go} from '..';
-import {Link} from '../Link';
+import {Router, Route, go, Go} from '..';
+import {Link} from '../../Link';
 
 const StoryRouteExample2 = () => (
   <Router>
     <div>
       <ul>
         <li><a onClick={() => go('/')}>Home</a></li>
-        <li><Link to='/about'>About</Link></li>
-        <li><Link to='/topics'>Topics</Link></li>
+        <li><Go to='/about'>About</Go></li>
+        <li><Link a to='/topics'><span>Topics</span></Link></li>
       </ul>
 
       <hr/>
 
       <Route exact match='/' comp={Home} />
-      <Route match='/about' comp={About} />
+      <Route match='/about' component={About} />
       <Route match='/topics' comp={Topics} />
     </div>
   </Router>
@@ -35,8 +35,6 @@ const About = () => (
 const Topics = (props) => {
   const {match} = props;
 
-  console.log('PROPS', props);
-
   return (
     <div>
       <h2>Topics</h2>
@@ -47,13 +45,13 @@ const Topics = (props) => {
           </Link>
         </li>
         <li>
-          <Link to={`${match}/components`}>
+          <Link a to={`${match}/components`}>
             Components
           </Link>
         </li>
         <li>
           <Link to={`${match}/props-v-state`}>
-            Props v. State
+            <a>Props v. State</a>
           </Link>
         </li>
       </ul>

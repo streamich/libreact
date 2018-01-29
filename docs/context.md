@@ -1,62 +1,10 @@
 # Context
 
-Provides a generic way to safely use React's context. Re-renders *consumer*
-components when *provider* changes value.
+`libreact` provides a range of component's that use React's context API and components that allow you
+to easily use React's context.
 
-## Example
-
-```jsx
-import {Provider, Context} from 'libreact/lib/context';
-
-<Provider name="theme" value={{color: 'red'}}>
-  <Consumer name="theme">{(theme) => {
-      return <div>Color is: {theme.color}</div>;
-  }}</Consumer>
-</Provider>
-```
-
-## `<Provider>`
-
-Uses React's context functionality to provide data to child nodes.
-
-### Props
-
-  - `name` - context channel name
-  - `value` - value to be broadcasted in this channel.
-
-## `<Consumer>`
-
-Retrieves context value from specified channel.
-
-### Props
-
-  - `name` - provider channel to subscribe to.
-
-
-## `withContext()`
-
-HOC that ensures your component will receive context value it subscribed to.
-
-```ts
-withContext: (Comp: React.Component, name?: string) => React.Component;
-```
-
-, where
-
-  - `Comp` - your React component.
-  - `name` - context channel to subscribe to.
-
-Returns a *connected* component that will have a prop named `name` with value
-fetched from context. This component has a special prop `contextName` that
-your can use to overwrite the default context channel name.
-
-### Example
-
-```jsx
-const ColorIs = ({theme}) => <div>Color is: {theme.color}</div>;
-const ColorIsConnected = withContext(ColorIs, 'theme');
-
-<Provider name="theme" value={{color: 'tomato'}}>
-  <ColorIsConnected />
-</Provider>
-```
+  - [`<Provider>`](./Provider.md) and [`<Consumer>`](./Provider.md#consumer) &mdash; utilities to work with React's context.
+  - [`<Theme>`](./theme.md#theme) and [`<Themed>`](./theme.md#themed) &mdash; theme provider and consumer.
+  - `<CssVars>` &mdash; provides ability to use CSS variables today.
+  - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), and `<Go>` &mdash; best router for React.
+  - [`<Translations>`](./docs/translate.md#translations) and [`<Translate>`](./docs/translate.md#translate-or-t) &mdash; translation provider and consumer.

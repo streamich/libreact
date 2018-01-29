@@ -23,4 +23,4 @@ export const Themed: React.StatelessComponent<IThemedProps> = (props) => {
   return h(Consumer, {name}, children);
 };
 
-export const withTheme: THoc<any, any> = (Comp, name = 'theme') => withContext(Comp, name);
+export const withTheme: THoc<any, any> = (Comp, name = 'theme') => withContext(Comp, name, {name});

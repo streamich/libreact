@@ -1,19 +1,11 @@
 import {createElement as h} from 'react';
 import {Provider, Consumer} from 'freestyler-context';
+import faccToHoc from '../util/faccToHoc';
 
-export const withContext = (Comp: React.ComponentClass<any> | React.StatelessComponent<any>, name?: string) => {
-  return (props) => {
-    const {contextName = name, ...rest} = props;
-
-    return h(Consumer, {name: contextName}, (value) => {
-      rest[contextName] = value;
-
-      return h(Comp, rest);
-    });
-  };
-};
+const withContext = faccToHoc(Consumer, '');
 
 export {
   Provider,
-  Consumer
+  Consumer,
+  withContext
 };

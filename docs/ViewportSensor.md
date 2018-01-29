@@ -59,3 +59,52 @@ how much to throttle document's `scroll` event.
 
 Is the same as `<ViewportSensor>`, but uses only `IntersectionObserver` to detect element's intersection
 with viewport.
+
+
+## `withViewport()` HOC
+
+HOC that merges `viewport` boolean prop into enhanced component's props. Uses `<ViewportSensor>` under-the-hood.
+
+```jsx
+import {withViewport} from 'libreact/lib/ViewportSensor';
+
+const MyComp = (props) =>
+  <pre style={{fontFamily: 'nomospace'}}>
+    {JSON.stringify(props, null, 4)}
+  </pre>;
+
+const MyCompWithViewport = withViewport(MyComp);
+
+<MyCompWithViewport />
+```
+
+You can overwrite the inject prop name and `<ViewportSensor>` props
+
+```js
+const MyCompWithVisibility = withViewport(MyComp, 'visible', {
+  threshold: 1
+});
+```
+
+
+## `@withViewport` decorator
+
+React stateful component decorator that adds `viewport` prop.
+
+```js
+import {withViewport} from 'libreact/lib/ViewportSensor';
+
+@withViewport
+class MyComp extends Component {
+
+}
+```
+
+Specify different prop name and `<ViewportSensor>` props
+
+```js
+@withViewport('visible', {threshold: 1})
+class MyComp extends Component {
+
+}
+```

@@ -1,7 +1,15 @@
 import {h} from '../util';
 import addClassDecoratorSupport from './addClassDecoratorSupport';
 
-const faccToHoc = (Facc, prop?: string) => {
+const noWrap = (Comp, propName, props, state) => h(Comp, propName ?
+  {[propName]: state, ...props} :
+  {...state, ...props}
+);
+
+export const divWrapper = (Comp, propName, props, state) =>
+  h('div', null, noWrap(Comp, propName, props, state)) as any;
+
+const faccToHoc = (Facc, prop?: string, wrapper = noWrap) => {
   const hoc = (Comp, propName: any = prop, faccProps: object = null) => {
     const isClassDecoratorMethodCall = typeof Comp === 'string';
 
@@ -10,13 +18,7 @@ const faccToHoc = (Facc, prop?: string) => {
     }
 
     const Enhanced = (props) =>
-      h(Facc, faccProps, (state) =>
-        h(Comp,
-          propName ?
-            {[propName]: state, ...props} :
-            {...state, ...props}
-        )
-      );
+      h(Facc, faccProps, (state) => wrapper(Comp, propName, props, state));
 
     return addClassDecoratorSupport(Enhanced);
   };

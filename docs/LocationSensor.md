@@ -40,3 +40,58 @@ interface ILocationSensorState {
   search?: string;
 }
 ```
+
+
+## `withLocation()` HOC
+
+Higher order component that injects `location` prop into your component.
+
+```js
+import {withLocation} from 'libreact/lib/LocationSensor';
+
+const MyCompWithLocation = withLocation(MyComp);
+```
+
+Overwrite the inject prop name
+
+```js
+const MyCompWithLocation = withLocation(MyComp, 'route');
+```
+
+or merge all props
+
+```js
+const MyCompWithLocation = withLocation(MyComp, '');
+```
+
+
+## `@withLocation` decorator
+
+Stateful component class decorator that injects `location` prop into your component.
+
+```js
+import {withLocation} from 'libreact/lib/LocationSensor';
+
+@withLocation
+class MyComp extends Component {
+
+}
+```
+
+Overwrite prop name
+
+```js
+@withLocation('route')
+class MyComp extends Component {
+
+}
+```
+
+or merge all props
+
+```js
+@withLocation('')
+class MyComp extends Component {
+
+}
+```

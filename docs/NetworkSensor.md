@@ -1,9 +1,9 @@
-# `NetworkSensor`
+# `<NetworkSensor>`
 
 FaCC that re-renders on network status change. Uses `navigator.onLine` and [`NetworkInformation`](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation) to get network connection information.
 
 
-## `<NetworkSensor>`
+## Reference
 
 Passes through its state to the `children` function
 
@@ -52,22 +52,62 @@ Result
   - `downlink`, `downlinkMax`, `effectiveType`, `type`, `rtt` - properties as provided by [`NetworkInformation`](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation).
 
 
-## `withNetwork()`
+## `withNetwork()` HOC
 
-HOC that merges `<NetworkSensor>` state into props of the enhanced component.
-
-### Example
+HOC that merges `net` prop into enhanced component's props.
 
 ```jsx
-import {withNetwork} from 'libreact/lib/NetworkSensro';
+import {withNetwork} from 'libreact/lib/NetworkSensor';
 
 const NetworkStatusFormatter = (props) =>
-  <pre style={{fontFamily: 'monospace'}}>
+  <pre style={{fontFamily: 'nomospace'}}>
     {JSON.stringify(props, null, 4)}
   </pre>;
 
 const NetworkStatus = withNetwork(NetworkStatusFormatter);
 
 <NetworkStatus />
-);
+```
+
+You can overwrite the injected prop name
+
+```js
+const NetworkStatus = withNetwork(NetworkStatusFormatter, 'network');
+```
+
+Or simply merge the whole object into your props
+
+```js
+const NetworkStatus = withNetwork(NetworkStatusFormatter, '');
+```
+
+## `@withNetwork` decorator
+
+React stateful component decorator that adds `net` prop.
+
+```js
+import {withNetwork} from 'libreact/lib/NetworkSensor';
+
+@withNetwork
+class MyComp extends Component {
+
+}
+```
+
+Specify different prop name
+
+```js
+@withNetwork('network')
+class MyComp extends Component {
+
+}
+```
+
+or merge the the whole network object into props
+
+```js
+@withNetwork('')
+class MyComp extends Component {
+
+}
 ```

@@ -8,7 +8,7 @@ export interface IMockComponent<TProps> {
 }
 
 export interface IMockParams<TProps> {
-  loading?: React.ReactElement<TProps> | React.SFC<TProps>;
+  loading?: React.ReactElement<any> | React.SFC<TProps>;
 }
 
 export type TMock = <TProps>(params?: IMockParams<TProps>) => IMockComponent<TProps>;

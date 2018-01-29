@@ -1,6 +1,7 @@
 import {Component, createElement as h} from 'react';
 import {SyncSensor} from '../SyncSensor';
 import {isClient} from '../util';
+import faccToHoc from '../util/faccToHoc';
 
 export interface IWindowSizeSensorValue {
   width: number;
@@ -42,3 +43,5 @@ export class WindowSizeSensor extends Component<IWindowSizeSensorProps, any> {
     });
   }
 }
+
+export const withWindowSize = faccToHoc(WindowSizeSensor, 'windowSize');

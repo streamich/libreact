@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Mailto> renders as expected  1`] = `"<a href=\\"mailto:foo@bar.baz?subject=Hello%20world&amp;cc=foo.cc%40bar.baz&amp;bcc=foo.bcc%40bar.baz&amp;body=Hello%20world%21\\">Click me</a>"`;
+
+exports[`<Mailto> renders as expected with just e-mail 1`] = `"<a href=\\"mailto:foo@bar.baz?subject=&amp;body=\\"></a>"`;

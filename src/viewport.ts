@@ -1,33 +1,29 @@
 import {Component} from 'react';
 import {h} from './util';
 import {ViewportSensor} from './ViewportSensor';
-import {loadable} from './loadable';
+import {pixel} from './pixel';
 
-export const viewport = (params) => {
-  const {Loadable} = params;
+export interface IViewportParams {
+  placeholder: React.ReactElement<any>;
+}
+
+export type TViewport = <P>(Comp: React.StatelessComponent<P> | React.ComponentClass<P>, params: IViewportParams) => React.ComponentClass<P>;
+
+export const viewport = (Comp, {placeholder = pixel} = {}) => {
+  let flipped = false;
 
   const Viewport = class Viewport extends Component<any, any> {
-    state = {
-      flipped: false
-    };
-
     onChange = () => {
-      Loadable.load();
-      this.setState({
-        flipped: true
-      });
+      flipped = true;
+      this.forceUpdate();
     };
 
     render () {
-      const {flipped} = this.state;
-
       return flipped ?
-        h(Loadable, this.props) :
-        h(ViewportSensor, {onChange: this.onChange},
-          h('div')
-        );
+        h(Comp, this.props) :
+        h(ViewportSensor, {onChange: this.onChange}, placeholder)
     }
-  };
+  }
 
   return Viewport;
 };

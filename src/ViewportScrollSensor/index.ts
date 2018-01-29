@@ -1,6 +1,7 @@
 import {Component, cloneElement} from 'react';
 import {h, on, off, noop} from '../util';
 import * as throttle from 'throttle-debounce/throttle';
+import renderProp from '../util/renderProp';
 
 export type TMargin = [number, number, number, number];
 export type TRect = [number, number, number, number];
@@ -44,6 +45,8 @@ type TArea = (react: TRect) => number;
 const area: TArea = ([x1, y1, x2, y2]) => (x2 - x1) * (y2 - y1);
 
 export interface IViewportScrollSensorProps {
+  children?: ((size: IViewportScrollSensorState) => React.ReactElement<any>) | React.ReactElement<any>;
+  render?: (size: IViewportScrollSensorState) => React.ReactElement<any>;
   margin?: TMargin;
   threshold?: number;
   throttle?: number;
@@ -57,7 +60,7 @@ export interface IViewportScrollSensorState {
 export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, IViewportScrollSensorState> {
   static defaultProps = {
     threshold: 0,
-    throttle: 150,
+    throttle: 50,
     margin: [0, 0, 0, 0]
   };
 
@@ -91,7 +94,7 @@ export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, 
       return;
     }
 
-    const {threshold, margin, onChange = noop} = this.props;
+    const {threshold, margin, onChange} = this.props;
     let visible = false;
 
     const rectRoot = getRootRect(margin);
@@ -112,13 +115,13 @@ export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, 
       };
 
       this.setState(state);
-      this.props.onChange(state);
+      (onChange || noop)(state);
     }
   });
 
   render () {
     const {children} = this.props;
-    const element = typeof children === 'function' ? children(this.state) : children;
+    const element = renderProp(this.props, this.state);
 
     if (process.env.NODE_ENV !== 'production') {
       if ((typeof element !== 'object') || (typeof element.type !== 'string')) {

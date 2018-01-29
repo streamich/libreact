@@ -4,10 +4,10 @@
 
 [![][npm-badge]][npm-url] [![][travis-badge]][travis-url]
 
-React standard library, must-have toolbox for any React project.
+React standard library &mdash; must-have toolbox for any React project.
 
-  - Collection of React sensors, FaCCs, HOCs, context providers, dummies, and [other goodies](#contents).
-  - Isomorphic - all components work in browser and on server (and some in `react-native`).
+  - Collection of React sensors, FaCCs, render props, HOCs, context providers, dummies, and [other goodies](#contents).
+  - *Isomorphic* - all components work in browser and on server (and some in `react-native`).
   - See [demos](https://mailonline.github.io/libreact/) and [docs](#contents).
 
 ## Installation
@@ -28,44 +28,57 @@ const MyComponent = mock();
 
 ## Contents
 
-  - Dummies
-     - [`mock()`](./docs/mock.md)
-     - [`loadable()`](./docs/loadable.md)
-     - [`lazy()`](./docs/lazy.md)
-     - [`delayed()`](./docs/delayed.md)
-     - [`invert()`](./docs/invert.md)
-  - Sensors
-     - [`<BatterySensor>`](./docs/BatterySensor.md), [`withBattery()`](./docs/BatterySensor.md#withbattery), and [`@withBattery`](./docs/BatterySensor.md#withbattery-1)
-     - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md), [`withMediaDevices()`](./docs/MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./docs/MediaDeviceSensor.md#withmediadevices-1)
-     - [`<MediaSensor>`](./docs/MediaSensor.md), [`withMedia()`](./docs/MediaSensor.md#withmedia), and [`@withMedia`](./docs/MediaSensor.md#withmedia-1)
-     - [`<NetworkSensor>`](./docs/NetworkSensor.md) and [`withNetwork()`](./docs/NetworkSensor.md#withnetwork)
-     - [`<LightSensor>`](./docs/LightSensor.md)
-     - [`<LocationSensor>`](./docs/LocationSensor.md)
-     - [`<OrientationSensor>`](./docs/OrientationSensor.md) and [`withOrientation()`](./docs/OrientationSensor.md#withorientation)
-     - [`<ScrollSensor>`](./docs/ScrollSensor.md)
-     - [`<SizeSensor>`](./docs/SizeSensor.md)
-     - [`<ViewportSensor>`](./docs/ViewportSensor.md), [`<ViewportScrollSensor>`](./docs/ViewportSensor.md#viewportscrollsensor), and [`<ViewportObserverSensor>`](./docs/ViewportSensor.md#viewportobserversensor)
-     - [`<WidthSensor>`](./docs/WidthSensor.md)
-     - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md)
-     - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md)
-  - Generators
-     - [`<Alert>`](./docs/Alert.md)
-     - [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
-     - [`<LocalStorage>`](./docs/LocalStorage.md)
-     - `<Redirect>`
-     - [`<Speak>`](./docs/Speak.md)
-     - [`<Vibrate>`](./docs/Vibrate.md)
-  - Context
-     - [`<Provider>`](./docs/context.md#provider), [`<Consumer>`](./docs/context.md#consumer), [`withContext()`](./docs/context.md#withcontext), and `@withContext`
+  - [Introduction](./docs/Introduction.md)
+  - [Dummies](./docs/Dummies.md)
+     - [`mock()`](./docs/mock.md) and [`loadable()`](./docs/loadable.md)
+     - [`lazy()`](./docs/lazy.md), [`delayed()`](./docs/delayed.md), and [`viewport()`](./docs/viewport.md)
+  - [Inversion](./docs/Inversion.md)
+     - [`invert()`](./docs/invert.md) and [`<Inverted>`](./docs/invert.md#inverted)
+     - [`<State>`](./docs/State.md) and [`withState()`](./docs/State.md#withstate-hoc)
+        - [`<Toggle>`](./docs/Toggle.md), [`withToggle()`](./docs/Toggle.md#withtoggle-hoc), and [`@withToggle`](./docs/Toggle.md#withtoggle-decorator)
+        - [`<Flipflop>`](./docs/Flipflop.md), [`withFlipflop()`](./docs/Flipflop.md#withflipflop-hoc), and [`@withFlipflop`](./docs/Flipflop.md#withflipflop-decorator)
+        - [`<Value>`](./docs/Value.md), [`withValue()`](./docs/Value.md#withvalue-hoc), and [`@withValue`](./docs/Value.md#withvalue-decorator)
+        - [`<Counter>`](./docs/Counter.md), [`withCounter()`](./docs/Counter.md#withcounter-hoc) and [`@withCounter`](./docs/Counter.md#withcounter-decorator)
+        - [`<List>`](./docs/List.md), [`withList()`](./docs/List.md#withlist-hoc), and [`@withList`](./docs/List.md#withlist-decorator)
+        - [`<Map>`](./docs/Map.md), [`withMap()`](./docs/Map.md#withmap-hoc), and [`@withMap`](./docs/Map.md#withmap-decorator)
+  - [Context](./docs/Context.md)
+     - [`<Provider>`](./docs/Provider.md#provider), [`<Consumer>`](./docs/Provider.md#consumer), [`withContext()`](./docs/Provider.md#withcontext), and `@withContext`
      - [`<Theme>`](./docs/theme.md#theme), [`<Themed>`](./docs/theme.md#themed), [`withTheme()`](./docs/theme.md#withtheme), and `@withTheme`
      - `<CssVars>`
-     - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), [`go()`](./docs/route.md#go), [`withRoute()`](./docs/route.md#withroute), and `@withRoute`
-  - CSS resets
-     - [`<CssResetEricMeyer>`](./docs/reset/CssResetEricMeyer.md)
-     - [`<CssResetEricMeyerCondensed>`](./docs/reset/CssResetEricMeyerCondensed.md)
-     - [`<CssResetMinimalistic>`](./docs/reset/CssResetMinimalistic.md)
-     - [`<CssResetMinimalistic2>`](./docs/reset/CssResetMinimalistic2.md)
-     - [`<CssResetMinimalistic3>`](./docs/reset/CssResetMinimalistic3.md)
+     - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), [`withRoute()`](./docs/route.md#withroute), `@withRoute`, `go()`, and `<Go>`
+     - [`<Translations>`](./docs/translate.md#translations), [`<Translate>`](./docs/translate.md#translate-or-t), [`<T>`](./docs/translate.md#translate-or-t), [`withT()`](./docs/translate.md#witht-hoc), and [`@withT`](./docs/translate.md#witht-decorator)
+  - [Sensors](./docs/Sensors.md)
+     - [`<BatterySensor>`](./docs/BatterySensor.md), [`withBattery()`](./docs/BatterySensor.md#withbattery), and [`@withBattery`](./docs/BatterySensor.md#withbattery-1)
+     - [`<GeoLocationSensor>`](./docs/GeoLocationSensor.md), [`withGeoLocation()`](./docs/GeoLocationSensor.md#withgeolocation-hoc), and [`@withGeoLocation`](./docs/GeoLocationSensor.md#withgeolocation-decorator)
+     - [`<HoverSensor>`](./docs/HoverSensor.md), [`withHover()`](./docs/HoverSensor.md#withhover-hoc), and [`@withHover`](./docs/HoverSensor.md#withhover-decorator)
+     - [`<MediaDeviceSensor>`](./docs/MediaDeviceSensor.md), [`withMediaDevices()`](./docs/MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./docs/MediaDeviceSensor.md#withmediadevices-1)
+     - [`<MediaSensor>`](./docs/MediaSensor.md), [`withMedia()`](./docs/MediaSensor.md#withmedia), and [`@withMedia`](./docs/MediaSensor.md#withmedia-1)
+     - [`<MotionSensor>`](./docs/MotionSensor.md), [`withMotion()`](./docs/MotionSensor.md#withmotion-hoc), and [`@withMotion`](./docs/MotionSensor.md#withmotion-decorator)
+     - [`<MouseSensor>`](./docs/MouseSensor.md), [`withMouse()`](./docs/MouseSensor.md#withmouse-hoc), and [`@withMouse`](./docs/MouseSensor.md#withmouse-decorator)
+     - [`<NetworkSensor>`](./docs/NetworkSensor.md), [`withNetwork()`](./docs/NetworkSensor.md#withnetwork-hoc), and [`@withNetwork`](./docs/NetworkSensor.md#withnetwork-decorator)
+     - [`<LightSensor>`](./docs/LightSensor.md), [`withLight()`](./docs/LightSensor.md#withlight-hoc), and [`@withLight`](./docs/LightSensor.md#withlight-decorator)
+     - [`<LocationSensor>`](./docs/LocationSensor.md), [`withLocation()`](./docs/LocationSensor.md#withlocation-hoc), and [`@withLocation`](./docs/LocationSensor.md#withlocation-decora)
+     - [`<OrientationSensor>`](./docs/OrientationSensor.md), [`withOrientation()`](./docs/OrientationSensor.md#withorientation-hoc), and [`@withOrientation`](./docs/OrientationSensor.md#withorientation-decorator)
+     - [`<ScrollSensor>`](./docs/ScrollSensor.md)
+     - [`<SizeSensor>`](./docs/SizeSensor.md), [`withSize()`](./docs/SizeSensor.md#withsize-hoc), and [`@withSize`](./docs/SizeSensor.md#withsize-decorator)
+        - [`<WidthSensor>`](./docs/WidthSensor.md), [`withWidth()`](./docs/WidthSensor.md#withwidth-hoc-and-withwidth-decorator), and [`@withWidth`](./docs/WidthSensor.md#withwidth-hoc-and-withwidth-decorator)
+     - [`<ViewportSensor>`](./docs/ViewportSensor.md), [`withViewport()`](./docs/ViewportSensor.md#withviewport-hoc), and [`@withViewport`](./docs/ViewportSensor.md#withviewport-decorator)
+        - [`<ViewportScrollSensor>`](./docs/ViewportSensor.md#viewportscrollsensor) and [`<ViewportObserverSensor>`](./docs/ViewportSensor.md#viewportobserversensor)
+     - [`<WindowScrollSensor>`](./docs/WindowScrollSensor.md), [`withWindowScroll()`](./docs/WindowScrollSensor.md#withwindowscroll-hoc), and [`@withWindowScroll`](./docs/WindowScrollSensor.md#withwindowscroll-decorator)
+     - [`<WindowSizeSensor>`](./docs/WindowSizeSensor.md), [`withWindowSize()`](./docs/WindowSizeSensor.md#withwindowsize-hoc), and [`@withWindowSize`](./docs/WindowSizeSensor.md#withwindowsize-decorator)
+     - `ActiveSensor`, `withActive()`, and `@withActive`
+     - `FocusSensor`, `withFocus()`, and `@withFocus`
+  - Generators
+     - [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
+     - [`<LocalStorage>`](./docs/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
+     - [`<Speak>`](./docs/Speak.md), [`<Vibrate>`](./docs/Vibrate.md), [`<Alert>`](./docs/Alert.md), `<Prompt>`, `<Confirm>`
+     - [`go()`](./docs/route.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/Sms.md), [`<Mailto>`](./docs/Mailto.md), and `<Tel>`
+     - [`<FullScreen>`](./docs/FullScreen.md)
+  - UI
+     - `<Overlay>`
+  - [CSS resets](./docs/CSS-resets.md)
+     - [`<CssResetEricMeyer>`](./docs/reset/CssResetEricMeyer.md) and [`<CssResetEricMeyerCondensed>`](./docs/reset/CssResetEricMeyerCondensed.md)
+     - [`<CssResetMinimalistic>`](./docs/reset/CssResetMinimalistic.md), [`<CssResetMinimalistic2>`](./docs/reset/CssResetMinimalistic2.md), and [`<CssResetMinimalistic3>`](./docs/reset/CssResetMinimalistic3.md)
      - [`<CssResetPoorMan>`](./docs/reset/CssResetPoorMan.md)
      - [`<CssResetShaunInman>`](./docs/reset/CssResetShaunInman.md)
      - [`<CssResetSiolon>`](./docs/reset/CssResetSiolon.md)
@@ -73,7 +86,11 @@ const MyComponent = mock();
      - [`<CssResetUniversal>`](./docs/reset/CssResetUniversal.md)
      - [`<CssResetYahoo>`](./docs/reset/CssResetYahoo.md)
   - Other
-     - [`<Resolve>`](./docs/Resolve.md)
+     - [`<Resolve>`](./docs/Resolve.md), `<Fetch>`
+     - [`getDisplayName()`](./docs/getDisplayName.md)
+     - `<BrowserOnly>`, `<ServerOnly>`, and `<Environment>`
+     - `<Locales>`
+     - `<Draggable>`, `<Droppable>`, `<Parallax>`, `<Pin>`
 
 
 ## License

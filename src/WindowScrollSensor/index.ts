@@ -1,6 +1,7 @@
 import {Component, createElement as h} from 'react';
 import {SyncSensor} from '../SyncSensor';
 import {isClient} from '../util';
+import faccToHoc from '../util/faccToHoc';
 
 export interface IWindowScrollSensorValue {
   x: number;
@@ -47,3 +48,5 @@ export class WindowScrollSensor extends Component<IWindowScrollSensorProps, any>
     });
   }
 }
+
+export const withWindowScroll = faccToHoc(WindowScrollSensor, 'windowScroll');

@@ -1,5 +1,7 @@
 import {Component} from 'react';
 import {h, on, off, isClient, THoc} from '../util';
+import faccToHoc from '../util/faccToHoc';
+import renderProp from '../util/renderProp';
 
 export interface INetworkSensorProps {
   children?: (INetworkState) => React.ReactElement<any>;
@@ -108,12 +110,8 @@ export class NetworkSensor extends Component<INetworkSensorProps, INetworkSensor
   };
 
   render () {
-    return this.props.children(this.state);
+    return renderProp(this.props, this.state);
   }
 }
 
-export const withNetwork: THoc<any, any> = (Comp) =>
-  (props) => h(NetworkSensor, null, (net) => h(Comp, {
-    ...net,
-    ...props
-  }));
+export const withNetwork = faccToHoc(NetworkSensor, 'net');

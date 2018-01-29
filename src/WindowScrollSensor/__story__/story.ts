@@ -2,8 +2,8 @@ import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
-import {WindowScrollSensor} from '.';
-import ShowDocs from '../../.storybook/ShowDocs'
+import {WindowScrollSensor} from '..';
+import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('Sensors/WindowScrollSensor', module)
   .add('Documentation', () => h(ShowDocs, {name: 'WindowScrollSensor'}))

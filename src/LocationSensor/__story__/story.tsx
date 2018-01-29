@@ -2,10 +2,30 @@ import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
-import {LocationSensor} from '..';
+import {LocationSensor, withLocation} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
-class StoryLocationSensroExample extends Component<any, any> {
+const Print = (props) =>
+  <pre style={{fontFamily: 'monospace'}}>
+    {JSON.stringify(props, null, 4)}
+  </pre>;
+
+const Facc = () =>
+  <LocationSensor>{(state) => <Print {...state} />}</LocationSensor>;
+
+const RenderProp = () =>
+  <LocationSensor render={(state) => <Print {...state} />} />;
+
+const Hoc = withLocation(Print);
+
+@withLocation
+class Decorator extends Component<any, any> {
+  render () {
+    return <Print {...this.props} />;
+  }
+}
+
+class StoryLocationSensorExample extends Component<any, any> {
   state = {
     url: 'page.html',
     state: 'STATE'
@@ -25,11 +45,7 @@ class StoryLocationSensroExample extends Component<any, any> {
         <button onClick={() => history.go(-1)}>history.back()</button>
         <button onClick={() => history.go(1)}>history.forward()</button>
 
-        <LocationSensor>{(state) =>
-          <pre style={{fontFamily: 'monospace'}}>
-            {JSON.stringify(state, null, 4)}
-          </pre>
-        }</LocationSensor>
+        <this.props.comp />
       </div>
     );
   }
@@ -37,4 +53,7 @@ class StoryLocationSensroExample extends Component<any, any> {
 
 storiesOf('Sensors/LocationSensor', module)
   .add('Documentation', () => h(ShowDocs, {name: 'LocationSensor'}))
-  .add('Example', () => h(StoryLocationSensroExample));
+  .add('FaCC', () => <StoryLocationSensorExample comp={Facc} />)
+  .add('Render prop', () => <StoryLocationSensorExample comp={RenderProp} />)
+  .add('HOC', () => <StoryLocationSensorExample comp={Hoc} />)
+  .add('Decorator', () => <StoryLocationSensorExample comp={Decorator} />);

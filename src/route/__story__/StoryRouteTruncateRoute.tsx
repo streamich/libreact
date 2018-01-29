@@ -6,17 +6,16 @@ const StoryRouteTruncateRoute = () =>
   <div>
     <Router route='/api/users/123.json'>
       <Route match='/api'>
-        <div>
-          API
+        /api
         <Route match='/users'>
-          <div>
-            USERS
+          /api/users
           <Route match={/.*/}>{(result) =>
-            <pre style={{fontFamily: 'monospace'}}>{JSON.stringify(result, null, 4)}</pre>
+            <div>
+              /api/users/.*
+              <pre style={{fontFamily: 'monospace'}}>{JSON.stringify(result, null, 4)}</pre>
+            </div>
           }</Route>
-          </div>
         </Route>
-        </div>
       </Route>
     </Router>
 
@@ -25,9 +24,14 @@ const StoryRouteTruncateRoute = () =>
     <pre style={{fontFamily: 'monospace'}}>{`
 <Router route='/api/users/123.json'>
   <Route match='/api'>
+    /api
     <Route match='/users'>
+      /api/users
       <Route match={/.*/}>{(result) =>
-        <pre style={{fontFamily: 'monospace'}}>{JSON.stringify(result, null, 4)}</pre>
+        <div>
+          /api/users/.*
+          <pre style={{fontFamily: 'monospace'}}>{JSON.stringify(result, null, 4)}</pre>
+        </div>
       }</Route>
     </Route>
   </Route>

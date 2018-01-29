@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Sms> renders as expected  1`] = `"<a href=\\"sms:123?body=Hello%20world\\"></a>"`;
+
+exports[`<Sms> renders as expected without body 1`] = `"<a href=\\"sms:123?\\"></a>"`;

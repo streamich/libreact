@@ -23,3 +23,64 @@ import {SizeSensor} from 'libreact/lib/SizeSensor';
   Resize me!
 </SizeSensor>
 ```
+
+
+## `withSize()` HOC
+
+HOC that merges `size` prop into enhanced component's props.
+
+```jsx
+import {withSize} from 'libreact/lib/SizeSensor';
+
+const MyComp = (props) =>
+  <pre style={{fontFamily: 'nomospace'}}>
+    {JSON.stringify(props, null, 4)}
+  </pre>;
+
+const MyCompWithSize = withSize(MyComp);
+
+<MyCompWithSize />
+```
+
+You can overwrite the inject prop name
+
+```js
+const MyCompWithDimensions = withSize(MyComp, 'dimensions');
+```
+
+Or simply merge the whole object into your props
+
+```js
+const MyCompWithSize = withSize(MyComp, '');
+```
+
+## `@withSize` decorator
+
+React stateful component decorator that adds `size` prop.
+
+```js
+import {withSize} from 'libreact/lib/SizeSensor';
+
+@withSize
+class MyComp extends Component {
+
+}
+```
+
+Specify different prop name
+
+```js
+@withSize('dimensions')
+class MyComp extends Component {
+
+}
+```
+
+or merge the the whole size object into props
+
+```js
+@withSize('')
+class MyComp extends Component {
+
+}
+```

@@ -1,12 +1,12 @@
 import {Component} from 'react';
-import {noop} from '../util';
+import {h, noop} from '../util';
 import renderProp from '../util/renderProp';
 
 export interface IStateProps {
-  children?: (state: IStateState, setState?) => React.ReactElement<any>;
+  children?: (state, setState?) => React.ReactElement<any>;
+  render?: (state, setState?) => React.ReactElement<any>;
   init: object,
   onChange?: (state: any) => void;
-  render?: (state: any, setState?) => void;
   onMount?: (state) => void;
   onUnmount?: (state) => void;
 }
@@ -27,7 +27,7 @@ export class State extends Component<IStateProps, IStateState> {
   constructor (props, context) {
     super(props, context);
 
-    this.state = props.init;
+    this.state = props.init || {};
     this.setState = this.setState.bind(this);
   }
 
@@ -43,3 +43,23 @@ export class State extends Component<IStateProps, IStateState> {
     return renderProp(this.props, this.state, this.setState);
   }
 }
+
+export const withState = (Comp, name = 'state', init = {}) =>
+  (props) => h(State, {
+    init,
+    render: (state, set) =>
+      h(Comp, name ?
+        {
+          [name]: {
+            ...state,
+            set
+          },
+          ...props
+        } :
+        {
+          ...state,
+          set,
+          ...props,
+        }
+      )
+  });

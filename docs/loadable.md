@@ -15,7 +15,8 @@ const SVGImage = loadable({
 SVGImage.load();
 ```
 
-Use default exports
+Supports default exports, for example, if your `<MyComp>` is actually in `./MyComp/index.js` file
+and is exported as `export default MyComp`:
 
 ```js
 const LoadableComp = loadable({
@@ -23,16 +24,17 @@ const LoadableComp = loadable({
 });
 ```
 
+
 ## Reference
 
 ```ts
-const loadable: <TProps>(params: ILoadableParams) => ILoadableComponent<TProps>;
+loadable: (params: ILoadableParams) => ILoadableComponent;
 
 interface ILoadableParams extends IMockParams {
-    loader: () => Promise<TComponent<any>>,
+    loader: () => Promise<React.ComponentClass>,
 }
 
-interface ILoadableComponent<TProps> extends IMockComponent<TProps> {
+interface ILoadableComponent extends React.ComponentClass {
     load();
 }
 ```

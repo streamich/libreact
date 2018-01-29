@@ -1,12 +1,12 @@
 import {createElement as h} from 'react';
 import {LocationSensor} from '../../LocationSensor';
-import {Router, Route} from '..';
+import {Router, Route, Route404} from '..';
 
 const StoryRouteExample = () => (
   <Router>
     <div>
       <ul>
-        <li onClick={() => history.pushState(null, '', '/home.html')}>Home</li>
+        <li onClick={() => history.pushState(null, '', '/home')}>Home</li>
         <li onClick={() => history.pushState(null, '', '/home/intro.html')}>Home / Intro</li>
         <li onClick={() => history.pushState(null, '', '/home/more.html')}>Home / More</li>
         <li onClick={() => history.pushState(null, '', '/page.html')}>Page</li>
@@ -16,12 +16,12 @@ const StoryRouteExample = () => (
       <Route match='/home'>{() =>
         <div>
           <div>HOME</div>
-          <Route match='/intro' children={<div>INTRO</div>} />
-          <Route children={<div>HOME/404</div>} />
+          <Route match='/intro' children={<div>HOME/INTRO</div>} />
+          <Route404 children={<div>HOME/404</div>} />
         </div>
       }</Route>
-      <Route match={/^\/page\.html/} children={<div>PAGE</div>} />
-      <Route children={<div>404</div>} />
+      <Route match={/^\/page\.html/} render={<div>PAGE</div>} />
+      <Route404 children={<div>404</div>} />
 
       <br />
       <hr />
@@ -43,8 +43,8 @@ const StoryRouteExample = () => (
     <Route children={<div>HOME/404</div>} />
   </div>
 }</Route>
-<Route match={/^\/page\.html/} children={<div>PAGE</div>} />
-<Route children={<div>404</div>} />
+<Route match={/^\/page\.html/} render={<div>PAGE</div>} />
+<Route max={0} children={<div>404</div>} />
       `}</pre>
     </div>
   </Router>
