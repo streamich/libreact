@@ -13,3 +13,4 @@ yarn.lock
 /test/
 /.vscode/
 .DS_Store
+/dist_docs/

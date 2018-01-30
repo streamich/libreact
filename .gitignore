@@ -9,3 +9,4 @@ yarn.lock
 /modules/
 /.vscode/
 .DS_Store
+/dist_docs/

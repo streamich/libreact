@@ -65,7 +65,9 @@
     "typescript": "2.6.2",
     "webpack": "3.10.0",
     "semantic-release": "^12.2.4",
-    "gitbook-cli": "2.3.2"
+    "gitbook-cli": "2.3.2",
+    "glob": "^7.1.2",
+    "mkdirp": "0.5.1"
   },
   "config": {
     "commitizen": {
@@ -73,18 +75,20 @@
     }
   },
   "scripts": {
-    "clean": "rimraf lib modules",
+    "clean": "rimraf lib modules && npm run docs:clean",
     "build": "npm run clean && gulp build-ts && gulp build-modules",
     "start": "npm run storybook",
-    "test": "npm run test:server && npm run test:client",
     "semantic-release": "semantic-release",
+    "test": "npm run test:server && npm run test:client",
     "test:server": "mocha -r ts-node/register src/**/*.test-server.ts*",
     "test:client": "jest",
     "test:client:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:story": "start-storybook -p 6007",
     "test:story:build": "build-storybook",
-    "docs:watch": "gitbook serve ./docs"
+    "docs:watch": "gitbook serve ./docs",
+    "docs:clean": "rimraf dist_docs",
+    "docs:build": "node ./scripts/build_docs.js"
   },
   "jest": {
     "moduleFileExtensions": [
