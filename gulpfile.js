@@ -25,5 +25,9 @@ gulp.task('build-modules', () => {
     '!src/**/__docs__/**',
     '!src/**/story.ts',
     '!src/**/story.tsx'
-  ]).pipe(ts(tsConfig.compilerOptions)).pipe(gulp.dest('modules'));
+  ]).pipe(ts({
+    ...tsConfig.compilerOptions,
+    target: 'ESNext',
+    module: 'ESNext'
+  })).pipe(gulp.dest('modules'));
 });
