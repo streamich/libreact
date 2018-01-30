@@ -1,6 +1,6 @@
 {
   "name": "libreact",
-  "version": "0.4.4",
+  "version": "0.5.3",
   "description": "React standard library",
   "main": "lib/index.js",
   "keywords": [
@@ -72,8 +72,8 @@
     }
   },
   "scripts": {
-    "clean": "rimraf lib",
-    "build": "npm run clean && gulp build-ts",
+    "clean": "rimraf lib modules",
+    "build": "npm run clean && gulp build-ts && gulp build-modules",
     "test": "npm run test:server && npm run test:client",
     "test:server": "mocha -r ts-node/register src/**/*.test-server.ts*",
     "test:client": "jest",
