@@ -6,3 +6,5 @@
   * [`mock()`](mock.md)
   * [`loadable()`](loadable.md)
   * [`lazy()`](lazy.md)
+  * [`delayed()`](delayed.md)
+  * [`viewport()`](viewport.md)
