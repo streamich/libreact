@@ -1,4 +1,4 @@
-![libreact logo](./docs/libreact.png)
+![libreact logo](../libreact.png)
 
 # libreact
 
@@ -28,7 +28,7 @@ const MyComponent = mock();
 
 ## Contents
 
-  - [Introduction](./docs/Introduction.md)
+  - [Introduction](./Introduction.md)
   - [Dummies](./docs/Dummies.md)
      - [`mock()`](./docs/mock.md) and [`loadable()`](./docs/loadable.md)
      - [`lazy()`](./docs/lazy.md), [`delayed()`](./docs/delayed.md), and [`viewport()`](./docs/viewport.md)

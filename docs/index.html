@@ -1,0 +1,369 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>libreact · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../dev/libreact/gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../dev/libreact/gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../dev/libreact/gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../dev/libreact/gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../dev/libreact/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../dev/libreact/gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="dev/libreact/Introduction.html" />
+    
+    
+    <link rel="prev" href="dev/libreact/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="dev/libreact/">
+            
+                <a href="dev/libreact/">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    libreact
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="dev/libreact/Introduction.html">
+            
+                <a href="dev/libreact/Introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="dev/libreact" >libreact</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><img src="docs/libreact.png" alt="libreact logo"></p>
+<h1 id="libreact">libreact</h1>
+<p><a href="https://www.npmjs.com/package/libreact" target="_blank"><img src="https://img.shields.io/npm/v/libreact.svg" alt=""></a> <a href="https://travis-ci.org/MailOnline/libreact" target="_blank"><img src="https://travis-ci.org/MailOnline/libreact.svg?branch=master" alt=""></a></p>
+<p>React standard library &#x2014; must-have toolbox for any React project.</p>
+<ul>
+<li>Collection of React sensors, FaCCs, render props, HOCs, context providers, dummies, and <a href="#contents">other goodies</a>.</li>
+<li><em>Isomorphic</em> - all components work in browser and on server (and some in <code>react-native</code>).</li>
+<li>See <a href="https://mailonline.github.io/libreact/" target="_blank">demos</a> and <a href="#contents">docs</a>.</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre>
+npm i <a href="https://www.npmjs.com/package/libreact" target="_blank">libreact</a> --save
+</pre>
+
+<h2 id="usage">Usage</h2>
+<p>Import each utility individually to decrease your bundle size</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {mock} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;libreact/lib/mock&apos;</span>;
+
+<span class="hljs-keyword">const</span> MyComponent = mock();
+</code></pre>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="docs/Introduction.md">Introduction</a></li>
+<li><a href="docs/Dummies.md">Dummies</a><ul>
+<li><a href="docs/mock.md"><code>mock()</code></a> and <a href="docs/loadable.md"><code>loadable()</code></a></li>
+<li><a href="docs/lazy.md"><code>lazy()</code></a>, <a href="docs/delayed.md"><code>delayed()</code></a>, and <a href="docs/viewport.md"><code>viewport()</code></a></li>
+</ul>
+</li>
+<li><a href="docs/Inversion2.md">Inversion</a><ul>
+<li><a href="docs/invert.md"><code>invert()</code></a> and <a href="docs/invert.md#inverted"><code>&lt;Inverted&gt;</code></a></li>
+<li><a href="docs/State.md"><code>&lt;State&gt;</code></a> and <a href="docs/State.md#withstate-hoc"><code>withState()</code></a><ul>
+<li><a href="docs/Toggle.md"><code>&lt;Toggle&gt;</code></a>, <a href="docs/Toggle.md#withtoggle-hoc"><code>withToggle()</code></a>, and <a href="docs/Toggle.md#withtoggle-decorator"><code>@withToggle</code></a></li>
+<li><a href="docs/Flipflop.md"><code>&lt;Flipflop&gt;</code></a>, <a href="docs/Flipflop.md#withflipflop-hoc"><code>withFlipflop()</code></a>, and <a href="docs/Flipflop.md#withflipflop-decorator"><code>@withFlipflop</code></a></li>
+<li><a href="docs/Value.md"><code>&lt;Value&gt;</code></a>, <a href="docs/Value.md#withvalue-hoc"><code>withValue()</code></a>, and <a href="docs/Value.md#withvalue-decorator"><code>@withValue</code></a></li>
+<li><a href="docs/Counter.md"><code>&lt;Counter&gt;</code></a>, <a href="docs/Counter.md#withcounter-hoc"><code>withCounter()</code></a> and <a href="docs/Counter.md#withcounter-decorator"><code>@withCounter</code></a></li>
+<li><a href="docs/List.md"><code>&lt;List&gt;</code></a>, <a href="docs/List.md#withlist-hoc"><code>withList()</code></a>, and <a href="docs/List.md#withlist-decorator"><code>@withList</code></a></li>
+<li><a href="docs/Map.md"><code>&lt;Map&gt;</code></a>, <a href="docs/Map.md#withmap-hoc"><code>withMap()</code></a>, and <a href="docs/Map.md#withmap-decorator"><code>@withMap</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="docs/Sensors.md">Sensors</a><ul>
+<li><a href="docs/BatterySensor.md"><code>&lt;BatterySensor&gt;</code></a>, <a href="docs/BatterySensor.md#withbattery"><code>withBattery()</code></a>, and <a href="docs/BatterySensor.md#withbattery-1"><code>@withBattery</code></a></li>
+<li><a href="docs/GeoLocationSensor.md"><code>&lt;GeoLocationSensor&gt;</code></a>, <a href="docs/GeoLocationSensor.md#withgeolocation-hoc"><code>withGeoLocation()</code></a>, and <a href="docs/GeoLocationSensor.md#withgeolocation-decorator"><code>@withGeoLocation</code></a></li>
+<li><a href="docs/HoverSensor.md"><code>&lt;HoverSensor&gt;</code></a>, <a href="docs/HoverSensor.md#withhover-hoc"><code>withHover()</code></a>, and <a href="docs/HoverSensor.md#withhover-decorator"><code>@withHover</code></a></li>
+<li><a href="docs/MediaDeviceSensor.md"><code>&lt;MediaDeviceSensor&gt;</code></a>, <a href="docs/MediaDeviceSensor.md#withmediadevices"><code>withMediaDevices()</code></a>, and <a href="docs/MediaDeviceSensor.md#withmediadevices-1"><code>@withMediaDevices</code></a></li>
+<li><a href="docs/MediaSensor.md"><code>&lt;MediaSensor&gt;</code></a>, <a href="docs/MediaSensor.md#withmedia"><code>withMedia()</code></a>, and <a href="docs/MediaSensor.md#withmedia-1"><code>@withMedia</code></a></li>
+<li><a href="docs/MotionSensor.md"><code>&lt;MotionSensor&gt;</code></a>, <a href="docs/MotionSensor.md#withmotion-hoc"><code>withMotion()</code></a>, and <a href="docs/MotionSensor.md#withmotion-decorator"><code>@withMotion</code></a></li>
+<li><a href="docs/MouseSensor.md"><code>&lt;MouseSensor&gt;</code></a>, <a href="docs/MouseSensor.md#withmouse-hoc"><code>withMouse()</code></a>, and <a href="docs/MouseSensor.md#withmouse-decorator"><code>@withMouse</code></a></li>
+<li><a href="docs/NetworkSensor.md"><code>&lt;NetworkSensor&gt;</code></a>, <a href="docs/NetworkSensor.md#withnetwork-hoc"><code>withNetwork()</code></a>, and <a href="docs/NetworkSensor.md#withnetwork-decorator"><code>@withNetwork</code></a></li>
+<li><a href="docs/LightSensor.md"><code>&lt;LightSensor&gt;</code></a>, <a href="docs/LightSensor.md#withlight-hoc"><code>withLight()</code></a>, and <a href="docs/LightSensor.md#withlight-decorator"><code>@withLight</code></a></li>
+<li><a href="docs/LocationSensor.md"><code>&lt;LocationSensor&gt;</code></a>, <a href="docs/LocationSensor.md#withlocation-hoc"><code>withLocation()</code></a>, and <a href="docs/LocationSensor.md#withlocation-decora"><code>@withLocation</code></a></li>
+<li><a href="docs/OrientationSensor.md"><code>&lt;OrientationSensor&gt;</code></a>, <a href="docs/OrientationSensor.md#withorientation-hoc"><code>withOrientation()</code></a>, and <a href="docs/OrientationSensor.md#withorientation-decorator"><code>@withOrientation</code></a></li>
+<li><a href="docs/ScrollSensor.md"><code>&lt;ScrollSensor&gt;</code></a></li>
+<li><a href="docs/SizeSensor.md"><code>&lt;SizeSensor&gt;</code></a>, <a href="docs/SizeSensor.md#withsize-hoc"><code>withSize()</code></a>, and <a href="docs/SizeSensor.md#withsize-decorator"><code>@withSize</code></a><ul>
+<li><a href="docs/WidthSensor.md"><code>&lt;WidthSensor&gt;</code></a>, <a href="docs/WidthSensor.md#withwidth-hoc-and-withwidth-decorator"><code>withWidth()</code></a>, and <a href="docs/WidthSensor.md#withwidth-hoc-and-withwidth-decorator"><code>@withWidth</code></a></li>
+</ul>
+</li>
+<li><a href="docs/ViewportSensor.md"><code>&lt;ViewportSensor&gt;</code></a>, <a href="docs/ViewportSensor.md#withviewport-hoc"><code>withViewport()</code></a>, and <a href="docs/ViewportSensor.md#withviewport-decorator"><code>@withViewport</code></a><ul>
+<li><a href="docs/ViewportSensor.md#viewportscrollsensor"><code>&lt;ViewportScrollSensor&gt;</code></a> and <a href="docs/ViewportSensor.md#viewportobserversensor"><code>&lt;ViewportObserverSensor&gt;</code></a></li>
+</ul>
+</li>
+<li><a href="docs/WindowScrollSensor.md"><code>&lt;WindowScrollSensor&gt;</code></a>, <a href="docs/WindowScrollSensor.md#withwindowscroll-hoc"><code>withWindowScroll()</code></a>, and <a href="docs/WindowScrollSensor.md#withwindowscroll-decorator"><code>@withWindowScroll</code></a></li>
+<li><a href="docs/WindowSizeSensor.md"><code>&lt;WindowSizeSensor&gt;</code></a>, <a href="docs/WindowSizeSensor.md#withwindowsize-hoc"><code>withWindowSize()</code></a>, and <a href="docs/WindowSizeSensor.md#withwindowsize-decorator"><code>@withWindowSize</code></a></li>
+<li><code>ActiveSensor</code>, <code>withActive()</code>, and <code>@withActive</code></li>
+<li><code>FocusSensor</code>, <code>withFocus()</code>, and <code>@withFocus</code></li>
+</ul>
+</li>
+<li><a href="docs/Context2.md">Context</a><ul>
+<li><a href="docs/Provider.md#provider"><code>&lt;Provider&gt;</code></a>, <a href="docs/Provider.md#consumer"><code>&lt;Consumer&gt;</code></a>, <a href="docs/Provider.md#withcontext"><code>withContext()</code></a>, and <code>@withContext</code></li>
+<li><a href="docs/theme.md#theme"><code>&lt;Theme&gt;</code></a>, <a href="docs/theme.md#themed"><code>&lt;Themed&gt;</code></a>, <a href="docs/theme.md#withtheme"><code>withTheme()</code></a>, and <code>@withTheme</code></li>
+<li><code>&lt;CssVars&gt;</code></li>
+<li><a href="docs/route.md#router"><code>&lt;Router&gt;</code></a>, <a href="docs/route.md#route"><code>&lt;Route&gt;</code></a>, <a href="docs/route.md#withroute"><code>withRoute()</code></a>, <code>@withRoute</code>, <code>go()</code>, and <code>&lt;Go&gt;</code></li>
+<li><a href="docs/translate.md#translations"><code>&lt;Translations&gt;</code></a>, <a href="docs/translate.md#translate-or-t"><code>&lt;Translate&gt;</code></a>, <a href="docs/translate.md#translate-or-t"><code>&lt;T&gt;</code></a>, <a href="docs/translate.md#witht-hoc"><code>withT()</code></a>, and <a href="docs/translate.md#witht-decorator"><code>@withT</code></a></li>
+</ul>
+</li>
+<li>Generators<ul>
+<li><a href="docs/Audio.md"><code>&lt;Audio&gt;</code></a>, <a href="docs/Video.md"><code>&lt;Video&gt;</code></a>, and <code>&lt;Media&gt;</code></li>
+<li><a href="docs/LocalStorage.md"><code>&lt;LocalStorage&gt;</code></a>, <code>&lt;SessionStorage&gt;</code>, <code>&lt;IndexedDb&gt;</code></li>
+<li><a href="docs/Speak.md"><code>&lt;Speak&gt;</code></a>, <a href="docs/Vibrate.md"><code>&lt;Vibrate&gt;</code></a>, <a href="docs/Alert.md"><code>&lt;Alert&gt;</code></a>, <code>&lt;Prompt&gt;</code>, <code>&lt;Confirm&gt;</code></li>
+<li><a href="docs/route.md#go"><code>go()</code></a>, <code>&lt;Redirect&gt;</code>, <code>&lt;Link&gt;</code>, <a href="docs/Sms.md"><code>&lt;Sms&gt;</code></a>, <a href="docs/Mailto.md"><code>&lt;Mailto&gt;</code></a>, and <code>&lt;Tel&gt;</code></li>
+<li><a href="docs/FullScreen.md"><code>&lt;FullScreen&gt;</code></a></li>
+</ul>
+</li>
+<li>UI<ul>
+<li><code>&lt;Overlay&gt;</code></li>
+</ul>
+</li>
+<li><a href="docs/CSS-resets.md">CSS resets</a><ul>
+<li><a href="docs/reset/CssResetEricMeyer.md"><code>&lt;CssResetEricMeyer&gt;</code></a> and <a href="docs/reset/CssResetEricMeyerCondensed.md"><code>&lt;CssResetEricMeyerCondensed&gt;</code></a></li>
+<li><a href="docs/reset/CssResetMinimalistic.md"><code>&lt;CssResetMinimalistic&gt;</code></a>, <a href="docs/reset/CssResetMinimalistic2.md"><code>&lt;CssResetMinimalistic2&gt;</code></a>, and <a href="docs/reset/CssResetMinimalistic3.md"><code>&lt;CssResetMinimalistic3&gt;</code></a></li>
+<li><a href="docs/reset/CssResetPoorMan.md"><code>&lt;CssResetPoorMan&gt;</code></a></li>
+<li><a href="docs/reset/CssResetShaunInman.md"><code>&lt;CssResetShaunInman&gt;</code></a></li>
+<li><a href="docs/reset/CssResetSiolon.md"><code>&lt;CssResetSiolon&gt;</code></a></li>
+<li><a href="docs/reset/CssResetTantek.md"><code>&lt;CssResetTantek&gt;</code></a></li>
+<li><a href="docs/reset/CssResetUniversal.md"><code>&lt;CssResetUniversal&gt;</code></a></li>
+<li><a href="docs/reset/CssResetYahoo.md"><code>&lt;CssResetYahoo&gt;</code></a></li>
+</ul>
+</li>
+<li>Other<ul>
+<li><a href="docs/Resolve.md"><code>&lt;Resolve&gt;</code></a>, <code>&lt;Fetch&gt;</code></li>
+<li><a href="docs/getDisplayName.md"><code>getDisplayName()</code></a></li>
+<li><code>&lt;BrowserOnly&gt;</code>, <code>&lt;ServerOnly&gt;</code>, and <code>&lt;Environment&gt;</code></li>
+<li><code>&lt;Locales&gt;</code></li>
+<li><code>&lt;Draggable&gt;</code>, <code>&lt;Droppable&gt;</code>, <code>&lt;Parallax&gt;</code>, <code>&lt;Pin&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="license">License</h2>
+<p><a href="LICENSE">Unlicense</a> - public domain.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="dev/libreact/" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="dev/libreact/Introduction.html" class="navigation navigation-next " aria-label="Next page: Introduction">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"libreact","level":"1.2","depth":1,"next":{"title":"Introduction","level":"1.3","depth":1,"path":"Introduction.md","ref":"Introduction.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"../../README.md","mtime":"2018-01-29T23:38:48.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-29T23:34:33.342Z"},"basePath":"dev/libreact","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../dev/libreact/gitbook/gitbook.js"></script>
+    <script src="../dev/libreact/gitbook/theme.js"></script>
+    
+        
+        <script src="../dev/libreact/gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../dev/libreact/gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../dev/libreact/gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../dev/libreact/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../dev/libreact/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../dev/libreact/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../dev/libreact/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
