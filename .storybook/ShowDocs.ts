@@ -16,15 +16,16 @@ const ShowDocs = (props) => {
 @import url(http://fonts.googleapis.com/css?family=Merriweather:300italic,300);
 
 html {
-  font-size: 18px;
-  max-width: 800px;
+  font-size: 16px;
+  max-width: 700px;
+  margin: auto;
 }
 
 body {
   color: #444;
   font-family: 'Merriweather', Georgia, serif;
-  margin: 0;
-  max-width: 800px;
+  max-width: 700px;
+  margin: auto;
 }
 
 /* === A bit of a gross hack so we can have bleeding divs/blockquotes. */
@@ -61,7 +62,12 @@ p {
 }
 
 pre, code {
-  font-family: Menlo, Monaco, "Courier New", monospace
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  color: #42b983;
+}
+
+pre, pre code {
+  color: #000;
 }
 
 pre {
@@ -71,7 +77,7 @@ pre {
   padding: 1.125em;
 }
 
-a,
+a, a pre, a code,
 a:visited {
   color: #3498db;
 }
