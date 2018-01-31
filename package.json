@@ -75,7 +75,7 @@
     }
   },
   "scripts": {
-    "clean": "rimraf lib modules && npm run docs:clean",
+    "clean": "rimraf lib modules && npm run test:story:clean && npm run docs:clean",
     "build": "npm run clean && gulp build-ts && gulp build-modules",
     "start": "npm run storybook",
     "semantic-release": "semantic-release",
@@ -84,12 +84,13 @@
     "test:client": "jest",
     "test:client:coverage": "jest --coverage",
     "test:watch": "jest --watch",
+    "test:story:clean": "rimraf storybook-static",
     "test:story": "start-storybook -p 6007",
     "test:story:build": "build-storybook",
     "docs:clean": "rimraf dist_docs docs/_book",
     "docs:serve": "npm run docs:clean && gitbook install ./docs && gitbook serve ./docs",
     "docs:build": "npm run docs:clean && gitbook install ./docs && gitbook build ./docs",
-    "docs:publish": "npm run test:story:build && npm run docs:build && node build/publish-docs.sh"
+    "docs:publish": "npm run test:story:build && npm run docs:build && ./build/publish-docs.sh"
   },
   "jest": {
     "moduleFileExtensions": [
