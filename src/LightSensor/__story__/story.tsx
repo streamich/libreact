@@ -21,7 +21,7 @@ class LightPrinter extends Component<any, any> {
 }
 
 storiesOf('Sensors/LightSensor', module)
-  .add('Documentation', () => <ShowDocs name='LightSensor' />)
+  .add('Documentation', () => <ShowDocs {...{md: require('../../../docs/en/LightSensor.md')}} />)
   .add('FaCC', () =>
     <LightSensor>{(light) =>
       <pre style={{fontFamily: 'monospace'}}>

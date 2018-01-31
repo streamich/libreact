@@ -6,7 +6,6 @@ import {Resolve} from '.';
 import ShowDocs from '../../.storybook/ShowDocs'
 
 storiesOf('Other/Resolve', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'Resolve'}))
   .add('Example', () => {
     const promise = new Promise((resolve) => {
       setTimeout(resolve, 2000);

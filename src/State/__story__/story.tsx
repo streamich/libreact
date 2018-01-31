@@ -12,7 +12,7 @@ const Hoc1 = withState(Cnt, '', {cnt: 3});
 const Hoc2 = withState(({foobar}) => h(Cnt, foobar), 'foobar', {cnt: 0});
 
 storiesOf('Inversion/State', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'State'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/State.md')}))
   .add('Basic example', () =>
     <State init={{cnt: 0}}>{({cnt}, set) =>
       <div

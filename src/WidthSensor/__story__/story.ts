@@ -14,7 +14,7 @@ const Hoc2 = withWidth(Print, 'mySize');
 const Hoc3 = withWidth(Print, '');
 
 storiesOf('Sensors/WidthSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'WidthSensor'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/WidthSensor.md')}))
   .add('Example', () =>
     h(WidthSensor, {
       onWidth: action('onWidth')

@@ -19,7 +19,7 @@ class Decorator extends Component<any, any> {
 }
 
 storiesOf('Inversion/Value', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'Value'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Value.md')}))
   .add('Example', () =>
     <Value init={'foobar'}>{(props) => <Val {...props} />}</Value>
   )

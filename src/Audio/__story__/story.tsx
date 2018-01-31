@@ -2,13 +2,13 @@ import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
-import {Audio} from '.';
-import ShowDocs from '../../.storybook/ShowDocs'
+import {Audio} from '..';
+import ShowDocs from '../../../.storybook/ShowDocs'
 
 const src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3';
 
 storiesOf('Generators/Audio', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'Audio'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Audio.md')}))
   .add('Example', () =>
     <Audio autoPlay src={src}>{(audio) =>
       <div>

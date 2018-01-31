@@ -52,7 +52,7 @@ class StoryLocationSensorExample extends Component<any, any> {
 }
 
 storiesOf('Sensors/LocationSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'LocationSensor'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/LocationSensor.md')}))
   .add('FaCC', () => <StoryLocationSensorExample comp={Facc} />)
   .add('Render prop', () => <StoryLocationSensorExample comp={RenderProp} />)
   .add('HOC', () => <StoryLocationSensorExample comp={Hoc} />)

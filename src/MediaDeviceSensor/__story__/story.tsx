@@ -25,7 +25,7 @@ class Printer extends Component<any, any> {
 }
 
 storiesOf('Sensors/MediaDeviceSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'MediaDeviceSensor'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/MediaDeviceSensor.md')}))
   .add('FaCC', () =>
     <div>
       <MediaDeviceSensor>{(state) =>

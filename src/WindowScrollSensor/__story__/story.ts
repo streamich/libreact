@@ -6,7 +6,7 @@ import {WindowScrollSensor} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('Sensors/WindowScrollSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'WindowScrollSensor'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/WindowScrollSensor.md')}))
   .add('Example', () =>
     h('div', {style: {
       background: 'linear-gradient(to bottom, #fff 0%, #000 100%)',

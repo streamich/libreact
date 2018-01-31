@@ -21,7 +21,7 @@ class IsBigClass extends Component<any, any> {
 }
 
 storiesOf('Sensors/MediaSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'MediaSensor'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/MediaSensor.md')}))
   .add('FaCC', () =>
     h(MediaSensor, {
       query: '(min-width: 480px)'

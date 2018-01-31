@@ -43,7 +43,7 @@ class Decorator3 extends Component<any, any> {
 }
 
 storiesOf('Sensors/ViewportSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'ViewportSensor'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/ViewportSensor.md')}))
   .add('Basic example', () =>
     <StoryViewportSensorBasic sensor={ViewportSensor} onChange={action('onChange')} />)
   .add('Horizontal', () =>

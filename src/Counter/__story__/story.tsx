@@ -19,7 +19,7 @@ class Decorator extends Component<any, any> {
 }
 
 storiesOf('Inversion/Counter', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'Counter'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Counter.md')}))
   .add('FaCC', () =>
     <Counter init={1}>{(props) => <Val {...props} />}</Counter>
   )

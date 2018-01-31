@@ -6,7 +6,7 @@ import CssResetYahoo from '.';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('CSS resets/CssResetYahoo', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'reset/CssResetYahoo'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/reset/CssResetYahoo.md')}))
   .add('Examples', () =>
     h(CssResetYahoo)
   );
