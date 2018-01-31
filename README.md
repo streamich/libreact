@@ -1,4 +1,4 @@
-![libreact logo](./docs/en/docs/libreact.png)
+![libreact logo](./docs/assets/libreact.png)
 
 # libreact
 
@@ -6,7 +6,7 @@
 
 React standard library &mdash; must-have toolbox for any React project.
 
-  - React [sensors](https://mailonline.github.io/libreact/en/Sensors.html), [FaCC](https://mailonline.github.io/libreact/en/Introduction.html#facc)s, [render props](https://mailonline.github.io/libreact/en/Introduction.html#render-props), [HOC](https://mailonline.github.io/libreact/en/Introduction.html#hoc)s, [context](https://mailonline.github.io/libreact/en/Context.html) providers, [dummies](https://mailonline.github.io/libreact/en/Dummies.html), and [other goodies](https://mailonline.github.io/libreact/en/).
+  - React [router](https://mailonline.github.io/libreact/en/routing.html), [sensors](https://mailonline.github.io/libreact/en/Sensors.html), [FaCC](https://mailonline.github.io/libreact/en/Introduction.html#facc)s, [render props](https://mailonline.github.io/libreact/en/Introduction.html#render-props), [HOC](https://mailonline.github.io/libreact/en/Introduction.html#hoc)s, [context](https://mailonline.github.io/libreact/en/Context.html) providers, [dummies](https://mailonline.github.io/libreact/en/Dummies.html), and [other goodies](https://mailonline.github.io/libreact/en/).
   - *Isomorphic* - all components work in browser and on server (and some in `react-native`).
   - See [demos](https://mailonline.github.io/libreact/demos/), [docs](https://mailonline.github.io/libreact/en/), and NPM [package](https://www.npmjs.com/package/libreact/).
 
@@ -69,13 +69,13 @@ const MyComponent = mock();
      - [`<Provider>`](./docs/en/Provider.md#provider), [`<Consumer>`](./docs/en/Provider.md#consumer), [`withContext()`](./docs/en/Provider.md#withcontext), and `@withContext`
      - [`<Theme>`](./docs/en/theme.md#theme), [`<Themed>`](./docs/en/theme.md#themed), [`withTheme()`](./docs/en/theme.md#withtheme), and `@withTheme`
      - `<CssVars>`
-     - [`<Router>`](./docs/en/route.md#router), [`<Route>`](./docs/en/route.md#route), [`withRoute()`](./docs/en/route.md#withroute), `@withRoute`, `go()`, and `<Go>`
+     - [`<Router>`](./docs/en/routing.md#router), [`<Route>`](./docs/en/routing.md#route), [`withRoute()`](./docs/en/routing.md#withroute), `@withRoute`, `go()`, and `<Go>`
      - [`<Translations>`](./docs/en/translate.md#translations), [`<Translate>`](./docs/en/translate.md#translate-or-t), [`<T>`](./docs/en/translate.md#translate-or-t), [`withT()`](./docs/en/translate.md#witht-hoc), and [`@withT`](./docs/en/translate.md#witht-decorator)
   - Generators
      - [`<Audio>`](./docs/en/Audio.md), [`<Video>`](./docs/en/Video.md), and `<Media>`
      - [`<LocalStorage>`](./docs/en/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
      - [`<Speak>`](./docs/en/Speak.md), [`<Vibrate>`](./docs/en/Vibrate.md), [`<Alert>`](./docs/en/Alert.md), `<Prompt>`, `<Confirm>`
-     - [`go()`](./docs/en/route.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md), and `<Tel>`
+     - [`go()`](./docs/en/routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md), and `<Tel>`
      - [`<FullScreen>`](./docs/en/FullScreen.md)
   - UI
      - `<Overlay>`

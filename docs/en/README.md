@@ -38,13 +38,13 @@
      - [`<Provider>`](./Provider.md#provider), [`<Consumer>`](./Provider.md#consumer), [`withContext()`](./Provider.md#withcontext), and `@withContext`
      - [`<Theme>`](./theme.md#theme), [`<Themed>`](./theme.md#themed), [`withTheme()`](./theme.md#withtheme), and `@withTheme`
      - `<CssVars>`
-     - [`<Router>`](./route.md#router), [`<Route>`](./route.md#route), [`withRoute()`](./route.md#withroute), `@withRoute`, `go()`, and `<Go>`
+     - [`<Router>`](./routing.md#router), [`<Route>`](./routing.md#route), [`withRoute()`](./routing.md#withroute), `@withRoute`, `go()`, and `<Go>`
      - [`<Translations>`](./translate.md#translations), [`<Translate>`](./translate.md#translate-or-t), [`<T>`](./translate.md#translate-or-t), [`withT()`](./translate.md#witht-hoc), and [`@withT`](./translate.md#witht-decorator)
   - Generators
      - [`<Audio>`](./Audio.md), [`<Video>`](./Video.md), and `<Media>`
      - [`<LocalStorage>`](./LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
      - [`<Speak>`](./Speak.md), [`<Vibrate>`](./Vibrate.md), [`<Alert>`](./Alert.md), `<Prompt>`, `<Confirm>`
-     - [`go()`](./route.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./Sms.md), [`<Mailto>`](./Mailto.md), and `<Tel>`
+     - [`go()`](./routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./Sms.md), [`<Mailto>`](./Mailto.md), and `<Tel>`
      - [`<FullScreen>`](./FullScreen.md)
   - UI
      - `<Overlay>`
