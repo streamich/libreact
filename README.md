@@ -69,9 +69,9 @@ const MyComponent = mock();
      - [`<Router>`](./docs/route.md#router), [`<Route>`](./docs/route.md#route), [`withRoute()`](./docs/route.md#withroute), `@withRoute`, `go()`, and `<Go>`
      - [`<Translations>`](./docs/translate.md#translations), [`<Translate>`](./docs/translate.md#translate-or-t), [`<T>`](./docs/translate.md#translate-or-t), [`withT()`](./docs/translate.md#witht-hoc), and [`@withT`](./docs/translate.md#witht-decorator)
   - Generators
-     - [`<Audio>`](./docs/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
+     - [`<Audio>`](./src/Audio/__docs__/en/Audio.md), [`<Video>`](./docs/Video.md), and `<Media>`
      - [`<LocalStorage>`](./docs/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
-     - [`<Speak>`](./docs/Speak.md), [`<Vibrate>`](./docs/Vibrate.md), [`<Alert>`](./docs/Alert.md), `<Prompt>`, `<Confirm>`
+     - [`<Speak>`](./docs/Speak.md), [`<Vibrate>`](./docs/Vibrate.md), [`<Alert>`](./src/Alert/__docs__/en/Alert.md), `<Prompt>`, `<Confirm>`
      - [`go()`](./docs/route.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/Sms.md), [`<Mailto>`](./docs/Mailto.md), and `<Tel>`
      - [`<FullScreen>`](./docs/FullScreen.md)
   - UI
