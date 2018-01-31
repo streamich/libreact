@@ -15,6 +15,10 @@ const ShowDocs = (props) => {
         __html: `
 @import url(http://fonts.googleapis.com/css?family=Merriweather:300italic,300);
 
+h1, h1 code, h2, h2 code, h3, h3 code, h4, h4 code {
+  color: #333;
+}
+
 html {
   font-size: 16px;
   max-width: 700px;
