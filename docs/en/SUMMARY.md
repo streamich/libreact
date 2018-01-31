@@ -1,7 +1,12 @@
 # Summary
 
+### Getting Started
+
 * [Contents](README.md)
 * [Introduction](Introduction.md)
+
+### Reference
+
 * [Dummies](Dummies.md)
   * [mock()](mock.md)
   * [loadable()](loadable.md)
@@ -51,18 +56,21 @@
   * [Mailto](Mailto.md)
   * [FullScreen](FullScreen.md)
 * [CSS resets](CSS-resets.md)
-  * [`<CssResetEricMeyer>`](./reset/CssResetEricMeyer.md)
-  * [`<CssResetEricMeyerCondensed>`](./reset/CssResetEricMeyerCondensed.md)
-  * [`<CssResetMinimalistic>`](./reset/CssResetMinimalistic.md)
-  * [`<CssResetMinimalistic2>`](./reset/CssResetMinimalistic2.md)
-  * [`<CssResetMinimalistic3>`](./reset/CssResetMinimalistic3.md)
-  * [`<CssResetPoorMan>`](./reset/CssResetPoorMan.md)
-  * [`<CssResetShaunInman>`](./reset/CssResetShaunInman.md)
-  * [`<CssResetSiolon>`](./reset/CssResetSiolon.md)
-  * [`<CssResetTantek>`](./reset/CssResetTantek.md)
-  * [`<CssResetUniversal>`](./reset/CssResetUniversal.md)
-  * [`<CssResetYahoo>`](./reset/CssResetYahoo.md)
+  * [CssResetEricMeyer](./reset/CssResetEricMeyer.md)
+  * [CssResetEricMeyerCondensed](./reset/CssResetEricMeyerCondensed.md)
+  * [CssResetMinimalistic](./reset/CssResetMinimalistic.md)
+  * [CssResetMinimalistic2](./reset/CssResetMinimalistic2.md)
+  * [CssResetMinimalistic3](./reset/CssResetMinimalistic3.md)
+  * [CssResetPoorMan](./reset/CssResetPoorMan.md)
+  * [CssResetShaunInman](./reset/CssResetShaunInman.md)
+  * [CssResetSiolon](./reset/CssResetSiolon.md)
+  * [CssResetTantek](./reset/CssResetTantek.md)
+  * [CssResetUniversal](./reset/CssResetUniversal.md)
+  * [CssResetYahoo](./reset/CssResetYahoo.md)
 * [Other](Other.md)
   * [Resolve](Resolve.md)
   * [getDisplayName()](getDisplayName.md)
-* [License](../LICENSE)
+
+--
+
+* [License](LICENSE.md)
