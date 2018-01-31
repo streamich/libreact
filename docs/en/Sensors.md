@@ -5,9 +5,9 @@ Sensors are render pros that track some behavior and re-render on state change.
 For example, the below `<div>` will be re-rendered every time mouse position changes.
 
 ```jsx
-<MouseSensor>{({posX, posY}) =>
-  <div />
-}</MouseSensor>
+<MouseSensor>
+  {({posX, posY}) => <div />}
+</MouseSensor>
 ```
 
 `libreact` comes with plenty of sensors built-in.
