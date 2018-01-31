@@ -1,8 +1,10 @@
 # `lazy()`
 
-Creates a `loadable()` component which is loaded automatically when it is rendered for the first time.
+Creates a [`loadable()`](./loadable.md) component which is loaded automatically when it is rendered for the first time.
 
-Use it the same as [`loadable()`](./loadable.md).
+Use it exactly the same as `loadable()`, the only difference is that it will automatically `.load()` on first render.
+
+However, you still have access to the `.load()` method, which allows you *"pre-load"* your components ahead of time.
 
 
 ## Reference
