@@ -1,13 +1,13 @@
 import {createElement as h} from 'react';
 
-const ShowDocs = ({name}) => {
+const ShowDocs = (props) => {
   return h('div', {},
     h('div', {
       style: {
         padding: '0 20px'
       },
       dangerouslySetInnerHTML: {
-        __html: require(`../docs/${name}.md`)
+        __html: props.md
       }
     }),
     h('style', {

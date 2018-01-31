@@ -86,10 +86,10 @@
     "test:watch": "jest --watch",
     "test:story": "start-storybook -p 6007",
     "test:story:build": "build-storybook",
-    "docs:prepare": "node ./scripts/build_docs.js",
-    "docs:serve": "npm run docs:clean && npm run docs:prepare && gitbook serve ./dist_docs",
-    "docs:clean": "rimraf dist_docs",
-    "docs:build": "npm run docs:clean && npm run docs:prepare && gitbook build ./dist_docs"
+    "docs:clean": "rimraf dist_docs docs/_book",
+    "docs:serve": "npm run docs:clean && gitbook install ./docs && gitbook serve ./docs",
+    "docs:build": "npm run docs:clean && gitbook install ./docs && gitbook build ./docs",
+    "docs:publish": "npm run test:story:build && npm run docs:build && node build/publish-docs.sh"
   },
   "jest": {
     "moduleFileExtensions": [

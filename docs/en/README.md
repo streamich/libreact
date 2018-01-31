@@ -1,4 +1,4 @@
-![libreact logo](../libreact.png)
+![libreact logo](../assets/libreact.png)
 
   - [Introduction](./Introduction.md)
   - [Dummies](./Dummies.md)
