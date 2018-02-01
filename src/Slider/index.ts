@@ -77,7 +77,7 @@ export class Slider extends Component<ISliderProps, ISliderState> {
 
   startScrubbing () {
     if (!this.state.isScrubbing) {
-      this.props.onScrubStart();
+      (this.props.onScrubStart || noop)();
       this.setState({isScrubbing: true});
       this.bindEvents();
     }
@@ -85,26 +85,26 @@ export class Slider extends Component<ISliderProps, ISliderState> {
 
   stopScrubbing = () => {
     if (this.state.isScrubbing) {
-      this.props.onScrubStop();
+      (this.props.onScrubStop || noop)();
       this.setState({isScrubbing: false});
       this.unbindEvents();
     }
   };
 
   bindEvents () {
-    on('mousemove', this.onMouseMove);
-    on('mouseup', this.onMouseUp);
+    on(document, 'mousemove', this.onMouseMove);
+    on(document, 'mouseup', this.onMouseUp);
 
-    on('touchmove', this.onTouchMove);
-    on('touchend', this.onTouchEnd);
+    on(document, 'touchmove', this.onTouchMove);
+    on(document, 'touchend', this.onTouchEnd);
   }
 
   unbindEvents () {
-    off('mousemove', this.onMouseMove);
-    off('mouseup', this.onMouseUp);
+    off(document, 'mousemove', this.onMouseMove);
+    off(document, 'mouseup', this.onMouseUp);
 
-    off('touchmove', this.onTouchMove);
-    off('touchend', this.onTouchEnd);
+    off(document, 'touchmove', this.onTouchMove);
+    off(document, 'touchend', this.onTouchEnd);
   }
 
   onMouseMove = (event) => {
@@ -144,7 +144,7 @@ export class Slider extends Component<ISliderProps, ISliderState> {
     }
 
     this.setState({value});
-    this.props.onScrub(value);
+    (this.props.onScrub || noop)(value);
   });
 
   render () {
