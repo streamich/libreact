@@ -24,6 +24,7 @@
     * [Map](Map.md)
 * [Sensors](Sensors.md)
   * [BatterySensor](BatterySensor.md)
+  * [ExitSensor](ExitSensor.md)
   * [GeoLocationSensor](GeoLocationSensor.md)
   * [HoverSensor](HoverSensor.md)
   * [MediaDeviceSensor](MediaDeviceSensor.md)

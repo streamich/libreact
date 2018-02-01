@@ -15,6 +15,7 @@
         - [`<Map>`](./Map.md), [`withMap()`](./Map.md#withmap-hoc), and [`@withMap`](./Map.md#withmap-decorator)
   - [Sensors](./Sensors.md)
      - [`<BatterySensor>`](./BatterySensor.md), [`withBattery()`](./BatterySensor.md#withbattery), and [`@withBattery`](./BatterySensor.md#withbattery-1)
+     - [`<ExitSensor>`](./ExitSensor.md)
      - [`<GeoLocationSensor>`](./GeoLocationSensor.md), [`withGeoLocation()`](./GeoLocationSensor.md#withgeolocation-hoc), and [`@withGeoLocation`](./GeoLocationSensor.md#withgeolocation-decorator)
      - [`<HoverSensor>`](./HoverSensor.md), [`withHover()`](./HoverSensor.md#withhover-hoc), and [`@withHover`](./HoverSensor.md#withhover-decorator)
      - [`<MediaDeviceSensor>`](./MediaDeviceSensor.md), [`withMediaDevices()`](./MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./MediaDeviceSensor.md#withmediadevices-1)
