@@ -99,7 +99,7 @@ const MyComponent = mock();
 
 ## License
 
-[Unlicense](./LICENSE) - public domain.
+[Unlicense](./LICENSE) &mdash; public domain.
 
 
 [npm-url]: https://www.npmjs.com/package/libreact

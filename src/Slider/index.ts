@@ -1,33 +1,37 @@
-/*
-import {Component, createElement as h} from 'react';
-import Types from 'prop-types';
-import {noop} from '../../helpers';
+import {Component, cloneElement} from 'react';
+import {h, noop, on, off} from '../util';
+import renderProp from '../util/renderProp';
+import * as throttle from 'throttle-debounce/throttle';
 
-const on = (name, listener) => document.addEventListener(name, listener);
-const off = (name, listener) => document.removeEventListener(name, listener);
+export interface ISliderProps {
+  children?;
+  disabled?: boolean;
+  onScrub?: (pos: number) => void;
+  onScrubStart?: () => void;
+  onScrubStop?: () => void;
+  reverse?: boolean;
+  value?: number;
+  vertical?: boolean;
+  throttle?: number;
+}
 
-class Slider extends Component {
-  static propTypes = {
-    children: Types.func.isRequired,
-    disabled: Types.bool,
-    onScrub: Types.func.isRequired,
-    onScrubStart: Types.func.isRequired,
-    onScrubStop: Types.func.isRequired,
-    reverse: Types.bool,
-    value: Types.number.isRequired,
-    vertical: Types.bool
-  };
+export interface ISliderState {
+  isScrubbing?: boolean;
+  value?: number;
+}
 
+export class Slider extends Component<ISliderProps, ISliderState> {
   static defaultProps = {
     disabled: false,
     reverse: false,
-    vertical: false
+    vertical: false,
+    throttle: 50
   };
 
   LEFT = 'left';
   WIDTH = 'width';
   CLIENT_X = 'clientX';
-  element;
+  el: HTMLElement = null;
   mounted = false;
 
   constructor (props, context) {
@@ -54,16 +58,19 @@ class Slider extends Component {
     this.unbindEvents();
   }
 
-  ref = (element) => {
-    this.element = element;
+  ref = (originalRef) => (el) => {
+    this.el = el;
+    (originalRef || noop) (el);
   };
 
-  handleMouseDown = (event) => {
+  onMouseDown = (originalMouseDown) => (event) => {
+    (originalMouseDown || noop)(event);
     this.startScrubbing();
     this.onMouseMove(event);
   };
 
-  handleTouchStart = (event) => {
+  onTouchStart = (originalTouchStart) => (event) => {
+    (originalTouchStart)(event);
     this.startScrubbing();
     this.onTouchMove(event);
   };
@@ -112,12 +119,12 @@ class Slider extends Component {
 
   onTouchEnd = this.stopScrubbing;
 
-  onScrub = throttle((clientX) => {
-    if (!this.mounted || !this.element) {
+  onScrub = throttle(this.props.throttle, false, (clientX) => {
+    if (!this.mounted || !this.el) {
       return;
     }
 
-    const {[this.LEFT]: left, [this.WIDTH]: width} = this.element.getBoundingClientRect();
+    const {[this.LEFT]: left, [this.WIDTH]: width} = this.el.getBoundingClientRect();
 
     // This prevents returning 0 when element is hidden by CSS.
     if (!width) {
@@ -138,24 +145,20 @@ class Slider extends Component {
 
     this.setState({value});
     this.props.onScrub(value);
-  }, 50);
+  });
 
   render () {
-    const {children, disabled, onScrub, onScrubStart, onScrubStop, reverse, value: propsValue, vertical, ...passThrough} = this.props;
-    const {isScrubbing, value: stateValue} = this.state;
-    const value = isScrubbing ? stateValue : propsValue;
+    const {disabled} = this.props;
+    const element = renderProp(this.props, this.state);
+    const props: any = {
+      ref: this.ref(element.ref)
+    };
 
-    return (
-      <div
-        onMouseDown={disabled ? noop : this.handleMouseDown}
-        onTouchStart={disabled ? noop : this.handleTouchStart}
-        ref={this.ref}
-        {...passThrough}
-      >{children(value)}</div>
-    );
+    if (!disabled) {
+      props.onMouseDown = this.onMouseDown(element.props.onMouseDown);
+      props.onTouchStart = this.onTouchStart(element.props.onTouchStart);
+    }
+
+    return cloneElement(element, props);
   }
 }
-
-export default Slider;
-
-*/
