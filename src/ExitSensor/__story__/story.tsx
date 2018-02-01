@@ -7,6 +7,7 @@ import ShowDocs from '../../../.storybook/ShowDocs'
 import {StoryExitSensorExample} from './StoryExitSensorExample';
 
 storiesOf('Sensors/ExitSensor', module)
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/ExitSensor.md')}))
   .add('Example', () => <StoryExitSensorExample />)
   .add('Can display nothing', () =>
     <div>

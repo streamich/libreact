@@ -15,8 +15,8 @@ export class ExitSensor extends Component<IExitSensorProps, IExitSensorState> {
     time: 200
   };
 
-  element: React.ReactElement<any>;
-  nextElement: React.ReactElement<any>;
+  element: React.ReactElement<any> = null;
+  nextElement: React.ReactElement<any> = null;
   exitInFlight: boolean = false;
   exitFinish: boolean = false;
   timeout;

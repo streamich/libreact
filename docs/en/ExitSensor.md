@@ -18,6 +18,22 @@ import {ExitSensor} from 'libreact/lib/ExitSensor';
 </ExitSensor>
 ```
 
+, where
+
+```jsx
+const Rectangle = ({exiting}) => {
+  return (
+    <div style={{
+      opacity: exiting ? 0 : 1
+      transition: 'all 0.5s',
+      width: 200,
+      height: 200,
+      background: 'tomato',
+    }} />
+  );
+};
+```
+
 
 ## Props
 
