@@ -6,7 +6,7 @@ import CssResetUniversal from '.';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('CSS resets/CssResetUniversal', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'reset/CssResetUniversal'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/reset/CssResetUniversal.md')}))
   .add('Examples', () =>
     h(CssResetUniversal)
   );

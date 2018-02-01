@@ -15,7 +15,7 @@ const Demo = ({T}) => {
 const Hoc1 = withT(Demo);
 
 storiesOf('Context/translate', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'translate'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/translate.md')}))
   .add('Example', () => (
     <Translations map={{
       hello: 'world'

@@ -31,7 +31,7 @@ class Decorator2 extends Component<any, any> {
 }
 
 storiesOf('Inversion/Map', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'Map'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Map.md')}))
   .add('FaCC', () =>
     <Map init={{c: 'd'}}>{Demo}</Map>
   )

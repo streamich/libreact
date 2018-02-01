@@ -13,7 +13,7 @@ const Print = ({geoLocation}) =>
 const Hoc = withGeoLocation(Print);
 
 storiesOf('Sensors/GeoLocationSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'GeoLocationSensor'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/GeoLocationSensor.md')}))
   .add('FaCC', () =>
     <GeoLocationSensor>{(state) =>
       <pre style={{fontFamily: 'monospace'}}>{JSON.stringify(state, null, 4)}</pre>

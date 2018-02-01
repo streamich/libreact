@@ -6,7 +6,7 @@ import CssResetTantek from '.';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('CSS resets/CssResetTantek', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'reset/CssResetTantek'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/reset/CssResetTantek.md')}))
   .add('Example', () =>
     h(CssResetTantek)
   );

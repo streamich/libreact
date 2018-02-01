@@ -64,7 +64,7 @@ class Decorator3 extends Component<any, any> {
 }
 
 storiesOf('Sensors/SizeSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'SizeSensor'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/SizeSensor.md')}))
   .add('Basic example', () =>
     h(SizeSensor, {
       onSize: action('onSize')

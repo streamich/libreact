@@ -1,5 +1,5 @@
 .idea
-/node_modules/
+node_modules/
 /.idea/
 /.nyc_output/
 /coverage/
@@ -9,3 +9,5 @@ yarn.lock
 /modules/
 /.vscode/
 .DS_Store
+/dist_docs/
+_book/

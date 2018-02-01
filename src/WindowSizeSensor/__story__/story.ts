@@ -6,7 +6,7 @@ import {WindowSizeSensor} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('Sensors/WindowSizeSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'WindowSizeSensor'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/WindowSizeSensor.md')}))
   .add('Example', () =>
     h(WindowSizeSensor, {}, ({width, height}) =>
       h('div', {},

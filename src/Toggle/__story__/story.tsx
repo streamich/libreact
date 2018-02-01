@@ -31,7 +31,7 @@ class Decorator extends Component<any, any> {
 }
 
 storiesOf('Inversion/Toggle', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'Toggle'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Toggle.md')}))
   .add('Example', () =>
     <Toggle init={true}>{({on, toggle}) =>
       <div onClick={toggle}>

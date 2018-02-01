@@ -29,7 +29,7 @@ class Printer extends Component<any, any> {
 }
 
 storiesOf('Sensors/BatterySensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'BatterySensor'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/BatterySensor.md')}))
   .add('FaCC', () =>
     h(BatterySensor, {}, (state) =>
       h('pre', {style: {

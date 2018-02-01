@@ -26,7 +26,7 @@ class StorySpeakBasic extends Component<any, any> {
 }
 
 storiesOf('Generators/Speak', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'Speak'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../docs/en/Speak.md')}))
   .add('Example', () =>
     h(StorySpeakBasic)
   );

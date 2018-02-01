@@ -6,7 +6,7 @@ import CssResetEricMeyer from '.';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('CSS resets/CssResetEricMeyer', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'reset/CssResetEricMeyer'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/reset/CssResetEricMeyer.md')}))
   .add('Example', () =>
     h(CssResetEricMeyer)
   );

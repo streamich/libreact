@@ -19,7 +19,13 @@ export class LocalStorage extends Component<ILocalStorageProps, any> {
     const {name, onMount} = this.props;
 
     if (onMount) {
-      const json = localStorage[name];
+      let json = '';
+
+      try {
+        json = localStorage[name];
+      } catch {
+        json = 'null';
+      }
 
       if (typeof json === 'string') {
         try {
@@ -62,14 +68,14 @@ export class LocalStorage extends Component<ILocalStorageProps, any> {
       }
 
       localStorage[String(name)] = rawData;
-    } catch (error) {
-
-    }
+    } catch {}
   });
 
   remove (name = this.props.name) {
     if (!this.props.persist) {
-      delete localStorage[name];
+      try {
+        delete localStorage[name];
+      } catch {}
     }
   }
 

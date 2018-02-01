@@ -1,21 +1,8 @@
 {
   "name": "libreact",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "React standard library",
   "main": "lib/index.js",
-  "keywords": [
-    "react",
-    "libreact",
-    "stdlib",
-    "hoc",
-    "higher-order",
-    "composition",
-    "facc",
-    "components",
-    "utilities",
-    "toolbox",
-    "toolbox"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/MailOnline/libreact.git"
@@ -64,7 +51,10 @@
     "ts-node": "4.1.0",
     "typescript": "2.6.2",
     "webpack": "3.10.0",
-    "semantic-release": "^12.2.4"
+    "semantic-release": "^12.2.4",
+    "gitbook-cli": "2.3.2",
+    "glob": "^7.1.2",
+    "mkdirp": "0.5.1"
   },
   "config": {
     "commitizen": {
@@ -72,17 +62,22 @@
     }
   },
   "scripts": {
-    "clean": "rimraf lib modules",
+    "clean": "rimraf lib modules && npm run test:story:clean && npm run docs:clean",
     "build": "npm run clean && gulp build-ts && gulp build-modules",
+    "start": "npm run test:story",
+    "semantic-release": "semantic-release",
     "test": "npm run test:server && npm run test:client",
     "test:server": "mocha -r ts-node/register src/**/*.test-server.ts*",
     "test:client": "jest",
     "test:client:coverage": "jest --coverage",
     "test:watch": "jest --watch",
-    "storybook": "start-storybook -p 6007",
-    "build-storybook": "build-storybook",
-    "start": "npm run storybook",
-    "semantic-release": "semantic-release"
+    "test:story:clean": "rimraf storybook-static",
+    "test:story": "start-storybook -p 6007",
+    "test:story:build": "build-storybook",
+    "docs:clean": "rimraf dist_docs docs/_book",
+    "docs:serve": "npm run docs:clean && gitbook install ./docs && gitbook serve ./docs",
+    "docs:build": "npm run docs:clean && gitbook install ./docs && gitbook build ./docs",
+    "docs:publish": "npm run test:story:build && npm run docs:build && ./build/publish-docs.sh"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -103,5 +98,69 @@
       "jest-tap-reporter"
     ],
     "testEnvironment": "jest-environment-jsdom-global"
-  }
+  },
+  "keywords": [
+    "react",
+    "libreact",
+    "stdlib",
+    "hoc",
+    "higher-order",
+    "composition",
+    "facc",
+    "components",
+    "utilities",
+    "toolbox",
+    "toolbox",
+    "dummies",
+    "mock",
+    "mocks",
+    "loadable",
+    "lazy",
+    "delayed",
+    "viewport",
+    "inversion",
+    "invert",
+    "state",
+    "toggle",
+    "flipflop",
+    "list",
+    "map",
+    "sensor",
+    "sensors",
+    "battery",
+    "geolocation",
+    "location",
+    "hover",
+    "media",
+    "motion",
+    "mouse",
+    "network",
+    "light",
+    "orientation",
+    "scroll",
+    "size",
+    "intersection",
+    "observer",
+    "context",
+    "provider",
+    "consumer",
+    "routing",
+    "router",
+    "route",
+    "theming",
+    "theme",
+    "translation",
+    "internationalization",
+    "audio",
+    "video",
+    "localstorage",
+    "speak",
+    "vibrate",
+    "sms",
+    "mailto",
+    "link",
+    "fullscreen",
+    "css",
+    "reset"
+  ]
 }

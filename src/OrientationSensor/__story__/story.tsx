@@ -13,7 +13,7 @@ const Print = ({orientation}) =>
 const PrintOrientation = withOrientation(Print);
 
 storiesOf('Sensors/OrientationSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'OrientationSensor'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/OrientationSensor.md')}))
   .add('FaCC', () =>
     <OrientationSensor>{(state) =>
       <pre style={{fontFamily: 'monospace'}}>{JSON.stringify(state, null, 4)}</pre>

@@ -31,7 +31,7 @@ class Decorator2 extends Component<any, any> {
 }
 
 storiesOf('Inversion/List', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'List'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/List.md')}))
   .add('FaCC', () =>
     <List init={[1, 2, 3]}>{Demo}</List>
   )

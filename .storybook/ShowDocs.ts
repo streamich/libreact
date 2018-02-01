@@ -1,13 +1,13 @@
 import {createElement as h} from 'react';
 
-const ShowDocs = ({name}) => {
+const ShowDocs = (props) => {
   return h('div', {},
     h('div', {
       style: {
         padding: '0 20px'
       },
       dangerouslySetInnerHTML: {
-        __html: require(`../docs/${name}.md`)
+        __html: props.md
       }
     }),
     h('style', {
@@ -15,16 +15,21 @@ const ShowDocs = ({name}) => {
         __html: `
 @import url(http://fonts.googleapis.com/css?family=Merriweather:300italic,300);
 
+h1, h1 code, h2, h2 code, h3, h3 code, h4, h4 code {
+  color: #333;
+}
+
 html {
-  font-size: 18px;
-  max-width: 800px;
+  font-size: 16px;
+  max-width: 700px;
+  margin: auto;
 }
 
 body {
   color: #444;
   font-family: 'Merriweather', Georgia, serif;
-  margin: 0;
-  max-width: 800px;
+  max-width: 700px;
+  margin: auto;
 }
 
 /* === A bit of a gross hack so we can have bleeding divs/blockquotes. */
@@ -61,7 +66,12 @@ p {
 }
 
 pre, code {
-  font-family: Menlo, Monaco, "Courier New", monospace
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  color: #42b983;
+}
+
+pre, pre code {
+  color: #000;
 }
 
 pre {
@@ -71,7 +81,7 @@ pre {
   padding: 1.125em;
 }
 
-a,
+a, a pre, a code,
 a:visited {
   color: #3498db;
 }

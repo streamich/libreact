@@ -6,7 +6,7 @@ import CssResetMinimalistic from '.';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('CSS resets/CssResetMinimalistic', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'reset/CssResetMinimalistic'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/reset/CssResetMinimalistic.md')}))
   .add('Example', () =>
     h(CssResetMinimalistic)
   );

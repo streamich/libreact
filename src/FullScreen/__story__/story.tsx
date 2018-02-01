@@ -50,6 +50,6 @@ class StoryFullScreenVideo extends Component<any, any> {
 
 
 storiesOf('Other/FullScreen', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'FullScreen'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/FullScreen.md')}))
   .add('Example', () => <StoryFullScreenBasicNative />)
   .add('.webkitEnterFullscreen()', () => <StoryFullScreenVideo />);

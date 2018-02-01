@@ -6,7 +6,7 @@ import {Flipflop} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('Inversion/Flipflop', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'Flipflop'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Flipflop.md')}))
   .add('Basic example', () =>
     <Flipflop>{({on, flip, flop}) =>
       <div>

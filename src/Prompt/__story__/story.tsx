@@ -6,7 +6,7 @@ import {Prompt} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('Generators/Prompt', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'Prompt'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Prompt.md')}))
   .add('Basic example', () =>
     <Prompt
       show

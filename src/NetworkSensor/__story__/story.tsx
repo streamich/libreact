@@ -48,7 +48,7 @@ class NetworkStatus6 extends Component<any, any> {
 }
 
 storiesOf('Sensors/NetworkSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'NetworkSensor'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/NetworkSensor.md')}))
   .add('FaCC', () =>
     h(NetworkSensor, {}, (state) =>
       h('pre', {style: {

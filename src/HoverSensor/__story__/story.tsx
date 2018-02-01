@@ -16,7 +16,7 @@ const Demo = ({bond, isHover}) =>
 const Hoc = withHover(Demo, '');
 
 storiesOf('Sensors/HoverSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'HoverSensor'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/HoverSensor.md')}))
   .add('FaCC', () =>
     <HoverSensor>{({isHover}) =>
       <div style={{

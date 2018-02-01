@@ -43,5 +43,5 @@ class StoryScrollSensorBasic extends Component<any, any> {
 }
 
 storiesOf('Sensors/ScrollSensor', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'ScrollSensor'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../docs/en/ScrollSensor.md')}))
   .add('Example', () => h(StoryScrollSensorBasic));

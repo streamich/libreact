@@ -11,7 +11,7 @@ import StoryRouteTruncateRoute from './StoryRouteTruncateRoute';
 import StoryRoutePreserveRoute from './StoryRoutePreserveRoute';
 
 storiesOf('Context/route', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'route'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/routing.md')}))
   .add('Example', () => h(StoryRouteExample))
   .add('Example 2', () => h(StoryRouteExample2))
   .add('Truncates route', () => h(StoryRouteTruncateRoute))

@@ -7,5 +7,5 @@ import ShowDocs from '../../../.storybook/ShowDocs'
 import {invert} from '../../invert';
 
 storiesOf('Other/Mailto', module)
-  .add('Documentation', () => h(ShowDocs, {name: 'Mailto'}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Mailto.md')}))
   .add('Example', () => <Mailto email='foo@bar.baz'>Click me!</Mailto>);
