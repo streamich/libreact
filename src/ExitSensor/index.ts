@@ -8,7 +8,6 @@ export interface IExitSensorProps {
 }
 
 export interface IExitSensorState {
-
 }
 
 export class ExitSensor extends Component<IExitSensorProps, IExitSensorState> {
@@ -22,10 +21,6 @@ export class ExitSensor extends Component<IExitSensorProps, IExitSensorState> {
   exitFinish: boolean = false;
   timeout;
 
-  state: IExitSensorState = {
-
-  };
-
   componentWillUnmount () {
     clearTimeout(this.timeout);
   }
@@ -36,12 +31,22 @@ export class ExitSensor extends Component<IExitSensorProps, IExitSensorState> {
   };
 
   render () {
+    if (process.env.NODE_ENV !== 'production') {
+      const {children} = this.props;
+
+      if (children && (typeof children !== 'object')) {
+        console.error(new TypeError(
+          'ExitSensors expects a single ReactElement node as a child.'
+        ));
+      }
+    }
+
     if (this.exitFinish) {
       this.exitFinish = false;
       this.exitInFlight = false;
       this.element = this.nextElement;
 
-      return this.element;
+      return this.element || null;
     }
 
     const element = this.props.children;
@@ -49,13 +54,15 @@ export class ExitSensor extends Component<IExitSensorProps, IExitSensorState> {
     if (this.exitInFlight) {
       this.nextElement = element;
 
-      return this.element;
+      return cloneElement(this.element, {
+        exiting: true
+      });
     }
 
     if (!this.element) {
       this.element = element;
 
-      return element;
+      return element || null;
     }
 
     if (!element || (this.element.key !== element.key)) {
@@ -69,10 +76,6 @@ export class ExitSensor extends Component<IExitSensorProps, IExitSensorState> {
       });
     }
 
-    if (this.exitInFlight) {
-      return this.element;
-    }
-
-    return element;
+    return element || null;
   }
 }

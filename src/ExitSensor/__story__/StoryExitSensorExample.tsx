@@ -8,7 +8,7 @@ const Rectangle = ({exiting}: any) => {
       width: 200,
       height: 200,
       background: 'tomato',
-      transition: 'all 2s',
+      transition: 'all 0.5s',
       opacity: exiting ? 0 : 1
     }} />
   );
@@ -21,7 +21,7 @@ const Circle = ({exiting}: any) => {
       height: 200,
       background: 'tomato',
       borderRadius: '100px',
-      transition: 'all 2s',
+      transition: 'all 0.5s',
       opacity: exiting ? 0 : 1
     }} />
   );
@@ -38,7 +38,7 @@ export class StoryExitSensorExample extends Component<any, any> {
 
     return (
       <div>
-        <ExitSensor time={2000}>
+        <ExitSensor time={500}>
           {shape}
         </ExitSensor>
         <button onClick={() => this.setState({shape: 'rectangle'})}>Rectangle</button>
