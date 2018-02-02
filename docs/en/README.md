@@ -4,7 +4,7 @@
   - [Dummies](./Dummies.md)
      - [`mock()`](./mock.md) and [`loadable()`](./loadable.md)
      - [`lazy()`](./lazy.md), [`delayed()`](./delayed.md), and [`viewport()`](./viewport.md)
-  - [Inversion](./Inversion2.md)
+  - [Inversion](./Inversion.md)
      - [`invert()`](./invert.md) and [`<Inverted>`](./invert.md#inverted)
      - [`<State>`](./State.md) and [`withState()`](./State.md#withstate-hoc)
         - [`<Toggle>`](./Toggle.md), [`withToggle()`](./Toggle.md#withtoggle-hoc), and [`@withToggle`](./Toggle.md#withtoggle-decorator)
@@ -15,6 +15,7 @@
         - [`<Map>`](./Map.md), [`withMap()`](./Map.md#withmap-hoc), and [`@withMap`](./Map.md#withmap-decorator)
   - [Sensors](./Sensors.md)
      - [`<BatterySensor>`](./BatterySensor.md), [`withBattery()`](./BatterySensor.md#withbattery), and [`@withBattery`](./BatterySensor.md#withbattery-1)
+     - [`<ExitSensor>`](./ExitSensor.md)
      - [`<GeoLocationSensor>`](./GeoLocationSensor.md), [`withGeoLocation()`](./GeoLocationSensor.md#withgeolocation-hoc), and [`@withGeoLocation`](./GeoLocationSensor.md#withgeolocation-decorator)
      - [`<HoverSensor>`](./HoverSensor.md), [`withHover()`](./HoverSensor.md#withhover-hoc), and [`@withHover`](./HoverSensor.md#withhover-decorator)
      - [`<MediaDeviceSensor>`](./MediaDeviceSensor.md), [`withMediaDevices()`](./MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./MediaDeviceSensor.md#withmediadevices-1)
@@ -34,7 +35,7 @@
      - [`<WindowSizeSensor>`](./WindowSizeSensor.md), [`withWindowSize()`](./WindowSizeSensor.md#withwindowsize-hoc), and [`@withWindowSize`](./WindowSizeSensor.md#withwindowsize-decorator)
      - `ActiveSensor`, `withActive()`, and `@withActive`
      - `FocusSensor`, `withFocus()`, and `@withFocus`
-  - [Context](./Context2.md)
+  - [Context](./Context.md)
      - [`<Provider>`](./Provider.md#provider), [`<Consumer>`](./Provider.md#consumer), [`withContext()`](./Provider.md#withcontext), and `@withContext`
      - [`<Theme>`](./theme.md#theme), [`<Themed>`](./theme.md#themed), [`withTheme()`](./theme.md#withtheme), and `@withTheme`
      - `<CssVars>`
@@ -47,6 +48,7 @@
      - [`go()`](./routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./Sms.md), [`<Mailto>`](./Mailto.md), and `<Tel>`
      - [`<FullScreen>`](./FullScreen.md)
   - UI
+     - [`<Slider>`](./Slider.md)
      - `<Overlay>`
   - [CSS resets](./CSS-resets.md)
      - [`<CssResetEricMeyer>`](./reset/CssResetEricMeyer.md) and [`<CssResetEricMeyerCondensed>`](./reset/CssResetEricMeyerCondensed.md)

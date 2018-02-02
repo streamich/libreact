@@ -1,6 +1,6 @@
 # `<Alert>`
 
-Uses [`Window.alert()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert) to display message ot a user.
+Uses [`Window.alert()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert) to display message to a user.
 
 ## Usage
 
