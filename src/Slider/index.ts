@@ -17,8 +17,10 @@ export interface ISliderProps {
 }
 
 export interface ISliderState {
-  isScrubbing?: boolean;
+  isSliding?: boolean;
   value?: number;
+  pos?: number;
+  length?: number;
 }
 
 export class Slider extends Component<ISliderProps, ISliderState> {
@@ -26,7 +28,8 @@ export class Slider extends Component<ISliderProps, ISliderState> {
     disabled: false,
     reverse: false,
     vertical: false,
-    throttle: 50
+    throttle: 50,
+    value: 0
   };
 
   LEFT = 'left';
@@ -45,8 +48,8 @@ export class Slider extends Component<ISliderProps, ISliderState> {
     }
 
     this.state = {
-      isScrubbing: false,
-      value: 0
+      isSliding: false,
+      value: this.props.value
     };
   }
 
@@ -77,17 +80,17 @@ export class Slider extends Component<ISliderProps, ISliderState> {
   };
 
   startScrubbing () {
-    if (!this.state.isScrubbing) {
+    if (!this.state.isSliding) {
       (this.props.onScrubStart || noop)();
-      this.setState({isScrubbing: true});
+      this.setState({isSliding: true});
       this.bindEvents();
     }
   }
 
   stopScrubbing = () => {
-    if (this.state.isScrubbing) {
+    if (this.state.isSliding) {
       (this.props.onScrubStop || noop)();
-      this.setState({isScrubbing: false});
+      this.setState({isSliding: false});
       this.unbindEvents();
     }
   };
@@ -125,14 +128,14 @@ export class Slider extends Component<ISliderProps, ISliderState> {
       return;
     }
 
-    const {[this.LEFT]: left, [this.WIDTH]: width} = this.el.getBoundingClientRect();
+    const {[this.LEFT]: pos, [this.WIDTH]: length} = this.el.getBoundingClientRect();
 
     // This prevents returning 0 when element is hidden by CSS.
-    if (!width) {
+    if (!length) {
       return;
     }
 
-    let value = (clientX - left) / width;
+    let value = (clientX - pos) / length;
 
     if (value > 1) {
       value = 1;
@@ -144,7 +147,11 @@ export class Slider extends Component<ISliderProps, ISliderState> {
       value = 1 - value;
     }
 
-    this.setState({value});
+    this.setState({
+      value,
+      pos: clientX - pos,
+      length
+    });
     (this.props.onScrub || noop)(value);
   });
 

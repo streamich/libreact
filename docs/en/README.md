@@ -48,6 +48,7 @@
      - [`go()`](./routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./Sms.md), [`<Mailto>`](./Mailto.md), and `<Tel>`
      - [`<FullScreen>`](./FullScreen.md)
   - UI
+     - [`<Slider>`](./Slider.md)
      - `<Overlay>`
   - [CSS resets](./CSS-resets.md)
      - [`<CssResetEricMeyer>`](./reset/CssResetEricMeyer.md) and [`<CssResetEricMeyerCondensed>`](./reset/CssResetEricMeyerCondensed.md)

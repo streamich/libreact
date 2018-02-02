@@ -97,4 +97,21 @@ storiesOf('Other/Slider', module)
         border: '1px solid tomato'
       }} />
     </Slider>
+  )
+  .add('Default position', () =>
+    <Slider
+      value={0.25}
+      onScrub={action('onScrub')}
+      onScrubStart={action('onScrubStart')}
+      onScrubStop={action('onScrubStop')}
+      reverse
+    >{({value}) =>
+      <div style={{
+        width: 200,
+        height: 15,
+        border: '1px solid tomato'
+      }}>
+        {value}
+      </div>
+    }</Slider>
   );

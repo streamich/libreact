@@ -56,6 +56,8 @@
   * [Sms](Sms.md)
   * [Mailto](Mailto.md)
   * [FullScreen](FullScreen.md)
+* [UI](UI.md)
+  * [Slider](Slider.md)
 * [CSS resets](CSS-resets.md)
   * [CssResetEricMeyer](./reset/CssResetEricMeyer.md)
   * [CssResetEricMeyerCondensed](./reset/CssResetEricMeyerCondensed.md)
