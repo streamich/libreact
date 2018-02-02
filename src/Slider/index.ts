@@ -1,7 +1,7 @@
 import {Component, cloneElement} from 'react';
 import {h, noop, on, off} from '../util';
 import renderProp from '../util/renderProp';
-import * as throttle from 'throttle-debounce/throttle';
+const throttle = require('throttle-debounce/throttle');
 
 export interface ISliderProps {
   children?: React.ReactElement<any> | ((state: ISliderState) => React.ReactElement<any>);
@@ -74,7 +74,7 @@ export class Slider extends Component<ISliderProps, ISliderState> {
   };
 
   onTouchStart = (originalTouchStart) => (event) => {
-    (originalTouchStart)(event);
+    (originalTouchStart || noop)(event);
     this.startScrubbing();
     this.onTouchMove(event);
   };

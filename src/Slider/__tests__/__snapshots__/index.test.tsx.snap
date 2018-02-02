@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Slider> renders as expected 1`] = `
+<div
+  onMouseDown={[Function]}
+  onTouchStart={[Function]}
+>
+  0.2
+</div>
+`;
