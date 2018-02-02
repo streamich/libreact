@@ -8,7 +8,11 @@ import ShowDocs from '../../../.storybook/ShowDocs';
 storiesOf('Other/Slider', module)
   // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/MouseSensor.md')}))
   .add('Example', () =>
-    <Slider>{(state) =>
+    <Slider
+      onScrub={action('onScrub')}
+      onScrubStart={action('onScrubStart')}
+      onScrubStop={action('onScrubStop')}
+    >{(state) =>
       <div style={{
         width: 800,
         height: 80,
@@ -19,4 +23,78 @@ storiesOf('Other/Slider', module)
         </pre>
       </div>
     }</Slider>
+  )
+  .add('Vertical', () =>
+    <Slider
+      onScrub={action('onScrub')}
+      onScrubStart={action('onScrubStart')}
+      onScrubStop={action('onScrubStop')}
+      vertical={true}
+      render={(state) => (
+        <div style={{
+          width: 15,
+          height: 200,
+          border: '1px solid tomato'
+        }} />
+      )}
+    />
+  )
+  .add('Disabled', () =>
+    <Slider
+      disabled
+      onScrub={action('onScrub')}
+      onScrubStart={action('onScrubStart')}
+      onScrubStop={action('onScrubStop')}
+      vertical={true}
+      render={(state) => (
+        <div style={{
+          width: 15,
+          height: 200,
+          border: '1px solid tomato'
+        }} />
+      )}
+    />
+  )
+  .add('Simple children', () =>
+    <Slider
+      onScrub={action('onScrub')}
+      onScrubStart={action('onScrubStart')}
+      onScrubStop={action('onScrubStop')}
+      vertical={true}
+    >
+      <div style={{
+        width: 15,
+        height: 200,
+        border: '1px solid tomato'
+      }} />
+    </Slider>
+  )
+  .add('Reverse vertical', () =>
+    <Slider
+      onScrub={action('onScrub')}
+      onScrubStart={action('onScrubStart')}
+      onScrubStop={action('onScrubStop')}
+      vertical={true}
+      reverse
+    >
+      <div style={{
+        width: 15,
+        height: 200,
+        border: '1px solid tomato'
+      }} />
+    </Slider>
+  )
+  .add('Reverse horizontal', () =>
+    <Slider
+      onScrub={action('onScrub')}
+      onScrubStart={action('onScrubStart')}
+      onScrubStop={action('onScrubStop')}
+      reverse
+    >
+      <div style={{
+        width: 200,
+        height: 15,
+        border: '1px solid tomato'
+      }} />
+    </Slider>
   );

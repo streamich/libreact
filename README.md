@@ -35,7 +35,7 @@ const MyComponent = mock();
   - [Dummies](./docs/en/Dummies.md)
      - [`mock()`](./docs/en/mock.md) and [`loadable()`](./docs/en/loadable.md)
      - [`lazy()`](./docs/en/lazy.md), [`delayed()`](./docs/en/delayed.md), and [`viewport()`](./docs/en/viewport.md)
-  - [Inversion](./docs/en/Inversion2.md)
+  - [Inversion](./docs/en/Inversion.md)
      - [`invert()`](./docs/en/invert.md) and [`<Inverted>`](./docs/en/invert.md#inverted)
      - [`<State>`](./docs/en/State.md) and [`withState()`](./docs/en/State.md#withstate-hoc)
         - [`<Toggle>`](./docs/en/Toggle.md), [`withToggle()`](./docs/en/Toggle.md#withtoggle-hoc), and [`@withToggle`](./docs/en/Toggle.md#withtoggle-decorator)
@@ -66,7 +66,7 @@ const MyComponent = mock();
      - [`<WindowSizeSensor>`](./docs/en/WindowSizeSensor.md), [`withWindowSize()`](./docs/en/WindowSizeSensor.md#withwindowsize-hoc), and [`@withWindowSize`](./docs/en/WindowSizeSensor.md#withwindowsize-decorator)
      - `ActiveSensor`, `withActive()`, and `@withActive`
      - `FocusSensor`, `withFocus()`, and `@withFocus`
-  - [Context](./docs/en/Context2.md)
+  - [Context](./docs/en/Context.md)
      - [`<Provider>`](./docs/en/Provider.md#provider), [`<Consumer>`](./docs/en/Provider.md#consumer), [`withContext()`](./docs/en/Provider.md#withcontext), and `@withContext`
      - [`<Theme>`](./docs/en/theme.md#theme), [`<Themed>`](./docs/en/theme.md#themed), [`withTheme()`](./docs/en/theme.md#withtheme), and `@withTheme`
      - `<CssVars>`

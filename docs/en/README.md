@@ -4,7 +4,7 @@
   - [Dummies](./Dummies.md)
      - [`mock()`](./mock.md) and [`loadable()`](./loadable.md)
      - [`lazy()`](./lazy.md), [`delayed()`](./delayed.md), and [`viewport()`](./viewport.md)
-  - [Inversion](./Inversion2.md)
+  - [Inversion](./Inversion.md)
      - [`invert()`](./invert.md) and [`<Inverted>`](./invert.md#inverted)
      - [`<State>`](./State.md) and [`withState()`](./State.md#withstate-hoc)
         - [`<Toggle>`](./Toggle.md), [`withToggle()`](./Toggle.md#withtoggle-hoc), and [`@withToggle`](./Toggle.md#withtoggle-decorator)
@@ -35,7 +35,7 @@
      - [`<WindowSizeSensor>`](./WindowSizeSensor.md), [`withWindowSize()`](./WindowSizeSensor.md#withwindowsize-hoc), and [`@withWindowSize`](./WindowSizeSensor.md#withwindowsize-decorator)
      - `ActiveSensor`, `withActive()`, and `@withActive`
      - `FocusSensor`, `withFocus()`, and `@withFocus`
-  - [Context](./Context2.md)
+  - [Context](./Context.md)
      - [`<Provider>`](./Provider.md#provider), [`<Consumer>`](./Provider.md#consumer), [`withContext()`](./Provider.md#withcontext), and `@withContext`
      - [`<Theme>`](./theme.md#theme), [`<Themed>`](./theme.md#themed), [`withTheme()`](./theme.md#withtheme), and `@withTheme`
      - `<CssVars>`

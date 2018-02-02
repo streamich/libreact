@@ -4,7 +4,8 @@ import renderProp from '../util/renderProp';
 import * as throttle from 'throttle-debounce/throttle';
 
 export interface ISliderProps {
-  children?;
+  children?: React.ReactElement<any> | ((state: ISliderState) => React.ReactElement<any>);
+  render?: (state: ISliderState) => React.ReactElement<any>;
   disabled?: boolean;
   onScrub?: (pos: number) => void;
   onScrubStart?: () => void;
