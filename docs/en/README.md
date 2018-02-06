@@ -47,7 +47,7 @@
      - [`<Speak>`](./Speak.md), [`<Vibrate>`](./Vibrate.md), [`<Alert>`](./Alert.md), `<Prompt>`, `<Confirm>`
      - [`go()`](./routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./Sms.md), [`<Mailto>`](./Mailto.md), and `<Tel>`
      - [`<FullScreen>`](./FullScreen.md)
-  - UI
+  - [UI](./UI.md)
      - [`<Slider>`](./Slider.md)
      - `<Overlay>`
   - [CSS resets](./CSS-resets.md)
