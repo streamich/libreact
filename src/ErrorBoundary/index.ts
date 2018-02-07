@@ -22,6 +22,7 @@ export class ErrorBoundary extends Component<any, any> {
       error,
       info
     });
+
     (this.props.onError || noop)(error, info);
   }
 
