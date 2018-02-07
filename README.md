@@ -79,7 +79,9 @@ const MyComponent = mock();
      - [`go()`](./docs/en/routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md), and `<Tel>`
      - [`<FullScreen>`](./docs/en/FullScreen.md)
   - Boundaries
-     - `<ErrorBoundary>`, `<ClientBoundary>`, `<ServerBoundary>`, `<ElectronBoundary>`, `<Environment>`, and `<CacheBoundary>`
+     - [`<BrowserOnly>`](./docs/en/BrowserOnly.md), [`<ServerOnly>`](./docs/en/ServerOnly.md), and [`<ElectronOnly>`](./docs/en/ElectronOnly.md)
+     - `<ErrorBoundary>` and `withErrorBoundary()`
+     - `<CacheBoundary>`
   - [UI](./docs/en/UI.md)
      - [`<Slider>`](./docs/en/Slider.md)
      - `<Overlay>`
@@ -95,7 +97,6 @@ const MyComponent = mock();
   - Other
      - [`<Resolve>`](./docs/en/Resolve.md), `<Fetch>`
      - [`getDisplayName()`](./docs/en/getDisplayName.md)
-     - `<BrowserOnly>`, `<ServerOnly>`, and `<Environment>`
      - `<Locales>`
      - `<Draggable>`, `<Droppable>`, `<Parallax>`, `<Pin>`
 
