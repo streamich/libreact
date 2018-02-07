@@ -78,7 +78,7 @@ const MyComponent = mock();
      - [`<Speak>`](./docs/en/Speak.md), [`<Vibrate>`](./docs/en/Vibrate.md), [`<Alert>`](./docs/en/Alert.md), `<Prompt>`, `<Confirm>`
      - [`go()`](./docs/en/routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md), and `<Tel>`
      - [`<FullScreen>`](./docs/en/FullScreen.md)
-  - Boundaries
+  - [Boundaries](./docs/en/Boundaries.md)
      - [`<BrowserOnly>`](./docs/en/BrowserOnly.md), [`<ServerOnly>`](./docs/en/ServerOnly.md), and [`<ElectronOnly>`](./docs/en/ElectronOnly.md)
      - `<ErrorBoundary>` and `withErrorBoundary()`
      - `<CacheBoundary>`

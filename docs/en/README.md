@@ -47,6 +47,10 @@
      - [`<Speak>`](./Speak.md), [`<Vibrate>`](./Vibrate.md), [`<Alert>`](./Alert.md), `<Prompt>`, `<Confirm>`
      - [`go()`](./routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./Sms.md), [`<Mailto>`](./Mailto.md), and `<Tel>`
      - [`<FullScreen>`](./FullScreen.md)
+  - [Boundaries](./Boundaries.md)
+     - [`<BrowserOnly>`](./BrowserOnly.md), [`<ServerOnly>`](./ServerOnly.md), and [`<ElectronOnly>`](./ElectronOnly.md)
+     - `<ErrorBoundary>` and `withErrorBoundary()`
+     - `<CacheBoundary>`
   - [UI](./UI.md)
      - [`<Slider>`](./Slider.md)
      - `<Overlay>`
