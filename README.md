@@ -80,7 +80,7 @@ const MyComponent = mock();
      - [`<FullScreen>`](./docs/en/FullScreen.md)
   - [Boundaries](./docs/en/Boundaries.md)
      - [`<BrowserOnly>`](./docs/en/BrowserOnly.md), [`<ServerOnly>`](./docs/en/ServerOnly.md), and [`<ElectronOnly>`](./docs/en/ElectronOnly.md)
-     - `<ErrorBoundary>` and `withErrorBoundary()`
+     - [`<ErrorBoundary>`](./docs/en/ErrorBoundary.md) and `withErrorBoundary()`
      - `<CacheBoundary>`
   - [UI](./docs/en/UI.md)
      - [`<Slider>`](./docs/en/Slider.md)

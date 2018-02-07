@@ -49,7 +49,7 @@
      - [`<FullScreen>`](./FullScreen.md)
   - [Boundaries](./Boundaries.md)
      - [`<BrowserOnly>`](./BrowserOnly.md), [`<ServerOnly>`](./ServerOnly.md), and [`<ElectronOnly>`](./ElectronOnly.md)
-     - `<ErrorBoundary>` and `withErrorBoundary()`
+     - [`<ErrorBoundary>`](./ErrorBoundary.md) and `withErrorBoundary()`
      - `<CacheBoundary>`
   - [UI](./UI.md)
      - [`<Slider>`](./Slider.md)
