@@ -22,13 +22,16 @@ describe('route', () => {
               /foo
             </Route>
             <Route match='/bar'>
-              /foo
+              /bar
             </Route>
           </div>
         </Router>
       );
 
-      expect(wrapper.html()).toMatchSnapshot();
+      const html = wrapper.html();
+
+      expect(html.includes('<div>/foo')).toBe(true);
+      expect(html.includes('<div>/bar')).toBe(false);
     });
   });
 });
