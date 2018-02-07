@@ -36,7 +36,7 @@
      - `ActiveSensor`, `withActive()`, and `@withActive`
      - `FocusSensor`, `withFocus()`, and `@withFocus`
   - [Context](./Context.md)
-     - [`<Provider>`](./Provider.md#provider), [`<Consumer>`](./Provider.md#consumer), [`withContext()`](./Provider.md#withcontext), and `@withContext`
+     - [`<Provider>`](./Provider.md#provider), [`<Consumer>`](./Provider.md#consumer), [`withContext()`](./Provider.md#withcontext-hoc), and [`@withContext`](./Provider.md#withcontext-decorator)
      - [`<Theme>`](./theme.md#theme), [`<Themed>`](./theme.md#themed), [`withTheme()`](./theme.md#withtheme), and `@withTheme`
      - `<CssVars>`
      - [`<Router>`](./routing.md#router), [`<Route>`](./routing.md#route), [`withRoute()`](./routing.md#withroute), `@withRoute`, `go()`, and `<Go>`

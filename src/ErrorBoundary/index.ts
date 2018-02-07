@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import renderProp from '../util/renderProp';
+import faccToHoc from '../util/faccToHoc';
 import {noop} from '../util';
 
 export interface IErrorBoundaryProps {
@@ -34,3 +34,5 @@ export class ErrorBoundary extends Component<any, any> {
       children;
   }
 }
+
+export const withErrorBoundary = faccToHoc(ErrorBoundary, 'error');

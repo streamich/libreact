@@ -1,4 +1,3 @@
-import {Component} from 'react';
 import {Provider, Consumer, withContext} from '../context';
 import {h, THoc} from '../util';
 
@@ -10,7 +9,7 @@ export interface IThemeProps {
 export const Theme: React.StatelessComponent<IThemeProps> = (props) => {
   let {name = 'theme', value, children} = props;
 
-  return h(Provider, {name, value}, children);
+  return h(Provider as any, {name, value}, children);
 };
 
 export interface IThemedProps {
