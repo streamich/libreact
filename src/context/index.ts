@@ -1,16 +1,26 @@
-import {createElement as h, Component} from 'react';
-import * as PropTypes from 'prop-types';
-import {ns, noop} from '../util';
+import {Component} from 'react';
+import * as Types from 'prop-types';
+import {h, ns, noop} from '../util';
 import {IObservable, observable, TObservalbeUnsub} from './observable';
 import faccToHoc from '../util/faccToHoc';
 
 const $$context = ns('context');
+
 export type TValue = {[key: string]: any};
 
-export class Provider extends Component<any, any> {
+export interface IProviderProps {
+  children?: any;
+  name: string;
+  value: any;
+}
+
+export interface IProviderState {
+}
+
+export class Provider extends Component<IProviderProps, IProviderState> {
   static propTypes = {
-    name: PropTypes.string,
-    value: PropTypes.object.isRequired,
+    name: Types.string,
+    value: Types.object.isRequired,
   };
 
   static defaultProps = {
@@ -18,11 +28,11 @@ export class Provider extends Component<any, any> {
   };
 
   static childContextTypes = {
-    [$$context]: PropTypes.object,
+    [$$context]: Types.object,
   };
 
   static contextTypes = {
-    [$$context]: PropTypes.object,
+    [$$context]: Types.object,
   };
 
   observable: IObservable<TValue>;
@@ -64,19 +74,28 @@ export class Provider extends Component<any, any> {
     return {...this.parentValue, ...value};
   }
 
-  render() {
+  render () {
     return this.props.children || null;
   }
 }
 
-export class Consumer extends Component<any, any> {
+export interface IConsumerProps {
+  children?: (value) => React.ReactElement<any>;
+  name: string;
+}
+
+export interface IConsumerState {
+  value;
+}
+
+export class Consumer extends Component<IConsumerProps, IConsumerState> {
   static propTypes = {
-    name: PropTypes.string.isRequired,
-    children: PropTypes.func.isRequired,
+    name: Types.string.isRequired,
+    children: Types.func.isRequired,
   };
 
   static contextTypes = {
-    [$$context]: PropTypes.object,
+    [$$context]: Types.object,
   };
 
   state = {
@@ -86,15 +105,15 @@ export class Consumer extends Component<any, any> {
   unsub: TObservalbeUnsub = noop;
 
   observable(): IObservable<TValue> {
-  const observable = this.context[$$context][this.props.name];
+    const observable = this.context[$$context][this.props.name];
 
-  if (process.env.NODE_ENV !== 'production') {
-    if (!observable) {
-      throw new Error(`Context observable "${this.props.name}" not found.`);
+    if (process.env.NODE_ENV !== 'production') {
+      if (!observable) {
+        throw new Error(`Context observable "${this.props.name}" not found.`);
+      }
     }
-  }
 
-  return observable;
+    return observable;
   }
 
   componentWillMount() {
