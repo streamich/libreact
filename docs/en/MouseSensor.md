@@ -1,6 +1,6 @@
 # `<MouseSensor>`
 
-Render prop/FaCC that re-renders on mouse position change.
+Render prop that re-renders on mouse position change.
 
 
 ## Usage
@@ -35,7 +35,7 @@ interface IMouseSensorState {
 
   - `docX` and `docY` &mdash; mouse position in document.
   - `posX` and `posY` &mdash; mouse position in your element.
-  - `elH` and `elW` &mdash; element dimensions.
+  - `elW` and `elH` &mdash; element dimensions.
   - `elX` and `elY` &mdash; element position.
 
 ### Props
@@ -43,8 +43,6 @@ interface IMouseSensorState {
 ```ts
 interface IMouseSensorProps {
   bond?: string | boolean;
-  children?: (state: IMouseSensorState) => React.ReactElement<any>;
-  render?: (state: IMouseSensorState) => React.ReactElement<any>;
   whenHovered?: boolean;
 }
 ```
@@ -52,21 +50,23 @@ interface IMouseSensorProps {
 , where
 
   - `bond` &mdash; optional, boolean or string, specifying bondig spread object. If string, it specifies the name of the bonding object injected into state, if boolean and true the bonding object will have its default name `bond`.
-  - `children` and `render` - render props that receive `IMouseState` object and, optionally, bonding object.
   - `whenHovered` - optional, boolean, when true, will track mouse position only when target element is hovered, defaults to `false`.
 
 ### Example
 
+Below is an example that uses optional `bond` prop, which allows to attach listeners to any React HTML element.
+
 ```jsx
 import {MouseSensor} from 'libreact/lib/MouseSensor';
 
-<MouseSensor>{(state) =>
-  <div style={{
-    width: 300,
-    height: 300,
-    border: '1px solid tomato',
-    margin: '100px'
-  }}>
+<MouseSensor bond>{(state) =>
+  <div>
+    <div {...state.bond} style={{
+      width: 300,
+      height: 300,
+      border: '1px solid tomato',
+      margin: '100px'
+    }} />
     <pre style={{fontFamily: 'monospace'}}>
       {JSON.stringify(state, null, 4)}
     </pre>
