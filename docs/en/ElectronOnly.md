@@ -9,7 +9,7 @@ import {ElectronOnly} from 'libreact/lib/ElectronOnly';
 
 <ElectronOnly>
   <div>
-    You can see this only on server.
+    You can see this only if Electron app.
   </div>
 </ElectronOnly>
 ```
