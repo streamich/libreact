@@ -2,7 +2,7 @@
 
 `libreact` is a collection of most essential React utilities you will probably need in any project.
 
-[Render prop](#render-props) and [FaCC](#facc) notation is usually used interchangeably as most `libreact`
+[Render prop](#render-props) and [FaCC](#facc) notation is used interchangeably as most `libreact`
 components support both interfaces. Also, most render prop components support
 [component prop](#component-prop) interface, with the following precedence:
 
