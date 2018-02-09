@@ -34,7 +34,7 @@ export class Router extends Component<IRouteProviderProps, any> {
     const {children, fullRoute} = this.props;
     this.matches = 0;
 
-    const element = h(Provider, {
+    const element = h(Provider as any, {
       name: ns(`route/${this.props.ns}`),
       value: {
         go: this.props.onGo,

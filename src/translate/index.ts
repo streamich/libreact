@@ -10,15 +10,16 @@ export interface ITranslationsProps {
 }
 
 export interface ITranslationsState {
-
 }
 
 export class Translations extends Component<ITranslationsProps, ITranslationsState> {
   render () {
-    return h(Provider, {
+    const {children, map: value} = this.props;
+
+    return h(Provider as any, {
       name: ns(`T/${this.props.ns}`),
-      value: this.props.map
-    }, this.props.children);
+      value
+    }, children);
   }
 }
 
@@ -27,7 +28,6 @@ export interface ITranslateProps {
 }
 
 export interface ITranslateState {
-
 }
 
 export class Translate extends Component<ITranslateProps, ITranslateState> {

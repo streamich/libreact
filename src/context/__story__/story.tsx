@@ -1,12 +1,18 @@
-import React, {createElement as h} from 'react';
+import React, {createElement as h, Component} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
-import {Provider, Consumer, withContext} from '.';
+import {Provider, Consumer, withContext} from '..';
 
 const ColorIs = ({ctx}) => <div>Color is: {ctx.color}</div>;
-const ColorIsConnected = withContext(ColorIs, 'ctx');
-const ColorIsConnected2 = withContext(ColorIs);
+const ColorIsConnected = withContext(ColorIs, 'ctx', {name: 'ctx'});
+
+@withContext('', {name: 'theme'})
+class Decorator1 extends Component<any, any> {
+  render () {
+    return <ColorIs ctx={this.props} />;
+  }
+}
 
 storiesOf('Context/context', module)
   .add('FaCC', () =>
@@ -21,8 +27,8 @@ storiesOf('Context/context', module)
       <ColorIsConnected />
     </Provider>
   )
-  .add('HOC 2', () =>
-    <Provider name="ctx" value={{color: 'papayared'}}>
-      <ColorIsConnected2 contextName='ctx' />
+  .add('Decorator 1', () =>
+    <Provider name="theme" value={{color: 'tomato'}}>
+      <Decorator1 />
     </Provider>
   );

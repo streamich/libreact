@@ -31,6 +31,10 @@
   "exclude": [
     "node_modules",
     "lib",
-    "src/__tests__"
+    "src/__tests__",
+    "*.test.ts",
+    "*.test.tsx",
+    "*.test-server.ts",
+    "*.test-server.tsx"
   ]
 }

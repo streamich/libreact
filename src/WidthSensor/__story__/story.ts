@@ -16,15 +16,17 @@ const Hoc3 = withWidth(Print, '');
 storiesOf('Sensors/WidthSensor', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/WidthSensor.md')}))
   .add('Example', () =>
-    h(WidthSensor, {
-      onWidth: action('onWidth')
-    }, ({width, height}) =>
-      h('div', {
-        style: {
-          border: '1px solid red'
-        }
-      },
-        `WIDTH: ${width}, HEIGHT: ${height}`
+    h('div', {},
+      h(WidthSensor, {
+        onWidth: action('onWidth')
+      }, ({width, height}) =>
+        h('div', {
+          style: {
+            border: '1px solid red'
+          }
+        },
+          `WIDTH: ${width}, HEIGHT: ${height}`
+        )
       )
     )
   )

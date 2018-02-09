@@ -1,65 +1,11 @@
 {
   "name": "libreact",
-  "version": "0.5.7",
+  "version": "0.5.11",
   "description": "React standard library",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/MailOnline/libreact.git"
-  },
-  "dependencies": {
-    "react": "15",
-    "react-dom": "15",
-    "prop-types": "15",
-    "throttle-debounce": "^1.0.1",
-    "freestyler-context": "^1.3.3",
-    "freestyler-renderer": "^1.3.2",
-    "screenfull": "^3.3.2",
-    "fast-extend": "0.0.2"
-  },
-  "peerDependencies": {
-    "react": "15",
-    "react-dom": "15",
-    "prop-types": "15"
-  },
-  "devDependencies": {
-    "@storybook/addon-actions": "^3.3.10",
-    "@storybook/addon-links": "^3.3.10",
-    "@storybook/react": "^3.3.10",
-    "@types/chai": "4.1.1",
-    "@types/jest": "22.0.1",
-    "@types/node": "9.3.0",
-    "@types/react": "15",
-    "chai": "4.1.2",
-    "enzyme": "3.3.0",
-    "enzyme-adapter-react-15": "1.0.5",
-    "enzyme-to-json": "3.3.0",
-    "gulp": "3.9.1",
-    "gulp-typescript": "3",
-    "jest": "22.1.2",
-    "jest-environment-jsdom": "^22.1.4",
-    "jest-environment-jsdom-global": "^1.0.3",
-    "jest-tap-reporter": "1.9.0",
-    "mocha": "5.0.0",
-    "mol-conventional-changelog": "1.2.0",
-    "react-markdown": "3.1.4",
-    "react-test-renderer": "15",
-    "rimraf": "2.6.2",
-    "to-string-loader": "1.1.5",
-    "ts-jest": "22.0.1",
-    "ts-loader": "3.2.0",
-    "ts-node": "4.1.0",
-    "typescript": "2.6.2",
-    "webpack": "3.10.0",
-    "semantic-release": "^12.2.4",
-    "gitbook-cli": "2.3.2",
-    "glob": "^7.1.2",
-    "mkdirp": "0.5.1"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/mol-conventional-changelog"
-    }
   },
   "scripts": {
     "clean": "rimraf lib modules && npm run test:story:clean && npm run docs:clean",
@@ -78,6 +24,61 @@
     "docs:serve": "npm run docs:clean && gitbook install ./docs && gitbook serve ./docs",
     "docs:build": "npm run docs:clean && gitbook install ./docs && gitbook build ./docs",
     "docs:publish": "npm run test:story:build && npm run docs:build && ./build/publish-docs.sh"
+  },
+  "dependencies": {
+    "throttle-debounce": "^1.0.1",
+    "freestyler-context": "^1.3.3",
+    "freestyler-renderer": "^1.3.2",
+    "screenfull": "^3.3.2",
+    "fast-extend": "0.0.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*",
+    "prop-types": "*"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.3.10",
+    "@storybook/addon-links": "^3.3.10",
+    "@storybook/react": "^3.3.10",
+    "@types/chai": "4.1.1",
+    "@types/jest": "22.0.1",
+    "@types/node": "9.3.0",
+    "@types/react": "16.0.36",
+    "@types/react-dom": "16.0.3",
+    "chai": "4.1.2",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "3.3.0",
+    "gulp": "3.9.1",
+    "gulp-typescript": "3",
+    "jest": "22.1.2",
+    "jest-environment-jsdom": "^22.1.4",
+    "jest-environment-jsdom-global": "^1.0.3",
+    "jest-tap-reporter": "1.9.0",
+    "mocha": "5.0.0",
+    "mol-conventional-changelog": "1.2.0",
+    "react-markdown": "3.1.4",
+    "react-test-renderer": "16.2.0",
+    "rimraf": "2.6.2",
+    "to-string-loader": "1.1.5",
+    "ts-jest": "22.0.1",
+    "ts-loader": "3.2.0",
+    "ts-node": "4.1.0",
+    "typescript": "2.6.2",
+    "webpack": "3.10.0",
+    "semantic-release": "^12.2.4",
+    "gitbook-cli": "2.3.2",
+    "glob": "^7.1.2",
+    "mkdirp": "0.5.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "prop-types": "^15.6.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/mol-conventional-changelog"
+    }
   },
   "jest": {
     "moduleFileExtensions": [
@@ -101,6 +102,7 @@
   },
   "keywords": [
     "react",
+    "lib",
     "libreact",
     "stdlib",
     "hoc",

@@ -1,13 +1,13 @@
-# `WidthSensor`
+# `<WidthSensor>`
 
-FaCC that works similar to [`SizeSensor`](./SizeSensor.md) but re-renders only on width change.
+FaCC that works similar to [`<SizeSensor>`](./SizeSensor.md) but re-renders only on width change.
 
 ## Example
 
 Use it as FaCC
 
 ```jsx
-[`withSize()`](./docs/SizeSensor.md#withsize-hoc), and [`@withSize`](./docs/SizeSensor.md#withsize-decorator)
+import {WidthSensor} from 'libreact/lib/WidthSensor';
 
 <WidthSensor>{({width, height}) =>
   `WIDTH: ${width}, HEIGHT: ${height}`
