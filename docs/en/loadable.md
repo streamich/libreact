@@ -1,12 +1,15 @@
 # `loadable()`
 
-Create a [mock](./mock.md) component whose implementation is loaded using a promise when `.load()` method is called.
+Creates a [mock()](./mock.md) component whose implementation is loaded using `.load()` method is called,
+instead of explicitly setting it by `.implement()`.
 
 ## Example
 
 Create a loadable React component and immediately load it.
 
 ```js
+import {loadable} from 'libreact/lib/loadable';
+
 const loader = () => import('./path/to/image.svg')
   .then((module) => module.MySVGComponent);
 

@@ -7,7 +7,7 @@ Gives you a map as a state.
 ```jsx
 import {Map} from 'libreact/lib/Map';
 
-<Map init={{c: 'd'}}>{({value, set, push, filter, sort}) =>
+<Map init={{c: 'd'}}>{({get, set, remove}) =>
   <div>
     <div>a: {get('a')}</div>
     <pre style={{fontFamily: 'monospace'}}>{JSON.stringify(get())}</pre>

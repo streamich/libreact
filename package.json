@@ -8,22 +8,23 @@
     "url": "https://github.com/MailOnline/libreact.git"
   },
   "scripts": {
-    "clean": "rimraf lib modules && npm run test:story:clean && npm run docs:clean",
-    "build": "npm run clean && gulp build-ts && gulp build-modules",
     "start": "npm run test:story",
-    "semantic-release": "semantic-release",
+    "build": "npm run clean && gulp build-ts && gulp build-modules",
+    "clean": "rimraf lib modules && npm run test:story:clean && npm run docs:clean",
     "test": "npm run test:server && npm run test:client",
     "test:server": "mocha -r ts-node/register src/**/*.test-server.ts*",
     "test:client": "jest",
     "test:client:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:story:clean": "rimraf storybook-static",
-    "test:story": "start-storybook -p 6007",
+    "test:story": "npm run storybook",
     "test:story:build": "build-storybook",
     "docs:clean": "rimraf dist_docs docs/_book",
     "docs:serve": "npm run docs:clean && gitbook install ./docs && gitbook serve ./docs",
     "docs:build": "npm run docs:clean && gitbook install ./docs && gitbook build ./docs",
-    "docs:publish": "npm run test:story:build && npm run docs:build && ./build/publish-docs.sh"
+    "docs:publish": "npm run test:story:build && npm run docs:build && ./build/publish-docs.sh",
+    "storybook": "start-storybook -p 6007",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "throttle-debounce": "^1.0.1",
