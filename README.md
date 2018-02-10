@@ -8,7 +8,7 @@ React standard library &mdash; must-have toolbox for any React project.
 
   - React [router](https://mailonline.github.io/libreact/en/routing.html), [sensors](https://mailonline.github.io/libreact/en/Sensors.html), [FaCC](https://mailonline.github.io/libreact/en/Introduction.html#facc)s, [render props](https://mailonline.github.io/libreact/en/Introduction.html#render-props), [HOC](https://mailonline.github.io/libreact/en/Introduction.html#hoc)s, [context](https://mailonline.github.io/libreact/en/Context.html) providers, [dummies](https://mailonline.github.io/libreact/en/Dummies.html), and [other goodies](https://mailonline.github.io/libreact/en/).
   - *Isomorphic* - all components work in browser and on server (and some in `react-native`).
-  - See [demos](https://mailonline.github.io/libreact/demos/), [docs](https://mailonline.github.io/libreact/en/), and NPM [package](https://www.npmjs.com/package/libreact/).
+  - See [__demos__](https://mailonline.github.io/libreact/demos/), [__docs__](https://mailonline.github.io/libreact/en/), and NPM [__package__](https://www.npmjs.com/package/libreact/).
 
 
 ## Installation
