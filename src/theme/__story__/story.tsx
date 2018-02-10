@@ -1,8 +1,8 @@
-import {createElement as h} from 'react';
+import {createElement as h, Component} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
-import {Theme, Themed, withTheme} from '.';
+import {Theme, Themed, withTheme} from '..';
 
 const theme = {
   color: 'white',
@@ -13,6 +13,19 @@ const Block = ({theme: {color, background}}) =>
   <div style={{color, background}}>Color is: {color}</div>;
 
 const BlockThemed = withTheme(Block);
+
+@withTheme
+class Decorator1 extends Component<any, any> {
+  render () {
+    const {color, background} = this.props.theme;
+
+    return (
+      <div style={{color, background}}>
+        Background: {background}, color: {color}
+      </div>
+    );
+  }
+}
 
 storiesOf('Context/theme', module)
   .add('FaCC', () =>
@@ -26,4 +39,9 @@ storiesOf('Context/theme', module)
     <Theme value={theme}>
       <BlockThemed />
     </Theme>
-  );
+  )
+  .add('Decorator 1', () =>
+    <Theme value={theme}>
+      <Decorator1 />
+    </Theme>
+  )

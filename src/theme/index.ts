@@ -1,5 +1,6 @@
 import {Provider, Consumer, withContext} from '../context';
 import {h, THoc} from '../util';
+import faccToHocc from '../util/faccToHoc';
 
 export interface IThemeProps {
   name?: string;
@@ -22,4 +23,4 @@ export const Themed: React.StatelessComponent<IThemedProps> = (props) => {
   return h(Consumer, {name}, children);
 };
 
-export const withTheme: THoc<any, any> = (Comp, name = 'theme') => withContext(Comp, name, {name});
+export const withTheme = faccToHocc(Themed, 'theme');
