@@ -46,12 +46,13 @@
      - [`<LocalStorage>`](./LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
      - [`<Speak>`](./Speak.md), [`<Vibrate>`](./Vibrate.md), [`<Alert>`](./Alert.md), `<Prompt>`, `<Confirm>`
      - [`go()`](./routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./Sms.md), [`<Mailto>`](./Mailto.md), and `<Tel>`
-     - [`<FullScreen>`](./FullScreen.md)
   - [Boundaries](./Boundaries.md)
      - [`<BrowserOnly>`](./BrowserOnly.md), [`<ServerOnly>`](./ServerOnly.md), and [`<ElectronOnly>`](./ElectronOnly.md)
      - [`<ErrorBoundary>`](./ErrorBoundary.md) and `withErrorBoundary()`
      - `<CacheBoundary>`
   - [UI](./UI.md)
+     - [`<Portal>`](./Portal.md) and [`<Overlay>`](./Overlay.md)
+     - [`<FullScreen>`](./FullScreen.md)
      - [`<Slider>`](./Slider.md)
      - `<Overlay>`
   - [CSS resets](./CSS-resets.md)

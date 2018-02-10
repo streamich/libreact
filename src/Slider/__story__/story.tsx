@@ -5,8 +5,8 @@ import {linkTo} from '@storybook/addon-links';
 import {Slider} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs';
 
-storiesOf('Other/Slider', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/MouseSensor.md')}))
+storiesOf('UI/Slider', module)
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Slider.md')}))
   .add('Example', () =>
     <Slider
       onScrub={action('onScrub')}

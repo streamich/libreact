@@ -17,3 +17,4 @@ import {Overlay} from 'libreact/lib/Overlay';
 ## Props
 
 - `color` &mdash; optional, string, overlay color, defaults to `rgba(0, 0, 0, 0.5)`.
+- `time` &mdash; optional, number, entrance opacity animation length in milliseconds, defaults to `300`.
