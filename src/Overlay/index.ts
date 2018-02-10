@@ -4,6 +4,7 @@ import {h} from '../util';
 
 export interface IOverlayProps {
   color?: string;
+  time?: number;
 }
 
 export interface IOverlayState {
@@ -11,7 +12,8 @@ export interface IOverlayState {
 
 export class Overlay extends Component<IOverlayProps, IOverlayState> {
   static defaultProps = {
-    color: 'rgba(0,0,0,0.5)'
+    color: 'rgba(0,0,0,0.5)',
+    time: 300,
   };
 
   onElement = (el) => {
@@ -26,7 +28,7 @@ export class Overlay extends Component<IOverlayProps, IOverlayState> {
     style.right = 0;
     style.bottom = 0;
     style.background = this.props.color;
-    style.transition = '0.3s opacity';
+    style.transition = this.props.time + 'ms opacity';
     style.opacity = 0;
 
     style.display = 'flex';

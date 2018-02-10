@@ -5,7 +5,7 @@ import {linkTo} from '@storybook/addon-links';
 import {Overlay} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
-storiesOf('Other/Overlay', module)
+storiesOf('UI/Overlay', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Overlay.md')}))
   .add('Basic example', () =>
     <div>
@@ -61,6 +61,13 @@ storiesOf('Other/Overlay', module)
         >
           Second
         </div>
+      </Overlay>
+    </div>
+  )
+  .add('No animation', () =>
+    <div>
+      <Overlay time={0}>
+        foobar
       </Overlay>
     </div>
   )
