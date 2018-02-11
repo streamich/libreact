@@ -2,7 +2,7 @@ import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
-import {ErrorBoundary} from '..';
+import {ErrorBoundary, withErrorBoundary} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 class BuggyCounter extends Component<any, any> {
@@ -29,6 +29,10 @@ class BuggyCounter extends Component<any, any> {
   }
 }
 
+const Hoc1 = withErrorBoundary(BuggyCounter, {
+  renderError: () => <div>Errror!</div>
+});
+
 storiesOf('Boundaries/ErrorBoundary', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/ErrorBoundary.md')}))
   .add('Renders children', () =>
@@ -42,4 +46,5 @@ storiesOf('Boundaries/ErrorBoundary', module)
     <ErrorBoundary renderError={() => <div>Caught error!</div>}>
       <BuggyCounter />
     </ErrorBoundary>
-  );
+  )
+  .add('HOC', () => <Hoc1 />);

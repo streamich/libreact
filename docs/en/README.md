@@ -48,7 +48,7 @@
      - [`go()`](./routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./Sms.md), [`<Mailto>`](./Mailto.md), and `<Tel>`
   - [Boundaries](./Boundaries.md)
      - [`<BrowserOnly>`](./BrowserOnly.md), [`<ServerOnly>`](./ServerOnly.md), and [`<ElectronOnly>`](./ElectronOnly.md)
-     - [`<ErrorBoundary>`](./ErrorBoundary.md) and `withErrorBoundary()`
+     - [`<ErrorBoundary>`](./ErrorBoundary.md) and [`withErrorBoundary()`](./ErrorBoundary.md#witherrorboundary-hoc)
      - `<CacheBoundary>`
   - [UI](./UI.md)
      - [`<Portal>`](./Portal.md) and [`<Overlay>`](./Overlay.md)
