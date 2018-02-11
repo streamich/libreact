@@ -10,7 +10,7 @@ Use it as FaCC, attach to root element
 import {HoverSensor} from 'libreact/lib/HoverSensor';
 
 <HoverSensor>{({isHover}) =>
-  <div>{isHover ? 'hovered' : 'no hovered'}</div>
+  <div>{isHover ? 'hovered' : 'not hovered'}</div>
 }</HoverSensor>
 ```
 
@@ -21,7 +21,7 @@ import {HoverSensor} from 'libreact/lib/HoverSensor';
 
 <HoverSensor bond>{({bond, isHover}) =>
   <div>
-    <div {...bond}>{isHover ? 'hovered' : 'no hovered'}</div>
+    <div {...bond}>{isHover ? 'hovered' : 'not hovered'}</div>
   </div>
 }</HoverSensor>
 ```

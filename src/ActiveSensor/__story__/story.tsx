@@ -6,7 +6,7 @@ import {ActiveSensor, withActive} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('Sensors/ActiveSensor', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/ActiveSensor.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/ActiveSensor.md')}))
   .add('Without bond', () =>
     <ActiveSensor>{({isActive}) =>
       <div style={{

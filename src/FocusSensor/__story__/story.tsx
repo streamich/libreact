@@ -6,7 +6,7 @@ import {FocusSensor, withFocus} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('Sensors/FocusSensor', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/FocusSensor.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/FocusSensor.md')}))
   .add('With bond', () =>
     <FocusSensor bond>{({isFocused, bond}) =>
       <div style={{
