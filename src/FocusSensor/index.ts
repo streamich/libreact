@@ -19,7 +19,7 @@ export const FocusSensor: React.StatelessComponent<IFocusSensorProps> = (props: 
         }
 
         return renderProp(props, {
-          isActive: value,
+          isFocused: value,
           [bond]: {
             onFocus: () => set(true),
             onBlur: () => set(false),
@@ -27,7 +27,7 @@ export const FocusSensor: React.StatelessComponent<IFocusSensorProps> = (props: 
         });
       } else {
         const element = renderProp(props, {
-          isActive: value
+          isFocused: value
         });
 
         return cloneElement(element, {
