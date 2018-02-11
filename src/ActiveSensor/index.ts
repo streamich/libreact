@@ -8,7 +8,7 @@ export interface IActiveSensorProps {
   bond?: boolean | string;
 }
 
-export const ActiveSensor = (props: IActiveSensorProps) => {
+export const ActiveSensor: React.StatelessComponent<IActiveSensorProps> = (props: IActiveSensorProps) => {
   let {bond} = props;
 
   return Value({
@@ -18,21 +18,23 @@ export const ActiveSensor = (props: IActiveSensorProps) => {
           bond = 'bond';
         }
 
-        return renderProp(this.props, {
+        return renderProp(props, {
           isActive: value,
           [bond]: {
-            onMouseDown: () => value(false),
-            onMouseUp: () => value(true),
+            onMouseDown: () => set(true),
+            onMouseUp: () => set(false),
+            onMouseLeave: () => set(false),
           }
         });
       } else {
-        const element = renderProp(this.props, {
+        const element = renderProp(props, {
           isActive: value
         });
 
         return cloneElement(element, {
-          onMouseDown: () => value(false),
-          onMouseUp: () => value(true),
+          onMouseDown: () => set(true),
+          onMouseUp: () => set(false),
+          onMouseLeave: () => set(false),
         });
       }
     }
