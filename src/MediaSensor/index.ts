@@ -6,7 +6,10 @@ import renderProp from '../util/renderProp';
 export interface IMediaSensorProps {
   matches?: boolean;
   query: string;
-  children?: (match: boolean) => React.ReactElement<any>;
+  children?: React.ReactElement<any> | ((match: boolean) => React.ReactElement<any>);
+  render?: React.ReactElement<any> | ((match: boolean) => React.ReactElement<any>);
+  comp?: React.StatelessComponent<IMediaSensorState> | React.ComponentClass<IMediaSensorState>;
+  component?: React.StatelessComponent<IMediaSensorState> | React.ComponentClass<IMediaSensorState>;
 }
 
 export interface IMediaSensorState {
@@ -20,12 +23,15 @@ export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState>
   constructor (props, context) {
     super(props, context);
 
-    this.state = {
-      matches: isClient ? !!window.matchMedia(this.props.query).matches : (props.matches || false)
-    };
-
     if (isClient) {
       this.updateQuery();
+      this.state = {
+        matches: !!this.mql.matches
+      };
+    } else {
+      this.state = {
+        matches: props.matches || false
+      };
     }
   }
 
@@ -70,7 +76,7 @@ export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState>
   }
 
   render () {
-    return renderProp(this.props, this.state.matches);
+    return renderProp(this.props, this.state);
   }
 }
 
