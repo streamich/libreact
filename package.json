@@ -1,6 +1,6 @@
 {
   "name": "libreact",
-  "version": "0.5.11",
+  "version": "0.6.1",
   "description": "React standard library",
   "main": "lib/index.js",
   "repository": {
