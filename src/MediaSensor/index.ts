@@ -80,4 +80,4 @@ export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState>
   }
 }
 
-export const withMedia = faccToHoc(MediaSensor);
+export const withMedia = faccToHoc(MediaSensor, 'media');

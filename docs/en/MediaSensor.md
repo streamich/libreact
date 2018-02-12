@@ -7,7 +7,7 @@ FaCC that re-renders on [media query](https://developer.mozilla.org/en-US/docs/W
 ```jsx
 import {MediaSensor} from 'libreact/lib/MediaSensor';
 
-<MediaSensor query='(min-width: 480px)'>{(matches) =>
+<MediaSensor query='(min-width: 480px)'>{({matches}) =>
   `WIDTH IS GREATED THAN 480PX: ${matches}`
 }</MediaSensor>
 ```
@@ -15,7 +15,7 @@ import {MediaSensor} from 'libreact/lib/MediaSensor';
 
 ## `withMedia()`
 
-Higher order component that injects a boolean prop into your component that specifies if media query matches.
+Higher order component that injects a `media` prop into your component that specifies if media query matches.
 
 ```js
 import {withMedia} from 'libreact/lib/MediaSensor';
