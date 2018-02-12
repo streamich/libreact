@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import {isClient} from '../util';
 import faccToHoc from '../util/faccToHoc';
 import renderProp from '../util/renderProp';
 
@@ -20,14 +21,12 @@ export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState>
     super(props, context);
 
     this.state = {
-      matches: props.matches || false
+      matches: isClient ? !!window.matchMedia(this.props.query).matches : (props.matches || false)
     };
 
-    this.updateQuery();
-  }
-
-  componentDidMount () {
-    this.updateQuery();
+    if (isClient) {
+      this.updateQuery();
+    }
   }
 
   componentDidUpdate (props) {
@@ -47,6 +46,8 @@ export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState>
   };
 
   updateQuery () {
+    this.removeListener();
+
     if (typeof window !== 'object') {
       return;
     }
