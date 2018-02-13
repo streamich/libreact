@@ -1,11 +1,15 @@
 import {Component} from 'react';
+import {isClient} from '../util';
 import faccToHoc from '../util/faccToHoc';
 import renderProp from '../util/renderProp';
 
 export interface IMediaSensorProps {
   matches?: boolean;
   query: string;
-  children?: (match: boolean) => React.ReactElement<any>;
+  children?: React.ReactElement<any> | ((match: boolean) => React.ReactElement<any>);
+  render?: React.ReactElement<any> | ((match: boolean) => React.ReactElement<any>);
+  comp?: React.StatelessComponent<IMediaSensorState> | React.ComponentClass<IMediaSensorState>;
+  component?: React.StatelessComponent<IMediaSensorState> | React.ComponentClass<IMediaSensorState>;
 }
 
 export interface IMediaSensorState {
@@ -19,15 +23,16 @@ export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState>
   constructor (props, context) {
     super(props, context);
 
-    this.state = {
-      matches: props.matches || false
-    };
-
-    this.updateQuery();
-  }
-
-  componentDidMount () {
-    this.updateQuery();
+    if (isClient) {
+      this.updateQuery();
+      this.state = {
+        matches: !!this.mql.matches
+      };
+    } else {
+      this.state = {
+        matches: props.matches || false
+      };
+    }
   }
 
   componentDidUpdate (props) {
@@ -47,6 +52,8 @@ export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState>
   };
 
   updateQuery () {
+    this.removeListener();
+
     if (typeof window !== 'object') {
       return;
     }
@@ -69,8 +76,8 @@ export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState>
   }
 
   render () {
-    return renderProp(this.props, this.state.matches);
+    return renderProp(this.props, this.state);
   }
 }
 
-export const withMedia = faccToHoc(MediaSensor);
+export const withMedia = faccToHoc(MediaSensor, 'media');

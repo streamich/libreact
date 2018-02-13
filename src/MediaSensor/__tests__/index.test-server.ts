@@ -6,7 +6,7 @@ import {MediaSensor} from '..';
 describe('<MediaSensor> SSR', () => {
   it('renders without crashing', () => {
     const html = renderToStaticMarkup(h(MediaSensor, {query: '(min-width: 480px)'},
-      (matches) => h('div', {}, 'foobar')
+      ({matches}) => h('div', {}, 'foobar')
     ));
 
     expect(html).to.equal('<div>foobar</div>');
@@ -14,7 +14,7 @@ describe('<MediaSensor> SSR', () => {
 
   it('by default returns false', () => {
     const html = renderToStaticMarkup(h(MediaSensor, {query: '(min-width: 480px)'},
-      (matches) => h('div', {}, String(matches))
+      ({matches}) => h('div', {}, String(matches))
     ));
 
     expect(html).to.equal('<div>false</div>');
@@ -26,7 +26,7 @@ describe('<MediaSensor> SSR', () => {
         matches: false,
         query: '(min-width: 480px)'
       },
-        (matches) => h('div', {}, String(matches))
+        ({matches}) => h('div', {}, String(matches))
       ));
 
       expect(html).to.equal('<div>false</div>');
@@ -37,7 +37,7 @@ describe('<MediaSensor> SSR', () => {
         matches: true,
         query: '(min-width: 480px)'
       },
-        (matches) => h('div', {}, String(matches))
+        ({matches}) => h('div', {}, String(matches))
       ));
 
       expect(html).to.equal('<div>true</div>');
