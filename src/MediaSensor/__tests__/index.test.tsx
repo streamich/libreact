@@ -132,6 +132,9 @@ describe('<MediaSensor>', () => {
 
       expect(matchMediaReturn.addListener).toHaveBeenCalledTimes(2);
       expect(matchMediaReturn.removeListener).toHaveBeenCalledTimes(2);
+
+      expect(matchMediaReturn.removeListener.mock.calls[0][0]).toBe(listeners[0]);
+      expect(matchMediaReturn.removeListener.mock.calls[1][0]).toBe(listeners[1]);
     });
   });
 });
