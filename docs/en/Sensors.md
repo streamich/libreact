@@ -12,7 +12,10 @@ For example, the below `<div>` will be re-rendered every time mouse position cha
 
 `libreact` comes with plenty of sensors built-in.
 
+  - [`<ActiveSensor>`](./ActiveSensor.md) &mdash; tracks if element is being "pressed" on by `mousedown`.
   - [`<BatterySensor>`](./BatterySensor.md) &mdash; tracks battery status.
+  - [`<ExitSensor>`](./ExitSensor.md) &mdash; notifies component when it is being un-mounted.
+  - [`<FocusSensor>`](./FocusSensor.md) &mdash; tracks element has focus.
   - [`<GeoLocationSensor>`](./GeoLocationSensor.md) &mdash; tracks device geographical location.
   - [`<HoverSensor>`](./HoverSensor.md) &mdash; tracks element's hover status.
   - [`<MediaDeviceSensor>`](./MediaDeviceSensor.md) &mdash; tracks media devices connected to your device.
