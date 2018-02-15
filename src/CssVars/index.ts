@@ -1,52 +1,104 @@
-import {Component} from 'react';
+import {PureComponent, Component} from 'react';
 import {Provider, Consumer} from '../context';
-import {h} from '../util';
+import {h, isClient} from '../util';
 import renderProp from '../util/renderProp';
 
-let idCnt = 0;
+const supportsCssVariables = isClient && (window as any).CSS && CSS.supports && CSS.supports('--a', '0');
+let style;
 
-const supportsCssVariables = typeof window === 'object' && (window as any).CSS && CSS.supports && CSS.supports('--a', '0');
+if (supportsCssVariables) {
+  style = document.documentElement.style;
+}
 
 export type TVars = {[name: string]: string};
 
 export interface ICssVarsProviderProps {
   ns?: string;
-  prefix?: string;
   vars: TVars;
 }
 
 export interface ICssVarsProviderState {
 }
 
-export class CssVarsProvider extends Component<ICssVarsProviderProps, ICssVarsProviderState> {
+export class CssVarsProvider extends PureComponent<ICssVarsProviderProps, ICssVarsProviderState> {
+  static defaultProps = {
+    ns: ''
+  };
+
   vars: TVars = {};
 
-  constructor (props, context) {
-    super(props, context);
-
-    this.updateVars(props.vars);
+  componentWillMount () {
+    this.setVars(this.props.vars);
   }
 
-  updateVars (vars: TVars) {
-    if (supportsCssVariables) {
-      const {prefix = ''} = this.props;
-      const {style} = document.documentElement;
+  componentWillUpdate (newProps) {
+    const oldVars = this.props.vars;
+    const newVars = newProps.vars;
 
-      for (const name in vars) {
-        const id = (idCnt++).toString(36);
-        const varName = `---${prefix}${id}`;
+    const shouldRerender = this.setVars(newVars, oldVars) || this.removeVars(oldVars, newVars);
+
+    if (shouldRerender) {
+      this.vars = {...this.vars};
+    }
+  }
+
+  componentWillUnmount () {
+    this.removeVars(this.vars);
+  }
+
+  setVars (vars: TVars, oldVars: TVars = {}): boolean {
+    if (!supportsCssVariables) {
+      this.vars = vars;
+
+      return true;
+    }
+
+    let shouldRerender = false;
+    const {ns} = this.props;
+
+    for (const name in vars) {
+      let doUpdate = false;
+
+      if (oldVars[name]) {
+        if (vars[name] !== oldVars[name]) {
+          doUpdate = true;
+        }
+      } else {
+        shouldRerender = true;
+        doUpdate = true;
+      }
+
+      if (doUpdate) {
+        const varName = `---${ns}libreact-${name}`;
 
         this.vars[name] = `var(${varName})`;
         style.setProperty(varName, String(vars[name]));
       }
-    } else {
-      this.vars = vars;
     }
+
+    return shouldRerender;
+  }
+
+  removeVars (oldVars: TVars, vars: TVars = {}): boolean {
+    let shouldRerender = false;
+    const {ns} = this.props;
+
+    for (const name in oldVars) {
+      if (vars[name] === undefined) {
+        const varName = `---${ns}libreact-${name}`;
+
+        delete this.vars[name];
+        style.removeProperty(varName);
+        shouldRerender = true;
+      }
+    }
+
+    return shouldRerender;
   }
 
   render () {
     return h(Provider, {
-      name: 'css/' + this.props.ns,
+      name: 'css-vars/' + this.props.ns,
       value: this.vars
     },
       this.props.children
@@ -66,8 +118,12 @@ export interface ICssVarsState {
 }
 
 export class CssVars extends Component<ICssVarsProps, ICssVarsState> {
+  static defaultProps = {
+    ns: ''
+  };
+
   render () {
-    return h(Consumer, {name: 'css/' + this.props.ns}, (vars) => {
+    return h(Consumer, {name: 'css-vars/' + this.props.ns}, (vars) => {
       return renderProp(this.props, vars);
     });
   }

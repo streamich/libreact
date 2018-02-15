@@ -5,6 +5,7 @@ import {linkTo} from '@storybook/addon-links';
 import ShowDocs from '../../../.storybook/ShowDocs'
 import {CssVarsProvider, CssVars} from '..';
 import {Example1} from './Example1';
+import {Example2} from './Example2';
 
 const Print = (props) => <pre style={{fontFamily: 'monospace'}}>{JSON.stringify(props, null, 4)}</pre>;
 
@@ -25,7 +26,7 @@ storiesOf('Context/CSS Variables', module)
     </CssVarsProvider>
   )
   .add('With namespace', () =>
-    <CssVarsProvider ns='namespace' prefix='prefix-' vars={{
+    <CssVarsProvider ns='namespace-' vars={{
       color: 'tomato',
       border: '1px solid tomato'
     }}>
@@ -37,3 +38,4 @@ storiesOf('Context/CSS Variables', module)
       }</CssVars>
     </CssVarsProvider>
   )
+  .add('Change theme', () => <Example2 />);
