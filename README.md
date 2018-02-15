@@ -37,6 +37,7 @@ const MyComponent = mock();
      - [`lazy()`](./docs/en/lazy.md), [`delayed()`](./docs/en/delayed.md), and [`viewport()`](./docs/en/viewport.md)
   - [Inversion](./docs/en/Inversion.md)
      - [`invert()`](./docs/en/invert.md) and [`<Inverted>`](./docs/en/invert.md#inverted)
+        - `<ShouldUpdate>`
      - [`<State>`](./docs/en/State.md) and [`withState()`](./docs/en/State.md#withstate-hoc)
         - [`<Toggle>`](./docs/en/Toggle.md), [`withToggle()`](./docs/en/Toggle.md#withtoggle-hoc), and [`@withToggle`](./docs/en/Toggle.md#withtoggle-decorator)
         - [`<Flipflop>`](./docs/en/Flipflop.md), [`withFlipflop()`](./docs/en/Flipflop.md#withflipflop-hoc), and [`@withFlipflop`](./docs/en/Flipflop.md#withflipflop-decorator)
