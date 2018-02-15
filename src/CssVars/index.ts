@@ -2,6 +2,7 @@ import {PureComponent, Component} from 'react';
 import {Provider, Consumer} from '../context';
 import {h, isClient} from '../util';
 import renderProp from '../util/renderProp';
+import faccToHoc from '../util/faccToHoc';
 
 const supportsCssVariables = isClient && (window as any).CSS && CSS.supports && CSS.supports('--a', '0');
 let style;
@@ -128,3 +129,5 @@ export class CssVars extends Component<ICssVarsProps, ICssVarsState> {
     });
   }
 }
+
+export const withCssVars = faccToHoc(CssVars, 'vars');
