@@ -9,7 +9,7 @@ Creates overlay over whole page.
 import {Overlay} from 'libreact/lib/Overlay';
 
 <Overlay>
-  This renderer over whole page.
+  This is rendered over the whole page.
 </Overlay>
 ```
 

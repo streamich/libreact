@@ -6,9 +6,9 @@
 
 React standard library &mdash; must-have toolbox for any React project.
 
-  - React [router](https://mailonline.github.io/libreact/en/routing.html), [sensors](https://mailonline.github.io/libreact/en/Sensors.html), [FaCC](https://mailonline.github.io/libreact/en/Introduction.html#facc)s, [render props](https://mailonline.github.io/libreact/en/Introduction.html#render-props), [HOC](https://mailonline.github.io/libreact/en/Introduction.html#hoc)s, [context](https://mailonline.github.io/libreact/en/Context.html) providers, [dummies](https://mailonline.github.io/libreact/en/Dummies.html), and [other goodies](https://mailonline.github.io/libreact/en/).
+  - [React router](https://mailonline.github.io/libreact/en/routing.html), [sensors](https://mailonline.github.io/libreact/en/Sensors.html), [inversions](https://mailonline.github.io/libreact/en/Inversion.html), [context providers](https://mailonline.github.io/libreact/en/Context.html), [dummies](https://mailonline.github.io/libreact/en/Dummies.html), and [other goodies](https://mailonline.github.io/libreact/en/).
   - *Isomorphic* - all components work in browser and on server (and some in `react-native`).
-  - See [__demos__](https://mailonline.github.io/libreact/demos/), [__docs__](https://mailonline.github.io/libreact/en/), and NPM [__package__](https://www.npmjs.com/package/libreact/).
+  - See [__demos__](https://mailonline.github.io/libreact/demos/), [__docs__](https://mailonline.github.io/libreact/en/), and [__package__](https://www.npmjs.com/package/libreact/).
 
 
 ## Installation
@@ -72,19 +72,25 @@ const MyComponent = mock();
      - [`<CssVarsProvider>`](./docs/en/cssvars.md), [`<CssVars>`](./docs/en/cssvars.md#cssvars), [`withCssVars()`](./docs/en/cssvars.md#withcssvars-hoc), and [`@withCssVars`](./docs/en/cssvars.md#withcssvars-decorator)
      - [`<Router>`](./docs/en/routing.md#router), [`<Route>`](./docs/en/routing.md#route), [`withRoute()`](./docs/en/routing.md#withroute), `@withRoute`, `go()`, and `<Go>`
      - [`<Translations>`](./docs/en/translate.md#translations), [`<Translate>`](./docs/en/translate.md#translate-or-t), [`<T>`](./docs/en/translate.md#translate-or-t), [`withT()`](./docs/en/translate.md#witht-hoc), and [`@withT`](./docs/en/translate.md#witht-decorator)
-  - Generators
-     - [`<Audio>`](./docs/en/Audio.md), [`<Video>`](./docs/en/Video.md), and `<Media>`
-     - [`<LocalStorage>`](./docs/en/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
-     - [`<Speak>`](./docs/en/Speak.md), [`<Vibrate>`](./docs/en/Vibrate.md), [`<Alert>`](./docs/en/Alert.md), `<Prompt>`, `<Confirm>`
-     - [`go()`](./docs/en/routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md), and `<Tel>`
-  - [Boundaries](./docs/en/Boundaries.md)
-     - [`<BrowserOnly>`](./docs/en/BrowserOnly.md), [`<ServerOnly>`](./docs/en/ServerOnly.md), and [`<ElectronOnly>`](./docs/en/ElectronOnly.md)
-     - [`<ErrorBoundary>`](./docs/en/ErrorBoundary.md) and [`withErrorBoundary()`](./docs/en/ErrorBoundary.md#witherrorboundary-hoc)
-     - `<CacheBoundary>`
   - [UI](./docs/en/UI.md)
      - [`<Portal>`](./docs/en/Portal.md) and [`<Overlay>`](./docs/en/Overlay.md)
      - [`<FullScreen>`](./docs/en/FullScreen.md)
      - [`<Slider>`](./docs/en/Slider.md)
+  - Side effects
+     - [`<LocalStorage>`](./docs/en/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
+     - `<Title>`, `<Favicon>`
+     - [`go()`](./docs/en/routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md), and `<Tel>`
+  - Generators
+     - [`<Audio>`](./docs/en/Audio.md), [`<Video>`](./docs/en/Video.md), and `<Media>`
+     - [`<Speak>`](./docs/en/Speak.md), [`<Vibrate>`](./docs/en/Vibrate.md), [`<Alert>`](./docs/en/Alert.md), `<Prompt>`, `<Confirm>`
+  - [Boundaries](./docs/en/Boundaries.md)
+     - [`<BrowserOnly>`](./docs/en/BrowserOnly.md), [`<ServerOnly>`](./docs/en/ServerOnly.md), and [`<ElectronOnly>`](./docs/en/ElectronOnly.md)
+     - [`<ErrorBoundary>`](./docs/en/ErrorBoundary.md) and [`withErrorBoundary()`](./docs/en/ErrorBoundary.md#witherrorboundary-hoc)
+     - `<CacheBoundary>`
+  - CSS
+     - 3<sup>rd</sup> generation: `StyleSheet.create()`
+     - 4<sup>th</sup> generation: `@css`, `styled()()`
+     - 5<sup>th</sup> generation: `jsxstyle`, `hot()()`
   - [CSS resets](./docs/en/CSS-resets.md)
      - [`<CssResetEricMeyer>`](./docs/en/reset/CssResetEricMeyer.md) and [`<CssResetEricMeyerCondensed>`](./docs/en/reset/CssResetEricMeyerCondensed.md)
      - [`<CssResetMinimalistic>`](./docs/en/reset/CssResetMinimalistic.md), [`<CssResetMinimalistic2>`](./docs/en/reset/CssResetMinimalistic2.md), and [`<CssResetMinimalistic3>`](./docs/en/reset/CssResetMinimalistic3.md)
@@ -99,6 +105,8 @@ const MyComponent = mock();
      - [`getDisplayName()`](./docs/en/getDisplayName.md)
      - `<Locales>`
      - `<Draggable>`, `<Droppable>`, `<Parallax>`, `<Pin>`
+  - Electron
+     - `<Menu>` and `<MenuItem>`
 
 
 ## License
