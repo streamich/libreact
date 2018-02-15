@@ -41,20 +41,20 @@
      - [`<CssVarsProvider>`](./cssvars.md), [`<CssVars>`](./cssvars.md#cssvars), [`withCssVars()`](./cssvars.md#withcssvars-hoc), and [`@withCssVars`](./cssvars.md#withcssvars-decorator)
      - [`<Router>`](./routing.md#router), [`<Route>`](./routing.md#route), [`withRoute()`](./routing.md#withroute), `@withRoute`, `go()`, and `<Go>`
      - [`<Translations>`](./translate.md#translations), [`<Translate>`](./translate.md#translate-or-t), [`<T>`](./translate.md#translate-or-t), [`withT()`](./translate.md#witht-hoc), and [`@withT`](./translate.md#witht-decorator)
-  - Generators
-     - [`<Audio>`](./Audio.md), [`<Video>`](./Video.md), and `<Media>`
-     - [`<LocalStorage>`](./LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
+  - [UI](./UI.md)
+     - [`<Portal>`](./Portal.md) and [`<Overlay>`](./Overlay.md)
+     - [`<FullScreen>`](./FullScreen.md)
+     - [`<Slider>`](./Slider.md)
+     - [`<Audio>`](./Audio.md) and [`<Video>`](./Video.md)
      - [`<Speak>`](./Speak.md), [`<Vibrate>`](./Vibrate.md), [`<Alert>`](./Alert.md), `<Prompt>`, `<Confirm>`
+  - [Side Effects](./Side-effects.md)
+     - [`<LocalStorage>`](./LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
+     - `<Title>`, `<Favicon>`
      - [`go()`](./routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./Sms.md), [`<Mailto>`](./Mailto.md), and `<Tel>`
   - [Boundaries](./Boundaries.md)
      - [`<BrowserOnly>`](./BrowserOnly.md), [`<ServerOnly>`](./ServerOnly.md), and [`<ElectronOnly>`](./ElectronOnly.md)
      - [`<ErrorBoundary>`](./ErrorBoundary.md) and [`withErrorBoundary()`](./ErrorBoundary.md#witherrorboundary-hoc)
      - `<CacheBoundary>`
-  - [UI](./UI.md)
-     - [`<Portal>`](./Portal.md) and [`<Overlay>`](./Overlay.md)
-     - [`<FullScreen>`](./FullScreen.md)
-     - [`<Slider>`](./Slider.md)
-     - `<Overlay>`
   - [CSS resets](./CSS-resets.md)
      - [`<CssResetEricMeyer>`](./reset/CssResetEricMeyer.md) and [`<CssResetEricMeyerCondensed>`](./reset/CssResetEricMeyerCondensed.md)
      - [`<CssResetMinimalistic>`](./reset/CssResetMinimalistic.md), [`<CssResetMinimalistic2>`](./reset/CssResetMinimalistic2.md), and [`<CssResetMinimalistic3>`](./reset/CssResetMinimalistic3.md)

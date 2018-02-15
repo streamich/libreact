@@ -7,7 +7,7 @@ import ShowDocs from '../../../.storybook/ShowDocs'
 
 const src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3';
 
-storiesOf('Generators/Audio', module)
+storiesOf('UI/Audio', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Audio.md')}))
   .add('Example', () =>
     <Audio autoPlay src={src}>{(audio) =>

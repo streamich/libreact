@@ -76,13 +76,12 @@ const MyComponent = mock();
      - [`<Portal>`](./docs/en/Portal.md) and [`<Overlay>`](./docs/en/Overlay.md)
      - [`<FullScreen>`](./docs/en/FullScreen.md)
      - [`<Slider>`](./docs/en/Slider.md)
-  - Side effects
+     - [`<Audio>`](./docs/en/Audio.md) and [`<Video>`](./docs/en/Video.md)
+     - [`<Speak>`](./docs/en/Speak.md), [`<Vibrate>`](./docs/en/Vibrate.md), [`<Alert>`](./docs/en/Alert.md), `<Prompt>`, `<Confirm>`
+  - [Side Effects](./docs/en/Side-effects.md)
      - [`<LocalStorage>`](./docs/en/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
      - `<Title>`, `<Favicon>`
      - [`go()`](./docs/en/routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md), and `<Tel>`
-  - Generators
-     - [`<Audio>`](./docs/en/Audio.md), [`<Video>`](./docs/en/Video.md), and `<Media>`
-     - [`<Speak>`](./docs/en/Speak.md), [`<Vibrate>`](./docs/en/Vibrate.md), [`<Alert>`](./docs/en/Alert.md), `<Prompt>`, `<Confirm>`
   - [Boundaries](./docs/en/Boundaries.md)
      - [`<BrowserOnly>`](./docs/en/BrowserOnly.md), [`<ServerOnly>`](./docs/en/ServerOnly.md), and [`<ElectronOnly>`](./docs/en/ElectronOnly.md)
      - [`<ErrorBoundary>`](./docs/en/ErrorBoundary.md) and [`withErrorBoundary()`](./docs/en/ErrorBoundary.md#witherrorboundary-hoc)
