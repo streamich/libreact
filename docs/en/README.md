@@ -38,7 +38,7 @@
   - [Context](./Context.md)
      - [`<Provider>`](./Provider.md#provider), [`<Consumer>`](./Provider.md#consumer), [`withContext()`](./Provider.md#withcontext-hoc), and [`@withContext`](./Provider.md#withcontext-decorator)
      - [`<Theme>`](./theme.md#theme), [`<Themed>`](./theme.md#themed), [`withTheme()`](./theme.md#withtheme-hoc), and [`@withTheme`](./theme.md#withtheme-decorator)
-     - `<CssVars>`
+     - [`<CssVarsProvider>`](./cssvars.md), [`<CssVars>`](./cssvars.md#cssvars), [`withCssVars()`](./cssvars.md#withcssvars-hoc), and [`@withCssVars`](./cssvars.md#withcssvars-decorator)
      - [`<Router>`](./routing.md#router), [`<Route>`](./routing.md#route), [`withRoute()`](./routing.md#withroute), `@withRoute`, `go()`, and `<Go>`
      - [`<Translations>`](./translate.md#translations), [`<Translate>`](./translate.md#translate-or-t), [`<T>`](./translate.md#translate-or-t), [`withT()`](./translate.md#witht-hoc), and [`@withT`](./translate.md#witht-decorator)
   - Generators

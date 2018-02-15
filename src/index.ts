@@ -28,6 +28,7 @@ export * from './Audio';
 export * from './context';
 export * from './theme';
 export * from './route';
+export * from './cssvars';
 
 // Other
 export * from './Resolve';

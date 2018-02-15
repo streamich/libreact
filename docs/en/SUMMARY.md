@@ -46,6 +46,7 @@
 * [Context](Context.md)
   * [Provider](Provider.md)
   * [Theming](theme.md)
+  * [CSS Variables](cssvars.md)
   * [Router](routing.md)
   * [Translations](translate.md)
 * [Generators](Generators.md)
