@@ -20,3 +20,4 @@ _book/
 /build/
 /.storybook/
 /docs/
+/storybook-static/
