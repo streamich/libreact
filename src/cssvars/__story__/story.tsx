@@ -25,7 +25,7 @@ class Decorator1 extends Component<any, any> {
 }
 
 storiesOf('Context/CSS Variables', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/FocusSensor.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/cssvars.md')}))
   .add('Basic example', () => <Example1 />)
   .add('Inline style', () =>
     <CssVarsProvider vars={{

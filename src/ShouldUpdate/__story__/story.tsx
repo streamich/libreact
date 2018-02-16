@@ -10,7 +10,7 @@ import {Example3} from './Example3';
 import {Example4} from './Example4';
 
 storiesOf('Inversion/ShouldUpdate', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/ShouldUpdate.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/ShouldUpdate.md')}))
   .add('Renders children', () =>
     h(ShouldUpdate, {when: () => false, props: {}},
       h('div', {}, 'Hello foobar!')

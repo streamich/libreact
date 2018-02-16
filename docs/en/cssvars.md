@@ -2,7 +2,7 @@
 
 Use [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) (aka CSS variables) theming with automatic fallback
 to [regular theming](./theme.md). Below components allow you to safely use CSS variables. You simply use `<CssVarsProvider>` similar
-to how you use [`<Theme>`](./theme.md#theme), but if CSS variables are supported by user's browser, *all values will be replaces instead
+to how you use [`<Theme>`](./theme.md#theme), but if CSS variables are supported by user's browser, *all values will be replaced instead
 by CSS variables* and on subsequent re-renders it will try to *just modify the CSS variables without re-rendering* the children.
 
 > If CSS Custom Properties are not supported, CssVars works like a typical theme provider.
