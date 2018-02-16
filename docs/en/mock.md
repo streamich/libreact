@@ -33,7 +33,7 @@ const MySvg = mock({
 mock: (params?: IMockParams) => IMockComponent;
 
 interface IMockParams {
-  loading?: React.ReactElement;
+  loading?: React.ReactElement | React.ComponentClass | React.StatelessComponent;
 }
 
 interface IMockComponent extends React.ComponentClass {

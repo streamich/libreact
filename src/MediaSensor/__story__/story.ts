@@ -16,7 +16,7 @@ const IsBigWithMedia = withMedia(IsBig, 'isBig', {
 })
 class IsBigClass extends Component<any, any> {
   render () {
-    return h('div', null, `WIDTH IS GREATED THAN 480PX: ${this.props.isBig}`);
+    return h('div', null, `WIDTH IS GREATED THAN 480PX: ${this.props.isBig.matches}`);
   }
 }
 
@@ -25,7 +25,7 @@ storiesOf('Sensors/MediaSensor', module)
   .add('FaCC', () =>
     h(MediaSensor, {
       query: '(min-width: 480px)'
-    }, (matches) =>
+    }, ({matches}) =>
       h('div', {
         style: {
           border: '1px solid red'
@@ -38,7 +38,7 @@ storiesOf('Sensors/MediaSensor', module)
   .add('Render prop', () =>
     h(MediaSensor, {
       query: '(min-width: 480px)',
-      render: (matches) =>
+      render: ({matches}) =>
         h('div', {
           style: {
             border: '1px solid red'

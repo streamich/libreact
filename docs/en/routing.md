@@ -1,4 +1,4 @@
-# Route
+# Routing
 
 Routing components that allow you to implement single page app routing functionality.
 

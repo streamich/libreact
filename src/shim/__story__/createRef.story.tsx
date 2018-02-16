@@ -13,7 +13,7 @@ class Example extends Component<any, any> {
   };
 
   render () {
-    return <div ref={this.divRef} onClick={this.onClick}>foobar</div>;
+    return <div ref={this.divRef} onClick={this.onClick}>{'See <div> ref in console.'}</div>;
   }
 }
 

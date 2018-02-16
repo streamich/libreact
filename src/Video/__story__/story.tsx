@@ -7,7 +7,7 @@ import ShowDocs from '../../../.storybook/ShowDocs'
 
 const src = 'http://dailym.ai/2rG7TBS';
 
-storiesOf('Generators/Video', module)
+storiesOf('UI/Video', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Video.md')}))
   .add('Example', () =>
     <Video autoPlay style={{

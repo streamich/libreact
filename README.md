@@ -6,9 +6,9 @@
 
 React standard library &mdash; must-have toolbox for any React project.
 
-  - React [router](https://mailonline.github.io/libreact/en/routing.html), [sensors](https://mailonline.github.io/libreact/en/Sensors.html), [FaCC](https://mailonline.github.io/libreact/en/Introduction.html#facc)s, [render props](https://mailonline.github.io/libreact/en/Introduction.html#render-props), [HOC](https://mailonline.github.io/libreact/en/Introduction.html#hoc)s, [context](https://mailonline.github.io/libreact/en/Context.html) providers, [dummies](https://mailonline.github.io/libreact/en/Dummies.html), and [other goodies](https://mailonline.github.io/libreact/en/).
+  - [React router](https://mailonline.github.io/libreact/en/routing.html), [sensors](https://mailonline.github.io/libreact/en/Sensors.html), [inversions](https://mailonline.github.io/libreact/en/Inversion.html), [context providers](https://mailonline.github.io/libreact/en/Context.html), [dummies](https://mailonline.github.io/libreact/en/Dummies.html), and [other goodies](https://mailonline.github.io/libreact/en/).
   - *Isomorphic* - all components work in browser and on server (and some in `react-native`).
-  - See [demos](https://mailonline.github.io/libreact/demos/), [docs](https://mailonline.github.io/libreact/en/), and NPM [package](https://www.npmjs.com/package/libreact/).
+  - See [__demos__](https://mailonline.github.io/libreact/demos/), [__docs__](https://mailonline.github.io/libreact/en/), and [__package__](https://www.npmjs.com/package/libreact/).
 
 
 ## Installation
@@ -36,7 +36,6 @@ const MyComponent = mock();
      - [`mock()`](./docs/en/mock.md) and [`loadable()`](./docs/en/loadable.md)
      - [`lazy()`](./docs/en/lazy.md), [`delayed()`](./docs/en/delayed.md), and [`viewport()`](./docs/en/viewport.md)
   - [Inversion](./docs/en/Inversion.md)
-     - [`invert()`](./docs/en/invert.md) and [`<Inverted>`](./docs/en/invert.md#inverted)
      - [`<State>`](./docs/en/State.md) and [`withState()`](./docs/en/State.md#withstate-hoc)
         - [`<Toggle>`](./docs/en/Toggle.md), [`withToggle()`](./docs/en/Toggle.md#withtoggle-hoc), and [`@withToggle`](./docs/en/Toggle.md#withtoggle-decorator)
         - [`<Flipflop>`](./docs/en/Flipflop.md), [`withFlipflop()`](./docs/en/Flipflop.md#withflipflop-hoc), and [`@withFlipflop`](./docs/en/Flipflop.md#withflipflop-decorator)
@@ -44,9 +43,13 @@ const MyComponent = mock();
         - [`<Counter>`](./docs/en/Counter.md), [`withCounter()`](./docs/en/Counter.md#withcounter-hoc) and [`@withCounter`](./docs/en/Counter.md#withcounter-decorator)
         - [`<List>`](./docs/en/List.md), [`withList()`](./docs/en/List.md#withlist-hoc), and [`@withList`](./docs/en/List.md#withlist-decorator)
         - [`<Map>`](./docs/en/Map.md), [`withMap()`](./docs/en/Map.md#withmap-hoc), and [`@withMap`](./docs/en/Map.md#withmap-decorator)
+     - [`<ShouldUpdate>`](./docs/en/ShouldUpdate.md), [`shouldUpdate()`](./docs/en/ShouldUpdate.md#shouldupdate-hoc), and [`pure()`](./docs/en/pure.md)
+     - [`invert()`](./docs/en/invert.md) and [`<Inverted>`](./docs/en/invert.md#inverted)
   - [Sensors](./docs/en/Sensors.md)
+     - [`<ActiveSensor>`](./docs/en/ActiveSensor.md), [`withActive()`](./docs/en/ActiveSensor.md#withactive-hoc), and [`@withActive`](./docs/en/ActiveSensor.md#withactive-decorator)
      - [`<BatterySensor>`](./docs/en/BatterySensor.md), [`withBattery()`](./docs/en/BatterySensor.md#withbattery), and [`@withBattery`](./docs/en/BatterySensor.md#withbattery-1)
      - [`<ExitSensor>`](./docs/en/ExitSensor.md)
+     - [`<FocusSensor>`](./docs/en/FocusSensor.md), [`withFocus()`](./docs/en/FocusSensor.md#withfocus-hoc), and [`@withFocus`](./docs/en/FocusSensor.md#withfocus-decorator)
      - [`<GeoLocationSensor>`](./docs/en/GeoLocationSensor.md), [`withGeoLocation()`](./docs/en/GeoLocationSensor.md#withgeolocation-hoc), and [`@withGeoLocation`](./docs/en/GeoLocationSensor.md#withgeolocation-decorator)
      - [`<HoverSensor>`](./docs/en/HoverSensor.md), [`withHover()`](./docs/en/HoverSensor.md#withhover-hoc), and [`@withHover`](./docs/en/HoverSensor.md#withhover-decorator)
      - [`<MediaDeviceSensor>`](./docs/en/MediaDeviceSensor.md), [`withMediaDevices()`](./docs/en/MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./docs/en/MediaDeviceSensor.md#withmediadevices-1)
@@ -64,27 +67,30 @@ const MyComponent = mock();
         - [`<ViewportScrollSensor>`](./docs/en/ViewportSensor.md#viewportscrollsensor) and [`<ViewportObserverSensor>`](./docs/en/ViewportSensor.md#viewportobserversensor)
      - [`<WindowScrollSensor>`](./docs/en/WindowScrollSensor.md), [`withWindowScroll()`](./docs/en/WindowScrollSensor.md#withwindowscroll-hoc), and [`@withWindowScroll`](./docs/en/WindowScrollSensor.md#withwindowscroll-decorator)
      - [`<WindowSizeSensor>`](./docs/en/WindowSizeSensor.md), [`withWindowSize()`](./docs/en/WindowSizeSensor.md#withwindowsize-hoc), and [`@withWindowSize`](./docs/en/WindowSizeSensor.md#withwindowsize-decorator)
-     - `ActiveSensor`, `withActive()`, and `@withActive`
-     - `FocusSensor`, `withFocus()`, and `@withFocus`
   - [Context](./docs/en/Context.md)
      - [`<Provider>`](./docs/en/Provider.md#provider), [`<Consumer>`](./docs/en/Provider.md#consumer), [`withContext()`](./docs/en/Provider.md#withcontext-hoc), and [`@withContext`](./docs/en/Provider.md#withcontext-decorator)
-     - [`<Theme>`](./docs/en/theme.md#theme), [`<Themed>`](./docs/en/theme.md#themed), [`withTheme()`](./docs/en/theme.md#withtheme), and `@withTheme`
-     - `<CssVars>`
+     - [`<Theme>`](./docs/en/theme.md#theme), [`<Themed>`](./docs/en/theme.md#themed), [`withTheme()`](./docs/en/theme.md#withtheme-hoc), and [`@withTheme`](./docs/en/theme.md#withtheme-decorator)
+     - [`<CssVarsProvider>`](./docs/en/cssvars.md), [`<CssVars>`](./docs/en/cssvars.md#cssvars), [`withCssVars()`](./docs/en/cssvars.md#withcssvars-hoc), and [`@withCssVars`](./docs/en/cssvars.md#withcssvars-decorator)
      - [`<Router>`](./docs/en/routing.md#router), [`<Route>`](./docs/en/routing.md#route), [`withRoute()`](./docs/en/routing.md#withroute), `@withRoute`, `go()`, and `<Go>`
      - [`<Translations>`](./docs/en/translate.md#translations), [`<Translate>`](./docs/en/translate.md#translate-or-t), [`<T>`](./docs/en/translate.md#translate-or-t), [`withT()`](./docs/en/translate.md#witht-hoc), and [`@withT`](./docs/en/translate.md#witht-decorator)
-  - Generators
-     - [`<Audio>`](./docs/en/Audio.md), [`<Video>`](./docs/en/Video.md), and `<Media>`
-     - [`<LocalStorage>`](./docs/en/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
-     - [`<Speak>`](./docs/en/Speak.md), [`<Vibrate>`](./docs/en/Vibrate.md), [`<Alert>`](./docs/en/Alert.md), `<Prompt>`, `<Confirm>`
-     - [`go()`](./docs/en/routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md), and `<Tel>`
+  - [UI](./docs/en/UI.md)
+     - [`<Portal>`](./docs/en/Portal.md) and [`<Overlay>`](./docs/en/Overlay.md)
      - [`<FullScreen>`](./docs/en/FullScreen.md)
+     - [`<Slider>`](./docs/en/Slider.md)
+     - [`<Audio>`](./docs/en/Audio.md) and [`<Video>`](./docs/en/Video.md)
+     - [`<Speak>`](./docs/en/Speak.md), [`<Vibrate>`](./docs/en/Vibrate.md), [`<Alert>`](./docs/en/Alert.md), `<Prompt>`, `<Confirm>`
+  - [Side Effects](./docs/en/Side-effects.md)
+     - [`<LocalStorage>`](./docs/en/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
+     - `<Title>`, `<Favicon>`
+     - [`go()`](./docs/en/routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md), and `<Tel>`
   - [Boundaries](./docs/en/Boundaries.md)
      - [`<BrowserOnly>`](./docs/en/BrowserOnly.md), [`<ServerOnly>`](./docs/en/ServerOnly.md), and [`<ElectronOnly>`](./docs/en/ElectronOnly.md)
-     - [`<ErrorBoundary>`](./docs/en/ErrorBoundary.md) and `withErrorBoundary()`
+     - [`<ErrorBoundary>`](./docs/en/ErrorBoundary.md) and [`withErrorBoundary()`](./docs/en/ErrorBoundary.md#witherrorboundary-hoc)
      - `<CacheBoundary>`
-  - [UI](./docs/en/UI.md)
-     - [`<Slider>`](./docs/en/Slider.md)
-     - `<Overlay>`
+  - CSS
+     - 3<sup>rd</sup> generation: `StyleSheet.create()`
+     - 4<sup>th</sup> generation: `@css`, `styled()()`
+     - 5<sup>th</sup> generation: `jsxstyle`, `hot()()`
   - [CSS resets](./docs/en/CSS-resets.md)
      - [`<CssResetEricMeyer>`](./docs/en/reset/CssResetEricMeyer.md) and [`<CssResetEricMeyerCondensed>`](./docs/en/reset/CssResetEricMeyerCondensed.md)
      - [`<CssResetMinimalistic>`](./docs/en/reset/CssResetMinimalistic.md), [`<CssResetMinimalistic2>`](./docs/en/reset/CssResetMinimalistic2.md), and [`<CssResetMinimalistic3>`](./docs/en/reset/CssResetMinimalistic3.md)
@@ -99,6 +105,8 @@ const MyComponent = mock();
      - [`getDisplayName()`](./docs/en/getDisplayName.md)
      - `<Locales>`
      - `<Draggable>`, `<Droppable>`, `<Parallax>`, `<Pin>`
+  - Electron
+     - `<Menu>` and `<MenuItem>`
 
 
 ## License

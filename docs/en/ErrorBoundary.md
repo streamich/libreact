@@ -37,3 +37,22 @@ interface IErrorBoundaryState {
 
   - `renderError` &mdash; renderer called if error happened in error boundary's children.
   - `onError` &mdash; event called every time error detected.
+
+
+## `withErrorBoundary` HOC
+
+Wraps your component into an error boundary.
+
+```jsx
+import {withErrorBoundary} from 'libreact/lib/ErrorBoundary';
+
+const SafeComponent = withErrorBoundary(UnsafeComponent, {
+  renderError: () => <div>Error happened!</div>
+});
+```
+
+Signature
+
+```ts
+withErrorBoundary(Comp, boundaryProps: IErrorBoundaryProps)
+```

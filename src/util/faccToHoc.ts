@@ -20,7 +20,7 @@ const faccToHoc = (Facc, prop?: string, wrapper = noWrap) => {
     const Enhanced = (props) =>
       h(Facc, faccProps, (state) => wrapper(Comp, propName, props, state));
 
-    return addClassDecoratorSupport(Enhanced);
+    return isClassDecoratorMethodCall ? addClassDecoratorSupport(Enhanced) : Enhanced;
   };
 
   return hoc;

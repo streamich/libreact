@@ -2,8 +2,8 @@ import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
-import {Speak} from '.';
-import ShowDocs from '../../.storybook/ShowDocs'
+import {Speak} from '..';
+import ShowDocs from '../../../.storybook/ShowDocs'
 
 class StorySpeakBasic extends Component<any, any> {
   state = {
@@ -26,7 +26,7 @@ class StorySpeakBasic extends Component<any, any> {
 }
 
 storiesOf('Generators/Speak', module)
-  .add('Documentation', () => h(ShowDocs, {md: require('../../docs/en/Speak.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Speak.md')}))
   .add('Example', () =>
     h(StorySpeakBasic)
   );
