@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import {h} from '../util';
 import renderProp from '../util/renderProp';
 
 export interface IShouldUpdateProps {
@@ -18,3 +19,6 @@ export class ShouldUpdate extends Component<IShouldUpdateProps, IShouldUpdateSta
     return renderProp(this.props, this.props.props);
   }
 }
+
+export const shouldUpdate = (when) => (Comp) => (props) =>
+  h(ShouldUpdate, {when, props}, h(Comp, props));
