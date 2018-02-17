@@ -28,8 +28,7 @@
   },
   "dependencies": {
     "throttle-debounce": "^1.0.1",
-    "freestyler-context": "^1.3.3",
-    "freestyler-renderer": "^1.3.2",
+    "freestyler": "1.9.2",
     "screenfull": "^3.3.2",
     "fast-extend": "1.0.2",
     "fast-shallow-equal": "0.1.1"
