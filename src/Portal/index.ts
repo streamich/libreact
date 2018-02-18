@@ -1,10 +1,11 @@
 import {Component} from 'react';
 import {createPortal} from 'react-dom';
-import {isClient} from '../util';
+import {isClient, noop} from '../util';
 
 export interface IPortalProps {
   children?: any;
   el?: HTMLElement;
+  onElement?: (el: HTMLElement) => void;
 }
 
 export interface IPortalState {
@@ -18,6 +19,7 @@ export class Portal extends Component<IPortalProps, IPortalState> {
 
     if (isClient && !props.el) {
       this.createEl();
+      (props.onElement || noop)(this.el);
     }
   }
 
