@@ -31,7 +31,8 @@
     "freestyler": "1.9.2",
     "screenfull": "^3.3.2",
     "fast-extend": "1.0.2",
-    "fast-shallow-equal": "0.1.1"
+    "fast-shallow-equal": "0.1.1",
+    "tslib": "^1.9.0"
   },
   "peerDependencies": {
     "react": "*",
