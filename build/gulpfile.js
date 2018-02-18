@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const ts = require('gulp-typescript');
-const tsConfig = require('./tsconfig');
+const tsConfig = require('../tsconfig');
 
 gulp.task('build-ts', () => {
     return gulp.src([
