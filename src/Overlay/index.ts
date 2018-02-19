@@ -19,6 +19,8 @@ export class Overlay extends Component<IOverlayProps, IOverlayState> {
   onElement = (el) => {
     const {style} = el;
 
+    el.setAttribute('role', 'modal');
+
     style.zIndex = 2147483647; // Max z-index.
     style.position = 'fixed';
     style.width = '100%';
