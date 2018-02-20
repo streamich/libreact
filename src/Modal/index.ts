@@ -10,9 +10,11 @@ const ESC = 27;
 
 export interface IModalProps extends IOverlayProps {
   onEsc?: (event: KeyboardEvent) => void;
+  onClose?: () => void;
 }
 
 export interface IModalState {
+  close: () => void;
   idTitle: string;
   idDescription: string;
 }
@@ -28,6 +30,7 @@ export class Modal extends Component<IModalProps, IModalState> {
     this.id = id++;
 
     this.state = {
+      close: () => (this.props.onClose || noop)(),
       idTitle: 'dialog-title-' + this.id,
       idDescription: 'dialog-descr-' + this.id
     };
@@ -74,6 +77,7 @@ export class Modal extends Component<IModalProps, IModalState> {
     el.setAttribute('role', 'dialog');
     el.classList.add('dialog');
 
+    el.setAttribute('aria-modal', 'true');
     el.setAttribute('aria-labelledby', 'dialog-title-' + this.id);
     el.setAttribute('aria-describedby', 'dialog-descr-' + this.id);
 
