@@ -35,6 +35,8 @@ export * from './Portal';
 export * from './Overlay';
 export * from './Modal';
 export * from './FullScreen';
+export * from './Ripple';
+export * from './Slider';
 
 // Other
 export * from './Resolve';
