@@ -32,7 +32,8 @@
     "screenfull": "^3.3.2",
     "fast-extend": "1.0.2",
     "fast-shallow-equal": "0.1.1",
-    "tslib": "^1.9.0"
+    "tslib": "^1.9.0",
+    "react-universal-interface": "^0.3.1"
   },
   "peerDependencies": {
     "react": "*",
