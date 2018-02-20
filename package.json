@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "npm run test:story",
-    "build": "npm run clean && gulp --gulpfile build/gulpfile.js build-ts && gulp --gulpfile build/gulpfile.js build-modules",
+    "build": "npm run clean && gulp --gulpfile build/gulpfile.js build",
     "clean": "rimraf lib modules && npm run test:story:clean && npm run docs:clean",
     "test": "npm run test:server && npm run test:client",
     "test:server": "mocha -r ts-node/register src/**/*.test-server.ts*",

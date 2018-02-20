@@ -32,3 +32,8 @@ gulp.task('build-modules', () => {
     module: 'ESNext'
   })).pipe(gulp.dest('../modules'));
 });
+
+gulp.task('build', () => {
+  gulp.start('build-ts');
+  gulp.start('build-modules');
+});
