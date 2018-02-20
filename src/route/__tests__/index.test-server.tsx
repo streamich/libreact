@@ -34,7 +34,7 @@ describe('route SSR', () => {
       </Router>
     );
 
-    expect(html).to.equal('<div><span>1</span><span>3</span><span>4</span></div>');
+    expect(html).to.equal('<span>1</span><span>3</span><span>4</span>');
   });
 
   it('matches partial step', () => {

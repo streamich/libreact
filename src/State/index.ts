@@ -12,7 +12,6 @@ export interface IStateProps {
 }
 
 export interface IStateState {
-
 }
 
 export class State extends Component<IStateProps, IStateState> {

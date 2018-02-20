@@ -1,23 +1,33 @@
 import {Component} from 'react';
 import {Portal} from '../Portal';
-import {h} from '../util';
+import {h, noop, on, off} from '../util';
 
 export interface IOverlayProps {
   color?: string;
   time?: number;
+  onClick?: (event: MouseEvent) => void;
+  onElement?: (div: HTMLElement) => void;
 }
 
 export interface IOverlayState {
 }
 
 export class Overlay extends Component<IOverlayProps, IOverlayState> {
+  el: HTMLElement = null;
+
   static defaultProps = {
     color: 'rgba(0,0,0,0.5)',
     time: 300,
   };
 
+  componentWillUnmount () {
+    off(this.el, 'click', this.onClick);
+  }
+
   onElement = (el) => {
     const {style} = el;
+
+    this.el = el;
 
     style.zIndex = 2147483647; // Max z-index.
     style.position = 'fixed';
@@ -39,6 +49,16 @@ export class Overlay extends Component<IOverlayProps, IOverlayState> {
     setTimeout(() => {
       style.opacity = 1;
     }, 35);
+
+    on(el, 'click', this.onClick);
+
+    (this.props.onElement || noop)(el);
+  };
+
+  onClick = (event) => {
+    if (event.target === this.el) {
+      (this.props.onClick || noop)(event);
+    }
   };
 
   render () {

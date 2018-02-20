@@ -16,7 +16,7 @@ storiesOf('UI/Overlay', module)
   )
   .add('Sample modal', () =>
     <div>
-      <Overlay color='tomato'>
+      <Overlay color='tomato' onClick={action('onClick')}>
         <div
           style={{
             width: 300,
@@ -68,6 +68,26 @@ storiesOf('UI/Overlay', module)
     <div>
       <Overlay time={0}>
         foobar
+      </Overlay>
+    </div>
+  )
+  .add('Button underneath', () =>
+    <div>
+      <button onClick={() => alert('CLICKED')}>Click me!</button>
+      <Overlay>
+        foobar
+      </Overlay>
+    </div>
+  )
+  .add('With inputs', () =>
+    <div>
+      <button onClick={() => alert('CLICKED')}>Click me!</button>
+      <Overlay>
+        <div style={{background: 'white'}}>
+          This is modal...
+          <button>OK</button>
+          <button>Cancel</button>
+        </div>
       </Overlay>
     </div>
   )
