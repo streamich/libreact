@@ -103,3 +103,5 @@ export class Ripple extends Component<IRippleProps, IRippleState> {
     }, ...innerChildren);
   }
 }
+
+export const withRipple = (tag: string, rippleProps = null) => (props) => h(Ripple, rippleProps, h(tag, props));

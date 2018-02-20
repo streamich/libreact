@@ -3,6 +3,7 @@ import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {Ripple} from '..';
+import Button from './Button';
 import ShowDocs from '../../../.storybook/ShowDocs';
 
 storiesOf('UI/Ripple', module)
@@ -23,4 +24,4 @@ storiesOf('UI/Ripple', module)
       </Ripple>
     </div>
   )
-
+  .add('Button', () => <Button primary>Click me!</Button>)
