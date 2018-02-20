@@ -79,3 +79,15 @@ storiesOf('UI/Overlay', module)
       </Overlay>
     </div>
   )
+  .add('With inputs', () =>
+    <div>
+      <button onClick={() => alert('CLICKED')}>Click me!</button>
+      <Overlay>
+        <div style={{background: 'white'}}>
+          This is modal...
+          <button>OK</button>
+          <button>Cancel</button>
+        </div>
+      </Overlay>
+    </div>
+  )

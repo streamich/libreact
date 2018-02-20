@@ -7,19 +7,6 @@ import {Overlay} from '../Overlay';
 let id = 0;
 
 const ESC = 27;
-const focusableElements = [
-  'a[href]',
-  'area[href]',
-  'input:not([disabled])',
-  'select:not([disabled])',
-  'textarea:not([disabled])',
-  'button:not([disabled])',
-  'iframe',
-  'object',
-  'embed',
-  '[contenteditable]',
-  '[tabindex]:not([tabindex="-1"])'
-].join(',');
 
 export interface IModalProps {
   onElement?: (el: HTMLDivElement) => void;
@@ -27,26 +14,23 @@ export interface IModalProps {
 }
 
 export interface IModalState {
+  idTitle: string;
+  idDescription: string;
 }
 
 export class Modal extends Component<IModalProps, IModalState> {
   id: number;
   el: HTMLElement = null;
   activeEl: Element; // Previous active element;
-  data;
 
   constructor (props, context) {
     super(props, context);
 
     this.id = id++;
 
-    this.data = {
-      bindTitle: {
-        id: 'dialog-title-' + this.id
-      },
-      bindDescr: {
-        id: 'dialog-descr-' + this.id
-      }
+    this.state = {
+      idTitle: 'dialog-title-' + this.id,
+      idDescription: 'dialog-descr-' + this.id
     };
 
     this.activeEl = isClient ? document.activeElement : null;
@@ -54,14 +38,6 @@ export class Modal extends Component<IModalProps, IModalState> {
 
   componentDidMount () {
     on(document, 'keydown', this.onKey);
-
-    setTimeout(() => {
-      const firstFocusableElement = this.el.querySelector(focusableElements) as HTMLElement;
-
-      if (firstFocusableElement && firstFocusableElement.focus) {
-        firstFocusableElement.focus();
-      }
-    });
   }
 
   componentWillUnmount () {
@@ -136,7 +112,7 @@ export class Modal extends Component<IModalProps, IModalState> {
       onElement: this.onElement
     },
       h(FocusLock, null,
-        render(this.props, this.data)
+        render(this.props, this.state)
       )
     );
   }
