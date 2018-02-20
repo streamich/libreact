@@ -44,6 +44,7 @@ Track when user intends to close the the modal.
 
 Accepts all [`<Overlay>`](./Overlay.md) props in addition to:
 
+- `dontLockFocus` &mdash; optional, boolean, does not jail tabbing focus if true, defaults to `false`.
 - `onEsc` &mdash; optional, callback, called when user presses `Esc` button.
 - `onClose` &mdash; optional, callback, called when `close()` is executed.
 
