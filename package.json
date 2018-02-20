@@ -167,6 +167,9 @@
     "link",
     "fullscreen",
     "css",
-    "reset"
+    "reset",
+    "portal",
+    "overlay",
+    "modal"
   ]
 }

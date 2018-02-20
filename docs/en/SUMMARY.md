@@ -52,6 +52,7 @@
 * [UI](UI.md)
   * [Portal](Portal.md)
   * [Overlay](Overlay.md)
+  * [Modal](Modal.md)
   * [FullScreen](FullScreen.md)
   * [Slider](Slider.md)
   * [Audio](Audio.md)

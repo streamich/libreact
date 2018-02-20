@@ -74,7 +74,7 @@ const MyComponent = mock();
      - [`<Router>`](./docs/en/routing.md#router), [`<Route>`](./docs/en/routing.md#route), [`withRoute()`](./docs/en/routing.md#withroute), `@withRoute`, `go()`, and `<Go>`
      - [`<Translations>`](./docs/en/translate.md#translations), [`<Translate>`](./docs/en/translate.md#translate-or-t), [`<T>`](./docs/en/translate.md#translate-or-t), [`withT()`](./docs/en/translate.md#witht-hoc), and [`@withT`](./docs/en/translate.md#witht-decorator)
   - [UI](./docs/en/UI.md)
-     - [`<Portal>`](./docs/en/Portal.md) and [`<Overlay>`](./docs/en/Overlay.md)
+     - [`<Portal>`](./docs/en/Portal.md), [`<Overlay>`](./docs/en/Overlay.md), and [`<Modal>`](./docs/en/Modal.md)
      - [`<FullScreen>`](./docs/en/FullScreen.md)
      - [`<Slider>`](./docs/en/Slider.md)
      - [`<Audio>`](./docs/en/Audio.md) and [`<Video>`](./docs/en/Video.md)

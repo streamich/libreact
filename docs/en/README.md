@@ -43,7 +43,7 @@
      - [`<Router>`](./routing.md#router), [`<Route>`](./routing.md#route), [`withRoute()`](./routing.md#withroute), `@withRoute`, `go()`, and `<Go>`
      - [`<Translations>`](./translate.md#translations), [`<Translate>`](./translate.md#translate-or-t), [`<T>`](./translate.md#translate-or-t), [`withT()`](./translate.md#witht-hoc), and [`@withT`](./translate.md#witht-decorator)
   - [UI](./UI.md)
-     - [`<Portal>`](./Portal.md) and [`<Overlay>`](./Overlay.md)
+     - [`<Portal>`](./Portal.md), [`<Overlay>`](./Overlay.md), and [`<Modal>`](./Modal.md)
      - [`<FullScreen>`](./FullScreen.md)
      - [`<Slider>`](./Slider.md)
      - [`<Audio>`](./Audio.md) and [`<Video>`](./Video.md)

@@ -6,7 +6,7 @@ import {Modal} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('UI/Modal', module)
-  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Overlay.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Modal.md')}))
   .add('Basic example', () =>
     <div>
       <Modal>
