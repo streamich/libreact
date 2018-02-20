@@ -1,10 +1,11 @@
 import {Component} from 'react';
 import {Portal} from '../Portal';
-import {h} from '../util';
+import {h, noop} from '../util';
 
 export interface IOverlayProps {
   color?: string;
   time?: number;
+  onElement?: (div: HTMLElement) => void;
 }
 
 export interface IOverlayState {
@@ -18,8 +19,6 @@ export class Overlay extends Component<IOverlayProps, IOverlayState> {
 
   onElement = (el) => {
     const {style} = el;
-
-    el.setAttribute('role', 'modal');
 
     style.zIndex = 2147483647; // Max z-index.
     style.position = 'fixed';
@@ -41,6 +40,8 @@ export class Overlay extends Component<IOverlayProps, IOverlayState> {
     setTimeout(() => {
       style.opacity = 1;
     }, 35);
+
+    (this.props.onElement || noop)(el);
   };
 
   render () {
