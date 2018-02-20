@@ -2,15 +2,14 @@ import {Component} from 'react';
 import {render} from 'react-universal-interface';
 import FocusLock from 'react-focus-lock';
 import {h, isClient, on, off, noop} from '../util';
-import {Overlay} from '../Overlay';
+import {Overlay, IOverlayProps} from '../Overlay';
 
 let id = 0;
 
 const ESC = 27;
 
-export interface IModalProps {
-  onElement?: (el: HTMLDivElement) => void;
-  onEsc?: (event) => void;
+export interface IModalProps extends IOverlayProps {
+  onEsc?: (event: KeyboardEvent) => void;
 }
 
 export interface IModalState {
@@ -108,8 +107,13 @@ export class Modal extends Component<IModalProps, IModalState> {
   };
 
   render () {
+    const {color, time, onClick} = this.props;
+
     return h(Overlay, {
-      onElement: this.onElement
+      color,
+      time,
+      onClick,
+      onElement: this.onElement,
     },
       h(FocusLock, null,
         render(this.props, this.state)

@@ -16,7 +16,7 @@ storiesOf('UI/Overlay', module)
   )
   .add('Sample modal', () =>
     <div>
-      <Overlay color='tomato'>
+      <Overlay color='tomato' onClick={action('onClick')}>
         <div
           style={{
             width: 300,

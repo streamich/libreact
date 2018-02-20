@@ -34,3 +34,21 @@ storiesOf('UI/Modal', module)
       </Modal>
     </div>
   )
+  .add('Modal UI', () =>
+    <div>
+      <Modal color='tomato' onClick={action('onClick')} onEsc={action('onEsc')}>
+        <div
+          style={{
+            width: 300,
+            height: 200,
+            background: '#fff',
+            borderRadius: 4,
+            boxShadow: '0 2px 4px rgba(0,0,0,.3)',
+            padding: 30,
+          }}
+        >
+          foobar
+        </div>
+      </Modal>
+    </div>
+  )
