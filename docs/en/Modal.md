@@ -40,12 +40,8 @@ Track when user intends to close the the modal.
 
 ## Props
 
-Accepts all [`<Overlay>`](./Overlay.md) props.
+Accepts all [`<Overlay>`](./Overlay.md) props in addition to:
 
-- `color` &mdash; optional, string, overlay color, defaults to `rgba(0, 0, 0, 0.5)`.
-- `time` &mdash; optional, number, entrance opacity animation length in milliseconds, defaults to `300`.
-- `onElement` &mdash; optional, callback that receives the DOM element overlay created.
-- `onClick` &mdash; optional, callback, which is called when user click on overlay but not on its children.
 - `onEsc` &mdash; optional, callback, called when user presses `Esc` button.
 
 
