@@ -71,3 +71,11 @@ storiesOf('UI/Overlay', module)
       </Overlay>
     </div>
   )
+  .add('Button underneath', () =>
+    <div>
+      <button onClick={() => alert('CLICKED')}>Click me!</button>
+      <Overlay>
+        foobar
+      </Overlay>
+    </div>
+  )

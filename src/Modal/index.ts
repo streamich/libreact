@@ -1,12 +1,25 @@
 import {Component} from 'react';
 import {render} from 'react-universal-interface';
+import FocusLock from 'react-focus-lock';
 import {h, isClient, on, off, noop} from '../util';
 import {Overlay} from '../Overlay';
 
-let cnt = 0;
 let id = 0;
 
 const ESC = 27;
+const focusableElements = [
+  'a[href]',
+  'area[href]',
+  'input:not([disabled])',
+  'select:not([disabled])',
+  'textarea:not([disabled])',
+  'button:not([disabled])',
+  'iframe',
+  'object',
+  'embed',
+  '[contenteditable]',
+  '[tabindex]:not([tabindex="-1"])'
+].join(',');
 
 export interface IModalProps {
   onElement?: (el: HTMLDivElement) => void;
@@ -16,18 +29,18 @@ export interface IModalProps {
 export interface IModalState {
 }
 
-class Modal extends Component<IModalProps, IModalState> {
+export class Modal extends Component<IModalProps, IModalState> {
   id: number;
   el: HTMLElement = null;
   activeEl: Element; // Previous active element;
+  data;
 
   constructor (props, context) {
     super(props, context);
 
-    cnt++;
     this.id = id++;
 
-    this.state = {
+    this.data = {
       bindTitle: {
         id: 'dialog-title-' + this.id
       },
@@ -43,7 +56,7 @@ class Modal extends Component<IModalProps, IModalState> {
     on(document, 'keydown', this.onKey);
 
     setTimeout(() => {
-      const firstFocusableElement = this.el.querySelector('button, [href], input, select, textarea, [tabindex]:not(tabindex="-1"]') as HTMLElement;
+      const firstFocusableElement = this.el.querySelector(focusableElements) as HTMLElement;
 
       if (firstFocusableElement && firstFocusableElement.focus) {
         firstFocusableElement.focus();
@@ -52,8 +65,6 @@ class Modal extends Component<IModalProps, IModalState> {
   }
 
   componentWillUnmount () {
-    cnt--;
-
     off(document, 'keydown', this.onKey);
 
     const siblings = Array.from(document.body.children);
@@ -72,6 +83,7 @@ class Modal extends Component<IModalProps, IModalState> {
       delete (sibling as any).__modal_lock;
       (sibling as any).inert = false;
       sibling.style.removeProperty('pointer-events');
+      sibling.style.removeProperty('user-select');
       sibling.removeAttribute('aria-hidden');
     }
 
@@ -106,6 +118,7 @@ class Modal extends Component<IModalProps, IModalState> {
       (sibling as any).__modal_lock = this;
       (sibling as any).inert = true;
       sibling.style.setProperty('pointer-events', 'none');
+      sibling.style.setProperty('user-select', 'none');
       sibling.setAttribute('aria-hidden', 'true');
     }
 
@@ -121,6 +134,10 @@ class Modal extends Component<IModalProps, IModalState> {
   render () {
     return h(Overlay, {
       onElement: this.onElement
-    }, render(this.props, this.state));
+    },
+      h(FocusLock, null,
+        render(this.props, this.data)
+      )
+    );
   }
 }
