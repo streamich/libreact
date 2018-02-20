@@ -7,7 +7,16 @@ import Button from './Button';
 import ShowDocs from '../../../.storybook/ShowDocs';
 
 storiesOf('UI/Ripple', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Slider.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Ripple.md')}))
+  .add('Plain example', () =>
+    <div>
+      <Ripple>
+        <div>
+          foobar
+        </div>
+      </Ripple>
+    </div>
+  )
   .add('Example', () =>
     <div>
       <Ripple>

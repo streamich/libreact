@@ -4,23 +4,18 @@ import styled from 'freestyler/lib/react/styled';
 import {withRipple} from '..';
 
 export const theme = {
-  // Main site colors.
   color1: ['#29EB7F', '#13CE66', '#0F9F4F'],
   color2: ['#85D7FF', '#1FB6FF', '#009EEB'],
   color3: ['#A389F4', '#7E5BEF', '#592DEA'],
   color4: ['#FF7CE5', '#FF49DB', '#FF16D1'],
   color5: ['#FF9E7C', '#FF7849', '#FF5216'],
   color6: ['#FFD55F', '#FFC82C', '#F8B700'],
-
-  // Shades of grey.
   black: '#1F2D3D',
   steel: '#273444',
   slate: '#3C4858',
   silver: '#8492A6',
   smoke: ['#E0E6ED', '#D3DCE6', '#C0CCDA'],
   snow: ['#F9FAFC', '#EFF2F7', '#E5E9F2'],
-
-  // Semantic colors.
   blue: '#1FB6FF',
   positive: '#13CE66',
   negative: '#FF4949',
@@ -65,7 +60,7 @@ const dynamicTemplate = ({disabled, outline, lite, primary, simple, small}) => {
     return style;
 };
 
-const ButtonWithRipple = withRipple('button', {ms: 1000});
+const ButtonWithRipple = withRipple('button', {ms: 1000, color: 'white'});
 
 const Button: React.SFC<IButtonProps> = styled(ButtonWithRipple)(staticTemplate, dynamicTemplate);
 

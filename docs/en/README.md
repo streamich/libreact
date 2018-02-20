@@ -46,6 +46,7 @@
      - [`<Portal>`](./Portal.md), [`<Overlay>`](./Overlay.md), and [`<Modal>`](./Modal.md)
      - [`<FullScreen>`](./FullScreen.md)
      - [`<Slider>`](./Slider.md)
+     - [`<Ripple>`](./Ripple.md)
      - [`<Audio>`](./Audio.md) and [`<Video>`](./Video.md)
      - [`<Speak>`](./Speak.md), [`<Vibrate>`](./Vibrate.md), [`<Alert>`](./Alert.md), `<Prompt>`, `<Confirm>`
   - [Side Effects](./Side-effects.md)

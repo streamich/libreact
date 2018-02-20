@@ -55,6 +55,7 @@
   * [Modal](Modal.md)
   * [FullScreen](FullScreen.md)
   * [Slider](Slider.md)
+  * [Ripple](Ripple.md)
   * [Audio](Audio.md)
   * [Video](Video.md)
   * [Speak](Speak.md)
