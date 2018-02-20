@@ -24,19 +24,12 @@ export interface IRippleProps {
 }
 
 export interface IRippleState {
-  x: number;
-  y: number;
 }
 
 export class Ripple extends Component<IRippleProps, IRippleState> {
   static defaultProps = {
     color: 'rgba(0,0,0,.2)',
     ms: 400
-  };
-
-  state: IRippleState = {
-    x: 0,
-    y: 0
   };
 
   el: HTMLElement = null;
