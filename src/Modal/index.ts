@@ -9,6 +9,7 @@ let id = 0;
 const ESC = 27;
 
 export interface IModalProps extends IOverlayProps {
+  dontLockFocus?: boolean;
   onEsc?: (event: KeyboardEvent) => void;
   onClose?: () => void;
 }
@@ -49,20 +50,28 @@ export class Modal extends Component<IModalProps, IModalState> {
 
     for (let i = 0; i < siblings.length; i++) {
       const sibling = siblings[i] as HTMLElement;
+      const sib = sibling as any;
 
       if (sibling === this.el) {
         continue;
       }
 
-      if ((sibling as any).__modal_lock !== this) {
+      if (!sib.__libreact_lock) {
         continue;
       }
 
-      delete (sibling as any).__modal_lock;
-      (sibling as any).inert = false;
-      sibling.style.removeProperty('pointer-events');
-      sibling.style.removeProperty('user-select');
+      if (sib.__libreact_lock.owner !== this) {
+        continue;
+      }
+
+      const lock = sib.__libreact_lock;
+
+      sib.inert = lock.inert;
+      sibling.style.setProperty('pointer-events', lock.pointerEvents),
+      sibling.style.setProperty('user-select', lock.userSelect),
+
       sibling.removeAttribute('aria-hidden');
+      delete sib.__libreact_lock;
     }
 
     // Focus previously active element.
@@ -90,12 +99,24 @@ export class Modal extends Component<IModalProps, IModalState> {
         continue;
       }
 
-      if ((sibling as any).__modal_lock) {
+      if ((sibling as any).__libreact_lock) {
         continue;
       }
 
-      (sibling as any).__modal_lock = this;
-      (sibling as any).inert = true;
+      if (sibling.hasAttribute('aria-hidden')) {
+        continue;
+      }
+
+      const sib = sibling as any;
+
+      sib.__libreact_lock = {
+        owner: this,
+        inert: sib.inert,
+        pointerEvents: sibling.style.getPropertyValue('pointer-events'),
+        userSelect: sibling.style.getPropertyValue('user-select'),
+      };
+
+      sib.inert = true;
       sibling.style.setProperty('pointer-events', 'none');
       sibling.style.setProperty('user-select', 'none');
       sibling.setAttribute('aria-hidden', 'true');
@@ -111,7 +132,12 @@ export class Modal extends Component<IModalProps, IModalState> {
   };
 
   render () {
-    const {color, time, onClick} = this.props;
+    const {color, dontLockFocus, time, onClick} = this.props;
+    let element = render(this.props, this.state);
+
+    if (!dontLockFocus) {
+      element = h(FocusLock, null, element);
+    }
 
     return h(Overlay, {
       color,
@@ -119,9 +145,7 @@ export class Modal extends Component<IModalProps, IModalState> {
       onClick,
       onElement: this.onElement,
     },
-      h(FocusLock, null,
-        render(this.props, this.state)
-      )
+      element
     );
   }
 }

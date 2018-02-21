@@ -3,6 +3,7 @@ import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {Modal} from '..';
+import {Toggle} from '../../Toggle';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('UI/Modal', module)
@@ -50,5 +51,28 @@ storiesOf('UI/Modal', module)
           foobar
         </div>
       </Modal>
+    </div>
+  )
+  .add('Toggle', () =>
+    <div>
+      <Toggle>{({on, toggle}) =>
+        <div>
+          <button onClick={toggle}>Open dialog</button>
+          {on && <Modal color='tomato' onClick={toggle} onEsc={toggle}>
+            <div
+              style={{
+                width: 300,
+                height: 200,
+                background: '#fff',
+                borderRadius: 4,
+                boxShadow: '0 2px 4px rgba(0,0,0,.3)',
+                padding: 30,
+              }}
+            >
+              foobar
+            </div>
+          </Modal>}
+        </div>
+      }</Toggle>
     </div>
   )
