@@ -77,7 +77,7 @@ const MyComponent = mock();
      - [`<Portal>`](./docs/en/Portal.md), [`<Overlay>`](./docs/en/Overlay.md), and [`<Modal>`](./docs/en/Modal.md)
      - [`<FullScreen>`](./docs/en/FullScreen.md)
      - [`<Slider>`](./docs/en/Slider.md)
-     - [`<Ripple>`](./docs/en/Ripple.md) &mdash; [**example**](https://codesandbox.io/s/983q7jr80o)
+     - [`<Ripple>`](./docs/en/Ripple.md) and [`withRipple`](./docs/en/Ripple.md#withripple) &mdash; [**example**](https://codesandbox.io/s/983q7jr80o)
      - [`<Audio>`](./docs/en/Audio.md) and [`<Video>`](./docs/en/Video.md)
      - [`<Speak>`](./docs/en/Speak.md), [`<Vibrate>`](./docs/en/Vibrate.md), [`<Alert>`](./docs/en/Alert.md), `<Prompt>`, `<Confirm>`
   - [Side Effects](./docs/en/Side-effects.md)
