@@ -33,7 +33,7 @@ const MyComponent = mock();
 
   - [Introduction](./docs/en/Introduction.md)
   - [Dummies](./docs/en/Dummies.md)
-     - [`mock()`](./docs/en/mock.md) and [`loadable()`](./docs/en/loadable.md) &mdash; [**example8*](https://codesandbox.io/s/j2ovpr03z3)
+     - [`mock()`](./docs/en/mock.md) and [`loadable()`](./docs/en/loadable.md) &mdash; [**example**](https://codesandbox.io/s/j2ovpr03z3)
      - [`lazy()`](./docs/en/lazy.md), [`delayed()`](./docs/en/delayed.md), and [`viewport()`](./docs/en/viewport.md)
   - [Inversion](./docs/en/Inversion.md)
      - [`<State>`](./docs/en/State.md) and [`withState()`](./docs/en/State.md#withstate-hoc)
