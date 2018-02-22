@@ -14,11 +14,8 @@ import {
 } from 'libreact/lib/css';
 ```
 
-Below are listed supported interfaces.
+Below are listed supported interfaces. Read more about [CSS-in-JS generations](https://github.com/streamich/freestyler#reference).
 
-- 3<sup>rd</sup> generation: [`rule()`](./css/rule.md), [`StyleSheet.create()`](./css/StyleSheet.md)
-- 4<sup>th</sup> generation: [`@css`](./css/css.md), [`styled()()`](./css/styled.md)
-- 5<sup>th</sup> generation: [`jsxstyle()`](./css/jsxstyle.md)
-
-
-> Read more about [CSS-in-JS generations](https://github.com/streamich/freestyler#reference).
+- 3<sup>rd</sup> generation &mdash; [`rule()`](./css/rule.md), [`StyleSheet.create()`](./css/StyleSheet.md)
+- 4<sup>th</sup> generation &mdash; [`@css`](./css/css.md), [`styled()()`](./css/styled.md)
+- 5<sup>th</sup> generation &mdash; [`jsxstyle()`](./css/jsxstyle.md)
