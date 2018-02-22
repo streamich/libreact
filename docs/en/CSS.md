@@ -16,6 +16,6 @@ import {
 
 Below are listed supported interfaces. Read more about [CSS-in-JS generations](https://github.com/streamich/freestyler#reference).
 
-- 3<sup>rd</sup> generation &mdash; [`rule()`](./css/rule.md), [`StyleSheet.create()`](./css/StyleSheet.md)
-- 4<sup>th</sup> generation &mdash; [`@css`](./css/css.md), [`styled()()`](./css/styled.md)
+- 3<sup>rd</sup> generation &mdash; [`rule()`](./css/rule.md) and [`StyleSheet.create()`](./css/StyleSheet.md)
+- 4<sup>th</sup> generation &mdash; [`@css`](./css/css.md) and [`styled()()`](./css/styled.md)
 - 5<sup>th</sup> generation &mdash; [`jsxstyle()`](./css/jsxstyle.md)
