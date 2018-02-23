@@ -1,5 +1,4 @@
 import {Component} from 'react';
-import {render} from 'react-universal-interface';
 
 export interface IAfterTimeoutProps {
   ms?: number;
@@ -33,6 +32,6 @@ export class AfterTimeout extends Component<IAfterTimeoutProps, IAfterTimeoutSta
   }
 
   render () {
-    return this.state.ready ? render(this.props, {}) : null;
+    return this.state.ready ? this.props.children : null;
   }
 }
