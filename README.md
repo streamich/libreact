@@ -88,10 +88,8 @@ const MyComponent = mock();
      - [`<BrowserOnly>`](./docs/en/BrowserOnly.md), [`<ServerOnly>`](./docs/en/ServerOnly.md), and [`<ElectronOnly>`](./docs/en/ElectronOnly.md)
      - [`<ErrorBoundary>`](./docs/en/ErrorBoundary.md) and [`withErrorBoundary()`](./docs/en/ErrorBoundary.md#witherrorboundary-hoc)
      - `<CacheBoundary>`
-  - CSS
-     - 3<sup>rd</sup> generation: `StyleSheet.create()`
-     - 4<sup>th</sup> generation: `@css`, `styled()()`
-     - 5<sup>th</sup> generation: `jsxstyle`, `hot()()`
+  - [CSS](./docs/en/CSS.md)
+     - [`rule()`](./docs/en/css/rule.md), [`StyleSheet.create()`](./docs/en/css/StyleSheet.md), [`@css`](./docs/en/css/css.md), [`styled()()`](./docs/en/css/styled.md), and [`jsxstyle()`](./docs/en/css/jsxstyle.md)
   - [CSS resets](./docs/en/CSS-resets.md)
      - [`<CssResetEricMeyer>`](./docs/en/reset/CssResetEricMeyer.md) and [`<CssResetEricMeyerCondensed>`](./docs/en/reset/CssResetEricMeyerCondensed.md)
      - [`<CssResetMinimalistic>`](./docs/en/reset/CssResetMinimalistic.md), [`<CssResetMinimalistic2>`](./docs/en/reset/CssResetMinimalistic2.md), and [`<CssResetMinimalistic3>`](./docs/en/reset/CssResetMinimalistic3.md)

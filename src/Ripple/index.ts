@@ -1,5 +1,5 @@
 import {Component, Children, cloneElement} from 'react';
-import rule from 'freestyler/lib/rule';
+import {rule} from 'freestyler';
 import {h, noop} from '../util';
 
 const className = rule({
@@ -97,4 +97,5 @@ export class Ripple extends Component<IRippleProps, IRippleState> {
   }
 }
 
-export const withRipple = (tag: string, rippleProps = null) => (props) => h(Ripple, rippleProps, h(tag, props));
+export const withRipple = (tag: string, rippleProps = null) =>
+  (props) =>h(Ripple, rippleProps, h(tag, props));

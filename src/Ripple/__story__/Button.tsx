@@ -1,7 +1,7 @@
 import {Component, createElement as h} from 'react';
 import {extend} from 'fast-extend';
-import styled from 'freestyler/lib/react/styled';
-import {withRipple} from '..';
+import {styled} from 'freestyler';
+import {Ripple} from '..';
 
 export const theme = {
   color1: ['#29EB7F', '#13CE66', '#0F9F4F'],
@@ -60,7 +60,9 @@ const dynamicTemplate = ({disabled, outline, lite, primary, simple, small}) => {
     return style;
 };
 
-const ButtonWithRipple = withRipple('button', {ms: 1000, color: 'white'});
+const ButtonWithRipple = (props) => {
+    return h(Ripple, {ms: 1000, color: 'white'}, h('button', props.attr, props.children));
+};
 
 const Button: React.SFC<IButtonProps> = styled(ButtonWithRipple)(staticTemplate, dynamicTemplate);
 
