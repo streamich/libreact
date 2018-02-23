@@ -1,6 +1,7 @@
 import {Component} from 'react';
 import {render, createEnhancer} from 'react-universal-interface';
 import {on, off, noop} from '../util';
+import * as throttle from 'throttle-debounce/throttle';
 
 const equalSets = (a: string[], b: string[]) => {
   if (a.length !== b.length) {
@@ -20,9 +21,9 @@ const equalSets = (a: string[], b: string[]) => {
 };
 
 export interface IIdleSensorProps {
-  events: string[];
-  ms: number;
-  onChange: (idle: boolean) => void;
+  events?: string[];
+  ms?: number;
+  onChange?: (idle: boolean) => void;
 }
 
 export interface IIdleSensorState {
@@ -31,7 +32,7 @@ export interface IIdleSensorState {
 
 export class IdleSensor extends Component<IIdleSensorProps, IIdleSensorState> {
   static defaultProps = {
-    events: ['mousemove', 'mousedown', 'keydown', 'touchstart', 'scroll'],
+    events: ['mousemove', 'mousedown', 'resize', 'keydown', 'touchstart', 'scroll'],
     ms: 1000 * 60 * 2,
   }
 
@@ -64,6 +65,8 @@ export class IdleSensor extends Component<IIdleSensorProps, IIdleSensorState> {
     for (let i = 0; i < events.length; i++) {
       on(window, events[i], this.onEvent);
     }
+
+    on(document, 'visibilitychange', this.onVisibility);
   }
 
   unbindEvents () {
@@ -72,16 +75,24 @@ export class IdleSensor extends Component<IIdleSensorProps, IIdleSensorState> {
     for (let i = 0; i < events.length; i++) {
       off(window, events[i], this.onEvent);
     }
+
+    off(document, 'visibilitychange', this.onVisibility);
   }
 
-  onEvent = () => {
+  onVisibility = () => {
+    if (!document.hidden) {
+      this.onEvent();
+    }
+  };
+
+  onEvent = throttle(50, false, () => {
     if (this.state.idle) {
       this.change(false);
     }
 
     clearTimeout(this.timeout);
     this.setTimeout();
-  };
+  });
 
   change (idle: boolean) {
     (this.props.onChange || noop)(idle)
