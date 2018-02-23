@@ -24,6 +24,7 @@ export interface IIdleSensorProps {
   events?: string[];
   ms?: number;
   onChange?: (idle: boolean) => void;
+  throttle?: number;
 }
 
 export interface IIdleSensorState {
@@ -32,8 +33,9 @@ export interface IIdleSensorState {
 
 export class IdleSensor extends Component<IIdleSensorProps, IIdleSensorState> {
   static defaultProps = {
-    events: ['mousemove', 'mousedown', 'resize', 'keydown', 'touchstart', 'scroll'],
+    events: ['mousemove', 'mousedown', 'resize', 'keydown', 'touchstart', 'wheel'],
     ms: 1000 * 60 * 2,
+    throttle: 50
   }
 
   state = {
@@ -85,7 +87,7 @@ export class IdleSensor extends Component<IIdleSensorProps, IIdleSensorState> {
     }
   };
 
-  onEvent = throttle(50, false, () => {
+  onEvent = throttle(this.props.throttle, false, () => {
     if (this.state.idle) {
       this.change(false);
     }

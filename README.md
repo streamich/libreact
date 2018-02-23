@@ -52,6 +52,7 @@ const MyComponent = mock();
      - [`<FocusSensor>`](./docs/en/FocusSensor.md), [`withFocus()`](./docs/en/FocusSensor.md#withfocus-hoc), and [`@withFocus`](./docs/en/FocusSensor.md#withfocus-decorator)
      - [`<GeoLocationSensor>`](./docs/en/GeoLocationSensor.md), [`withGeoLocation()`](./docs/en/GeoLocationSensor.md#withgeolocation-hoc), and [`@withGeoLocation`](./docs/en/GeoLocationSensor.md#withgeolocation-decorator)
      - [`<HoverSensor>`](./docs/en/HoverSensor.md), [`withHover()`](./docs/en/HoverSensor.md#withhover-hoc), and [`@withHover`](./docs/en/HoverSensor.md#withhover-decorator)
+     - [`<IdleSensor>`](./docs/en/IdleSensor.md), [`withIdle()`](./docs/en/IdleSensor.md#withidle-hoc), and [`@withIdle`](./docs/en/IdleSensor.md#withidle-decorator)
      - [`<MediaDeviceSensor>`](./docs/en/MediaDeviceSensor.md), [`withMediaDevices()`](./docs/en/MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./docs/en/MediaDeviceSensor.md#withmediadevices-1)
      - [`<MediaSensor>`](./docs/en/MediaSensor.md), [`withMedia()`](./docs/en/MediaSensor.md#withmedia), and [`@withMedia`](./docs/en/MediaSensor.md#withmedia-1)
      - [`<MotionSensor>`](./docs/en/MotionSensor.md), [`withMotion()`](./docs/en/MotionSensor.md#withmotion-hoc), and [`@withMotion`](./docs/en/MotionSensor.md#withmotion-decorator)

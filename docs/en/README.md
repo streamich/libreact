@@ -21,6 +21,7 @@
      - [`<FocusSensor>`](./FocusSensor.md), [`withFocus()`](./FocusSensor.md#withfocus-hoc), and [`@withFocus`](./FocusSensor.md#withfocus-decorator)
      - [`<GeoLocationSensor>`](./GeoLocationSensor.md), [`withGeoLocation()`](./GeoLocationSensor.md#withgeolocation-hoc), and [`@withGeoLocation`](./GeoLocationSensor.md#withgeolocation-decorator)
      - [`<HoverSensor>`](./HoverSensor.md), [`withHover()`](./HoverSensor.md#withhover-hoc), and [`@withHover`](./HoverSensor.md#withhover-decorator)
+     - [`<IdleSensor>`](./IdleSensor.md), [`withIdle()`](./IdleSensor.md#withidle-hoc), and [`@withIdle`](./IdleSensor.md#withidle-decorator)
      - [`<MediaDeviceSensor>`](./MediaDeviceSensor.md), [`withMediaDevices()`](./MediaDeviceSensor.md#withmediadevices), and [`@withMediaDevices`](./MediaDeviceSensor.md#withmediadevices-1)
      - [`<MediaSensor>`](./MediaSensor.md), [`withMedia()`](./MediaSensor.md#withmedia), and [`@withMedia`](./MediaSensor.md#withmedia-1)
      - [`<MotionSensor>`](./MotionSensor.md), [`withMotion()`](./MotionSensor.md#withmotion-hoc), and [`@withMotion`](./MotionSensor.md#withmotion-decorator)

@@ -13,7 +13,7 @@ const Print = ({idle}) =>
 const Hoc1 = withIdle(Print, '', {ms: 3000});
 
 storiesOf('Sensors/IdleSensor', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/IdleSensor.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/IdleSensor.md')}))
   .add('FaCC - 2 sec', () =>
     <IdleSensor ms={2000}>{({idle}) =>
       <div>

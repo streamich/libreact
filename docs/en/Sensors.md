@@ -18,6 +18,7 @@ For example, the below `<div>` will be re-rendered every time mouse position cha
   - [`<FocusSensor>`](./FocusSensor.md) &mdash; tracks element has focus.
   - [`<GeoLocationSensor>`](./GeoLocationSensor.md) &mdash; tracks device geographical location.
   - [`<HoverSensor>`](./HoverSensor.md) &mdash; tracks element's hover status.
+  - [`<IdleSensor>`](./IdleSensor.md) &mdash; tracks is user is active on the page.
   - [`<MediaDeviceSensor>`](./MediaDeviceSensor.md) &mdash; tracks media devices connected to your device.
   - [`<MediaSensor>`](./MediaSensor.md) &mdash; tracks matches of a media query.
   - [`<MotionSensor>`](./MotionSensor.md) &mdash; tracks physical motion of your device.
