@@ -2,7 +2,7 @@ import {Component} from 'react';
 import {render} from 'react-universal-interface';
 
 export interface IAfterTimeoutProps {
-  ms: number;
+  ms?: number;
 }
 
 export interface IAfterTimeoutState {
@@ -10,6 +10,10 @@ export interface IAfterTimeoutState {
 }
 
 export class AfterTimeout extends Component<IAfterTimeoutProps, IAfterTimeoutState> {
+  static defaultProps = {
+    ms: 200
+  };
+
   state: IAfterTimeoutState = {
     ready: false
   };
