@@ -3,26 +3,34 @@ import {render, createEnhancer} from 'react-universal-interface';
 import {h} from '../util';
 
 export interface IRenderProps {
-  delay?: number;
-  duration?: number;
-  fps?: number;
+  ms?: number;
 }
 
 export interface IRenderState {
   start?: number;
-  time?: number;
+  now?: number;
   value?: number;
 }
 
 export class Render extends Component<IRenderProps, IRenderState> {
+  static defaultProps = {
+    ms: 300
+  };
+
   frame = null;
 
-  start () {
-    const time = Date.now();
+  state = {
+    start: 0,
+    now: 0,
+    value: 0
+  };
+
+  componentDidMount () {
+    const now = Date.now();
 
     this.setState({
-      start: time,
-      time,
+      start: now,
+      now,
       value: 0
     }, () => {
       this.frame = requestAnimationFrame(this.onFrame);
@@ -34,8 +42,8 @@ export class Render extends Component<IRenderProps, IRenderState> {
   }
 
   onFrame = () => {
-    const time = Date.now();
-    const value = Math.min((time - this.state.start) / this.props.duration, 1);
+    const now = Date.now();
+    const value = Math.min((now - this.state.start) / this.props.ms, 1);
     let onState;
 
     if (value < 1) {
@@ -45,7 +53,7 @@ export class Render extends Component<IRenderProps, IRenderState> {
     }
 
     this.setState({
-      time,
+      now,
       value
     }, onState);
   };
