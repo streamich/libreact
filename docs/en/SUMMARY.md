@@ -54,7 +54,8 @@
   * [Overlay](Overlay.md)
   * [Modal](Modal.md)
   * [FullScreen](FullScreen.md)
-  * [Slider](Slider.md)
+  * [Slider](Slider.m
+  * [`<DropArea>`](DropArea.md)
   * [Ripple](Ripple.md)
   * [Audio](Audio.md)
   * [Video](Video.md)

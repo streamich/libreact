@@ -6,7 +6,7 @@ import {DropArea} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('UI/DropArea', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Toggle.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/DropArea.md')}))
   .add('Example', () =>
     <DropArea
       onUri={action('onUri')}
