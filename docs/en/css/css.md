@@ -13,7 +13,7 @@ if you want your CSS to update every time your component re-renders.
 Import `@css` decorator.
 
 ```js
-import {css} from 'libreact/lib/react/css';
+import {css} from 'libreact/lib/css';
 ```
 
 Add styling to your component using CSS-like object.

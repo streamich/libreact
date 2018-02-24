@@ -6,7 +6,7 @@ a single "rule" you create a collection of rules for any logical unit you need i
 __Example__
 
 ```jsx
-import {StyleSheet} from 'libreact/lib/StyleSheet';
+import {StyleSheet} from 'libreact/lib/css';
 
 const styles = StyleSheet.create({
   container: {
