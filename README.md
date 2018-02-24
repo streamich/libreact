@@ -80,6 +80,12 @@ const MyComponent = mock();
      - [`<Ripple>`](./docs/en/Ripple.md) and [`withRipple()`](./docs/en/Ripple.md#withripple) &mdash; [**example**](https://codesandbox.io/s/983q7jr80o)
      - [`<Audio>`](./docs/en/Audio.md) and [`<Video>`](./docs/en/Video.md)
      - [`<Speak>`](./docs/en/Speak.md), [`<Vibrate>`](./docs/en/Vibrate.md), [`<Alert>`](./docs/en/Alert.md), `<Prompt>`, `<Confirm>`
+  - [Animation](./docs/en/Animation.md)
+     - [`<AfterTimeout>`](./docs/en/AfterTimeout.md), [`<AfterDraf>`](./docs/en/AfterDraf.md), and [`<WhenIdle>`](./docs/en/WhenIdle.md)
+     - [`<Render>`](./docs/en/Render.md), [`withRender()`](./docs/en/Render.md#withrender-hoc), and [`@withRender`](./docs/en/Render.md#withrender-decorator)
+     - [`<RenderInterval>`](./docs/en/RenderInverval.md), [`withRenderInterval()`](./docs/en/RenderInverval.md#withrenderinterval-hoc), and [`@withRenderInterval`](./docs/en/RenderInverval.md#withrenderinterval-decorator)
+     - [`<Tween>`](./docs/en/Tween.md), [`withTween()`](./docs/en/Tween.md#withtween-hoc), and [`@withTween`](./docs/en/Tween.md#withtween-decorator)
+     - [`<Interpolation>`](./docs/en/Interpolation.md), [`withInterpolation()`](./docs/en/Interpolation.md#withinterpolation-hoc), and [`@withInterpolation`](./docs/en/Interpolation.md#withinterpolation-decorator)
   - [Side Effects](./docs/en/Side-effects.md)
      - [`<LocalStorage>`](./docs/en/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
      - `<Title>`, `<Favicon>`
