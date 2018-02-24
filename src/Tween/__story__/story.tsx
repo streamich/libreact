@@ -78,9 +78,129 @@ storiesOf('Animation/Tween', module)
       }</Tween>
     </div>
   )
-  .add('Entry - circ', () =>
+  .add('Entry - outCirc', () =>
     <div>
-      <Tween ms={1000} easing='circ'>{({value}) =>
+      <Tween ms={1000} easing='outCirc'>{({value}) =>
+        <div style={{
+          width: 100,
+          height: 100,
+          background: 'tomato',
+          opacity: .1 + .9 * value,
+          position: 'relative',
+          top: (value * 300),
+          left: 100
+        }}>{value}</div>
+      }</Tween>
+    </div>
+  )
+  .add('Entry - inCirc', () =>
+    <div>
+      <Tween ms={1000} easing='inCirc'>{({value}) =>
+        <div style={{
+          width: 100,
+          height: 100,
+          background: 'tomato',
+          opacity: .1 + .9 * value,
+          position: 'relative',
+          top: (value * 300),
+          left: 100
+        }}>{value}</div>
+      }</Tween>
+    </div>
+  )
+  .add('Entry - inOutCirc', () =>
+    <div>
+      <Tween ms={1000} easing='inOutCirc'>{({value}) =>
+        <div style={{
+          width: 100,
+          height: 100,
+          background: 'tomato',
+          opacity: .1 + .9 * value,
+          position: 'relative',
+          top: (value * 300),
+          left: 100
+        }}>{value}</div>
+      }</Tween>
+    </div>
+  )
+  .add('Entry - inExpo', () =>
+    <div>
+      <Tween ms={1000} easing='inExpo'>{({value}) =>
+        <div style={{
+          width: 100,
+          height: 100,
+          background: 'tomato',
+          opacity: .1 + .9 * value,
+          position: 'relative',
+          top: (value * 300),
+          left: 100
+        }}>{value}</div>
+      }</Tween>
+    </div>
+  )
+  .add('Entry - outExpo', () =>
+    <div>
+      <Tween ms={1000} easing='outExpo'>{({value}) =>
+        <div style={{
+          width: 100,
+          height: 100,
+          background: 'tomato',
+          opacity: .1 + .9 * value,
+          position: 'relative',
+          top: (value * 300),
+          left: 100
+        }}>{value}</div>
+      }</Tween>
+    </div>
+  )
+  .add('Entry - inOutExpo', () =>
+    <div>
+      <Tween ms={1000} easing='inOutExpo'>{({value}) =>
+        <div style={{
+          width: 100,
+          height: 100,
+          background: 'tomato',
+          opacity: .1 + .9 * value,
+          position: 'relative',
+          top: (value * 300),
+          left: 100
+        }}>{value}</div>
+      }</Tween>
+    </div>
+  )
+  .add('Entry - inSine', () =>
+    <div>
+      <Tween ms={1000} easing='inSine'>{({value}) =>
+        <div style={{
+          width: 100,
+          height: 100,
+          background: 'tomato',
+          opacity: .1 + .9 * value,
+          position: 'relative',
+          top: (value * 300),
+          left: 100
+        }}>{value}</div>
+      }</Tween>
+    </div>
+  )
+  .add('Entry - outSine', () =>
+    <div>
+      <Tween ms={1000} easing='outSine'>{({value}) =>
+        <div style={{
+          width: 100,
+          height: 100,
+          background: 'tomato',
+          opacity: .1 + .9 * value,
+          position: 'relative',
+          top: (value * 300),
+          left: 100
+        }}>{value}</div>
+      }</Tween>
+    </div>
+  )
+  .add('Entry - inOutSine', () =>
+    <div>
+      <Tween ms={1000} easing='inOutSine'>{({value}) =>
         <div style={{
           width: 100,
           height: 100,
