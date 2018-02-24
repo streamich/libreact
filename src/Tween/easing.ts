@@ -21,7 +21,7 @@ export interface IEasingMap {
 }
 
 export const easing: IEasingMap = {
-  // no easing, no acceleration
+  // No easing, no acceleration
   linear: (t) => t,
 
   // Accelerates fast, then slows quickly towards end.
@@ -35,8 +35,8 @@ export const easing: IEasingMap = {
 
   // Commonly known as 'easeOutCirc'. Moves VERY fast at the beginning and
   // then quickly slows down in the middle. This tween can actually be used
-  // in continues transition where target value change all the time,
-  // because if very quick start, it hides the jitter between target value changes.
+  // in continuous transitions where target value changes all the time,
+  // because of the very quick start, it hides the jitter between target value changes.
   circ: (t) => Math.sqrt(1 - (t = t - 1) * t),
 
   // Accelerating from zero velocity

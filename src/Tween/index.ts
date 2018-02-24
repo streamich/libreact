@@ -11,12 +11,8 @@ export interface ITweenProps extends IRenderProps {
 export const Tween: React.SFC<ITweenProps> = (props) => {
   let {easing: fn = 'linear'} = props;
 
-  switch (typeof props.easing) {
-    case 'string':
-      fn = easing[fn as string];
-      break;
-    case 'object':
-      // TODO: Implement cubic-bezier
+  if (typeof props.easing === 'string') {
+    fn = easing[fn as string];
   }
 
   if (process.env.NODE_ENV !== 'production') {
