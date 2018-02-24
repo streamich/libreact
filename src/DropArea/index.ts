@@ -66,7 +66,7 @@ export class DropArea extends Component<IDropAreaProps, IDropAreaState> {
     if (dataTransfer.items && dataTransfer.items.length) {
       dataTransfer.items[0].getAsString((text) => {
         if (this.mounted) {
-          this.props.onText(text);
+          this.props.onText(text, event);
         }
       });
     }
