@@ -30,6 +30,66 @@ storiesOf('Animation/Tween', module)
       }</Tween>
     </div>
   )
+  .add('Entry - quadratic', () =>
+    <div>
+      <Tween ms={1000} easing='quadratic'>{({value}) =>
+        <div style={{
+          width: 100,
+          height: 100,
+          background: 'tomato',
+          opacity: value,
+          position: 'relative',
+          top: (value * 300),
+          left: 100
+        }}>{value}</div>
+      }</Tween>
+    </div>
+  )
+  .add('Entry - cubic', () =>
+    <div>
+      <Tween ms={1000} easing='cubic'>{({value}) =>
+        <div style={{
+          width: 100,
+          height: 100,
+          background: 'tomato',
+          opacity: value,
+          position: 'relative',
+          top: (value * 300),
+          left: 100
+        }}>{value}</div>
+      }</Tween>
+    </div>
+  )
+  .add('Entry - elastic', () =>
+    <div>
+      <Tween ms={1000} easing='elastic'>{({value}) =>
+        <div style={{
+          width: 100,
+          height: 100,
+          background: 'tomato',
+          opacity: value,
+          position: 'relative',
+          top: (value * 300),
+          left: 100
+        }}>{value}</div>
+      }</Tween>
+    </div>
+  )
+  .add('Entry - circ', () =>
+    <div>
+      <Tween ms={1000} easing='circ'>{({value}) =>
+        <div style={{
+          width: 100,
+          height: 100,
+          background: 'tomato',
+          opacity: value,
+          position: 'relative',
+          top: (value * 300),
+          left: 100
+        }}>{value}</div>
+      }</Tween>
+    </div>
+  )
   .add('Entry - inQuad', () =>
     <div>
       <Tween ms={1000} easing='inQuad'>{({value}) =>
