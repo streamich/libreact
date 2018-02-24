@@ -1,0 +1,19 @@
+import {createElement as h} from 'react';
+import {storiesOf} from '@storybook/react';
+import {action} from '@storybook/addon-actions';
+import {linkTo} from '@storybook/addon-links';
+import {WhenIdle} from '..';
+import ShowDocs from '../../../.storybook/ShowDocs'
+
+storiesOf('Animation/WhenIdle', module)
+  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Overlay.md')}))
+  .add('Defaults', () =>
+    <WhenIdle>
+      Hello world!
+    </WhenIdle>
+  )
+  .add('Timeout prop', () =>
+    <WhenIdle timeout={1}>
+      Hello world!
+    </WhenIdle>
+  )
