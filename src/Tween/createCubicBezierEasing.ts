@@ -1,15 +1,15 @@
-const createCubicBezierEasing = (x1, y1, x2, y2, p, i) => {
-  const
-    precision = p ? p : 1e-3,
-    maxIterations = i ? i : 5,
-    Cx = 3 * x1,
-    Bx = 3 * (x2 - x1) - Cx,
-    Bx2 = Bx * 2,
-    Ax = 1 - Cx - Bx,
-    Ax3 = Ax * 3,
-    Cy = 3 * y1,
-    By = 3 * (y2 - y1) - Cy,
-    Ay = 1 - Cy - By;
+const precision = 1e-3;
+const maxIterations = 5;
+
+const createCubicBezierEasing = (x1, y1, x2, y2) => {
+  const Cx = 3 * x1;
+  const Bx = 3 * (x2 - x1) - Cx;
+  const Bx2 = Bx * 2;
+  const Ax = 1 - Cx - Bx;
+  const Ax3 = Ax * 3;
+  const Cy = 3 * y1;
+  const By = 3 * (y2 - y1) - Cy;
+  const Ay = 1 - Cy - By;
 
   return (t) => {
       let x = t, i = 0, z;
@@ -22,7 +22,7 @@ const createCubicBezierEasing = (x1, y1, x2, y2, p, i) => {
       }
 
       return x * (Cy + x * (By + x * Ay));
-  }
+  };
 };
 
 export default createCubicBezierEasing;

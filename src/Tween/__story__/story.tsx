@@ -4,7 +4,10 @@ import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 import {Tween} from '..';
 import {AfterTimeout} from '../../AfterTimeout';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../../.storybook/ShowDocs';
+import createCubicBezierEasing from '../createCubicBezierEasing';
+
+const cubicBezierEasing1 = createCubicBezierEasing(0, 1.66, .75, .78);
 
 storiesOf('Animation/Tween', module)
   // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Overlay.md')}))
@@ -225,5 +228,20 @@ storiesOf('Animation/Tween', module)
           }}>{value}</div>
         }</Tween>
       </AfterTimeout>
+    </div>
+  )
+  .add('With cubic-bezier', () =>
+    <div>
+      <Tween ms={1000} easing={cubicBezierEasing1}>{({value}) =>
+        <div style={{
+          width: 100,
+          height: 100,
+          background: 'tomato',
+          opacity: value,
+          position: 'relative',
+          top: (value * 300),
+          left: 100
+        }}>{value}</div>
+      }</Tween>
     </div>
   )
