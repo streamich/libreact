@@ -25,7 +25,7 @@ storiesOf('Animation/Tween', module)
           width: 100,
           height: 100,
           background: 'tomato',
-          opacity: value,
+          opacity: .1 + .9 * value,
           position: 'relative',
           top: (value * 300),
           left: 100
@@ -40,7 +40,7 @@ storiesOf('Animation/Tween', module)
           width: 100,
           height: 100,
           background: 'tomato',
-          opacity: value,
+          opacity: .1 + .9 * value,
           position: 'relative',
           top: (value * 300),
           left: 100
@@ -55,7 +55,7 @@ storiesOf('Animation/Tween', module)
           width: 100,
           height: 100,
           background: 'tomato',
-          opacity: value,
+          opacity: .1 + .9 * value,
           position: 'relative',
           top: (value * 300),
           left: 100
@@ -70,7 +70,7 @@ storiesOf('Animation/Tween', module)
           width: 100,
           height: 100,
           background: 'tomato',
-          opacity: value,
+          opacity: .1 + .9 * value,
           position: 'relative',
           top: (value * 300),
           left: 100
@@ -85,7 +85,7 @@ storiesOf('Animation/Tween', module)
           width: 100,
           height: 100,
           background: 'tomato',
-          opacity: value,
+          opacity: .1 + .9 * value,
           position: 'relative',
           top: (value * 300),
           left: 100
@@ -100,7 +100,7 @@ storiesOf('Animation/Tween', module)
           width: 100,
           height: 100,
           background: 'tomato',
-          opacity: value,
+          opacity: .1 + .9 * value,
           position: 'relative',
           top: (value * 300),
           left: 100
@@ -115,7 +115,7 @@ storiesOf('Animation/Tween', module)
           width: 100,
           height: 100,
           background: 'tomato',
-          opacity: value,
+          opacity: .1 + .9 * value,
           position: 'relative',
           top: (value * 300),
           left: 100
@@ -130,7 +130,7 @@ storiesOf('Animation/Tween', module)
           width: 100,
           height: 100,
           background: 'tomato',
-          opacity: value,
+          opacity: .1 + .9 * value,
           position: 'relative',
           top: (value * 300),
           left: 100
@@ -145,7 +145,7 @@ storiesOf('Animation/Tween', module)
           width: 100,
           height: 100,
           background: 'tomato',
-          opacity: value,
+          opacity: .1 + .9 * value,
           position: 'relative',
           top: (value * 300),
           left: 100
@@ -160,7 +160,7 @@ storiesOf('Animation/Tween', module)
           width: 100,
           height: 100,
           background: 'tomato',
-          opacity: value,
+          opacity: .1 + .9 * value,
           position: 'relative',
           top: (value * 300),
           left: 100
@@ -175,7 +175,7 @@ storiesOf('Animation/Tween', module)
           width: 100,
           height: 100,
           background: 'tomato',
-          opacity: value,
+          opacity: .1 + .9 * value,
           position: 'relative',
           top: (value * 300),
           left: 100
@@ -190,7 +190,7 @@ storiesOf('Animation/Tween', module)
           width: 100,
           height: 100,
           background: 'tomato',
-          opacity: value,
+          opacity: .1 + .9 * value,
           position: 'relative',
           top: (value * 300),
           left: 100
@@ -205,7 +205,37 @@ storiesOf('Animation/Tween', module)
           width: 100,
           height: 100,
           background: 'tomato',
-          opacity: value,
+          opacity: .1 + .9 * value,
+          position: 'relative',
+          top: (value * 300),
+          left: 100
+        }}>{value}</div>
+      }</Tween>
+    </div>
+  )
+  .add('With cubic-bezier', () =>
+    <div>
+      <Tween ms={1000} easing={cubicBezierEasing1}>{({value}) =>
+        <div style={{
+          width: 100,
+          height: 100,
+          background: 'tomato',
+          opacity: .1 + .9 * value,
+          position: 'relative',
+          top: (value * 300),
+          left: 100
+        }}>{value}</div>
+      }</Tween>
+    </div>
+  )
+  .add('With delay', () =>
+    <div>
+      <Tween delay={2000} ms={1000}>{({value}) =>
+        <div style={{
+          width: 100,
+          height: 100,
+          background: 'tomato',
+          opacity: .1 + .9 * value,
           position: 'relative',
           top: (value * 300),
           left: 100
@@ -221,27 +251,12 @@ storiesOf('Animation/Tween', module)
             width: 100,
             height: 100,
             background: 'tomato',
-            opacity: value,
+            opacity: .1 + .9 * value,
             position: 'relative',
             top: (value * 300),
             left: 100
           }}>{value}</div>
         }</Tween>
       </AfterTimeout>
-    </div>
-  )
-  .add('With cubic-bezier', () =>
-    <div>
-      <Tween ms={1000} easing={cubicBezierEasing1}>{({value}) =>
-        <div style={{
-          width: 100,
-          height: 100,
-          background: 'tomato',
-          opacity: value,
-          position: 'relative',
-          top: (value * 300),
-          left: 100
-        }}>{value}</div>
-      }</Tween>
     </div>
   )

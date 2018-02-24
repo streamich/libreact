@@ -1,16 +1,13 @@
 import {Component} from 'react';
 import {render, createEnhancer} from 'react-universal-interface';
 import {h} from '../util';
+import {IRenderProps, IRenderState} from '../Render';
 
-export interface IRenderIntervalProps {
+export interface IRenderIntervalProps extends IRenderProps {
   fps?: number;
-  ms?: number;
 }
 
-export interface IRenderIntervalState {
-  start?: number;
-  now?: number;
-  value?: number;
+export interface IRenderIntervalState extends IRenderState {
 }
 
 export class RenderInterval extends Component<IRenderIntervalProps, IRenderIntervalState> {
@@ -19,8 +16,9 @@ export class RenderInterval extends Component<IRenderIntervalProps, IRenderInter
     ms: 300
   };
 
-  delay: number = 50;
+  interval: number = 50;
   timeout = null;
+  timeoutDelay = null;
 
   state = {
     start: 0,
@@ -29,27 +27,38 @@ export class RenderInterval extends Component<IRenderIntervalProps, IRenderInter
   };
 
   componentDidMount () {
+    const {delay} = this.props;
+
+    if (delay) {
+      this.timeoutDelay = setTimeout(this.start, delay);
+    } else {
+      this.start();
+    }
+  }
+
+  start = () => {
     const now = Date.now();
 
-    this.delay = 1000 / this.props.fps;
+    this.interval = 1000 / this.props.fps;
 
     this.setState({
       start: now,
       now,
       value: 0
     }, () => {
-      this.timeout = setTimeout(this.onFrame, this.delay);
+      this.timeout = setTimeout(this.onFrame, this.interval);
     });
   }
 
   componentDidUpdate (props) {
     if (props.fps !== this.props.fps) {
-      this.delay = 1000 / this.props.fps;
+      this.interval = 1000 / this.props.fps;
     }
   }
 
   componentWillUnmount () {
     clearTimeout(this.timeout);
+    clearTimeout(this.timeoutDelay);
   }
 
   onFrame = () => {
@@ -59,7 +68,7 @@ export class RenderInterval extends Component<IRenderIntervalProps, IRenderInter
 
     if (value < 1) {
       onState = () => {
-        this.timeout = setTimeout(this.onFrame, this.delay);
+        this.timeout = setTimeout(this.onFrame, this.interval);
       };
     }
 

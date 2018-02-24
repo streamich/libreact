@@ -3,6 +3,7 @@ import {render, createEnhancer} from 'react-universal-interface';
 import {h} from '../util';
 
 export interface IRenderProps {
+  delay?: number;
   ms?: number;
 }
 
@@ -17,6 +18,7 @@ export class Render extends Component<IRenderProps, IRenderState> {
     ms: 300
   };
 
+  timeout = null;
   frame = null;
 
   state = {
@@ -26,6 +28,21 @@ export class Render extends Component<IRenderProps, IRenderState> {
   };
 
   componentDidMount () {
+    const {delay} = this.props;
+
+    if (delay) {
+      this.timeout = setTimeout(this.start, delay);
+    } else {
+      this.start();
+    }
+  }
+
+  componentWillUnmount () {
+    cancelAnimationFrame(this.frame);
+    clearTimeout(this.timeout);
+  }
+
+  start = () => {
     const now = Date.now();
 
     this.setState({
@@ -35,10 +52,6 @@ export class Render extends Component<IRenderProps, IRenderState> {
     }, () => {
       this.frame = requestAnimationFrame(this.onFrame);
     });
-  }
-
-  componentWillUnmount () {
-    cancelAnimationFrame(this.frame);
   }
 
   onFrame = () => {
