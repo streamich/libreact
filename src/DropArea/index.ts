@@ -2,8 +2,6 @@ import {Component, cloneElement} from 'react';
 import {render} from 'react-universal-interface';
 import {h, noop} from '../util';
 
-const REG_URL = /^https?:\/\//;
-
 export interface IDropAreaProps {
   onFiles?: (files: File[], event?) => void;
   onText?: (text: string, event?) => void;
