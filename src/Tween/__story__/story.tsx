@@ -10,7 +10,7 @@ import createCubicBezierEasing from '../createCubicBezierEasing';
 const cubicBezierEasing1 = createCubicBezierEasing(0, 1.66, .75, .78);
 
 storiesOf('Animation/Tween', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Overlay.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Tween.md')}))
   .add('Defaults', () =>
     <div>
       <Tween>{({value}) =>

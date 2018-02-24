@@ -6,7 +6,7 @@ import {AfterTimeout} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('Animation/AfterTimeout', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Overlay.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/AfterTimeout.md')}))
   .add('Defaults', () =>
     <AfterTimeout>
       Hello world!

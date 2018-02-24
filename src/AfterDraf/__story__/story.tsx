@@ -6,7 +6,7 @@ import {AfterDraf} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('Animation/AfterDraf', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/AfterDraf.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/AfterDraf.md')}))
   .add('Defaults', () =>
     <AfterDraf>
       Hello world!

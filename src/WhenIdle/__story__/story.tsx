@@ -6,7 +6,7 @@ import {WhenIdle} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('Animation/WhenIdle', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Overlay.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/WhenIdle.md')}))
   .add('Defaults', () =>
     <WhenIdle>
       Hello world!
