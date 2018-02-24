@@ -7,7 +7,7 @@ import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('Animation/Render', module)
   // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Overlay.md')}))
-  .add('Basic example', () =>
+  .add('Defaults', () =>
     <div>
       <Render>{({value}) =>
         <div>{value}</div>

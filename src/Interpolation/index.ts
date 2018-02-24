@@ -2,11 +2,11 @@ import {render, createEnhancer} from 'react-universal-interface';
 import {Tween, ITweenProps} from '../Tween';
 import {h} from '../util';
 
-export interface IAnimationProps extends ITweenProps {
+export interface IInterpolationProps extends ITweenProps {
   map: {[key: string]: [number, number]};
 }
 
-export const Animation: React.SFC<IAnimationProps> = (props) => {
+export const Interpolation: React.SFC<IInterpolationProps> = (props) => {
   return h(Tween, props,
     ({value}) => {
       const {map} = props;
@@ -18,12 +18,12 @@ export const Animation: React.SFC<IAnimationProps> = (props) => {
         const [start, end] = map[key];
         const diff = end - start;
 
-        interpolated[key] = diff * value + start;
+        interpolated[key] = start + (diff * value);
       }
 
-      render(props, interpolated);
+      return render(props, interpolated);
     }
   );
 };
 
-export const withAnimation = createEnhancer(Animation, 'animation');
+export const withInterpolation = createEnhancer(Interpolation, 'interpolation');

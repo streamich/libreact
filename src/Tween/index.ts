@@ -4,12 +4,12 @@ import {h} from '../util';
 import {easing, TEasing, IEasingMap} from './easing';
 
 export interface ITweenProps extends IRenderProps {
-  easing: (keyof IEasingMap) | [number, number, number, number] | ((time: number) => number);
-  Render: React.SFC<IRenderProps> | React.ComponentClass<IRenderProps>;
+  easing?: (keyof IEasingMap) | [number, number, number, number] | ((time: number) => number);
+  Render?: React.SFC<IRenderProps> | React.ComponentClass<IRenderProps>;
 }
 
 export const Tween: React.SFC<ITweenProps> = (props) => {
-  let {easing: fn} = props;
+  let {easing: fn = 'linear'} = props;
 
   switch (typeof props.easing) {
     case 'string':
