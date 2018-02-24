@@ -30,8 +30,7 @@
     "throttle-debounce": "^1.0.1",
     "freestyler": "^2.0.1",
     "screenfull": "^3.3.2",
-    "fast-extend": "1.0.2",
-    "fast-shallow-equal": "0.1.1",
+    "fast-af": "^0.1.0",
     "tslib": "^1.9.0",
     "react-universal-interface": "^0.3.1",
     "react-focus-lock": "1.6.5"

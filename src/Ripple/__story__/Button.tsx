@@ -1,5 +1,4 @@
 import {Component, createElement as h} from 'react';
-import {extend} from 'fast-extend';
 import {styled} from 'freestyler';
 import {Ripple} from '..';
 
