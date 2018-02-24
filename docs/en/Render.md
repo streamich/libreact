@@ -21,3 +21,13 @@ import {Render} from 'libreact/lib/Render';
 ## Props
 
 - `ms` &mdash; optional, number, time in milliseconds how long to re-render its children, defaults to `300`.
+
+
+## `withRender` HOC
+
+Enhancer that injects `render` prop into your component.
+
+
+## `@withRender` decorator
+
+Stateful component decorator that injects `render` prop into your component.
