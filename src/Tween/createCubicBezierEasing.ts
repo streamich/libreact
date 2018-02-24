@@ -12,12 +12,16 @@ const createCubicBezierEasing = (x1, y1, x2, y2) => {
   const Ay = 1 - Cy - By;
 
   return (t) => {
-      let x = t, i = 0, z;
+      let x = t;
+      let i = 0;
+      let z;
 
       // Newton's root finding algorithm.
       for (; i < maxIterations; i++) {
           z = x * (Cx + x * (Bx + x * Ax)) - t;
-          if (Math.abs(z) < precision) break;
+          if (Math.abs(z) < precision) {
+            break;
+          }
           x = x - z / (Cx + x * (Bx2 + x * Ax3));
       }
 
