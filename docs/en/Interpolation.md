@@ -6,7 +6,7 @@ a value in `[0...1]` range it interpolates a map of values you define.
 
 ## Usage
 
-Below code animates movement of 100x100px square.
+Below code animates movement of a 100x100px square.
 
 ```jsx
 import {Interpolation} from 'libreact/lib/Interpolation';
@@ -27,6 +27,13 @@ import {Interpolation} from 'libreact/lib/Interpolation';
   }}/>
 }</Interpolation>
 ```
+
+
+## Props
+
+Accepts all the [`<Tween>`](./Tween.md) props in addiont to:
+
+- `map` &mdash; required, map of `[start, end]` values to interpolate.
 
 
 ## `withInterpolation()` HOC

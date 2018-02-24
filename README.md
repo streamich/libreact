@@ -83,7 +83,7 @@ const MyComponent = mock();
   - [Animation](./docs/en/Animation.md)
      - [`<AfterTimeout>`](./docs/en/AfterTimeout.md), [`<AfterDraf>`](./docs/en/AfterDraf.md), and [`<WhenIdle>`](./docs/en/WhenIdle.md)
      - [`<Render>`](./docs/en/Render.md), [`withRender()`](./docs/en/Render.md#withrender-hoc), and [`@withRender`](./docs/en/Render.md#withrender-decorator)
-     - [`<RenderInterval>`](./docs/en/RenderInverval.md), [`withRenderInterval()`](./docs/en/RenderInverval.md#withrenderinterval-hoc), and [`@withRenderInterval`](./docs/en/RenderInverval.md#withrenderinterval-decorator)
+     - [`<RenderInterval>`](./docs/en/RenderInterval.md), [`withRenderInterval()`](./docs/en/RenderInterval.md#withrenderinterval-hoc), and [`@withRenderInterval`](./docs/en/RenderInterval.md#withrenderinterval-decorator)
      - [`<Tween>`](./docs/en/Tween.md), [`withTween()`](./docs/en/Tween.md#withtween-hoc), and [`@withTween`](./docs/en/Tween.md#withtween-decorator)
      - [`<Interpolation>`](./docs/en/Interpolation.md), [`withInterpolation()`](./docs/en/Interpolation.md#withinterpolation-hoc), and [`@withInterpolation`](./docs/en/Interpolation.md#withinterpolation-decorator)
   - [Side Effects](./docs/en/Side-effects.md)

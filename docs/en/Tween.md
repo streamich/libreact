@@ -40,7 +40,7 @@ You can use one of the built-in easing functions simply specifying its name as a
 - `quadratic` &mdash; accelerates fast, then slows quickly towards end.
 - `cubic` &mdash; overshoots over 1 and then returns to 1 towards end.
 - `elastic` &mdash; overshoots over 1 multiple times - wiggles around 1.
-- `circ` &mdsah; Commonly known as `outCirc`. Moves very fast at the beginning and
+- `circ` &mdash; Commonly known as `outCirc`. Moves very fast at the beginning and
 then quickly slows down in the middle. This tween can actually be used
 in continuous transitions where target value changes all the time,
 because of the very quick start, it hides the jitter between target value changes.
@@ -48,14 +48,14 @@ because of the very quick start, it hides the jitter between target value change
 - `outQuad` &mdash; decelerating to zero velocity.
 - `inOutQuad` &mdash; acceleration until halfway, then deceleration.
 - `inCubic` &mdash; accelerating from zero velocity.
-- `outCubic` &mdsah; decelerating to zero velocity.
+- `outCubic` &mdash; decelerating to zero velocity.
 - `inOutCubic` &mdash; acceleration until halfway, then deceleration.
-- `inQuart` &mdsah; accelerating from zero velocity.
-- `outQuart` &mdsah; decelerating to zero velocity.
-- `inOutQuart` &mdsah; acceleration until halfway, then deceleration.
-- `inQuint` &mdsah; accelerating from zero velocity.
-- `outQuint` &mdsah; decelerating to zero velocity.
-- `inOutQuint` &mdsah; acceleration until halfway, then deceleration.
+- `inQuart` &mdash; accelerating from zero velocity.
+- `outQuart` &mdash; decelerating to zero velocity.
+- `inOutQuart` &mdash; acceleration until halfway, then deceleration.
+- `inQuint` &mdash; accelerating from zero velocity.
+- `outQuint` &mdash; decelerating to zero velocity.
+- `inOutQuint` &mdash; acceleration until halfway, then deceleration.
 
 
 ## Cubic-Bezier
