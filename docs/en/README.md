@@ -47,6 +47,7 @@
      - [`<Portal>`](./Portal.md), [`<Overlay>`](./Overlay.md), and [`<Modal>`](./Modal.md)
      - [`<FullScreen>`](./FullScreen.md)
      - [`<Slider>`](./Slider.md)
+     - [`<DropArea>`](./DropArea.md)
      - [`<Ripple>`](./Ripple.md) and [`withRipple()`](./Ripple.md#withripple) &mdash; [**example**](https://codesandbox.io/s/983q7jr80o)
      - [`<Audio>`](./Audio.md) and [`<Video>`](./Video.md)
      - [`<Speak>`](./Speak.md), [`<Vibrate>`](./Vibrate.md), [`<Alert>`](./Alert.md), `<Prompt>`, `<Confirm>`

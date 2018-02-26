@@ -38,6 +38,7 @@ export * from './Modal';
 export * from './FullScreen';
 export * from './Ripple';
 export * from './Slider';
+export * from './DropArea';
 
 // Other
 export * from './Resolve';
