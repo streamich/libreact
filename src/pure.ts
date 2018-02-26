@@ -1,4 +1,4 @@
-import {equal} from 'fast-shallow-equal';
+import {shallowEqual} from 'fast-af/shallowEqual';
 import {shouldUpdate} from './ShouldUpdate';
 
-export const pure = shouldUpdate((a, b) => !equal(a, b));
+export const pure = shouldUpdate((a, b) => !shallowEqual(a, b));
