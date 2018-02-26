@@ -29,6 +29,7 @@
   * [FocusSensor](FocusSensor.md)
   * [GeoLocationSensor](GeoLocationSensor.md)
   * [HoverSensor](HoverSensor.md)
+  * [IdleSensor](IdleSensor.md)
   * [MediaDeviceSensor](MediaDeviceSensor.md)
   * [MediaSensor](MediaSensor.md)
   * [MotionSensor](MotionSensor.md)
