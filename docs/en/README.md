@@ -51,6 +51,12 @@
      - [`<Ripple>`](./Ripple.md) and [`withRipple()`](./Ripple.md#withripple) &mdash; [**example**](https://codesandbox.io/s/983q7jr80o)
      - [`<Audio>`](./Audio.md) and [`<Video>`](./Video.md)
      - [`<Speak>`](./Speak.md), [`<Vibrate>`](./Vibrate.md), [`<Alert>`](./Alert.md), `<Prompt>`, `<Confirm>`
+  - [Animation](./Animation.md)
+     - [`<AfterTimeout>`](./AfterTimeout.md), [`<AfterDraf>`](./AfterDraf.md), and [`<WhenIdle>`](./WhenIdle.md)
+     - [`<Render>`](./Render.md), [`withRender()`](./Render.md#withrender-hoc), and [`@withRender`](./Render.md#withrender-decorator)
+     - [`<RenderInterval>`](./RenderInterval.md), [`withRenderInterval()`](./RenderInterval.md#withrenderinterval-hoc), and [`@withRenderInterval`](./RenderInterval.md#withrenderinterval-decorator)
+     - [`<Tween>`](./Tween.md), [`withTween()`](./Tween.md#withtween-hoc), and [`@withTween`](./Tween.md#withtween-decorator)
+     - [`<Interpolation>`](./Interpolation.md), [`withInterpolation()`](./Interpolation.md#withinterpolation-hoc), and [`@withInterpolation`](./Interpolation.md#withinterpolation-decorator)
   - [Side Effects](./Side-effects.md)
      - [`<LocalStorage>`](./LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
      - `<Title>`, `<Favicon>`

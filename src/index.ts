@@ -40,5 +40,14 @@ export * from './Ripple';
 export * from './Slider';
 export * from './DropArea';
 
+// Animation
+export * from './AfterTimeout';
+export * from './AfterDraf';
+export * from './WhenIdle';
+export * from './Render';
+export * from './RenderInterval';
+export * from './Tween';
+export * from './Interpolation';
+
 // Other
 export * from './Resolve';

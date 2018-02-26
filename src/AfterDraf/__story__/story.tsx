@@ -1,0 +1,14 @@
+import {createElement as h} from 'react';
+import {storiesOf} from '@storybook/react';
+import {action} from '@storybook/addon-actions';
+import {linkTo} from '@storybook/addon-links';
+import {AfterDraf} from '..';
+import ShowDocs from '../../../.storybook/ShowDocs'
+
+storiesOf('Animation/AfterDraf', module)
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/AfterDraf.md')}))
+  .add('Defaults', () =>
+    <AfterDraf>
+      Hello world!
+    </AfterDraf>
+  )
