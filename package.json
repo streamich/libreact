@@ -1,6 +1,6 @@
 {
   "name": "libreact",
-  "version": "0.8.1",
+  "version": "0.12.1",
   "description": "React standard library",
   "main": "lib/index.js",
   "repository": {
@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "throttle-debounce": "^1.0.1",
-    "freestyler": "^2.0.1",
+    "freestyler": "^3",
     "screenfull": "^3.3.2",
     "fast-af": "^0.1.0",
     "tslib": "^1.9.0",
