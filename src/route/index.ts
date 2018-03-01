@@ -1,8 +1,8 @@
 import {Component} from 'react';
+import {render} from 'react-universal-interface';
 import {LocationSensor} from '../LocationSensor';
 import {Provider, Consumer} from '../context';
 import {h, ns} from '../util';
-import renderProp from '../util/renderProp';
 import {Link, ILinkProps} from '../Link';
 import {go, TGo} from './go';
 
@@ -44,7 +44,7 @@ export class Router extends Component<IRouteProviderProps, any> {
         count: () => this.matches,
         parent: this.props.parent
       }
-    }, renderProp(this.props));
+    }, render(this.props, null));
 
     return element;
   }
@@ -143,7 +143,7 @@ export class Route extends Component<IRouteMatch, any> {
             route: newRoute,
             parent: matchResult
           },
-            renderProp(this.props, {
+            render(this.props, {
               go,
               match: route.substr(0, length),
               matches,
