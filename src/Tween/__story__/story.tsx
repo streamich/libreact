@@ -5,9 +5,7 @@ import {linkTo} from '@storybook/addon-links';
 import {Tween} from '..';
 import {AfterTimeout} from '../../AfterTimeout';
 import ShowDocs from '../../../.storybook/ShowDocs';
-import createCubicBezierEasing from '../createCubicBezierEasing';
-
-const cubicBezierEasing1 = createCubicBezierEasing(0, 1.66, .75, .78);
+import createBezierEasing from '../createBezierEasing';
 
 storiesOf('Animation/Tween', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Tween.md')}))
@@ -335,7 +333,7 @@ storiesOf('Animation/Tween', module)
   )
   .add('With cubic-bezier', () =>
     <div>
-      <Tween ms={1000} easing={cubicBezierEasing1}>{({value}) =>
+      <Tween ms={1000} easing={createBezierEasing(0, 1.66, .75, .78)}>{({value}) =>
         <div style={{
           width: 100,
           height: 100,

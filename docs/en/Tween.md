@@ -72,9 +72,9 @@ You can create an easing function using Cubic-Bezier definition. Example:
 
 ```jsx
 import {Tween} from 'libreact/lib/Tween';
-import createCubicBezierEasing from 'libreact/lib/Tween/createCubicBezierEasing';
+import createBezierEasing from 'libreact/lib/Tween/createBezierEasing';
 
-const myEasing = createCubicBezierEasing(0, 1.66, .75, .78);
+const myEasing = createBezierEasing(0, 1.66, .75, .78);
 
 <Tween easing={myEasing}>{({value}) =>
   <div>Value: {value}</div>
