@@ -43,3 +43,9 @@ storiesOf('Sensors/ScratchSensor', module)
       </div>
     );
   }}</ScratchSensor>)
+  .add('Fires events', () => <ScratchSensor
+    render={Demo}
+    onScratchStart={action('onScratchStart')}
+    onScratch={action('onScratch')}
+    onScratchEnd={action('onScratchEnd')}
+   />)

@@ -154,6 +154,8 @@ export class ScratchSensor extends Component<IScratchSensorProps, IScratchSensor
         dx: x - this.state.x,
         dy: y - this.state.y,
         end: Date.now(),
+      }, () => {
+        this.props.onScratch(this.state);
       });
     });
   };
