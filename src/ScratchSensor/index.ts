@@ -103,7 +103,6 @@ export class ScratchSensor extends Component<IScratchSensorProps, IScratchSensor
       this.setState({isScratching: false});
       this.props.onScratchEnd({
         ...this.state,
-        end: Date.now(),
         isScratching: false,
       });
       this.unbindEvents();

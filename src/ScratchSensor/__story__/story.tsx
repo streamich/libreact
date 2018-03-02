@@ -20,3 +20,26 @@ const Demo = (props) =>
 storiesOf('Sensors/ScratchSensor', module)
   // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/MouseSensor.md')}))
   .add('FaCC', () => <ScratchSensor>{Demo}</ScratchSensor>)
+  .add('With animation', () => <ScratchSensor>{(state) => {
+    return (
+      <div style={{
+        width: 300,
+        height: 300,
+        border: '1px solid tomato',
+        margin: '100px',
+        position: 'relative',
+      }}>
+        <pre style={{fontFamily: 'monospace'}}>
+          {JSON.stringify(state, null, 4)}
+        </pre>
+        <div style={{
+          position: 'absolute',
+          top: Math.min(state.y, state.y + state.dy),
+          left: Math.min(state.x, state.x + state.dx),
+          width: Math.abs(state.dx),
+          height: Math.abs(state.dy),
+          border: '1px solid tomato',
+        }} />
+      </div>
+    );
+  }}</ScratchSensor>)
