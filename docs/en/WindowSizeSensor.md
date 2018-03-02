@@ -12,6 +12,12 @@ import {WindowSizeSensor} from 'libreact/lib/WindowSizeSensor';
 }</WindowSizeSensor>
 ```
 
+You can use it without children.
+
+```jsx
+<WindowSizeSensor onChange={({width, height}) => console.log(width, height)} />
+```
+
 ## `withWindowSize()` HOC
 
 HOC that merges `windowSize` prop into enhanced component's props.

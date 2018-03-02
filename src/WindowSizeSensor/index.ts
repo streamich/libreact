@@ -10,6 +10,7 @@ export interface IWindowSizeSensorValue {
 
 export interface IWindowSizeSensorProps {
   children?: (state: IWindowSizeSensorValue) => React.ReactElement<any>;
+  onChange?: (state: IWindowSizeSensorValue) => void;
 }
 
 const addListener = (handler) => window.addEventListener('resize', handler);
@@ -39,6 +40,7 @@ export class WindowSizeSensor extends Component<IWindowSizeSensorProps, any> {
       initial: this.initial,
       addListener,
       removeListener,
+      onChange: this.props.onChange,
       onEvent
     });
   }
