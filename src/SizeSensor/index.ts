@@ -19,8 +19,8 @@ export interface ISizeSensorState {
 
 export class SizeSensor extends Component<ISizeSensorProps, ISizeSensorState> {
   state: ISizeSensorState = {
-    width: null,
-    height: null,
+    width: Infinity,
+    height: Infinity,
   };
 
   iframe;
