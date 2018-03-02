@@ -30,6 +30,7 @@
      - [`<LightSensor>`](./LightSensor.md), [`withLight()`](./LightSensor.md#withlight-hoc), and [`@withLight`](./LightSensor.md#withlight-decorator)
      - [`<LocationSensor>`](./LocationSensor.md), [`withLocation()`](./LocationSensor.md#withlocation-hoc), and [`@withLocation`](./LocationSensor.md#withlocation-decora)
      - [`<OrientationSensor>`](./OrientationSensor.md), [`withOrientation()`](./OrientationSensor.md#withorientation-hoc), and [`@withOrientation`](./OrientationSensor.md#withorientation-decorator)
+     - [`<ScratchSensor>`](./ScratchSensor.md), [`withScratch()`](./ScratchSensor.md#withscratch-hoc), and [`@withScratch`](./ScratchSensor.md#withscratch-decorator)
      - [`<ScrollSensor>`](./ScrollSensor.md)
      - [`<SizeSensor>`](./SizeSensor.md), [`withSize()`](./SizeSensor.md#withsize-hoc), and [`@withSize`](./SizeSensor.md#withsize-decorator)
         - [`<WidthSensor>`](./WidthSensor.md), [`withWidth()`](./WidthSensor.md#withwidth-hoc-and-withwidth-decorator), and [`@withWidth`](./WidthSensor.md#withwidth-hoc-and-withwidth-decorator)

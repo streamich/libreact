@@ -61,6 +61,7 @@ const MyComponent = mock();
      - [`<LightSensor>`](./docs/en/LightSensor.md), [`withLight()`](./docs/en/LightSensor.md#withlight-hoc), and [`@withLight`](./docs/en/LightSensor.md#withlight-decorator)
      - [`<LocationSensor>`](./docs/en/LocationSensor.md), [`withLocation()`](./docs/en/LocationSensor.md#withlocation-hoc), and [`@withLocation`](./docs/en/LocationSensor.md#withlocation-decora)
      - [`<OrientationSensor>`](./docs/en/OrientationSensor.md), [`withOrientation()`](./docs/en/OrientationSensor.md#withorientation-hoc), and [`@withOrientation`](./docs/en/OrientationSensor.md#withorientation-decorator)
+     - [`<ScratchSensor>`](./docs/en/ScratchSensor.md), [`withScratch()`](./docs/en/ScratchSensor.md#withscratch-hoc), and [`@withScratch`](./docs/en/ScratchSensor.md#withscratch-decorator)
      - [`<ScrollSensor>`](./docs/en/ScrollSensor.md)
      - [`<SizeSensor>`](./docs/en/SizeSensor.md), [`withSize()`](./docs/en/SizeSensor.md#withsize-hoc), and [`@withSize`](./docs/en/SizeSensor.md#withsize-decorator) &mdash; [**example**](https://codesandbox.io/s/0y2qjm210p)
         - [`<WidthSensor>`](./docs/en/WidthSensor.md), [`withWidth()`](./docs/en/WidthSensor.md#withwidth-hoc-and-withwidth-decorator), and [`@withWidth`](./docs/en/WidthSensor.md#withwidth-hoc-and-withwidth-decorator)

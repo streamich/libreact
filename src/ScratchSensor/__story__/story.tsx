@@ -18,7 +18,7 @@ const Demo = (props) =>
   </div>;
 
 storiesOf('Sensors/ScratchSensor', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/MouseSensor.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/ScratchSensor.md')}))
   .add('FaCC', () => <ScratchSensor>{Demo}</ScratchSensor>)
   .add('With animation', () => <ScratchSensor>{
     (state) => {

@@ -38,6 +38,7 @@
   * [LightSensor](LightSensor.md)
   * [LocationSensor](LocationSensor.md)
   * [OrientationSensor](OrientationSensor.md)
+  * [ScratchSensor](ScratchSensor.md)
   * [ScrollSensor](ScrollSensor.md)
   * [SizeSensor](SizeSensor.md)
     * [WidthSensor](WidthSensor.md)

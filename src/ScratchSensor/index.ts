@@ -1,7 +1,7 @@
 import {IScratchSensorState} from './index';
 import {Component, cloneElement} from 'react';
 import {h, noop, on, off} from '../util';
-import {render} from 'react-universal-interface';
+import {render, createEnhancer} from 'react-universal-interface';
 const throttle = require('throttle-debounce/throttle');
 
 export interface IScratchSensorProps {
@@ -207,3 +207,5 @@ export class ScratchSensor extends Component<IScratchSensorProps, IScratchSensor
     }
   }
 }
+
+export const withScratch = createEnhancer(ScratchSensor, 'scratch');
