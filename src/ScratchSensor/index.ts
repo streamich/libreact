@@ -1,0 +1,176 @@
+import {Component, cloneElement} from 'react';
+import {h, noop, on, off} from '../util';
+import {render} from 'react-universal-interface';
+const throttle = require('throttle-debounce/throttle');
+
+export interface IScratchSensorProps {
+  children?: React.ReactElement<any> | ((state: IScratchSensorState) => React.ReactElement<any>);
+  render?: (state: IScratchSensorState) => React.ReactElement<any>;
+  disabled?: boolean;
+  onScratch?: (state: IScratchSensorState) => void;
+  onScratchStart?: (state: IScratchSensorState) => void;
+  onScratchEnd?: (state: IScratchSensorState) => void;
+}
+
+export interface IScratchSensorState {
+  isScratching?: boolean;
+  start?: number;
+  end?: number;
+  x?: number;
+  y?: number;
+  dx?: number;
+  dy?: number;
+  docX?: number;
+  docY?: number;
+  posX?: number;
+  posY?: number;
+  elH?: number;
+  elW?: number;
+  elX?: number;
+  elY?: number;
+}
+
+export class ScratchSensor extends Component<IScratchSensorProps, IScratchSensorState> {
+  static defaultProps = {
+    disabled: false,
+    onScratch: noop,
+    onScratchStart: noop,
+    onScratchEnd: noop,
+  };
+
+  state: IScratchSensorState = {
+    isScratching: false,
+  };
+
+  el: HTMLElement = null;
+  frame = null;
+
+  ref = (originalRef) => (el) => {
+    this.el = el;
+    (originalRef || noop)(el);
+  };
+
+  onMouseDown = (originalMouseDown) => (event) => {
+    (originalMouseDown || noop)(event);
+    this.startScratching(event.pageX, event.pageY);
+  };
+
+  onTouchStart = (originalTouchStart) => (event) => {
+    (originalTouchStart || noop)(event);
+    // this.startScratching(event.pageX, event.pageY);
+  };
+
+  startScratching (docX, docY) {
+    if (this.state.isScratching) {
+      return;
+    }
+
+    const {el} = this;
+
+    if (!el) {
+      return;
+    }
+
+    const {left, top} = el.getBoundingClientRect();
+    const elX = left + window.scrollX;
+    const elY = top + window.scrollY;
+    const x = docX - elX;
+    const y = docY - elY;
+    const time = Date.now();
+    const newState = {
+      isScratching: true,
+      start: time,
+      end: time,
+      docX,
+      docY,
+      x,
+      y,
+      dx: 0,
+      dy: 0,
+      elH: el.offsetHeight,
+      elW: el.offsetWidth,
+      elX,
+      elY,
+    };
+
+    this.props.onScratchStart(newState);
+    this.setState(newState);
+    this.bindEvents();
+  }
+
+  stopScratching = () => {
+    if (this.state.isScratching) {
+      this.setState({isScratching: false});
+      this.props.onScratchEnd({
+        ...this.state,
+        end: Date.now(),
+        isScratching: false,
+      });
+      this.unbindEvents();
+    }
+  };
+
+  bindEvents () {
+    on(document, 'mousemove', this.onMouseMove);
+    on(document, 'mouseup', this.onMouseUp);
+    on(document, 'touchmove', this.onTouchMove);
+    on(document, 'touchend', this.onTouchEnd);
+  }
+
+  unbindEvents () {
+    off(document, 'mousemove', this.onMouseMove);
+    off(document, 'mouseup', this.onMouseUp);
+    off(document, 'touchmove', this.onTouchMove);
+    off(document, 'touchend', this.onTouchEnd);
+  }
+
+  onMouseMove = (event) => {
+    this.onMoveEvent(event.pageX, event.pageY);
+  };
+
+
+  onTouchMove = (event) => {
+    this.onMoveEvent(event.changedTouches[0].pageX, event.changedTouches[0].pageY);
+  };
+
+  onMouseUp = this.stopScratching;
+  onTouchEnd = this.stopScratching;
+
+  onMoveEvent = (docX, docY) => {
+    const {el} = this;
+
+    if (!el) {
+      return;
+    }
+
+    cancelAnimationFrame(this.frame);
+    this.frame = requestAnimationFrame(() => {
+      const {left, top} = el.getBoundingClientRect();
+      const elX = left + window.scrollX;
+      const elY = top + window.scrollY;
+      const x = docX - elX;
+      const y = docY - elY;
+
+      this.setState({
+        dx: x - this.state.x,
+        dy: y - this.state.y,
+        end: Date.now(),
+      });
+    });
+  };
+
+  render () {
+    const {disabled} = this.props;
+    let element = render(this.props, this.state);
+
+    if (!disabled) {
+      element = cloneElement(element, {
+        ref: this.ref(element.ref),
+        onMouseDown: this.onMouseDown(element.props.onMouseDown),
+        onTouchStart: this.onMouseDown(element.props.onTouchStart),
+      });
+    }
+
+    return element;
+  }
+}
