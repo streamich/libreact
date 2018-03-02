@@ -12,6 +12,12 @@ import {WindowScrollSensor} from 'libreact/lib/WindowScrollSensor';
 }</WindowScrollSensor>
 ```
 
+You can also use it without children.
+
+```jsx
+<WindowScrollSensor onChange={({x, y}) => console.log(x, y)} />
+```
+
 
 ## `withWindowScroll()` HOC
 
