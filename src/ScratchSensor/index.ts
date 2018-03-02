@@ -1,11 +1,13 @@
+import {IScratchSensorState} from './index';
 import {Component, cloneElement} from 'react';
 import {h, noop, on, off} from '../util';
 import {render} from 'react-universal-interface';
 const throttle = require('throttle-debounce/throttle');
 
 export interface IScratchSensorProps {
-  children?: React.ReactElement<any> | ((state: IScratchSensorState) => React.ReactElement<any>);
-  render?: (state: IScratchSensorState) => React.ReactElement<any>;
+  bond?: boolean | string;
+  children?: React.ReactElement<any> | ((state: IScratchSensorStateWithBond) => React.ReactElement<any>);
+  render?: (state: IScratchSensorStateWithBond) => React.ReactElement<any>;
   disabled?: boolean;
   onScratch?: (state: IScratchSensorState) => void;
   onScratchStart?: (state: IScratchSensorState) => void;
@@ -30,6 +32,17 @@ export interface IScratchSensorState {
   elY?: number;
 }
 
+export interface IScratchSensorBond {
+  ref?: any;
+  onMouseDown?: any;
+  onTouchStart?: any;
+}
+
+export interface IScratchSensorStateWithBond extends IScratchSensorState {
+  [bond: string]: any;
+  bond?: IScratchSensorBond;
+}
+
 export class ScratchSensor extends Component<IScratchSensorProps, IScratchSensorState> {
   static defaultProps = {
     disabled: false,
@@ -45,19 +58,23 @@ export class ScratchSensor extends Component<IScratchSensorProps, IScratchSensor
   el: HTMLElement = null;
   frame = null;
 
-  ref = (originalRef) => (el) => {
+  ref = (originalRef?) => (el) => {
     this.el = el;
     (originalRef || noop)(el);
   };
 
-  onMouseDown = (originalMouseDown) => (event) => {
+  componentWillUnmount () {
+    this.unbindEvents();
+  }
+
+  onMouseDown = (originalMouseDown?) => (event) => {
     (originalMouseDown || noop)(event);
     this.startScratching(event.pageX, event.pageY);
   };
 
-  onTouchStart = (originalTouchStart) => (event) => {
+  onTouchStart = (originalTouchStart?) => (event) => {
     (originalTouchStart || noop)(event);
-    // this.startScratching(event.pageX, event.pageY);
+    this.startScratching(event.changedTouches[0].pageX, event.changedTouches[0].pageY);
   };
 
   startScratching (docX, docY) {
@@ -127,7 +144,6 @@ export class ScratchSensor extends Component<IScratchSensorProps, IScratchSensor
     this.onMoveEvent(event.pageX, event.pageY);
   };
 
-
   onTouchMove = (event) => {
     this.onMoveEvent(event.changedTouches[0].pageX, event.changedTouches[0].pageY);
   };
@@ -161,17 +177,33 @@ export class ScratchSensor extends Component<IScratchSensorProps, IScratchSensor
   };
 
   render () {
-    const {disabled} = this.props;
-    let element = render(this.props, this.state);
+    const {disabled, bond} = this.props;
 
-    if (!disabled) {
-      element = cloneElement(element, {
-        ref: this.ref(element.ref),
-        onMouseDown: this.onMouseDown(element.props.onMouseDown),
-        onTouchStart: this.onMouseDown(element.props.onTouchStart),
-      });
+    if (bond) {
+      const bondName: string = typeof bond === 'string' ? bond : 'bond';
+      const state: IScratchSensorStateWithBond = {...this.state};
+
+      if (!disabled) {
+        state[bondName] = {
+          ref: this.ref(),
+          onMouseDown: this.onMouseDown(),
+          onTouchStart: this.onTouchStart(),
+        };
+      }
+
+      return render(this.props, state);
+    } else {
+      let element = render(this.props, this.state);
+
+      if (!disabled) {
+        element = cloneElement(element, {
+          ref: this.ref(element.ref),
+          onMouseDown: this.onMouseDown(element.props.onMouseDown),
+          onTouchStart: this.onTouchStart(element.props.onTouchStart),
+        });
+      }
+
+      return element;
     }
-
-    return element;
   }
 }
