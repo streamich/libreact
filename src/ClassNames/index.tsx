@@ -27,10 +27,6 @@ export interface IClassNamesProps {
 }
 
 export class ClassNames extends Component<IClassNamesProps, {}> {
-  static defaultProps = {
-    el: document.body
-  };
-
   componentDidMount () {
     this.putList(this.props.list);
   }
@@ -53,13 +49,13 @@ export class ClassNames extends Component<IClassNamesProps, {}> {
     }
   }
 
-  putList (list: string[], el: HTMLElement = this.props.el) {
+  putList (list: string[], el: HTMLElement = this.props.el || document.body) {
     for (const className of list) {
       el.classList.add(className);
     }
   }
 
-  removeList (list: string[], el: HTMLElement = this.props.el) {
+  removeList (list: string[], el: HTMLElement = this.props.el || document.body) {
     for (const className of list) {
       el.classList.remove(className);
     }
