@@ -17,21 +17,65 @@ export class Dimmer extends Component<IDimmerProps, IDimmerState> {
     color: 'rgba(0,0,0,0.5)',
   };
 
+  el: HTMLElement = null;
+
   state: IDimmerState = {
 
   };
 
-  blur () {
+  ref = (el) => {
+    this.el = el;
+  };
 
+  componentDidMount () {
+    const parent = this.el.parentElement;
+
+    this.applyDOMChanges();
   }
 
-  unblur () {
+  componentWillUnmount () {
+    this.removeDOMChanges();
+  }
+
+  applyDOMChanges () {
+    const parent = this.el.parentElement;
+    const siblings = Array.from(document.body.children);
+    const position = parent.style.getPropertyValue('position');
+
+    if (process.env.NODE_ENV !== 'production') {
+      if (position && (position !== 'relative')) {
+        console.warn(
+          'The "position" style property of a parent element of <Dimmer> must be ' +
+          `"relative" or not set, but "${position}" was detected. It will be overwritten` +
+          'to "relative".'
+        );
+      }
+    }
+
+    if (position !== 'relative') {
+      parent.style.setProperty('position', 'relative', 'important');
+    }
+
+    for (let i = 0; i < siblings.length; i++) {
+      const sibling = siblings[i];
+
+      if (sibling === this.el) {
+        continue;
+      }
+
+
+    }
+  }
+
+  removeDOMChanges () {
 
   }
 
   render () {
     return h('div', {
+      ref: this.ref,
       style: {
+        background: this.props.color,
         position: 'absolute',
         top: 0,
         left: 0,
