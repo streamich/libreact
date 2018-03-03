@@ -60,6 +60,7 @@
      - [`<Interpolation>`](./Interpolation.md), [`withInterpolation()`](./Interpolation.md#withinterpolation-hoc), and [`@withInterpolation`](./Interpolation.md#withinterpolation-decorator)
   - [Side Effects](./Side-effects.md)
      - [`<LocalStorage>`](./LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
+     - [`<ClassNames>`](./ClassNames.md)
      - `<Title>`, `<Favicon>`
      - [`go()`](./routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./Sms.md), [`<Mailto>`](./Mailto.md), and `<Tel>`
   - [Boundaries](./Boundaries.md)
