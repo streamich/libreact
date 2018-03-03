@@ -40,7 +40,6 @@ export class Overlay extends Component<IOverlayProps, IOverlayState> {
     style.background = this.props.color;
     style.transition = this.props.time + 'ms opacity';
     style.opacity = 0;
-
     style.display = 'flex';
     style.alignItems = 'center';
     style.justifyContent = 'center';

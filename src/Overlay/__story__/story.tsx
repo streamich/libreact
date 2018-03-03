@@ -9,6 +9,7 @@ storiesOf('UI/Overlay', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Overlay.md')}))
   .add('Basic example', () =>
     <div>
+      <div style={{width: 100, height: 100, background: 'tomato'}} />
       <Overlay>
         foobar
       </Overlay>
