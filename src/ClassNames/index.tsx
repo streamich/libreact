@@ -27,6 +27,10 @@ export interface IClassNamesProps {
 }
 
 export class ClassNames extends Component<IClassNamesProps, {}> {
+  static defaultProps = {
+    el: document.body
+  };
+
   componentDidMount () {
     this.putList(this.props.list);
   }
