@@ -4,12 +4,14 @@ import {render} from 'react-universal-interface';
 
 export interface IDimmerProps {
   color?: string;
+  ms?: number;
   hidden?: boolean;
 }
 
 export class Dimmer extends Component<IDimmerProps, {}> {
   static defaultProps = {
     color: 'rgba(0,0,0,0.5)',
+    ms: 300,
   };
 
   el: HTMLElement = null;
@@ -26,7 +28,7 @@ export class Dimmer extends Component<IDimmerProps, {}> {
       if (position && (position !== 'relative')) {
         console.warn(
           'The "position" style property of a parent element of <Dimmer> must be ' +
-          `"relative" or not set, but "${position}" was detected. It will be overwritten` +
+          `"relative" or not set, but "${position}" was detected. It will be overwritten ` +
           'to "relative".'
         );
       }
@@ -38,6 +40,8 @@ export class Dimmer extends Component<IDimmerProps, {}> {
   }
 
   render () {
+    const {hidden} = this.props;
+
     let style: any = {
       background: this.props.color,
       position: 'absolute',
@@ -49,10 +53,10 @@ export class Dimmer extends Component<IDimmerProps, {}> {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      transition: 'opacity .3s',
+      transition: `opacity ${this.props.ms}ms`,
     };
 
-    if (this.props.hidden) {
+    if (hidden) {
       style.opacity = 0;
       style.pointerEvents = 'none';
     }
@@ -61,7 +65,7 @@ export class Dimmer extends Component<IDimmerProps, {}> {
       ref: this.ref,
       style,
     },
-      render(this.props, this.state)
+      hidden ? null : render(this.props, this.state)
     );
   }
 }
