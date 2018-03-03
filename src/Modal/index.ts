@@ -131,7 +131,6 @@ export class Modal extends Component<IModalProps, IModalState> {
       sib.inert = true;
       sibling.style.setProperty('pointer-events', 'none');
       sibling.style.setProperty('user-select', 'none');
-      console.log('F', 'filter', (filter ? filter + ',' : '') + `blur(${this.props.blur}px)`);
       sibling.style.setProperty('filter', (filter ? filter + ',' : '') + `blur(${this.props.blur}px)`);
       sibling.setAttribute('aria-hidden', 'true');
     }
