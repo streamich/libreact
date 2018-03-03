@@ -3,25 +3,16 @@ import {h} from '../util';
 import {render} from 'react-universal-interface';
 
 export interface IDimmerProps {
-  blur?: number;
   color?: string;
   hidden?: boolean;
 }
 
-export interface IDimmerState {
-}
-
-export class Dimmer extends Component<IDimmerProps, IDimmerState> {
+export class Dimmer extends Component<IDimmerProps, {}> {
   static defaultProps = {
-    blur: 5,
     color: 'rgba(0,0,0,0.5)',
   };
 
   el: HTMLElement = null;
-
-  state: IDimmerState = {
-
-  };
 
   ref = (el) => {
     this.el = el;
@@ -29,17 +20,6 @@ export class Dimmer extends Component<IDimmerProps, IDimmerState> {
 
   componentDidMount () {
     const parent = this.el.parentElement;
-
-    this.applyDOMChanges();
-  }
-
-  componentWillUnmount () {
-    this.removeDOMChanges();
-  }
-
-  applyDOMChanges () {
-    const parent = this.el.parentElement;
-    const siblings = Array.from(document.body.children);
     const position = parent.style.getPropertyValue('position');
 
     if (process.env.NODE_ENV !== 'production') {
@@ -55,34 +35,31 @@ export class Dimmer extends Component<IDimmerProps, IDimmerState> {
     if (position !== 'relative') {
       parent.style.setProperty('position', 'relative', 'important');
     }
-
-    for (let i = 0; i < siblings.length; i++) {
-      const sibling = siblings[i];
-
-      if (sibling === this.el) {
-        continue;
-      }
-
-
-    }
-  }
-
-  removeDOMChanges () {
-
   }
 
   render () {
+    let style: any = {
+      background: this.props.color,
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      zIndex: 2147483647, // Max z-index.
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      transition: 'opacity .3s',
+    };
+
+    if (this.props.hidden) {
+      style.opacity = 0;
+      style.pointerEvents = 'none';
+    }
+
     return h('div', {
       ref: this.ref,
-      style: {
-        background: this.props.color,
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        zIndex: 2147483647, // Max z-index.
-      }
+      style,
     },
       render(this.props, this.state)
     );
