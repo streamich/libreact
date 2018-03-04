@@ -8,7 +8,7 @@ import {WindowSizeSensor} from '../../WindowSizeSensor';
 import ShowDocs from '../../../.storybook/ShowDocs';
 
 storiesOf('UI/WidthQuery', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/WidthQuery.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/WidthQuery.md')}))
   .add('Example', () =>
     <WindowSizeSensor>{({width}) =>
       <WidthQuery width={width}>

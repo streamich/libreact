@@ -8,7 +8,7 @@ import {WindowSizeSensor} from '../../WindowSizeSensor';
 import ShowDocs from '../../../.storybook/ShowDocs';
 
 storiesOf('UI/InlineWidthQuery', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/InlineWidthQuery.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/InlineWidthQuery.md')}))
   .add('Example', () =>
     <InlineWidthQuery>
       <View maxWidth={300}>
