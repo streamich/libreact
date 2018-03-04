@@ -3,6 +3,7 @@ import {render} from 'react-universal-interface';
 import {h, noop} from '../util';
 
 export interface ILifecycleProps {
+  [key: string]: any;
   willMount?: (props) => void;
   didMount?: (props) => void;
   willReceiveProps?: (nextProps, props) => void;
