@@ -21,6 +21,6 @@ const Lifecycles = createLifecycleEvents({
 <Lifecycles foo='bar'>
   <div>
     Hello world!
-  <div>
+  </div>
 </Lifecycles>
 ```
