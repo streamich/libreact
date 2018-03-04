@@ -7,7 +7,7 @@ import {Toggle} from '../../Toggle';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('UI/Dimmer', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Dimmer.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Dimmer.md')}))
   .add('Example', () =>
     <div style={{width: 500, height: 300, border: '1px solid tomato', position: 'absolute'}}>
       Inline...

@@ -7,7 +7,7 @@ import {Toggle} from '../../Toggle';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('UI/Dimmable', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Dimmable.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Dimmable.md')}))
   .add('Text node', () =>
     <Toggle>{({on, toggle}) =>
       <div>

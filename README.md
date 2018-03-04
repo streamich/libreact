@@ -77,6 +77,7 @@ const MyComponent = mock();
      - [`<Translations>`](./docs/en/translate.md#translations), [`<Translate>`](./docs/en/translate.md#translate-or-t), [`<T>`](./docs/en/translate.md#translate-or-t), [`withT()`](./docs/en/translate.md#witht-hoc), and [`@withT`](./docs/en/translate.md#witht-decorator)
   - [UI](./docs/en/UI.md)
      - [`<Portal>`](./docs/en/Portal.md), [`<Overlay>`](./docs/en/Overlay.md), and [`<Modal>`](./docs/en/Modal.md)
+     - [`<Dimmer>`](./docs/en/Dimmer.md) and [`<Dimmable>`](./docs/en/Dimmable.md)
      - [`<FullScreen>`](./docs/en/FullScreen.md)
      - [`<Slider>`](./docs/en/Slider.md)
      - [`<DropArea>`](./docs/en/DropArea.md)
