@@ -101,6 +101,8 @@ const MyComponent = mock();
      - [`<BrowserOnly>`](./docs/en/BrowserOnly.md), [`<ServerOnly>`](./docs/en/ServerOnly.md), and [`<ElectronOnly>`](./docs/en/ElectronOnly.md)
      - [`<ErrorBoundary>`](./docs/en/ErrorBoundary.md) and [`withErrorBoundary()`](./docs/en/ErrorBoundary.md#witherrorboundary-hoc)
      - `<CacheBoundary>`
+  - [Next](./docs/en/next.md)
+     - [`createRef()`](./docs/en/next/createRef.md), [`createState()`](./docs/en/next/createState.md), and [`createLifecycleEvents()`](./docs/en/next/createLifecycleEvents.md)
   - [CSS](./docs/en/CSS.md)
      - [`rule()`](./docs/en/css/rule.md), [`StyleSheet.create()`](./docs/en/css/StyleSheet.md), [`@css`](./docs/en/css/css.md), [`styled()()`](./docs/en/css/styled.md), and [`jsxstyle()`](./docs/en/css/jsxstyle.md)
   - [CSS resets](./docs/en/CSS-resets.md)
