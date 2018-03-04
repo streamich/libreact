@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ViewQuery/> crashes if less than two <View/> children provided 1`] = `"<WidthQuery/> expects multiple <View/> children."`;
+
+exports[`<ViewQuery/> picks the correct <View/> by maxWidth 1 1`] = `
+<Component
+  maxWidth={800}
+>
+  view 4
+</Component>
+`;
+
+exports[`<ViewQuery/> picks the correct <View/> by maxWidth 2 1`] = `
+<Component
+  maxWidth={800}
+>
+  view 4
+</Component>
+`;
+
+exports[`<ViewQuery/> renders first matching view 1`] = `
+<Component
+  maxWidth={123}
+>
+  view 1
+</Component>
+`;
+
+exports[`<ViewQuery/> renders with crashing, expects multiple <View/> children 1`] = `"<WidthQuery/> expects multiple <View/> children."`;
+
+exports[`<ViewQuery/> treats empty maxWidth as Infinity 1`] = `
+<Component>
+  view 5
+</Component>
+`;
