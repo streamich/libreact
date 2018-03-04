@@ -1,9 +1,3 @@
-export const View = (props) => {
-  const {children} = props;
+import {render} from 'react-universal-interface';
 
-  if (!children) {
-    return null;
-  }
-
-  return typeof children === 'function' ? children(props) : children;
-};
+export const View = (props) => render(props, null);
