@@ -11,7 +11,7 @@ storiesOf('UI/Dimmable', module)
   .add('Text node', () =>
     <Toggle>{({on, toggle}) =>
       <div>
-        <Dimmable dim={on}>
+        <Dimmable dim={on} ms={2000}>
           <div style={{width: 500, height: 300, border: '1px solid tomato'}}>
             Inline...
           </div>
@@ -66,7 +66,7 @@ storiesOf('UI/Dimmable', module)
     </Dimmable>
   )
   .add('Set color', () =>
-    <Dimmable color='rgba(255, 255, 255, .3)' dim renderOverlay={(on) => 'Hello'}>
+    <Dimmable color='rgba(255, 255, 255, .3)' ms={2000} dim renderOverlay={(on) => 'Hello'}>
       <div style={{width: 500, height: 300, border: '1px solid tomato'}}>
         Inline...
       </div>

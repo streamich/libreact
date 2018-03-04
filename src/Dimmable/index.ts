@@ -3,6 +3,16 @@ import {Component, Children, cloneElement} from 'react';
 import {h, noop} from '../util';
 import {Dimmer, IDimmerProps} from '../Dimmer';
 
+const onlyTextNodes = (children) => {
+  for (let i = 0; i < children.length; i++) {
+    if (typeof children[i] === 'object') {
+      return false;
+    }
+  }
+
+  return true;
+};
+
 export interface IDimmableProps extends IDimmerProps {
   dim?: boolean;
   blur?: number;
@@ -27,6 +37,7 @@ export class Dimmable extends Component<IDimmableProps> {
 
     if (dim) {
       childProps = {
+        'aria-hidden': 'true',
         style: {
           pointerEvents: 'none'
         }
@@ -57,7 +68,7 @@ export class Dimmable extends Component<IDimmableProps> {
         child = cloneElement(child, childProps);
       }
     } else {
-      child = h('div', childProps, ...elementChildren);
+      child = h(onlyTextNodes(elementChildren) ? 'span' : 'div', childProps, ...elementChildren);
     }
 
     return cloneElement(element, {},
