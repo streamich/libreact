@@ -21,3 +21,33 @@ storiesOf('UI/WidthQuery', module)
       </WidthQuery>
     }</WindowSizeSensor>
   )
+  .add('100px increments', () =>
+    <WindowSizeSensor>{({width}) =>
+      <WidthQuery width={width}>
+        <View maxWidth={100}>
+          Up to 100px
+        </View>
+        <View maxWidth={200}>
+          100px - 200px
+        </View>
+        <View maxWidth={300}>
+          200px - 300px
+        </View>
+        <View maxWidth={400}>
+          300px - 400px
+        </View>
+        <View maxWidth={500}>
+          400px - 500px
+        </View>
+        <View maxWidth={600}>
+          500px - 600px
+        </View>
+        <View maxWidth={700}>
+          600px - 700px
+        </View>
+        <View>
+          700px+
+        </View>
+      </WidthQuery>
+    }</WindowSizeSensor>
+  )
