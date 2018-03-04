@@ -16,7 +16,7 @@ storiesOf('UI/Dimmable', module)
             Inline...
           </div>
         </Dimmable>
-        <div onClick={toggle}>Toggle: {on ? 'on' : 'off'}</div>
+        <button onClick={toggle}>Toggle: {on ? 'on' : 'off'}</button>
       </div>
     }</Toggle>
   )
@@ -30,7 +30,7 @@ storiesOf('UI/Dimmable', module)
             </div>
           </div>
         </Dimmable>
-        <div onClick={toggle}>Toggle: {on ? 'on' : 'off'}</div>
+        <button onClick={toggle}>Toggle: {on ? 'on' : 'off'}</button>
       </div>
     }</Toggle>
   )
@@ -47,13 +47,20 @@ storiesOf('UI/Dimmable', module)
             </div>
           </div>
         </Dimmable>
-        <div onClick={toggle}>Toggle: {on ? 'on' : 'off'}</div>
+        <button onClick={toggle}>Toggle: {on ? 'on' : 'off'}</button>
       </div>
     }</Toggle>
   )
   .add('Warning "position"', () =>
     <Dimmable>
       <div style={{width: 500, height: 300, border: '1px solid tomato', position: 'absolute'}}>
+        Inline...
+      </div>
+    </Dimmable>
+  )
+  .add('renderOverlay', () =>
+    <Dimmable dim renderOverlay={(on) => 'Hello'}>
+      <div style={{width: 500, height: 300, border: '1px solid tomato'}}>
         Inline...
       </div>
     </Dimmable>

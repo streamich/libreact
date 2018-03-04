@@ -1,11 +1,12 @@
 import {IDimmableProps} from './index';
 import {Component, Children, cloneElement} from 'react';
-import {h} from '../util';
+import {h, noop} from '../util';
 import {Dimmer, IDimmerProps} from '../Dimmer';
 
 export interface IDimmableProps extends IDimmerProps {
   dim?: boolean;
   blur?: number;
+  renderOverlay?: (dim?: boolean) => React.ReactChild;
 }
 
 export class Dimmable extends Component<IDimmableProps> {
@@ -32,7 +33,7 @@ export class Dimmable extends Component<IDimmableProps> {
 
     return cloneElement(element, {},
       elementChild,
-      h(Dimmer, rest),
+      h(Dimmer, rest, (this.props.renderOverlay || noop)(dim)),
     );
   }
 }

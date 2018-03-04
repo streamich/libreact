@@ -49,7 +49,7 @@ storiesOf('UI/Dimmer', module)
             Children...
           </Dimmer>
         </div>
-        <div onClick={toggle}>Toggle: {on ? 'on' : 'off'}</div>
+        <button onClick={toggle}>Toggle: {on ? 'on' : 'off'}</button>
       </div>
     }</Toggle>
   )
