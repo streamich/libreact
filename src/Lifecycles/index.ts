@@ -2,19 +2,19 @@ import {Component} from 'react';
 import {render} from 'react-universal-interface';
 import {h, noop} from '../util';
 
-export interface ILifecycleProps {
+export interface ILifecyclesProps {
   [key: string]: any;
   willMount?: (props) => void;
   didMount?: (props) => void;
   willReceiveProps?: (nextProps, props) => void;
   shouldUpdate?: (nextProps, props) => boolean;
   willUpdate?: (nextProps, props) => void;
-  didUpdate?: (prevProps, props) => void;
+  didUpdate?: (props, prevProps) => void;
   willUnmount?: (props) => void;
   didCatch?: (error, info, props) => void;
 }
 
-export class Lifecycle extends Component<ILifecycleProps, {}> {
+export class Lifecycles extends Component<ILifecyclesProps, {}> {
   static defaultProp = {
     willMount: noop,
     didMount: noop,
@@ -47,7 +47,7 @@ export class Lifecycle extends Component<ILifecycleProps, {}> {
   }
 
   componentDidUpdate (prevProps) {
-    return this.props.didUpdate(prevProps, this.props);
+    return this.props.didUpdate(this.props, prevProps);
   }
 
   componentWillUnmount () {
