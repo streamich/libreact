@@ -22,6 +22,8 @@
     * [Counter](Counter.md)
     * [List](List.md)
     * [Map](Map.md)
+    * [ShouldUpdate](ShouldUpdate.md)
+    * [Lifecycles](Lifecycles.md)
 * [Sensors](Sensors.md)
   * [ActiveSensor](ActiveSensor.md)
   * [BatterySensor](BatterySensor.md)

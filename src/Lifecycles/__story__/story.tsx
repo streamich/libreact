@@ -8,7 +8,7 @@ import {WindowSizeSensor} from '../../WindowSizeSensor';
 import ShowDocs from '../../../.storybook/ShowDocs';
 
 storiesOf('Inversion/Lifecycles', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Lifecycle.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Lifecycles.md')}))
   .add('Example', () =>
     <Lifecycles
       foo='bar'
