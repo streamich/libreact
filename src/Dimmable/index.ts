@@ -71,7 +71,12 @@ export class Dimmable extends Component<IDimmableProps> {
       child = h(onlyTextNodes(elementChildren) ? 'span' : 'div', childProps, ...elementChildren);
     }
 
-    return cloneElement(element, {},
+    return cloneElement(element, {
+      style: {
+        ...(element.props.style || {}),
+        position: 'relative'
+      }
+    },
       child,
       h(Dimmer, rest, (renderOverlay || noop)(dim)),
     );
