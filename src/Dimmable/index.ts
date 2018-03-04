@@ -15,25 +15,54 @@ export class Dimmable extends Component<IDimmableProps> {
   };
 
   render () {
-    const {children, dim, ...rest} = this.props;
+    const {children, dim, blur, renderOverlay, ...rest} = this.props;
     const element = Children.only(children);
     const elementChildren = Children.toArray(element.props.children);
-    let elementChild: React.ReactChild;
+    let child: React.ReactChild;
     const dimmerProps: IDimmerProps = rest;
 
     dimmerProps.hidden = !dim;
 
-    const elementChildrenProps = {};
+    let childProps = null;
+
+    if (dim) {
+      childProps = {
+        style: {
+          pointerEvents: 'none'
+        }
+      };
+
+      if (blur) {
+        childProps.style = {
+          filter: `blur(${blur}px)`
+        };
+      }
+    }
 
     if ((elementChildren.length === 1) && (typeof elementChildren[0] === 'object')) {
-      elementChild = elementChildren[0];
+      child = elementChildren[0] as React.ReactElement<any>;
+
+      if (childProps) {
+        if (child.props.style) {
+          childProps.style = {
+            ...child.props.style,
+            ...childProps.style
+          };
+
+          if (childProps.style.filter && child.props.style.filter) {
+            childProps.style.filter += ' ' + child.props.style.filter;
+          }
+        }
+
+        child = cloneElement(child, childProps);
+      }
     } else {
-      elementChild = h('div', elementChildrenProps, ...elementChildren);
+      child = h('div', childProps, ...elementChildren);
     }
 
     return cloneElement(element, {},
-      elementChild,
-      h(Dimmer, rest, (this.props.renderOverlay || noop)(dim)),
+      child,
+      h(Dimmer, rest, (renderOverlay || noop)(dim)),
     );
   }
 }

@@ -25,7 +25,7 @@ storiesOf('UI/Dimmable', module)
       <div>
         <Dimmable dim={on}>
           <div style={{width: 500, height: 300, border: '1px solid tomato'}}>
-            <div>
+            <div style={{filter: 'grayscale(100%)'}}>
               Single child node...
             </div>
           </div>
@@ -60,6 +60,13 @@ storiesOf('UI/Dimmable', module)
   )
   .add('renderOverlay', () =>
     <Dimmable dim renderOverlay={(on) => 'Hello'}>
+      <div style={{width: 500, height: 300, border: '1px solid tomato'}}>
+        Inline...
+      </div>
+    </Dimmable>
+  )
+  .add('Set color', () =>
+    <Dimmable color='rgba(255, 255, 255, .3)' dim renderOverlay={(on) => 'Hello'}>
       <div style={{width: 500, height: 300, border: '1px solid tomato'}}>
         Inline...
       </div>
