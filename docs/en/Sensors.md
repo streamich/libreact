@@ -27,6 +27,7 @@ For example, the below `<div>` will be re-rendered every time mouse position cha
   - [`<LightSensor>`](./LightSensor.md) &mdash; tracks physical lightning sensor state.
   - [`<LocationSensor>`](./LocationSensor.md) &mdash; tracks browser location.
   - [`<OrientationSensor>`](./OrientationSensor.md) &mdash; tracks physical device orientation.
+  - [`<ScratchSensor>`](./ScratchSensor.md) &mdash; tracks user "scratches" aka swipes.
   - [`<ScrollSensor>`](./ScrollSensor.md) &mdash; tracks scroll offsets in a DOM element.
   - [`<SizeSensor>`](./SizeSensor.md) &mdash; tracks child DOM element size.
     - [`<WidthSensor>`](./WidthSensor.md) &mdash; same as `<SizeSensor>`, but only re-renders on width change.
