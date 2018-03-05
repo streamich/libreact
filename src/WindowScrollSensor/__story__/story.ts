@@ -27,4 +27,15 @@ storiesOf('Sensors/WindowScrollSensor', module)
         )
       )
     )
-  );
+  )
+  .add('No children', () =>
+    h('div', {style: {
+      background: 'linear-gradient(to bottom, #fff 0%, #000 100%)',
+      width: 5000,
+      height: 5000
+    }},
+      h(WindowScrollSensor, {
+        onChange: action('onChange')
+      })
+    )
+  )

@@ -1,3 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CssResetPoorMan> renders as expected 1`] = `"<style>html,body{padding:0;margin:0;}html{font-size:1em;}body{font-size:100%;}a img,:link img,:visited img{border:0;}</style>"`;
+exports[`<CssResetPoorMan> renders as expected 1`] = `
+"<style>html,body {
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 1em;
+}
+body {
+    font-size: 100%;
+}
+a img,:link img,:visited img {
+    border: 0;
+}
+</style>"
+`;

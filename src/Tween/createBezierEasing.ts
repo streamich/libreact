@@ -1,7 +1,7 @@
 const precision = 1e-3;
 const maxIterations = 5;
 
-const createCubicBezierEasing = (x1, y1, x2, y2) => {
+const createBezierEasing = (x1, y1, x2, y2) => {
   const Cx = 3 * x1;
   const Bx = 3 * (x2 - x1) - Cx;
   const Bx2 = Bx * 2;
@@ -29,4 +29,4 @@ const createCubicBezierEasing = (x1, y1, x2, y2) => {
   };
 };
 
-export default createCubicBezierEasing;
+export default createBezierEasing;

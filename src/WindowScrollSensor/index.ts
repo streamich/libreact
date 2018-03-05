@@ -10,6 +10,7 @@ export interface IWindowScrollSensorValue {
 
 export interface IWindowScrollSensorProps {
   children?: (state: IWindowScrollSensorValue) => React.ReactElement<any>;
+  onChange?: (state: IWindowScrollSensorValue) => void;
 }
 
 const addListener = (handler) => window.addEventListener('scroll', handler, {
@@ -44,6 +45,7 @@ export class WindowScrollSensor extends Component<IWindowScrollSensorProps, any>
       initial: this.initial,
       addListener,
       removeListener,
+      onChange: this.props.onChange,
       onEvent
     });
   }

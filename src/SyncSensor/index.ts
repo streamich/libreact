@@ -1,5 +1,5 @@
 import {Component, createElement as h} from 'react';
-import {isClient} from '../util';
+import {isClient, noop} from '../util';
 import renderProp from '../util/renderProp';
 import * as throttle from 'throttle-debounce/throttle';
 
@@ -9,6 +9,7 @@ export interface ISyncSensorProps<TState> {
   children?: (state: TState) => React.ReactElement<any>;
   addListener: (handler) => void;
   removeListener: (handler) => void;
+  onChange: (state: TState) => void;
   onEvent: (event) => TState;
 }
 
@@ -29,7 +30,9 @@ export class SyncSensor<TState> extends Component<ISyncSensorProps<TState>, TSta
     this.onEvent = throttle(this.props.throttle, false, (event) => {
       const state = this.props.onEvent(event);
 
-      this.setState(state);
+      this.setState(state, () => {
+        (this.props.onChange || noop)(this.state);
+      });
     });
   }
 

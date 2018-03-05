@@ -13,4 +13,7 @@ storiesOf('Sensors/WindowSizeSensor', module)
         `WIDTH: ${width}, HEIGHT: ${height}`
       )
     )
-  );
+  )
+  .add('No children', () =>
+    h(WindowSizeSensor, {onChange: action('onChange')})
+  )
