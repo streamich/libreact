@@ -8,6 +8,10 @@ export interface IWidthSensorProps extends ISizeSensorProps {
 }
 
 export class WidthSensor extends Component<IWidthSensorProps, ISizeSensorState> {
+  static defaultProps = {
+    onWidth: noop
+  };
+
   state = {
     width: Infinity,
     height: Infinity,
@@ -16,7 +20,7 @@ export class WidthSensor extends Component<IWidthSensorProps, ISizeSensorState> 
   onSize = (size) => {
     if (this.state.width !== size.width) {
       this.setState(size);
-      (this.props.onWidth || noop)(size);
+      this.props.onWidth(size);
     }
   };
 
