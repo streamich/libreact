@@ -8,6 +8,11 @@ export interface IWidthSensorProps extends ISizeSensorProps {
 }
 
 export class WidthSensor extends Component<IWidthSensorProps, ISizeSensorState> {
+  state = {
+    width: Infinity,
+    height: Infinity,
+  };
+
   onSize = (size) => {
     if (this.state.width !== size.width) {
       this.setState(size);
@@ -25,4 +30,4 @@ export class WidthSensor extends Component<IWidthSensorProps, ISizeSensorState> 
   }
 }
 
-export const withWidth = faccToHoc(WidthSensor, 'size', divWrapper);
+export const withWidth = faccToHoc(WidthSensor, 'width', divWrapper);
