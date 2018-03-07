@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<View/> renders child function as children 1`] = `
+<div>
+  children....
+</div>
+`;
+
+exports[`<View/> renders its children 1`] = `
+<div>
+  children....
+</div>
+`;
+
+exports[`<View/> renders nothing by default 1`] = `null`;
