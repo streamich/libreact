@@ -6,7 +6,7 @@ import {LocalStorage} from '..';
 import StoryLocalStorageForm from './StoryLocalStorageForm';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
-storiesOf('Generators/LocalStorage', module)
+storiesOf('Side Effects/LocalStorage', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/LocalStorage.md')}))
   .add('Basic example', () =>
     <div>

@@ -76,6 +76,7 @@
   * [Interpolation](Interpolation.md)
 * [Side Effects](Side-effects.md)
   * [LocalStorage](LocalStorage.md)
+  * [ClassNames](ClassNames.md)
 * [Boundaries](Boundaries.md)
   * [BrowserOnly](BrowserOnly.md)
   * [ServerOnly](ServerOnly.md)

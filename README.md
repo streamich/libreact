@@ -91,6 +91,7 @@ const MyComponent = mock();
      - [`<Interpolation>`](./docs/en/Interpolation.md), [`withInterpolation()`](./docs/en/Interpolation.md#withinterpolation-hoc), and [`@withInterpolation`](./docs/en/Interpolation.md#withinterpolation-decorator)
   - [Side Effects](./docs/en/Side-effects.md)
      - [`<LocalStorage>`](./docs/en/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
+     - [`<ClassNames>`](./docs/en/ClassNames.md)
      - `<Title>`, `<Favicon>`
      - [`go()`](./docs/en/routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md), and `<Tel>`
   - [Boundaries](./docs/en/Boundaries.md)
