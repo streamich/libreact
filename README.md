@@ -44,6 +44,7 @@ const MyComponent = mock();
         - [`<List>`](./docs/en/List.md), [`withList()`](./docs/en/List.md#withlist-hoc), and [`@withList`](./docs/en/List.md#withlist-decorator)
         - [`<Map>`](./docs/en/Map.md), [`withMap()`](./docs/en/Map.md#withmap-hoc), and [`@withMap`](./docs/en/Map.md#withmap-decorator)
      - [`<ShouldUpdate>`](./docs/en/ShouldUpdate.md), [`shouldUpdate()`](./docs/en/ShouldUpdate.md#shouldupdate-hoc), and [`pure()`](./docs/en/pure.md)
+     - [`<Lifecycles>`](./docs/en/Lifecycles.md)
      - [`invert()`](./docs/en/invert.md) and [`<Inverted>`](./docs/en/invert.md#inverted)
   - [Sensors](./docs/en/Sensors.md)
      - [`<ActiveSensor>`](./docs/en/ActiveSensor.md), [`withActive()`](./docs/en/ActiveSensor.md#withactive-hoc), and [`@withActive`](./docs/en/ActiveSensor.md#withactive-decorator)
@@ -100,6 +101,8 @@ const MyComponent = mock();
      - [`<BrowserOnly>`](./docs/en/BrowserOnly.md), [`<ServerOnly>`](./docs/en/ServerOnly.md), and [`<ElectronOnly>`](./docs/en/ElectronOnly.md)
      - [`<ErrorBoundary>`](./docs/en/ErrorBoundary.md) and [`withErrorBoundary()`](./docs/en/ErrorBoundary.md#witherrorboundary-hoc)
      - `<CacheBoundary>`
+  - [Next](./docs/en/next.md)
+     - [`createRef()`](./docs/en/next/createRef.md), [`createState()`](./docs/en/next/createState.md), and [`createLifecycleEvents()`](./docs/en/next/createLifecycleEvents.md)
   - [CSS](./docs/en/CSS.md)
      - [`rule()`](./docs/en/css/rule.md), [`StyleSheet.create()`](./docs/en/css/StyleSheet.md), [`@css`](./docs/en/css/css.md), [`styled()()`](./docs/en/css/styled.md), and [`jsxstyle()`](./docs/en/css/jsxstyle.md)
   - [CSS resets](./docs/en/CSS-resets.md)

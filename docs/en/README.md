@@ -13,6 +13,7 @@
       - [`<List>`](./List.md), [`withList()`](./List.md#withlist-hoc), and [`@withList`](./List.md#withlist-decorator)
       - [`<Map>`](./Map.md), [`withMap()`](./Map.md#withmap-hoc), and [`@withMap`](./Map.md#withmap-decorator)
      - [`<ShouldUpdate>`](./ShouldUpdate.md), [`shouldUpdate()`](./ShouldUpdate.md#shouldupdate-hoc), and [`pure()`](./pure.md)
+     - [`<Lifecycles>`](./Lifecycles.md)
      - [`invert()`](./invert.md) and [`<Inverted>`](./invert.md#inverted)
   - [Sensors](./Sensors.md)
      - [`<ActiveSensor>`](./ActiveSensor.md), [`withActive()`](./ActiveSensor.md#withactive-hoc), and [`@withActive`](./ActiveSensor.md#withactive-decorator)
@@ -69,6 +70,8 @@
      - [`<BrowserOnly>`](./BrowserOnly.md), [`<ServerOnly>`](./ServerOnly.md), and [`<ElectronOnly>`](./ElectronOnly.md)
      - [`<ErrorBoundary>`](./ErrorBoundary.md) and [`withErrorBoundary()`](./ErrorBoundary.md#witherrorboundary-hoc)
      - `<CacheBoundary>`
+  - [Next](./next.md)
+     - [`createRef()`](./next/createRef.md), [`createState()`](./next/createState.md), and [`createLifecycleEvents()`](./next/createLifecycleEvents.md)
   - [CSS](./CSS.md)
      - [`rule()`](./css/rule.md), [`StyleSheet.create()`](./css/StyleSheet.md), [`@css`](./css/css.md), [`styled()()`](./css/styled.md), and [`jsxstyle()`](./css/jsxstyle.md)
   - [CSS resets](./CSS-resets.md)
