@@ -9,6 +9,7 @@ let id = 0;
 const ESC = 27;
 
 export interface IModalProps extends IOverlayProps {
+  blur?: number;
   dontLockFocus?: boolean;
   onEsc?: (event: KeyboardEvent) => void;
   onClose?: () => void;
@@ -21,6 +22,10 @@ export interface IModalState {
 }
 
 export class Modal extends Component<IModalProps, IModalState> {
+  static defaultProps = {
+    blur:  5
+  };
+
   id: number;
   el: HTMLElement = null;
   activeEl: Element; // Previous active element;
@@ -67,8 +72,9 @@ export class Modal extends Component<IModalProps, IModalState> {
       const lock = sib.__libreact_lock;
 
       sib.inert = lock.inert;
-      sibling.style.setProperty('pointer-events', lock.pointerEvents),
-      sibling.style.setProperty('user-select', lock.userSelect),
+      sibling.style.setProperty('pointer-events', lock.pointerEvents);
+      sibling.style.setProperty('user-select', lock.userSelect);
+      sibling.style.setProperty('filter', lock.filter || 'none');
 
       sibling.removeAttribute('aria-hidden');
       delete sib.__libreact_lock;
@@ -108,17 +114,24 @@ export class Modal extends Component<IModalProps, IModalState> {
       }
 
       const sib = sibling as any;
+      let filter = sibling.style.getPropertyValue('filter');
+
+      if (filter === 'none') {
+        filter = '';
+      }
 
       sib.__libreact_lock = {
         owner: this,
         inert: sib.inert,
         pointerEvents: sibling.style.getPropertyValue('pointer-events'),
         userSelect: sibling.style.getPropertyValue('user-select'),
+        filter
       };
 
       sib.inert = true;
       sibling.style.setProperty('pointer-events', 'none');
       sibling.style.setProperty('user-select', 'none');
+      sibling.style.setProperty('filter', (filter ? filter + ',' : '') + `blur(${this.props.blur}px)`);
       sibling.setAttribute('aria-hidden', 'true');
     }
 

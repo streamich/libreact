@@ -58,7 +58,7 @@ storiesOf('UI/Modal', module)
       <Toggle>{({on, toggle}) =>
         <div>
           <button onClick={toggle}>Open dialog</button>
-          {on && <Modal color='tomato' onClick={toggle} onEsc={toggle}>
+          {on && <Modal color='rgba(0,0,0,.3)' onClick={toggle} onEsc={toggle}>
             <div
               style={{
                 width: 300,
