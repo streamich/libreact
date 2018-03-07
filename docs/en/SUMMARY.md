@@ -55,6 +55,8 @@
   * [Portal](Portal.md)
   * [Overlay](Overlay.md)
   * [Modal](Modal.md)
+  * [`<Dimmer>`](Dimmer.md)
+  * [`<Dimmable>`](Dimmable.md)
   * [FullScreen](FullScreen.md)
   * [Slider](Slider.m
   * [`<DropArea>`](DropArea.md)

@@ -46,6 +46,7 @@
      - [`<Translations>`](./translate.md#translations), [`<Translate>`](./translate.md#translate-or-t), [`<T>`](./translate.md#translate-or-t), [`withT()`](./translate.md#witht-hoc), and [`@withT`](./translate.md#witht-decorator)
   - [UI](./UI.md)
      - [`<Portal>`](./Portal.md), [`<Overlay>`](./Overlay.md), and [`<Modal>`](./Modal.md)
+     - [`<Dimmer>`](./Dimmer.md) and [`<Dimmable>`](./Dimmable.md)
      - [`<FullScreen>`](./FullScreen.md)
      - [`<Slider>`](./Slider.md)
      - [`<DropArea>`](./DropArea.md)
