@@ -8,7 +8,7 @@ export interface IMockComponent<TProps> {
 }
 
 export interface IMockParams<TProps> {
-  loading?: React.ReactElement<any> | React.SFC<TProps>;
+  loading?: ((props) => (React.ReactElement<any> | React.SFC<TProps>)) | React.ReactElement<any> | React.SFC<TProps> | React.ReactChild;
 }
 
 export type TMock = <TProps>(params?: IMockParams<TProps>) => IMockComponent<TProps>;
@@ -32,7 +32,7 @@ export const mock: TMock = <TProps>({loading = null}: IMockParams<TProps> = {}) 
     }
 
     render () {
-      return Comp ? h(Comp, this.props) : (typeof loading === 'function' ? h(loading, this.props) : loading);
+      return Comp ? h(Comp, this.props) : (typeof loading === 'function' ? h(loading as any, this.props) : loading);
     }
   } as any as IMockComponent<TProps>;
 
