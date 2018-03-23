@@ -11,7 +11,7 @@ This ways &mdash; when your component is rendered for the first time &mdash; you
 
 ## Example
 
-Below `MyComponent` will be resolved and renderer in place of `LazyMyComponent`.
+Below `MyComponent` will be resolved and rendered in place of `LazyMyComponent`.
 
 ```jsx
 const loader = () => new Promise(resolve => resolve(MyComponent));
