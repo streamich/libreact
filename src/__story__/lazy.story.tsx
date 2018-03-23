@@ -31,7 +31,22 @@ const Lazy2 = lazy({
   loading: <Spinner />
 });
 
+const Lazy3 = lazy({
+  loader: () => new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error('could not load'));
+    }, 1000);
+  }),
+  loading: <Spinner />,
+  error: (error) => {
+    console.log(error);
+
+    return () => <div>Could not load</div>;
+  }
+});
+
 storiesOf('Dummies/lazy()', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../docs/en/lazy.md')}))
   .add('Loads in 1s', () => <Lazy1 />)
   .add('Loads in 1s with <Spinner>', () => <Lazy2 />)
+  .add('Error', () => <Lazy3 />)
