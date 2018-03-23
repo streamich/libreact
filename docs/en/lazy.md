@@ -21,12 +21,12 @@ const LazyMyComponent = lazy({loader});
 <LazyMyComponent />
 ```
 
-This feature allows you to do code-splitting &mdash; to load your components only when they are actually renderer for the first time.
-Below code will load and render `MyComponent` in place of `LazyMyComponent`, but only when `LazyMyComponent` was actually renderer for
+This feature allows you to do code-splitting &mdash; to load your components only when they are actually rendered for the first time.
+Below code will load and render `MyComponent` in place of `LazyMyComponent`, but only when `LazyMyComponent` was actually rendered for
 the first time.
 
 ```jsx
-const loader = () => import('./MyComponent'); // Assume it is exports as default exports.
+const loader = () => import('./MyComponent'); // Assuming it is exports as default export.
 
 const LazyMyComponent = lazy({loader});
 
@@ -49,7 +49,7 @@ You can also use `.load()` method, to pre-load your component ahead of time.
 LazyMyComponent.load();
 ```
 
-By default, while your component is loading, nothing will be renderer, but you can display a loading text instead.
+By default, while your component is loading, nothing will be rendered, but you can display a loading text instead.
 
 ```js
 const LazyMyComponent = lazy({
@@ -68,7 +68,7 @@ const LazyMyComponent = lazy({
 ```
 
 If error happens during loading, and `.error()` param is called, it receives a single error argument, and expects back
-a component to be renderer on error, or `null`.
+a component to be rendered on error, or `null`.
 
 ```js
 const LazyMyComponent = lazy({
