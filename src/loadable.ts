@@ -6,7 +6,8 @@ export type TLoaderPromise = () => Promise<React.ComponentClass<any> | React.Sta
 export type TLoader = TLoaderPromise;
 
 export interface ILoadableParams<TProps> extends IMockParams<TProps> {
-    loader: TLoader,
+    error?: (error) => (React.Component<TProps, any> | React.SFC<TProps>);
+    loader: TLoader;
 }
 
 export interface ILoadableComponent<TProps> extends IMockComponent<TProps> {
@@ -22,7 +23,11 @@ export const loadable: TLoadable = <TProps>(params: ILoadableParams<TProps>) => 
     Mock.load = () => {
         loader().then((Implementation) => {
             Mock.implement((Implementation as any).default || Implementation);
-        }, console.error);
+        }, (error) => {
+            const element = params.error ? params.error(error) : null;
+
+            Mock.implement(element || null);
+        });
 
         Mock.load = noop;
     };
