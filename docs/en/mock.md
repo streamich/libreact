@@ -27,19 +27,10 @@ const MySvg = mock({
 });
 ```
 
+
 ## Reference
 
-```ts
-mock: (params?: IMockParams) => IMockComponent;
+Receives configuration object, with the following keys:
 
-interface IMockParams {
-  loading?: React.ReactElement | React.ComponentClass | React.StatelessComponent;
-}
-
-interface IMockComponent extends React.ComponentClass {
-  implement(Implementation: React.ComponentClass | React.StatelessComponent);
-}
-```
-
-  - `loading` - React element to show while the mock is not implemented.
-  - `.implement()` - use this method to set the implementation of your mock component.
+- `loading` - React element or component to show while the mock is not implemented.
+- `.implement()` - use this method to set the implementation of your mock component.
