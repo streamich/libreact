@@ -9,9 +9,10 @@ const nano = create({
 addonRule(nano);
 addonKeyframes(nano);
 
-const {rule} = nano;
+const {rule, keyframes} = nano;
 
 export {
   nano,
   rule,
+  keyframes,
 };
