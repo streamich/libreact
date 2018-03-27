@@ -2,13 +2,18 @@ import {Component, cloneElement, Children} from 'react';
 import {on, off, noop} from '../util';
 
 export interface IOutsideClickProps {
+  event?: string;
   onClick?: (event?) => void;
 }
 
 export interface IOutsideClickState {
 }
 
-class OutsideClick extends Component<IOutsideClickProps, IOutsideClickState> {
+export class OutsideClick extends Component<IOutsideClickProps, IOutsideClickState> {
+  static defaultProps = {
+    event: 'mousedown'
+  };
+
   el: HTMLElement;
 
   ref = (originalRef) => (el) => {
@@ -17,11 +22,11 @@ class OutsideClick extends Component<IOutsideClickProps, IOutsideClickState> {
   };
 
   componentDidMount () {
-    on(document, 'mousedown', this.onClickOutside);
+    on(document, this.props.event, this.onClickOutside);
   }
 
   componentWillUnmount () {
-    off(document, 'mousedown', this.onClickOutside);
+    off(document, this.props.event, this.onClickOutside);
   }
 
   onClickOutside = (event) => {
