@@ -1,19 +1,19 @@
 import {Component, Children, cloneElement} from 'react';
-import {rule} from 'freestyler';
+import {rule} from '../nano';
 import {h, noop} from '../util';
 
 const className = rule({
-  bdrad: '50%',
-  h: '100px',
-  w: '100px',
-  pos: 'absolute',
+  borderRadius: '50%',
+  height: '100px',
+  width: '100px',
+  position: 'absolute',
   transform: 'scale(0)',
-  op: 1,
+  opacity: 1,
   pointerEvents: 'none',
   '@keyframes libreact-ripple': {
     '100%': {
        transform: 'scale(12)',
-       op: 0
+       opacity: 0
     }
   }
 });
