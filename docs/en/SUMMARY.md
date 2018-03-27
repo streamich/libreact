@@ -62,6 +62,7 @@
   * [FullScreen](FullScreen.md)
   * [Slider](Slider.m
   * [DropArea](DropArea.md)
+  * [OutsideClick](OutsideClick.md)
   * [Ripple](Ripple.md)
   * [WidthQuery](WidthQuery.md)
   * [View](View.md)
