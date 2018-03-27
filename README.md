@@ -103,8 +103,6 @@ const MyComponent = mock();
      - `<CacheBoundary>`
   - [Next](./docs/en/next.md)
      - [`createRef()`](./docs/en/next/createRef.md), [`createState()`](./docs/en/next/createState.md), and [`createLifecycleEvents()`](./docs/en/next/createLifecycleEvents.md)
-  - [CSS](./docs/en/CSS.md)
-     - [`rule()`](./docs/en/css/rule.md), [`StyleSheet.create()`](./docs/en/css/StyleSheet.md), [`@css`](./docs/en/css/css.md), [`styled()()`](./docs/en/css/styled.md), and [`jsxstyle()`](./docs/en/css/jsxstyle.md)
   - [CSS resets](./docs/en/CSS-resets.md)
      - [`<CssResetEricMeyer>`](./docs/en/reset/CssResetEricMeyer.md) and [`<CssResetEricMeyerCondensed>`](./docs/en/reset/CssResetEricMeyerCondensed.md)
      - [`<CssResetMinimalistic>`](./docs/en/reset/CssResetMinimalistic.md), [`<CssResetMinimalistic2>`](./docs/en/reset/CssResetMinimalistic2.md), and [`<CssResetMinimalistic3>`](./docs/en/reset/CssResetMinimalistic3.md)
