@@ -63,6 +63,7 @@
   * [Slider](Slider.m
   * [DropArea](DropArea.md)
   * [Ripple](Ripple.md)
+  * [Group](Group.md)
   * [WidthQuery](WidthQuery.md)
   * [View](View.md)
   * [WindowWidthQuery](WindowWidthQuery.md)
