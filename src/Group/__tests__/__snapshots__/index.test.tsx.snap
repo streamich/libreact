@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Group> can change element type 1`] = `
+<Component
+  as="span"
+  separator=" "
+>
+  <span />
+</Component>
+`;
+
+exports[`<Group> can set custom separator 1`] = `
+<Component
+  as="div"
+  separator={<br />}
+>
+  <div>
+    <span
+      key=".0"
+    >
+      Hello
+    </span>
+    <br />
+    <span
+      key=".1"
+    >
+      world
+    </span>
+  </div>
+</Component>
+`;
+
+exports[`<Group> default separator is space 1`] = `
+<Component
+  as="div"
+  separator=" "
+>
+  <div>
+    <span
+      key=".0"
+    >
+      Hello
+    </span>
+     
+    <span
+      key=".1"
+    >
+      world
+    </span>
+  </div>
+</Component>
+`;
+
+exports[`<Group> passes through props 1`] = `
+<Component
+  as="div"
+  className="foo"
+  separator=" "
+>
+  <div
+    className="foo"
+  />
+</Component>
+`;
+
+exports[`<Group> works with no children 1`] = `
+<Component
+  as="div"
+  separator=" "
+>
+  <div />
+</Component>
+`;
