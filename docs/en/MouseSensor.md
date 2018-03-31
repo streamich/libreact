@@ -50,7 +50,8 @@ interface IMouseSensorProps {
 , where
 
   - `bond` &mdash; optional, boolean or string, specifying bondig spread object. If string, it specifies the name of the bonding object injected into state, if boolean and true the bonding object will have its default name `bond`.
-  - `whenHovered` - optional, boolean, when true, will track mouse position only when target element is hovered, defaults to `false`.
+  - `whenHovered` &mdash; optional, boolean, when true, will track mouse position only when target element is hovered, defaults to `false`.
+  - `onMouseMove` &mdash; optional, callback called on every mouse move, receives state as a single argument.
 
 ### Example
 
