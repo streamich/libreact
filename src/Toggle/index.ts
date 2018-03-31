@@ -13,7 +13,7 @@ export const Toggle: React.StatelessComponent<IToggleProps> = (props) =>
     render: ({on}, set) => renderProp(props, {
       on,
       toggle: () => set({on: !on}),
-      set
+      set: (on) => set({on})
     })
   });
 
