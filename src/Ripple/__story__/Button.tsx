@@ -1,6 +1,19 @@
 import {Component, createElement as h} from 'react';
-import {styled} from 'freestyler';
+import {nano} from '../../nano';
+import {addon as addonCache} from 'nano-css/addon/cache';
+import {addon as addonJsx} from 'nano-css/addon/jsx';
+import {addon as addonAtoms} from 'nano-css/addon/atoms';
+import {addon as addonStyle} from 'nano-css/addon/style';
+import {addon as addonStyled} from 'nano-css/addon/styled';
 import {Ripple} from '..';
+
+addonCache(nano);
+addonJsx(nano);
+addonAtoms(nano);
+addonStyle(nano);
+addonStyled(nano);
+
+const {styled} = nano;
 
 export const theme = {
   color1: ['#29EB7F', '#13CE66', '#0F9F4F'],
