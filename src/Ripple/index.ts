@@ -1,21 +1,22 @@
 import {Component, Children, cloneElement} from 'react';
-import {rule} from 'freestyler';
+import {rule, keyframes} from '../nano';
 import {h, noop} from '../util';
 
-const className = rule({
-  bdrad: '50%',
-  h: '100px',
-  w: '100px',
-  pos: 'absolute',
-  transform: 'scale(0)',
-  op: 1,
-  pointerEvents: 'none',
-  '@keyframes libreact-ripple': {
-    '100%': {
-       transform: 'scale(12)',
-       op: 0
-    }
+const rippleAnimationName = keyframes({
+  to: {
+     transform: 'scale(12)',
+     opacity: 0
   }
+});
+
+const className = rule({
+  borderRadius: '50%',
+  height: '100px',
+  width: '100px',
+  position: 'absolute',
+  transform: 'scale(0)',
+  opacity: 1,
+  pointerEvents: 'none',
 });
 
 export interface IRippleProps {
@@ -60,7 +61,7 @@ export class Ripple extends Component<IRippleProps, IRippleState> {
     style.top = (elY - 50) + 'px';
     style.left = (elX - 50) + 'px';
     setTimeout(() => {
-      style.setProperty('animation', `libreact-ripple ${this.props.ms}ms linear`);
+      style.setProperty('animation', `${rippleAnimationName} ${this.props.ms}ms linear`);
     }, 35);
 
     (originalMouseDown || noop)(event);
