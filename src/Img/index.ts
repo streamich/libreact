@@ -2,8 +2,8 @@ import {Component} from 'react';
 import {h, noop} from '../util';
 
 export interface IImgProps {
-  renderSpinner?: () => React.ReactElement<any>;
-  renderError?: () => React.ReactElement<any>;
+  renderSpinner?: (props?: IImgProps) => React.ReactElement<any>;
+  renderError?: (props?: IImgProps) => React.ReactElement<any>;
 }
 
 export interface IImgState {
