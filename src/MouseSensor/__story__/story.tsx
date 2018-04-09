@@ -41,7 +41,7 @@ class Decorator extends Component<any, any> {
 
 storiesOf('Sensors/MouseSensor', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/MouseSensor.md')}))
-  .add('FaCC', () => <MouseSensor>{Demo}</MouseSensor>)
+  .add('FaCC', () => <MouseSensor onMouseMove={action('onMouseMove')}>{Demo}</MouseSensor>)
   .add('FaCC with bond', () => <MouseSensor bond>{DemoWithBond}</MouseSensor>)
   .add('Render prop', () => <MouseSensor render={Demo} />)
   .add('HOC 1', () => <Hoc1 />)

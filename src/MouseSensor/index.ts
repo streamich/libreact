@@ -8,6 +8,7 @@ export interface IMouseSensorProps {
   children?: (state: IMouseSensorState) => React.ReactElement<any>;
   render?: (state: IMouseSensorState) => React.ReactElement<any>;
   whenHovered?: boolean;
+  onMouseMove?: (state: IMouseSensorState) => void;
 }
 
 export interface IMouseSensorState {
@@ -71,8 +72,7 @@ export class MouseSensor extends Component<IMouseSensorProps, IMouseSensorState>
       const {left, top} = el.getBoundingClientRect();
       const posX = left + window.scrollX;
       const posY = top + window.scrollY;
-
-      this.setState({
+      const state = {
         docX: event.pageX,
         docY: event.pageY,
         posX,
@@ -81,7 +81,10 @@ export class MouseSensor extends Component<IMouseSensorProps, IMouseSensorState>
         elW: el.offsetWidth,
         elX: event.pageX - posX,
         elY: event.pageY - posY
-      });
+      };
+
+      this.setState(state);
+      (this.props.onMouseMove || noop)(state);
     });
   };
 
