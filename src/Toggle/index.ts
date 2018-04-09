@@ -12,7 +12,8 @@ export const Toggle: React.StatelessComponent<IToggleProps> = (props) =>
     init: {on: props.init || false},
     render: ({on}, set) => renderProp(props, {
       on,
-      toggle: () => set({on: !on})
+      toggle: () => set({on: !on}),
+      set: (on) => set({on})
     })
   });
 
