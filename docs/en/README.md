@@ -53,6 +53,7 @@
      - [`<DropArea>`](./DropArea.md)
      - [`<OutsideClick>`](./OutsideClick.md)
      - [`<Ripple>`](./Ripple.md) and [`withRipple()`](./Ripple.md#withripple) &mdash; [**example**](https://codesandbox.io/s/983q7jr80o)
+     - [`<Img>`](./Img.md)
      - [`<WidthQuery>`](./WidthQuery.md), [`<View>`](./View.md), [`<WindowWidthQuery>`](./WindowWidthQuery.md), and [`<InlineWidthQuery>`](./InlineWidthQuery.md)
      - [`<Audio>`](./Audio.md) and [`<Video>`](./Video.md)
      - [`<Speak>`](./Speak.md), [`<Vibrate>`](./Vibrate.md), [`<Alert>`](./Alert.md), `<Prompt>`, `<Confirm>`

@@ -64,6 +64,7 @@
   * [DropArea](DropArea.md)
   * [OutsideClick](OutsideClick.md)
   * [Ripple](Ripple.md)
+  * [Img](Img.md)
   * [WidthQuery](WidthQuery.md)
   * [View](View.md)
   * [WindowWidthQuery](WindowWidthQuery.md)
