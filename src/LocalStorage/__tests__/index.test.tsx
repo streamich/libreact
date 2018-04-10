@@ -27,7 +27,7 @@ describe('<LocalStorage>', () => {
   });
 
   it('puts value to localStorage', () => {
-    const wrapper = mount(<LocalStorage name='foo' data='bar' debounce={10} />);
+    mount(<LocalStorage name='foo' data='bar' debounce={10} />);
 
     return promisify(() => {
       expect(glob.localStorage).toMatchSnapshot();
@@ -35,7 +35,7 @@ describe('<LocalStorage>', () => {
   });
 
   it('serializes an object', () => {
-    const wrapper = mount(<LocalStorage name='foo' data={{key: [1, 2, 3]}} debounce={10} />);
+    mount(<LocalStorage name='foo' data={{key: [1, 2, 3]}} debounce={10} />);
 
     return promisify(() => {
       expect(glob.localStorage).toMatchSnapshot();
@@ -58,7 +58,7 @@ describe('<LocalStorage>', () => {
   });
 
   it('does NOT set initial data when onMount prop is set', () => {
-    const wrapper = mount(<LocalStorage name='foo' data={1} debounce={10} onMount={() => {}} />);
+    mount(<LocalStorage name='foo' data={1} debounce={10} onMount={() => {}} />);
 
     return promisify(() => {
       expect(glob.localStorage).toMatchSnapshot();

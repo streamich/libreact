@@ -1,6 +1,5 @@
 import {Component} from 'react';
 import {render, createEnhancer} from 'react-universal-interface';
-import {h} from '../util';
 import {IRenderProps, IRenderState} from '../Render';
 
 export interface IRenderIntervalProps extends IRenderProps {

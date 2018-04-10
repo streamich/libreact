@@ -15,6 +15,11 @@
     "skipLibCheck": true,
     "experimentalDecorators": true,
     "importHelpers": true,
+    "noErrorTruncation": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
     "lib": [
       "dom",
       "es5",

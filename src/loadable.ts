@@ -1,4 +1,3 @@
-import {Component, createElement as h} from 'react';
 import {mock, IMockParams, IMockComponent} from './mock';
 import {noop} from './util';
 

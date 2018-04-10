@@ -8,7 +8,7 @@ describe('<State>', () => {
   });
 
   it('can set initial state object', () => {
-    const wrapper = mount(h(State, {
+    mount(h(State, {
       init: {
         foo: 'bar',
         baz: 'bazoooka'
@@ -30,7 +30,7 @@ describe('<State>', () => {
   });
 
   it('uses render prop', () => {
-    const wrapper = mount(h(State, {
+    mount(h(State, {
       init: {
         foo: 'bar',
         baz: 'bazoooka'
@@ -57,7 +57,7 @@ describe('<State>', () => {
       const foos = [];
       let setState;
 
-      const wrapper = mount(<State
+      mount(<State
         init={{
           foo: 'bar'
         }}
@@ -82,7 +82,7 @@ describe('<State>', () => {
       const onMount = jest.fn();
       const onUnmount = jest.fn();
 
-      const wrapper = mount(h(State, {
+      mount(h(State, {
         init: {
           foo: 'bar'
         },

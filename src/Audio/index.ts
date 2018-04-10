@@ -1,5 +1,4 @@
-import {Component, cloneElement, Children} from 'react';
-import {h, noop} from '../util';
+import {cloneElement, Children} from 'react';
 import {Media} from '../Media';
 
 export type TAudioEvent = (event, Audio, IAudioState) => void;

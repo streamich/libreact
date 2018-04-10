@@ -1,6 +1,6 @@
 import {Component} from 'react';
 import * as Types from 'prop-types';
-import {h, ns, noop} from '../util';
+import {ns, noop} from '../util';
 import {IObservable, observable, TObservalbeUnsub} from './observable';
 import faccToHoc from '../util/faccToHoc';
 

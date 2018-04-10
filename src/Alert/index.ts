@@ -1,5 +1,4 @@
 import {PureComponent} from 'react';
-import {noop, isClient} from '../util';
 
 export interface IAlertProps {
   show?: boolean;

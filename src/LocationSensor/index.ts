@@ -1,12 +1,12 @@
 import {Component} from 'react';
-import {h, on, off, isClient} from '../util';
+import {on, off, isClient} from '../util';
 import faccToHoc from '../util/faccToHoc';
 import renderProp from '../util/renderProp';
 
 const patchHistoryMethod = (method) => {
   const original = history[method];
 
-  history[method] = function (state, title, url) {
+  history[method] = function (state) {
     const result = original.apply(this, arguments);
     const event = new Event(method.toLowerCase());
 
@@ -71,15 +71,15 @@ export class LocationSensor extends Component<ILocationSensorProps, ILocationSen
     off(window, 'replacestate', this.onReplacestate);
   }
 
-  onPopstate = (e) => {
+  onPopstate = () => {
     this.onChange('popstate');
   };
 
-  onPushstate = (e) => {
+  onPushstate = () => {
     this.onChange('pushstate');
   };
 
-  onReplacestate = (e) => {
+  onReplacestate = () => {
     this.onChange('replacestate');
   };
 

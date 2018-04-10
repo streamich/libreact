@@ -1,5 +1,5 @@
 import {Component, cloneElement} from 'react';
-import {h, on, off, noop} from '../util';
+import {on, off, noop} from '../util';
 import * as throttle from 'throttle-debounce/throttle';
 import renderProp from '../util/renderProp';
 
@@ -120,7 +120,6 @@ export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, 
   });
 
   render () {
-    const {children} = this.props;
     const element = renderProp(this.props, this.state);
 
     if (process.env.NODE_ENV !== 'production') {

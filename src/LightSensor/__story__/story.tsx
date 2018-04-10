@@ -1,9 +1,6 @@
 import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
 import {LightSensor, withLight} from '..';
-import {readFileSync} from 'fs';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 const Print = (props) =>

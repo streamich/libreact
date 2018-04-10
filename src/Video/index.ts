@@ -1,5 +1,3 @@
-import {Component, cloneElement, Children} from 'react';
-import {h, noop} from '../util';
 import {Media, IMediaProps, IMediaState, IMedia} from '../Media';
 import renderProp from '../util/renderProp';
 

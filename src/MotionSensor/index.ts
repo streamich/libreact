@@ -1,6 +1,6 @@
 import {Component} from 'react';
 import {SyncSensor} from '../SyncSensor';
-import {h, on, off, isClient} from '../util';
+import {h, on, off} from '../util';
 import faccToHoc from '../util/faccToHoc';
 
 export interface IMotionSensorProps {

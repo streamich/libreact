@@ -1,5 +1,4 @@
-import {Component, createElement as h} from 'react';
-import {isClient} from '../util';
+import {Component} from 'react';
 import renderProp from '../util/renderProp';
 
 export interface IScrollSensorProps {

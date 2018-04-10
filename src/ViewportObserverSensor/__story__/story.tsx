@@ -1,9 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
 import {ViewportObserverSensor} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
 import StoryViewportSensorBasic from './StoryViewportSensorBasic';
 import StoryViewportSensorHorizontal from './StoryViewportSensorHorizontal';
 import StoryViewportSensorConf from './StoryViewportSensorConf';

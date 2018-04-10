@@ -1,7 +1,5 @@
-import {Component, createElement as h} from 'react';
+import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
 import {delayed} from './delayed';
 import {viewport} from './viewport';
 import ShowDocs from '../.storybook/ShowDocs'

@@ -1,7 +1,6 @@
 import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
 import {ViewportSensor, withViewport} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 import StoryViewportSensorBasicJsx from './StoryViewportSensorBasicJsx';

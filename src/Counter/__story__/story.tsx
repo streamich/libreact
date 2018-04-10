@@ -1,12 +1,10 @@
 import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
 import {Counter, withCounter} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
-const Val = ({value, inc, set}) =>
-  <div onClick={(e) => inc(3)} onDoubleClick={inc}>{value}</div>;
+const Val = ({value, inc}) =>
+  <div onClick={() => inc(3)} onDoubleClick={inc}>{value}</div>;
 
 const Hoc1 = withCounter(({counter}) => h(Val, counter));
 const Hoc2 = withCounter(Val, '', -5);

@@ -1,7 +1,5 @@
-import {h} from '../util';
 import {Value, faccToHocInit} from '../Value';
 import renderProp from '../util/renderProp';
-import faccToHoc from '../util/faccToHoc';
 
 export interface ICounterProps {
   init?: number;

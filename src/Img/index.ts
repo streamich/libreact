@@ -1,38 +1,64 @@
 import {Component} from 'react';
-import {h, noop} from '../util';
+import {h, isClient, noop} from '../util';
 
-export interface IImgProps {
-  renderSpinner?: (props?: IImgProps) => React.ReactElement<any>;
-  renderError?: (props?: IImgProps) => React.ReactElement<any>;
+const enum STATE {
+  LOADING,
+  DONE,
+  ERROR,
+}
+
+export interface IImgProps extends React.AllHTMLAttributes<any> {
+  renderLoad?: (img, props?: IImgProps, state?: STATE) => React.ReactElement<any>;
+  renderError?: (img?, props?: IImgProps, state?: STATE) => React.ReactElement<any>;
+  $ref?: any;
 }
 
 export interface IImgState {
-  state: number;
+  state: STATE;
+  error?: string;
 }
 
 export class Img extends Component<IImgProps, IImgState> {
-  state = {
-    state: 0
+  state: IImgState = {
+    state: STATE.LOADING
   };
 
-  onLoad = () => this.setState({state: 1});
-  onError = () => this.setState({state: -1});
+  onLoad = (originalOnLoad) => (event) => {
+    this.setState({state: STATE.DONE});
+    (originalOnLoad || noop)(event);
+  };
+
+  onError = (originalOnError) => (event) => {
+    this.setState({state: STATE.ERROR});
+    (originalOnError || noop)(event);
+  }
 
   render () {
-    const {renderSpinner, renderError, ...rest} = this.props;
-    const {state} = this.state;
+    const {renderLoad, renderError, onLoad, onError, $ref, ...rest} = this.props;
 
-    (rest as any).onLoad = this.onLoad;
-    (rest as any).onError = this.onError;
-
-    if (state > 0) {
+    if (!isClient) {
       return h('img', rest);
     }
 
-    if (state < 0) {
-      return (renderError || renderSpinner || noop)(this.props);
+    (rest as any).onLoad = this.onLoad(onLoad);
+    (rest as any).onError = this.onError(onError);
+
+    if ($ref) {
+      (rest as any).ref = $ref;
     }
 
-    return (renderSpinner || noop)(this.props);
+    const {state} = this.state;
+    const img = h('img', rest);
+
+    switch (state) {
+      case STATE.LOADING:
+        return renderLoad ? renderLoad(img, this.props, state) : img;
+      case STATE.DONE:
+        return img;
+      case STATE.ERROR:
+        return renderError || renderLoad ?
+          (renderError || renderLoad)(img, this.props, state) :
+          img;
+    }
   }
 }

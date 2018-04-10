@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import {h, on, off, isClient} from '../util';
+import {on, off} from '../util';
 import faccToHoc from '../util/faccToHoc';
 import renderProp from '../util/renderProp';
 

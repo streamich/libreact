@@ -31,7 +31,6 @@ export class Router extends Component<IRouteProviderProps, any> {
   };
 
   renderProvider (route) {
-    const {children, fullRoute} = this.props;
     this.matches = 0;
 
     const element = h(Provider as any, {
@@ -51,7 +50,7 @@ export class Router extends Component<IRouteProviderProps, any> {
 
   render () {
     const {props} = this;
-    const {children, route} = props;
+    const {route} = props;
 
     if(typeof route === 'string') {
       return this.renderProvider(route);
@@ -69,8 +68,6 @@ export interface TRouteMatchResult {
 export type TRouteMatcher = (route: string) => TRouteMatchResult;
 
 export function createMatcher (match: string | RegExp | TRouteMatcher, exact?: boolean): TRouteMatcher {
-  let matcher: TRouteMatcher;
-
   if (typeof match === 'function') {
     return match;
   }
@@ -120,7 +117,7 @@ export class Route extends Component<IRouteMatch, any> {
   render () {
     return h(Consumer, {name: ns(`route/${this.props.ns}`)}, (context) => {
       const {fullRoute, route, go, inc, count, parent} = context;
-      const {children, exact, match, preserve, min, max} = this.props;
+      const {exact, match, preserve, min, max} = this.props;
       const matchCount = count();
 
       if ((matchCount >= min) && (matchCount <= max)) {
@@ -176,7 +173,7 @@ export interface IGoState {
 
 export class Go extends Component<IGoProps, IGoState> {
   render () {
-    return h(Consumer, {name: ns(`route/${this.props.ns}`)}, ({fullRoute, route, go, inc, count, parent}) => {
+    return h(Consumer, {name: ns(`route/${this.props.ns}`)}, ({fullRoute, go}) => {
       const {exact, match} = this.props;
       const matcher = createMatcher(match, exact);
       const isActive = !!matcher(fullRoute);

@@ -1,7 +1,5 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
 import {Video} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
@@ -13,7 +11,7 @@ storiesOf('UI/Video', module)
     <Video autoPlay style={{
       width: 400,
       border: '1px solid tomato'
-    }} src={src}>{({video}, {isPlaying}) =>
+    }} src={src}>{({video}) =>
       <div>
         {video}
       </div>
@@ -26,7 +24,7 @@ storiesOf('UI/Video', module)
         width: 400,
         border: '1px solid tomato'
       }}
-      render={({video, play, pause, seek, volume, mute, unmute}, {isPlaying}) =>
+      render={({video, play, pause}, {isPlaying}) =>
         <div>
           {video}
           <br />

@@ -1,6 +1,6 @@
 import {Component, cloneElement} from 'react';
 import {render} from 'react-universal-interface';
-import {h, noop} from '../util';
+import {noop} from '../util';
 
 export interface IDropAreaProps {
   onFiles?: (files: File[], event?) => void;
@@ -39,7 +39,6 @@ export class DropArea extends Component<IDropAreaProps, IDropAreaState> {
     event.preventDefault();
 
     this.process(event.dataTransfer, event);
-    const {dataTransfer} = event;
   };
 
   onPaste = (originalOnPaste) => (event) => {

@@ -1,7 +1,5 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
 import {LocalStorage} from '..';
 import StoryLocalStorageForm from './StoryLocalStorageForm';
 import ShowDocs from '../../../.storybook/ShowDocs'

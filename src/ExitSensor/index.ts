@@ -1,6 +1,4 @@
 import {Component, cloneElement} from 'react';
-import {h} from '../util';
-import renderProp from '../util/renderProp';
 
 export interface IExitSensorProps {
   children?: React.ReactElement<any>;

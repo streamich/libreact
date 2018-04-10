@@ -72,7 +72,6 @@ const simulate = (instance, events, assertions) => new Promise((resolve, reject)
 const mouseEventX = (clientX) => ({clientX});
 const mouseEventY = (clientY) => ({clientY});
 const touchEventX = (clientX) => ({changedTouches: [{clientX}]});
-const touchEventY = (clientY) => ({changedTouches: [{clientY}]});
 
 const rect = {
   bottom: 200,
@@ -415,7 +414,6 @@ describe('<Slider>', () => {
           it('works', () => {
             const wrapper = mountSlider({vertical: true});
             const instance = wrapper.instance();
-            const onScrub = wrapper.props().onScrub;
 
             return simulate(instance, [
               [1, 'mousedown', mouseEventY(50)],

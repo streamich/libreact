@@ -24,7 +24,7 @@ describe('<MediaSensor>', () => {
   it('calls correct media query', () => {
     const [matchMedia] = createMatchMedia();
     let children: any = (jest.fn()) as any;
-    let wrapper = shallow(<MediaSensor query='(foobar)'>{children}</MediaSensor>);
+    shallow(<MediaSensor query='(foobar)'>{children}</MediaSensor>);
 
     expect(matchMedia).toHaveBeenCalledTimes(1);
     expect(matchMedia).toHaveBeenCalledWith('(foobar)');
@@ -33,7 +33,7 @@ describe('<MediaSensor>', () => {
   it('gets default media query match on mount', () => {
     const [matchMedia] = createMatchMedia();
     let children: any = (jest.fn()) as any;
-    let wrapper = shallow(<MediaSensor query='(foobar)'>{children}</MediaSensor>);
+    shallow(<MediaSensor query='(foobar)'>{children}</MediaSensor>);
 
     expect(matchMedia).toHaveBeenCalledTimes(1);
     expect(matchMedia).toHaveBeenCalledWith('(foobar)');
@@ -48,7 +48,7 @@ describe('<MediaSensor>', () => {
     });
 
     children = jest.fn();
-    wrapper = shallow(<MediaSensor query='(foobar)' render={children} />);
+    shallow(<MediaSensor query='(foobar)' render={children} />);
 
     expect(children).toHaveBeenCalledTimes(1);
     expect(children).toHaveBeenCalledWith({matches: false});
@@ -56,7 +56,7 @@ describe('<MediaSensor>', () => {
 
   it('re-renders on media query change', () => {
     let listener;
-    const [matchMedia, matchMediaReturn] = createMatchMedia();
+    const [, matchMediaReturn] = createMatchMedia();
 
     (matchMediaReturn as any).addListener.mockImplementation((list) => {
       listener = list;
@@ -66,7 +66,7 @@ describe('<MediaSensor>', () => {
 
     MyComp.mockImplementation(() => null);
 
-    const wrapper = mount(<MediaSensor query='(foobar)' comp={MyComp}></MediaSensor>);
+    mount(<MediaSensor query='(foobar)' comp={MyComp}></MediaSensor>);
 
     expect(MyComp).toHaveBeenCalledTimes(1);
     expect(MyComp.mock.calls[0][0]).toEqual({matches: true});
@@ -82,7 +82,7 @@ describe('<MediaSensor>', () => {
   });
 
   it('removes listener on un-mount', () => {
-    const [matchMedia, matchMediaReturn] = createMatchMedia() as any;
+    const [, matchMediaReturn] = createMatchMedia() as any;
     let listener;
 
     matchMediaReturn.addListener.mockImplementation((list) => {
@@ -105,7 +105,7 @@ describe('<MediaSensor>', () => {
 
   describe('when changing media query dynamically', () => {
     it('re-attaches listener and removes old one', () => {
-      const [matchMedia, matchMediaReturn] = createMatchMedia() as any;
+      const [, matchMediaReturn] = createMatchMedia() as any;
       let listeners = [];
 
       matchMediaReturn.addListener.mockImplementation((listener) => {

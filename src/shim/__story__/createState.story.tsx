@@ -1,9 +1,6 @@
-import {Component, createElement as h} from 'react';
+import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
 import {createState} from '../createState';
-import ShowDocs from '../../../.storybook/ShowDocs'
 
 const State1 = createState({
   cnt: 1,

@@ -1,6 +1,5 @@
 import {Component} from 'react';
 import {render, createEnhancer} from 'react-universal-interface';
-import {h} from '../util';
 
 export interface IRenderProps {
   delay?: number;

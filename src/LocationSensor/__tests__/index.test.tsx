@@ -17,15 +17,15 @@ describe('<LocationSensor>', () => {
   });
 
   it('renders without crashing', () => {
-    const wrapper = mount(
-      <LocationSensor>{(location) =>
+    mount(
+      <LocationSensor>{() =>
         null
       }</LocationSensor>
     );
   });
 
   it('returns expected default state', () => {
-    const wrapper = mount(
+    mount(
       <LocationSensor>{(location) => {
         expect(location).toMatchSnapshot();
 

@@ -1,5 +1,5 @@
-import {Provider, Consumer, withContext} from '../context';
-import {h, THoc} from '../util';
+import {Provider, Consumer} from '../context';
+import {h} from '../util';
 import faccToHocc from '../util/faccToHoc';
 
 export interface IThemeProps {

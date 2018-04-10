@@ -1,7 +1,6 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
 import {Modal} from '..';
 import {Toggle} from '../../Toggle';
 import ShowDocs from '../../../.storybook/ShowDocs'

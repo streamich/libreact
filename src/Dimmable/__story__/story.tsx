@@ -1,7 +1,5 @@
-import {Component, createElement as h} from 'react';
+import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
 import {Dimmable} from '..';
 import {Toggle} from '../../Toggle';
 import ShowDocs from '../../../.storybook/ShowDocs'
@@ -59,14 +57,14 @@ storiesOf('UI/Dimmable', module)
     </Dimmable>
   )
   .add('renderOverlay', () =>
-    <Dimmable dim renderOverlay={(on) => 'Hello'}>
+    <Dimmable dim renderOverlay={() => 'Hello'}>
       <div style={{width: 500, height: 300, border: '1px solid tomato'}}>
         Inline...
       </div>
     </Dimmable>
   )
   .add('Set color', () =>
-    <Dimmable color='rgba(255, 255, 255, .3)' ms={2000} dim renderOverlay={(on) => 'Hello'}>
+    <Dimmable color='rgba(255, 255, 255, .3)' ms={2000} dim renderOverlay={() => 'Hello'}>
       <div style={{width: 500, height: 300, border: '1px solid tomato'}}>
         Inline...
       </div>
