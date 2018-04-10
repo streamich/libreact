@@ -82,6 +82,7 @@ const MyComponent = mock();
      - [`<FullScreen>`](./docs/en/FullScreen.md)
      - [`<Slider>`](./docs/en/Slider.md)
      - [`<DropArea>`](./docs/en/DropArea.md)
+     - [`<Group>`](./docs/en/Group.md)
      - [`<OutsideClick>`](./docs/en/OutsideClick.md)
      - [`<Ripple>`](./docs/en/Ripple.md) and [`withRipple()`](./docs/en/Ripple.md#withripple) &mdash; [**example**](https://codesandbox.io/s/983q7jr80o)
      - [`<Img>`](./docs/en/Img.md)

@@ -65,6 +65,7 @@
   * [OutsideClick](OutsideClick.md)
   * [Ripple](Ripple.md)
   * [Img](Img.md)
+  * [Group](Group.md)
   * [WidthQuery](WidthQuery.md)
   * [View](View.md)
   * [WindowWidthQuery](WindowWidthQuery.md)
