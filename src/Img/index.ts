@@ -1,5 +1,11 @@
 import {Component} from 'react';
-import {h, noop} from '../util';
+import {h, noop, isClient} from '../util';
+
+const enum STATE {
+  LOADING,
+  DONE,
+  ERROR,
+}
 
 export interface IImgProps {
   renderLoad?: (props?: IImgProps) => React.ReactElement<any>;
@@ -12,27 +18,32 @@ export interface IImgState {
 
 export class Img extends Component<IImgProps, IImgState> {
   state = {
-    state: 0
+    state: STATE.LOADING
   };
 
-  onLoad = () => this.setState({state: 1});
-  onError = () => this.setState({state: -1});
+  onLoad = () => this.setState({state: STATE.DONE});
+  onError = () => this.setState({state: STATE.ERROR});
 
   render () {
     const {renderLoad, renderError, ...rest} = this.props;
-    const {state} = this.state;
+
+    if (!isClient) {
+      return h('img', rest);
+    }
 
     (rest as any).onLoad = this.onLoad;
     (rest as any).onError = this.onError;
 
-    if (state > 0) {
-      return h('img', rest);
-    }
+    const {state} = this.state;
+    const img = h('img', rest);
 
-    if (state < 0) {
-      return (renderError || renderLoad || noop)(this.props);
+    switch (state) {
+      case STATE.LOADING:
+        return (renderLoad || noop)(img, this.props, state);
+      case STATE.DONE:
+        return img;
+      case STATE.ERROR:
+        return (renderError || renderLoad || noop)(img, this.props, state);
     }
-
-    return (renderLoad || noop)(this.props);
   }
 }
