@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import {h, isClient} from '../util';
+import {h, isClient, noop} from '../util';
 
 const enum STATE {
   LOADING,
@@ -10,6 +10,7 @@ const enum STATE {
 export interface IImgProps extends React.AllHTMLAttributes<any> {
   renderLoad?: (img, props?: IImgProps, state?: STATE) => React.ReactElement<any>;
   renderError?: (img?, props?: IImgProps, state?: STATE) => React.ReactElement<any>;
+  $ref?: any;
 }
 
 export interface IImgState {
@@ -22,21 +23,29 @@ export class Img extends Component<IImgProps, IImgState> {
     state: STATE.LOADING
   };
 
-  onLoad = () => this.setState({state: STATE.DONE});
-  onError = (error) => {
-    console.log('err', error.target.nativeEvent);
-    this.setState({state: STATE.ERROR, error: error.message});
+  onLoad = (originalOnLoad) => (event) => {
+    this.setState({state: STATE.DONE});
+    (originalOnLoad || noop)(event);
+  };
+
+  onError = (originalOnError) => (event) => {
+    this.setState({state: STATE.ERROR});
+    (originalOnError || noop)(event);
   }
 
   render () {
-    const {renderLoad, renderError, ...rest} = this.props;
+    const {renderLoad, renderError, onLoad, onError, $ref, ...rest} = this.props;
 
     if (!isClient) {
       return h('img', rest);
     }
 
-    (rest as any).onLoad = this.onLoad;
-    (rest as any).onError = this.onError;
+    (rest as any).onLoad = this.onLoad(onLoad);
+    (rest as any).onError = this.onError(onError);
+
+    if ($ref) {
+      (rest as any).ref = $ref;
+    }
 
     const {state} = this.state;
     const img = h('img', rest);

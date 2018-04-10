@@ -1,4 +1,4 @@
-# `<Img>`Img
+# `<Img>`
 
 A wrapper around `<img>` element that accepts all `<img>` props and adds these two additional ones:
 
@@ -11,5 +11,9 @@ A wrapper around `<img>` element that accepts all `<img>` props and adds these t
 ```jsx
 import {Img} from 'libreact/lib/Img';
 
-<Img src="..." renderLoad={() => <div>Loading...</div>} renderError={() => <div>Error happened</div>} />
+<Img
+  src="..."
+  renderLoad={() => <div>Loading...</div>}
+  renderError={() => <div>Error happened</div>}
+/>
 ```
