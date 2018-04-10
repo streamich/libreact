@@ -3,8 +3,7 @@ import {storiesOf} from '@storybook/react';
 import {Img} from '..';
 // import ShowDocs from '../../../.storybook/ShowDocs';
 
-storiesOf('Sensors/IdleSensor', module)
+storiesOf('UI/Img', module)
   // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/IdleSensor.md')}))
-  .add('Defaults', () =>
-    <Img src='https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_960_720.jpg' />
-  )
+  .add('<img>', () => <img src='http://placehold.it/120x120&text=image1' />)
+  .add('Defaults', () => <Img src='http://placehold.it/120x120&text=image1' />)

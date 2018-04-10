@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import {h, noop, isClient} from '../util';
+import {h, isClient} from '../util';
 
 const enum STATE {
   LOADING,
@@ -8,8 +8,8 @@ const enum STATE {
 }
 
 export interface IImgProps extends React.AllHTMLAttributes<any> {
-  renderLoad?: (props?: IImgProps) => React.ReactElement<any>;
-  renderError?: (props?: IImgProps) => React.ReactElement<any>;
+  renderLoad?: (img?, props?: IImgProps, state?: STATE) => React.ReactElement<any>;
+  renderError?: (img, props?: IImgProps, state?: STATE) => React.ReactElement<any>;
 }
 
 export interface IImgState {
@@ -39,11 +39,13 @@ export class Img extends Component<IImgProps, IImgState> {
 
     switch (state) {
       case STATE.LOADING:
-        return (renderLoad || noop)(img, this.props, state);
+        return renderLoad ? renderLoad(img, this.props, state) : img;
       case STATE.DONE:
         return img;
       case STATE.ERROR:
-        return (renderError || renderLoad || noop)(img, this.props, state);
+        return renderError || renderLoad ?
+          (renderError || renderLoad)(img, this.props, state) :
+          img;
     }
   }
 }
