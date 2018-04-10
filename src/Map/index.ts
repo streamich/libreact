@@ -1,5 +1,3 @@
-import {h} from '../util';
-import {State} from '../State';
 import renderProp from '../util/renderProp';
 import {Value, faccToHocInit} from '../Value';
 

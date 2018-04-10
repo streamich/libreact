@@ -1,5 +1,4 @@
 import {Component} from 'react';
-import {h} from '../util';
 
 export interface IVibrateProps {
   ms: number | number[];

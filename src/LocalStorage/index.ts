@@ -1,5 +1,4 @@
 import {Component} from 'react';
-import {noop} from '../util';
 const debounce = require('throttle-debounce/debounce');
 
 export interface ILocalStorageProps {

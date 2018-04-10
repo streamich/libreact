@@ -1,6 +1,6 @@
 import {Component} from 'react';
 
-const RIC = (window as any).requestIdleCallback || ((fn, {timeout = 35} = {}) => setTimeout(fn, 35));
+const RIC = (window as any).requestIdleCallback || ((fn, {timeout = 35} = {}) => setTimeout(fn, timeout));
 
 export interface IWhenIdleProps {
   timeout?: number;

@@ -1,8 +1,7 @@
 import {IScratchSensorState} from './index';
 import {Component, cloneElement} from 'react';
-import {h, noop, on, off} from '../util';
+import {noop, on, off} from '../util';
 import {render, createEnhancer} from 'react-universal-interface';
-const throttle = require('throttle-debounce/throttle');
 
 export interface IScratchSensorProps {
   bond?: boolean | string;

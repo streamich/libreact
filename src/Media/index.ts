@@ -1,6 +1,5 @@
-import {Component, cloneElement, Children} from 'react';
-import {h, noop} from '../util';
-import renderProp from '../util/renderProp';
+import {Component} from 'react';
+import {h} from '../util';
 import parseTimeRanges from './parseTimeRanges';
 
 export type TMediaEvent<M> = (event, media?: M, state?: IMediaState) => void;

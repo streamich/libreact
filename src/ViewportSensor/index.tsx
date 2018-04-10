@@ -1,5 +1,5 @@
 import {h} from '../util';
-import {ViewportObserverSensor, IViewportObserverSensorProps, IViewportObserverSensorState} from '../ViewportObserverSensor';
+import {ViewportObserverSensor, IViewportObserverSensorProps} from '../ViewportObserverSensor';
 import {loadable} from '../loadable';
 import faccToHoc, {divWrapper} from '../util/faccToHoc';
 

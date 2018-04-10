@@ -1,4 +1,4 @@
-import {Component, Children, cloneElement} from 'react';
+import {Component, cloneElement} from 'react';
 import {h, noop} from '../util';
 import renderProp from '../util/renderProp';
 import faccToHoc from '../util/faccToHoc';

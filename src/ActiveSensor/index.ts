@@ -1,4 +1,4 @@
-import {Component, cloneElement} from 'react';
+import {cloneElement} from 'react';
 import {h} from '../util';
 import {Value} from '../Value';
 import renderProp from '../util/renderProp';

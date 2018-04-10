@@ -1,5 +1,5 @@
-import {Component, createElement as h} from 'react';
-import {isClient, noop} from '../util';
+import {Component} from 'react';
+import {noop} from '../util';
 import renderProp from '../util/renderProp';
 import * as throttle from 'throttle-debounce/throttle';
 

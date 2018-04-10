@@ -1,5 +1,4 @@
 import {Component} from 'react';
-import {isClient} from '../util';
 
 export interface IBrowserOnlyProps {
   children?;

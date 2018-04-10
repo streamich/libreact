@@ -1,6 +1,6 @@
 import {Component} from 'react';
 import {render} from 'react-universal-interface';
-import {h, noop} from '../util';
+import {noop} from '../util';
 
 export interface ILifecyclesProps {
   [key: string]: any;

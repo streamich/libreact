@@ -1,5 +1,5 @@
 import {Component, cloneElement} from 'react';
-import {h, on, off, noop} from '../util';
+import {noop} from '../util';
 import renderProp from '../util/renderProp';
 
 export interface IViewportObserverSensorProps {
@@ -65,7 +65,6 @@ export class ViewportObserverSensor extends Component<IViewportObserverSensorPro
   };
 
   render () {
-    const {children} = this.props;
     const element = renderProp(this.props, this.state);
 
     if (process.env.NODE_ENV !== 'production') {

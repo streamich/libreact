@@ -37,7 +37,7 @@ export const invert: TInvert = (tag?: keyof React.ReactHTML) => {
       this.el = null;
     }
 
-    event (name: string, handler: (...args) => void) {
+    event (handler: (...args) => void) {
       return (event) => {
         handler(event, this.el, this);
         this.forceUpdate();
@@ -45,7 +45,6 @@ export const invert: TInvert = (tag?: keyof React.ReactHTML) => {
     }
 
     render () {
-      const {event} = this;
       const {children, render, wrapper, tag: tagProp, onMount, onUnmount, ...rest} = this.props;
       const props = {
         ref: this.ref
@@ -55,7 +54,7 @@ export const invert: TInvert = (tag?: keyof React.ReactHTML) => {
         const value = rest[name];
 
         if ((name[0] === 'o') && (name[1] === 'n') && (typeof value === 'function')) {
-          props[name] = this.event(name, value);
+          props[name] = this.event(value);
         } else {
           props[name] = value;
         }

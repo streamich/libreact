@@ -1,6 +1,5 @@
 import {Component, createElement as h, cloneElement, Children} from 'react';
-import Types from 'prop-types';
-import {idx, noop} from '../util';
+import {noop} from '../util';
 import renderProp from '../util/renderProp';
 import faccToHoc, {divWrapper} from '../util/faccToHoc';
 
