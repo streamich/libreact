@@ -1,14 +1,12 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
 import {Group} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 const Custom = () => <hr />;
 
 storiesOf('UI/Group', module)
-//   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Group.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Group.md')}))
   .add('No group', () =>
     <div>
         <span>Hello</span>
