@@ -2,7 +2,7 @@ import {Component} from 'react';
 import {h, noop} from '../util';
 
 export interface IImgProps {
-  renderSpinner?: (props?: IImgProps) => React.ReactElement<any>;
+  renderLoad?: (props?: IImgProps) => React.ReactElement<any>;
   renderError?: (props?: IImgProps) => React.ReactElement<any>;
 }
 
@@ -19,7 +19,7 @@ export class Img extends Component<IImgProps, IImgState> {
   onError = () => this.setState({state: -1});
 
   render () {
-    const {renderSpinner, renderError, ...rest} = this.props;
+    const {renderLoad, renderError, ...rest} = this.props;
     const {state} = this.state;
 
     (rest as any).onLoad = this.onLoad;
@@ -30,9 +30,9 @@ export class Img extends Component<IImgProps, IImgState> {
     }
 
     if (state < 0) {
-      return (renderError || renderSpinner || noop)(this.props);
+      return (renderError || renderLoad || noop)(this.props);
     }
 
-    return (renderSpinner || noop)(this.props);
+    return (renderLoad || noop)(this.props);
   }
 }
