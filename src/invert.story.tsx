@@ -1,7 +1,5 @@
 import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
 import {invert, Inverted} from './invert';
 import ShowDocs from '../.storybook/ShowDocs'
 
@@ -25,7 +23,7 @@ class StoryInvertedUnmount extends Component<any, any> {
       this.state.show ?
         h(Inverted, {
           tag: 'div',
-          wrapper: (jsx, comp) => <b>jsx</b>,
+          wrapper: () => <b>jsx</b>,
           onMount: (div) => console.log('MOUNTED', div),
           onUnmount: (div) => console.log('UNMOUNTED', div)
         }, 'Hello world') :

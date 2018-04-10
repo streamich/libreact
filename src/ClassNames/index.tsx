@@ -1,7 +1,5 @@
 import {Component} from 'react';
 import {render} from 'react-universal-interface';
-import {Inverted} from '../invert';
-import {h} from '../util';
 
 const equalSets = (a: any[], b: any[]) => {
   if (a.length !== b.length) {

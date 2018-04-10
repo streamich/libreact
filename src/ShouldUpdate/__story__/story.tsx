@@ -1,8 +1,6 @@
-import {Component, createElement as h} from 'react';
+import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
-import {ShouldUpdate, shouldUpdate} from '..';
+import {ShouldUpdate} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 import {Example1} from './Example1';
 import {Example2} from './Example2';

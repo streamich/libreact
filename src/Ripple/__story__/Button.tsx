@@ -1,4 +1,4 @@
-import {Component, createElement as h} from 'react';
+import {createElement as h} from 'react';
 import {nano} from '../../nano';
 import {addon as addonCache} from 'nano-css/addon/cache';
 import {addon as addonJsx} from 'nano-css/addon/jsx';

@@ -1,7 +1,5 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
 import {lazy} from '../lazy';
 import ShowDocs from '../../.storybook/ShowDocs'
 
@@ -32,6 +30,7 @@ const Lazy2 = lazy({
 });
 
 const Lazy3 = lazy({
+  // @ts-ignore
   loader: () => new Promise((resolve, reject) => {
     setTimeout(() => {
       reject(new Error('could not load'));

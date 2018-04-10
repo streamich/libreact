@@ -6,7 +6,7 @@ import {LocationSensor} from '..';
 describe('<LocationSensor> SSR', () => {
   it('renders without crashing', () => {
     const html = renderToStaticMarkup(
-      <LocationSensor>{(location) =>
+      <LocationSensor>{() =>
         <div>foo</div>
       }</LocationSensor>
     );
@@ -15,7 +15,7 @@ describe('<LocationSensor> SSR', () => {
   });
 
   it('returns expected state', () => {
-    const html = renderToStaticMarkup(
+    renderToStaticMarkup(
       <LocationSensor>{(location) => {
         expect(location).to.eql({
           trigger: 'load',

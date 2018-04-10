@@ -1,5 +1,4 @@
 import {createElement as h} from 'react';
-import {LocationSensor} from '../../LocationSensor';
 import {Router, Route} from '..';
 
 const StoryRouteTruncateRoute = () =>

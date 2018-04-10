@@ -1,6 +1,5 @@
 import {createElement as h} from 'react';
 import {render, unmountComponentAtNode} from 'react-dom';
-import {mount} from 'enzyme';
 import {Dimmer} from '..';
 
 describe('<Dimmer>', () => {

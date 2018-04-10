@@ -1,7 +1,5 @@
-import React, {createElement as h, Component} from 'react';
+import {createElement as h, Component} from 'react';
 import {storiesOf} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
 import {Provider, Consumer, withContext} from '..';
 
 const ColorIs = ({ctx}) => <div>Color is: {ctx.color}</div>;

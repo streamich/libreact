@@ -1,7 +1,6 @@
-import {Component, createElement as h} from 'react';
+import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
 import {Slider} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs';
 
@@ -30,7 +29,7 @@ storiesOf('UI/Slider', module)
       onScrubStart={action('onScrubStart')}
       onScrubStop={action('onScrubStop')}
       vertical={true}
-      render={(state) => (
+      render={() => (
         <div style={{
           width: 15,
           height: 200,
@@ -46,7 +45,7 @@ storiesOf('UI/Slider', module)
       onScrubStart={action('onScrubStart')}
       onScrubStop={action('onScrubStop')}
       vertical={true}
-      render={(state) => (
+      render={() => (
         <div style={{
           width: 15,
           height: 200,

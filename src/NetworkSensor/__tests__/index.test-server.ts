@@ -5,13 +5,13 @@ import {NetworkSensor} from '..';
 
 describe('<NetworkSensor> SSR', () => {
   it('renders without crashing', () => {
-    const html = renderToStaticMarkup(h(NetworkSensor, {},
-      (net) => h('div', {}, 'foobar')
+    renderToStaticMarkup(h(NetworkSensor, {},
+      () => h('div', {}, 'foobar')
     ));
   });
 
   it('has expected server-side values', () => {
-    const html = renderToStaticMarkup(h(NetworkSensor, {},
+    renderToStaticMarkup(h(NetworkSensor, {},
       (net) => {
         const {online, since} = net;
 
