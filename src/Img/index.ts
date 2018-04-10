@@ -7,13 +7,13 @@ const enum STATE {
   ERROR,
 }
 
-export interface IImgProps {
+export interface IImgProps extends React.AllHTMLAttributes<any> {
   renderLoad?: (props?: IImgProps) => React.ReactElement<any>;
   renderError?: (props?: IImgProps) => React.ReactElement<any>;
 }
 
 export interface IImgState {
-  state: number;
+  state: STATE;
 }
 
 export class Img extends Component<IImgProps, IImgState> {
