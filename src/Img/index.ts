@@ -8,21 +8,25 @@ const enum STATE {
 }
 
 export interface IImgProps extends React.AllHTMLAttributes<any> {
-  renderLoad?: (img?, props?: IImgProps, state?: STATE) => React.ReactElement<any>;
-  renderError?: (img, props?: IImgProps, state?: STATE) => React.ReactElement<any>;
+  renderLoad?: (img, props?: IImgProps, state?: STATE) => React.ReactElement<any>;
+  renderError?: (img?, props?: IImgProps, state?: STATE) => React.ReactElement<any>;
 }
 
 export interface IImgState {
   state: STATE;
+  error?: string;
 }
 
 export class Img extends Component<IImgProps, IImgState> {
-  state = {
+  state: IImgState = {
     state: STATE.LOADING
   };
 
   onLoad = () => this.setState({state: STATE.DONE});
-  onError = () => this.setState({state: STATE.ERROR});
+  onError = (error) => {
+    console.log('err', error.target.nativeEvent);
+    this.setState({state: STATE.ERROR, error: error.message});
+  }
 
   render () {
     const {renderLoad, renderError, ...rest} = this.props;
