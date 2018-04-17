@@ -13,8 +13,7 @@ const ignore = [
 
 gulp.task('build-ts', () => {
     return gulp.src([
-      '../src/**/*.ts',
-      '../src/**/*.tsx',
+      '../src/**/*.{ts,tsx}',
       ...ignore
     ]).pipe(ts({
       ...tsConfig.compilerOptions,
@@ -25,7 +24,7 @@ gulp.task('build-ts', () => {
 
 gulp.task('build-modules', () => {
   return gulp.src([
-    '../src/**/*.ts',
+    '../src/**/*.{ts,tsx}',
     ...ignore
   ]).pipe(ts({
     ...tsConfig.compilerOptions,
