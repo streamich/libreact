@@ -13,7 +13,7 @@ if (!(window as any).IntersectionObserver) {
 }
 
 export const ViewportSensor: React.StatelessComponent<IViewportObserverSensorProps> = (props) => {
-  return <Sensor {...props} />
+  return h(Sensor, props);
 };
 
 const wrapper = (Comp, propName, props, state) =>

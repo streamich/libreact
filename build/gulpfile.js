@@ -12,20 +12,22 @@ const ignore = [
 ];
 
 gulp.task('build-ts', () => {
-    return gulp.src([
-      '../src/**/*.ts',
-      '../src/**/*.tsx',
-      ...ignore
-    ]).pipe(ts({
-      ...tsConfig.compilerOptions,
-      target: 'es5',
-      module: 'commonjs'
-    })).pipe(gulp.dest('../lib'));
+    return gulp
+      .src([
+        '../src/**/*.ts',
+        ...ignore
+      ])
+      .pipe(ts({
+        ...tsConfig.compilerOptions,
+        target: 'es5',
+        module: 'commonjs'
+      }))
+      .pipe(gulp.dest('../lib'));
 });
 
 gulp.task('build-modules', () => {
   return gulp.src([
-    '../src/**/*.ts',
+    '../src/**/*.{ts,tsx}',
     ...ignore
   ]).pipe(ts({
     ...tsConfig.compilerOptions,
