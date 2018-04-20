@@ -5,19 +5,15 @@ export interface IAfterDrafState {
   ready: boolean;
 }
 
-const Passthrough = (props) => props.children;
-
-export const createAfterDraf = (times = 1) => {
-  let cnt = 0;
-
-  return class extends Component<{}, IAfterDrafState> {
+export const AfterDraf = isClient
+  ? class AfterDraf extends Component<{}, IAfterDrafState> {
     frame;
     state: IAfterDrafState;
 
     constructor (props, context) {
       super(props, context);
 
-      if (isClient && cnt < times) {
+      if (isClient) {
         this.state = {
           ready: false
         };
@@ -25,32 +21,21 @@ export const createAfterDraf = (times = 1) => {
     }
 
     componentDidMount () {
-      if (cnt < times) {
-        const RAF = requestAnimationFrame;
+      const RAF = requestAnimationFrame;
 
+      this.frame = RAF(() => {
         this.frame = RAF(() => {
-          this.frame = RAF(() => {
-            cnt++;
-            this.setState({ready: true});
-          });
+          this.setState({ready: true});
         });
-      }
+      });
     }
 
     componentWillUnmount () {
-      if (cnt < times) {
-        cancelAnimationFrame(this.frame);
-      }
+      cancelAnimationFrame(this.frame);
     }
 
     render () {
-      if (!isClient || cnt >= times) {
-        return this.props.children;
-      }
-
       return this.state.ready ? this.props.children : null;
-    }
+    };
   }
-};
-
-export const AfterDraf = isClient ? createAfterDraf(Infinity) : Passthrough;
+  : (props) => props.children;
