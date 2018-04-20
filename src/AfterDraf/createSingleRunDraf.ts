@@ -7,7 +7,7 @@ export interface IAfterDrafState {
 
 export const createSingleRunDraf = isClient
   ? () => {
-    let done = false;
+    let signelDrafFinished = false;
 
     return class extends Component<{}, IAfterDrafState> {
       frame;
@@ -16,7 +16,7 @@ export const createSingleRunDraf = isClient
       constructor (props, context) {
         super(props, context);
 
-        if (isClient && !done) {
+        if (isClient && !signelDrafFinished) {
           this.state = {
             ready: false
           };
@@ -24,12 +24,12 @@ export const createSingleRunDraf = isClient
       }
 
       componentDidMount () {
-        if (!done) {
+        if (!signelDrafFinished) {
           const RAF = requestAnimationFrame;
 
           this.frame = RAF(() => {
             this.frame = RAF(() => {
-              done = true;
+              signelDrafFinished = true;
               this.setState({ready: true});
             });
           });
@@ -43,7 +43,7 @@ export const createSingleRunDraf = isClient
       }
 
       render () {
-        if (!isClient || done) {
+        if (!isClient || signelDrafFinished) {
           return this.props.children;
         }
 
