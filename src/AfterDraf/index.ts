@@ -1,31 +1,41 @@
 import {Component} from 'react';
-
-const RAF = requestAnimationFrame;
+import {isClient} from '../util';
 
 export interface IAfterDrafState {
   ready: boolean;
 }
 
-export class AfterDraf extends Component<{}, IAfterDrafState> {
-  frame;
+export const AfterDraf = isClient
+  ? class AfterDraf extends Component<{}, IAfterDrafState> {
+    frame;
+    state: IAfterDrafState;
 
-  state: IAfterDrafState = {
-    ready: false
-  };
+    constructor (props, context) {
+      super(props, context);
 
-  componentDidMount () {
-    this.frame = RAF(() => {
+      if (isClient) {
+        this.state = {
+          ready: false
+        };
+      }
+    }
+
+    componentDidMount () {
+      const RAF = requestAnimationFrame;
+
       this.frame = RAF(() => {
-        this.setState({ready: true});
+        this.frame = RAF(() => {
+          this.setState({ready: true});
+        });
       });
-    });
-  }
+    }
 
-  componentWillUnmount () {
-    cancelAnimationFrame(this.frame);
-  }
+    componentWillUnmount () {
+      cancelAnimationFrame(this.frame);
+    }
 
-  render () {
-    return this.state.ready ? this.props.children : null;
+    render () {
+      return this.state.ready ? this.props.children : null;
+    };
   }
-}
+  : (props) => props.children;
