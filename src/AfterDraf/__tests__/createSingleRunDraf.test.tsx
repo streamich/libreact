@@ -49,7 +49,7 @@ describe('createSingleRunDraf()', () => {
 
     expect(wrapper.html()).toBe('<div>foobar</div>');
 
-    const wrapper2 = shallow(
+    shallow(
       <AfterDraf>
         <div>bazooka</div>
       </AfterDraf>

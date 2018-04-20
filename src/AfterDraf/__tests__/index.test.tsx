@@ -31,7 +31,7 @@ describe('<AfterDraf>', () => {
   });
 
   it('waits for DRAF every mount', async () => {
-    const wrapper = shallow(
+    shallow(
       <AfterDraf>
         <div>foobar</div>
       </AfterDraf>
