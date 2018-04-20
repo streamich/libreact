@@ -25,7 +25,7 @@ export const createAfterDraf = (times = 1) => {
     }
 
     componentDidMount () {
-      if (isClient && cnt < times) {
+      if (cnt < times) {
         const RAF = requestAnimationFrame;
 
         this.frame = RAF(() => {
@@ -38,7 +38,7 @@ export const createAfterDraf = (times = 1) => {
     }
 
     componentWillUnmount () {
-      if (isClient && cnt < times) {
+      if (cnt < times) {
         cancelAnimationFrame(this.frame);
       }
     }
