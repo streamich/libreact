@@ -2,6 +2,7 @@ import {createElement as h} from 'react';
 import {shallow} from 'enzyme';
 import {createAfterDraf, AfterDraf} from '..';
 
+const isClient = typeof window === 'object';
 const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 describe('<AfterDraf>', () => {
@@ -24,7 +25,11 @@ describe('<AfterDraf>', () => {
       </AfterDraf>
     );
 
-    expect(wrapper.html()).toBe(null);
+    if (isClient) {
+      expect(wrapper.html()).toBe(null);
+    } else {
+      expect(wrapper.html()).toBe('<div>foobar</div>');
+    }
 
     await sleep(100);
 
