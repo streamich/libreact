@@ -8,12 +8,15 @@ import {getElRect, getRootRect, TRect} from '../ViewportScrollSensor';
 const zeros: TRect = [0, 0, 0, 0];
 
 export interface IParallaxProps extends IUniversalInterfaceProps<IParallaxState> {
-  margin?: [number, number, number, number],
+  distance?: number,
   throttle?: number,
+  margin?: [number, number, number, number],
   onChange?: (IParallaxState) => void,
 }
 
 export interface IParallaxState {
+  distance: number,
+  travelled: number,
   value: number,
   el: TRect,
   root: TRect,
@@ -21,17 +24,26 @@ export interface IParallaxState {
 
 export class Parallax extends Component<IParallaxProps, IParallaxState> {
   static defaultProps = {
+    distance: Infinity,
     margin: zeros,
     throttle: 50,
   };
 
   el: HTMLElement;
   mounted: boolean = false;
-  state: IParallaxState = {
-    value: 0,
-    el: zeros,
-    root: zeros,
-  };
+  state: IParallaxState;
+
+  constructor (props, context) {
+    super(props, context);
+
+    this.state = {
+      distance: this.props.distance,
+      travelled: 0,
+      value: 0,
+      el: zeros,
+      root: zeros,
+    };
+  }
 
   ref = (originalRef) => (el) => {
     this.el = el;
@@ -67,15 +79,15 @@ export class Parallax extends Component<IParallaxProps, IParallaxState> {
 
     const rootHeight = root[3] - root[1];
     const elHeight = el[3] - el[1];
-    const distance = rootHeight + elHeight;
-    const remaining = distance - (el[3] - root[1]);
-    const value = Math.max(0, Math.min(1, remaining / distance));
+    const distance = Math.min(rootHeight + elHeight, this.props.distance);
+    const travelled = root[3] - el[1];
+    const value = Math.max(0, Math.min(1, travelled / distance));
 
     if (value > 0 && value < 1) {
-      this.change({value, el, root});
+      this.change({distance, travelled, value, el, root});
     } else {
       if (this.state.value > 0 && this.state.value < 1) {
-        this.change({value, el, root});
+        this.change({distance, travelled, value, el, root});
       }
     }
   });
