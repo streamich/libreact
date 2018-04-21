@@ -1,7 +1,7 @@
 import {Parallax} from '..';
 import {h} from '../../util';
 
-const StoryParallax1 = ({onChange}) => {
+const StoryParallax1 = () => {
   return (
     <div>
       <div style={{
@@ -10,7 +10,7 @@ const StoryParallax1 = ({onChange}) => {
         border: '1px solid tomato'
       }} />
 
-      <Parallax onChange={(lol) => console.log(lol)}>{(state) =>
+      <Parallax onChange={(data) => console.log(data)}>{(state) =>
         <pre style={{border: '1px solid black', height: 300}}>{JSON.stringify(state, null, 4)}</pre>
       }</Parallax>
 

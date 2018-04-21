@@ -84,9 +84,9 @@ export class Parallax extends Component<IParallaxProps, IParallaxState> {
     const element = render(this.props, this.state);
 
     if (process.env.NODE_ENV !== 'production') {
-      if ((typeof element !== 'object') || (typeof element.type !== 'string')) {
+      if ((typeof element !== 'object') && (typeof element.type !== 'string')) {
         throw new TypeError(
-          '<ViewportScrollSensor> accepts a single child which must be ' +
+          '<Parallax> accepts a single child which must be ' +
           'a plain DOM element or a function that returns one.'
         );
       }
