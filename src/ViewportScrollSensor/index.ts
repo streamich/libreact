@@ -7,13 +7,13 @@ import {IUniversalInterfaceProps} from '../typing';
 export type TMargin = [number, number, number, number];
 export type TRect = [number, number, number, number];
 
-const getElRect = (el): TRect => {
+export const getElRect = (el): TRect => {
   const {top, left, bottom, right} = el.getBoundingClientRect();
 
   return [left, top, right, bottom];
 };
 
-const getRootRect = ([top, right, bottom, left]: TMargin): TRect => {
+export const getRootRect = ([top, right, bottom, left]: TMargin): TRect => {
   return [
     0 - left,
     0 - top,

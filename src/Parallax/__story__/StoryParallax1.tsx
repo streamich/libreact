@@ -10,7 +10,7 @@ const StoryParallax1 = ({onChange}) => {
         border: '1px solid tomato'
       }} />
 
-      <Parallax threshold={1} onChange={onChange}>{(state) =>
+      <Parallax onChange={onChange}>{(state) =>
         <pre>{JSON.stringify(state, null, 4)}</pre>
       }</Parallax>
 
