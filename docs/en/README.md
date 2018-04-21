@@ -48,6 +48,7 @@
   - [UI](./UI.md)
      - [`<Portal>`](./Portal.md), [`<Overlay>`](./Overlay.md), and [`<Modal>`](./Modal.md)
      - [`<Dimmer>`](./Dimmer.md) and [`<Dimmable>`](./Dimmable.md)
+     - [`<Parallax>`](./Parallax.md)
      - [`<FullScreen>`](./FullScreen.md)
      - [`<Slider>`](./Slider.md)
      - [`<DropArea>`](./DropArea.md)

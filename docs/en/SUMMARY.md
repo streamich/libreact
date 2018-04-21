@@ -59,6 +59,7 @@
   * [Modal](Modal.md)
   * [Dimmer](Dimmer.md)
   * [Dimmable](Dimmable.md)
+  * [Parallax](Parallax.md)
   * [FullScreen](FullScreen.md)
   * [Slider](Slider.m
   * [DropArea](DropArea.md)
