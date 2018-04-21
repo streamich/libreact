@@ -1,9 +1,9 @@
 import {Component, cloneElement} from 'react';
 import {render} from 'react-universal-interface';
-import * as throttle from 'throttle-debounce/throttle';
 import {IUniversalInterfaceProps} from '../typing';
 import {noop, on, off} from '../util';
 import {getElRect, getRootRect, TRect} from '../ViewportScrollSensor';
+const throttle = require('throttle-debounce/throttle');
 
 const zeros: TRect = [0, 0, 0, 0];
 
