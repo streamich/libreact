@@ -1,8 +1,6 @@
 # `<Parallax>`
 
-This component allows you to create [*Parallax effects*](https://en.wikipedia.org/wiki/Parallax).
-
-It supports [React Universal Interace](https://www.npmjs.com/package/react-universal-interface).
+This component allows you to create [*Parallax effects*](https://en.wikipedia.org/wiki/Parallax). It supports [React Universal Interace](https://www.npmjs.com/package/react-universal-interface).
 
 
 ## Usage
@@ -13,7 +11,7 @@ The below example will slow down the scrolling of your `<img>` element.
 import {Parallax} from 'libreact/lib/Parallax';
 
 <Parallax>{({value}) =>
-  <img style={{marginTop: state.value * 300}} src={/* ... */} />
+  <img style={{marginTop: value * 300}} src={/* ... */} />
 }</Parallax>
 ```
 
@@ -25,5 +23,5 @@ parallax effect will continue thoughout the lenght of your element, if set, the 
 effect will be capped at `distance`, defaults to `Infinity`.
 - `throttle` &mdash; optional, number in milliseconds, used to throttle document `scroll` event, defaults to `50`.
 - `margin` &mdash; optional, a 4-tuple `[top, right, bottom, left]` margins in pixels to apply to the viewport.
-- `onChange` &mdash; optional, callback triggered every time the state of `<Parallax>` component changes. Receives the
+- `onChange` &mdash; optional, callback, triggered every time the state of `<Parallax>` component changes. Receives the
 state of the `<Parallax>` component as a single argument.
