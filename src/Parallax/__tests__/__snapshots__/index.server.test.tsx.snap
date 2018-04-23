@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Parallax> Server throws on invalid children in development mode 1`] = `"<Parallax> accepts a single child which must be a plain DOM element or a function that returns one."`;

@@ -79,6 +79,7 @@ const MyComponent = mock();
   - [UI](./docs/en/UI.md)
      - [`<Portal>`](./docs/en/Portal.md), [`<Overlay>`](./docs/en/Overlay.md), and [`<Modal>`](./docs/en/Modal.md)
      - [`<Dimmer>`](./docs/en/Dimmer.md) and [`<Dimmable>`](./docs/en/Dimmable.md)
+     - [`<Parallax>`](./docs/en/Parallax.md)
      - [`<FullScreen>`](./docs/en/FullScreen.md)
      - [`<Slider>`](./docs/en/Slider.md)
      - [`<DropArea>`](./docs/en/DropArea.md)

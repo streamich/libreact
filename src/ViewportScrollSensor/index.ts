@@ -2,17 +2,18 @@ import {Component, cloneElement} from 'react';
 import {on, off, noop} from '../util';
 import * as throttle from 'throttle-debounce/throttle';
 import renderProp from '../util/renderProp';
+import {IUniversalInterfaceProps} from '../typing';
 
 export type TMargin = [number, number, number, number];
 export type TRect = [number, number, number, number];
 
-const getElRect = (el): TRect => {
+export const getElRect = (el): TRect => {
   const {top, left, bottom, right} = el.getBoundingClientRect();
 
   return [left, top, right, bottom];
 };
 
-const getRootRect = ([top, right, bottom, left]: TMargin): TRect => {
+export const getRootRect = ([top, right, bottom, left]: TMargin): TRect => {
   return [
     0 - left,
     0 - top,
@@ -44,9 +45,7 @@ const intersect: TIntersect = (rect1, rect2) => {
 type TArea = (react: TRect) => number;
 const area: TArea = ([x1, y1, x2, y2]) => (x2 - x1) * (y2 - y1);
 
-export interface IViewportScrollSensorProps {
-  children?: ((size: IViewportScrollSensorState) => React.ReactElement<any>) | React.ReactElement<any>;
-  render?: (size: IViewportScrollSensorState) => React.ReactElement<any>;
+export interface IViewportScrollSensorProps extends IUniversalInterfaceProps<IViewportScrollSensorState> {
   margin?: TMargin;
   threshold?: number;
   throttle?: number;
@@ -57,7 +56,7 @@ export interface IViewportScrollSensorState {
   visible: boolean;
 }
 
-export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, IViewportScrollSensorState> {
+export class ViewportScrollSensor<TProps extends IViewportScrollSensorProps, TState extends IViewportScrollSensorState> extends Component<TProps, TState> {
   static defaultProps = {
     threshold: 0,
     throttle: 50,
@@ -67,9 +66,9 @@ export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, 
   mounted: boolean = false;
   el: HTMLElement;
 
-  state = {
+  state: TState = {
     visible: false
-  };
+  } as TState;
 
   ref = (originalRef) => (el) => {
     this.el = el;
@@ -89,12 +88,23 @@ export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, 
     off(document, 'scroll', this.onScroll);
   }
 
+  onCalculation (visible, rectRoot: TRect, rectEl: TRect, rectIntersection: TRect) {
+    if (visible !== this.state.visible) {
+      const state = {
+        visible
+      };
+
+      this.setState(state);
+      (this.props.onChange || noop)(state);
+    }
+  }
+
   onScroll = throttle(this.props.throttle, false, () => {
     if (!this.mounted) {
       return;
     }
 
-    const {threshold, margin, onChange} = this.props;
+    const {threshold, margin} = this.props;
     let visible = false;
 
     const rectRoot = getRootRect(margin);
@@ -109,14 +119,7 @@ export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, 
       visible = !!((!threshold && intersectionRatio) || (intersectionRatio >= threshold));
     }
 
-    if (visible !== this.state.visible) {
-      const state = {
-        visible
-      };
-
-      this.setState(state);
-      (onChange || noop)(state);
-    }
+    this.onCalculation(visible, rectRoot, rectEl, rectIntersection);
   });
 
   render () {
