@@ -46,7 +46,7 @@ describe('<Parallax> Server', () => {
       <Parallax distance={300}>{(data) => {
 
         expect(data).toMatchObject({
-          distance: 300,
+          distance: 300
         });
 
         return <div>value: {data.value}</div>;
