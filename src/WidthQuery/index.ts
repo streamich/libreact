@@ -1,3 +1,5 @@
+export {View} from '../View';
+
 export interface IWidthQueryProps {
   width: number,
 }
