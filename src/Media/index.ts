@@ -88,7 +88,8 @@ export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IM
     }
 
     this.setState({
-      volume: this.el.volume
+      volume: this.el.volume,
+      muted: this.el.muted,
     });
 
     this.event('onMount')(this);
