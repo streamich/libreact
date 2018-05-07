@@ -11,7 +11,7 @@ storiesOf('UI/Video', module)
     <Video autoPlay style={{
       width: 400,
       border: '1px solid tomato'
-    }} src={src}>{({video}) =>
+    }} src={src} onChange={(...args) => console.log(...args)}>{({video}) =>
       <div>
         {video}
       </div>
@@ -24,6 +24,7 @@ storiesOf('UI/Video', module)
         width: 400,
         border: '1px solid tomato'
       }}
+      onChange={(...args) => console.log(...args)}
       render={({video, play, pause}, {isPlaying}) =>
         <div>
           {video}
@@ -42,6 +43,7 @@ storiesOf('UI/Video', module)
         width: 400,
         border: '1px solid tomato'
       }}
+      onChange={(...args) => console.log(...args)}
       render={({video, play, pause, seek, volume, mute, unmute}, state) =>
         <div>
           {video}
