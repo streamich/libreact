@@ -29,6 +29,7 @@ export interface IMediaProps<M> extends React.AllHTMLAttributes<any> {
 
   onMount?: TMediaEvent<M>,
   onUnmount?: TMediaEvent<M>,
+  onChange?: TMediaEvent<M>,
   onAbort?: TMediaEvent<M>,
   onCanPlay?: TMediaEvent<M>,
   onCanPlayThrough?: TMediaEvent<M>,
@@ -166,8 +167,14 @@ export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IM
     }
   };
 
+  change (nextState) {
+    this.setState(nextState, () => {
+      this.event('onChange')(null);
+    });
+  }
+
   onPlay = (event) => {
-    this.setState({
+    this.change({
       isPlaying: true
     });
 
@@ -175,7 +182,7 @@ export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IM
   };
 
   onPause = (event) => {
-    this.setState({
+    this.change({
       isPlaying: false
     });
 
@@ -185,7 +192,7 @@ export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IM
   onVolumeChange = (event) => {
     const {muted, volume} = this.el;
 
-    this.setState({
+    this.change({
       muted,
       volume
     });
@@ -196,7 +203,7 @@ export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IM
   onDurationChange = (event) => {
     const {duration, buffered} = this.el;
 
-    this.setState({
+    this.change({
       duration,
       buffered: parseTimeRanges(buffered)
     });
@@ -205,7 +212,7 @@ export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IM
   };
 
   onTimeUpdate = (event) => {
-    this.setState({
+    this.change({
       time: this.el.currentTime
     });
 
@@ -213,7 +220,7 @@ export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IM
   };
 
   onProgress = (event) => {
-    this.setState({
+    this.change({
       buffered: parseTimeRanges(this.el.buffered)
     });
 
@@ -222,7 +229,7 @@ export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IM
 
   render () {
     const {props, event} = this;
-    const {tag = this.tag, children, render, noJs, ...rest} = props as any;
+    const {tag = this.tag, children, render, noJs, onMount, onUnmount, ...rest} = props as any;
 
     return h(tag, {
       ...rest,
