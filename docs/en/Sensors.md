@@ -35,6 +35,7 @@ For example, the below `<div>` will be re-rendered every time mouse position cha
     - [`<ViewportScrollSensor>`](./ViewportSensor.md#viewportscrollsensor) and [`<ViewportObserverSensor>`](./ViewportSensor.md#viewportobserversensor)
   - [`<WindowScrollSensor>`](./WindowScrollSensor.md) &mdash; tracks window scroll position.
   - [`<WindowSizeSensor>`](./WindowSizeSensor.md) &mdash; tracks window size.
+    - [`<WindowWidthSensor>`](./WindowWidthSensor.md) &mdash; tracks window width.
 
 Most sensors have also corresponding HOC and class decorator that provide the same functionality.
 For example, [`<NetworkSensor>`](./NetworkSensor.md) render prop component has a corresponding [`withNetowrk()`](./NetworkSensor.md#withnetwork-hoc) HOC and
