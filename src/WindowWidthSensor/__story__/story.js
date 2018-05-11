@@ -5,7 +5,7 @@ import {WindowWidthSensor} from '..';
 import ShowDocs from '../../../.storybook/ShowDocs'
 
 storiesOf('Sensors/WindowWidthSensor', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/WindowWidthSensor.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/WindowWidthSensor.md')}))
   .add('Example', () =>
     h(WindowWidthSensor, {onWidth: action('onWidth')}, ({width, height}) =>
       h('div', {},
