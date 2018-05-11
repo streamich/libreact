@@ -47,6 +47,7 @@
   * [ViewportSensor](ViewportSensor.md)
   * [WindowScrollSensor](WindowScrollSensor.md)
   * [WindowSizeSensor](WindowSizeSensor.md)
+    * [WindowWidthSensor](WindowWidthSensor.md)
 * [Context](Context.md)
   * [Provider](Provider.md)
   * [Theming](theme.md)

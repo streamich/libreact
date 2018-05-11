@@ -39,6 +39,7 @@
         - [`<ViewportScrollSensor>`](./ViewportSensor.md#viewportscrollsensor) and [`<ViewportObserverSensor>`](./ViewportSensor.md#viewportobserversensor)
      - [`<WindowScrollSensor>`](./WindowScrollSensor.md), [`withWindowScroll()`](./WindowScrollSensor.md#withwindowscroll-hoc), and [`@withWindowScroll`](./WindowScrollSensor.md#withwindowscroll-decorator)
      - [`<WindowSizeSensor>`](./WindowSizeSensor.md), [`withWindowSize()`](./WindowSizeSensor.md#withwindowsize-hoc), and [`@withWindowSize`](./WindowSizeSensor.md#withwindowsize-decorator)
+        - [`<WindowWidthSensor>`](./WindowWidthSensor.md), [`withWindowWidth()`](./WindowWidthSensor.md#withwindowwidth-hoc), and [`@withWindowWidth`](./WindowWidthSensor.md#withwindowwidth-decorator)
   - [Context](./Context.md)
      - [`<Provider>`](./Provider.md#provider), [`<Consumer>`](./Provider.md#consumer), [`withContext()`](./Provider.md#withcontext-hoc), and [`@withContext`](./Provider.md#withcontext-decorator)
      - [`<Theme>`](./theme.md#theme), [`<Themed>`](./theme.md#themed), [`withTheme()`](./theme.md#withtheme-hoc), and [`@withTheme`](./theme.md#withtheme-decorator)
