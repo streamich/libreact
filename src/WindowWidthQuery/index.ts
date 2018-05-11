@@ -1,10 +1,10 @@
 import {h} from '../util';
 import {WidthQuery} from '../WidthQuery';
-import {WindowSizeSensor} from '../WindowSizeSensor';
+import {WindowWidthSensor} from '../WindowWidthSensor';
 
 export {View} from '../View';
 
 export const WindowWidthQuery = (props) =>
-  h(WindowSizeSensor, null,
+  h(WindowWidthSensor, null,
     (state) => h(WidthQuery, state, props.children)
   );
