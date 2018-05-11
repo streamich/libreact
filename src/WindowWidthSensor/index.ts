@@ -1,36 +1,53 @@
-import {Component, createElement as h} from 'react';
-import {WindowSizeSensor, IWindowSizeSensorProps, IWindowSizeSensorValue} from '../WindowSizeSensor';
-import {noop} from '../util';
+import {Component} from 'react';
+import {isClient} from '../util';
 import faccToHoc from '../util/faccToHoc';
+import renderProp from '../util/renderProp';
+import {IUniversalInterfaceProps} from '../typing'
+import {noop, on, off} from '../util';
+const throttle = require('throttle-debounce/throttle');
 
-export interface IWindowWidthSensorProps extends IWindowSizeSensorProps {
-  onChange?: (size: IWindowSizeSensorValue) => void;
+export interface IWindowWidthSensorProps extends IUniversalInterfaceProps<IWindowWidthSensorState> {
+  width?: number,
+  throttle?: number,
+  onWidth: (state: IWindowWidthSensorState) => {},
 }
 
-export class WindowWidthSensor extends Component<IWindowWidthSensorProps, IWindowSizeSensorValue> {
+export interface IWindowWidthSensorState {
+  width: number;
+}
+
+export class WindowWidthSensor extends Component<IWindowWidthSensorProps, IWindowWidthSensorState> {
   static defaultProps = {
-    onChange: noop
+    width: 1920,
+    throttle: 25,
+    onWidth: noop,
   };
 
   state = {
-    width: Infinity,
-    height: Infinity,
+    width: isClient ? window.innerWidth : this.props.width,
   };
 
-  onChange = (size) => {
-    if (this.state.width !== size.width) {
-      this.setState(size);
-      this.props.onChange(size);
+  componentDidMount () {
+    on(window, 'resize', this.onResize);
+  }
+
+  componentWillUnmount () {
+    off(window, 'resize', this.onResize);
+  }
+
+  onResize = throttle(this.props.throttle, false, () => {
+    const width = window.innerWidth;
+
+    if (width !== this.state.width) {
+      const state = {width};
+
+      this.setState(state);
+      this.props.onWidth(state);
     }
-  };
+  });
 
   render () {
-    const {onChange, ..._rest} = this.props;
-    const rest: IWindowSizeSensorProps = _rest;
-
-    rest.onChange = this.onChange;
-
-    return h(WindowSizeSensor, rest);
+    return renderProp(this.props, this.state);
   }
 }
 
