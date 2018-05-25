@@ -17,7 +17,9 @@ matrix:
   allow_failures: []
   fast_finish: true
 after_success:
-  - npm run semantic-release
+  - npx ci-scripts slack
+  - npx ci-scripts github-post
+  - npx semantic-release
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
