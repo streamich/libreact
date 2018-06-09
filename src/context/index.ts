@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import faccToHoc from '../util/faccToHoc';
 
 const contexts = {};
@@ -7,7 +7,7 @@ const getOrCreateContext = (name: string) => {
   let context = contexts[name];
 
   if (!context) {
-    context = contexts[name] = React.createContext();
+    context = contexts[name] = React.createContext({});
   }
 
   return context;
@@ -66,7 +66,7 @@ export class Consumer extends React.Component<IConsumerProps, IConsumerState> {
       return null;
     }
 
-    return React.createElement(context.Consumer, {}, this.props.children);
+    return React.createElement(context.Consumer, {}, children);
   }
 }
 
