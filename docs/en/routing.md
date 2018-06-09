@@ -17,7 +17,7 @@ Reference:
   - [`createRouter()`](#createrouter)
 
 
-## Use any state container
+###### Use any state container
 
 With libreact's `<Router>` you can choose to store the current route in your state continer (like Redux or MobX) of
 choice.
@@ -58,7 +58,7 @@ so, simply use:
 ```
 
 
-## Multiple routers
+###### Multiple routers
 
 You can have many routers operating on the same page in parallel. All you have to do is specify a *namespace* using the `ns` prop.
 
@@ -68,7 +68,7 @@ You can have many routers operating on the same page in parallel. All you have t
 </Router>
 ```
 
-You can have *app-inside-app* that has its own routing logic.
+Or use [`createRouter()`](#createrouter) to create React components with bound namespace.
 
 
 ## Reference

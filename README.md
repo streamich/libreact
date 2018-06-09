@@ -89,7 +89,7 @@ const MyComponent = mock();
      - [`<Img>`](./docs/en/Img.md)
      - [`<WidthQuery>`](./docs/en/WidthQuery.md), [`<View>`](./docs/en/View.md), [`<WindowWidthQuery>`](./docs/en/WindowWidthQuery.md), and [`<InlineWidthQuery>`](./docs/en/InlineWidthQuery.md)
      - [`<Audio>`](./docs/en/Audio.md) and [`<Video>`](./docs/en/Video.md)
-     - [`<Speak>`](./docs/en/Speak.md), [`<Vibrate>`](./docs/en/Vibrate.md), [`<Alert>`](./docs/en/Alert.md), `<Prompt>`, `<Confirm>`
+     - [`<Speak>`](./docs/en/Speak.md), [`<Vibrate>`](./docs/en/Vibrate.md), [`<Alert>`](./docs/en/Alert.md)
   - [Animation](./docs/en/Animation.md)
      - [`<AfterTimeout>`](./docs/en/AfterTimeout.md), [`<AfterDraf>`](./docs/en/AfterDraf.md), and [`<WhenIdle>`](./docs/en/WhenIdle.md)
      - [`<Render>`](./docs/en/Render.md), [`withRender()`](./docs/en/Render.md#withrender-hoc), and [`@withRender`](./docs/en/Render.md#withrender-decorator)
@@ -97,10 +97,9 @@ const MyComponent = mock();
      - [`<Tween>`](./docs/en/Tween.md), [`withTween()`](./docs/en/Tween.md#withtween-hoc), and [`@withTween`](./docs/en/Tween.md#withtween-decorator)
      - [`<Interpolation>`](./docs/en/Interpolation.md), [`withInterpolation()`](./docs/en/Interpolation.md#withinterpolation-hoc), and [`@withInterpolation`](./docs/en/Interpolation.md#withinterpolation-decorator)
   - [Side Effects](./docs/en/Side-effects.md)
-     - [`<LocalStorage>`](./docs/en/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
+     - [`<LocalStorage>`](./docs/en/LocalStorage.md)
      - [`<ClassNames>`](./docs/en/ClassNames.md)
-     - `<Title>`, `<Favicon>`
-     - [`go()`](./docs/en/routing.md#go), [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md), and `<Tel>`
+     - [`go()`](./docs/en/routing.md#go), [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md)
   - [Boundaries](./docs/en/Boundaries.md)
      - [`<BrowserOnly>`](./docs/en/BrowserOnly.md), [`<ServerOnly>`](./docs/en/ServerOnly.md), and [`<ElectronOnly>`](./docs/en/ElectronOnly.md)
      - [`<ErrorBoundary>`](./docs/en/ErrorBoundary.md) and [`withErrorBoundary()`](./docs/en/ErrorBoundary.md#witherrorboundary-hoc)

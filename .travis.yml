@@ -8,7 +8,6 @@ cache:
 notifications:
   email: false
 node_js:
-  - '9'
   - '8'
 script:
   - npm run test
@@ -17,6 +16,8 @@ matrix:
   allow_failures: []
   fast_finish: true
 after_success:
+  - npx ci-scripts github-post
+  - npx ci-scripts slack
   - npm run semantic-release
 branches:
   except:
