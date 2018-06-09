@@ -44,7 +44,7 @@
      - [`<Provider>`](./Provider.md#provider), [`<Consumer>`](./Provider.md#consumer), [`withContext()`](./Provider.md#withcontext-hoc), and [`@withContext`](./Provider.md#withcontext-decorator)
      - [`<Theme>`](./theme.md#theme), [`<Themed>`](./theme.md#themed), [`withTheme()`](./theme.md#withtheme-hoc), and [`@withTheme`](./theme.md#withtheme-decorator)
      - [`<CssVarsProvider>`](./cssvars.md), [`<CssVars>`](./cssvars.md#cssvars), [`withCssVars()`](./cssvars.md#withcssvars-hoc), and [`@withCssVars`](./cssvars.md#withcssvars-decorator)
-     - [`<Router>`](./routing.md#router), [`<Route>`](./routing.md#route), [`withRoute()`](./routing.md#withroute), `@withRoute`, `go()`, and `<Go>`
+     - [Router](./routing.md)
      - [`<Translations>`](./translate.md#translations), [`<Translate>`](./translate.md#translate-or-t), [`<T>`](./translate.md#translate-or-t), [`withT()`](./translate.md#witht-hoc), and [`@withT`](./translate.md#witht-decorator)
   - [UI](./UI.md)
      - [`<Portal>`](./Portal.md), [`<Overlay>`](./Overlay.md), and [`<Modal>`](./Modal.md)
@@ -70,7 +70,7 @@
      - [`<LocalStorage>`](./LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
      - [`<ClassNames>`](./ClassNames.md)
      - `<Title>`, `<Favicon>`
-     - [`go()`](./routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./Sms.md), [`<Mailto>`](./Mailto.md), and `<Tel>`
+     - [`go()`](./routing.md#go), [`<Sms>`](./Sms.md), [`<Mailto>`](./Mailto.md), and `<Tel>`
   - [Boundaries](./Boundaries.md)
      - [`<BrowserOnly>`](./BrowserOnly.md), [`<ServerOnly>`](./ServerOnly.md), and [`<ElectronOnly>`](./ElectronOnly.md)
      - [`<ErrorBoundary>`](./ErrorBoundary.md) and [`withErrorBoundary()`](./ErrorBoundary.md#witherrorboundary-hoc)
@@ -78,8 +78,5 @@
   - [NEXT](./next.md)
      - [`createRef()`](./next/createRef.md), [`createState()`](./next/createState.md), and [`createLifecycleEvents()`](./next/createLifecycleEvents.md)
   - Other
-     - [`<Resolve>`](./Resolve.md), `<Fetch>`
+     - [`<Resolve>`](./Resolve.md)
      - [`getDisplayName()`](./getDisplayName.md)
-     - `<BrowserOnly>`, `<ServerOnly>`, and `<Environment>`
-     - `<Locales>`
-     - `<Draggable>`, `<Droppable>`, `<Parallax>`, `<Pin>`

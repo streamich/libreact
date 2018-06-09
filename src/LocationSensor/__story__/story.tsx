@@ -9,7 +9,7 @@ const Print = (props) =>
   </pre>;
 
 const Facc = () =>
-  <LocationSensor>{(state) => <Print {...state} />}</LocationSensor>;
+  <LocationSensor onChange={(state) => console.log('s', state)}>{(state) => <Print {...state} />}</LocationSensor>;
 
 const RenderProp = () =>
   <LocationSensor render={(state) => <Print {...state} />} />;

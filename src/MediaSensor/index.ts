@@ -19,6 +19,7 @@ export interface IMediaSensorState {
 export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState> {
   mql: MediaQueryList;
   state: IMediaSensorState;
+  mounted = false;
 
   constructor (props, context) {
     super(props, context);
@@ -35,6 +36,10 @@ export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState>
     }
   }
 
+  componentDidMount () {
+    this.mounted = true;
+  }
+
   componentDidUpdate (props) {
     if (props.query !== this.props.query) {
       this.updateQuery();
@@ -42,10 +47,15 @@ export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState>
   }
 
   componentWillUnmount () {
+    this.mounted = false;
     this.removeListener();
   }
 
   onMediaChange = (mediaQueryList) => {
+    if (!this.mounted) {
+      return;
+    }
+
     this.setState({
       matches: !!mediaQueryList.matches
     });

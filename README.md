@@ -6,9 +6,8 @@
 
 React standard library &mdash; must-have toolbox for any React project.
 
-  - [React router](https://mailonline.github.io/libreact/en/routing.html), [sensors](https://mailonline.github.io/libreact/en/Sensors.html), [inversions](https://mailonline.github.io/libreact/en/Inversion.html), [context providers](https://mailonline.github.io/libreact/en/Context.html), [dummies](https://mailonline.github.io/libreact/en/Dummies.html), and [other goodies](https://mailonline.github.io/libreact/en/).
   - *Isomorphic* - all components work in browser and on server (and some in `react-native`).
-  - See [__demos__](https://mailonline.github.io/libreact/demos/), [__docs__](https://mailonline.github.io/libreact/en/), and [__package__](https://www.npmjs.com/package/libreact/).
+  - See [__demos__](https://streamich.github.io/libreact/demos/), [__docs__](https://streamich.github.io/libreact/en/), and [__package__](https://www.npmjs.com/package/libreact/).
 
 
 ## Installation
@@ -34,7 +33,7 @@ const MyComponent = mock();
   - [Introduction](./docs/en/Introduction.md)
   - [Dummies](./docs/en/Dummies.md)
      - [`mock()`](./docs/en/mock.md) and [`loadable()`](./docs/en/loadable.md) &mdash; [**example**](https://codesandbox.io/s/j2ovpr03z3)
-     - [`lazy()`](./docs/en/lazy.md), [`delayed()`](./docs/en/delayed.md), and [`viewport()`](./docs/en/viewport.md)
+     - [`lazy()`](./docs/en/lazy.md) and [`delayed()`](./docs/en/delayed.md)
   - [Inversion](./docs/en/Inversion.md)
      - [`<State>`](./docs/en/State.md) and [`withState()`](./docs/en/State.md#withstate-hoc)
         - [`<Toggle>`](./docs/en/Toggle.md), [`withToggle()`](./docs/en/Toggle.md#withtoggle-hoc), and [`@withToggle`](./docs/en/Toggle.md#withtoggle-decorator) &mdash; [**example**](https://codesandbox.io/s/zwkl16vv93)
@@ -75,7 +74,7 @@ const MyComponent = mock();
      - [`<Provider>`](./docs/en/Provider.md#provider), [`<Consumer>`](./docs/en/Provider.md#consumer), [`withContext()`](./docs/en/Provider.md#withcontext-hoc), and [`@withContext`](./docs/en/Provider.md#withcontext-decorator)
      - [`<Theme>`](./docs/en/theme.md#theme), [`<Themed>`](./docs/en/theme.md#themed), [`withTheme()`](./docs/en/theme.md#withtheme-hoc), and [`@withTheme`](./docs/en/theme.md#withtheme-decorator)
      - [`<CssVarsProvider>`](./docs/en/cssvars.md), [`<CssVars>`](./docs/en/cssvars.md#cssvars), [`withCssVars()`](./docs/en/cssvars.md#withcssvars-hoc), and [`@withCssVars`](./docs/en/cssvars.md#withcssvars-decorator)
-     - [`<Router>`](./docs/en/routing.md#router), [`<Route>`](./docs/en/routing.md#route), [`withRoute()`](./docs/en/routing.md#withroute), `@withRoute`, `go()`, and `<Go>`
+     - [Router](./docs/en/routing.md)
      - [`<Translations>`](./docs/en/translate.md#translations), [`<Translate>`](./docs/en/translate.md#translate-or-t), [`<T>`](./docs/en/translate.md#translate-or-t), [`withT()`](./docs/en/translate.md#witht-hoc), and [`@withT`](./docs/en/translate.md#witht-decorator)
   - [UI](./docs/en/UI.md)
      - [`<Portal>`](./docs/en/Portal.md), [`<Overlay>`](./docs/en/Overlay.md), and [`<Modal>`](./docs/en/Modal.md)
@@ -101,7 +100,7 @@ const MyComponent = mock();
      - [`<LocalStorage>`](./docs/en/LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
      - [`<ClassNames>`](./docs/en/ClassNames.md)
      - `<Title>`, `<Favicon>`
-     - [`go()`](./docs/en/routing.md#go), `<Redirect>`, `<Link>`, [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md), and `<Tel>`
+     - [`go()`](./docs/en/routing.md#go), [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md), and `<Tel>`
   - [Boundaries](./docs/en/Boundaries.md)
      - [`<BrowserOnly>`](./docs/en/BrowserOnly.md), [`<ServerOnly>`](./docs/en/ServerOnly.md), and [`<ElectronOnly>`](./docs/en/ElectronOnly.md)
      - [`<ErrorBoundary>`](./docs/en/ErrorBoundary.md) and [`withErrorBoundary()`](./docs/en/ErrorBoundary.md#witherrorboundary-hoc)
@@ -109,12 +108,8 @@ const MyComponent = mock();
   - [NEXT](./docs/en/next.md)
      - [`createRef()`](./docs/en/next/createRef.md), [`createState()`](./docs/en/next/createState.md), and [`createLifecycleEvents()`](./docs/en/next/createLifecycleEvents.md)
   - Other
-     - [`<Resolve>`](./docs/en/Resolve.md), `<Fetch>`
+     - [`<Resolve>`](./docs/en/Resolve.md)
      - [`getDisplayName()`](./docs/en/getDisplayName.md)
-     - `<Locales>`
-     - `<Draggable>`, `<Droppable>`, `<Parallax>`, `<Pin>`
-  - Electron
-     - `<Menu>` and `<MenuItem>`
 
 
 ## License
@@ -124,5 +119,5 @@ const MyComponent = mock();
 
 [npm-url]: https://www.npmjs.com/package/libreact
 [npm-badge]: https://img.shields.io/npm/v/libreact.svg
-[travis-url]: https://travis-ci.org/MailOnline/libreact
-[travis-badge]: https://travis-ci.org/MailOnline/libreact.svg?branch=master
+[travis-url]: https://travis-ci.org/streamich/libreact
+[travis-badge]: https://travis-ci.org/streamich/libreact.svg?branch=master

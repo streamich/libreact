@@ -21,3 +21,4 @@ _book/
 /.storybook/
 /docs/
 /storybook-static/
+yarn-error.log

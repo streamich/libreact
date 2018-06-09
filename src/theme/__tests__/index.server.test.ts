@@ -1,21 +1,24 @@
+/**
+ * @jest-environment node
+ */
+
 import {createElement as h} from 'react';
-import {mount} from 'enzyme';
+import {renderToStaticMarkup} from 'react-dom/server';
 import {Theme, Themed, withTheme} from '../index';
 
-describe('themestyler', () => {
+describe('theme', () => {
   describe('<Theme/>', () => {
     it('<Theme/> passes theme to <Themed/>', () => {
-      const wrapper = mount(h(Theme, {value: {color: 'red'}},
+      const html = renderToStaticMarkup(h(Theme, {value: {color: 'red'}},
         h('div', {},
           h(Themed, {}, theme => {
             return h('span', {}, theme.color);
           })
         )
       ));
-      expect(wrapper.find('span').props().children).toBe('red');
-    });
 
-    xit('merges multiple themes together', () => {});
+      expect(html).toMatch('<span>red');
+    });
   });
 
   describe('withTheme()', () => {
@@ -24,9 +27,9 @@ describe('themestyler', () => {
         return h('div', {}, theme.color);
       };
       const BoxThemed = withTheme(Box);
-      const wrapper = mount(h(Theme, {value: {color: 'red'}}, h(BoxThemed)));
+      const html = renderToStaticMarkup(h(Theme, {value: {color: 'red'}}, h(BoxThemed)));
 
-      console.log(wrapper.html());
+      expect(html).toBe('<div>red</div>');
     });
   });
 });

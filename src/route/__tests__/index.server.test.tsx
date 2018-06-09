@@ -1,6 +1,9 @@
+/**
+ * @jest-environment node
+ */
+
 import {createElement as h} from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
-import {expect} from 'chai';
 import {Router, Route} from '..';
 
 describe('route SSR', () => {
@@ -13,7 +16,7 @@ describe('route SSR', () => {
       </Router>
     );
 
-    expect(html).to.equal('<span>baz</span>');
+    expect(html).toBe('<span>baz</span>');
   });
 
   it('renders matching routes', () => {
@@ -34,7 +37,7 @@ describe('route SSR', () => {
       </Router>
     );
 
-    expect(html).to.equal('<span>1</span><span>3</span><span>4</span>');
+    expect(html).toBe('<span>1</span><span>3</span><span>4</span>');
   });
 
   it('matches partial step', () => {
@@ -46,6 +49,6 @@ describe('route SSR', () => {
       </Router>
     );
 
-    expect(html).to.equal('<span>1</span>');
+    expect(html).toBe('<span>1</span>');
   });
 });
