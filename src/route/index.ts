@@ -1,12 +1,15 @@
 import Router from './Router';
+import Match from './Match';
 import Route from './Route';
 import Switch from './Switch';
-import {go, Go} from './go';
+import go from './go';
+import Link from './Link';
 
 export {
   Router,
+  Match,
   Route,
   Switch,
   go,
-  Go,
+  Link,
 };
