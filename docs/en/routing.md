@@ -10,14 +10,17 @@ Reference:
 
   - [`<Router>`](#router)
   - [`<Route>`](#route)
+  - [`<Switch>`](#switch)
+  - [`<Match>`](#match)
+  - [`<Link>`](#link)
   - [`go()`](#go)
-  - [`withRoute()`](#withroute)
+  - [`createRouter()`](#createrouter)
 
 
 ## Use any state container
 
 With libreact's `<Router>` you can choose to store the current route in your state continer (like Redux or MobX) of
-choice, or not bother about it at all, in which case the `<Router>` will just use the current browser location out-of-the-box.
+choice.
 
 The "problem-of-all-routers" is that they all want to keep the state of the route. For example, [`react-router`](https://reacttraining.com/react-router/) uses
 its internal history objects to store route information, and [it does not give you good access to that data structure](http://formidable.com/blog/2016/07/11/let-the-url-do-the-talking-part-1-the-pain-of-react-router-in-redux/).
@@ -65,8 +68,7 @@ You can have many routers operating on the same page in parallel. All you have t
 </Router>
 ```
 
-This allows you to route by basically anything, not just the current page location. You can have *app-inside-app* that has its
-own routing logic.
+You can have *app-inside-app* that has its own routing logic.
 
 
 ## Reference
@@ -79,68 +81,41 @@ its children.
 
 #### Props
 
-  - `route` - optional, string, route to use for routing. If not specified, `<Router>` will use
-  [`<LocationSensor>`](./LocationSensor.md) internally to track any changes to `window.location`.
-  - `ns` - optional, string, namespaces of the router. This allows you to have many different routers
+  - `route` &mdash; required, string, route to use for routing. If not specified, `<Router>` will use
+  - `ns` &mdash; optional, string, namespaces of the router. This allows you to have many different routers
   on one page, each in a separate namespace.
 
-Unlike other routing libraries `<Router>` component lets you specify the current route manually using the `route` property,
-this way you can use Redux or MobX, or any other state container library to store your route, if you want to.
+Unlike in other routing libraries `<Router>` component forces you specify the current route manually using the `route` property,
+this way you can use Redux or MobX, or any other state container library to store your route.
 
 
 ### `<Route>`
 
 `Route` tries to match a fragment in a route. If it does match, the contents of the route is rendered. The contents of the route
-can be either regular JSX children or a FaCC or a React component specified in the `comp` prop.
+can be either regular JSX children or a FaCC, render prop, or component prop.
 
 
 #### Props
 
-  - `match`, optional, matching condition, defaults to `/.+/`, see discussion below.
-
-The props object has the following TypeScript signature
-
-```ts
-interface IRouteMatch {
-  children?: React.ReactElement<any> | ((params) => React.ReactElement<any>);
-  cnt?: number;
-  comp?: React.ComponentClass<{}> | React.StatelessComponent<{}>;
-  exact?: boolean;
-  match?: TRouteMatcher | RegExp | string;
-  ns?: string;
-  preserve?: boolean;
-}
-```
+  - `match` &mdash; optional, matching condition, defaults to empty string. This can be a regular expression.
+  - `exact` &mdash; optiona, boolean, whether string route has to match exactly.
+  - `truncate` &mdash; optiona, boolean, whether matched part of the route should be truncated for the nested routes.
+  - `ns` &mdash; optional, string, namespace of the router.
 
 
-As you can see the `match` prop has the following signature
-
-```ts
-TRouteMatcher | RegExp | string;
-```
-
-where
-
-```ts
-type TRouteMatcher = (route: string) => TRouteMatchResult;
-
-interface TRouteMatchResult {
-  length: number; // Length how many characters to truncate from route.
-  matches?: RegExpMatchArray; // RegExp matches, if any.
-}
-```
+`match` prop can be a string, `RegExp` of a `function.
 
   - if `string`, it is converted to a regular expression with `^` prepended, which means it has to match the route starting from
   the very first character. For example, `/users` -> `/^(\/users)/`. If the `exact` prop is on, also `$` appended to the regular
   expression, which means the regular expression has to match the route exactly. For example, `/users` -> `/^(\/users)$`.
   - if `RegExp`, the specified regular expression will be used to match the current `route`, the resulting matches array will be
   returned, if any.
-  - if `function` is provided, it will be treated as if it has type of `TRouteMatcher`, it is given a `route` string as a
-  single argument. If it does not match the route, it has to return `null`. If it matches the `route`, it has to return an object
-  with the following properties:
-     - `length` - required, number of characters to truncate from the start of the route, for the inner routes, basically this should be
-     equal to the length of the matched fragment of the path.
-     - `matches` - optional, array of matches returned by `String.prototype.match()` function.
+  - if `function` is provided, it has to return an array of strings on a match.
+
+
+### `<Match>`
+
+`<Match>` component is similar to `<Route>`, but it always renders its children, regarles if route was actually matched.
 
 
 ### `go()`
@@ -164,25 +139,15 @@ interface IGoParams {
   - `state` - any serializable JavaScript object to store with the current history state. Useful, for example, to store current scroll position.
 
 
-## Example
+### `<Link>`
 
-### With Redux
+Renders a link that will change browser location on click.
 
-```jsx
-import {Router, Route} from 'libreact/lib/route';
-import {connect} from 'react-redux';
 
-const App = ({route}) =>
-  <Router route={route}>
-    <div>
-      <Route match='/home' comp={Home} />
-      <Route match='/users' comp={Users} />
-    </div>
-  </Router>;
+### `createRouter()`
 
-const mapStateToProps = ({route}) => ({
-  route
-});
+Create a new collection of router components given a namespace.
 
-export default connect(mapStateToProps)(App);
+```js
+const {Router, Route, Match} = createRouter('inner-router', go);
 ```
