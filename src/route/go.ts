@@ -1,6 +1,6 @@
 import {Component} from 'react';
 import {Consumer} from '../context';
-import {h, ns} from '../util';
+import {h, ns, isClient} from '../util';
 import {Link, ILinkProps} from '../Link';
 import createMatcher, {TRouteMatcher} from './createMatcher';
 
@@ -10,11 +10,13 @@ export interface IGoParams {
   state?: any;
 }
 
-export type TGo = (url: string, params: IGoParams) => void;
-
-export const go = (url, {replace, title = '', state}: IGoParams = {}) => {
-  history[replace ? 'replaceState' : 'pushState'](state, title || '', url);
+export const go = (page: string, {replace, title, state}: IGoParams = {}) => {
+  if (isClient) {
+    history[replace ? 'replaceState' : 'pushState'](state, title || '', page);
+  }
 };
+
+export type TGo = (url: string, params: IGoParams) => void;
 
 export interface IGoProps extends ILinkProps {
   exact?: boolean;

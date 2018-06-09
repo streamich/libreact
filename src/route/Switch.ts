@@ -9,7 +9,7 @@ export interface ISwitchProps {
 }
 
 const Switch: React.SFC<ISwitchProps> = (props) => {
-  return h(Consumer, {name: ns(`route/${props.ns}`)}, (route) => {
+  return h(Consumer, {name: ns(`route/${props.ns}`)}, ({route}) => {
     const routes = Children.toArray(props.children);
 
     for (let i = 0; i < routes.length; i++) {
