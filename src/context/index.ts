@@ -3,7 +3,7 @@ import faccToHoc from '../util/faccToHoc';
 
 const contexts = {};
 
-const getContext = (name: string) => {
+const getOrCreateContext = (name: string) => {
   let context = contexts[name];
 
   if (!context) {
@@ -31,7 +31,7 @@ export class Provider extends React.Component<IProviderProps, IProviderState> {
 
   render () {
     const {name, value, children} = this.props;
-    const {Provider} = getContext(name);
+    const {Provider} = getOrCreateContext(name);
 
     return React.createElement(Provider, {value}, children || null);
   }
@@ -48,9 +48,25 @@ export interface IConsumerState {
 
 export class Consumer extends React.Component<IConsumerProps, IConsumerState> {
   render() {
-    const {Consumer} = getContext(name);
+    const {name, children} = this.props;
 
-    return React.createElement(Consumer, {}, this.props.children);
+    if (process.env.NODE_ENV !== 'production') {
+      if (!name || (typeof name !== 'string')) {
+        throw new TypeError('context/Consumer name prop should be a string');
+      }
+    }
+
+    const context = contexts[name];
+
+    if (!context) {
+      if (process.env.NODE_ENV !== 'production') {
+        throw new Error(`Context "${name}" does not have a provider.`);
+      }
+
+      return null;
+    }
+
+    return React.createElement(context.Consumer, {}, this.props.children);
   }
 }
 
