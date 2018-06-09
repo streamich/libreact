@@ -1,5 +1,4 @@
 import {createElement as h} from 'react';
-import {render} from 'react-dom';
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import {WidthQuery} from '..';

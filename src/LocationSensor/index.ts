@@ -1,7 +1,8 @@
 import {Component} from 'react';
-import {on, off, isClient} from '../util';
+import {on, off, isClient, noop} from '../util';
 import faccToHoc from '../util/faccToHoc';
 import renderProp from '../util/renderProp';
+import {IUniversalInterfaceProps} from '../typing';
 
 const patchHistoryMethod = (method) => {
   const original = history[method];
@@ -23,9 +24,8 @@ if (isClient) {
   patchHistoryMethod('replaceState');
 }
 
-export interface ILocationSensorProps {
-  children?: (ILocationSensorState) => React.ReactElement<any>;
-  render?: (ILocationSensorState) => React.ReactElement<any>;
+export interface ILocationSensorProps extends IUniversalInterfaceProps<ILocationSensorState> {
+  onChange?: (state: ILocationSensorState) => void;
 }
 
 export interface ILocationSensorState {
@@ -84,7 +84,10 @@ export class LocationSensor extends Component<ILocationSensorProps, ILocationSen
   };
 
   onChange = (trigger: string) => {
-    this.setState(this.buildState(trigger));
+    const newState = this.buildState(trigger);
+
+    this.setState(newState);
+    (this.props.onChange || noop)(newState);
   };
 
   buildState (trigger: string) {
