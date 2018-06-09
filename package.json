@@ -36,9 +36,9 @@
     "react-focus-lock": "1.6.5"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-dom": "*",
-    "prop-types": "*"
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "prop-types": "^15.6.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.10",
