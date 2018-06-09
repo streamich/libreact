@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MailOnline/libreact.git"
+    "url": "https://github.com/streamich/libreact.git"
   },
   "scripts": {
     "start": "npm run test:story",
