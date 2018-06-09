@@ -1,5 +1,5 @@
 /**
- * @jest-environment jsdom
+ * @jest-environment node
  */
 
 import {createElement as h} from 'react';

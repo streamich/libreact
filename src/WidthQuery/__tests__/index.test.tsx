@@ -6,22 +6,6 @@ import {WidthQuery} from '..';
 import {View} from '../../View';
 
 describe('<ViewQuery/>', () => {
-  it('renders with crashing, expects multiple <View/> children', () => {
-    expect(() => {
-      render(<WidthQuery width={Infinity} />, document.createElement('div'));
-    }).toThrowErrorMatchingSnapshot();
-  });
-
-  it('crashes if less than two <View/> children provided', () => {
-    expect(() => {
-      const jsx = <WidthQuery width={100}>
-        <View maxWidth={123}>view 1</View>
-      </WidthQuery>;
-
-      render(jsx, document.createElement('div'));
-    }).toThrowErrorMatchingSnapshot();
-  });
-
   it('renders first matching view', () => {
     const jsx = <WidthQuery width={100}>
       <View maxWidth={123}>view 1</View>

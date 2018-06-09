@@ -80,7 +80,7 @@ export class Slider extends Component<ISliderProps, ISliderState> {
   };
 
   startScrubbing () {
-    if (!this.state.isSliding) {
+    if (!this.state.isSliding && this.mounted) {
       (this.props.onScrubStart || noop)();
       this.setState({isSliding: true});
       this.bindEvents();
@@ -88,7 +88,7 @@ export class Slider extends Component<ISliderProps, ISliderState> {
   }
 
   stopScrubbing = () => {
-    if (this.state.isSliding) {
+    if (this.state.isSliding && this.mounted) {
       (this.props.onScrubStop || noop)();
       this.setState({isSliding: false});
       this.unbindEvents();

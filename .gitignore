@@ -12,3 +12,4 @@ yarn.lock
 /dist_docs/
 _book/
 /storybook-static/
+yarn-error.log
