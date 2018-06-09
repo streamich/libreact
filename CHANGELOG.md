@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/streamich/libreact/compare/v1.0.0...v2.0.0) (2018-06-09)
+
+
+### Features
+
+* bump version ([0f13e96](https://github.com/streamich/libreact/commit/0f13e96))
+
+
+### BREAKING CHANGES
+
+* bump version to v2
+
 # [1.0.0](https://github.com/streamich/libreact/compare/v0.5.0...v1.0.0) (2018-06-09)
 
 
