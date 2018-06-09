@@ -1,0 +1,1597 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>WidthSensor · libreact</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-libreact/theme.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ViewportSensor.html" />
+    
+    
+    <link rel="prev" href="SizeSensor.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Getting Started</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Contents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Introduction.html">
+            
+                <a href="Introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Reference</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="Dummies.html">
+            
+                <a href="Dummies.html">
+            
+                    
+                    Dummies
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="mock.html">
+            
+                <a href="mock.html">
+            
+                    
+                    mock()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="loadable.html">
+            
+                <a href="loadable.html">
+            
+                    
+                    loadable()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="lazy.html">
+            
+                <a href="lazy.html">
+            
+                    
+                    lazy()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="delayed.html">
+            
+                <a href="delayed.html">
+            
+                    
+                    delayed()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="viewport.html">
+            
+                <a href="viewport.html">
+            
+                    
+                    viewport()
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Inversion.html">
+            
+                <a href="Inversion.html">
+            
+                    
+                    Inversion
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="invert.html">
+            
+                <a href="invert.html">
+            
+                    
+                    invert()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="State.html">
+            
+                <a href="State.html">
+            
+                    
+                    State
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.2.1" data-path="Toggle.html">
+            
+                <a href="Toggle.html">
+            
+                    
+                    Toggle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.2" data-path="Flipflop.html">
+            
+                <a href="Flipflop.html">
+            
+                    
+                    Flipflop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.3" data-path="Value.html">
+            
+                <a href="Value.html">
+            
+                    
+                    Value
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.4" data-path="Counter.html">
+            
+                <a href="Counter.html">
+            
+                    
+                    Counter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.5" data-path="List.html">
+            
+                <a href="List.html">
+            
+                    
+                    List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.6" data-path="Map.html">
+            
+                <a href="Map.html">
+            
+                    
+                    Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.7" data-path="ShouldUpdate.html">
+            
+                <a href="ShouldUpdate.html">
+            
+                    
+                    ShouldUpdate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.8" data-path="Lifecycles.html">
+            
+                <a href="Lifecycles.html">
+            
+                    
+                    Lifecycles
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="Sensors.html">
+            
+                <a href="Sensors.html">
+            
+                    
+                    Sensors
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="ActiveSensor.html">
+            
+                <a href="ActiveSensor.html">
+            
+                    
+                    ActiveSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="BatterySensor.html">
+            
+                <a href="BatterySensor.html">
+            
+                    
+                    BatterySensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="ExitSensor.html">
+            
+                <a href="ExitSensor.html">
+            
+                    
+                    ExitSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="FocusSensor.html">
+            
+                <a href="FocusSensor.html">
+            
+                    
+                    FocusSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="GeoLocationSensor.html">
+            
+                <a href="GeoLocationSensor.html">
+            
+                    
+                    GeoLocationSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="HoverSensor.html">
+            
+                <a href="HoverSensor.html">
+            
+                    
+                    HoverSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="IdleSensor.html">
+            
+                <a href="IdleSensor.html">
+            
+                    
+                    IdleSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="MediaDeviceSensor.html">
+            
+                <a href="MediaDeviceSensor.html">
+            
+                    
+                    MediaDeviceSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="MediaSensor.html">
+            
+                <a href="MediaSensor.html">
+            
+                    
+                    MediaSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.10" data-path="MotionSensor.html">
+            
+                <a href="MotionSensor.html">
+            
+                    
+                    MotionSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.11" data-path="MouseSensor.html">
+            
+                <a href="MouseSensor.html">
+            
+                    
+                    MouseSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.12" data-path="NetworkSensor.html">
+            
+                <a href="NetworkSensor.html">
+            
+                    
+                    NetworkSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.13" data-path="LightSensor.html">
+            
+                <a href="LightSensor.html">
+            
+                    
+                    LightSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.14" data-path="LocationSensor.html">
+            
+                <a href="LocationSensor.html">
+            
+                    
+                    LocationSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.15" data-path="OrientationSensor.html">
+            
+                <a href="OrientationSensor.html">
+            
+                    
+                    OrientationSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.16" data-path="ScratchSensor.html">
+            
+                <a href="ScratchSensor.html">
+            
+                    
+                    ScratchSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.17" data-path="ScrollSensor.html">
+            
+                <a href="ScrollSensor.html">
+            
+                    
+                    ScrollSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.18" data-path="SizeSensor.html">
+            
+                <a href="SizeSensor.html">
+            
+                    
+                    SizeSensor
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.3.18.1" data-path="WidthSensor.html">
+            
+                <a href="WidthSensor.html">
+            
+                    
+                    WidthSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.19" data-path="ViewportSensor.html">
+            
+                <a href="ViewportSensor.html">
+            
+                    
+                    ViewportSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.20" data-path="WindowScrollSensor.html">
+            
+                <a href="WindowScrollSensor.html">
+            
+                    
+                    WindowScrollSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.21" data-path="WindowSizeSensor.html">
+            
+                <a href="WindowSizeSensor.html">
+            
+                    
+                    WindowSizeSensor
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.21.1" data-path="WindowWidthSensor.html">
+            
+                <a href="WindowWidthSensor.html">
+            
+                    
+                    WindowWidthSensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="Context.html">
+            
+                <a href="Context.html">
+            
+                    
+                    Context
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="Provider.html">
+            
+                <a href="Provider.html">
+            
+                    
+                    Provider
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="theme.html">
+            
+                <a href="theme.html">
+            
+                    
+                    Theming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="cssvars.html">
+            
+                <a href="cssvars.html">
+            
+                    
+                    CSS Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="translate.html">
+            
+                <a href="translate.html">
+            
+                    
+                    Translations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="UI.html">
+            
+                <a href="UI.html">
+            
+                    
+                    UI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="Portal.html">
+            
+                <a href="Portal.html">
+            
+                    
+                    Portal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="Overlay.html">
+            
+                <a href="Overlay.html">
+            
+                    
+                    Overlay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="Modal.html">
+            
+                <a href="Modal.html">
+            
+                    
+                    Modal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="Dimmer.html">
+            
+                <a href="Dimmer.html">
+            
+                    
+                    Dimmer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="Dimmable.html">
+            
+                <a href="Dimmable.html">
+            
+                    
+                    Dimmable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="Parallax.html">
+            
+                <a href="Parallax.html">
+            
+                    
+                    Parallax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.7" data-path="FullScreen.html">
+            
+                <a href="FullScreen.html">
+            
+                    
+                    FullScreen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.8" >
+            
+                <span>
+            
+                    
+                    [Slider](Slider.m
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.9" data-path="DropArea.html">
+            
+                <a href="DropArea.html">
+            
+                    
+                    DropArea
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.10" data-path="OutsideClick.html">
+            
+                <a href="OutsideClick.html">
+            
+                    
+                    OutsideClick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.11" data-path="Ripple.html">
+            
+                <a href="Ripple.html">
+            
+                    
+                    Ripple
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.12" data-path="Img.html">
+            
+                <a href="Img.html">
+            
+                    
+                    Img
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.13" data-path="Group.html">
+            
+                <a href="Group.html">
+            
+                    
+                    Group
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.14" data-path="WidthQuery.html">
+            
+                <a href="WidthQuery.html">
+            
+                    
+                    WidthQuery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.15" data-path="View.html">
+            
+                <a href="View.html">
+            
+                    
+                    View
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.16" data-path="WindowWidthQuery.html">
+            
+                <a href="WindowWidthQuery.html">
+            
+                    
+                    WindowWidthQuery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.17" data-path="InlineWidthQuery.html">
+            
+                <a href="InlineWidthQuery.html">
+            
+                    
+                    InlineWidthQuery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.18" data-path="Audio.html">
+            
+                <a href="Audio.html">
+            
+                    
+                    Audio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.19" data-path="Video.html">
+            
+                <a href="Video.html">
+            
+                    
+                    Video
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.20" data-path="Speak.html">
+            
+                <a href="Speak.html">
+            
+                    
+                    Speak
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.21" data-path="Vibrate.html">
+            
+                <a href="Vibrate.html">
+            
+                    
+                    Vibrate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.22" data-path="Alert.html">
+            
+                <a href="Alert.html">
+            
+                    
+                    Alert
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.23" data-path="Sms.html">
+            
+                <a href="Sms.html">
+            
+                    
+                    Sms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.24" data-path="Mailto.html">
+            
+                <a href="Mailto.html">
+            
+                    
+                    Mailto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="Animation.html">
+            
+                <a href="Animation.html">
+            
+                    
+                    Animation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="AfterTimeout.html">
+            
+                <a href="AfterTimeout.html">
+            
+                    
+                    AfterTimeout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="AfterDraf.html">
+            
+                <a href="AfterDraf.html">
+            
+                    
+                    AfterDraf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="WhenIdle.html">
+            
+                <a href="WhenIdle.html">
+            
+                    
+                    WhenIdle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="Render.html">
+            
+                <a href="Render.html">
+            
+                    
+                    Render
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="RenderInterval.html">
+            
+                <a href="RenderInterval.html">
+            
+                    
+                    RenderInterval
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="Tween.html">
+            
+                <a href="Tween.html">
+            
+                    
+                    Tween
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="Interpolation.html">
+            
+                <a href="Interpolation.html">
+            
+                    
+                    Interpolation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="Side-effects.html">
+            
+                <a href="Side-effects.html">
+            
+                    
+                    Side Effects
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="LocalStorage.html">
+            
+                <a href="LocalStorage.html">
+            
+                    
+                    LocalStorage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="ClassNames.html">
+            
+                <a href="ClassNames.html">
+            
+                    
+                    ClassNames
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="Boundaries.html">
+            
+                <a href="Boundaries.html">
+            
+                    
+                    Boundaries
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="BrowserOnly.html">
+            
+                <a href="BrowserOnly.html">
+            
+                    
+                    BrowserOnly
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="ServerOnly.html">
+            
+                <a href="ServerOnly.html">
+            
+                    
+                    ServerOnly
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="ElectronOnly.html">
+            
+                <a href="ElectronOnly.html">
+            
+                    
+                    ElectronOnly
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="next.html">
+            
+                <a href="next.html">
+            
+                    
+                    Next
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="createRef.md">
+            
+                <span>
+            
+                    
+                    createRef()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.2" data-path="createState.md">
+            
+                <span>
+            
+                    
+                    createState()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3" data-path="createLifecycleEvents.md">
+            
+                <span>
+            
+                    
+                    createLifecycleEvents()
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="Other.html">
+            
+                <a href="Other.html">
+            
+                    
+                    Other
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.10.1" data-path="Resolve.html">
+            
+                <a href="Resolve.html">
+            
+                    
+                    Resolve
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10.2" data-path="getDisplayName.html">
+            
+                <a href="getDisplayName.html">
+            
+                    
+                    getDisplayName()
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="LICENSE.html">
+            
+                <a href="LICENSE.html">
+            
+                    
+                    License
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >WidthSensor</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="widthsensor"><code>&lt;WidthSensor&gt;</code></h1>
+<p>FaCC that works similar to <a href="SizeSensor.html"><code>&lt;SizeSensor&gt;</code></a> but re-renders only on width change.</p>
+<h2 id="example">Example</h2>
+<p>Use it as FaCC</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> {WidthSensor} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;libreact/lib/WidthSensor&apos;</span>;
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">WidthSensor</span>&gt;</span>{({width, height}) =&gt;
+  `WIDTH: ${width}, HEIGHT: ${height}`
+}<span class="hljs-tag">&lt;/<span class="hljs-name">WidthSensor</span>&gt;</span></span>
+</code></pre>
+<p>Or use <code>onWidth</code> prop</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> {WidthSensor} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;libreact/lib/WidthSensor&apos;</span>;
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">SizeSensor</span> <span class="hljs-attr">onWidth</span>=<span class="hljs-string">{({width,</span> <span class="hljs-attr">height</span>}) =&gt;</span> console.log(width, height)}&gt;
+  Resize me!
+<span class="hljs-tag">&lt;/<span class="hljs-name">SizeSensor</span>&gt;</span></span>
+</code></pre>
+<h2 id="withwidth-hoc-and-withwidth-decorator"><code>withWidth()</code> HOC and <code>@withWidth</code> decorator</h2>
+<p>Works same as <a href="SizeSensor.html#withsize-hoc"><code>withSize()</code></a> and <a href="SizeSensor.html#withsize-decorator"><code>@withSize</code></a>.</p>
+<p>Incldue <code>withWidth</code> as follows</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {withWidth} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;libreact/lib/WidthSensor&apos;</span>;
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="SizeSensor.html" class="navigation navigation-prev " aria-label="Previous page: SizeSensor">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ViewportSensor.html" class="navigation navigation-next " aria-label="Next page: ViewportSensor">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"WidthSensor","level":"2.3.18.1","depth":3,"next":{"title":"ViewportSensor","level":"2.3.19","depth":2,"path":"ViewportSensor.md","ref":"ViewportSensor.md","articles":[]},"previous":{"title":"SizeSensor","level":"2.3.18","depth":2,"path":"SizeSensor.md","ref":"SizeSensor.md","articles":[{"title":"WidthSensor","level":"2.3.18.1","depth":3,"path":"WidthSensor.md","ref":"WidthSensor.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-libreact","-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"edit-link":{"label":"Edit This Page","base":"https://github.com/MailOnline/libreact/edit/master/docs"},"github":{"url":"https://github.com/MailOnline/libreact/"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-libreact":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"libreact","language":"en","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"WidthSensor.md","mtime":"2018-03-30T10:51:01.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-09T20:35:54.383Z"},"basePath":".","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
