@@ -1,3 +1,11 @@
+## [2.0.1](https://github.com/streamich/libreact/compare/v2.0.0...v2.0.1) (2018-06-28)
+
+
+### Bug Fixes
+
+* 🐛 fix .setState() warning in <MediaSensor> constructor ([4a7b515](https://github.com/streamich/libreact/commit/4a7b515))
+* 🐛 fix new TypeScript errors ([f3e9529](https://github.com/streamich/libreact/commit/f3e9529))
+
 # [2.0.0](https://github.com/streamich/libreact/compare/v1.0.0...v2.0.0) (2018-06-09)
 
 
