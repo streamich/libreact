@@ -72,9 +72,15 @@ export class MediaSensor extends Component<IMediaSensorProps, IMediaSensorState>
 
     this.mql = window.matchMedia(query);
 
-    this.setState({
+    const newState = {
       matches: !!this.mql.matches
-    });
+    };
+
+    if (this.mounted) {
+      this.setState(newState);
+    } else {
+      this.state = newState;
+    }
 
     this.mql.addListener(this.onMediaChange);
   }

@@ -37,6 +37,7 @@ export class Slider extends Component<ISliderProps, ISliderState> {
   CLIENT_X = 'clientX';
   el: HTMLElement = null;
   mounted = false;
+  state;
 
   constructor (props, context) {
     super(props, context);
