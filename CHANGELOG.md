@@ -1,3 +1,16 @@
+# [2.1.0](https://github.com/streamich/libreact/compare/v2.0.1...v2.1.0) (2018-09-30)
+
+
+### Bug Fixes
+
+* 🐛 simplify AfterDraf component ([5d71134](https://github.com/streamich/libreact/commit/5d71134))
+
+
+### Features
+
+* 🎸 add GoogleAuthButton scaffolding ([b22fb0a](https://github.com/streamich/libreact/commit/b22fb0a))
+* 🎸 implement Google auth Provider and Consumer components ([ece3676](https://github.com/streamich/libreact/commit/ece3676))
+
 ## [2.0.1](https://github.com/streamich/libreact/compare/v2.0.0...v2.0.1) (2018-06-28)
 
 
