@@ -1,8 +1,7 @@
 import {createElement as h} from 'react';
-import {shallow} from 'enzyme';
+import {render} from 'react-dom';
 import {AfterDraf} from '..';
 
-const isClient = typeof window === 'object';
 const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 describe('<AfterDraf>', () => {
@@ -11,50 +10,20 @@ describe('<AfterDraf>', () => {
   });
 
   it('waits for DRAF on client before rendering', async () => {
-    const wrapper = shallow(
-      <AfterDraf>
+    const div = document.createElement('div');
+
+    document.body.appendChild(div);
+    render(<AfterDraf>
         <div>foobar</div>
-      </AfterDraf>
-    );
+      </AfterDraf>,
+    div);
 
-    if (isClient) {
-      expect(wrapper.html()).toBe(null);
-    } else {
-      expect(wrapper.html()).toBe('<div>foobar</div>');
-    }
+    expect(div.innerHTML).toBe('');
 
     await sleep(100);
 
-    wrapper.update();
+    expect(div.innerHTML).toBe('<div>foobar</div>');
 
-    expect(wrapper.html()).toBe('<div>foobar</div>');
-  });
-
-  it('waits for DRAF every mount', async () => {
-    shallow(
-      <AfterDraf>
-        <div>foobar</div>
-      </AfterDraf>
-    );
-
-    await sleep(100);
-
-    const wrapper2 = shallow(
-      <AfterDraf>
-        <div>bazooka</div>
-      </AfterDraf>
-    );
-
-    if (isClient) {
-      expect(wrapper2.html()).toBe(null);
-    } else {
-      expect(wrapper2.html()).toBe('<div>bazooka</div>');
-    }
-
-    await sleep(100);
-
-    wrapper2.update();
-
-    expect(wrapper2.html()).toBe('<div>bazooka</div>');
+    document.body.removeChild(div);
   });
 });
