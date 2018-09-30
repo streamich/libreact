@@ -112,7 +112,8 @@
     "setupFiles": [
       "./src/__tests__/setup.js"
     ],
-    "testEnvironment": "jest-environment-jsdom-global"
+    "testEnvironment": "jest-environment-jsdom-global",
+    "testURL": "http://localhost"
   },
   "keywords": [
     "react",
