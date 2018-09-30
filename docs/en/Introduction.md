@@ -3,8 +3,8 @@
 `libreact` is a collection of most essential React utilities you will probably need in any project.
 
 [Render prop](#render-props) and [FaCC](#facc) notation is used interchangeably as most `libreact`
-components support both interfaces. Also, most render prop components support
-[component prop](#component-prop) interface, with the following precedence:
+components support both interfaces and implement [*Universal Component Interface*](https://github.com/streamich/react-universal-interface).
+Also, most render prop components support [component prop](#component-prop) interface, with the following precedence:
 
   1. FaCC
   2. Render prop
