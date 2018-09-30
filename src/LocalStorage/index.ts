@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import {get, set, del} from './local-storage';
 const debounce = require('throttle-debounce/debounce');
 
 export interface ILocalStorageProps {
@@ -21,7 +22,7 @@ export class LocalStorage extends Component<ILocalStorageProps, any> {
       let json = '';
 
       try {
-        json = localStorage[name];
+        json = get(name);
       } catch {
         json = 'null';
       }
@@ -66,14 +67,14 @@ export class LocalStorage extends Component<ILocalStorageProps, any> {
         rawData = JSON.stringify(data);
       }
 
-      localStorage[String(name)] = rawData;
+      set(name, rawData);
     } catch {}
   });
 
   remove (name = this.props.name) {
     if (!this.props.persist) {
       try {
-        delete localStorage[name];
+        del(name);
       } catch {}
     }
   }

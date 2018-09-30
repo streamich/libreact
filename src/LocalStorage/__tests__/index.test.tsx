@@ -1,48 +1,43 @@
 import {createElement as h} from 'react';
 import {mount} from 'enzyme';
 import {LocalStorage} from '..';
+import {get, set, del} from '../local-storage';
 
-const glob = global as any;
+jest.mock('../local-storage');
 
-const promisify = (assertions, delay = 20) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      try {
-        assertions();
-        resolve();
-      } catch (error) {
-        reject(error);
-      }
-    }, delay);
-  });
-};
+const getSpy = get as any as jest.SpyInstance;
+const setSpy = set as any as jest.SpyInstance;
+const delSpy = del as any as jest.SpyInstance;
+const sleep = t => new Promise(r => setTimeout(r, t));
 
 describe('<LocalStorage>', () => {
   beforeEach(() => {
-    glob.localStorage = {};
+    getSpy.mockClear();
+    setSpy.mockClear();
+    delSpy.mockClear();
   });
 
   it('is a component', () => {
     expect(LocalStorage).toBeInstanceOf(Function);
   });
 
-  it('puts value to localStorage', () => {
+  it('puts value to localStorage', async () => {
     mount(<LocalStorage name='foo' data='bar' debounce={10} />);
+    await sleep(20);
 
-    return promisify(() => {
-      expect(glob.localStorage).toMatchSnapshot();
-    });
+    expect(set).toHaveBeenCalledTimes(1);
+    expect(set).toHaveBeenCalledWith('foo', '"bar"');
   });
 
-  it('serializes an object', () => {
+  it('serializes an object', async () => {
     mount(<LocalStorage name='foo' data={{key: [1, 2, 3]}} debounce={10} />);
+    await sleep(20);
 
-    return promisify(() => {
-      expect(glob.localStorage).toMatchSnapshot();
-    });
+    expect(set).toHaveBeenCalledTimes(1);
+    expect(set).toHaveBeenCalledWith('foo', '{"key":[1,2,3]}');
   });
 
-  it('updates on re-render', () => {
+  it('updates on re-render', async () => {
     const wrapper = mount(<LocalStorage name='foo' data={1} debounce={10} />);
 
     wrapper.setProps({
@@ -51,17 +46,17 @@ describe('<LocalStorage>', () => {
     });
 
     wrapper.update();
+    await sleep(20);
 
-    return promisify(() => {
-      expect(glob.localStorage.foo).toBe('2');
-    }, 50);
+    const lastSetArgs = setSpy.mock.calls[setSpy.mock.calls.length - 1];
+
+    expect(lastSetArgs).toEqual(['foo', '2']);
   });
 
-  it('does NOT set initial data when onMount prop is set', () => {
+  it('does NOT set initial data when onMount prop is set', async () => {
     mount(<LocalStorage name='foo' data={1} debounce={10} onMount={() => {}} />);
+    await sleep(20);
 
-    return promisify(() => {
-      expect(glob.localStorage).toMatchSnapshot();
-    }, 20);
+    expect(set).not.toHaveBeenCalled();
   });
 });
