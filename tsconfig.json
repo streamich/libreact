@@ -7,6 +7,7 @@
     "noImplicitAny": false,
     "sourceMap": false,
     "outDir": "./lib",
+    "declaration": true,
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
