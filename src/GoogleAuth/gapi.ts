@@ -101,7 +101,5 @@ export const getGapiAuth2 = async (): Promise<GApiAuth2> => {
 
 export const getGapiAuthInstance = async (options: GApiAuth2InitOptions) => {
   const gapiAuth2 = await getGapiAuth2();
-  const GoogleAuthCache = await gapiAuth2.init(options);
-
-  return GoogleAuthCache;
+  return await gapiAuth2.init(options);
 };

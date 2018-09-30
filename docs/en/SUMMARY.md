@@ -49,6 +49,7 @@
   * [WindowSizeSensor](WindowSizeSensor.md)
     * [WindowWidthSensor](WindowWidthSensor.md)
 * [Context](Context.md)
+  * [Google Sign-in for Websites](GoogleAuth.md)
   * [Provider](Provider.md)
   * [Theming](theme.md)
   * [CSS Variables](cssvars.md)

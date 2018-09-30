@@ -41,6 +41,7 @@
      - [`<WindowSizeSensor>`](./WindowSizeSensor.md), [`withWindowSize()`](./WindowSizeSensor.md#withwindowsize-hoc), and [`@withWindowSize`](./WindowSizeSensor.md#withwindowsize-decorator)
         - [`<WindowWidthSensor>`](./WindowWidthSensor.md), [`withWindowWidth()`](./WindowWidthSensor.md#withwindowwidth-hoc), and [`@withWindowWidth`](./WindowWidthSensor.md#withwindowwidth-decorator)
   - [Context](./Context.md)
+     - [Google Sign-in for Websites](./GoogleAuth.md)
      - [`<Provider>`](./Provider.md#provider), [`<Consumer>`](./Provider.md#consumer), [`withContext()`](./Provider.md#withcontext-hoc), and [`@withContext`](./Provider.md#withcontext-decorator)
      - [`<Theme>`](./theme.md#theme), [`<Themed>`](./theme.md#themed), [`withTheme()`](./theme.md#withtheme-hoc), and [`@withTheme`](./theme.md#withtheme-decorator)
      - [`<CssVarsProvider>`](./cssvars.md), [`<CssVars>`](./cssvars.md#cssvars), [`withCssVars()`](./cssvars.md#withcssvars-hoc), and [`@withCssVars`](./cssvars.md#withcssvars-decorator)

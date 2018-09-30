@@ -1,7 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {createGoogleAuthContext} from '..';
-// import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../../.storybook/ShowDocs'
 
 const clientId = '305188012168-htfit0k0u4vegn0f6hn10rcqoj1m77ca.apps.googleusercontent.com';
 const options = {
@@ -10,7 +10,7 @@ const options = {
 const ctx1 = createGoogleAuthContext(options);
 
 storiesOf('Context/GoogleAuthButton', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/GoogleAuthButton.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/GoogleAuth.md')}))
   .add('Default', () =>
     <ctx1.Provider>
       <ctx1.Consumer>{({loading, signIn, signOut, isSignedIn, user}) => {
