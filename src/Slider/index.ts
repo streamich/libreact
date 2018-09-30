@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {noop, on, off} from '../util';
 import renderProp from '../util/renderProp';
-const throttle = require('throttle-debounce/throttle');
+import {throttle} from 'throttle-debounce';
 
 export interface ISliderProps {
   children?: React.ReactElement<any> | ((state: ISliderState) => React.ReactElement<any>);

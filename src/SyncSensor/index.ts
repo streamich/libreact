@@ -1,7 +1,7 @@
-import {Component} from 'react';
+import * as React from 'react';
 import {noop} from '../util';
 import renderProp from '../util/renderProp';
-import * as throttle from 'throttle-debounce/throttle';
+import {throttle} from 'throttle-debounce';
 
 export interface ISyncSensorProps<TState> {
   throttle?: number;
@@ -13,7 +13,7 @@ export interface ISyncSensorProps<TState> {
   onEvent: (event) => TState;
 }
 
-export class SyncSensor<TState> extends Component<ISyncSensorProps<TState>, TState> {
+export class SyncSensor<TState> extends React.Component<ISyncSensorProps<TState>, TState> {
   static defaultProps = {
     throttle: 100
   };

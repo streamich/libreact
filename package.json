@@ -28,7 +28,7 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "throttle-debounce": "^1.0.1",
+    "throttle-debounce": "^2.0.1",
     "nano-css": "^1.13.0",
     "screenfull": "^3.3.2",
     "fast-af": "^0.1.0",

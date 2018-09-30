@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import * as React from 'react';
 import {SyncSensor} from '../SyncSensor';
 import {isClient, h} from '../util';
 import faccToHoc from '../util/faccToHoc';
@@ -36,7 +36,7 @@ const getInitialState = () => {
   }
 };
 
-export class WindowScrollSensor extends Component<IWindowScrollSensorProps, any> {
+export class WindowScrollSensor extends React.Component<IWindowScrollSensorProps, any> {
   initial = getInitialState();
 
   render () {

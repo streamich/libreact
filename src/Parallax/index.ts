@@ -3,7 +3,7 @@ import {render} from 'react-universal-interface';
 import {IUniversalInterfaceProps} from '../typing';
 import {noop, on, off} from '../util';
 import {getElRect, getRootRect, TRect} from '../ViewportScrollSensor';
-const throttle = require('throttle-debounce/throttle');
+import {throttle} from 'throttle-debounce';
 
 const zeros: TRect = [0, 0, 0, 0];
 

@@ -1,4 +1,4 @@
-import {createElement} from 'react';
+import * as React from 'react';
 
 export type TComponent<TProps> = React.ComponentClass<TProps> | React.StatelessComponent<TProps>;
 export type THoc<P1, P2> = (Comp: TComponent<P1>) => TComponent<P2>
@@ -29,4 +29,4 @@ export const sym = (name) => {
 
 export const isFn = (fn) => typeof fn === 'function';
 
-export const h = createElement as any;
+export const h = React.createElement;

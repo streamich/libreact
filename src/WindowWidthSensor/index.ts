@@ -4,7 +4,7 @@ import faccToHoc from '../util/faccToHoc';
 import renderProp from '../util/renderProp';
 import {IUniversalInterfaceProps} from '../typing'
 import {noop, on, off} from '../util';
-const throttle = require('throttle-debounce/throttle');
+import {throttle} from 'throttle-debounce';
 
 export interface IWindowWidthSensorProps extends IUniversalInterfaceProps<IWindowWidthSensorState> {
   width?: number,
