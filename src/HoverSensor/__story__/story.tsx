@@ -1,7 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {HoverSensor, withHover} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 const Demo = ({bond, isHover}) =>
   <div {...bond} style={{

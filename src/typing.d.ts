@@ -6,3 +6,7 @@ export interface IUniversalInterfaceProps<TData> {
   comp?: React.ComponentClass<TData> | React.SFC<TData>;
   component?: React.ComponentClass<TData> | React.SFC<TData>;
 }
+
+interface React {
+  createElement: any;
+}

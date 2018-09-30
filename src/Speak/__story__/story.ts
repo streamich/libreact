@@ -1,7 +1,7 @@
 import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {Speak} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 class StorySpeakBasic extends Component<any, any> {
   state = {

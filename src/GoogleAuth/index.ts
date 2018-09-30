@@ -1,5 +1,5 @@
+import * as React from 'react';
 import {h} from '../util';
-import {Component, createContext} from 'react';
 import {
   getGapiAuthInstance,
   GApiAuth2InitOptions,
@@ -25,12 +25,15 @@ export interface IGoogleAuthConsumerProps {
   children: (state: IGoogleAuthProviderState) => React.ReactNode;
 }
 
+export interface IProvider extends React.Component<IGoogleAuthProviderProps, IGoogleAuthProviderState> {
+}
+
 /**
  * @param clientId Google App client ID.
  * @param scope Scopes as a comma separated string.
  */
 export const createGoogleAuthContext = (options: GApiAuth2InitOptions) => {
-  const context = createContext({});
+  const context = React.createContext({});
   const googleAuthPromise = getGapiAuthInstance(options);
   let googleAuthInstance: GApiAuth2Instance | undefined;
   let isSignedInListener: GApiAuth2InstanceIsSignedInListener | undefined;
@@ -46,7 +49,7 @@ export const createGoogleAuthContext = (options: GApiAuth2InitOptions) => {
     });
   }, console.error);
 
-  class Provider extends Component<IGoogleAuthProviderProps, IGoogleAuthProviderState> {
+  class Provider extends React.Component<IGoogleAuthProviderProps, IGoogleAuthProviderState> implements IProvider {
     signIn = async (): Promise<GApiAuth2User> => {
       if (!googleAuthInstance) {
         googleAuthInstance = await googleAuthPromise;
@@ -124,7 +127,7 @@ export const createGoogleAuthContext = (options: GApiAuth2InitOptions) => {
   }
 
   return {
-    Provider,
+    Provider: Provider as any as IProvider,
     Consumer: context.Consumer as React.SFC<IGoogleAuthConsumerProps>,
   };
 };

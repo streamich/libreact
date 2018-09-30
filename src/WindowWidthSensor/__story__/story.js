@@ -2,7 +2,7 @@ import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {WindowWidthSensor} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 storiesOf('Sensors/WindowWidthSensor', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/WindowWidthSensor.md')}))

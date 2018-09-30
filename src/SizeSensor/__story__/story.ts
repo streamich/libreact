@@ -2,7 +2,7 @@ import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {SizeSensor, withSize} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 const Print = (props) => h('pre', {
   style: {fontFamily: 'monospace'}

@@ -1,7 +1,7 @@
 import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {Counter, withCounter} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 const Val = ({value, inc}) =>
   <div onClick={() => inc(3)} onDoubleClick={inc}>{value}</div>;

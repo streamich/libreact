@@ -1,7 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {RenderInterval} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 storiesOf('Animation/RenderInterval', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/RenderInterval.md')}))

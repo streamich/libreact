@@ -1,7 +1,7 @@
 import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {NetworkSensor, withNetwork} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 const Status = (props) =>
   <pre style={{fontFamily: 'monospace'}}>

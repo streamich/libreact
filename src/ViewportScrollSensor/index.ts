@@ -1,4 +1,4 @@
-import {Component, cloneElement} from 'react';
+import {Component, cloneElement, SFCElement} from 'react';
 import {on, off, noop} from '../util';
 import * as throttle from 'throttle-debounce/throttle';
 import renderProp from '../util/renderProp';

@@ -1,4 +1,4 @@
-import {Component, cloneElement} from 'react';
+import * as React from 'react';
 import {render} from 'react-universal-interface';
 import {noop} from '../util';
 
@@ -11,7 +11,7 @@ export interface IDropAreaProps {
 export interface IDropAreaState {
 }
 
-export class DropArea extends Component<IDropAreaProps, IDropAreaState> {
+export class DropArea extends React.Component<IDropAreaProps, IDropAreaState> {
   static defaultProps = {
     onFiles: noop,
     onText: noop,
@@ -73,7 +73,7 @@ export class DropArea extends Component<IDropAreaProps, IDropAreaState> {
     const element = render(this.props, {});
     const {props} = element;
 
-    return cloneElement(element, {
+    return React.cloneElement(element, {
       ...props,
       onDragOver: this.onDragOver(props.onDragOver),
       onDragEnter: this.onDragEnter(props.onDragEnter),

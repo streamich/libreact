@@ -1,4 +1,4 @@
-import {Component, cloneElement, Children} from 'react';
+import * as React from 'react';
 import {on, off, noop} from '../util';
 
 export interface IOutsideClickProps {
@@ -9,7 +9,7 @@ export interface IOutsideClickProps {
 export interface IOutsideClickState {
 }
 
-export class OutsideClick extends Component<IOutsideClickProps, IOutsideClickState> {
+export class OutsideClick extends React.Component<IOutsideClickProps, IOutsideClickState> {
   static defaultProps = {
     event: 'mousedown'
   };
@@ -37,13 +37,13 @@ export class OutsideClick extends Component<IOutsideClickProps, IOutsideClickSta
 
   render () {
     const {children} = this.props;
-    const element = Children.only(children);
+    const element = React.Children.only(children);
 
     if (!element) {
       return null;
     }
 
-    return cloneElement(element, {
+    return React.cloneElement(element, {
       ...element.props,
       ref: this.ref((element as any).ref)
     });

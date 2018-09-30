@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {Modal} from '..';
 import {Toggle} from '../../Toggle';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 storiesOf('UI/Modal', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Modal.md')}))

@@ -1,6 +1,6 @@
-import {Component, createElement as h} from 'react';
+import {Component} from 'react';
 import {SyncSensor} from '../SyncSensor';
-import {isClient} from '../util';
+import {isClient, h} from '../util';
 import faccToHoc from '../util/faccToHoc';
 
 export interface IWindowScrollSensorValue {

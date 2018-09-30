@@ -1,4 +1,4 @@
-import {PureComponent} from 'react';
+import * as React from 'react';
 import {noop, isClient} from '../util';
 
 export interface IPromptProps {
@@ -9,7 +9,7 @@ export interface IPromptProps {
   onResult?: (result: string) => void;
 }
 
-export class Prompt extends PureComponent<IPromptProps, any> {
+export class Prompt extends React.PureComponent<IPromptProps, any> {
   componentDidMount () {
     if (!(typeof this.props.children === 'function')) {
       this.prompt();
@@ -32,6 +32,8 @@ export class Prompt extends PureComponent<IPromptProps, any> {
 
       return result;
     }
+
+    return undefined;
   }
 
   render () {

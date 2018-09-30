@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import * as React from 'react';
 import {isClient} from '../util';
 
 export interface IAfterDrafState {
@@ -9,7 +9,7 @@ export const createSingleRunDraf = isClient
   ? () => {
     let signelDrafFinished = false;
 
-    return class extends Component<{}, IAfterDrafState> {
+    return class extends React.Component<{}, IAfterDrafState> {
       frame;
       state: IAfterDrafState;
 

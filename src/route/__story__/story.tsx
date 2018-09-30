@@ -1,6 +1,6 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 import {Router, Route, Switch} from '..';
 
 storiesOf('Context/route', module)

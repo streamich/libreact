@@ -1,4 +1,4 @@
-import {Component, cloneElement} from 'react';
+import * as React from 'react';
 import {noop, on, off} from '../util';
 import renderProp from '../util/renderProp';
 const throttle = require('throttle-debounce/throttle');
@@ -23,7 +23,7 @@ export interface ISliderState {
   length?: number;
 }
 
-export class Slider extends Component<ISliderProps, ISliderState> {
+export class Slider extends React.Component<ISliderProps, ISliderState> {
   static defaultProps = {
     disabled: false,
     reverse: false,
@@ -168,6 +168,6 @@ export class Slider extends Component<ISliderProps, ISliderState> {
       props.onTouchStart = this.onTouchStart(element.props.onTouchStart);
     }
 
-    return cloneElement(element, props);
+    return React.cloneElement(element, props);
   }
 }

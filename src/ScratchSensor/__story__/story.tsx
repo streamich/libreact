@@ -2,7 +2,7 @@ import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {ScratchSensor} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs';
+import ShowDocs from '../../ShowDocs';
 
 const Demo = (props) =>
   <div style={{

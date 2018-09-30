@@ -1,7 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {Render} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 storiesOf('Animation/Render', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Render.md')}))

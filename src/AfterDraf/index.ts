@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import * as React from 'react';
 import {isClient} from '../util';
 
 export interface IAfterDrafState {
@@ -6,7 +6,7 @@ export interface IAfterDrafState {
 }
 
 export const AfterDraf = isClient
-  ? class AfterDraf extends Component<{}, IAfterDrafState> {
+  ? class AfterDraf extends React.Component<{}, IAfterDrafState> {
     frame;
     state: IAfterDrafState;
 

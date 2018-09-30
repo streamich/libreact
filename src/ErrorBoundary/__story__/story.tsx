@@ -1,7 +1,7 @@
 import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {ErrorBoundary, withErrorBoundary} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 class BuggyCounter extends Component<any, any> {
   state;

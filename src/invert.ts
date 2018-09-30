@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import * as React from 'react';
 import {h, noop} from './util';
 import renderProp from './util/renderProp';
 
@@ -16,7 +16,7 @@ export type TInvert = (tag?: keyof React.ReactHTML) => React.ComponentClass<any>
 const defaultWrapper = (element) => element;
 
 export const invert: TInvert = (tag?: keyof React.ReactHTML) => {
-  const Inverted = class Inverted extends Component<IInvertedProps, any> {
+  const Inverted = class Inverted extends React.Component<IInvertedProps, any> {
     static defaultProps = {
       wrapper: defaultWrapper
     };

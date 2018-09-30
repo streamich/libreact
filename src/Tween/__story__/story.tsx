@@ -2,7 +2,7 @@ import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {Tween} from '..';
 import {AfterTimeout} from '../../AfterTimeout';
-import ShowDocs from '../../../.storybook/ShowDocs';
+import ShowDocs from '../../ShowDocs';
 import createBezierEasing from '../createBezierEasing';
 
 storiesOf('Animation/Tween', module)

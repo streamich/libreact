@@ -1,4 +1,4 @@
-import {Component, Children, cloneElement} from 'react';
+import * as React from 'react';
 import {rule, keyframes} from '../nano';
 import {h, noop} from '../util';
 
@@ -27,7 +27,7 @@ export interface IRippleProps {
 export interface IRippleState {
 }
 
-export class Ripple extends Component<IRippleProps, IRippleState> {
+export class Ripple extends React.Component<IRippleProps, IRippleState> {
   static defaultProps = {
     color: 'rgba(0,0,0,.2)',
     ms: 400
@@ -69,7 +69,7 @@ export class Ripple extends Component<IRippleProps, IRippleState> {
 
   render () {
     const {children, color} = this.props;
-    const element = Children.only(children);
+    const element = React.Children.only(children);
     const ripple = h('div', {
       className,
       style: {
@@ -85,11 +85,11 @@ export class Ripple extends Component<IRippleProps, IRippleState> {
       position: 'relative'
     });
 
-    const innerChildren = Children.toArray(element.props.children);
+    const innerChildren = React.Children.toArray(element.props.children);
 
     innerChildren.push(ripple);
 
-    return cloneElement(element, {
+    return React.cloneElement(element, {
       ...element.props,
       style,
       ref: this.ref(element.props.ref),

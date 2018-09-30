@@ -1,7 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {lazy} from '../lazy';
-import ShowDocs from '../../.storybook/ShowDocs'
+import ShowDocs from '../ShowDocs'
 
 const MyComponent = () => <div style={{
   background: 'tomato',

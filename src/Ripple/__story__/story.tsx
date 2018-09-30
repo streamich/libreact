@@ -2,7 +2,7 @@ import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {Ripple} from '..';
 import Button from './Button';
-import ShowDocs from '../../../.storybook/ShowDocs';
+import ShowDocs from '../../ShowDocs';
 
 storiesOf('UI/Ripple', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Ripple.md')}))

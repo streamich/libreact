@@ -1,7 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {ActiveSensor} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 storiesOf('Sensors/ActiveSensor', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/ActiveSensor.md')}))

@@ -1,5 +1,5 @@
+import * as React from 'react';
 import {IDimmableProps} from './index';
-import {Component, Children, cloneElement} from 'react';
 import {h, noop} from '../util';
 import {Dimmer, IDimmerProps} from '../Dimmer';
 
@@ -19,15 +19,15 @@ export interface IDimmableProps extends IDimmerProps {
   renderOverlay?: (dim?: boolean) => React.ReactChild;
 }
 
-export class Dimmable extends Component<IDimmableProps> {
+export class Dimmable extends React.Component<IDimmableProps> {
   static defaultProps = {
     blur: 5,
   };
 
   render () {
     const {children, dim, blur, renderOverlay, ...rest} = this.props;
-    const element = Children.only(children);
-    const elementChildren = Children.toArray(element.props.children);
+    const element = React.Children.only(children);
+    const elementChildren = React.Children.toArray(element.props.children);
     let child: React.ReactChild;
     const dimmerProps: IDimmerProps = rest;
 
@@ -65,13 +65,13 @@ export class Dimmable extends Component<IDimmableProps> {
           }
         }
 
-        child = cloneElement(child, childProps);
+        child = React.cloneElement(child, childProps);
       }
     } else {
       child = h(onlyTextNodes(elementChildren) ? 'span' : 'div', childProps, ...elementChildren);
     }
 
-    return cloneElement(element, {
+    return React.cloneElement(element, {
       style: {
         ...(element.props.style || {}),
         position: 'relative'

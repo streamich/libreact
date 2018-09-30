@@ -5,9 +5,8 @@
     "moduleResolution": "Node",
     "removeComments": true,
     "noImplicitAny": false,
-    "sourceMap": false,
     "outDir": "./lib",
-    "allowJs": true,
+    "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "jsxFactory": "h",
@@ -15,31 +14,23 @@
     "skipLibCheck": true,
     "experimentalDecorators": true,
     "importHelpers": true,
+    "pretty": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "noEmitHelpers": true,
     "noErrorTruncation": true,
     "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "pretty": true,
-    "lib": [
-      "dom",
-      "es5",
-      "es6",
-      "es7",
-      "es2015",
-      "scripthost",
-      "dom.iterable"
-    ]
+    "noImplicitReturns": true,
+    "declaration": true,
+    "lib": ["dom", "es5", "es6", "es7", "es2015", "es2017", "scripthost", "dom.iterable"]
   },
-  "include": [
-    "src/typing.d.ts",
-    "src"
-  ],
+  "include": ["typing.d.ts", "src"],
   "exclude": [
     "node_modules",
     "lib",
-    "src/__tests__",
+    "**/__tests__/**/*",
+    "**/__story__/**/*",
     "*.test.ts",
-    "*.test.tsx",
-    "*.test-server.ts",
-    "*.test-server.tsx"
+    "*.test.tsx"
   ]
 }

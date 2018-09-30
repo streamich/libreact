@@ -2,7 +2,7 @@ import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {delayed} from './delayed';
 import {viewport} from './viewport';
-import ShowDocs from '../.storybook/ShowDocs'
+import ShowDocs from './ShowDocs'
 
 
 const Loaded = () => <div>LOADED</div>;

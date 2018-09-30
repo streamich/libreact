@@ -1,7 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {Translations, T, withT} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs';
+import ShowDocs from '../../ShowDocs';
 
 const Demo = ({T}) => {
   return (
