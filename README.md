@@ -71,6 +71,7 @@ const MyComponent = mock();
      - [`<WindowSizeSensor>`](./docs/en/WindowSizeSensor.md), [`withWindowSize()`](./docs/en/WindowSizeSensor.md#withwindowsize-hoc), and [`@withWindowSize`](./docs/en/WindowSizeSensor.md#withwindowsize-decorator)
         - [`<WindowWidthSensor>`](./docs/en/WindowWidthSensor.md), [`withWindowWidth()`](./docs/en/WindowWidthSensor.md#withwindowwidth-hoc), and [`@withWindowWidth`](./docs/en/WindowWidthSensor.md#withwindowwidth-decorator)
   - [Context](./docs/en/Context.md)
+     - [Google Sign-in for Websites](./docs/en/GoogleAuth.md)
      - [`<Provider>`](./docs/en/Provider.md#provider), [`<Consumer>`](./docs/en/Provider.md#consumer), [`withContext()`](./docs/en/Provider.md#withcontext-hoc), and [`@withContext`](./docs/en/Provider.md#withcontext-decorator)
      - [`<Theme>`](./docs/en/theme.md#theme), [`<Themed>`](./docs/en/theme.md#themed), [`withTheme()`](./docs/en/theme.md#withtheme-hoc), and [`@withTheme`](./docs/en/theme.md#withtheme-decorator)
      - [`<CssVarsProvider>`](./docs/en/cssvars.md), [`<CssVars>`](./docs/en/cssvars.md#cssvars), [`withCssVars()`](./docs/en/cssvars.md#withcssvars-hoc), and [`@withCssVars`](./docs/en/cssvars.md#withcssvars-decorator)

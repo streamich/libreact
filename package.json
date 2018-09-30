@@ -55,9 +55,9 @@
     "enzyme-to-json": "^3.3.4",
     "gulp": "3.9.1",
     "gulp-typescript": "3",
-    "jest": "22.1.2",
-    "jest-environment-jsdom": "^22.1.4",
-    "jest-environment-jsdom-global": "^1.0.3",
+    "jest": "^23.6.0",
+    "jest-environment-jsdom": "^23.4.0",
+    "jest-environment-jsdom-global": "^1.1.0",
     "mocha": "5.0.0",
     "git-cz": "^1.7.0",
     "react-markdown": "3.1.4",
@@ -112,7 +112,8 @@
     "setupFiles": [
       "./src/__tests__/setup.js"
     ],
-    "testEnvironment": "jest-environment-jsdom-global"
+    "testEnvironment": "jest-environment-jsdom-global",
+    "testURL": "http://localhost"
   },
   "keywords": [
     "react",
