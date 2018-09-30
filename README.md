@@ -6,8 +6,10 @@
 
 React standard library &mdash; must-have toolbox for any React project.
 
-  - *Isomorphic* - all components work in browser and on server (and some in `react-native`).
-  - See [__demos__](https://streamich.github.io/libreact/demos/), [__docs__](https://streamich.github.io/libreact/en/), and [__package__](https://www.npmjs.com/package/libreact/).
+- *Isomorphic* - all components work in browser and on server (and some in `react-native`).
+- Most components implement [Universal Component Interface](https://github.com/streamich/react-universal-interface)
+- [__LAUNCH STORYBOOK__](https://streamich.github.io/libreact/demos/) 🚀
+- [__See docs__](https://streamich.github.io/libreact/en/)
 
 
 ## Installation
