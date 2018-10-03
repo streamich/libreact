@@ -12,6 +12,7 @@ node_js:
 script:
   - yarn test
   - yarn build
+  - yarn build:modules
 matrix:
   allow_failures: []
   fast_finish: true

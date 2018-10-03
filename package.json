@@ -7,11 +7,15 @@
     "type": "git",
     "url": "https://github.com/streamich/libreact.git"
   },
-  "files": ["lib/"],
+  "files": [
+    "lib/",
+    "modules/"
+  ],
   "scripts": {
     "start": "yarn test:story",
     "clean": "rimraf lib modules && yarn test:story:clean && yarn docs:clean",
     "build": "tsc",
+    "build:modules": "tsc --project tsconfig.es6.json",
     "test": "yarn test:server && yarn test:client",
     "test:server": "mocha -r ts-node/register src/**/*.test-server.ts*",
     "test:client": "jest",
