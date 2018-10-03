@@ -17,6 +17,13 @@ Reference:
   - [`createRouter()`](#createrouter)
 
 
+## Usage
+
+```js
+import {Router, Match, Route, Switch, go, Link, createRouter} from 'libreact/lib/route';
+```
+
+
 ## Use any state container
 
 With libreact's `<Router>` you can choose to store the current route in your state continer (like Redux or MobX).
