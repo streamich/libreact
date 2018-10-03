@@ -79,7 +79,7 @@ const MyComponent = mock();
      - [`<Provider>`](./docs/en/Provider.md#provider), [`<Consumer>`](./docs/en/Provider.md#consumer), [`withContext()`](./docs/en/Provider.md#withcontext-hoc), and [`@withContext`](./docs/en/Provider.md#withcontext-decorator)
      - [`<Theme>`](./docs/en/theme.md#theme), [`<Themed>`](./docs/en/theme.md#themed), [`withTheme()`](./docs/en/theme.md#withtheme-hoc), and [`@withTheme`](./docs/en/theme.md#withtheme-decorator)
      - [`<CssVarsProvider>`](./docs/en/cssvars.md), [`<CssVars>`](./docs/en/cssvars.md#cssvars), [`withCssVars()`](./docs/en/cssvars.md#withcssvars-hoc), and [`@withCssVars`](./docs/en/cssvars.md#withcssvars-decorator)
-     - [__Routing__](./docs/en/routing.md): [`createRouter()`](./docs/en/routing.md#createrouter), [`<Router>`](./docs/en/routing.md#router), [`<Route>`](./docs/en/routing.md#route), [`<Switch>`](./docs/en/routing.md#switch), [`<Match>`]](./docs/en/routing.md#match), [`<Link>`](./docs/en/routing.md#link), and [`go()`](./docs/en/routing.md#go)
+     - [__Routing__](./docs/en/routing.md): [`createRouter()`](./docs/en/routing.md#createrouter), [`<Router>`](./docs/en/routing.md#router), [`<Route>`](./docs/en/routing.md#route), [`<Switch>`](./docs/en/routing.md#switch), [`<Match>`](./docs/en/routing.md#match), [`<Link>`](./docs/en/routing.md#link), and [`go()`](./docs/en/routing.md#go)
      - [`<Translations>`](./docs/en/translate.md#translations), [`<Translate>`](./docs/en/translate.md#translate-or-t), [`<T>`](./docs/en/translate.md#translate-or-t), [`withT()`](./docs/en/translate.md#witht-hoc), and [`@withT`](./docs/en/translate.md#witht-decorator)
   - [UI](./docs/en/UI.md)
      - [`<Portal>`](./docs/en/Portal.md), [`<Overlay>`](./docs/en/Overlay.md), and [`<Modal>`](./docs/en/Modal.md)
