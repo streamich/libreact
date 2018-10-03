@@ -2,7 +2,7 @@
 
 Routing components that allow you to implement single page app routing functionality.
 
-  - Provide *dynamic* routing, [just like `react-router`](https://reacttraining.com/react-router/core/guides/philosophy/dynamic-routing)
+  - Provides *dynamic* routing
   - Use [any state container](#use-any-state-container)
   - [Multiple routers](#multiple-routers) on one page
 
@@ -17,11 +17,9 @@ Reference:
   - [`createRouter()`](#createrouter)
 
 
-###### Use any state container
+## Use any state container
 
-With libreact's `<Router>` you can choose to store the current route in your state continer (like Redux or MobX) of
-choice.
-
+With libreact's `<Router>` you can choose to store the current route in your state continer (like Redux or MobX).
 The "problem-of-all-routers" is that they all want to keep the state of the route. For example, [`react-router`](https://reacttraining.com/react-router/) uses
 its internal history objects to store route information, and [it does not give you good access to that data structure](http://formidable.com/blog/2016/07/11/let-the-url-do-the-talking-part-1-the-pain-of-react-router-in-redux/).
 
@@ -48,17 +46,8 @@ You can store it in Redux or MobX, or really anywhere you want. And if you don't
 }</LocationSensor>
 ```
 
-Actually, you don't even have to do that, if you don't explicitly specify the `route` prop, the `<Router>` component will do exactly that for you under-the-hood,
-so, simply use:
 
-```jsx
-<Router>
-  {/* ... */}
-</Router>
-```
-
-
-###### Multiple routers
+## Multiple routers
 
 You can have many routers operating on the same page in parallel. All you have to do is specify a *namespace* using the `ns` prop.
 
