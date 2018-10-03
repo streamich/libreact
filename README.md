@@ -19,8 +19,6 @@ npm i <a href="https://www.npmjs.com/package/libreact">libreact</a> --save
 
 ## Usage
 
-Import each utility individually to decrease your bundle size
-
 ```js
 import {mock} from 'libreact/lib/mock';
 
