@@ -1,3 +1,21 @@
+# [2.2.0](https://github.com/streamich/libreact/compare/v2.1.0...v2.2.0) (2018-10-03)
+
+
+### Bug Fixes
+
+* 🐛 export CssVars using correc casing ([b46164f](https://github.com/streamich/libreact/commit/b46164f))
+
+
+### Features
+
+* 🎸 export EsNext modules ([1805455](https://github.com/streamich/libreact/commit/1805455))
+* 🎸 export TypeScript types and improve build process ([c050afd](https://github.com/streamich/libreact/commit/c050afd))
+
+
+### Performance Improvements
+
+* ⚡️ upgrade throttle-debounce lib, fix tests after refactor ([a8da481](https://github.com/streamich/libreact/commit/a8da481))
+
 # [2.1.0](https://github.com/streamich/libreact/compare/v2.0.1...v2.1.0) (2018-09-30)
 
 
