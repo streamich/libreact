@@ -2,6 +2,10 @@ import {createElement as h} from 'react';
 import {render} from 'react-dom';
 import {AfterDraf} from '..';
 
+try {
+  (window as any).requestAnimationFrame = (callback) => setTimeout(callback, 17);
+} catch {}
+
 const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 describe('<AfterDraf>', () => {
