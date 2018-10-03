@@ -1,6 +1,6 @@
 import {createElement as h, Component} from 'react';
 import {storiesOf} from '@storybook/react';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 import {CssVarsProvider, CssVars, withCssVars} from '..';
 import {Example1} from './Example1';
 import {Example2} from './Example2';

@@ -1,7 +1,7 @@
 import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {List, withList} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 const Demo = ({value, push, filter, sort}) =>
   <div>

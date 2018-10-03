@@ -2,7 +2,7 @@ import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {InlineWidthQuery} from '..';
 import {View} from '../../View';
-import ShowDocs from '../../../.storybook/ShowDocs';
+import ShowDocs from '../../ShowDocs';
 
 storiesOf('UI/InlineWidthQuery', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/InlineWidthQuery.md')}))

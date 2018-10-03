@@ -1,7 +1,7 @@
 import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {invert, Inverted} from './invert';
-import ShowDocs from '../.storybook/ShowDocs'
+import ShowDocs from './ShowDocs'
 
 const Audio = invert('audio');
 

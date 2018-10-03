@@ -1,7 +1,6 @@
 # Dummies
 
 Dummies are empty *"shell"* components that don't contain the actual implementation.
-
 However, those dummies can be used as real React components and they will re-render
 automatically once they get implemented.
 
@@ -12,5 +11,3 @@ but implement them with real components only later when necessary.
   - [`loadable()`](./loadable.md) - dummy that can be loaded using `.load()` method.
   - [`lazy()`](./lazy.md) - like `loadable()`, but also loads automatically when rendered for the first time.
   - [`delayed()`](./delayed.md) - like `lazy()`, but its loading can be delayed.
-  - [`viewport()`](./viewport.md) - postpones component's rendering until it is visible
-  in viewport at least once.

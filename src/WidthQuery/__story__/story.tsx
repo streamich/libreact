@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react';
 import {WidthQuery} from '..';
 import {View} from '../../View';
 import {WindowSizeSensor} from '../../WindowSizeSensor';
-import ShowDocs from '../../../.storybook/ShowDocs';
+import ShowDocs from '../../ShowDocs';
 
 storiesOf('UI/WidthQuery', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/WidthQuery.md')}))

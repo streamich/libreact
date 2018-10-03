@@ -4,10 +4,12 @@
 
 [![][npm-badge]][npm-url] [![][travis-badge]][travis-url] [![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface)
 
-React standard library &mdash; must-have toolbox for any React project.
+React standard library&mdash;must-have toolbox for any React project.
 
-  - *Isomorphic* - all components work in browser and on server (and some in `react-native`).
-  - See [__demos__](https://streamich.github.io/libreact/demos/), [__docs__](https://streamich.github.io/libreact/en/), and [__package__](https://www.npmjs.com/package/libreact/).
+- [__LAUNCH STORYBOOK__](https://streamich.github.io/libreact/demos/) 🚀
+- [__See documentation__](https://streamich.github.io/libreact/en/)
+- Most components implement [![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface)
+- *Isomorphic* - most components work in browser and on server (and some in `react-native`).
 
 
 ## Installation
@@ -19,10 +21,12 @@ npm i <a href="https://www.npmjs.com/package/libreact">libreact</a> --save
 
 ## Usage
 
-Import each utility individually to decrease your bundle size
+Library is modular&mdash;you can import each component by its name.
 
 ```js
 import {mock} from 'libreact/lib/mock';
+// or
+import {mock} from 'libreact/modules/mock';
 
 const MyComponent = mock();
 ```
@@ -75,7 +79,7 @@ const MyComponent = mock();
      - [`<Provider>`](./docs/en/Provider.md#provider), [`<Consumer>`](./docs/en/Provider.md#consumer), [`withContext()`](./docs/en/Provider.md#withcontext-hoc), and [`@withContext`](./docs/en/Provider.md#withcontext-decorator)
      - [`<Theme>`](./docs/en/theme.md#theme), [`<Themed>`](./docs/en/theme.md#themed), [`withTheme()`](./docs/en/theme.md#withtheme-hoc), and [`@withTheme`](./docs/en/theme.md#withtheme-decorator)
      - [`<CssVarsProvider>`](./docs/en/cssvars.md), [`<CssVars>`](./docs/en/cssvars.md#cssvars), [`withCssVars()`](./docs/en/cssvars.md#withcssvars-hoc), and [`@withCssVars`](./docs/en/cssvars.md#withcssvars-decorator)
-     - [Router](./docs/en/routing.md)
+     - [__Routing__](./docs/en/routing.md): [`createRouter()`](./docs/en/routing.md#createrouter), [`<Router>`](./docs/en/routing.md#router), [`<Route>`](./docs/en/routing.md#route), [`<Switch>`](./docs/en/routing.md#switch), [`<Match>`](./docs/en/routing.md#match), [`<Link>`](./docs/en/routing.md#link), and [`go()`](./docs/en/routing.md#go)
      - [`<Translations>`](./docs/en/translate.md#translations), [`<Translate>`](./docs/en/translate.md#translate-or-t), [`<T>`](./docs/en/translate.md#translate-or-t), [`withT()`](./docs/en/translate.md#witht-hoc), and [`@withT`](./docs/en/translate.md#witht-decorator)
   - [UI](./docs/en/UI.md)
      - [`<Portal>`](./docs/en/Portal.md), [`<Overlay>`](./docs/en/Overlay.md), and [`<Modal>`](./docs/en/Modal.md)
@@ -100,7 +104,6 @@ const MyComponent = mock();
   - [Side Effects](./docs/en/Side-effects.md)
      - [`<LocalStorage>`](./docs/en/LocalStorage.md)
      - [`<ClassNames>`](./docs/en/ClassNames.md)
-     - [`go()`](./docs/en/routing.md#go), [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md)
   - [Boundaries](./docs/en/Boundaries.md)
      - [`<BrowserOnly>`](./docs/en/BrowserOnly.md), [`<ServerOnly>`](./docs/en/ServerOnly.md), and [`<ElectronOnly>`](./docs/en/ElectronOnly.md)
      - [`<ErrorBoundary>`](./docs/en/ErrorBoundary.md) and [`withErrorBoundary()`](./docs/en/ErrorBoundary.md#witherrorboundary-hoc)
@@ -109,6 +112,7 @@ const MyComponent = mock();
      - [`createRef()`](./docs/en/next/createRef.md), [`createState()`](./docs/en/next/createState.md), and [`createLifecycleEvents()`](./docs/en/next/createLifecycleEvents.md)
   - Other
      - [`<Resolve>`](./docs/en/Resolve.md)
+     - [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md)
      - [`getDisplayName()`](./docs/en/getDisplayName.md)
 
 

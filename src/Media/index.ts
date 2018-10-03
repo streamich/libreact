@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import * as React from 'react';
 import {h} from '../util';
 import parseTimeRanges from './parseTimeRanges';
 
@@ -64,7 +64,7 @@ export interface IMediaState {
   volume?: number;
 }
 
-export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IMedia> extends Component<P, S> implements IMedia {
+export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IMedia> extends React.Component<P, S> implements IMedia {
   tag: 'video' | 'audio' = 'video';
   props: P;
   el: HTMLMediaElement = null;

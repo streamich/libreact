@@ -1,7 +1,7 @@
 import {Component} from 'react';
 import {render, createEnhancer} from 'react-universal-interface';
 import {on, off, noop} from '../util';
-import * as throttle from 'throttle-debounce/throttle';
+import {throttle} from 'throttle-debounce';
 
 const equalSets = (a: string[], b: string[]) => {
   if (a.length !== b.length) {

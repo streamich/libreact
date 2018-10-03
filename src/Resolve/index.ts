@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import * as React from 'react';
 
 export interface IResolveProps {
   promise: Promise<any>;
@@ -11,7 +11,7 @@ export interface IResolveState {
   error?: any;
 }
 
-export class Resolve extends Component<IResolveProps, any> {
+export class Resolve extends React.Component<IResolveProps, any> {
   mounted = false;
 
   state: IResolveState = {

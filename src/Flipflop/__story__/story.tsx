@@ -1,7 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {Flipflop} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 storiesOf('Inversion/Flipflop', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Flipflop.md')}))

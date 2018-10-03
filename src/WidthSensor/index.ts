@@ -1,6 +1,6 @@
-import {Component, createElement as h} from 'react';
+import {Component} from 'react';
 import {SizeSensor, ISizeSensorProps, ISizeSensorState} from '../SizeSensor';
-import {noop} from '../util';
+import {noop, h} from '../util';
 import faccToHoc, {divWrapper} from '../util/faccToHoc';
 
 export interface IWidthSensorProps extends ISizeSensorProps {

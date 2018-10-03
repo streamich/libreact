@@ -1,7 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {Interpolation} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 storiesOf('Animation/Interpolation', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Interpolation.md')}))

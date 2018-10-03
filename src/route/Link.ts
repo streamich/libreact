@@ -1,4 +1,4 @@
-import {Component, cloneElement} from 'react';
+import * as React from 'react';
 import {h, noop} from '../util';
 import go, {TGo} from '../route/go';
 import renderProp from '../util/renderProp';
@@ -19,7 +19,7 @@ export interface ILinkProps extends React.AllHTMLAttributes<any> {
 export interface ILinkState {
 }
 
-class Link extends Component<ILinkProps, ILinkState> {
+class Link extends React.Component<ILinkProps, ILinkState> {
   static defaultProps = {
     onGo: go
   };
@@ -94,7 +94,7 @@ class Link extends Component<ILinkProps, ILinkState> {
       props.href = to;
     }
 
-    return cloneElement(element, props);
+    return React.cloneElement(element, props);
   }
 }
 

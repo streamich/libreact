@@ -1,7 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {ShouldUpdate} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 import {Example1} from './Example1';
 import {Example2} from './Example2';
 import {Example3} from './Example3';

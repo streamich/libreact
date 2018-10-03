@@ -1,6 +1,23 @@
 # UI
 
   - [`<Portal>`](./Portal.md) &mdash; creates React portal into document's body.
-  - [`<Overlay>`](./Overlay.md) &mdash; creates overlay over the whole page.
+  - [`<Overlay>`](./Overlay.md) &mdash; creates an overlay over the whole page.
+  - [`<Modal>`](./Modal.md) &mdash; creates an overlay and keeps focus in modal.
+  - [`<Dimmer>`](./Dimmer.md) &mdash; Dims its parent element.
+  - [`<Dimmable>`](./Dimmable.md) &mdash; Dims its children.
+  - [`<Parallax>`](./Parallax.md) &mdash; Creates *parallax* effect when user scrolls.
   - [`<FullScreen>`](./FullScreen.md) &mdash; displays children in full screen.
   - [`<Slider>`](./Slider.md) &mdash; provides mouse position inside element when scrubbing.
+  - [`<DropArea>`](./DropArea.md) &mdash; area where to copy-paste and drop files.
+  - [`<Group>`](./Group.md) &mdash; separates its children using a separator.
+  - [`<OutsideClick>`](./OutsideClick.md) &mdash; tracks clicks outside its children.
+  - [`<Ripple>`](./Ripple.md) &mdash; creates a material-design-like ripple effect.
+  - [`<Img>`](./Img.md) &mdash; render-prop for `<img>` to handle loading and error states.
+  - [`<WidthQuery>`](./WidthQuery.md) &mdash; Renders the `<View>` child that matches a query.
+  - [`<WindowWidthQuery>`](./WindowWidthQuery.md) &mdash; `<WidthQuery>` that uses `<WindowWidthSensor>`.
+  - [`<InlineWidthQuery>`](./InlineWidthQuery.md) &mdash; `<WidthQuery>` that uses `<WidthSensor>`.
+  - [`<Audio>`](./Audio.md) &mdash; render-prop for `<audio>` element.
+  - [`<Video>`](./Video.md) &mdash; render-prop for `<video>` element.
+  - [`<Speak>`](./Speak.md) &mdash; synthesizes human voice.
+  - [`<Vibrate>`](./Vibrate.md) &mdash; vibrates user's device.
+  - [`<Alert>`](./Alert.md) &mdash; displays `alert()` modal.

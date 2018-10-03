@@ -1,7 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {State, withState} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 const Cnt = ({cnt, set}) =>
   <div onClick={() => set({cnt: cnt + 1})}>{cnt}</div>;

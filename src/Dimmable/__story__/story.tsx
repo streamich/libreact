@@ -2,7 +2,7 @@ import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {Dimmable} from '..';
 import {Toggle} from '../../Toggle';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 storiesOf('UI/Dimmable', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Dimmable.md')}))

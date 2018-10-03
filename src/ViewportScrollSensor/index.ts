@@ -1,6 +1,6 @@
-import {Component, cloneElement} from 'react';
+import {Component, cloneElement, SFCElement} from 'react';
 import {on, off, noop} from '../util';
-import * as throttle from 'throttle-debounce/throttle';
+import {throttle} from 'throttle-debounce';
 import renderProp from '../util/renderProp';
 import {IUniversalInterfaceProps} from '../typing';
 

@@ -1,7 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {OrientationSensor, withOrientation} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 const Print = ({orientation}) =>
   <pre style={{fontFamily: 'monospace'}}>

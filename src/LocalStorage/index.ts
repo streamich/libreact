@@ -1,6 +1,6 @@
 import {Component} from 'react';
 import {get, set, del} from './local-storage';
-const debounce = require('throttle-debounce/debounce');
+import {debounce} from 'throttle-debounce';
 
 export interface ILocalStorageProps {
   name: string;

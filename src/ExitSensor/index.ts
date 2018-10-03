@@ -1,4 +1,4 @@
-import {Component, cloneElement} from 'react';
+import * as React from 'react';
 
 export interface IExitSensorProps {
   children?: React.ReactElement<any>;
@@ -8,7 +8,7 @@ export interface IExitSensorProps {
 export interface IExitSensorState {
 }
 
-export class ExitSensor extends Component<IExitSensorProps, IExitSensorState> {
+export class ExitSensor extends React.Component<IExitSensorProps, IExitSensorState> {
   static defaultProps = {
     time: 200
   };
@@ -52,7 +52,7 @@ export class ExitSensor extends Component<IExitSensorProps, IExitSensorState> {
     if (this.exitInFlight) {
       this.nextElement = element;
 
-      return cloneElement(this.element, {
+      return React.cloneElement(this.element, {
         exiting: true
       });
     }
@@ -69,7 +69,7 @@ export class ExitSensor extends Component<IExitSensorProps, IExitSensorState> {
 
       this.timeout = setTimeout(this.transition, this.props.time);
 
-      return cloneElement(this.element, {
+      return React.cloneElement(this.element, {
         exiting: true
       });
     }

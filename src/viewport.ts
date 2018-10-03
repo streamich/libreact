@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import * as React from 'react';
 import {h} from './util';
 import {ViewportSensor} from './ViewportSensor';
 import {pixel} from './pixel';
@@ -12,7 +12,7 @@ export type TViewport = <P>(Comp: React.StatelessComponent<P> | React.ComponentC
 export const viewport = (Comp, {placeholder = pixel} = {}) => {
   let flipped = false;
 
-  const Viewport = class Viewport extends Component<any, any> {
+  const Viewport = class Viewport extends React.Component<any, any> {
     onChange = () => {
       flipped = true;
       this.forceUpdate();

@@ -1,4 +1,4 @@
-import {Component, cloneElement} from 'react';
+import {Component, cloneElement, SFCElement} from 'react';
 import {noop} from '../util';
 import renderProp from '../util/renderProp';
 

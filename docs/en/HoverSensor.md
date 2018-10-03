@@ -1,5 +1,7 @@
 # `<HoverSensor>`
 
+[![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface)
+
 Render prop that tracks elements hover status. Attaches to the root element, or provides a binding, if `bond` prop specified.
 
 ## Example

@@ -2,7 +2,7 @@ import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {LocalStorage} from '..';
 import StoryLocalStorageForm from './StoryLocalStorageForm';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 storiesOf('Side Effects/LocalStorage', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/LocalStorage.md')}))

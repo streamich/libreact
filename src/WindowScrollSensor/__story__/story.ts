@@ -2,7 +2,7 @@ import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {WindowScrollSensor} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 storiesOf('Sensors/WindowScrollSensor', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/WindowScrollSensor.md')}))

@@ -1,7 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {AfterTimeout} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 storiesOf('Animation/AfterTimeout', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/AfterTimeout.md')}))

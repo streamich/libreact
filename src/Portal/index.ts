@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import * as React from 'react';
 import {createPortal} from 'react-dom';
 import {isClient, noop} from '../util';
 
@@ -11,7 +11,7 @@ export interface IPortalProps {
 export interface IPortalState {
 }
 
-export class Portal extends Component<IPortalProps, IPortalState> {
+export class Portal extends React.Component<IPortalProps, IPortalState> {
   el: HTMLElement = null;
 
   constructor (props, context) {

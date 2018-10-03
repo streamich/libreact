@@ -1,4 +1,4 @@
-import {cloneElement, Children} from 'react';
+import * as React from 'react';
 import {Media} from '../Media';
 
 export type TAudioEvent = (event, Audio, IAudioState) => void;
@@ -54,8 +54,8 @@ export class Audio extends Media<IAudioProps, IAudioState, Audio> {
     const audio = super.render();
     const markup = children(this, this.state);
 
-    return cloneElement(markup, null, ...[
-      ...Children.toArray(markup.props.children),
+    return React.cloneElement(markup, null, ...[
+      ...React.Children.toArray(markup.props.children),
       audio
     ]) as any;
   }

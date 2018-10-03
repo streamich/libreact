@@ -1,7 +1,7 @@
 import {Component, createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {MediaSensor, withMedia} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 const IsBig = ({isBig}) => h('div', null, `WIDTH IS GREATED THAN 480PX: ${isBig}`);
 

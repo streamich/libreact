@@ -28,7 +28,7 @@ export * from './Audio';
 export * from './context';
 export * from './theme';
 export * from './route';
-export * from './cssvars';
+export * from './CssVars';
 
 // UI
 export * from './Portal';

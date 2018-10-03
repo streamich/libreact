@@ -1,5 +1,7 @@
 # `<BatterySensor>`
 
+[![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface)
+
 Uses [`Navigator.getBattery()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getBattery) API to track battery level, charging status and time it takes to charge/discharge a battery.
 
 ## Props

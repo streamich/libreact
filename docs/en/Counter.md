@@ -1,5 +1,7 @@
 # `<Counter>`
 
+[![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface)
+
 Allows you to keep a state of a counter value. Is similar to [`<Value>`](./Value.md) but its
 value is cast to `number` and you have an extra `inc(by = 1)` method that will increment your counter.
 

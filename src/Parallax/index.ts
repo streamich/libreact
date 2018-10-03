@@ -1,9 +1,9 @@
-import {Component, cloneElement} from 'react';
+import * as React from 'react';
 import {render} from 'react-universal-interface';
 import {IUniversalInterfaceProps} from '../typing';
 import {noop, on, off} from '../util';
 import {getElRect, getRootRect, TRect} from '../ViewportScrollSensor';
-const throttle = require('throttle-debounce/throttle');
+import {throttle} from 'throttle-debounce';
 
 const zeros: TRect = [0, 0, 0, 0];
 
@@ -22,7 +22,7 @@ export interface IParallaxState {
   root: TRect,
 }
 
-export class Parallax extends Component<IParallaxProps, IParallaxState> {
+export class Parallax extends React.Component<IParallaxProps, IParallaxState> {
   static defaultProps = {
     distance: Infinity,
     margin: zeros,
@@ -104,7 +104,7 @@ export class Parallax extends Component<IParallaxProps, IParallaxState> {
       }
     }
 
-    return cloneElement(element, {
+    return React.cloneElement(element, {
       ref: this.ref(element.ref)
     });
   }

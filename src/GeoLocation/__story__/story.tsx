@@ -1,7 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {GeoLocationSensor, withGeoLocation} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 const Print = ({geoLocation}) =>
   <pre style={{fontFamily: 'monospace'}}>

@@ -1,5 +1,5 @@
-import {Component, createElement as h, cloneElement, Children} from 'react';
-import {noop} from '../util';
+import * as React from 'react';
+import {noop, h} from '../util';
 import renderProp from '../util/renderProp';
 import faccToHoc, {divWrapper} from '../util/faccToHoc';
 
@@ -16,7 +16,7 @@ export interface ISizeSensorState {
   height: number;
 }
 
-export class SizeSensor extends Component<ISizeSensorProps, ISizeSensorState> {
+export class SizeSensor extends React.Component<ISizeSensorProps, ISizeSensorState> {
   state: ISizeSensorState = {
     width: Infinity,
     height: Infinity,
@@ -84,7 +84,7 @@ export class SizeSensor extends Component<ISizeSensorProps, ISizeSensorState> {
 
     style.position = 'relative';
 
-    return cloneElement(element, {style}, ...[
+    return React.cloneElement(element, {style}, ...[
       h('iframe', {
         ref: this.ref,
         style: {
@@ -98,7 +98,7 @@ export class SizeSensor extends Component<ISizeSensorProps, ISizeSensorState> {
           zIndex: -1
         }
       }),
-      ...Children.toArray(element.props.children)
+      ...React.Children.toArray(element.props.children)
     ]);
   }
 }

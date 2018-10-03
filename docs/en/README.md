@@ -45,7 +45,7 @@
      - [`<Provider>`](./Provider.md#provider), [`<Consumer>`](./Provider.md#consumer), [`withContext()`](./Provider.md#withcontext-hoc), and [`@withContext`](./Provider.md#withcontext-decorator)
      - [`<Theme>`](./theme.md#theme), [`<Themed>`](./theme.md#themed), [`withTheme()`](./theme.md#withtheme-hoc), and [`@withTheme`](./theme.md#withtheme-decorator)
      - [`<CssVarsProvider>`](./cssvars.md), [`<CssVars>`](./cssvars.md#cssvars), [`withCssVars()`](./cssvars.md#withcssvars-hoc), and [`@withCssVars`](./cssvars.md#withcssvars-decorator)
-     - [Router](./routing.md)
+     - [__Routing__](./routing.md): [`createRouter()`](./routing.md#createrouter), [`<Router>`](./routing.md#router), [`<Route>`](./routing.md#route), [`<Switch>`](./routing.md#switch), [`<Match>`](./routing.md#match), [`<Link>`](./routing.md#link), and [`go()`](./routing.md#go)
      - [`<Translations>`](./translate.md#translations), [`<Translate>`](./translate.md#translate-or-t), [`<T>`](./translate.md#translate-or-t), [`withT()`](./translate.md#witht-hoc), and [`@withT`](./translate.md#witht-decorator)
   - [UI](./UI.md)
      - [`<Portal>`](./Portal.md), [`<Overlay>`](./Overlay.md), and [`<Modal>`](./Modal.md)
@@ -71,7 +71,6 @@
      - [`<LocalStorage>`](./LocalStorage.md), `<SessionStorage>`, `<IndexedDb>`
      - [`<ClassNames>`](./ClassNames.md)
      - `<Title>`, `<Favicon>`
-     - [`go()`](./routing.md#go), [`<Sms>`](./Sms.md), [`<Mailto>`](./Mailto.md), and `<Tel>`
   - [Boundaries](./Boundaries.md)
      - [`<BrowserOnly>`](./BrowserOnly.md), [`<ServerOnly>`](./ServerOnly.md), and [`<ElectronOnly>`](./ElectronOnly.md)
      - [`<ErrorBoundary>`](./ErrorBoundary.md) and [`withErrorBoundary()`](./ErrorBoundary.md#witherrorboundary-hoc)
@@ -80,4 +79,5 @@
      - [`createRef()`](./next/createRef.md), [`createState()`](./next/createState.md), and [`createLifecycleEvents()`](./next/createLifecycleEvents.md)
   - Other
      - [`<Resolve>`](./Resolve.md)
+     - [`<Sms>`](./Sms.md), [`<Mailto>`](./Mailto.md), and `<Tel>`
      - [`getDisplayName()`](./getDisplayName.md)

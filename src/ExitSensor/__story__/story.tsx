@@ -1,7 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {ExitSensor} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 import {StoryExitSensorExample} from './StoryExitSensorExample';
 
 storiesOf('Sensors/ExitSensor', module)

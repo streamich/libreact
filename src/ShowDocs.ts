@@ -1,4 +1,4 @@
-import {createElement as h} from 'react';
+import {h} from './util';
 
 const ShowDocs = (props) => {
   return h('div', {},
