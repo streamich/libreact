@@ -92,14 +92,14 @@ can be either regular JSX children or a FaCC, render prop, or component prop.
   - `ns` &mdash; optional, string, namespace of the router.
 
 
-`match` prop can be a string, `RegExp` of a `function.
+`match` prop can be a string, `RegExp` of a `Function`.
 
   - if `string`, it is converted to a regular expression with `^` prepended, which means it has to match the route starting from
   the very first character. For example, `/users` -> `/^(\/users)/`. If the `exact` prop is on, also `$` appended to the regular
   expression, which means the regular expression has to match the route exactly. For example, `/users` -> `/^(\/users)$`.
   - if `RegExp`, the specified regular expression will be used to match the current `route`, the resulting matches array will be
   returned, if any.
-  - if `function` is provided, it has to return an array of strings on a match.
+  - if `Function` is provided, it has to return an array of strings on a match.
 
 
 ### `<Match>`
