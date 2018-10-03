@@ -4,12 +4,12 @@
 
 [![][npm-badge]][npm-url] [![][travis-badge]][travis-url] [![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface)
 
-React standard library &mdash; must-have toolbox for any React project.
+React standard library&mdash;must-have toolbox for any React project.
 
-- *Isomorphic* - all components work in browser and on server (and some in `react-native`).
-- Most components implement [Universal Component Interface](https://github.com/streamich/react-universal-interface)
 - [__LAUNCH STORYBOOK__](https://streamich.github.io/libreact/demos/) 🚀
-- [__See docs__](https://streamich.github.io/libreact/en/)
+- [__See documentation__](https://streamich.github.io/libreact/en/)
+- Most components implement [![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface)
+- *Isomorphic* - most components work in browser and on server (and some in `react-native`).
 
 
 ## Installation
@@ -25,6 +25,8 @@ Library is modular&mdash;you can import each component by its name.
 
 ```js
 import {mock} from 'libreact/lib/mock';
+// or
+import {mock} from 'libreact/modules/mock';
 
 const MyComponent = mock();
 ```
@@ -77,7 +79,7 @@ const MyComponent = mock();
      - [`<Provider>`](./docs/en/Provider.md#provider), [`<Consumer>`](./docs/en/Provider.md#consumer), [`withContext()`](./docs/en/Provider.md#withcontext-hoc), and [`@withContext`](./docs/en/Provider.md#withcontext-decorator)
      - [`<Theme>`](./docs/en/theme.md#theme), [`<Themed>`](./docs/en/theme.md#themed), [`withTheme()`](./docs/en/theme.md#withtheme-hoc), and [`@withTheme`](./docs/en/theme.md#withtheme-decorator)
      - [`<CssVarsProvider>`](./docs/en/cssvars.md), [`<CssVars>`](./docs/en/cssvars.md#cssvars), [`withCssVars()`](./docs/en/cssvars.md#withcssvars-hoc), and [`@withCssVars`](./docs/en/cssvars.md#withcssvars-decorator)
-     - [Router](./docs/en/routing.md)
+     - [Routing](./docs/en/routing.md) (`createRouter()`, `<Router>`, `<Route>`, `<Switch>`, `<Match>`, `<Link>`, and `go()`)
      - [`<Translations>`](./docs/en/translate.md#translations), [`<Translate>`](./docs/en/translate.md#translate-or-t), [`<T>`](./docs/en/translate.md#translate-or-t), [`withT()`](./docs/en/translate.md#witht-hoc), and [`@withT`](./docs/en/translate.md#witht-decorator)
   - [UI](./docs/en/UI.md)
      - [`<Portal>`](./docs/en/Portal.md), [`<Overlay>`](./docs/en/Overlay.md), and [`<Modal>`](./docs/en/Modal.md)
