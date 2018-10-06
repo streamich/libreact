@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {isClient} from '../util';
+import RAF from './RAF';
 
 export interface IAfterDrafState {
   ready: boolean;
@@ -25,8 +26,6 @@ export const createSingleRunDraf = isClient
 
       componentDidMount () {
         if (!signelDrafFinished) {
-          const RAF = requestAnimationFrame;
-
           this.frame = RAF(() => {
             this.frame = RAF(() => {
               signelDrafFinished = true;

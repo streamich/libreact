@@ -1,12 +1,17 @@
 import {createElement as h} from 'react';
 import {render} from 'react-dom';
 import {AfterDraf} from '..';
+import RAF from '../RAF';
 
-try {
-  (window as any).requestAnimationFrame = (callback) => setTimeout(callback, 17);
-} catch {}
+jest.mock('../RAF');
 
+const RAFMock = RAF as any as jest.SpyInstance;
 const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
+
+beforeEach(() => {
+  RAFMock.mockClear();
+  RAFMock.mockImplementation(cb => setImmediate(cb, 17));
+});
 
 describe('<AfterDraf>', () => {
   it('default <AfterDraf> exists', () => {
