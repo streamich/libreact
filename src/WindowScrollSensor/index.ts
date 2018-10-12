@@ -2,14 +2,14 @@ import * as React from 'react';
 import {SyncSensor} from '../SyncSensor';
 import {isClient, h} from '../util';
 import faccToHoc from '../util/faccToHoc';
+import {IUniversalInterfaceProps} from '../typing';
 
 export interface IWindowScrollSensorValue {
   x: number;
   y: number;
 }
 
-export interface IWindowScrollSensorProps {
-  children?: (state: IWindowScrollSensorValue) => React.ReactElement<any>;
+export interface IWindowScrollSensorProps extends IUniversalInterfaceProps<IWindowScrollSensorValue> {
   onChange?: (state: IWindowScrollSensorValue) => void;
 }
 
