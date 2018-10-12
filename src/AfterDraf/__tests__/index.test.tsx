@@ -19,6 +19,7 @@ describe('<AfterDraf>', () => {
   });
 
   // TODO: enble this test later
+  /*
   it('waits for DRAF on client before rendering', async () => {
     const div = document.createElement('div');
 
@@ -36,4 +37,5 @@ describe('<AfterDraf>', () => {
 
     document.body.removeChild(div);
   });
+  */
 });
