@@ -2,14 +2,14 @@ import {Component} from 'react';
 import {SyncSensor} from '../SyncSensor';
 import {isClient, h} from '../util';
 import faccToHoc from '../util/faccToHoc';
+import {IUniversalInterfaceProps} from '../typing';
 
 export interface IWindowSizeSensorValue {
   width: number;
   height: number;
 }
 
-export interface IWindowSizeSensorProps {
-  children?: (state: IWindowSizeSensorValue) => React.ReactElement<any>;
+export interface IWindowSizeSensorProps extends IUniversalInterfaceProps<IWindowSizeSensorValue> {
   onChange?: (state: IWindowSizeSensorValue) => void;
 }
 
@@ -36,11 +36,10 @@ export class WindowSizeSensor extends Component<IWindowSizeSensorProps, any> {
 
   render () {
     return h(SyncSensor, {
-      children: this.props.children,
+      ...this.props,
       initial: this.initial,
       addListener,
       removeListener,
-      onChange: this.props.onChange,
       onEvent
     });
   }

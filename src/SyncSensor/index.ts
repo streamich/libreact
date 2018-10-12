@@ -2,11 +2,11 @@ import * as React from 'react';
 import {noop} from '../util';
 import renderProp from '../util/renderProp';
 import {throttle} from 'throttle-debounce';
+import {IUniversalInterfaceProps} from '../typing';
 
-export interface ISyncSensorProps<TState> {
+export interface ISyncSensorProps<TState> extends IUniversalInterfaceProps<TState> {
   throttle?: number;
   initial?: TState;
-  children?: (state: TState) => React.ReactElement<any>;
   addListener: (handler) => void;
   removeListener: (handler) => void;
   onChange: (state: TState) => void;
