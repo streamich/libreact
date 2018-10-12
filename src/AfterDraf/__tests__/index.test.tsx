@@ -18,6 +18,7 @@ describe('<AfterDraf>', () => {
     expect(typeof AfterDraf).toBe('function');
   });
 
+  // TODO: enble this test later
   it('waits for DRAF on client before rendering', async () => {
     const div = document.createElement('div');
 
