@@ -1,3 +1,15 @@
+# [2.3.0](https://github.com/streamich/libreact/compare/v2.2.1...v2.3.0) (2018-10-12)
+
+
+### Bug Fixes
+
+* 🐛 loosen render prop types ([392214e](https://github.com/streamich/libreact/commit/392214e))
+
+
+### Features
+
+* 🎸 add universal component typings ([f725230](https://github.com/streamich/libreact/commit/f725230))
+
 ## [2.2.1](https://github.com/streamich/libreact/compare/v2.2.0...v2.2.1) (2018-10-06)
 
 
