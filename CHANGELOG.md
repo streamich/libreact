@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/streamich/libreact/compare/v2.3.0...v2.4.0) (2018-10-12)
+
+
+### Features
+
+* 🎸 improve props typings of <WindowScrollSensor> ([090c2bb](https://github.com/streamich/libreact/commit/090c2bb))
+
 # [2.3.0](https://github.com/streamich/libreact/compare/v2.2.1...v2.3.0) (2018-10-12)
 
 
