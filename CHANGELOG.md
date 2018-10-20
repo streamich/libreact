@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/streamich/libreact/compare/v2.4.0...v2.5.0) (2018-10-20)
+
+
+### Features
+
+* **TouchSupportSensor:** Add the TouchSupportSensor HOC and func ([a06fbed](https://github.com/streamich/libreact/commit/a06fbed))
+
 # [2.4.0](https://github.com/streamich/libreact/compare/v2.3.0...v2.4.0) (2018-10-12)
 
 
