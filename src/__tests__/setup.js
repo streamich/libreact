@@ -7,4 +7,5 @@ configure({
 
 if (typeof window === 'object') {
   global.requestAnimationFrame = window.requestAnimationFrame = (callback) => setTimeout(callback, 17);
+  global.matchMedia = window.matchMedia = (() => { return { matches: false, addListener: () => {}, removeListener: () => {}, }; });
 }

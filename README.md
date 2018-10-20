@@ -69,6 +69,7 @@ const MyComponent = mock();
      - [`<ScrollSensor>`](./docs/en/ScrollSensor.md)
      - [`<SizeSensor>`](./docs/en/SizeSensor.md), [`withSize()`](./docs/en/SizeSensor.md#withsize-hoc), and [`@withSize`](./docs/en/SizeSensor.md#withsize-decorator) &mdash; [**example**](https://codesandbox.io/s/0y2qjm210p)
         - [`<WidthSensor>`](./docs/en/WidthSensor.md), [`withWidth()`](./docs/en/WidthSensor.md#withwidth-hoc-and-withwidth-decorator), and [`@withWidth`](./docs/en/WidthSensor.md#withwidth-hoc-and-withwidth-decorator)
+     - [`<TouchSupportSensor>`](./docs/en/TouchSupportSensor.md)
      - [`<ViewportSensor>`](./docs/en/ViewportSensor.md), [`withViewport()`](./docs/en/ViewportSensor.md#withviewport-hoc), and [`@withViewport`](./docs/en/ViewportSensor.md#withviewport-decorator)
         - [`<ViewportScrollSensor>`](./docs/en/ViewportSensor.md#viewportscrollsensor) and [`<ViewportObserverSensor>`](./docs/en/ViewportSensor.md#viewportobserversensor)
      - [`<WindowScrollSensor>`](./docs/en/WindowScrollSensor.md), [`withWindowScroll()`](./docs/en/WindowScrollSensor.md#withwindowscroll-hoc), and [`@withWindowScroll`](./docs/en/WindowScrollSensor.md#withwindowscroll-decorator)
@@ -114,6 +115,7 @@ const MyComponent = mock();
      - [`<Resolve>`](./docs/en/Resolve.md)
      - [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md)
      - [`getDisplayName()`](./docs/en/getDisplayName.md)
+     - [`touchSupported()`](./docs/en/TouchSupportSensor.md)
 
 
 ## License

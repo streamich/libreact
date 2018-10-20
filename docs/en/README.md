@@ -35,6 +35,7 @@
      - [`<ScrollSensor>`](./ScrollSensor.md)
      - [`<SizeSensor>`](./SizeSensor.md), [`withSize()`](./SizeSensor.md#withsize-hoc), and [`@withSize`](./SizeSensor.md#withsize-decorator)
         - [`<WidthSensor>`](./WidthSensor.md), [`withWidth()`](./WidthSensor.md#withwidth-hoc-and-withwidth-decorator), and [`@withWidth`](./WidthSensor.md#withwidth-hoc-and-withwidth-decorator)
+     - [`<TouchSupportSensor>`](./TouchSupportSensor.md)
      - [`<ViewportSensor>`](./ViewportSensor.md), [`withViewport()`](./ViewportSensor.md#withviewport-hoc), and [`@withViewport`](./ViewportSensor.md#withviewport-decorator)
         - [`<ViewportScrollSensor>`](./ViewportSensor.md#viewportscrollsensor) and [`<ViewportObserverSensor>`](./ViewportSensor.md#viewportobserversensor)
      - [`<WindowScrollSensor>`](./WindowScrollSensor.md), [`withWindowScroll()`](./WindowScrollSensor.md#withwindowscroll-hoc), and [`@withWindowScroll`](./WindowScrollSensor.md#withwindowscroll-decorator)
@@ -81,3 +82,4 @@
      - [`<Resolve>`](./Resolve.md)
      - [`<Sms>`](./Sms.md), [`<Mailto>`](./Mailto.md), and `<Tel>`
      - [`getDisplayName()`](./getDisplayName.md)
+     - [`touchSupported()`](./TouchSupportSensor.md)

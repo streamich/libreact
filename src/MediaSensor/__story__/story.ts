@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react';
 import {MediaSensor, withMedia} from '..';
 import ShowDocs from '../../ShowDocs'
 
-const IsBig = ({isBig}) => h('div', null, `WIDTH IS GREATED THAN 480PX: ${isBig}`);
+const IsBig = ({isBig}) => h('div', null, `WIDTH IS GREATER THAN 480PX: ${isBig}`);
 
 const IsBigWithMedia = withMedia(IsBig, 'isBig', {
   query: '(min-width: 480px)'
@@ -14,7 +14,7 @@ const IsBigWithMedia = withMedia(IsBig, 'isBig', {
 })
 class IsBigClass extends Component<any, any> {
   render () {
-    return h('div', null, `WIDTH IS GREATED THAN 480PX: ${this.props.isBig.matches}`);
+    return h('div', null, `WIDTH IS GREATER THAN 480PX: ${this.props.isBig.matches}`);
   }
 }
 
@@ -29,7 +29,7 @@ storiesOf('Sensors/MediaSensor', module)
           border: '1px solid red'
         }
       },
-        `WIDTH IS GREATED THAN 480PX: ${matches}`
+        `WIDTH IS GREATER THAN 480PX: ${matches}`
       )
     )
   )
@@ -42,7 +42,7 @@ storiesOf('Sensors/MediaSensor', module)
             border: '1px solid red'
           }
         },
-          `WIDTH IS GREATED THAN 480PX: ${matches}`
+          `WIDTH IS GREATER THAN 480PX: ${matches}`
         )
     })
   )
