@@ -4,6 +4,7 @@ import {on, off, noop} from '../util';
 export interface IOutsideClickProps {
   event?: string;
   onClick?: (event?) => void;
+  clickRoots?: () => Array<HTMLElement>;
 }
 
 export interface IOutsideClickState {
@@ -14,10 +15,13 @@ export class OutsideClick extends React.Component<IOutsideClickProps, IOutsideCl
     event: 'mousedown'
   };
 
-  el: HTMLElement;
+  roots: Array<HTMLElement>;
 
   ref = (originalRef) => (el) => {
-    this.el = el;
+    const { clickRoots } = this.props
+    this.roots = clickRoots
+      ? clickRoots()
+      : [el];
     (originalRef || noop)(el);
   };
 
@@ -30,7 +34,15 @@ export class OutsideClick extends React.Component<IOutsideClickProps, IOutsideCl
   }
 
   onClickOutside = (event) => {
-    if (this.el && !this.el.contains(event.target)) {
+    if (!this.roots.length) {
+        return
+    }
+
+    const inside = this.roots.some(root => (
+        root.contains(event.target)
+    ))
+
+    if (!inside) {
       (this.props.onClick || noop)(event);
     }
   };
