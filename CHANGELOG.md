@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/streamich/libreact/compare/v2.5.0...v2.6.0) (2018-10-22)
+
+
+### Features
+
+* release <OutsideClick> clickRoots() ([4fdc4e7](https://github.com/streamich/libreact/commit/4fdc4e7))
+
 # [2.5.0](https://github.com/streamich/libreact/compare/v2.4.0...v2.5.0) (2018-10-20)
 
 
