@@ -1,6 +1,6 @@
 # `<OutsideClick>`
 
-Tracks clicks outside its children.
+Tracks clicks outside its `children` or `clickRoots()`.
 
 
 ## Usage
@@ -15,7 +15,7 @@ import {OutsideClick} from 'libreact/lib/OutsideClick';
 </OutsideClick>
 ```
 
-#### Using a Portal
+### Using a Portal
 
 ```jsx
 import {OutsideClick} from 'libreact/lib/OutsideClick';
