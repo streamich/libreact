@@ -2,7 +2,7 @@
 
 # libreact
 
-[![][npm-badge]][npm-url] [![][travis-badge]][travis-url] [![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface)
+[![][npm-badge]][npm-url] [![][travis-badge]][travis-url] [![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface)[![Backers on Open Collective](https://opencollective.com/libreact/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/libreact/sponsors/badge.svg)](#sponsors) 
 
 React standard library&mdash;must-have toolbox for any React project.
 
@@ -116,6 +116,35 @@ const MyComponent = mock();
      - [`<Sms>`](./docs/en/Sms.md), [`<Mailto>`](./docs/en/Mailto.md)
      - [`getDisplayName()`](./docs/en/getDisplayName.md)
      - [`touchSupported()`](./docs/en/TouchSupportSensor.md)
+
+
+## Contributors
+
+This project exists thanks to all the people who contribute. <img src="https://opencollective.com/libreact/contributors.svg?width=890&button=false" />
+
+
+## Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/libreact#backer)]
+
+<a href="https://opencollective.com/libreact#backers" target="_blank"><img src="https://opencollective.com/libreact/backers.svg?width=890"></a>
+
+
+## Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/libreact#sponsor)]
+
+<a href="https://opencollective.com/libreact/sponsor/0/website" target="_blank"><img src="https://opencollective.com/libreact/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/libreact/sponsor/1/website" target="_blank"><img src="https://opencollective.com/libreact/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/libreact/sponsor/2/website" target="_blank"><img src="https://opencollective.com/libreact/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/libreact/sponsor/3/website" target="_blank"><img src="https://opencollective.com/libreact/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/libreact/sponsor/4/website" target="_blank"><img src="https://opencollective.com/libreact/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/libreact/sponsor/5/website" target="_blank"><img src="https://opencollective.com/libreact/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/libreact/sponsor/6/website" target="_blank"><img src="https://opencollective.com/libreact/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/libreact/sponsor/7/website" target="_blank"><img src="https://opencollective.com/libreact/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/libreact/sponsor/8/website" target="_blank"><img src="https://opencollective.com/libreact/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/libreact/sponsor/9/website" target="_blank"><img src="https://opencollective.com/libreact/sponsor/9/avatar.svg"></a>
+
 
 
 ## License
