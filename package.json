@@ -29,16 +29,19 @@
     "docs:build": "yarn docs:clean && gitbook install ./docs && gitbook build ./docs",
     "docs:publish": "yarn test:story:build && yarn docs:build && ./build/publish-docs.sh",
     "storybook": "start-storybook -p 6007",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "postinstall": "opencollective-postinstall"
   },
   "dependencies": {
-    "throttle-debounce": "^2.0.1",
-    "nano-css": "^1.13.0",
-    "screenfull": "^3.3.2",
     "fast-af": "^0.1.0",
-    "tslib": "^1.9.0",
+    "nano-css": "^1.13.0",
+    "opencollective-postinstall": "^2.0.1",
+    "react-focus-lock": "1.6.5",
     "react-universal-interface": "^0.3.1",
-    "react-focus-lock": "1.6.5"
+    "screenfull": "^3.3.2",
+    "throttle-debounce": "^2.0.1",
+    "tslib": "^1.9.0",
+    "opencollective": "^1.0.3"
   },
   "peerDependencies": {
     "react": "^16.4.0",
@@ -185,5 +188,9 @@
     "portal",
     "overlay",
     "modal"
-  ]
+  ],
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/libreact"
+  }
 }
