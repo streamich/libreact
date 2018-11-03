@@ -40,8 +40,7 @@
     "react-universal-interface": "^0.3.1",
     "screenfull": "^3.3.2",
     "throttle-debounce": "^2.0.1",
-    "tslib": "^1.9.0",
-    "opencollective": "^1.0.3"
+    "tslib": "^1.9.0"
   },
   "peerDependencies": {
     "react": "^16.4.0",
