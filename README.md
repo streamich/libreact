@@ -2,7 +2,7 @@
 
 # libreact
 
-[![][npm-badge]][npm-url] [![][travis-badge]][travis-url] [![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface)[![Backers on Open Collective](https://opencollective.com/libreact/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/libreact/sponsors/badge.svg)](#sponsors) 
+[![][npm-badge]][npm-url] [![][travis-badge]][travis-url] [![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface) [![Backers on Open Collective](https://opencollective.com/libreact/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/libreact/sponsors/badge.svg)](#sponsors) 
 
 React standard library&mdash;must-have toolbox for any React project.
 
