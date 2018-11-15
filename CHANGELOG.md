@@ -1,3 +1,15 @@
+# [2.7.0](https://github.com/streamich/libreact/compare/v2.6.0...v2.7.0) (2018-11-15)
+
+
+### Bug Fixes
+
+* 🐛 fix Storybook ([7e3d7f0](https://github.com/streamich/libreact/commit/7e3d7f0))
+
+
+### Features
+
+* 🎸 prevent window scroll under <Overlay> ([11b3a97](https://github.com/streamich/libreact/commit/11b3a97))
+
 # [2.6.0](https://github.com/streamich/libreact/compare/v2.5.0...v2.6.0) (2018-10-22)
 
 
