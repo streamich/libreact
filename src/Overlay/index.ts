@@ -1,6 +1,11 @@
 import {Component} from 'react';
 import {Portal} from '../Portal';
 import {h, noop, on, off} from '../util';
+import {rule} from '../nano';
+
+const classNameBodyNoScroll = rule({
+  overflow: 'hidden',
+}).trim();
 
 export interface IOverlayProps {
   color?: string;
@@ -20,8 +25,13 @@ export class Overlay extends Component<IOverlayProps, IOverlayState> {
     time: 300,
   };
 
+  componentDidMount () {
+    document.body.classList.add(classNameBodyNoScroll);
+  }
+
   componentWillUnmount () {
     off(this.el, 'click', this.onClick);
+    document.body.classList.remove(classNameBodyNoScroll);
   }
 
   onElement = (el) => {

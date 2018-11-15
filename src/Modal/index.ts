@@ -5,7 +5,6 @@ import {h, isClient, on, off, noop} from '../util';
 import {Overlay, IOverlayProps} from '../Overlay';
 
 let id = 0;
-
 const ESC = 27;
 
 export interface IModalProps extends IOverlayProps {

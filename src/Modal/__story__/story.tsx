@@ -75,3 +75,152 @@ storiesOf('UI/Modal', module)
       }</Toggle>
     </div>
   )
+  .add('Page scroll', () =>
+    <div>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      <Toggle>{({on, toggle}) =>
+        <div>
+          <button onClick={toggle}>Open dialog</button>
+          {on && <Modal color='rgba(0,0,0,.3)' onClick={toggle} onEsc={toggle}>
+            <div
+              style={{
+                width: 300,
+                height: 200,
+                background: '#fff',
+                borderRadius: 4,
+                boxShadow: '0 2px 4px rgba(0,0,0,.3)',
+                padding: 30,
+              }}
+            >
+              foobar
+            </div>
+          </Modal>}
+        </div>
+      }</Toggle>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+      This is page content
+      <br/>
+    </div>
+  )
