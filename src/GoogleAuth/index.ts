@@ -127,7 +127,7 @@ export const createGoogleAuthContext = (options: GApiAuth2InitOptions) => {
   }
 
   return {
-    Provider: Provider as any as IProvider,
+    Provider: Provider as React.ComponentClass<IGoogleAuthProviderProps, IGoogleAuthProviderState>,
     Consumer: context.Consumer as React.SFC<IGoogleAuthConsumerProps>,
   };
 };
