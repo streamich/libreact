@@ -1,7 +1,7 @@
 import {createElement as h} from 'react';
 import {storiesOf} from '@storybook/react';
 import {Audio} from '..';
-import ShowDocs from '../../../.storybook/ShowDocs'
+import ShowDocs from '../../ShowDocs'
 
 const src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3';
 
