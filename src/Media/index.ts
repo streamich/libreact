@@ -87,8 +87,6 @@ export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IM
   };
 
   componentDidMount () {
-    this.el.setAttribute('playsinline', '');
-
     this.setState({
       volume: this.el.volume,
       muted: this.el.muted,
