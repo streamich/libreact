@@ -87,9 +87,7 @@ export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IM
   };
 
   componentDidMount () {
-    if (this.props.autoPlay && this.el.paused) {
-      this.play();
-    }
+    this.el.setAttribute('playsinline', '');
 
     this.setState({
       volume: this.el.volume,
@@ -97,6 +95,12 @@ export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IM
     });
 
     this.event('onMount')(this);
+
+    // We run this code after `onMount` event to allow user
+    // to set `playsinline` attribute, if needed.
+    if (this.props.autoPlay && this.el.paused) {
+      this.play();
+    }
   }
 
   componentWillUnmount () {
@@ -251,9 +255,9 @@ export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IM
     const {tag = this.tag, children, render, noJs, onMount, onUnmount, ...rest} = props as any;
 
     return h(tag, {
+      controls: false,
       ...rest,
       ref: this.ref,
-      controls: false,
       onAbort: event('onAbort'),
       onCanPlay: this.onCanPlay,
       onCanPlayThrough: event('onCanPlayThrough'),
