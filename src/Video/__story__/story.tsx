@@ -73,4 +73,17 @@ storiesOf('UI/Video', module)
         border: '1px solid tomato'
       }}
     />
+  )
+  .add('autoplay on iOS', () =>
+    <Video
+      src={src}
+      autoPlay
+      onMount={(event, {el}) => {
+        el.setAttribute('playsinline', '');
+      }}
+      style={{
+        width: 400,
+        border: '1px solid tomato'
+      }}
+    />
   );
