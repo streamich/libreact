@@ -1,3 +1,11 @@
+# [2.8.0](https://github.com/streamich/libreact/compare/v2.7.0...v2.8.0) (2018-11-20)
+
+
+### Features
+
+* 🎸 reset <Video> state on src change ([a2c892f](https://github.com/streamich/libreact/commit/a2c892f))
+* 🎸 track canPlay boolean in state of <Video> ([72aae69](https://github.com/streamich/libreact/commit/72aae69))
+
 # [2.7.0](https://github.com/streamich/libreact/compare/v2.6.0...v2.7.0) (2018-11-15)
 
 
