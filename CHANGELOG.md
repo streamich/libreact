@@ -1,3 +1,11 @@
+## [2.8.1](https://github.com/streamich/libreact/compare/v2.8.0...v2.8.1) (2018-11-20)
+
+
+### Bug Fixes
+
+* 🐛 fire onMount event before attempting to play video ([cde669a](https://github.com/streamich/libreact/commit/cde669a))
+* 🐛 remove testing code ([ac8c487](https://github.com/streamich/libreact/commit/ac8c487))
+
 # [2.8.0](https://github.com/streamich/libreact/compare/v2.7.0...v2.8.0) (2018-11-20)
 
 
