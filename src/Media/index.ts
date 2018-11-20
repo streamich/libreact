@@ -62,21 +62,25 @@ export interface IMediaState {
   muted?: boolean;
   time?: number;
   volume?: number;
+  canPlay?: boolean;
 }
+
+const defaultState = {
+  buffered: [],
+  time: 0,
+  duration: 0,
+  isPlaying: false,
+  muted: false,
+  volume: 1,
+  canPlay: false,
+};
 
 export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IMedia> extends React.Component<P, S> implements IMedia {
   tag: 'video' | 'audio' = 'video';
   props: P;
   el: HTMLMediaElement = null;
 
-  state: S = {
-    buffered: [],
-    time: 0,
-    duration: 0,
-    isPlaying: false,
-    muted: false,
-    volume: 1
-  } as S;
+  state: S = defaultState as S;
 
   ref = (el) => {
     this.el = el;
@@ -99,6 +103,12 @@ export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IM
     this.el = null;
 
     this.event('onUnmount')(this);
+  }
+
+  componentDidUpdate (prevProps) {
+    if (prevProps.src !== this.props.src) {
+      this.setState(defaultState);
+    }
   }
 
   // Some browsers return `Promise` on `.play()` and may throw errors
@@ -228,6 +238,14 @@ export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IM
     this.event('onProgress')(event);
   };
 
+  onCanPlay = (event) => {
+    this.change({
+      canPlay: true,
+    });
+
+    this.event('onCanPlay')(event);
+  };
+
   render () {
     const {props, event} = this;
     const {tag = this.tag, children, render, noJs, onMount, onUnmount, ...rest} = props as any;
@@ -237,7 +255,7 @@ export class Media<P extends IMediaProps<M>, S extends IMediaState, M extends IM
       ref: this.ref,
       controls: false,
       onAbort: event('onAbort'),
-      onCanPlay: event('onCanPlay'),
+      onCanPlay: this.onCanPlay,
       onCanPlayThrough: event('onCanPlayThrough'),
       onDurationChange: this.onDurationChange,
       onEmptied: event('onEmptied'),
