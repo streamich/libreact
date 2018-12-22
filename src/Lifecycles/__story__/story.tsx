@@ -8,8 +8,6 @@ storiesOf('Inversion/Lifecycles', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Lifecycles.md')}))
   .add('Example', () =>
     <Lifecycles
-      foo='bar'
-      willMount={action('willMount')}
       didMount={action('didMount')}
       willUnmount={action('willUnmount')}
     >

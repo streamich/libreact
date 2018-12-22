@@ -1,53 +1,41 @@
 import {Component} from 'react';
-import {render} from 'react-universal-interface';
 import {noop} from '../util';
 
 export interface ILifecyclesProps {
-  [key: string]: any;
-  willMount?: (props) => void;
   didMount?: (props) => void;
-  willReceiveProps?: (nextProps, props) => void;
   shouldUpdate?: (nextProps, props) => boolean;
-  willUpdate?: (nextProps, props) => void;
-  didUpdate?: (props, prevProps) => void;
+  getSnapshotBeforeUpdate?: (prevProps, props) => any;
+  didUpdate?: (props, prevProps, snapshot) => void;
   willUnmount?: (props) => void;
   didCatch?: (error, info, props) => void;
+  [key: string]: any;
 }
 
 export class Lifecycles extends Component<ILifecyclesProps, {}> {
-  static defaultProp = {
-    willMount: noop,
+  static defaultProps = {
     didMount: noop,
-    willReceiveProps: noop,
     shouldUpdate: noop,
-    willUpdate: noop,
+    getSnapshotBeforeUpdate: noop,
     didUpdate: noop,
     willUnmount: noop,
     didCatch: noop,
   };
 
-  componentWillMount () {
-    return this.props.willMount(this.props);
-  }
-
   componentDidMount () {
     return this.props.didMount(this.props);
   }
 
-  componentWillReceiveProps (nextProps) {
-    return this.props.willReceiveProps(nextProps, this.props);
-  }
-
   shouldComponentUpdate (nextProps) {
-    return this.props.shouldUpdate(nextProps, this.props);
+    const fn = this.props.shouldUpdate;
+    return fn ? fn(nextProps, this.props) : true;
   }
 
-  componentWillUpdate (nextProps) {
-    return this.props.willUpdate(nextProps, this.props);
+  getSnapshotBeforeUpdate(prevProps) {
+    return this.props.getSnapshotBeforeUpdate(prevProps, this.props);
   }
 
-  componentDidUpdate (prevProps) {
-    return this.props.didUpdate(this.props, prevProps);
+  componentDidUpdate (prevProps, prevState, snapshot) {
+    return this.props.didUpdate(this.props, prevProps, snapshot);
   }
 
   componentWillUnmount () {
@@ -59,6 +47,6 @@ export class Lifecycles extends Component<ILifecyclesProps, {}> {
   }
 
   render () {
-    return render(this.props, null);
+    return this.props.children;
   }
 }
