@@ -1,3 +1,10 @@
+## [2.9.3](https://github.com/streamich/libreact/compare/v2.9.2...v2.9.3) (2018-12-22)
+
+
+### Bug Fixes
+
+* snapshot must be object or null ([a1eaca6](https://github.com/streamich/libreact/commit/a1eaca6))
+
 ## [2.9.2](https://github.com/streamich/libreact/compare/v2.9.1...v2.9.2) (2018-12-22)
 
 
