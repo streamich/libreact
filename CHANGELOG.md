@@ -1,3 +1,10 @@
+# [2.9.0](https://github.com/streamich/libreact/compare/v2.8.1...v2.9.0) (2018-12-22)
+
+
+### Features
+
+* 🎸 improve <Lifecycles> component ([baae6ea](https://github.com/streamich/libreact/commit/baae6ea))
+
 ## [2.8.1](https://github.com/streamich/libreact/compare/v2.8.0...v2.8.1) (2018-11-20)
 
 
