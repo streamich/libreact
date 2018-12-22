@@ -31,7 +31,7 @@ export class Lifecycles extends Component<ILifecyclesProps, {}> {
   }
 
   getSnapshotBeforeUpdate(prevProps) {
-    return this.props.getSnapshotBeforeUpdate(prevProps, this.props);
+    return this.props.getSnapshotBeforeUpdate(prevProps, this.props) || null;
   }
 
   componentDidUpdate (prevProps, prevState, snapshot) {
