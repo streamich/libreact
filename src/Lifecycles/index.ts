@@ -26,8 +26,7 @@ export class Lifecycles extends Component<ILifecyclesProps, {}> {
   }
 
   shouldComponentUpdate (nextProps) {
-    const fn = this.props.shouldUpdate;
-    return fn ? fn(nextProps, this.props) : true;
+    return fn ? Boolean(fn(nextProps, this.props)) : true;
   }
 
   getSnapshotBeforeUpdate(prevProps) {
