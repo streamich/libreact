@@ -1,3 +1,10 @@
+## [2.9.2](https://github.com/streamich/libreact/compare/v2.9.1...v2.9.2) (2018-12-22)
+
+
+### Bug Fixes
+
+* don't coerce to false ([d8748b9](https://github.com/streamich/libreact/commit/d8748b9))
+
 ## [2.9.1](https://github.com/streamich/libreact/compare/v2.9.0...v2.9.1) (2018-12-22)
 
 
