@@ -1,3 +1,11 @@
+## [2.9.1](https://github.com/streamich/libreact/compare/v2.9.0...v2.9.1) (2018-12-22)
+
+
+### Bug Fixes
+
+* define shouldUpdate function ([2277cfe](https://github.com/streamich/libreact/commit/2277cfe))
+* ensure we always return boolean from shouldComponentUpdate ([f2776ab](https://github.com/streamich/libreact/commit/f2776ab))
+
 # [2.9.0](https://github.com/streamich/libreact/compare/v2.8.1...v2.9.0) (2018-12-22)
 
 
