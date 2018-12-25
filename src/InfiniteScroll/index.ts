@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {ViewportSensor} from '../ViewportSensor';
 import {ViewportScrollSensor} from '../ViewportScrollSensor';
 
 const h = React.createElement;
