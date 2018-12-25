@@ -79,6 +79,7 @@ export class ViewportScrollSensor extends React.Component<IViewportScrollSensorP
     this.mounted = true;
 
     on(document, 'scroll', this.onScroll);
+    on(window, 'resize', this.onScroll);
     this.onScroll();
   }
 
@@ -86,6 +87,7 @@ export class ViewportScrollSensor extends React.Component<IViewportScrollSensorP
     this.mounted = false;
 
     off(document, 'scroll', this.onScroll);
+    off(window, 'resize', this.onScroll);
   }
 
   onCalculation (visible, rectRoot: TRect, rectEl: TRect, rectIntersection: TRect) {
