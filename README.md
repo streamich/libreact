@@ -2,7 +2,7 @@
 
 # libreact
 
-[![][npm-badge]][npm-url] [![][travis-badge]][travis-url] [![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface) [![Backers on Open Collective](https://opencollective.com/libreact/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/libreact/sponsors/badge.svg)](#sponsors) 
+[![][npm-badge]][npm-url] [![][travis-badge]][travis-url] [![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface) [![Backers on Open Collective](https://opencollective.com/libreact/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/libreact/sponsors/badge.svg)](#sponsors)
 
 React standard library&mdash;must-have toolbox for any React project.
 
@@ -90,6 +90,7 @@ const MyComponent = mock();
      - [`<Slider>`](./docs/en/Slider.md)
      - [`<DropArea>`](./docs/en/DropArea.md)
      - [`<Group>`](./docs/en/Group.md)
+     - [`<InfiniteScroll>`](./docs/en/InfiniteScroll.md)
      - [`<OutsideClick>`](./docs/en/OutsideClick.md)
      - [`<Ripple>`](./docs/en/Ripple.md) and [`withRipple()`](./docs/en/Ripple.md#withripple) &mdash; [**example**](https://codesandbox.io/s/983q7jr80o)
      - [`<Img>`](./docs/en/Img.md)

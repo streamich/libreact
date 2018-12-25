@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react';
 import {InfiniteScroll} from '..';
+import ShowDocs from '../../ShowDocs';
 
 const h = React.createElement;
 
@@ -51,5 +52,5 @@ class Demo extends React.Component {
 }
 
 storiesOf('UI/InfiniteScroll', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Lifecycles.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/InfiniteScroll.md')}))
   .add('Example', () => <Demo />)

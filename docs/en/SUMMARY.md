@@ -69,6 +69,7 @@
   * [Ripple](Ripple.md)
   * [Img](Img.md)
   * [Group](Group.md)
+  * [InfiniteScroll](InfiniteScroll.md)
   * [WidthQuery](WidthQuery.md)
   * [View](View.md)
   * [WindowWidthQuery](WindowWidthQuery.md)
