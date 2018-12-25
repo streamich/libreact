@@ -1,4 +1,4 @@
-import {Component, cloneElement, SFCElement} from 'react';
+import * as React from 'react';
 import {on, off, noop} from '../util';
 import {throttle} from 'throttle-debounce';
 import renderProp from '../util/renderProp';
@@ -56,12 +56,12 @@ export interface IViewportScrollSensorState {
   visible: boolean;
 }
 
-export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, IViewportScrollSensorState> {
+export class ViewportScrollSensor extends React.Component<IViewportScrollSensorProps, IViewportScrollSensorState> {
   static defaultProps = {
     threshold: 0,
     throttle: 50,
     margin: [0, 0, 0, 0]
-  };
+  } as any;
 
   mounted: boolean = false;
   el: HTMLElement;
@@ -134,7 +134,7 @@ export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, 
       }
     }
 
-    return cloneElement(element, {
+    return React.cloneElement(element, {
       ref: this.ref(element.ref)
     });
   }
