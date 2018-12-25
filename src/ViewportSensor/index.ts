@@ -5,11 +5,12 @@ import faccToHoc, {divWrapper} from '../util/faccToHoc';
 
 let Sensor: any = ViewportObserverSensor;
 
-if (!(window as any).IntersectionObserver) {
-  const loader = () => import('../ViewportScrollSensor').then((module) => module.ViewportScrollSensor);
-
-  Sensor = loadable({loader});
-  Sensor.load();
+if (typeof window === 'object') {
+  if (!(window as any).IntersectionObserver) {
+    const loader = () => import('../ViewportScrollSensor').then((module) => module.ViewportScrollSensor);
+    Sensor = loadable({loader});
+    Sensor.load();
+  }
 }
 
 export const ViewportSensor: React.StatelessComponent<IViewportObserverSensorProps> = (props) => {

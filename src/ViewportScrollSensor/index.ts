@@ -56,7 +56,7 @@ export interface IViewportScrollSensorState {
   visible: boolean;
 }
 
-export class ViewportScrollSensor<TProps extends IViewportScrollSensorProps, TState extends IViewportScrollSensorState> extends Component<TProps, TState> {
+export class ViewportScrollSensor extends Component<IViewportScrollSensorProps, IViewportScrollSensorState> {
   static defaultProps = {
     threshold: 0,
     throttle: 50,
@@ -66,9 +66,9 @@ export class ViewportScrollSensor<TProps extends IViewportScrollSensorProps, TSt
   mounted: boolean = false;
   el: HTMLElement;
 
-  state: TState = {
+  state: IViewportScrollSensorState = {
     visible: false
-  } as TState;
+  };
 
   ref = (originalRef) => (el) => {
     this.el = el;
