@@ -1,3 +1,18 @@
+# [2.10.0](https://github.com/streamich/libreact/compare/v2.9.3...v2.10.0) (2018-12-25)
+
+
+### Bug Fixes
+
+* 🐛 fix <ViewportObserverSensor> when threshold not spec ([a486bec](https://github.com/streamich/libreact/commit/a486bec))
+* 🐛 improve viewport sensors and speed up Storybook ([16d1603](https://github.com/streamich/libreact/commit/16d1603))
+
+
+### Features
+
+* 🎸 add <InfiniteScroll> component ([0768958](https://github.com/streamich/libreact/commit/0768958))
+* 🎸 preload items 100px before the reach end ([cb2990b](https://github.com/streamich/libreact/commit/cb2990b))
+* 🎸 use window resize in ViewportScrollSensor ([9004447](https://github.com/streamich/libreact/commit/9004447))
+
 ## [2.9.3](https://github.com/streamich/libreact/compare/v2.9.2...v2.9.3) (2018-12-22)
 
 
