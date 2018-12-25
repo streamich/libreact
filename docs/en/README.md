@@ -56,6 +56,7 @@
      - [`<Slider>`](./Slider.md)
      - [`<DropArea>`](./DropArea.md)
      - [`<Group>`](./Group.md)
+     - [`<InfiniteScroll>`](./InfiniteScroll.md)
      - [`<OutsideClick>`](./OutsideClick.md)
      - [`<Ripple>`](./Ripple.md) and [`withRipple()`](./Ripple.md#withripple) &mdash; [**example**](https://codesandbox.io/s/983q7jr80o)
      - [`<Img>`](./Img.md)

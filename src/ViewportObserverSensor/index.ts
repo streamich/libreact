@@ -55,9 +55,12 @@ export class ViewportObserverSensor extends Component<IViewportObserverSensorPro
     const entry = entries[0];
     const {intersectionRatio} = entry;
     const {threshold, onChange} = this.props;
-
+    const noThresholdAndTinyBitIsVisible = !!(!threshold && intersectionRatio);
+    const visibleMoreOrEqualToThreshold = threshold
+      ? intersectionRatio >= threshold
+      : intersectionRatio > threshold;
     const state = {
-      visible: !!((!threshold && intersectionRatio) || (intersectionRatio >= threshold))
+      visible: noThresholdAndTinyBitIsVisible || visibleMoreOrEqualToThreshold,
     };
 
     this.setState(state);

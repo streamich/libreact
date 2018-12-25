@@ -1,4 +1,4 @@
-import {Component, cloneElement, SFCElement} from 'react';
+import * as React from 'react';
 import {on, off, noop} from '../util';
 import {throttle} from 'throttle-debounce';
 import renderProp from '../util/renderProp';
@@ -56,19 +56,19 @@ export interface IViewportScrollSensorState {
   visible: boolean;
 }
 
-export class ViewportScrollSensor<TProps extends IViewportScrollSensorProps, TState extends IViewportScrollSensorState> extends Component<TProps, TState> {
+export class ViewportScrollSensor extends React.Component<IViewportScrollSensorProps, IViewportScrollSensorState> {
   static defaultProps = {
     threshold: 0,
     throttle: 50,
     margin: [0, 0, 0, 0]
-  };
+  } as any;
 
   mounted: boolean = false;
   el: HTMLElement;
 
-  state: TState = {
+  state: IViewportScrollSensorState = {
     visible: false
-  } as TState;
+  };
 
   ref = (originalRef) => (el) => {
     this.el = el;
@@ -79,6 +79,7 @@ export class ViewportScrollSensor<TProps extends IViewportScrollSensorProps, TSt
     this.mounted = true;
 
     on(document, 'scroll', this.onScroll);
+    on(window, 'resize', this.onScroll);
     this.onScroll();
   }
 
@@ -86,6 +87,7 @@ export class ViewportScrollSensor<TProps extends IViewportScrollSensorProps, TSt
     this.mounted = false;
 
     off(document, 'scroll', this.onScroll);
+    off(window, 'resize', this.onScroll);
   }
 
   onCalculation (visible, rectRoot: TRect, rectEl: TRect, rectIntersection: TRect) {
@@ -134,7 +136,7 @@ export class ViewportScrollSensor<TProps extends IViewportScrollSensorProps, TSt
       }
     }
 
-    return cloneElement(element, {
+    return React.cloneElement(element, {
       ref: this.ref(element.ref)
     });
   }
