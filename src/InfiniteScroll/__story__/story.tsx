@@ -15,13 +15,18 @@ const Block = () => {
 
 class Demo extends React.Component {
   state = {
-    items: [],
+    items: [
+      <Block key={0} />,
+      <Block key={1} />,
+      <Block key={2} />,
+      <Block key={3} />,
+      <Block key={4} />,
+    ],
     cursor: 1,
   };
 
   constructor (props) {
     super(props);
-    this.load();
   }
 
   load = (cnt = 5) => {
