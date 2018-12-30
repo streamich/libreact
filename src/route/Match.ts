@@ -9,7 +9,7 @@ export interface IRouteData {
   fullRoute: string;
   route: string;
   parent: IRouteData;
-  match: TRouteMatchResult;
+  matches: TRouteMatchResult;
 }
 
 export interface IMatchProps extends IUniversalInterfaceProps<IRouteData> {
@@ -36,7 +36,7 @@ const Match: React.SFC<IMatchProps> = (props) => {
     const {fullRoute, route, parent} = context;
     const matches = createMatcher(match, exact)(route);
 
-    const data = {
+    const data: IRouteData = {
       fullRoute,
       route,
       parent,
