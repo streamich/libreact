@@ -1,3 +1,10 @@
+## [2.10.1](https://github.com/streamich/libreact/compare/v2.10.0...v2.10.1) (2018-12-30)
+
+
+### Bug Fixes
+
+* 🐛 fix <Route> and <Match> data type ([cd51a81](https://github.com/streamich/libreact/commit/cd51a81))
+
 # [2.10.0](https://github.com/streamich/libreact/compare/v2.9.3...v2.10.0) (2018-12-25)
 
 
