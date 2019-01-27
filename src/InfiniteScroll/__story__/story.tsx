@@ -51,6 +51,46 @@ class Demo extends React.Component {
   }
 }
 
+class Demo2 extends React.Component {
+  state = {
+    items: [
+      <Block key={0} />,
+      <Block key={1} />,
+      <Block key={2} />,
+      <Block key={3} />,
+      <Block key={4} />,
+    ],
+    cursor: 1,
+  };
+
+  constructor (props) {
+    super(props);
+  }
+
+  load = (cnt = 5) => {
+    console.log('loading for cursor: ' + this.state.cursor);
+    const items = [...this.state.items];
+    for (let i = 0; i < cnt; i++) {
+      items.push(<Block key={items.length} />);
+    }
+    this.setState({
+      items,
+      cursor: this.state.cursor + 1,
+    });
+  };
+
+  render () {
+    return (
+      <div style={{border: '1px solid red', height: 400, width: 300, overflowY: 'scroll'}}>
+        <InfiniteScroll hasMore={this.state.cursor < 5} loadMore={this.load} cursor={this.state.cursor} poll={500}>
+          {this.state.items}
+        </InfiniteScroll>
+      </div>
+    );
+  }
+}
+
 storiesOf('UI/InfiniteScroll', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/InfiniteScroll.md')}))
   .add('Example', () => <Demo />)
+  .add('Example in <div>', () => <Demo2 />)
