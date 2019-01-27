@@ -1,3 +1,10 @@
+# [2.11.0](https://github.com/streamich/libreact/compare/v2.10.1...v2.11.0) (2019-01-27)
+
+
+### Features
+
+* 🎸 add polling to scroll sensor and infinite scroll ([dbc5646](https://github.com/streamich/libreact/commit/dbc5646))
+
 ## [2.10.1](https://github.com/streamich/libreact/compare/v2.10.0...v2.10.1) (2018-12-30)
 
 
