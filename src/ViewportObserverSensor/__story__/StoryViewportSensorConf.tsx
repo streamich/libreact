@@ -13,6 +13,7 @@ const StoryViewportSensorConf = ({sensor: Sensor, onChange, threshold, margin=[0
         threshold={threshold}
         margin={margin}
         onChange={onChange}
+        poll={0}
       >{(state) =>
         <div style={{
           width: 300,

@@ -9,6 +9,7 @@ export interface InfiniteScrollProps {
   sentinel?: React.ReactElement<any>;
   hasMore?: boolean;
   margin?: number;
+  poll?: number;
   loadMore: () => void;
 }
 
@@ -35,11 +36,11 @@ export class InfiniteScroll extends React.Component<InfiniteScrollProps, Infinit
 
   render () {
     const {props} = this;
-    const {children, hasMore, sentinel, margin} = props;
+    const {children, hasMore, sentinel, margin, poll} = props;
     return h(React.Fragment, null,
       children,
       hasMore &&
-        h(ViewportScrollSensor, {margin: [0, 0, margin, 0], onChange: this.onViewportChange}, sentinel),
+        h(ViewportScrollSensor, {margin: [0, 0, margin, 0], poll, onChange: this.onViewportChange}, sentinel),
     );
   }
 }

@@ -49,6 +49,7 @@ export interface IViewportScrollSensorProps extends IUniversalInterfaceProps<IVi
   margin?: TMargin;
   threshold?: number;
   throttle?: number;
+  poll?: number;
   onChange?: (state: IViewportScrollSensorState) => void;
 }
 
@@ -65,6 +66,7 @@ export class ViewportScrollSensor extends React.Component<IViewportScrollSensorP
 
   mounted: boolean = false;
   el: HTMLElement;
+  pollTimer;
 
   state: IViewportScrollSensorState = {
     visible: false
@@ -81,14 +83,25 @@ export class ViewportScrollSensor extends React.Component<IViewportScrollSensorP
     on(document, 'scroll', this.onScroll);
     on(window, 'resize', this.onScroll);
     this.onScroll();
+    if (this.props.poll) {
+      setTimeout(this.poll, this.props.poll);
+    }
   }
 
   componentWillUnmount () {
     this.mounted = false;
 
+    clearTimeout(this.pollTimer);
     off(document, 'scroll', this.onScroll);
     off(window, 'resize', this.onScroll);
   }
+
+  poll = () => {
+    if (this.mounted) {
+      this.onScroll();
+      setTimeout(this.poll, this.props.poll);
+    }
+  };
 
   onCalculation (visible, rectRoot: TRect, rectEl: TRect, rectIntersection: TRect) {
     if (visible !== this.state.visible) {
