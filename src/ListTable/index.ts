@@ -2,7 +2,7 @@ import * as React from 'react';
 
 const h = React.createElement;
 
-const defaultRenderRow = cells => h('tr', null, cells);
+const defaultRenderRow = cells => h('tr', null, ...cells);
 
 export interface Props {
   cols?: number;
@@ -26,7 +26,7 @@ export const ListTable: React.SFC<Props> = ({cols, renderRow, children}) => {
   }
 
   return h('table', null, h('tbody', null,
-    rows,
+    ...rows,
   ));
 };
 

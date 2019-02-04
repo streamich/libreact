@@ -103,3 +103,13 @@ storiesOf('UI/ListTable', module)
       <div>6</div>
     </ListTable>
   )
+  .add('Cells as text', () =>
+    <ListTable cols={2}>
+      {'1'}
+      {'2'}
+      {'3'}
+      {'4'}
+      {'5'}
+      {'6'}
+    </ListTable>
+  )
