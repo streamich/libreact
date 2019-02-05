@@ -94,6 +94,7 @@ const MyComponent = mock();
      - [`<OutsideClick>`](./docs/en/OutsideClick.md)
      - [`<Ripple>`](./docs/en/Ripple.md) and [`withRipple()`](./docs/en/Ripple.md#withripple) &mdash; [**example**](https://codesandbox.io/s/983q7jr80o)
      - [`<Img>`](./docs/en/Img.md)
+     - [`<ListTable>`](./docs/en/ListTable.md)
      - [`<WidthQuery>`](./docs/en/WidthQuery.md), [`<View>`](./docs/en/View.md), [`<WindowWidthQuery>`](./docs/en/WindowWidthQuery.md), and [`<InlineWidthQuery>`](./docs/en/InlineWidthQuery.md)
      - [`<Audio>`](./docs/en/Audio.md) and [`<Video>`](./docs/en/Video.md)
      - [`<Speak>`](./docs/en/Speak.md), [`<Vibrate>`](./docs/en/Vibrate.md), [`<Alert>`](./docs/en/Alert.md)

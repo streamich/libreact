@@ -4,7 +4,7 @@ import {ListTable} from '..';
 import ShowDocs from '../../ShowDocs'
 
 storiesOf('UI/ListTable', module)
-  // .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/ListTable.md')}))
+  .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/ListTable.md')}))
   .add('Default', () =>
     <ListTable>
       <div>1</div>

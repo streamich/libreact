@@ -4,12 +4,12 @@ const h = React.createElement;
 
 const defaultRenderRow = cells => h('tr', null, ...cells);
 
-export interface Props {
+export interface Props extends React.AllHTMLAttributes<any> {
   cols?: number;
   renderRow?: (cells: React.ReactElement<any>[]) => React.ReactElement<any>;
 }
 
-export const ListTable: React.SFC<Props> = ({cols, renderRow, children}) => {
+export const ListTable: React.SFC<Props> = ({cols, renderRow, children, ...rest}) => {
   const list = React.Children.toArray(children);
   const rows: React.ReactElement<any>[] = [];
   const length = list.length;
@@ -25,7 +25,7 @@ export const ListTable: React.SFC<Props> = ({cols, renderRow, children}) => {
     rows.push(renderRow(cells));
   }
 
-  return h('table', null, h('tbody', null,
+  return h('table', rest, h('tbody', null,
     ...rows,
   ));
 };
