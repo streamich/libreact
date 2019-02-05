@@ -1,3 +1,16 @@
+# [2.12.0](https://github.com/streamich/libreact/compare/v2.11.0...v2.12.0) (2019-02-05)
+
+
+### Bug Fixes
+
+* 🐛 avoide React use "key" warnings ([66fad9b](https://github.com/streamich/libreact/commit/66fad9b))
+
+
+### Features
+
+* 🎸 add <ListTable> component ([c9d767a](https://github.com/streamich/libreact/commit/c9d767a))
+* 🎸 improve <ListTable> and add reference to docs ([d95444d](https://github.com/streamich/libreact/commit/d95444d))
+
 # [2.11.0](https://github.com/streamich/libreact/compare/v2.10.1...v2.11.0) (2019-01-27)
 
 
