@@ -19,9 +19,9 @@ Or use `onWidth` prop
 ```jsx
 import {WidthSensor} from 'libreact/lib/WidthSensor';
 
-<SizeSensor onWidth={({width, height}) => console.log(width, height)}>
+<WidthSensor onWidth={({width, height}) => console.log(width, height)}>
   Resize me!
-</SizeSensor>
+</WidthSensor>
 ```
 
 
