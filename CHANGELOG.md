@@ -1,3 +1,10 @@
+## [2.12.1](https://github.com/streamich/libreact/compare/v2.12.0...v2.12.1) (2019-02-08)
+
+
+### Bug Fixes
+
+* example referred to incorrect component ([cfa0671](https://github.com/streamich/libreact/commit/cfa0671))
+
 # [2.12.0](https://github.com/streamich/libreact/compare/v2.11.0...v2.12.0) (2019-02-05)
 
 
