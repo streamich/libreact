@@ -9,7 +9,7 @@ import {LocalStorage} from 'libreact/lib/LocalStorage';
 
 <LocalStorage name='foo' data='bar' />
 <LocalStorage name='foo2' data='baz' persist />
-<LocalStorage name='foo3' data='bazooka' persit onMount={data => {/* ... */}} />
+<LocalStorage name='foo3' data='bazooka' persist onMount={data => {/* ... */}} />
 ```
 
 ## Props
