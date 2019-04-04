@@ -1,3 +1,10 @@
+# [2.13.0](https://github.com/streamich/libreact/compare/v2.12.2...v2.13.0) (2019-04-04)
+
+
+### Features
+
+* 🎸 don't blur elements with data-modal-ignore attribute ([718c1df](https://github.com/streamich/libreact/commit/718c1df))
+
 ## [2.12.2](https://github.com/streamich/libreact/compare/v2.12.1...v2.12.2) (2019-02-12)
 
 
