@@ -7,6 +7,8 @@ import {Overlay, IOverlayProps} from '../Overlay';
 let id = 0;
 const ESC = 27;
 
+const ignoreAttribute = 'data-modal-ignore';
+
 export interface IModalProps extends IOverlayProps {
   blur?: number;
   dontLockFocus?: boolean;
@@ -57,6 +59,10 @@ export class Modal extends Component<IModalProps, IModalState> {
       const sibling = siblings[i] as HTMLElement;
       const sib = sibling as any;
 
+      if (sibling.hasAttribute(ignoreAttribute)) {
+        continue;
+      }
+
       if (sibling === this.el) {
         continue;
       }
@@ -100,6 +106,10 @@ export class Modal extends Component<IModalProps, IModalState> {
 
     for (let i = 0; i < siblings.length; i++) {
       const sibling = siblings[i] as HTMLElement;
+
+      if (sibling.hasAttribute(ignoreAttribute)) {
+        continue;
+      }
 
       if (sibling === el) {
         continue;

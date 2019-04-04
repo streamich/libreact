@@ -56,3 +56,5 @@ Accepts all [`<Overlay>`](./Overlay.md) props in addition to:
 - `close()` &mdash; method to calle `onClose` event.
 - `idTitle` &mdash; id to set for aria title element.
 - `idDescription` &mdash; id to set for aria description element.
+
+Root nodes with `data-modal-ignore` attribute will not be dirty mutated (to create blur effect).

@@ -1,9 +1,11 @@
 import {createElement as h} from 'react';
+import {createPortal} from 'react-dom';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {Modal} from '..';
 import {Toggle} from '../../Toggle';
 import ShowDocs from '../../ShowDocs'
+import {AfterTimeout} from '../../AfterTimeout';
 
 storiesOf('UI/Modal', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Modal.md')}))
@@ -17,9 +19,19 @@ storiesOf('UI/Modal', module)
   .add('Button underneath', () =>
     <div>
       <button onClick={() => alert('CLICKED')}>Click me!</button>
-      <Modal>
-        foobar
-      </Modal>
+      {createPortal(
+        <button onClick={() => alert('CLICKED')}>This should be blurred</button>,
+        document.body
+      )}
+      {createPortal(
+        <button data-modal-ignore="" onClick={() => alert('CLICKED')}>This element should not be blurred</button>,
+        document.body
+      )}
+      <AfterTimeout>
+        <Modal>
+          foobar
+        </Modal>
+      </AfterTimeout>
     </div>
   )
   .add('With inputs', () =>
