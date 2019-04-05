@@ -1,3 +1,10 @@
+## [2.13.1](https://github.com/streamich/libreact/compare/v2.13.0...v2.13.1) (2019-04-05)
+
+
+### Bug Fixes
+
+* 🐛 call <Modal> onElement from componentDidMount ([95fd86f](https://github.com/streamich/libreact/commit/95fd86f))
+
 # [2.13.0](https://github.com/streamich/libreact/compare/v2.12.2...v2.13.0) (2019-04-04)
 
 
