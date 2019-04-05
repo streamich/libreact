@@ -48,52 +48,8 @@ export class Modal extends Component<IModalProps, IModalState> {
 
   componentDidMount () {
     on(document, 'keydown', this.onKey);
-  }
 
-  componentWillUnmount () {
-    off(document, 'keydown', this.onKey);
-
-    const siblings = Array.from(document.body.children);
-
-    for (let i = 0; i < siblings.length; i++) {
-      const sibling = siblings[i] as HTMLElement;
-      const sib = sibling as any;
-
-      if (sibling.hasAttribute(ignoreAttribute)) {
-        continue;
-      }
-
-      if (sibling === this.el) {
-        continue;
-      }
-
-      if (!sib.__libreact_lock) {
-        continue;
-      }
-
-      if (sib.__libreact_lock.owner !== this) {
-        continue;
-      }
-
-      const lock = sib.__libreact_lock;
-
-      sib.inert = lock.inert;
-      sibling.style.setProperty('pointer-events', lock.pointerEvents);
-      sibling.style.setProperty('user-select', lock.userSelect);
-      sibling.style.setProperty('filter', lock.filter || 'none');
-
-      sibling.removeAttribute('aria-hidden');
-      delete sib.__libreact_lock;
-    }
-
-    // Focus previously active element.
-    if (this.activeEl && (this.activeEl as any).focus) {
-      (this.activeEl as any).focus();
-    }
-  }
-
-  onElement = (el) => {
-    this.el = el;
+    const {el} = this;
 
     el.setAttribute('role', 'dialog');
     el.classList.add('dialog');
@@ -146,6 +102,52 @@ export class Modal extends Component<IModalProps, IModalState> {
     }
 
     (this.props.onElement || noop)(el);
+  }
+
+  componentWillUnmount () {
+    off(document, 'keydown', this.onKey);
+
+    const siblings = Array.from(document.body.children);
+
+    for (let i = 0; i < siblings.length; i++) {
+      const sibling = siblings[i] as HTMLElement;
+      const sib = sibling as any;
+
+      if (sibling.hasAttribute(ignoreAttribute)) {
+        continue;
+      }
+
+      if (sibling === this.el) {
+        continue;
+      }
+
+      if (!sib.__libreact_lock) {
+        continue;
+      }
+
+      if (sib.__libreact_lock.owner !== this) {
+        continue;
+      }
+
+      const lock = sib.__libreact_lock;
+
+      sib.inert = lock.inert;
+      sibling.style.setProperty('pointer-events', lock.pointerEvents);
+      sibling.style.setProperty('user-select', lock.userSelect);
+      sibling.style.setProperty('filter', lock.filter || 'none');
+
+      sibling.removeAttribute('aria-hidden');
+      delete sib.__libreact_lock;
+    }
+
+    // Focus previously active element.
+    if (this.activeEl && (this.activeEl as any).focus) {
+      (this.activeEl as any).focus();
+    }
+  }
+
+  onElement = (el) => {
+    this.el = el;
   };
 
   onKey = (event) => {

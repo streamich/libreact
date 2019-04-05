@@ -11,7 +11,9 @@ storiesOf('UI/Modal', module)
   .add('Documentation', () => h(ShowDocs, {md: require('../../../docs/en/Modal.md')}))
   .add('Basic example', () =>
     <div>
-      <Modal>
+      <Modal onElement={el => {
+        el.style.background = 'red';
+      }}>
         foobar
       </Modal>
     </div>

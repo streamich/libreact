@@ -26,6 +26,7 @@ export class Overlay extends Component<IOverlayProps, IOverlayState> {
   };
 
   componentDidMount () {
+    (this.props.onElement || noop)(this.el);
     document.body.classList.add(classNameBodyNoScroll);
   }
 
@@ -60,8 +61,6 @@ export class Overlay extends Component<IOverlayProps, IOverlayState> {
     }, 35);
 
     on(el, 'click', this.onClick);
-
-    (this.props.onElement || noop)(el);
   };
 
   onClick = (event) => {
