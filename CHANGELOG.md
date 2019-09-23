@@ -1,3 +1,10 @@
+## [2.13.2](https://github.com/streamich/libreact/compare/v2.13.1...v2.13.2) (2019-09-23)
+
+
+### Bug Fixes
+
+* 🐛 call .laodMore() on multiple short pages ([fe73c91](https://github.com/streamich/libreact/commit/fe73c91))
+
 ## [2.13.1](https://github.com/streamich/libreact/compare/v2.13.0...v2.13.1) (2019-04-05)
 
 
