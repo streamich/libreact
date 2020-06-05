@@ -94,8 +94,8 @@ can be either regular JSX children or a FaCC, render prop, or component prop.
 #### Props
 
   - `match` &mdash; optional, matching condition, defaults to empty string. This can be a regular expression.
-  - `exact` &mdash; optiona, boolean, whether string route has to match exactly.
-  - `truncate` &mdash; optiona, boolean, whether matched part of the route should be truncated for the nested routes.
+  - `exact` &mdash; optional, boolean, whether string route has to match exactly.
+  - `truncate` &mdash; optional, boolean, whether matched part of the route should be truncated for the nested routes.
   - `ns` &mdash; optional, string, namespace of the router.
 
 
@@ -111,7 +111,7 @@ can be either regular JSX children or a FaCC, render prop, or component prop.
 
 ### `<Match>`
 
-`<Match>` component is similar to `<Route>`, but it always renders its children, regarles if route was actually matched.
+`<Match>` component is similar to `<Route>`, but it always renders its children, regardless if route was actually matched.
 
 
 ### `go()`
