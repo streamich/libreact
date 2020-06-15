@@ -1,3 +1,10 @@
+## [2.13.3](https://github.com/streamich/libreact/compare/v2.13.2...v2.13.3) (2020-06-15)
+
+
+### Bug Fixes
+
+* 🐛 update tslib dependency ([7be746b](https://github.com/streamich/libreact/commit/7be746b))
+
 ## [2.13.2](https://github.com/streamich/libreact/compare/v2.13.1...v2.13.2) (2019-09-23)
 
 
