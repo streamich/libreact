@@ -77,7 +77,7 @@
     "react-test-renderer": "16.2.0",
     "react": "^16.2.0",
     "rimraf": "2.6.2",
-    "semantic-release": "^15.5.0",
+    "semantic-release": "^17.2.3",
     "to-string-loader": "1.1.5",
     "ts-jest": "^23.10.3",
     "ts-loader": "3.5.0",
