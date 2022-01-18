@@ -8404,13 +8404,6 @@ promzard@^0.3.0:
   dependencies:
     read "1"
 
-prop-types@15.5.10:
-  version "15.5.10"
-  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
-  dependencies:
-    fbjs "^0.8.9"
-    loose-envify "^1.3.1"
-
 prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
@@ -8688,12 +8681,13 @@ react-error-overlay@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.1.tgz#417addb0814a90f3a7082eacba7cee588d00da89"
 
-react-focus-lock@1.6.5:
-  version "1.6.5"
-  resolved "https://registry.npmjs.org/react-focus-lock/-/react-focus-lock-1.6.5.tgz#599be7854253d3cf082d882ef617fb13fd88ddac"
+react-focus-lock@1.6.6:
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-1.6.6.tgz#ca175181c5d4286693f6c9a9edf09ff06886cf9b"
+  integrity sha512-qhASEhgcbZkSZY0tKl7NCxqhwVkBjELI6YORI4KSIHCGcYgB3DVwR36rQCm+Jfhnzo+47XRJNj3Nuhz32a8+0w==
   dependencies:
     focus-lock "^0.1.0"
-    prop-types "15.5.10"
+    prop-types "^15.5.10"
     react-side-effect "^1.1.3"
 
 react-fuzzy@^0.5.2:
