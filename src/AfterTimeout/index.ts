@@ -1,37 +1,21 @@
-import {Component} from 'react';
+import * as React from 'react';
 
 export interface IAfterTimeoutProps {
   ms?: number;
 }
 
-export interface IAfterTimeoutState {
-  ready: boolean;
-}
+export const AfterTimeout: React.FC<IAfterTimeoutProps> = ({ms = 200, children}) => {
+  const [ready, setReady] = React.useState(false);
 
-export class AfterTimeout extends Component<IAfterTimeoutProps, IAfterTimeoutState> {
-  static defaultProps = {
-    ms: 200
-  };
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setReady(true);
+    }, ms);
 
-  state: IAfterTimeoutState = {
-    ready: false
-  };
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [ms]);
 
-  timer;
-
-  componentDidMount () {
-    this.timer = setTimeout(() => {
-      this.setState({
-        ready: true
-      });
-    }, this.props.ms);
-  }
-
-  componentWillUnmount () {
-    clearTimeout(this.timer);
-  }
-
-  render () {
-    return this.state.ready ? this.props.children : null;
-  }
-}
+  return ready ? children : null;
+};

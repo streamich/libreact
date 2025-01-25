@@ -1,6 +1,6 @@
 # `<AfterTimeout>`
 
-Renders its children only after a specified timeout. Useful to
+Renders its children only after a specified timeout. Useful for
 improving perceived performance by not blocking the main event loop.
 
 
