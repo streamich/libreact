@@ -57,6 +57,7 @@
   * [Translations](translate.md)
 * [UI](UI.md)
   * [Portal](Portal.md)
+  * [Iframe](Iframe.md)
   * [Overlay](Overlay.md)
   * [Modal](Modal.md)
   * [Dimmer](Dimmer.md)
