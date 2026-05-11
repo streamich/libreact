@@ -1,6 +1,7 @@
 # UI
 
   - [`<Portal>`](./Portal.md) &mdash; creates React portal into document's body.
+  - [`<Iframe>`](./Iframe.md) &mdash; renders children inside an iframe using a React portal.
   - [`<Overlay>`](./Overlay.md) &mdash; creates an overlay over the whole page.
   - [`<Modal>`](./Modal.md) &mdash; creates an overlay and keeps focus in modal.
   - [`<Dimmer>`](./Dimmer.md) &mdash; Dims its parent element.
