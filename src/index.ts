@@ -50,3 +50,6 @@ export * from './Interpolation';
 
 // Other
 export * from './Resolve';
+
+// Inversion
+export * from './Form';
