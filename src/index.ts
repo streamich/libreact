@@ -32,6 +32,7 @@ export * from './CssVars';
 
 // UI
 export * from './Portal';
+export * from './Iframe';
 export * from './Overlay';
 export * from './Modal';
 export * from './FullScreen';
