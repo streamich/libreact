@@ -42,6 +42,7 @@ const MyComponent = mock();
      - [`<State>`](./docs/en/State.md) and [`withState()`](./docs/en/State.md#withstate-hoc)
         - [`<Toggle>`](./docs/en/Toggle.md), [`withToggle()`](./docs/en/Toggle.md#withtoggle-hoc), and [`@withToggle`](./docs/en/Toggle.md#withtoggle-decorator) &mdash; [**example**](https://codesandbox.io/s/zwkl16vv93)
         - [`<Flipflop>`](./docs/en/Flipflop.md), [`withFlipflop()`](./docs/en/Flipflop.md#withflipflop-hoc), and [`@withFlipflop`](./docs/en/Flipflop.md#withflipflop-decorator)
+        - [`<Form>`](./docs/en/Form.md)
         - [`<Value>`](./docs/en/Value.md), [`withValue()`](./docs/en/Value.md#withvalue-hoc), and [`@withValue`](./docs/en/Value.md#withvalue-decorator)
         - [`<Counter>`](./docs/en/Counter.md), [`withCounter()`](./docs/en/Counter.md#withcounter-hoc) and [`@withCounter`](./docs/en/Counter.md#withcounter-decorator)
         - [`<List>`](./docs/en/List.md), [`withList()`](./docs/en/List.md#withlist-hoc), and [`@withList`](./docs/en/List.md#withlist-decorator)
