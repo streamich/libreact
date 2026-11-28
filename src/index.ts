@@ -39,6 +39,9 @@ export * from './Ripple';
 export * from './Slider';
 export * from './DropArea';
 
+// Forms
+export * from './Form';
+
 // Animation
 export * from './AfterTimeout';
 export * from './AfterDraf';
